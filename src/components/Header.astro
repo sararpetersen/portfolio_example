@@ -1,5 +1,56 @@
 ---
+
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50">
+  <nav class="container mx-auto flex justify-between items-center" x-data="{ showmenu: false }">
+    <!-- Logo -->
+    <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
+      <a href="/" class="relative inline-block w-full h-full">
+        <img
+          src="/logo.svg"
+          alt="logo"
+          class="opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out object-contain w-full h-full"
+        />
+        <img
+          src="/logo_grey.svg"
+          alt="logo grey"
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out object-contain w-full h-full"
+        />
+      </a>
+    </div>
+
+    <ul class="flex space-x-6">
+      <li><a href="./#about" class="hover:text-site-red">About</a></li>
+
+      <!-- Dropdown with Arrow -->
+      <li class="relative" @mouseenter="showmenu = true" @mouseleave="showmenu = false">
+        <a href="./#projects" class="py-2 border-b-2 border-transparent rounded-t-lg hover:text-[#FF3333] transition duration-300 flex items-center">
+          Projects
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300 transform"
+            :class="{ 'rotate-180': showmenu }"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+
+        <div x-show="showmenu" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
+          <ul>
+            <li class="py-2 px-4 hover:bg-dropdownHover transition duration-300">
+              <a href="/other" class="hover:text-site-red">Other projects</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="./#contact" class="hover:text-site-red">Contact</a></li>
+    </ul>
+  </nav>
+</header>

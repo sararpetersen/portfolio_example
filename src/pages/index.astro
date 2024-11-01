@@ -1,15 +1,186 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="SRP Portfolio - frontpage">
+  <!-- Hero Section -->
+  <section class="container mx-auto text-center py-20">
+    <h1 class="text-6xl font-bold text-gray-100 tracking-wider pt-32">Hey there!</h1>
+    <h2 class="text-3xl font-medium text-gray-400 mt-4 tracking-widest">Welcome to my portfolio</h2>
+    <p class="text-gray-400 mt-6 leading-7 max-w-4xl mx-auto">
+      Being a multimedia-design student specialising in UX and web design, I’m passionate about crafting accessible and user-friendly digital
+      experiences. With a strong foundation in both coding and design, I strive to create visually engaging platforms that prioritize clean,
+      functional, and inclusive solutions for all users.
+    </p>
+    <a href="#projects" class="mt-8 inline-block px-6 py-3 bg-site-red text-gray-100 font-semibold rounded hover:bg-red-700 transition"
+      >View Projects</a
+    >
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-16 px-4">
+    <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+      <div class="lg:w-1/2 lg:pr-8">
+        <h3 class="text-3xl font-bold text-gray-100">About me</h3>
+        <p class="mt-4 text-gray-400 leading-7">
+          As a multimedia designer, I specialize in UX and web design, with a strong focus on accessibility and inclusive design. I have a deep
+          understanding of the meaning of design, its impact on usability, and the overall importance of creating visually engaging and user-friendly
+          interfaces. As someone who's late-diagnosed with autism, I know what it's like to be a person who's not fully capable of certain things and
+          have limited understanding of the world around them. This has led me to my main goal&mdash; to create digital experiences that are
+          accessible and inclusive for all users, regardless of their disabilities.
+        </p>
+        <p class="mt-4 text-gray-400 leading-7">
+          Creativity is at the heart of everything I do, driving me to explore the world of design with enthusiasm and curiosity. Each project
+          presents a chance to transform ideas into meaningful experiences that connect with others. I thrive on the excitement of experimenting with
+          new techniques and discovering innovative ways to bring concepts to life. As I journey through this ever-evolving field, I look forward to
+          embracing new challenges and forging connections that inspire growth and creativity. The future holds endless possibilities, and I'm eager
+          to see where this path will lead me.
+        </p>
+      </div>
+      <div class="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
+        <img src="images/pfp.webp" alt="About Me Image" class="w-[450px] h-[400px] rounded-full shadow-md" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container mx-auto py-16 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
+    <h3 class="text-3xl font-bold text-gray-100 text-center">Highlighted projects</h3>
+    <p class="mt-4 text-gray-400 text-center leading-7 max-w-4xl mx-auto">
+      I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
+      When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
+      project you have to do. I've decided to highlight some of the projects that I'm most proud of.
+    </p>
+    <div class="relative mt-8 overflow-hidden">
+      <!-- Carousel Wrapper -->
+      <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+        <!-- Project 1 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-[400px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/entrance_exam.webp');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Entrance exam (first semester-project)</h4>
+          <p class="text-gray-400 mt-2 leading-7">
+            This project was my very first project, created as part of the entrance-exam to the multimedia-design course. <br />It's a site that
+            revolves around computers. We had to make this to show what we had learned during first three weeks of the course.
+          </p>
+        </div>
+        <!-- Project 2 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-[400px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/ux_site.webp');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">UX/UI-site (second first semester-project)</h4>
+          <p class="text-gray-400 mt-2 leading-7">
+            This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own choice.
+            Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario wikipedia-site.
+            Though it's not the prettiest, it was still a fun project, which is why I have included it here.
+          </p>
+        </div>
+        <!-- Project 3 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-[400px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/mak.webp');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">The MAK committee (case-project)</h4>
+          <p class="text-gray-400 mt-2 leading-7">
+            This was our very first case-project. Here, we had to redesign a website for a business of our own choice. Me and my group chose to go
+            with a non-global organisation called <br /> MAK&mdash; also known as "The central-America committee" &mdash;that one of the group-members
+            (my former classmate) was/are volunteering for.
+          </p>
+        </div>
+        <!-- Project 4 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-[400px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/1st_portfolio.webp');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">First portfolio-site (exam-project)</h4>
+          <p class="text-gray-400 mt-2 leading-7">
+            This project was made during the exam of my first semester. Here, we had to create a our very own portfolio-site, completely from scratch.
+            It's not a project that I'm particularly proud of, but it's one of the most important ones to showcase.
+          </p>
+        </div>
+        <!-- Project 5 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('path/to/image5.jpg');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Project 5</h4>
+          <p class="text-gray-400 mt-2">Description of the project goes here.</p>
+        </div>
+        <!-- Project 6 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('path/to/image6.jpg');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Project 6</h4>
+          <p class="text-gray-400 mt-2">Description of the project goes here.</p>
+        </div>
+        <!-- Project 7 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('path/to/image7.jpg');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Project 7</h4>
+          <p class="text-gray-400 mt-2">Description of the project goes here.</p>
+        </div>
+        <!-- Project 8 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('path/to/image8.jpg');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Project 8</h4>
+          <p class="text-gray-400 mt-2">Description of the project goes here.</p>
+        </div>
+        <!-- Project 9 -->
+        <div class="min-w-full bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('path/to/image9.jpg');"></div>
+          <h4 class="text-xl font-semibold text-gray-100 mt-4">Project 9</h4>
+          <p class="text-gray-400 mt-2">Description of the project goes here.</p>
+        </div>
+      </div>
+      <!-- Navigation Buttons -->
+      <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-gray-200 px-4 py-2 rounded-r-lg shadow"
+        >←</button
+      >
+      <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-gray-200 px-4 py-2 rounded-l-lg shadow"
+        >→</button
+      >
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-gray-100">Let's talk</h3>
+    <p class="mt-4 text-gray-400 leading-loose">
+      I'm always eager to connect and get in touch. <br />Feel free to reach out with any questions or comments. Then I'll get back to you as soon as
+      I can!
+    </p>
+
+    <form class="mt-8 space-y-4" action="#" netlify>
+      <input
+        type="text"
+        placeholder="Name..."
+        class="w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+      />
+      <input
+        type="email"
+        placeholder="Email..."
+        class="w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+      />
+      <textarea
+        placeholder="Message..."
+        class="w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"></textarea>
+      <button type="submit" class="w-full px-6 py-3 bg-site-red text-gray-100 font-semibold rounded hover:bg-red-700 transition">Send Message</button>
+    </form>
+  </section>
+
+  <!-- JavaScript for Carousel Functionality -->
+  <script>
+    const carousel = document.getElementById("carousel");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const width = carousel.querySelector("div").clientWidth;
+      carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = currentIndex > 0 ? currentIndex - 1 : carousel.children.length - 1;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = currentIndex < carousel.children.length - 1 ? currentIndex + 1 : 0;
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+  </script>
 </MainLayout>
