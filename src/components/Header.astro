@@ -3,8 +3,8 @@
 ---
 
 <!-- Navigation -->
-<header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50">
-  <nav class="container mx-auto flex justify-between items-center" x-data="{ showmenu: false }">
+<header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50" x-data="{ showmenu: false }">
+  <nav class="container mx-auto flex justify-between items-center">
     <!-- Logo -->
     <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
       <a href="/" class="relative inline-block w-full h-full">
@@ -21,12 +21,14 @@
       </a>
     </div>
 
-    <ul class="flex space-x-6">
-      <li><a href="./#about" class="hover:text-site-red">About</a></li>
+    <ul class="hidden lg:flex space-x-6 items-center">
+      <!-- Added items-center for vertical alignment -->
+      <li><a href="./#hero" class="hover:text-site-red py-2">Home</a></li>
+      <li><a href="./#about" class="hover:text-site-red py-2">About</a></li>
 
       <!-- Dropdown with Arrow -->
       <li class="relative" @mouseenter="showmenu = true" @mouseleave="showmenu = false">
-        <a href="./#projects" class="py-2 border-b-2 border-transparent rounded-t-lg hover:text-[#FF3333] transition duration-300 flex items-center">
+        <a href="./#projects" class="hover:text-[#FF3333] transition duration-300 flex items-center py-2">
           Projects
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -43,14 +45,51 @@
 
         <div x-show="showmenu" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
           <ul>
-            <li class="py-2 px-4 hover:bg-dropdownHover transition duration-300">
+            <li class="py-2 px-4 transition duration-300">
               <a href="/other" class="hover:text-site-red">Other projects</a>
             </li>
           </ul>
         </div>
       </li>
 
-      <li><a href="./#contact" class="hover:text-site-red">Contact</a></li>
+      <li><a href="./#contact" class="hover:text-site-red py-2">Contact</a></li>
+    </ul>
+
+    <!-- Burger Menu Button (Mobile Only) -->
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-8 text-gray-200 hover:text-site-red transition duration-30"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu (Hidden on Larger Screens) -->
+  <nav
+    id="mobilmenu"
+    class="flex flex-col content-center pt-4 lg:hidden"
+    x-show="showmenu"
+    x-transition=""
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+    style="display: none;"
+  >
+    <ul>
+      <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-30">
+        <a href="./#about">About</a>
+      </li>
+      <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
+        <a href="./#projects">Projects</a>
+      </li>
+      <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
+        <a href="./#contact">Contact</a>
+      </li>
     </ul>
   </nav>
 </header>

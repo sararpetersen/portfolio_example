@@ -1,8 +1,10 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 import "../styles/tailwind.css";
 import "animate.css";
+import "../styles/global.css";
 const { title } = Astro.props;
 ---
 
@@ -29,9 +31,10 @@ const { title } = Astro.props;
     />
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-gradient-to-r from-black via-gray-900 to-gray-800 text-gray-300 font-sans">
+  <body class="bg-gradient-to-r from-black via-gray-900 to-gray-800 text-gray-200">
     <header>
       <Header />
+      <ScrollToTop />
     </header>
 
     <main>
