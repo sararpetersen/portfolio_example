@@ -48,159 +48,133 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="container mx-auto pt-16 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
-    <h3 class="text-3xl font-bold text-gray-100 text-center">Highlighted projects</h3>
+  <section id="projects" class="container mx-auto pt-8 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
+    <h3 class="text-3xl font-bold text-gray-100 text-center mt-8">Highlighted projects</h3>
     <p class="mt-4 text-gray-400 text-center leading-7 max-w-4xl mx-auto mb-8">
       I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
       When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
       project you have to do. I've decided to highlight some of the projects that I'm most proud of.
     </p>
-    <div id="indicators-carousel" class="relative w-[90%] max-w-4xl mx-auto" data-carousel="static">
-      <!-- Carousel wrapper -->
-      <div class="relative rounded-lg h-[38rem] md:h-[35rem]">
-        <!-- Item 1 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/entrance_exam.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">Entrance-exam (first semester project)</h4>
-            <p class="text-gray-400 mt-1 mb-2 leading-7">
-              This project was my very first project, created as part of the entrance-exam to the multimedia-design course. <br />It's a site that
-              revolves around computers. We had to make this to show what we had learned during first three weeks of the course.
-            </p>
-          </div>
+    <div class="min-h-[350px] relative">
+      <div class="container mx-auto w-full overflow-hidden relative">
+        <div class="w-full h-full absolute">
+          <div class="w-1/4 h-full absolute z-50 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
+          <div class="w-1/4 h-full absolute z-50 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
         </div>
-        <!-- Item 2 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/ux_site.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">UX/UI-site (first semester project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">
-              This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own choice.
-              Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario wikipedia-site.
-              Though it's not the prettiest, it was still a fun project, which is why I have included it here.
-            </p>
-          </div>
-        </div>
-        <!-- Item 3 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/mak.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">The MAK committee (first semester case-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">
-              This was our very first case-project. Here, we had to redesign a website for a business of our own choice. Me and my group chose to go
-              with a non-global organisation called MAK&mdash; also known as "The central-America committee" &mdash;that one of the group-members (my
-              former classmate) was volunteering for.
-            </p>
-          </div>
-        </div>
-        <!-- Item 4 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/1st_portfolio.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">First portfolio-site (first semester exam-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">
-              This project was made during the exam of my first semester. Here, we had to create our very own portfolio-site, completely from scratch.
-              It's not a project that I'm particularly proud of, but it's one of the most important ones to showcase.
-            </p>
-          </div>
-        </div>
-        <!-- Item 5 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/karrusel.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">Karrusel Festival (second semester case-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">
-              This was the second case-project of my second semester. Here, we had to redesign a website for a rave-festival called Karrusel. This was
-              hands-down one of my favorite projects of the entire semester. Despite facing difficulties when it came to the then newly-introduced
-              component-based framework Astro, we were still able to pull off one heck of a project. And I'm so proud of it, even to this day.
-            </p>
-          </div>
-        </div>
-        <!-- Item 6 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/itmv.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">I Tråd Med Verden (second semester case-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">Description for project 6: This project was about...</p>
-          </div>
-        </div>
-        <!-- Item 7 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/susse_volander.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">Volander Art (second semester exam-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">Description for project 7: This project emphasized...</p>
-          </div>
-        </div>
-        <!-- Item 8 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/internship_prep.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">Personal professional profile (third semester internship-preparation project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">Description for project 8: This project aimed to...</p>
-          </div>
-        </div>
-        <!-- Item 9 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/uperfekt.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">Uperfekt er perfekt (third semester mini-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">Description for project 9: This project focused on...</p>
-          </div>
-        </div>
-        <!-- Item 10 -->
-        <div class="duration-700 ease-in-out h-[500px] md:h-[600px] flex flex-col" data-carousel-item="active">
-          <div class="bg-gray-700 p-6 h-[500px] rounded-lg shadow hover:shadow-lg transition">
-            <div class="flex items-center justify-center">
-              <div class="bg-cover bg-center h-[300px] w-full rounded-t-lg" style="background-image: url('/images/singleusesucks.webp');"></div>
-            </div>
-            <h4 class="text-xl font-semibold text-gray-100 mt-4">#SingleUseSucks (third semester case-project)</h4>
-            <p class="text-gray-400 mt-1 leading-7">Description for project 10: This project dealt with...</p>
-          </div>
-        </div>
-      </div>
-      <!-- Carousel controls -->
-      <div class="absolute top-1/2 -translate-y-1/2 left-0 z-30 flex justify-center md:gap-[45rem] gap-[16rem] items-center w-full space-x-4">
-        <button
-          type="button"
-          class="p-2 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-full shadow-md hover:bg-site-red transition-transform duration-300 ease-in-out hover:translate-y-2 hover:shadow-xl"
-          data-carousel-prev
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
-          </svg>
 
-          <span class="sr-only">Previous</span>
-        </button>
-        <button
-          type="button"
-          class="p-2 bg-gradient-to-l from-gray-800 via-gray-700 to-gray-600 rounded-full shadow-md transition-transform duration-300 ease-in-out hover:translate-y-2 hover:shadow-xl"
-          data-carousel-next
+        <div
+          class="carousel-items flex items-center justify-center"
+          style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-          </svg>
+          <!-- Carousel Item 1 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
 
-          <span class="sr-only">Next</span>
-        </button>
+          <!-- Carousel Item 2 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 3 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+          <!-- Carousel Item 4 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 5 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 6 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 7 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 8 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 9 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+
+          <!-- Carousel Item 10 -->
+          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
+            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
+            <img
+              class="h-16 w-16 rounded-full shadow-2xl"
+              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+              alt="Img"
+            />
+            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -254,49 +228,77 @@ import MainLayout from "../layouts/MainLayout.astro";
               <span>/</span>
               <a href="mailto:sape0003@stud.kea.dk" class="text-gray-200 hover:underline hover:text-site-red">sape0003@stud.kea.dk</a>
             </li>
-            <li><strong>Phone:</strong> <a href="tel:+4542428807" class="text-gray-200 hover:underline hover:text-site-red">+45 42 42 88 07</a></li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+4542428807" class="text-gray-200 hover:underline hover:text-site-red">+45 42 42 88 07</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-</MainLayout>
 
-<script>
-  const carouselItems = document.querySelectorAll("[data-carousel-item]");
-  let currentIndex = 0;
+  <script>
+    const carouselItems = document.querySelectorAll("[data-carousel-item]");
+    let currentIndex = 0;
 
-  // Function to show the current item
-  function showItem(index) {
-    console.log(`Current Index: ${index}`); // Debugging log
-    carouselItems.forEach((item, i) => {
-      item.classList.toggle("hidden", i !== index); // Show/hide items
-      item.setAttribute("data-carousel-item", i === index ? "active" : ""); // Set active attribute
+    // Function to show the current item
+    function showItem(index) {
+      console.log(`Current Index: ${index}`); // Debugging log
+      carouselItems.forEach((item, i) => {
+        item.classList.toggle("hidden", i !== index); // Show/hide items
+        item.setAttribute("data-carousel-item", i === index ? "active" : ""); // Set active attribute
+      });
+    }
+
+    // Next button event
+    document.querySelector("[data-carousel-next]").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % carouselItems.length; // Loop back to the start
+      showItem(currentIndex);
     });
-  }
 
-  // Next button event
-  document.querySelector("[data-carousel-next]").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % carouselItems.length; // Loop back to the start
+    // Previous button event
+    document.querySelector("[data-carousel-prev]").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length; // Loop to the end
+      showItem(currentIndex);
+    });
+
+    // Initialize the first item
     showItem(currentIndex);
-  });
+  </script>
 
-  // Previous button event
-  document.querySelector("[data-carousel-prev]").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length; // Loop to the end
-    showItem(currentIndex);
-  });
+  <style>
+    [data-carousel-prev]:hover span:last-child {
+      transform: translateX(0); /* Moves the background to the center on hover */
+    }
 
-  // Initialize the first item
-  showItem(currentIndex);
-</script>
+    [data-carousel-next]:hover span:last-child {
+      transform: translateX(0); /* Moves the background to the center on hover */
+    }
+    @keyframes carouselAnim {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(calc(-100% + (6 * 300px)));
+      }
+    }
 
-<style>
-  [data-carousel-prev]:hover span:last-child {
-    transform: translateX(0); /* Moves the background to the center on hover */
-  }
+    /* Default animation speed for larger screens */
+    .container .carousel-items {
+      animation: carouselAnim 160ms infinite alternate linear; /* Slowed down to 40s */
+    }
 
-  [data-carousel-next]:hover span:last-child {
-    transform: translateX(0); /* Moves the background to the center on hover */
-  }
-</style>
+    /* Media query for screens smaller than 768px */
+    @media only screen and (max-width: 768px) {
+      .container .carousel-items {
+        animation: carouselAnim 120ms infinite alternate linear; /* Slowed down to 30s */
+      }
+    }
+
+    .carousel-focus:hover {
+      transition: all 0.8s;
+      transform: scale(1.1);
+    }
+  </style>
+</MainLayout>
