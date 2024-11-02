@@ -58,121 +58,153 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="min-h-[350px] relative">
       <div class="container mx-auto w-full overflow-hidden relative">
         <div class="w-full h-full absolute">
-          <div class="w-1/4 h-full absolute z-50 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
-          <div class="w-1/4 h-full absolute z-50 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
+          <div class="w-1/4 h-full absolute z-30 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
+          <div class="w-1/4 h-full absolute z-30 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
         </div>
 
-        <div
-          class="carousel-items flex items-center justify-center"
-          style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
-        >
-          <!-- Carousel Item 1 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+        <div class="logo-slider overflow-hidden">
+          <div class="marquee">
+            <div
+              class="carousel-items flex items-center justify-center"
+              style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
+            >
+              <!-- Carousel Item 1 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Entrance exam <br /> (1st semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/entrance_exam.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This project was my very first project, created as part of the entrance-exam to the multimedia-design course. It's a site that
+                  revolves around computers. We had to make this to show what we had learned during first three weeks of the course.
+                </p>
+              </div>
 
-          <!-- Carousel Item 2 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 2 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">UX/UI-site <br /> (1st semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/ux_site.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
+                  choice. Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario
+                  wikipedia-site. Though it's not the prettiest, it was still a fun project, which is why I have included it here.
+                </p>
+              </div>
 
-          <!-- Carousel Item 3 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
-          <!-- Carousel Item 4 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 3 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">The MAK committee <br /> (1st semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/mak.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was our very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
+                  organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
+                </p>
+              </div>
+              <!-- Carousel Item 4 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Portfolio-site <br /> (1st semester exam)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/1st_portfolio.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was the first portfolio-site that I made, which was made as part of my 1st semester exam. Here, we had to make our own
+                  portfolio, completely from scratch. Though I'm not particularly fond of it, I still included it here because of its importance.
+                </p>
+              </div>
 
-          <!-- Carousel Item 5 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 5 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Karrusel Festival <br />(2nd semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/karrusel.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. This might
+                  be one among the best projects I've made during my studies. Although we struggled a lot while making it, we still managed to pull
+                  off on heck of a good result.
+                </p>
+              </div>
 
-          <!-- Carousel Item 6 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 6 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">I Tråd Med Verden <br />(2nd semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/itmv.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
+                    >I Tråd Med Verden</em
+                  >, that had to showcase who they were, what they did and so much more.
+                </p>
+              </div>
 
-          <!-- Carousel Item 7 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 7 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Volander Art <br />(2nd semester exam)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/susse_volander.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We chose the
+                  artist Susse Volander. Looking back, this was one of the most ambitious projects that we did on 2nd semester. It's jam-packed with
+                  over-the-top JavaScript-features, animations and so many more things. We struggled a lot while making it, and that was very obvious.
+                  But in the end, we managed to pull off.
+                </p>
+              </div>
 
-          <!-- Carousel Item 8 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 8 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Uperfekt er perfekt <br /> (3rd semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/uperfekt.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was a small project that we did, before our first 3rd semester case-project. Here, we had to revamp an existing website, and
+                  add small features to it that would invoke surprise. As in, small interactions and animations that would surprise the user.
+                </p>
+              </div>
 
-          <!-- Carousel Item 9 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
-          </div>
+              <!-- Carousel Item 9 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">Digital application <br /> (3rd semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/internship_prep.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  This was a small project, made as part of our internship-preparations. Here, we had to make a so-called <em
+                    >Personal Professional Profile</em
+                  >&mdash; a sort of digital application that could be used as part of our actual internship-application.
+                </p>
+              </div>
 
-          <!-- Carousel Item 10 -->
-          <div class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg" style="width: 270px;">
-            <span class="text-teal-400 font-bold text-xl mb-3">Sup3r-Us3r</span>
-            <img
-              class="h-16 w-16 rounded-full shadow-2xl"
-              src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
-              alt="Img"
-            />
-            <p class="mt-3 text-gray-600 text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam!"</p>
+              <!-- Carousel Item 10 -->
+              <div
+                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                style="width: 400px;"
+              >
+                <span class="text-gray-100 font-bold text-xl mb-3">#SingleUseSucks <br /> (3rd semester project)</span>
+                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/singleusesucks.webp" alt="Img" />
+                <p class="mt-3 text-gray-100 text-center">
+                  My most recent project. Here, we had to make a site based off of a slogan that Plastic Change, the company we made the project for,
+                  used a lot on their social media. This might be the project from 3rd semester that I'm most proud of. Not only had we completed the
+                  project before the deadline, we also had it shown more than once in front of our entire class, on the last day of the project&mdash;
+                  which we were insanely proud of.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -238,35 +270,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </section>
 
-  <script>
-    const carouselItems = document.querySelectorAll("[data-carousel-item]");
-    let currentIndex = 0;
-
-    // Function to show the current item
-    function showItem(index) {
-      console.log(`Current Index: ${index}`); // Debugging log
-      carouselItems.forEach((item, i) => {
-        item.classList.toggle("hidden", i !== index); // Show/hide items
-        item.setAttribute("data-carousel-item", i === index ? "active" : ""); // Set active attribute
-      });
-    }
-
-    // Next button event
-    document.querySelector("[data-carousel-next]").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % carouselItems.length; // Loop back to the start
-      showItem(currentIndex);
-    });
-
-    // Previous button event
-    document.querySelector("[data-carousel-prev]").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length; // Loop to the end
-      showItem(currentIndex);
-    });
-
-    // Initialize the first item
-    showItem(currentIndex);
-  </script>
-
   <style>
     [data-carousel-prev]:hover span:last-child {
       transform: translateX(0); /* Moves the background to the center on hover */
@@ -275,30 +278,39 @@ import MainLayout from "../layouts/MainLayout.astro";
     [data-carousel-next]:hover span:last-child {
       transform: translateX(0); /* Moves the background to the center on hover */
     }
-    @keyframes carouselAnim {
-      from {
-        transform: translate(0, 0);
+
+    .logo-slider {
+      max-width: 1920px;
+      min-width: 320px;
+      width: 100%;
+      display: flex;
+      padding-block: 5px;
+      overflow: hidden; /* Hide overflow for smoother scrolling */
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(30%); /* Start from the right */
       }
-      to {
-        transform: translate(calc(-100% + (6 * 300px)));
+      100% {
+        transform: translateX(-100%); /* Move to the left */
       }
     }
 
-    /* Default animation speed for larger screens */
-    .container .carousel-items {
-      animation: carouselAnim 160ms infinite alternate linear; /* Slowed down to 40s */
+    .marquee {
+      display: flex;
+      align-items: center;
+      animation: marquee 60s linear infinite; /* Adjust speed as needed */
+      justify-content: flex-start; /* Start from the left */
     }
 
-    /* Media query for screens smaller than 768px */
-    @media only screen and (max-width: 768px) {
-      .container .carousel-items {
-        animation: carouselAnim 120ms infinite alternate linear; /* Slowed down to 30s */
-      }
+    .carousel-focus {
+      margin-right: 15px; /* Space between items */
     }
 
     .carousel-focus:hover {
-      transition: all 0.8s;
-      transform: scale(1.1);
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
     }
   </style>
 </MainLayout>
