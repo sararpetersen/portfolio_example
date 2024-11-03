@@ -5,24 +5,26 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout title="SRP Portfolio - frontpage">
   <!-- Hero Section -->
   <section id="hero" class="container mx-auto text-center py-20">
-    <h1 class="font-bold text-gray-100 tracking-wider pt-32">Hey there!</h1>
-    <h2 class="font-medium text-gray-400 mt-4 tracking-widest">Welcome to my portfolio</h2>
-    <p class="text-gray-400 mt-6 leading-7 max-w-4xl mx-auto">
-      Specialising in UX- and web-design, I’m a designer passionate about crafting accessible and user-friendly digital experiences. With a strong
-      foundation in both coding and design, I strive to create visually engaging platforms that prioritize clean, functional, and inclusive solutions
-      for all users.
+    <h1 class="font-bold text-gray-100 tracking-wider pt-52">Hey there!</h1>
+    <h2 class="font-medium text-gray-400 mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
+    <p class="text-gray-400 mt-6 leading-7 md:max-w-3xl max-w-md mx-auto">
+      Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
+      digital experiences. Further down the page, you can read a bit about who I am, look though some of my projects&mdash; highlighted or not &mdash;or
+      simply reach out if you have any questions. <br /><br />Use the navigation menu to get started, or click the "View projects"-button below.
     </p>
-    <a
-      href="#projects"
-      class="relative z-[1] text-gray-100 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
-    >
-      <span class="relative z-[1] w-full text-center uppercase">View projects</span>
-      <span class="absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
-    </a>
+    <div class="button-container">
+      <a
+        href="#projects"
+        class="relative z-[1] text-gray-100 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+      >
+        <span class="button-text text-sm relative z-[1] w-full text-center uppercase">View projects</span>
+        <span class="absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
+      </a>
+    </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="container mx-auto py-16 px-4">
+  <section id="about" class="container mx-auto pt-52 pb-16 px-4">
     <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="text-3xl font-bold text-gray-100">About me</h3>
@@ -48,175 +50,200 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="container mx-auto pt-8 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
-    <h3 class="text-3xl font-bold text-gray-100 text-center mt-8">Highlighted projects</h3>
-    <p class="mt-4 text-gray-400 text-center leading-7 max-w-4xl mx-auto mb-8">
-      I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
-      When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
-      project you have to do. I've decided to highlight some of the projects that I'm most proud of.
-    </p>
-    <div class="min-h-[350px] relative">
-      <div class="container mx-auto w-full overflow-hidden relative">
-        <div class="w-full h-full absolute">
-          <div class="w-1/4 h-full absolute z-30 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
-          <div class="w-1/4 h-full absolute z-30 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
-        </div>
+  <div id="projects" class="pt-52">
+    <section class="container mx-auto px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
+      <h3 class="text-3xl font-bold max-w-4xl mx-auto text-gray-100 text-left pt-12 pb-4">Highlighted projects</h3>
+      <p class="mt-4 text-gray-400 text-left leading-7 max-w-4xl mx-auto">
+        I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
+        When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
+        project you have to do. I've decided to highlight some of the projects that I'm most proud of. <br />
+        <br />Click on the boxes corresponding to each project to see more.
+      </p>
+      <div class="min-h-[350px] relative">
+        <div class="container mx-auto w-full overflow-hidden relative">
+          <div class="w-full h-full absolute">
+            <div class="w-1/4 h-full absolute z-30 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
+            <div class="w-1/4 h-full absolute z-30 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
+          </div>
 
-        <div class="logo-slider overflow-hidden">
-          <div class="marquee">
-            <div
-              class="carousel-items flex items-center justify-center"
-              style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
-            >
-              <!-- Carousel Item 1 -->
+          <div class="logo-slider overflow-hidden">
+            <div class="marquee">
               <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
+                class="carousel-items flex items-center justify-center"
+                style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
               >
-                <span class="text-gray-100 font-bold text-xl mb-3">Entrance exam <br /> (1st semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/entrance_exam.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This project was my very first project, created as part of the entrance-exam to the multimedia-design course. It's a site that
-                  revolves around computers. We had to make this to show what we had learned during first three weeks of the course.
-                </p>
-              </div>
+                <!-- Carousel Item 1 -->
+                <a
+                  href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Entrance exam <br /> (1st semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/entrance_exam.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This project was my very first project, created as part of the entrance-exam to the multimedia-design course. It's a site that
+                    revolves around computers. We had to make this to show what we had learned during the first three weeks of the course.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 2 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">UX/UI-site <br /> (1st semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/ux_site.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
-                  choice. Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario
-                  wikipedia-site. Though it's not the prettiest, it was still a fun project, which is why I have included it here.
-                </p>
-              </div>
+                <!-- Carousel Item 2 -->
+                <a
+                  href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">UX/UI-site <br /> (1st semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/ux_site.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
+                    choice. Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario
+                    wikipedia-site. Though it's not the prettiest, it was still a fun project, which is why I have included it here.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 3 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">The MAK committee <br /> (1st semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/mak.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was our very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
-                  organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
-                </p>
-              </div>
-              <!-- Carousel Item 4 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">Portfolio-site <br /> (1st semester exam)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/1st_portfolio.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was the first portfolio-site that I made, which was made as part of my 1st semester exam. Here, we had to make our own
-                  portfolio, completely from scratch. Though I'm not particularly fond of it, I still included it here because of its importance.
-                </p>
-              </div>
+                <!-- Carousel Item 3 -->
+                <a
+                  href="https://makomiteen.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">The MAK committee <br /> (1st semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/mak.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was our very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
+                    organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 5 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">Karrusel Festival <br />(2nd semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/karrusel.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. This might
-                  be one among the best projects I've made during my studies. Although we struggled a lot while making it, we still managed to pull
-                  off on heck of a good result.
-                </p>
-              </div>
+                <!-- Carousel Item 4 -->
+                <a
+                  href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Portfolio-site <br /> (1st semester exam)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/1st_portfolio.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was the first portfolio-site that I made, which was made as part of my 1st semester exam. Here, we had to make our own
+                    portfolio, completely from scratch. Though I'm not particularly fond of it, I still included it here because of its importance.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 6 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">I Tråd Med Verden <br />(2nd semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/itmv.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
-                    >I Tråd Med Verden</em
-                  >, that had to showcase who they were, what they did and so much more.
-                </p>
-              </div>
+                <!-- Carousel Item 5 -->
+                <a
+                  href="https://t8-karrusel.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Karrusel Festival <br />(2nd semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/karrusel.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. This
+                    might be one among the best projects I've made during my studies. Although we struggled a lot while making it, we still managed to
+                    pull off one heck of a good result.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 7 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">Volander Art <br />(2nd semester exam)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/susse_volander.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We chose the
-                  artist Susse Volander. Looking back, this was one of the most ambitious projects that we did on 2nd semester. It's jam-packed with
-                  over-the-top JavaScript-features, animations and so many more things. We struggled a lot while making it, and that was very obvious.
-                  But in the end, we managed to pull off.
-                </p>
-              </div>
+                <!-- Carousel Item 6 -->
+                <a
+                  href="https://itmv-t9.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">I Tråd Med Verden <br />(2nd semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/itmv.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
+                      >I Tråd Med Verden</em
+                    >, that had to showcase who they were, what they did and so much more.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 8 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">Uperfekt er perfekt <br /> (3rd semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/uperfekt.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was a small project that we did, before our first 3rd semester case-project. Here, we had to revamp an existing website, and
-                  add small features to it that would invoke surprise. As in, small interactions and animations that would surprise the user.
-                </p>
-              </div>
+                <!-- Carousel Item 7 -->
+                <a
+                  href="https://volander-art.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Volander Art <br />(2nd semester exam)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/susse_volander.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We chose the
+                    artist Susse Volander. Looking back, this was one of the most ambitious projects that we did on 2nd semester. It's jam-packed with
+                    over-the-top JavaScript features, animations, and so many more things. We struggled a lot while making it, and that was very
+                    obvious. But in the end, we managed to pull off.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 9 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">Digital application <br /> (3rd semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/internship_prep.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  This was a small project, made as part of our internship-preparations. Here, we had to make a so-called <em
-                    >Personal Professional Profile</em
-                  >&mdash; a sort of digital application that could be used as part of our actual internship-application.
-                </p>
-              </div>
+                <!-- Carousel Item 8 -->
+                <a
+                  href="https://sd-uperfekterperfekt.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Uperfekt er perfekt <br /> (3rd semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/uperfekt.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was a small project that we did before our first 3rd semester case-project. Here, we had to revamp an existing website and
+                    add small features to it that would invoke surprise. As in, small interactions and animations that would surprise the user.
+                  </p>
+                </a>
 
-              <!-- Carousel Item 10 -->
-              <div
-                class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
-                style="width: 400px;"
-              >
-                <span class="text-gray-100 font-bold text-xl mb-3">#SingleUseSucks <br /> (3rd semester project)</span>
-                <img class="h-16 w-16 rounded-full shadow-2xl" src="images/singleusesucks.webp" alt="Img" />
-                <p class="mt-3 text-gray-100 text-center">
-                  My most recent project. Here, we had to make a site based off of a slogan that Plastic Change, the company we made the project for,
-                  used a lot on their social media. This might be the project from 3rd semester that I'm most proud of. Not only had we completed the
-                  project before the deadline, we also had it shown more than once in front of our entire class, on the last day of the project&mdash;
-                  which we were insanely proud of.
-                </p>
+                <!-- Carousel Item 9 -->
+                <a
+                  href="https://srp-profile.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">Digital application <br /> (3rd semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/internship_prep.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    This was a small project, made as part of our internship preparations. Here, we had to make a so-called <em
+                      >Personal Professional Profile</em
+                    >—a sort of digital application that could be used as part of our actual internship application.
+                  </p>
+                </a>
+
+                <!-- Carousel Item 10 -->
+                <a
+                  href="https://singleusesucks-plasticchange.netlify.app/"
+                  target="_blank"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  style="width: 400px;"
+                >
+                  <span class="text-gray-100 font-bold mb-3 p-2">#SingleUseSucks <br /> (3rd semester project)</span>
+                  <img class="h-32 w-32 rounded-full shadow-2xl" src="images/singleusesucks.webp" alt="Img" />
+                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                    My most recent project. Here, we had to make a site based off of a slogan that Plastic Change, the company we made the project
+                    for, used a lot on their social media. This might be the project from 3rd semester that I'm most proud of. Not only had we
+                    completed the project before the deadline, we also had it shown more than once in front of our entire class, on the last day of
+                    the project&mdash; which we were insanely proud of.
+                  </p>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- Contact Section -->
-  <section id="contact" class="container mx-auto py-16 px-4">
+  <section id="contact" class="container mx-auto pb-16 px-4 pt-52">
     <h3 class="text-3xl font-bold text-gray-100">Let's talk</h3>
-    <p class="mt-4 text-gray-400 leading-loose">
-      I'm always eager to connect with new people. <br />Feel free to reach out with any questions or comments. Then I'll get back to you as soon as I
-      can!
+    <p class="mt-4 text-gray-400 leading-7">
+      I'm always eager to connect with new people. <br class="hidden md:block" />Feel free to reach out with any questions or comments. <br
+        class="hidden md:block"
+      /> Then I'll get back to you as soon as I can!
     </p>
 
     <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -235,14 +262,16 @@ import MainLayout from "../layouts/MainLayout.astro";
         <textarea
           placeholder="Message..."
           class="w-[80%] p-3 bg-gray-800 text-gray-200 rounded border border-gray-600 focus:outline-none focus:border-red-500"
-          rows="8"></textarea>
-        <button
-          type="submit"
-          class="relative z-[1] text-gray-200 bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-[20%] mt-4 transition duration-300"
-        >
-          <span class="relative z-[1] w-full text-center uppercase">Send</span>
-          <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
-        </button>
+          rows="12"></textarea>
+        <div class="button-container">
+          <button
+            type="submit"
+            class="relative text-gray-200 bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-[20%] mt-4 transition duration-300"
+          >
+            <span class="button-text text-sm relative z-[1] w-full text-center uppercase">Send</span>
+            <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
+          </button>
+        </div>
       </form>
 
       <!-- Image and Contact Info Box -->
@@ -252,7 +281,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <!-- Contact Information Box -->
         <div class="p-6 bg-gray-800 text-gray-300 rounded-lg shadow-lg">
-          <h4 class="text-xl font-semibold text-gray-100">Contact Information</h4>
+          <h4 class="text-xl font-semibold text-gray-100">Contact me:</h4>
           <ul class="mt-4 space-y-2">
             <li>
               <strong>Email:</strong>
@@ -290,7 +319,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     @keyframes marquee {
       0% {
-        transform: translateX(30%); /* Start from the right */
+        transform: translateX(28%); /* Start from the right */
       }
       100% {
         transform: translateX(-100%); /* Move to the left */
@@ -300,7 +329,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     .marquee {
       display: flex;
       align-items: center;
-      animation: marquee 60s linear infinite; /* Adjust speed as needed */
+      animation: marquee 80s linear infinite; /* Adjust speed as needed */
       justify-content: flex-start; /* Start from the left */
     }
 
@@ -310,6 +339,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     .carousel-focus:hover {
       transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    .button-container a:hover {
+      transform: translate(0, -5px);
+      transition: transform 0.3s ease;
+    }
+
+    .button-container button:hover {
+      transform: translate(0, -5px);
       transition: transform 0.3s ease;
     }
   </style>

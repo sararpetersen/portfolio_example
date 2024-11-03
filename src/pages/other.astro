@@ -12,57 +12,75 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Project 1 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-1" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/animation-site.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">Animation site (first semester project)</h4>
         <p class="text-gray-400 mt-2 leading-7">Description of the project goes here. Explain the objective, your role, and the tools used.</p>
       </div>
 
       <!-- Project 2 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-2" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/videosite.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">Video-site (first semester project)</h4>
         <p class="text-gray-400 mt-2 leading-7">Description of the project goes here. Highlight any challenges you overcame.</p>
       </div>
 
       <!-- Project 3 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-3" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/vildmad.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">Vild Mad<br /> (second semester case-project)</h4>
         <p class="text-gray-400 mt-2 leading-7">Description of the project goes here. Discuss the outcome and what you learned.</p>
       </div>
 
       <!-- Project 4 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-4" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/kbh.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">Københavnerbilleder <br /> (third semester mini-project)</h4>
         <p class="text-gray-400 mt-2 leading-7">Description of the project goes here. Mention any unique features of the project.</p>
       </div>
 
       <!-- Project 5 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-5" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('images/digital_cleanup_day.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">Digital Skraldedag 2025<br /> (third semester case-project)</h4>
         <p class="text-gray-400 mt-2 leading-7">Description of the project goes here. Mention any unique features of the project.</p>
       </div>
 
       <!-- Project 6 -->
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div id="project-6" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/404_error.webp');"></div>
         <h4 class="text-xl font-semibold text-gray-100 mt-4">No Project Yet</h4>
-        <p class="text-gray-400 mt-2 leading-7"></p>
+        <p class="text-gray-400 mt-2 leading-7">Project coming soon</p>
       </div>
     </div>
   </section>
 
   <!-- Navigation Back to Portfolio -->
-  <section class="container mx-auto pb-12 pt-8 text-center">
+  <section class="button-container mx-auto pb-12 pt-8 text-center">
     <a
       href="/"
       class="relative z-[1] text-gray-100 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
     >
-      <span class="relative z-[1] w-full text-center uppercase">Back to homepage</span>
-      <span class="absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
+      <span class="button-text text-sm relative z-[1] w-full text-center uppercase">Back to homepage</span>
+      <span class="button-bg absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
+      ></span>
     </a>
   </section>
 </MainLayout>
+
+<style>
+  #project-1:hover,
+  #project-2:hover,
+  #project-3:hover,
+  #project-4:hover,
+  #project-5:hover,
+  #project-6:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .button-container a:hover {
+    transform: translate(0, -5px);
+    transition: transform 0.3s ease;
+  }
+</style>
