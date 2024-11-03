@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
+import ProgressBar from "../components/ProgressBar.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
@@ -35,6 +36,7 @@ const { title } = Astro.props;
     <header>
       <Header />
       <ScrollToTop />
+      <ProgressBar />
     </header>
 
     <main>

@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <footer class="bg-gray-800 text-gray-200 py-6">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Navigation Links -->
-    <nav class="flex flex-col items-center text-center mb-4 md:mb-0">
+    <nav class="some1 flex flex-col items-center md:items-start md:text-center text-left mb-4 md:mb-0">
       <a href="./#hero" class="hover:text-site-red mb-2">Home</a>
       <a href="./#about" class="hover:text-site-red mb-2">About</a>
       <a href="./#projects" class="hover:text-site-red mb-2">Projects</a>
@@ -29,13 +29,13 @@
     </nav>
 
     <!-- Social Media Links -->
-    <div class="flex flex-col items-center text-center">
-      <h5 class="text-gray-200 font-bold text-lg mb-2">Follow me on social media</h5>
+    <div id="footer-social" class="flex flex-col items-center text-center">
+      <h5 class="text-gray-300 font-bold text-lg mb-2">Follow me on social media</h5>
       <div class="flex space-x-3">
         <button class="w-12 h-12 flex items-center justify-center relative overflow-hidden rounded-full bg-main group transition-all duration-300">
           <a href="https://www.facebook.com/profile.php?id=61558070190613" target="_blank">
             <svg
-              class="relative z-10 fill-gray-200 transition-all duration-300 group-hover:fill-main"
+              class="relative z-10 fill-gray-300 transition-all duration-300 group-hover:fill-main"
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
@@ -53,7 +53,7 @@
         <button class="w-12 h-12 flex items-center justify-center rounded-full relative overflow-hidden bg-main group transition-all duration-500">
           <a href="https://www.instagram.com/srp_portfolio/" target="_blank">
             <svg
-              class="fill-gray-200 relative z-10 transition-all duration-500 group-hover:fill-main"
+              class="fill-gray-300 relative z-10 transition-all duration-500 group-hover:fill-main"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -77,7 +77,7 @@
         <button class="w-12 h-12 flex items-center relative overflow-hidden justify-center rounded-full bg-main group transition-all duration-300">
           <a href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/" target="_blank">
             <svg
-              class="fill-gray-200 relative z-10 transition-all duration-300 group-hover:fill-main"
+              class="fill-gray-300 relative z-10 transition-all duration-300 group-hover:fill-main"
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
@@ -94,9 +94,9 @@
       </div>
     </div>
     <!-- Contact Information -->
-    <div class="flex flex-col md:justify-center md:items-center md:mt-0 mt-8 mb-4 md:mb-0">
+    <div id="footer-contact" class="flex flex-col items-center md:items-start md:text-center text-left md:mt-0 mt-8 mb-4 md:mb-0">
       <h5 class="text-lg font-bold mb-2">Contact me</h5>
-      <div class="flex items-center">
+      <div class="some1 flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
           <path
             stroke-linecap="round"
@@ -105,9 +105,9 @@
           ></path>
         </svg>
 
-        <a href="mailto:sara.ringkow@gmail.com" class="text-gray-200 hover:underline hover:text-site-red">sara.ringkow@gmail.com</a>
+        <a href="mailto:sara.ringkow@gmail.com" class="text-gray-300 hover:underline hover:text-site-red">sara.ringkow@gmail.com</a>
       </div>
-      <div class="flex items-center mt-2">
+      <div class="some1 flex items-center mt-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
           <path
             stroke-linecap="round"
@@ -116,9 +116,9 @@
           ></path>
         </svg>
 
-        <a href="mailto:sape0003@stud.kea.dk" class="text-gray-200 hover:underline hover:text-site-red">sape0003@stud.kea.dk</a>
+        <a href="mailto:sape0003@stud.kea.dk" class="text-gray-300 hover:underline hover:text-site-red">sape0003@stud.kea.dk</a>
       </div>
-      <div class="flex items-center mt-6">
+      <div class="some1 flex items-center mt-6">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
           <path
             stroke-linecap="round"
@@ -127,7 +127,7 @@
           ></path>
         </svg>
 
-        <a href="tel:+4542428807" class="text-gray-200 hover:underline hover:text-site-red">+45 42 42 88 07</a>
+        <a href="tel:+4542428807" class="text-gray-300 hover:underline hover:text-site-red">+45 42 42 88 07</a>
       </div>
     </div>
   </div>

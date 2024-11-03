@@ -4,43 +4,53 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="SRP Portfolio - frontpage">
   <!-- Hero Section -->
-  <section id="hero" class="container mx-auto text-center py-20">
-    <h1 class="font-bold text-gray-100 tracking-wider pt-52">Hey there!</h1>
-    <h2 class="font-medium text-gray-400 mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
-    <p class="text-gray-400 mt-6 leading-7 md:max-w-3xl max-w-md mx-auto">
-      Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
-      digital experiences. Further down the page, you can read a bit about who I am, look though some of my projects&mdash; highlighted or not &mdash;or
-      simply reach out if you have any questions. <br /><br />Use the navigation menu to get started, or click the "View projects"-button below.
-    </p>
-    <div class="button-container">
-      <a
-        href="#projects"
-        class="relative z-[1] text-gray-100 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
-      >
-        <span class="button-text text-sm relative z-[1] w-full text-center uppercase">View projects</span>
-        <span class="absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
-      </a>
+  <section id="hero" class="relative container mx-auto text-center py-20">
+    <!-- Content of Hero Section (kept on top with z-index) -->
+    <div class="relative z-10">
+      <h1 class="font-bold text-gray-200 tracking-wider pt-52">Hey there!</h1>
+      <h2 class="font-medium text-gray-300 mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
+      <p class="text-gray-300 mt-6 leading-7 md:max-w-3xl max-w-md mx-auto">
+        Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
+        digital experiences. Further down the page, you can read a bit about who I am, look through some of my projects&mdash; highlighted or not &mdash;or
+        simply reach out if you have any questions or just want to say hi. <br /><br />Use the navigation menu to get started, or click the "View
+        projects"-button below.
+      </p>
+      <div class="button-container">
+        <a
+          href="#projects"
+          class="relative z-10 text-gray-300 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+        >
+          <span class="button-text text-sm relative z-10 w-full text-center uppercase">View projects</span>
+          <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="container mx-auto pt-52 pb-16 px-4">
-    <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+    <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
-        <h3 class="text-3xl font-bold text-gray-100">About me</h3>
-        <p class="mt-4 text-gray-400 leading-7">
-          As a multimedia-designer, I specialize in UX and web design, with a strong focus on accessibility and inclusive design. I have a deep
-          understanding of the meaning of design, its impact on usability, and the overall importance of creating visually engaging and user-friendly
-          interfaces. As someone who's late-diagnosed with autism, I know what it's like to be a person who's not fully capable of certain things and
-          have limited understanding of the world around them. This has led me to my main goal&mdash; to create digital experiences that are
-          accessible and inclusive for all users, regardless of their disabilities.
+        <h3 class="text-3xl font-bold text-gray-200">About me</h3>
+        <p class="mt-4 text-gray-300 leading-7">
+          As a multimedia-designer, I <span class="highlight-text text-site-red font-bold text-lg">specialise</span> in UX and web design, with a strong
+          focus on <span class="highlight-text text-site-red font-bold text-lg">accessibility</span> and inclusive design. I have a deep understanding
+          of the meaning of design, its impact on usability, and the overall importance of creating visually engaging and user-friendly interfaces. As
+          someone who's <span class="highlight-text text-site-red font-bold text-lg">late-diagnosed</span>
+          with autism, I know what it's like to be a person who's not fully capable of certain things and have limited understanding of the world around
+          them. This has led me to my <span class="highlight-text text-site-red font-bold text-lg">main goal</span>&mdash; to create digital
+          experiences that are accessible and inclusive for all users, regardless of their disabilities.
         </p>
-        <p class="mt-4 text-gray-400 leading-7">
-          Creativity is at the heart of everything I do, driving me to explore the world of design with enthusiasm and curiosity. Each project
-          presents a chance to transform ideas into meaningful experiences that connect with others. I thrive on the excitement of experimenting with
-          new techniques and discovering innovative ways to bring concepts to life. As I journey through this ever-evolving field, I look forward to
-          embracing new challenges and forging connections that inspire growth and creativity. The future holds endless possibilities, and I'm eager
-          to see where this path will lead me.
+        <p class="mt-4 text-gray-300 leading-7">
+          <span class="highlight-text text-site-red font-bold text-lg">Creativity</span> is at the heart of everything I do, driving me to explore the
+          world of design with enthusiasm and curiosity. Each project
+          <span class="highlight-text text-site-red font-bold text-lg">presents a chance</span> to transform ideas into meaningful experiences. I thrive
+          on the excitement of
+          <span class="highlight-text text-site-red font-bold text-lg">experimenting with new techniques</span> and discovering innovative ways to bring
+          concepts to life. As I journey through this ever-evolving field, I look forward to <span
+            class="highlight-text text-site-red font-bold text-lg">embracing new challenges</span
+          > and forging connections that <span class="highlight-text text-site-red font-bold text-lg">inspire</span> growth and creativity. The future
+          holds endless possibilities, and I'm eager to see where this path will lead me.
         </p>
       </div>
       <div class="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
@@ -53,12 +63,36 @@ import MainLayout from "../layouts/MainLayout.astro";
   <div id="projects" class="pt-52">
     <section class="container mx-auto px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
       <h3 class="text-3xl font-bold max-w-4xl mx-auto text-gray-100 text-left pt-12 pb-4">Highlighted projects</h3>
-      <p class="mt-4 text-gray-400 text-left leading-7 max-w-4xl mx-auto">
+      <p class="mt-4 text-gray-300 text-left leading-7 max-w-4xl mx-auto mb-[2rem]">
         I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
         When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
-        project you have to do. I've decided to highlight some of the projects that I'm most proud of. <br />
-        <br />Click on the boxes corresponding to each project to see more.
+        project you have to do. I've decided to highlight some of the projects that I'm most proud of.
       </p>
+
+      <div class="flex flex-col items-start max-w-4xl mx-auto space-y-4">
+        <div class="w-full">
+          <p>Click on the boxes corresponding to each project to see more.</p>
+        </div>
+        <a
+          href="/other"
+          class="relative z-10 text-gray-300 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group transition duration-300 uppercase"
+        >
+          <span class="flex items-center gap-2 button-text text-sm relative z-10 w-full text-center uppercase"
+            >Or click here to see other projects <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-4"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+            </svg>
+          </span>
+          <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
+        </a>
+      </div>
+
       <div class="min-h-[350px] relative">
         <div class="container mx-auto w-full overflow-hidden relative">
           <div class="w-full h-full absolute">
@@ -81,7 +115,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Entrance exam <br /> (1st semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/entrance_exam.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This project was my very first project, created as part of the entrance-exam to the multimedia-design course. It's a site that
                     revolves around computers. We had to make this to show what we had learned during the first three weeks of the course.
                   </p>
@@ -96,7 +130,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">UX/UI-site <br /> (1st semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/ux_site.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
                     choice. Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario
                     wikipedia-site. Though it's not the prettiest, it was still a fun project, which is why I have included it here.
@@ -112,8 +146,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">The MAK committee <br /> (1st semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/mak.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
-                    This was our very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
+                  <p class="mt-3 text-left leading-7 p-4">
+                    This was the very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
                     organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
                   </p>
                 </a>
@@ -127,7 +161,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Portfolio-site <br /> (1st semester exam)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/1st_portfolio.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was the first portfolio-site that I made, which was made as part of my 1st semester exam. Here, we had to make our own
                     portfolio, completely from scratch. Though I'm not particularly fond of it, I still included it here because of its importance.
                   </p>
@@ -142,7 +176,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Karrusel Festival <br />(2nd semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/karrusel.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. This
                     might be one among the best projects I've made during my studies. Although we struggled a lot while making it, we still managed to
                     pull off one heck of a good result.
@@ -158,7 +192,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">I Tråd Med Verden <br />(2nd semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/itmv.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
                       >I Tråd Med Verden</em
                     >, that had to showcase who they were, what they did and so much more.
@@ -174,7 +208,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Volander Art <br />(2nd semester exam)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/susse_volander.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We chose the
                     artist Susse Volander. Looking back, this was one of the most ambitious projects that we did on 2nd semester. It's jam-packed with
                     over-the-top JavaScript features, animations, and so many more things. We struggled a lot while making it, and that was very
@@ -191,7 +225,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Uperfekt er perfekt <br /> (3rd semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/uperfekt.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was a small project that we did before our first 3rd semester case-project. Here, we had to revamp an existing website and
                     add small features to it that would invoke surprise. As in, small interactions and animations that would surprise the user.
                   </p>
@@ -206,7 +240,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">Digital application <br /> (3rd semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/internship_prep.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
+                  <p class="mt-3 text-left leading-7 p-4">
                     This was a small project, made as part of our internship preparations. Here, we had to make a so-called <em
                       >Personal Professional Profile</em
                     >—a sort of digital application that could be used as part of our actual internship application.
@@ -222,9 +256,9 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >
                   <span class="text-gray-100 font-bold mb-3 p-2">#SingleUseSucks <br /> (3rd semester project)</span>
                   <img class="h-32 w-32 rounded-full shadow-2xl" src="images/singleusesucks.webp" alt="Img" />
-                  <p class="mt-3 text-gray-100 text-left leading-7 p-4">
-                    My most recent project. Here, we had to make a site based off of a slogan that Plastic Change, the company we made the project
-                    for, used a lot on their social media. This might be the project from 3rd semester that I'm most proud of. Not only had we
+                  <p class="mt-3 text-left leading-7 p-4">
+                    This is my most recent project. Here, we had to make a site based off of a slogan that Plastic Change, the company we made the
+                    project for, used a lot on their social media. This might be the project from 3rd semester that I'm most proud of. Not only had we
                     completed the project before the deadline, we also had it shown more than once in front of our entire class, on the last day of
                     the project&mdash; which we were insanely proud of.
                   </p>
@@ -239,8 +273,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <!-- Contact Section -->
   <section id="contact" class="container mx-auto pb-16 px-4 pt-52">
-    <h3 class="text-3xl font-bold text-gray-100">Let's talk</h3>
-    <p class="mt-4 text-gray-400 leading-7">
+    <h3 class="text-3xl font-bold text-gray-300">Let's talk!</h3>
+    <p class="mt-4 text-gray-300 leading-7">
       I'm always eager to connect with new people. <br class="hidden md:block" />Feel free to reach out with any questions or comments. <br
         class="hidden md:block"
       /> Then I'll get back to you as soon as I can!
@@ -252,21 +286,21 @@ import MainLayout from "../layouts/MainLayout.astro";
         <input
           type="text"
           placeholder="Name..."
-          class="w-[80%] p-3 bg-gray-800 text-gray-200 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="w-[80%] p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
         />
         <input
           type="email"
           placeholder="Email..."
-          class="w-[80%] p-3 bg-gray-800 text-gray-200 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="w-[80%] p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
         />
         <textarea
           placeholder="Message..."
-          class="w-[80%] p-3 bg-gray-800 text-gray-200 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="w-[80%] p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
           rows="12"></textarea>
         <div class="button-container">
           <button
             type="submit"
-            class="relative text-gray-200 bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-[20%] mt-4 transition duration-300"
+            class="relative text-gray-300 bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-[20%] mt-4 transition duration-300"
           >
             <span class="button-text text-sm relative z-[1] w-full text-center uppercase">Send</span>
             <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
@@ -280,18 +314,18 @@ import MainLayout from "../layouts/MainLayout.astro";
         <img src="images/pfp3.webp" alt="Contact Image" class="w-64 h-64 object-cover rounded-full shadow-lg" />
 
         <!-- Contact Information Box -->
-        <div class="p-6 bg-gray-800 text-gray-300 rounded-lg shadow-lg">
-          <h4 class="text-xl font-semibold text-gray-100">Contact me:</h4>
+        <div id="contact-info" class="p-6 bg-gray-800 text-gray-300 rounded-lg shadow-lg">
+          <h4 class="text-xl font-semibold text-gray-300">Contact me:</h4>
           <ul class="mt-4 space-y-2">
-            <li>
+            <li class="some1">
               <strong>Email:</strong>
-              <a href="mailto:sara.ringkow@gmail.com" class="text-gray-200 hover:underline hover:text-site-red">sara.ringkow@gmail.com</a>
+              <a href="mailto:sara.ringkow@gmail.com" class="text-gray-300 hover:underline hover:text-site-red">sara.ringkow@gmail.com</a>
               <span>/</span>
-              <a href="mailto:sape0003@stud.kea.dk" class="text-gray-200 hover:underline hover:text-site-red">sape0003@stud.kea.dk</a>
+              <a href="mailto:sape0003@stud.kea.dk" class="text-gray-300 hover:underline hover:text-site-red">sape0003@stud.kea.dk</a>
             </li>
-            <li>
+            <li class="some1">
               <strong>Phone:</strong>
-              <a href="tel:+4542428807" class="text-gray-200 hover:underline hover:text-site-red">+45 42 42 88 07</a>
+              <a href="tel:+4542428807" class="text-gray-300 hover:underline hover:text-site-red">+45 42 42 88 07</a>
             </li>
           </ul>
         </div>

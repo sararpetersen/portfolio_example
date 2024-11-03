@@ -15,13 +15,14 @@
     @apply font-exo text-3xl;
   }
 
-  span {
-    @apply font-exo text-xl;
-  }
-
   p,
   a {
     @apply font-almarai text-lg;
+    @apply text-gray-300;
+  }
+
+  span {
+    @apply text-2xl;
   }
 
   @media (min-width: 768px) {
@@ -35,10 +36,6 @@
 
     h3 {
       @apply text-4xl;
-    }
-
-    span {
-      @apply text-2xl;
     }
   }
 }
