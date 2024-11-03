@@ -2,10 +2,8 @@
 import "../styles/global.css";
 ---
 
-<!-- Navigation -->
 <header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50" x-data="{ showmenu: false }">
   <nav class="container mx-auto flex justify-between items-center">
-    <!-- Logo -->
     <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
       <a href="./#hero" class="relative inline-block w-full h-full">
         <img
@@ -22,7 +20,6 @@ import "../styles/global.css";
     </div>
 
     <ul class="some1 hidden lg:flex space-x-6 items-center">
-      <!-- Added items-center for vertical alignment -->
       <li><a href="./#hero" class="hover:text-site-red py-2">Home</a></li>
       <li><a href="./#about" class="hover:text-site-red py-2">About</a></li>
 
@@ -57,16 +54,30 @@ import "../styles/global.css";
 
     <!-- Burger Menu Button (Mobile Only) -->
     <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-8 text-gray-200 hover:text-site-red transition duration-30"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-      </svg>
+      <template x-if="showmenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-8 text-gray-200 hover:text-site-red transition duration-300"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </template>
+      <template x-if="!showmenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-8 text-gray-200 hover:text-site-red transition duration-300"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </template>
     </button>
   </nav>
 
@@ -84,7 +95,7 @@ import "../styles/global.css";
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
         <a href="./#hero">Home</a>
       </li>
-      <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-30">
+      <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
         <a href="./#about">About</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">

@@ -10,10 +10,15 @@ export default {
         "site-light-gray": "#b3b3b3",
         "site-red": "#ff3333",
       },
-    },
-    fontFamily: {
-      almarai: ["Almarai", "sans-serif"],
-      exo: ["Exo", "sans-serif"],
+
+      fontFamily: {
+        almarai: ["Almarai", "sans-serif"],
+        exo: ["Exo", "sans-serif"],
+      },
+
+      cursor: {
+        handcursor: "url(/cursor.png) 25 25, pointer",
+      },
     },
   },
   plugins: [

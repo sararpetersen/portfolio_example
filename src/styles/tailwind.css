@@ -5,37 +5,45 @@
 @layer base {
   h1 {
     @apply font-exo text-7xl;
+    @apply drop-shadow-md;
   }
 
   h2 {
     @apply font-exo text-4xl;
+    @apply drop-shadow-md;
   }
 
   h3 {
     @apply font-exo text-3xl;
+    @apply drop-shadow-md;
   }
 
   p,
   a {
     @apply font-almarai text-lg;
     @apply text-gray-300;
+    @apply drop-shadow-md;
   }
 
   span {
     @apply text-2xl;
+    @apply drop-shadow-md;
   }
 
   @media (min-width: 768px) {
     h1 {
       @apply text-8xl;
+      @apply drop-shadow-md;
     }
 
     h2 {
       @apply text-5xl;
+      @apply drop-shadow-md;
     }
 
     h3 {
       @apply text-4xl;
+      @apply drop-shadow-md;
     }
   }
 }

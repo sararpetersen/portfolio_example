@@ -34,3 +34,27 @@ html {
 #footer-contact a {
   text-decoration: none;
 }
+
+/*Custom cursor*/
+#cursor {
+  position: absolute;
+  width: 50px; /* Width of the cursor */
+  height: 50px; /* Height of the cursor */
+  background-color: #ff3333; /* Color of the cursor */
+  border-radius: 50%; /* Make it circular */
+  pointer-events: none; /* Prevent it from blocking mouse events */
+  transform: translate(-50%, -50%); /* Center the cursor on the mouse */
+  z-index: 1000; /* Ensure it's above other elements */
+  transition: left 0.1s ease, top 0.1s ease; /* Smooth transition for position */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+a,
+.form-button,
+.project-button,
+button,
+button input,
+input,
+textarea {
+  cursor: none;
+}
