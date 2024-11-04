@@ -7,13 +7,14 @@ import "../styles/tobii.min.css";
 <MainLayout title="Gallery">
   <div id="cursor"></div>
   <!-- Gallery Section -->
-  <section id="gallery" class="container mx-auto py-20 px-4">
+  <section id="gallery" class="container mx-auto py-20 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
     <!-- Intro Section -->
     <div class="text-center mb-12">
-      <h2 class="heading-title text-3xl font-bold text-gray-300 pt-32">Gallery & Media</h2>
-      <p class="heading-text text-gray-300 mt-4 max-w-2xl mx-auto">
+      <h2 class="heading-title max-w-2xl mx-auto font-bold md:text-left text-center text-gray-300 pt-32">Gallery & media</h2>
+      <p class="heading-text text-gray-300 mt-4 max-w-2xl mx-auto md:text-left text-center">
         A collection of my visual works, media assets, and other creative projects. Explore images and videos to get a deeper insight into my style
-        and approach.
+        and approach. <br /><br />
+        <em class="text-gray-400">Click on the different media-types to enlarge them.</em>
       </p>
     </div>
 
@@ -341,6 +342,17 @@ import "../styles/tobii.min.css";
         </a>
       </div>
     </div>
+  </section>
+  <!-- Navigation Back to Portfolio -->
+  <section class="button-container mx-auto pb-12 pt-8 text-center">
+    <a
+      href="/"
+      class="relative z-[1] text-gray-100 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+    >
+      <span class="button-text text-sm relative z-[1] w-full text-center uppercase">Back to homepage</span>
+      <span class="button-bg absolute inset-0 bg-red-700 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
+      ></span>
+    </a>
   </section>
 </MainLayout>
 <script is:inline src="/tobii.min.js"></script>
