@@ -3,15 +3,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 ---
 
-<MainLayout title="SRP Portfolio - frontpage">
+<MainLayout title="Frontpage">
   <!-- Hero Section -->
   <div id="cursor"></div>
-  <section id="hero" class="relative container mx-auto text-center py-20">
+  <section id="hero" class="relative container md:max-w-2xl max-w-md mx-auto md:text-left text-center py-20">
     <!-- Content of Hero Section (kept on top with z-index) -->
     <div class="relative z-10">
       <h1 id="hero-title" class="font-bold text-gray-200 tracking-wider md:pt-52 pt-32">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-medium text-gray-300 mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-gray-300 mt-6 leading-7 md:max-w-3xl max-w-md mx-auto">
+      <p id="hero-text" class="text-gray-300 mt-6 leading-7 mx-auto">
         Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
         digital experiences. Further down the page, you can read a bit about who I am, look through some of my projects&mdash; highlighted or not &mdash;or
         simply reach out if you have any questions or just want to say hi. <br /><br />Use the navigation menu to get started, or click the "View
@@ -28,10 +28,9 @@ import "../styles/global.css";
       </div>
     </div>
   </section>
-
   <!-- About Section -->
   <section id="about" class="container mx-auto md:pt-52 pt-20 pb-16 px-4">
-    <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+    <div class="bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="text-3xl font-bold text-gray-200 md:text-left text-center">About me</h3>
         <p class="mt-4 text-gray-300 leading-7 md:text-left text-center">
@@ -61,6 +60,153 @@ import "../styles/global.css";
     </div>
   </section>
 
+  <!-- Values Section -->
+  <div id="values" class="pt-12 md:pt-40">
+    <section id="values" class="container mx-auto py-8 px-4">
+      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-bold text-gray-200 text-center md:text-left">Values & mission</h3>
+        <p class="mt-4 text-gray-300 leading-7 text-center md:text-left">
+          My journey in design is guided by principles of accessibility, creativity, and inclusivity, ensuring every user has an exceptional
+          experience.
+        </p>
+        <div class="mt-8 space-y-8">
+          <!-- Value Item -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">1</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Accessibility first</h4>
+              <p class="text-gray-300">
+                I believe in designing for everyone, creating experiences that are accessible to all users, regardless of ability.
+              </p>
+            </div>
+          </div>
+          <!-- Value Item -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">2</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">User-centered design</h4>
+              <p class="text-gray-300">My goal is to create intuitive, user-friendly interfaces that resonate with users and serve their needs.</p>
+            </div>
+          </div>
+          <!-- Value Item -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">3</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Continuous growth</h4>
+              <p class="text-gray-300">
+                I am committed to learning and evolving with new design trends and technologies to push boundaries in digital experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Skills Section -->
+  <div id="skills" class="md:pt-52 pt-20">
+    <section id="skills" class="container mx-auto py-12 px-4">
+      <div class="bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-bold text-gray-200 text-center md:text-left">Skills & tools</h3>
+        <p class="mt-4 text-gray-300 leading-7 text-center md:text-left">
+          Here’s a quick overview of my skills, tools, and technologies that I use to bring digital experiences to life.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <!-- Skill Item -->
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">H</div>
+            <p class="ml-4 text-gray-300">HTML & CSS</p>
+          </div>
+          <!-- Skill Item -->
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">JS</div>
+            <p class="ml-4 text-gray-300">JavaScript & frameworks</p>
+          </div>
+          <!-- Skill Item -->
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">UX</div>
+            <p class="ml-4 text-gray-300">UX & UI Design</p>
+          </div>
+        </div>
+        <!-- Skill Item(s) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">F</div>
+            <p class="ml-4 text-gray-300">Figma & Canva</p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">P</div>
+            <p class="ml-4 text-gray-300">Photoshop & Illustrator</p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">Git</div>
+            <p class="ml-4 text-gray-300">Git & GitHub</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Workflow Section -->
+  <div id="workflow" class="">
+    <section id="workflow" class="container mx-auto py-8 px-4">
+      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-bold text-gray-200 text-center md:text-left">Process & workflow</h3>
+        <p class="mt-4 text-gray-300 leading-7 text-center md:text-left">
+          I follow a structured process to ensure every project meets its full potential, from concept to final design.
+        </p>
+        <div class="mt-8 space-y-8">
+          <!-- Workflow Step 1 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">1</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Research & discovery</h4>
+              <p class="text-gray-300">Understanding the project goals, audience, and challenges.</p>
+            </div>
+          </div>
+          <!-- Workflow Step 2 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">2</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Planning & strategy</h4>
+              <p class="text-gray-300">Crafting a roadmap that aligns design with project goals.</p>
+            </div>
+          </div>
+          <!-- Workflow Step 3 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">3</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Design & development</h4>
+              <p class="text-gray-300">Creating wireframes, prototypes, and final design elements.</p>
+            </div>
+          </div>
+          <!-- Workflow Step 4 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">4</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Coding & testing</h4>
+              <p class="text-gray-300">Building the project from the ground up.</p>
+            </div>
+          </div>
+          <!-- Workflow Step 5 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">5</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Final testing & feedback</h4>
+              <p class="text-gray-300">Gathering feedback and refining to achieve the best user experience.</p>
+            </div>
+          </div>
+          <!-- Workflow Step 6 -->
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-white font-bold">6</div>
+            <div class="ml-4">
+              <h4 class="text-xl font-semibold text-gray-200">Deployment</h4>
+              <p class="text-gray-300">Deploying the project to production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
   <!-- Projects Section -->
   <div id="projects" class="md:pt-52 pt-20">
     <section id="project-section" class="container mx-auto px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
@@ -83,7 +229,7 @@ import "../styles/global.css";
             class="project-button relative z-10 text-gray-300 bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex overflow-hidden group transition duration-300 uppercase"
           >
             <span class="flex items-center gap-2 button-text text-sm relative z-10 w-full text-center uppercase"
-              >Or click here to see other projects <svg
+              >See other projects <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -279,8 +425,46 @@ import "../styles/global.css";
     </section>
   </div>
 
+  <!-- Resources Section -->
+  <div id="resources" class="md:pt-52 pt-20">
+    <section id="resources" class="container mx-auto py-12 px-4">
+      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-bold text-gray-200 text-center md:text-left">Resources</h3>
+        <p class="mt-4 text-gray-300 leading-7 text-center md:text-left">
+          Access additional materials to learn more about my work, skills, and experience.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <!-- Resource Item -->
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+            <h4 class="text-xl font-semibold text-gray-200">Resume</h4>
+            <p class="text-gray-300 mt-2">Download my resume to get an overview of my professional background.</p>
+            <a
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8"
+              download
+              class="mt-4 px-4 py-2 bg-site-red text-white rounded-lg font-semibold transition duration-300 hover:bg-red-700"
+            >
+              Download
+            </a>
+          </div>
+          <!-- Resource Item -->
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+            <h4 class="text-xl font-semibold text-gray-200">Case studies <em class="text-gray-400">(none yet)</em></h4>
+            <p class="text-gray-300 mt-2">Explore case studies of selected projects to see my work in action.</p>
+            <a
+              href="case-studies.pdf"
+              download
+              class="mt-4 px-4 py-2 bg-site-red text-white rounded-lg font-semibold transition duration-300 hover:bg-red-700"
+            >
+              Download
+            </a>
+          </div>
+          <!-- Add more resources as needed -->
+        </div>
+      </div>
+    </section>
+  </div>
   <!-- Contact Section -->
-  <section id="contact" class="container mx-auto pb-16 px-4 pt-20 md:pt-52">
+  <section id="contact" class="container mx-auto pb-20 px-4 md:pt-12">
     <div id="contact-info-container">
       <h3 id="contact-title" class="font-bold text-gray-300 md:text-left text-center">Let's talk!</h3>
       <p id="contact-text" class="mt-4 text-gray-300 leading-7 md:text-left text-center">
@@ -432,14 +616,19 @@ import "../styles/global.css";
       }
     );
 
+    const elementmedanimation5 = document.querySelector("#values");
+    inView(elementmedanimation5, () => {
+      elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
     const elementmedanimation6 = document.querySelector("#projects");
     inView(elementmedanimation6, () => {
-      elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
+      elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
     });
 
     const elementmedanimation7 = document.querySelector("#contact-info-container");
     inView(elementmedanimation7, () => {
-      elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
+      elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
     const elementmedanimation8 = document.querySelector("#contact-form");
@@ -450,6 +639,21 @@ import "../styles/global.css";
     const elementmedanimation9 = document.querySelector("#contact-container");
     inView(elementmedanimation9, () => {
       elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation10 = document.querySelector("#skills");
+    inView(elementmedanimation10, () => {
+      elementmedanimation10.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const elementmedanimation11 = document.querySelector("#workflow");
+    inView(elementmedanimation11, () => {
+      elementmedanimation11.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation12 = document.querySelector("#resources");
+    inView(elementmedanimation12, () => {
+      elementmedanimation12.classList.add("animate__animated", "animate__fadeInRight");
     });
 
     // Custom cursor
