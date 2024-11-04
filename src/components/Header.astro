@@ -5,7 +5,7 @@ import "../styles/global.css";
 <header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50" x-data="{ showmenu: false }">
   <nav class="container mx-auto flex justify-between items-center">
     <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
-      <a href="./#hero" class="relative inline-block w-full h-full">
+      <a href="/#hero" class="relative inline-block w-full h-full">
         <img
           src="/logo.svg"
           alt="logo"
@@ -20,14 +20,14 @@ import "../styles/global.css";
     </div>
 
     <ul class="some1 hidden lg:flex space-x-6 items-center">
-      <li><a href="./#hero" class="hover:text-site-red py-2">Home</a></li>
-      <li><a href="./#about" class="hover:text-site-red py-2">About</a></li>
-      <li><a href="./#values" class="hover:text-site-red py-2">Values</a></li>
-      <li><a href="./#skills" class="hover:text-site-red py-2">Skills & workflow</a></li>
+      <li><a href="/#hero" class="hover:text-site-red py-2">Home</a></li>
+      <li><a href="/#about" class="hover:text-site-red py-2">About</a></li>
+      <li><a href="/#values" class="hover:text-site-red py-2">Values</a></li>
+      <li><a href="/#skills" class="hover:text-site-red py-2">Skills & workflow</a></li>
 
       <!-- Dropdown with Arrow -->
       <li class="relative" @mouseenter="showmenu = true" @mouseleave="showmenu = false">
-        <a href="./#projects" class="hover:text-[#FF3333] transition duration-300 flex items-center py-2">
+        <a href="/#projects" class="hover:text-[#FF3333] transition duration-300 flex items-center py-2">
           Projects
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -51,8 +51,8 @@ import "../styles/global.css";
         </div>
       </li>
 
-      <li><a href="./#resources" class="hover:text-site-red py-2">Contact & resources</a></li>
-      <li><a href="./gallery" class="hover:text-site-red py-2">Gallery</a></li>
+      <li><a href="/#resources" class="hover:text-site-red py-2">Contact & resources</a></li>
+      <li><a href="/gallery" class="hover:text-site-red py-2">Gallery</a></li>
     </ul>
 
     <!-- Burger Menu Button (Mobile Only) -->
@@ -96,25 +96,25 @@ import "../styles/global.css";
   >
     <ul>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#hero">Home</a>
+        <a href="/#hero">Home</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#about">About</a>
+        <a href="/#about">About</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#values">Values</a>
+        <a href="/#values">Values</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#skills">Skills & workflow</a>
+        <a href="/#skills">Skills & workflow</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#projects">Projects</a>
+        <a href="/#projects">Projects</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./#resources">Contact & resources</a>
+        <a href="/#resources">Contact & resources</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="./gallery">Gallery</a>
+        <a href="/gallery">Gallery</a>
       </li>
     </ul>
   </nav>
