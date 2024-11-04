@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
+import "../styles/tobii.min.css";
 ---
 
 <MainLayout title="Gallery">
@@ -20,289 +21,332 @@ import "../styles/global.css";
     <div class="grid-text grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Media Item 1 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/entrance_exam.webp"
-          alt="Entrance Exam"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg shadow-md"
-        />
-        <div
-          class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Entrance exam <br /><em class="text-gray-400">(frontpage)</em></p>
-        </div>
+        <a href="/images/entrance_exam.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/entrance_exam.webp"
+            alt="Entrance exam (frontpage)"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg shadow-md"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Entrance exam <br /><em class="text-gray-400">(frontpage)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 2 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/t2_studiestartsproeve7.png"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Entrance-exam <br /><em class="text-gray-400">(computer-page)</em></p>
-        </div>
+        <a href="/images/t2_studiestartsproeve7.png" class="w-full h-full lightbox">
+          <img
+            src="/images/t2_studiestartsproeve7.png"
+            alt="Entrance-exam (computer-page)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Entrance-exam <br /><em class="text-gray-400">(computer-page)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 3 (Video) -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <video
-          src="/videos/interview.mp4"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-          controls></video>
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Video-site <br /><em class="text-gray-400">(interview)</em></p>
-        </div>
+        <a href="/videos/interview.mp4" data-type="iframe" class="w-full h-full lightbox">
+          <video
+            src="/videos/interview.mp4"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            controls></video>
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Video-site <br /><em class="text-gray-400">(interview)</em></p>
+          </div>
+        </a>
       </div>
       <!-- Media Item 4 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/mak_nyheder.png"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">The MAK committee <br /><em class="text-gray-400">(news-page)</em></p>
-        </div>
+        <a href="/images/mak_nyheder.png" class="w-full h-full lightbox">
+          <img
+            src="/images/mak_nyheder.png"
+            alt="The MAK committee (news-page)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">The MAK committee <br /><em class="text-gray-400">(news-page)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 5 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/t4_state_machine.jpg"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Animation-site <br /><em class="text-gray-400">(state-machine diagram)</em></p>
-        </div>
+        <a href="/images/t4_state_machine.jpg" class="w-full h-full lightbox">
+          <img
+            src="/images/t4_state_machine.jpg"
+            alt="Animation-site (state-machine diagram)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Animation-site <br /><em class="text-gray-400">(state-machine diagram)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 6 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/t4_paper_prototype.jpg"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Animation-site <br /><em class="text-gray-400">(paper prototype)</em></p>
-        </div>
+        <a href="/images/t4_paper_prototype.jpg" class="w-full h-full lightbox">
+          <img
+            src="/images/t4_paper_prototype.jpg"
+            alt="Animation-site (paper prototype)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Animation-site <br /><em class="text-gray-400">(paper prototype)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 7 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/portfolio_lofi.png"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">First portfolio-site <br /><em class="text-gray-400">(lo-fi wireframe)</em></p>
-        </div>
+        <a href="/images/portfolio_lofi.png" class="w-full h-full lightbox">
+          <img
+            src="/images/portfolio_lofi.png"
+            alt="First portfolio-site (lo-fi wireframe)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">First portfolio-site <br /><em class="text-gray-400">(lo-fi wireframe)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 8 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/1st_portfolio.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">First portfolio-site <br /><em class="text-gray-400">(frontpage)</em></p>
-        </div>
+        <a href="/images/1st_portfolio.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/1st_portfolio.webp"
+            alt="First portfolio-site (frontpage)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">First portfolio-site <br /><em class="text-gray-400">(frontpage)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 9 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/karrusel.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Karrusel Festival<br /><em class="text-gray-400">(frontpage)</em></p>
-        </div>
+        <a href="/images/karrusel.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/karrusel.webp"
+            alt="Karrusel Festival (frontpage)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Karrusel Festival<br /><em class="text-gray-400">(frontpage)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 10 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/itmv.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">I Tråd Med Verden <br /><em class="text-gray-400">(top-section)</em></p>
-        </div>
+        <a href="/images/itmv.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/itmv.webp"
+            alt="I Tråd Med Verden (top-section)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">I Tråd Med Verden <br /><em class="text-gray-400">(top-section)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 11 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/susse_volander.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg">Volander Art <br /><em class="text-gray-400">(frontpage)</em></p>
-        </div>
+        <a href="/images/susse_volander.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/susse_volander.webp"
+            alt="Volander Art (frontpage)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg">Volander Art <br /><em class="text-gray-400">(frontpage)</em></p>
+          </div>
+        </a>
       </div>
       <!-- Media Item 12 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/styletile_2.png"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Style-tile <br /><em class="text-gray-400">(Volander Art)</em></p>
-        </div>
+        <a href="/images/styletile_2.png" class="w-full h-full lightbox">
+          <img
+            src="/images/styletile_2.png"
+            alt="Style-tile (Volander Art)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Style-tile <br /><em class="text-gray-400">(Volander Art)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 13 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/digital_cleanup_day.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Digital Skraldedag <br /><em class="text-gray-400">(frontpage)</em></p>
-        </div>
+        <a href="/images/digital_cleanup_day.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/digital_cleanup_day.webp"
+            alt="Digital Skraldedag (frontpage)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Digital Skraldedag <br /><em class="text-gray-400">(frontpage)</em></p>
+          </div>
+        </a>
       </div>
       <!-- Media Item 14 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/internship_prep.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">
-            Personal professional profile <br /><em class="text-gray-400">(hero-section)</em>
-          </p>
-        </div>
+        <a href="/images/internship_prep.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/internship_prep.webp"
+            alt="Personal professional profile (hero-section)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">
+              Personal professional profile <br /><em class="text-gray-400">(hero-section)</em>
+            </p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 15 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/background.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">
-            Personal professional profile <br /><em class="text-gray-400">(background-image)</em>
-          </p>
-        </div>
+        <a href="/images/background.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/background.webp"
+            alt="Personal professional profile (background-image)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">
+              Personal professional profile <br /><em class="text-gray-400">(background-image)</em>
+            </p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 16 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/2nd_portfolio.jpeg"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">
-            New portfolio-site <br /><em class="text-gray-400">(first hi-fi wireframe-iteration)</em>
-          </p>
-        </div>
+        <a href="/images/2nd_portfolio.jpeg" class="w-full h-full lightbox">
+          <img
+            src="/images/2nd_portfolio.jpeg"
+            alt="New portfolio-site (first hi-fi wireframe-iteration)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">
+              New portfolio-site <br /><em class="text-gray-400">(first hi-fi wireframe-iteration)</em>
+            </p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 17 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/uperfekt.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Uprefekt er perfekt <br /><em class="text-gray-400">(top-section)</em></p>
-        </div>
+        <a href="/images/uperfekt.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/uperfekt.webp"
+            alt="Uprefekt er perfekt (top-section)"
+            class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Uprefekt er perfekt <br /><em class="text-gray-400">(top-section)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 18 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/singleusesucks.webp"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">#SingleUseSucks <br /><em class="text-gray-400">(hero-section)</em></p>
-        </div>
+        <a href="/images/singleusesucks.webp" class="w-full h-full lightbox">
+          <img
+            src="/images/singleusesucks.webp"
+            alt="#SingleUseSucks (hero-section)"
+            class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">#SingleUseSucks <br /><em class="text-gray-400">(hero-section)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 19 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/ux_presentation.png"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">UX/UI presentation <br /><em class="text-gray-400">(UX/UI-site)</em></p>
-        </div>
+        <a href="/images/ux_presentation.png" class="w-full h-full lightbox">
+          <img
+            src="/images/ux_presentation.png"
+            alt="UX/UI presentation (UX/UI-site)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">UX/UI presentation <br /><em class="text-gray-400">(UX/UI-site)</em></p>
+          </div>
+        </a>
       </div>
 
       <!-- Media Item 20 -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <img
-          src="/images/moodboard_t3_ux.WEBP"
-          alt="Sample Image"
-          class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <p class="text-gray-300 font-semibold text-lg text-center">Moodboard <br /><em class="text-gray-400">(UX/UI-site)</em></p>
-        </div>
+        <a href="/images/moodboard_t3_ux.WEBP" class="w-full h-full lightbox">
+          <img
+            src="/images/moodboard_t3_ux.WEBP"
+            alt="Moodboard (UX/UI-site)"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="text-gray-300 font-semibold text-lg text-center">Moodboard <br /><em class="text-gray-400">(UX/UI-site)</em></p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 </MainLayout>
-
+<script is:inline src="/tobii.min.js"></script>
+<script defer>
+  const tobii = new Tobii();
+</script>
 <script>
   // Custom cursor
   (function () {
@@ -365,5 +409,19 @@ import "../styles/global.css";
 
   .grid-text {
     text-transform: uppercase;
+  }
+
+  .expanded {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    transition: all 0.3s ease-in-out;
+  }
+  .expanded img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>
