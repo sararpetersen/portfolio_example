@@ -7,71 +7,74 @@ import "../styles/global.css";
   <div id="cursor"></div>
 
   <!-- Thank you for your submission! -->
-  <div class="min-h-screen flex items-center justify-center bg-gray-900 text-gray-200 px-4">
-    <div class="max-w-md w-full text-center space-y-8">
-      <h1 class="text-3xl font-bold text-site-red">Thank You!</h1>
-      <p class="text-lg">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+  <div class="min-h-screen flex items-center justify-center text-gray-200 px-4">
+    <div class="max-w-lg w-full text-center space-y-8">
+      <h1 class="text-6xl font-bold">Thank You!</h1>
+      <p class="text-xl leading-7">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
       <div class="mt-8">
         <a
-          href="/"
-          class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-gray-900 bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300"
+          href="./"
+          class="form-button relative text-gray-300 bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-full md:w-[45%] mt-4 transition duration-300"
         >
-          Back to Home
+          <span class="button-text text-sm relative z-[1] w-full uppercase">Back to homepage</span>
+          <span class="absolute inset-0 bg-red-600 transition-transform duration-500 ease-in-out translate-x-full group-hover:translate-x-0"></span>
         </a>
       </div>
     </div>
+
+    <script>
+      import { animate, inView } from "motion";
+      /*Entrance Animation*/
+      animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+      // Custom cursor
+      (function () {
+        var mousePos;
+        var moved = false;
+
+        document.onmousemove = handleMouseMove;
+        setInterval(getMousePosition, 100);
+
+        function handleMouseMove(event) {
+          var eventDoc, doc, body;
+
+          moved = true;
+
+          event = event || window.event;
+          if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX =
+              event.clientX +
+              ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
+              ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
+            event.pageY =
+              event.clientY + ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) - ((doc && doc.clientTop) || (body && body.clientTop) || 0);
+          }
+
+          mousePos = {
+            x: event.pageX,
+            y: event.pageY,
+          };
+        }
+
+        function getMousePosition() {
+          var pos = mousePos;
+
+          if (!pos) {
+            // We haven't seen any movement yet
+          } else if (moved === true) {
+            // Use pos.x and pos.y
+            console.log("Pos:", pos.x, pos.y);
+            moved = false;
+            var cursor = document.querySelector("#cursor");
+            cursor.style.left = pos.x + "px";
+            cursor.style.top = pos.y + "px";
+          }
+        }
+      })();
+    </script>
   </div>
-
-  <script>
-    import { animate, inView } from "motion";
-    /*Entrance Animation*/
-    animate("body", { opacity: [0, 1] }, { duration: 1 });
-
-    // Custom cursor
-    (function () {
-      var mousePos;
-      var moved = false;
-
-      document.onmousemove = handleMouseMove;
-      setInterval(getMousePosition, 100);
-
-      function handleMouseMove(event) {
-        var eventDoc, doc, body;
-
-        moved = true;
-
-        event = event || window.event;
-        if (event.pageX == null && event.clientX != null) {
-          eventDoc = (event.target && event.target.ownerDocument) || document;
-          doc = eventDoc.documentElement;
-          body = eventDoc.body;
-
-          event.pageX =
-            event.clientX + ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) - ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
-          event.pageY =
-            event.clientY + ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) - ((doc && doc.clientTop) || (body && body.clientTop) || 0);
-        }
-
-        mousePos = {
-          x: event.pageX,
-          y: event.pageY,
-        };
-      }
-
-      function getMousePosition() {
-        var pos = mousePos;
-
-        if (!pos) {
-          // We haven't seen any movement yet
-        } else if (moved === true) {
-          // Use pos.x and pos.y
-          console.log("Pos:", pos.x, pos.y);
-          moved = false;
-          var cursor = document.querySelector("#cursor");
-          cursor.style.left = pos.x + "px";
-          cursor.style.top = pos.y + "px";
-        }
-      }
-    })();
-  </script>
 </MainLayout>
