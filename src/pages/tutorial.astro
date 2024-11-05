@@ -1,0 +1,141 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout title="Tutorials & tips">
+  <!-- BTS Section -->
+  <div id="cursor"></div>
+  <!-- Tutorials Section -->
+  <div id="tutorials" class="pt-12 md:pt-40">
+    <section class="container mx-auto py-8 px-4">
+      <h2 class="font-bold text-gray-200 max-w-2xl mx-auto md:text-left text-center">Tutorials & tips</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto md:text-left text-center leading-7 pb-16 mt-4">
+        Here are some of the tutorials, articles, and tips that I've found most useful during my studies. Here, you can find everything from
+        CSS-tutorials and design-tips, to documentations on how the frameworks I use work.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tutorial Card 1 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">CSS flexbox basics</h3>
+          <p class="mt-2 text-gray-300">Learn the base-fundamentals of CSS Flexbox.</p>
+          <a
+            href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+        <!-- Tutorial Card 2 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">Figma auto-layout</h3>
+          <p class="mt-2 text-gray-300">Learn how to use Figma's auto-layout feature.</p>
+          <a
+            href="https://youtu.be/wukJ1MTRxgQ"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+        <!-- Tutorial Card 3 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">Responsive design-principles</h3>
+          <p class="mt-2 text-gray-300">Understand the key principles behind creating responsive and adaptive web designs.</p>
+          <a
+            href="https://www.designveloper.com/blog/responsive-web-design-principles/"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+        <!-- Tutorial Card 4 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">Utility-first fundamentals (Tailwind)</h3>
+          <p class="mt-2 text-gray-300">Learn about Tailwind's utility-first approach to styling.</p>
+          <a
+            href="https://tailwindcss.com/docs/utility-first"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+        <!-- Tutorial Card 5 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">Getting started with the basics (Astro)</h3>
+          <p class="mt-2 text-gray-300">Learn how to get started with Astro, and get familiar with the basics.</p>
+          <a
+            href="https://docs.astro.build/en/getting-started/"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+
+        <!-- Tutorial Card 6 -->
+        <div class="bg-gray-700 bg-opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-gray-300">Design-systems 101 <br /> (NN Group)</h3>
+          <p class="mt-2 text-gray-300">Learn about the basics of design-systems, what they're used for and how they work.</p>
+          <a
+            href="https://www.nngroup.com/articles/design-systems-101/"
+            target="_blank"
+            class="mt-4 inline-block text-site-red hover:text-white border border-site-red hover:bg-site-red transition duration-300 px-4 py-2 rounded"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    import { animate, inView } from "motion";
+    /*Entrance Animation*/
+    animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+    // Custom cursor
+    (function () {
+      var mousePos;
+      var moved = false;
+
+      document.onmousemove = handleMouseMove;
+      setInterval(getMousePosition, 100);
+
+      function handleMouseMove(event) {
+        var eventDoc, doc, body;
+
+        moved = true;
+
+        event = event || window.event;
+        if (event.pageX == null && event.clientX != null) {
+          eventDoc = (event.target && event.target.ownerDocument) || document;
+          doc = eventDoc.documentElement;
+          body = eventDoc.body;
+
+          event.pageX =
+            event.clientX + ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) - ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
+          event.pageY =
+            event.clientY + ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) - ((doc && doc.clientTop) || (body && body.clientTop) || 0);
+        }
+
+        mousePos = {
+          x: event.pageX,
+          y: event.pageY,
+        };
+      }
+
+      function getMousePosition() {
+        var pos = mousePos;
+
+        if (!pos) {
+          // We haven't seen any movement yet
+        } else if (moved === true) {
+          // Use pos.x and pos.y
+          console.log("Pos:", pos.x, pos.y);
+          moved = false;
+          var cursor = document.querySelector("#cursor");
+          cursor.style.left = pos.x + "px";
+          cursor.style.top = pos.y + "px";
+        }
+      }
+    })();
+  </script>
+</MainLayout>
