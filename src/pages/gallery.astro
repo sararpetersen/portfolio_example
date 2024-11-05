@@ -7,13 +7,13 @@ import "../styles/tobii.min.css";
 <MainLayout title="Gallery">
   <div id="cursor"></div>
   <!-- Gallery Section -->
-  <section id="gallery" class="container mx-auto py-20 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
+  <section id="gallery" class="container mx-auto py-8 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
     <!-- Intro Section -->
-    <div class="text-center mb-12">
-      <h2 class="heading-title max-w-2xl mx-auto font-bold md:text-left text-center text-gray-300 pt-32">Gallery & media</h2>
+    <div class="mb-12">
+      <h2 class="heading-title max-w-2xl mx-auto font-bold md:text-left text-center text-gray-300 pt-52">Gallery & media</h2>
       <p class="heading-text text-gray-300 mt-4 max-w-2xl mx-auto md:text-left text-center">
-        A collection of my visual works, media assets, and other creative projects. Explore images and videos to get a deeper insight into my style
-        and approach. <br /><br />
+        A collection of the different media that I've made and used during my studies. It includes snippets of research from old projects,
+        screenshots, a video, and more.<br /><br />
         <em class="text-gray-400">Click on the different media-types to enlarge them.</em>
       </p>
     </div>
@@ -357,31 +357,32 @@ import "../styles/tobii.min.css";
         <a href="/images/2nd_portfolio.jpeg" class="w-full h-full lightbox">
           <img
             src="/images/2nd_portfolio.jpeg"
-            alt="New portfolio-site (first hi-fi wireframe-iteration)"
+            alt="New portfolio-site (first wireframe-iteration)"
             class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
             <p class="text-gray-300 font-semibold text-lg text-center">
-              New portfolio-site <br /><em class="text-gray-400">(first hi-fi wireframe-iteration)</em>
+              New portfolio-site <br /><em class="text-gray-400">(first wireframe-iteration)</em>
             </p>
           </div>
         </a>
       </div>
 
-      <!-- Media Item 17 -->
+      <!-- Media Item 3 (Video) -->
       <div class="relative group w-full h-64 overflow-hidden">
-        <a href="/images/uperfekt.webp" class="w-full h-full lightbox">
-          <img
-            src="/images/uperfekt.webp"
-            alt="Uprefekt er perfekt (top-section)"
-            class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
-          />
+        <a href="/videos/application_video.mp4" data-type="iframe" class="w-full h-full lightbox">
+          <video
+            src="/videos/application_video.mp4"
+            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            controls></video>
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-gray-300 font-semibold text-lg text-center">Uprefekt er perfekt <br /><em class="text-gray-400">(top-section)</em></p>
+            <p class="text-gray-300 font-semibold text-lg text-center">
+              Internship-preparations<br /><em class="text-gray-400">(application-video)</em>
+            </p>
           </div>
         </a>
       </div>

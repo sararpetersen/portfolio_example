@@ -4,6 +4,7 @@ import "../styles/global.css";
 
 <header class="fixed top-0 left-0 right-0 p-6 bg-gray-800 text-gray-200 shadow-md z-50" x-data="{ showmenu: false, showDropdown: false }">
   <nav class="container mx-auto flex justify-between items-center">
+    <!-- Logo Section -->
     <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
       <a href="/#hero" class="relative inline-block w-full h-full">
         <img
@@ -19,18 +20,19 @@ import "../styles/global.css";
       </a>
     </div>
 
+    <!-- Desktop Navigation -->
     <ul class="some1 hidden lg:flex space-x-6 items-center">
       <li><a href="/#about" class="hover:text-site-red py-2">About</a></li>
       <li><a href="/#values" class="hover:text-site-red py-2">Values</a></li>
-      <li><a href="/#skills" class="hover:text-site-red py-2">Skills & workflow</a></li>
+      <li><a href="/#skills" class="hover:text-site-red py-2">Skills</a></li>
 
-      <!-- Dropdown with Arrow -->
-      <li class="relative" @mouseenter="showmenu = true" @mouseleave="showmenu = false">
-        <a href="/#projects" class="hover:text-[#FF3333] transition duration-300 flex items-center py-2">
-          Projects
+      <!-- Explore Dropdown with Arrow -->
+      <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
+        <a href="#" class="hover:text-site-red py-2 flex items-center">
+          Explore
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
-            :class="{ 'rotate-180': showmenu }"
+            :class="{ 'rotate-180': showDropdown }"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -40,19 +42,20 @@ import "../styles/global.css";
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
           </svg>
         </a>
-
-        <div x-show="showmenu" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
+        <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
           <ul>
-            <li class="py-2 px-4 transition duration-300">
-              <a href="/other" class="hover:text-site-red">Other projects</a>
-            </li>
+            <li class="py-2 px-4 transition duration-300"><a href="/#projects" class="hover:text-site-red">Highlighted projects</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/other" class="hover:text-site-red">Other projects</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/gallery" class="hover:text-site-red">Gallery & media</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/tutorial" class="hover:text-site-red">Tutorials & tips</a></li>
           </ul>
         </div>
       </li>
 
-      <li><a href="/#resources" class="hover:text-site-red py-2">Contact & resources</a></li>
-      <li><a href="/gallery" class="hover:text-site-red py-2">Gallery</a></li>
-      <li><a href="/tutorial" class="hover:text-site-red py-2">Tutorials & tips</a></li>
+      <!-- Vertical Divider -->
+      <div class="border-r border-gray-300 h-6 mx-2"></div>
+
+      <li><a href="/#resources" class="hover:text-site-red py-2">Contact</a></li>
     </ul>
 
     <!-- Burger Menu Button (Mobile Only) -->
@@ -105,13 +108,13 @@ import "../styles/global.css";
         <a href="/#values">Values</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="/#skills">Skills & workflow</a>
+        <a href="/#skills">Skills</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
         <a href="/#projects">Projects</a>
       </li>
       <li class="some1 text-center drop-shadow-md py-3 hover:text-[#FF3333] transition duration-300">
-        <a href="/#resources">Contact & resources</a>
+        <a href="/#resources">Contact</a>
       </li>
     </ul>
   </nav>
