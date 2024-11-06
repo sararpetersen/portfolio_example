@@ -25,6 +25,7 @@ import "../styles/global.css";
       <li><a href="/#about" class="hover:text-site-red py-2">About</a></li>
       <li><a href="/#values" class="hover:text-site-red py-2">Values</a></li>
       <li><a href="/#skills" class="hover:text-site-red py-2">Skills</a></li>
+      <li><a href="/#projects" class="hover:text-site-red py-2">Projects</a></li>
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
@@ -44,10 +45,9 @@ import "../styles/global.css";
         </a>
         <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
           <ul>
-            <li class="py-2 px-4 transition duration-300"><a href="/#projects" class="hover:text-site-red">Highlighted projects</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/other" class="hover:text-site-red">Other projects</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/gallery" class="hover:text-site-red">Gallery & media</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/tutorial" class="hover:text-site-red">Tutorials & tips</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/other" class="hover:text-site-red py-2">Other projects</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/gallery" class="hover:text-site-red py-2">Gallery & media</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/tutorial" class="hover:text-site-red py-2">Tutorials & tips</a></li>
           </ul>
         </div>
       </li>
