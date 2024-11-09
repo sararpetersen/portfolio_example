@@ -21,7 +21,7 @@
   p,
   a {
     @apply font-almarai text-lg;
-    @apply text-gray-300;
+    @apply text-[#fafafa];
     @apply drop-shadow-md;
   }
 
