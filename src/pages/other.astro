@@ -12,13 +12,13 @@ import "../styles/global.css";
   <!-- Other Projects Section -->
   <div id="cursor"></div>
   <section id="other-projects" class="container mx-auto py-16 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
-    <h2 class="font-bold text-[#fafafa] max-w-2xl mx-auto md:text-left text-center md:pt-32 pt-24">Other projects</h2>
-    <p class="mt-4 text-[#fafafa] max-w-2xl mx-auto md:text-left text-center leading-7">
+    <h2 class="heading-title font-bold text-[#fafafa] max-w-2xl mx-auto md:text-left text-center md:pt-32 pt-24">Other projects</h2>
+    <p class="heading-text mt-4 text-[#fafafa] max-w-2xl mx-auto md:text-left text-center leading-7">
       In addition to my highlighted projects, there was also the projects that I was least proud of. It's everything from unfinished projects to
       projects that I just don't like. Here are the current ones.
     </p>
 
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="other-projects-grid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Project 1 -->
       <a href="https://sararingkow.dk/kea/04_animation/website/index.html" target="_blank">
         <div id="project-1" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -177,4 +177,25 @@ import "../styles/global.css";
       }
     }
   })();
+
+  /** inView Animations */
+  const elementmedanimation1 = document.querySelector("#other-projects-grid");
+  inView(elementmedanimation1, () => {
+    elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+  });
+
+  const elementmedanimation2 = document.querySelector(".heading-title");
+  inView(elementmedanimation2, () => {
+    elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+  });
+
+  const elementmedanimation3 = document.querySelector(".heading-text");
+  inView(elementmedanimation3, () => {
+    elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+  });
+
+  const elementmedanimation4 = document.querySelector(".button-container");
+  inView(elementmedanimation4, () => {
+    elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+  });
 </script>

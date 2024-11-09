@@ -24,7 +24,7 @@ import "../styles/tobii.min.css";
     </div>
 
     <!-- Media Grid -->
-    <div class="grid-text grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="main grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Media Item 1 -->
       <div class="relative group w-full h-64 overflow-hidden">
         <a href="/images/entrance_exam.webp" class="w-full h-full lightbox">
@@ -480,6 +480,27 @@ import "../styles/tobii.min.css";
   import { animate, inView } from "motion";
   /*Entrance Animation*/
   animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+  /** inView Animations */
+  const elementmedanimation1 = document.querySelector(".main");
+  inView(elementmedanimation1, () => {
+    elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+  });
+
+  const elementmedanimation2 = document.querySelector(".heading-title");
+  inView(elementmedanimation2, () => {
+    elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+  });
+
+  const elementmedanimation3 = document.querySelector(".heading-text");
+  inView(elementmedanimation3, () => {
+    elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+  });
+
+  const elementmedanimation4 = document.querySelector(".button-container");
+  inView(elementmedanimation4, () => {
+    elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+  });
 </script>
 
 <style>
