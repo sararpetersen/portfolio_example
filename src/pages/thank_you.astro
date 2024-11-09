@@ -14,9 +14,9 @@ import "../styles/global.css";
   <!-- Thank you for your submission! -->
   <div class="min-h-screen flex items-center justify-center text-[#fafafa] px-4">
     <div class="max-w-lg w-full text-center space-y-8">
-      <h1 class="text-6xl font-bold">Thank You!</h1>
-      <p class="text-xl leading-7">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
-      <div class="mt-8">
+      <h1 class="heading-title text-6xl font-bold">Thank You!</h1>
+      <p class="heading-text text-xl leading-7">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+      <div class="button-container mt-8">
         <a
           href="./"
           class="form-button relative text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-full md:w-[45%] mt-4 transition duration-300"
@@ -80,6 +80,22 @@ import "../styles/global.css";
           }
         }
       })();
+
+      /** inView Animations */
+      const elementmedanimation1 = document.querySelector(".heading-title");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation2 = document.querySelector(".heading-text");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation3 = document.querySelector(".button-container");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__fadeInRight");
+      });
     </script>
   </div>
 </MainLayout>
