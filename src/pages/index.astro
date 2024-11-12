@@ -11,12 +11,12 @@ import "../styles/global.css";
 >
   <!-- Hero Section -->
   <div id="cursor"></div>
-  <section id="hero" class="relative container md:max-w-3xl max-w-md mx-auto md:text-left text-center py-20">
+  <section id="hero" class="relative container md:max-w-3xl max-w-md mx-auto md:text-left text-center py-16">
     <!-- Content of Hero Section (kept on top with z-index) -->
     <div class="relative z-10">
-      <h1 id="hero-title" class="font-bold text-[#fafafa] tracking-wider md:pt-52 pt-32">Hey there!</h1>
+      <h1 id="hero-title" class="font-bold text-[#fafafa] tracking-wider md:pt-40 pt-60">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-medium text-[#fafafa] mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-gray-300 mt-6 leading-7 mx-auto">
+      <p id="hero-text" class="text-gray-300 mt-6 leading-7 mx-auto md:text-lg text-base">
         Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
         digital experiences. Further down the page, you can read a bit about who I am, look through some of my projects&mdash; highlighted or not &mdash;or
         simply reach out if you have any questions or just want to say hi. <br /><br />Use the navigation menu to navigate around to the different
@@ -25,7 +25,7 @@ import "../styles/global.css";
       <div id="hero-button" class="button-container">
         <a
           href="#projects"
-          class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+          class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
         >
           <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
             View projects <svg
@@ -47,7 +47,7 @@ import "../styles/global.css";
     </div>
   </section>
   <!-- About Section -->
-  <section id="about" class="container mx-auto md:pt-32 pt-12 px-4">
+  <section id="about" class="container mx-auto md:pt-24 pt-8 px-4 py-16">
     <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="text-3xl font-bold text-[#fafafa] md:text-left text-center">About me</h3>
@@ -75,7 +75,7 @@ import "../styles/global.css";
         <div class="flex md:justify-start justify-center w-full mt-8">
           <a
             href="/about_me"
-            class="project-button relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex overflow-hidden group transition duration-300 uppercase"
+            class="project-button relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex overflow-hidden group transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
           >
             <span class="flex items-center gap-2 button-text text-sm relative z-10 w-full text-center uppercase"
               >Read more about me<svg
@@ -102,14 +102,14 @@ import "../styles/global.css";
   </section>
 
   <!-- Values Section -->
-  <div id="values" class="pt-12 md:pt-32">
-    <section class="container mx-auto py-6 px-4">
+  <div id="values" class="pt-12 md:pt-32 my-8 md:my-12">
+    <section class="container mx-auto py-6 px-6 md:px-10">
       <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Values & mission</h3>
         <p class="values-text mt-2 mb-12 text-gray-300 leading-7 text-center md:text-left">
           My journey in design is guided by principles of accessibility, creativity, and inclusivity, <br /> ensuring every user has an exceptional experience.
         </p>
-        <div class="mt-8 space-y-8">
+        <div class="mt-8 space-y-4 md:space-y-8">
           <!-- Value Item 1 -->
           <div class="flex items-start">
             <div class="w-10 h-10 bg-site-red rounded-full flex items-center justify-center text-[#fafafa] font-bold mt-1">1</div>
@@ -149,7 +149,7 @@ import "../styles/global.css";
   </div>
 
   <!-- Skills Section -->
-  <div id="skills" class="md:pt-32 pt-12">
+  <div id="skills" class="pt-16 md:pt-40 my-8 md:my-12">
     <section id="skills" class="container mx-auto py-6 px-4">
       <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Skills & tools</h3>
@@ -192,8 +192,8 @@ import "../styles/global.css";
     </section>
   </div>
   <!-- Workflow Section -->
-  <div id="workflow" class="">
-    <section id="workflow" class="container mx-auto py-6 px-4">
+  <div id="workflow">
+    <section id="workflow-section" class="container max-w-screen-lg mx-auto py-6 px-4">
       <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Process & workflow</h3>
         <p class="mt-2 mb-12 text-gray-300 leading-7 text-center md:text-left">
@@ -262,7 +262,7 @@ import "../styles/global.css";
   <div id="projects" class="md:pt-32 pt-12">
     <section id="project-section" class="container mx-auto px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
       <h3 class="text-3xl font-bold max-w-4xl mx-auto text-[#fafafa] md:text-left text-center pt-10">Highlighted projects</h3>
-      <p class="mt-2 mb-10 text-gray-300 leading-7 max-w-4xl mx-auto md:text-left text-center">
+      <p class="mt-2 mb-10 text-gray-300 leading-7 max-w-4xl mx-auto md:text-left text-center md:text-lg text-base">
         I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
         When taking this sort of course, you're bound to have both favorite and least favorite projects. Because you can't always decide what kind of
         project you have to do. I've decided to highlight some of the projects that I'm most proud of.
@@ -277,7 +277,7 @@ import "../styles/global.css";
         <div class="flex md:justify-start justify-center w-full">
           <a
             href="/other"
-            class="project-button relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex overflow-hidden group transition duration-300 uppercase"
+            class="project-button relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex overflow-hidden group transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
           >
             <span class="flex items-center gap-2 button-text text-sm relative z-10 w-full text-center uppercase"
               >Or see other projects <svg
@@ -317,14 +317,15 @@ import "../styles/global.css";
                 <a
                   href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Entrance exam (1st semester)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">Entrance exam <br /> (1st semester project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/entrance_exam.webp"
-                    alt="Entrance exam"
+                    alt="Screenshot of entrance-exam (frontpage)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This project was my very first project, created as part of the entrance-exam to the multimedia-design course. It's a site that
@@ -336,14 +337,15 @@ import "../styles/global.css";
                 <a
                   href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: UX/UI-site (1st semester project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">UX/UI-site <br /> (1st semester project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/ux_site.webp"
-                    alt="Img"
+                    alt="Screenshot of UX/UI-site (frontpage)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
@@ -356,11 +358,16 @@ import "../styles/global.css";
                 <a
                   href="https://makomiteen.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: The MAK committee (1st semester case-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">The MAK committee <br /> (1st semester case-project)</span>
-                  <img class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0" src="images/mak.webp" alt="Img" />
+                  <img
+                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
+                    src="images/mak.webp"
+                    alt="Screenshot of the MAK committee (frontpage)"
+                  />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
                     organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
@@ -371,14 +378,15 @@ import "../styles/global.css";
                 <a
                   href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Portfolio-site (1st semester exam-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">Portfolio-site <br /> (1st semester exam-project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/1st_portfolio.webp"
-                    alt="Img"
+                    alt="Screenshot of 1st portfolio (frontpage)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the first portfolio-site that I made, which was made as part of my 1st semester exam. Here, we had to make our own
@@ -390,14 +398,15 @@ import "../styles/global.css";
                 <a
                   href="https://t8-karrusel.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Karrusel Festival (2nd semester case-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">Karrusel Festival <br />(2nd semester case-project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/karrusel.webp"
-                    alt="Img"
+                    alt="Screenshot of Karrusel Festival (frontpage)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. This
@@ -409,11 +418,16 @@ import "../styles/global.css";
                 <a
                   href="https://itmv-t9.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: I Tråd Med Verden (2nd semester case-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">I Tråd Med Verden <br />(2nd semester case-project)</span>
-                  <img class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0" src="images/itmv.webp" alt="Img" />
+                  <img
+                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
+                    src="images/itmv.webp"
+                    alt="Screenshot of I Tråd Med Verden (frontpage)"
+                  />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
                       >I Tråd Med Verden</em
@@ -425,14 +439,15 @@ import "../styles/global.css";
                 <a
                   href="https://volander-art.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Volander Art (2nd semester exam-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">Volander Art <br />(2nd semester exam-project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/susse_volander.webp"
-                    alt="Img"
+                    alt="Screenshot of Volander Art (frontpage)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We chose the
@@ -444,8 +459,9 @@ import "../styles/global.css";
                 <a
                   href="https://sd-uperfekterperfekt.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Uperfekt er perfekt (3rd semester mini-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center"
                     >Uperfekt er perfekt <br /> (3rd semester mini-project)</span
@@ -453,7 +469,7 @@ import "../styles/global.css";
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/uperfekt.webp"
-                    alt="Img"
+                    alt="Screenshot of uperfekt er perfekt (top-section)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was a small project that we did before our first 3rd semester case-project. Here, we had to revamp an existing website and
@@ -465,8 +481,9 @@ import "../styles/global.css";
                 <a
                   href="https://srp-profile.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: Digital application (3rd semester side-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center"
                     >Digital application <br /> (3rd semester side-project)</span
@@ -474,7 +491,7 @@ import "../styles/global.css";
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/internship_prep.webp"
-                    alt="Img"
+                    alt="Screenshot of digital application (hero-section)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was a small project, made as part of our internship preparations. Here, we had to make a so-called <em
@@ -487,14 +504,15 @@ import "../styles/global.css";
                 <a
                   href="https://singleusesucks-plasticchange.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
+                  aria-label="View project: #SingleUseSucks (3rd semester case-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center">#SingleUseSucks <br /> (3rd semester case-project)</span>
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="images/singleusesucks.webp"
-                    alt="#SingleUseSucks"
+                    alt="Screenshot of #SingleUseSucks (hero-section)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was the second case-project on 3rd semester. Here, we had to make a site based off of a slogan that Plastic Change, the
@@ -506,9 +524,10 @@ import "../styles/global.css";
                 <!-- Carousel Item 11 -->
                 <a
                   href="https://font-access.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300"
                   style="width: 400px;"
                   target="_blank"
+                  aria-label="View project: ACCESS – selfmade font (3rd semester mini-project)"
                 >
                   <span class="text-[#fafafa] font-bold mb-3 p-2 md:text-left text-center"
                     >ACCESS – selfmade font <br /> (3rd semester mini-project)</span
@@ -516,7 +535,7 @@ import "../styles/global.css";
                   <img
                     class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
                     src="/images/access.webp"
-                    alt="ACCESS"
+                    alt="Screenshot of ACCESS – selfmade font (top-section)"
                   />
                   <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-300">
                     This was a small project that we did before our third 3rd semester case-project. Here, we had make our very own font and then make
@@ -542,13 +561,15 @@ import "../styles/global.css";
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
           <!-- Resource Item -->
-          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+          <div
+            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
+          >
             <h4 class="text-xl font-semibold text-[#fafafa]">Resume (EN)</h4>
             <p class="text-gray-300 mt-2">Look through my resume to get an overview of my professional background.</p>
             <a
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8"
               target="_blank"
-              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
             >
               <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -566,13 +587,15 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+          <div
+            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
+          >
             <h4 class="text-xl font-semibold text-[#fafafa]">Resume (DA)</h4>
             <p class="text-gray-300 mt-2">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
             <a
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056"
               target="_blank"
-              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
             >
               <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -590,13 +613,15 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+          <div
+            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
+          >
             <h4 class="text-xl font-semibold text-[#fafafa]">Application template (EN)</h4>
             <p class="text-gray-300 mt-2">Take a look at what I include when I send out applications.</p>
             <a
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603"
               target="_blank"
-              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
             >
               <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -614,13 +639,15 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+          <div
+            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
+          >
             <h4 class="text-xl font-semibold text-[#fafafa]">Application template (DA)</h4>
             <p class="text-gray-300 mt-2">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
             <a
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693"
               target="_blank"
-              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase"
+              class="relative z-10 text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
             >
               <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -641,9 +668,10 @@ import "../styles/global.css";
       </div>
     </section>
   </div>
-  <!-- Contact Section -->
+
   <section id="contact" class="container mx-auto pb-20 px-4 md:pt-12 pt-16">
-    <div id="contact-info-container">
+    <!-- Contact Information Section -->
+    <div id="contact-info-container" class="mb-8">
       <h3 id="contact-title" class="font-bold text-[#fafafa] md:text-left text-center">Let's talk!</h3>
       <p id="contact-text" class="mt-2 mb-12 text-gray-300 leading-7 md:text-left text-center">
         I'm always eager to connect with new people. <br class="md:block hidden" />Feel free to reach out with any questions or comments. <br
@@ -651,37 +679,41 @@ import "../styles/global.css";
         /> Then I'll get back to you as soon as I can!
       </p>
     </div>
-    <div id="contact-form" class="mt-8 flex flex-col lg:flex-row gap-4">
+
+    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-8 justify-center">
       <!-- Form -->
-      <form class="space-y-4 flex-1" name="contact" method="POST" action="/thank_you" netlify>
+      <form class="space-y-4 flex-1 w-full lg:w-[45%]" name="contact" method="POST" action="/thank_you" netlify>
         <input
           type="text"
           placeholder="Name..."
           name="name"
-          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-site-red"
           required
+          aria-label="Name"
         />
         <input
           type="email"
           placeholder="Email..."
           name="email"
-          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-site-red"
           required
+          aria-label="Email"
         />
         <textarea
           placeholder="Message..."
           name="message"
-          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:border-red-500"
+          class="md:w-[70%] w-full p-3 bg-gray-800 text-gray-300 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-site-red"
           rows="12"
-          required></textarea>
+          required
+          aria-label="Message"></textarea>
         <!-- Button -->
         <div class="button-container mx-auto">
           <button
             type="submit"
-            class="form-button relative text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-full md:w-[15%] mt-4 transition duration-300"
+            class="form-button relative text-[#fafafa] bg-site-red font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-full md:w-[15%] mt-4 transition duration-300 hover:shadow-xl hover:shadow-red-600/50 hover:bg-red-600"
           >
-            <span class="button-text flex justify-center items-center gap-2 text-sm relative z-[1] w-full text-center uppercase"
-              >Send
+            <span class="button-text flex justify-center items-center gap-2 text-sm relative z-[1] w-full text-center uppercase">
+              Send
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
                 <path
                   d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"
@@ -704,14 +736,14 @@ import "../styles/global.css";
         <div id="contact-info" class="p-4 md:p-6 bg-gray-800 rounded-lg shadow-lg">
           <h4 class="text-xl md:text-2xl font-semibold md:text-left text-center text-[#fafafa]">Contact information:</h4>
           <ul class="mt-4 space-y-2 md:text-left text-center">
-            <li class="some1">
-              <strong class="text-lg text-[#fafafa]">Email:</strong><br class="md:hidden block" />
+            <li class="some1 text-lg md:text-base">
+              <strong class="text-[#fafafa]">Email:</strong><br class="md:hidden block" />
               <a href="mailto:sara.ringkow@gmail.com" class="text-gray-300 hover:text-site-red py-1">sara.ringkow@gmail.com</a>
               <span class="text-gray-300">/</span>
               <a href="mailto:sape0003@stud.kea.dk" class="text-gray-300 hover:text-site-red py-1">sape0003@stud.kea.dk</a>
             </li>
-            <li class="some1 md:pt-0 pt-4">
-              <strong class="text-lg text-[#fafafa]">Phone:</strong><br class="md:hidden block" />
+            <li class="some1 md:pt-0 pt-4 text-lg md:text-base">
+              <strong class="text-[#fafafa]">Phone:</strong><br class="md:hidden block" />
               <a href="tel:+4542428807" class="text-gray-300 hover:text-site-red py-1">+45 42 42 88 07</a>
             </li>
           </ul>
@@ -721,23 +753,55 @@ import "../styles/global.css";
   </section>
 
   <style>
-    [data-carousel-prev]:hover span:last-child {
-      transform: translateX(0); /* Moves the background to the center on hover */
+    /* Default animation behavior (for users with no preference) */
+    @media (prefers-reduced-motion: no-preference) {
+      .logo-slider {
+        max-width: 1920px;
+        min-width: 320px;
+        width: 100%;
+        display: flex;
+        padding-block: 5px;
+        overflow: hidden; /* Hide overflow for smoother scrolling */
+      }
+
+      .marquee {
+        display: flex;
+        align-items: center;
+        animation: marquee 120s linear infinite; /* Default speed */
+        justify-content: flex-start; /* Start from the left */
+      }
+
+      .carousel-focus:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
     }
 
-    [data-carousel-next]:hover span:last-child {
-      transform: translateX(0); /* Moves the background to the center on hover */
+    /* Slower animation for reduced motion users */
+    @media (prefers-reduced-motion: reduce) {
+      .logo-slider {
+        max-width: 1920px;
+        min-width: 320px;
+        width: 100%;
+        display: flex;
+        padding-block: 5px;
+        overflow: hidden; /* Hide overflow for smoother scrolling */
+      }
+
+      .marquee {
+        display: flex;
+        align-items: center;
+        animation: marquee-reduced 150s linear infinite; /* Slower animation */
+        justify-content: flex-start;
+      }
+
+      .carousel-focus:hover {
+        transform: scale(1.02); /* Slightly smaller scale for reduced motion */
+        transition: transform 0.3s ease;
+      }
     }
 
-    .logo-slider {
-      max-width: 1920px;
-      min-width: 320px;
-      width: 100%;
-      display: flex;
-      padding-block: 5px;
-      overflow: hidden; /* Hide overflow for smoother scrolling */
-    }
-
+    /* Keyframes for normal-speed marquee */
     @keyframes marquee {
       0% {
         transform: translateX(35%); /* Start from the right */
@@ -747,20 +811,14 @@ import "../styles/global.css";
       }
     }
 
-    .marquee {
-      display: flex;
-      align-items: center;
-      animation: marquee 70s linear infinite; /* Adjust speed as needed */
-      justify-content: flex-start; /* Start from the left */
-    }
-
-    .carousel-focus {
-      margin-right: 15px; /* Space between items */
-    }
-
-    .carousel-focus:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
+    /* Keyframes for reduced motion */
+    @keyframes marquee-reduced {
+      0% {
+        transform: translateX(35%); /* Start from the right */
+      }
+      100% {
+        transform: translateX(-100%); /* Move to the left */
+      }
     }
 
     .button-container a:hover,
