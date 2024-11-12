@@ -18,11 +18,6 @@
     @apply drop-shadow-md;
   }
 
-  p,
-  a {
-    @apply drop-shadow-md;
-  }
-
   span {
     @apply text-2xl;
     @apply drop-shadow-md;
