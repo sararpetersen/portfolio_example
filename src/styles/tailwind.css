@@ -20,8 +20,6 @@
 
   p,
   a {
-    @apply font-almarai text-lg;
-    @apply text-[#fafafa];
     @apply drop-shadow-md;
   }
 
