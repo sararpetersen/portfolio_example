@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "site-red": "#D32F2F",
+        "site-red": "#d32f2f",
       },
 
       fontFamily: {
