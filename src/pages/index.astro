@@ -14,7 +14,7 @@ import "../styles/global.css";
   <section id="hero" class="relative container md:max-w-3xl max-w-md mx-auto md:text-left text-center py-16">
     <!-- Content of Hero Section (kept on top with z-index) -->
     <div class="relative z-10">
-      <h1 id="hero-title" class="font-bold text-[#fafafa] tracking-wider md:pt-40 pt-60">Hey there!</h1>
+      <h1 id="hero-title" class="font-bold text-[#fafafa] tracking-wider md:pt-52 pt-60">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-medium text-[#fafafa] mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
       <p id="hero-text" class="text-gray-300 mt-6 leading-7 mx-auto md:text-lg text-base">
         Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
@@ -47,7 +47,7 @@ import "../styles/global.css";
     </div>
   </section>
   <!-- About Section -->
-  <section id="about" class="container mx-auto md:pt-24 pt-8 px-4 py-16">
+  <section id="about" class="container max-w-screen-xl mx-auto md:pt-24 pt-8 py-12 px-6">
     <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="text-3xl font-bold text-[#fafafa] md:text-left text-center">About me</h3>
@@ -102,8 +102,8 @@ import "../styles/global.css";
   </section>
 
   <!-- Values Section -->
-  <div id="values" class="pt-12 md:pt-32 my-8 md:my-12">
-    <section class="container mx-auto py-6 px-6 md:px-10">
+  <div id="values" class="pt-12 md:pt-20 py-12 px-6">
+    <section class="container max-w-screen-xl mx-auto py-6 px-4 md:px-10">
       <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Values & mission</h3>
         <p class="values-text mt-2 mb-12 text-gray-300 leading-7 text-center md:text-left">
@@ -149,8 +149,8 @@ import "../styles/global.css";
   </div>
 
   <!-- Skills Section -->
-  <div id="skills" class="pt-16 md:pt-40 my-8 md:my-12">
-    <section id="skills" class="container mx-auto py-6 px-4">
+  <div id="skills" class="pt-8 md:pt-20 py-4 px-6">
+    <section id="skills" class="container max-w-screen-lg mx-auto py-6 px-4">
       <div class="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Skills & tools</h3>
         <p class="mt-2 mb-12 text-gray-300 leading-7 text-center md:text-left">
@@ -259,8 +259,8 @@ import "../styles/global.css";
     </section>
   </div>
   <!-- Projects Section -->
-  <div id="projects" class="md:pt-32 pt-12">
-    <section id="project-section" class="container mx-auto px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
+  <div id="projects" class="md:pt-20 py-12 px-6">
+    <section id="project-section" class="container max-w-screen-xl mx-auto py-6 px-4 bg-gray-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
       <h3 class="text-3xl font-bold max-w-4xl mx-auto text-[#fafafa] md:text-left text-center pt-10">Highlighted projects</h3>
       <p class="mt-2 mb-10 text-gray-300 leading-7 max-w-4xl mx-auto md:text-left text-center md:text-lg text-base">
         I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
@@ -552,8 +552,8 @@ import "../styles/global.css";
   </div>
 
   <!-- Resources Section -->
-  <div id="resources" class="md:pt-32 pt-12">
-    <section id="resources" class="container mx-auto py-6 px-4">
+  <div id="resources" class="md:pt-20 py-12 px-6">
+    <section id="resources" class="container max-w-screen-lg mx-auto py-6 px-4">
       <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-[#fafafa] text-center md:text-left">Resources</h3>
         <p class="mt-2 mb-12 text-gray-300 leading-7 text-center md:text-left">
@@ -561,9 +561,7 @@ import "../styles/global.css";
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
           <!-- Resource Item -->
-          <div
-            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
-          >
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-[#fafafa]">Resume (EN)</h4>
             <p class="text-gray-300 mt-2">Look through my resume to get an overview of my professional background.</p>
             <a
@@ -587,9 +585,7 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div
-            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
-          >
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-[#fafafa]">Resume (DA)</h4>
             <p class="text-gray-300 mt-2">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
             <a
@@ -613,9 +609,7 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div
-            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
-          >
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-[#fafafa]">Application template (EN)</h4>
             <p class="text-gray-300 mt-2">Take a look at what I include when I send out applications.</p>
             <a
@@ -639,9 +633,7 @@ import "../styles/global.css";
             </a>
           </div>
           <!-- Resource Item -->
-          <div
-            class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300"
-          >
+          <div class="flex flex-col items-center bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-[#fafafa]">Application template (DA)</h4>
             <p class="text-gray-300 mt-2">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
             <a
@@ -882,7 +874,7 @@ import "../styles/global.css";
       elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
-    const elementmedanimation8 = document.querySelector("#contact-form");
+    const elementmedanimation8 = document.querySelector("#contact-form-container");
     inView(elementmedanimation8, () => {
       elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
     });
