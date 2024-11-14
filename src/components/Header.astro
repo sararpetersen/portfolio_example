@@ -2,7 +2,7 @@
 import "../styles/global.css";
 ---
 
-<header class="fixed top-0 left-0 right-0 p-4 bg-gray-800 text-[#f9f9f9] shadow-md z-50" x-data="{ showmenu: false, showDropdown: false }">
+<header class="fixed top-0 left-0 right-0 p-4 bg-blue-800 text-grey-500 shadow-md z-50" x-data="{ showmenu: false, showDropdown: false }">
   <nav class="container mx-auto flex justify-between items-center">
     <!-- Logo Section -->
     <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out group w-20 h-20">
@@ -22,14 +22,14 @@ import "../styles/global.css";
 
     <!-- Desktop Navigation -->
     <ul class="some1 hidden lg:flex space-x-6 items-center">
-      <li><a href="/#about" class="hover:text-site-red py-2 text-base">About</a></li>
-      <li><a href="/#values" class="hover:text-site-red py-2 text-base">Values</a></li>
-      <li><a href="/#skills" class="hover:text-site-red py-2 text-base">Skills</a></li>
-      <li><a href="/#projects" class="hover:text-site-red py-2 text-base">Projects</a></li>
+      <li><a href="/#about" class="hover:text-red-500 py-2 text-base">About</a></li>
+      <li><a href="/#values" class="hover:text-red-500 py-2 text-base">Values</a></li>
+      <li><a href="/#skills" class="hover:text-red-500 py-2 text-base">Skills</a></li>
+      <li><a href="/#projects" class="hover:text-red-500 py-2 text-base">Projects</a></li>
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
-        <a href="#" class="hover:text-site-red py-2 flex items-center text-base">
+        <a href="#" class="hover:text-red-500 py-2 flex items-center text-base">
           Explore
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -43,12 +43,12 @@ import "../styles/global.css";
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
           </svg>
         </a>
-        <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
+        <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-48 bg-blue-800 border border-gray-700 rounded-lg shadow-lg z-10">
           <ul>
-            <li class="py-2 px-4 transition duration-300"><a href="/other" class="hover:text-site-red py-2 text-base">Other projects</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/about_me" class="hover:text-site-red py-2 text-base">More about me</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/gallery" class="hover:text-site-red py-2 text-base">Gallery & media</a></li>
-            <li class="py-2 px-4 transition duration-300"><a href="/tutorial" class="hover:text-site-red py-2 text-base">Tutorials & tips</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/other" class="hover:text-red-500 py-2 text-base">Other projects</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/about_me" class="hover:text-red-500 py-2 text-base">More about me</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/gallery" class="hover:text-red-500 py-2 text-base">Gallery & media</a></li>
+            <li class="py-2 px-4 transition duration-300"><a href="/tutorial" class="hover:text-red-500 py-2 text-base">Tutorials & tips</a></li>
           </ul>
         </div>
       </li>
@@ -56,7 +56,7 @@ import "../styles/global.css";
       <!-- Vertical Divider -->
       <div class="border-r border-[#fafafa] h-6 mx-2"></div>
 
-      <li><a href="/#resources" class="hover:text-site-red py-2 text-base">Contact</a></li>
+      <li><a href="/#resources" class="hover:text-red-500 py-2 text-base">Contact</a></li>
     </ul>
 
     <!-- Burger Menu Button (Mobile Only) -->
@@ -68,7 +68,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 text-gray-200 hover:text-site-red transition duration-300"
+          class="size-8 text-gray-200 hover:text-red-500 transition duration-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -80,7 +80,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 text-gray-200 hover:text-site-red transition duration-300"
+          class="size-8 text-gray-200 hover:text-red-500 transition duration-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
@@ -99,34 +99,34 @@ import "../styles/global.css";
     style="display: none;"
   >
     <ul>
-      <li class="some1 text-center drop-shadow-md py-3 hover:text-site-red transition duration-300">
-        <a href="/#hero" class="some1 text-base text-center drop-shadow-md py-3 hover:text-site-red transition duration-300">Home</a>
+      <li class="some1 text-center drop-shadow-md py-3 hover:text-red-500 transition duration-300">
+        <a href="/#hero" class="some1 text-base text-center drop-shadow-md py-3 hover:text-red-500 transition duration-300">Home</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/#about">About</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/#values">Values & mission</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/#skills">Skills & workflow</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/#projects">Highlighted projects</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/#resources">Contact & resources</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/other">Other projects</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/about_me">More about me</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/gallery">Gallery & media</a>
       </li>
-      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-site-red transition duration-300">
+      <li class="some1 text-center text-base drop-shadow-md py-3 hover:text-red-500 transition duration-300">
         <a href="/tutorial">Tutorials & tips</a>
       </li>
     </ul>
