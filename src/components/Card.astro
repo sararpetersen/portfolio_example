@@ -1,0 +1,21 @@
+---
+const { url = null, image, title, description, ariaLabel = "" } = Astro.props;
+---
+
+{
+  url ? (
+    <a href={url} target="_blank" aria-label={ariaLabel} class="group">
+      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div class="h-[300px] bg-cover bg-center rounded-t-lg" style={`background-image: url(${image});`} />
+        <h3 class="text-xl font-semibold text-grey-500 mt-4">{title}</h3>
+        <p class="text-gray-300 mt-2 leading-7">{description}</p>
+      </div>
+    </a>
+  ) : (
+    <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div class="h-[300px] bg-cover bg-center rounded-t-lg" style={`background-image: url(${image});`} />
+      <h3 class="text-xl font-semibold text-grey-500 mt-4">{title}</h3>
+      <p class="text-gray-300 mt-2 leading-7">{description}</p>
+    </div>
+  )
+}

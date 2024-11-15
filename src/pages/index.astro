@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import AboutBtn from "../components/AboutBtn.astro";
+import ResourcesBtn from "../components/ResourcesBtn.astro";
 import ProjectsBtn from "../components/ProjectsBtn.astro";
 import OtherBtn from "../components/OtherBtn.astro";
 import Form from "../components/Form.astro";
@@ -508,97 +509,25 @@ import Form from "../components/Form.astro";
           <div class="flex flex-col items-center bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-grey-500">Resume (EN)</h4>
             <p class="text-gray-300 mt-2">Look through my resume to get an overview of my professional background.</p>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8"
-              target="_blank"
-              class="relative z-10 text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
-            >
-              <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
-                  ></path>
-                </svg>
-                See more
-              </span>
-              <span
-                class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
-              ></span>
-            </a>
+            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8" label="SEE MORE" />
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col items-center bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-grey-500">Resume (DA)</h4>
             <p class="text-gray-300 mt-2">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056"
-              target="_blank"
-              class="relative z-10 text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
-            >
-              <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
-                  ></path>
-                </svg>
-                Se mere
-              </span>
-              <span
-                class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
-              ></span>
-            </a>
+            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056" label="SE MERE" />
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col items-center bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-grey-500">Application template (EN)</h4>
             <p class="text-gray-300 mt-2">Take a look at what I include when I send out applications.</p>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603"
-              target="_blank"
-              class="relative z-10 text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
-            >
-              <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
-                  ></path>
-                </svg>
-                See more
-              </span>
-              <span
-                class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
-              ></span>
-            </a>
+            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603" label="SEE MORE" />
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col items-center bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md text-center">
             <h4 class="text-xl font-semibold text-grey-500">Application template (DA)</h4>
             <p class="text-gray-300 mt-2">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693"
-              target="_blank"
-              class="relative z-10 text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
-            >
-              <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
-                  ></path>
-                </svg>
-                Se mere
-              </span>
-              <span
-                class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
-              ></span>
-            </a>
+            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693" label="SE MERE" />
           </div>
         </div>
       </div>

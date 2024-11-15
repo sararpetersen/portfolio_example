@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import HomepageBtn from "../components/HomepageBtn.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout
@@ -19,77 +20,36 @@ import HomepageBtn from "../components/HomepageBtn.astro";
     </p>
 
     <div id="other-projects-grid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Project 1 -->
-      <a href="https://sararingkow.dk/kea/04_animation/website/index.html" target="_blank" aria-label="View project: Animation-site (1st semester)">
-        <div id="project-1" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/animation-site.webp');"></div>
-          <h3 class="text-xl font-semibold text-grey-500 mt-4">Animation-site <br /> (1st semester project)</h3>
-          <p class="text-gray-300 mt-2 leading-7">
-            This project was the third project on 1st semester. Here, we had to make a game from scratch using JavaScript and CSS. Things were looking
-            good, until it didn't. I messed up big time on the coding-part, which resulted in the game not working at all. I also didn't manage to
-            make a proper landing-page for it, because making the game itself took me a lot of time.
-          </p>
-        </div>
-      </a>
-
-      <!-- Project 2 -->
-      <a href="https://sararingkow.github.io/videosite_v3/" target="_blank" aria-label="View project: Video-site (1st semester)">
-        <div id="project-2" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/videosite.webp');"></div>
-          <h3 class="text-xl font-semibold text-grey-500 mt-4">Video-site (1st semester project)</h3>
-          <p class="text-gray-300 mt-2 leading-7">
-            This project was the fourth project on 1st semester. Here, we had to go out and film an interview of a person with a certain passion, and
-            then make a site for it. Although I am proud of the video-product itself, I'm not so proud of the site that I made for it. I feel like I
-            could've done so much more with it to capture the essence of the person we had interviewed, but I just think it's so messy and hastily
-            done.
-          </p>
-        </div>
-      </a>
-
-      <!-- Project 3 -->
-      <a href="https://vild-mad.netlify.app/" target="_blank" aria-label="View project: Vild Mad (2nd semester case-project)">
-        <div id="project-3" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/vildmad.webp');"></div>
-          <h3 class="text-xl font-semibold text-grey-500 mt-4">Vild Mad<br /> (2nd semester case-project)</h3>
-          <p class="text-gray-300 mt-2 leading-7">
-            This project was the first case-project on 2nd semester. Here, we had to make a website&mdash; subsequent to the original &mdash;for an
-            organisation called <em>Vild Mad</em>. If I hadn't ended up in a group with a bad work-dynamic, I think this project would've turned out
-            great. We just couldn't make things work, and we were really falling behind&mdash; partly because of one group-member.
-          </p>
-        </div>
-      </a>
-
-      <!-- Project 4 -->
-      <a
-        href="https://digitalskraldedag-dk.netlify.app/"
-        target="_blank"
-        aria-label="View project: Digital Skraldedag 2025 (3rd semester case-project)"
-      >
-        <div id="project-4" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/digital_cleanup_day.webp');"></div>
-          <h3 class="text-xl font-semibold text-grey-500 mt-4">Digital Skraldedag 2025 <br /> (3rd semester case-project)</h3>
-          <p class="text-gray-300 mt-2 leading-7">
-            This project was the first case-project on 3rd semester. Here, we had to make a Danish pendant to a campaign called <em
-              >Digital Cleanup Day</em
-            >. In the beginning, I really liked where we were going with this project. But, I just didn't like the way it ended up turning out. It
-            didn't work as well as I had hoped, and I just think it just looks messy, unprofessional and unfinished.
-          </p>
-        </div>
-      </a>
-
-      <!-- Project 5 -->
-      <div id="project-5" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-        <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/404_error.webp');"></div>
-        <h3 class="text-xl font-semibold text-grey-500 mt-4">No project yet</h3>
-        <p class="text-gray-300 mt-2 leading-7">No project has been done yet. Please stay tuned.</p>
-      </div>
-
-      <!-- Project 6 -->
-      <div id="project-6" class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
-        <div class="h-[300px] bg-cover bg-center rounded-t-lg" style="background-image: url('/images/404_error.webp');"></div>
-        <h3 class="text-xl font-semibold text-grey-500 mt-4">No project yet</h3>
-        <p class="text-gray-300 mt-2 leading-7">No project has been done yet. Please stay tuned.</p>
-      </div>
+      <Card
+        url="https://sararingkow.dk/kea/04_animation/website/index.html"
+        image="/images/animation-site.webp"
+        title="Animation-site (1st semester project)"
+        description="This project was the third project on 1st semester. Here, we had to make a game from scratch using JavaScript and CSS. Things were looking good, until it didn't. I messed up big time on the coding-part, which resulted in the game not working at all. I also didn't manage to make a proper landing-page for it, because making the game itself took me a lot of time."
+        ariaLabel="View project: Animation-site (1st semester)"
+      />
+      <Card
+        url="https://sararingkow.github.io/videosite_v3/"
+        image="/images/videosite.webp"
+        title="Video-site (1st semester project)"
+        description="This project was the fourth project on 1st semester. Here, we had to go out and film an interview of a person with a certain passion, and then make a site for it. Although I am proud of the video-product itself, I'm not so proud of the site that I made for it. I feel like I could've done so much more with it, but I just think it's so messy and hastily done."
+        ariaLabel="View project: Video-site (1st semester)"
+      />
+      <Card
+        url="https://vild-mad.netlify.app/"
+        image="/images/vildmad.webp"
+        title="Vild Mad (2nd semester case-project)"
+        description="This project was the first case-project on 2nd semester. Here, we had to make a website— subsequent to the original —for an organisation called Vild Mad. If I hadn't ended up in a group with a bad work-dynamic, I think this project would've turned out great. We just couldn't make things work, and we were really falling behind— partly because of one group-member."
+        ariaLabel="View project: Vild Mad (2nd semester case-project)"
+      />
+      <Card
+        url="https://digitalskraldedag-dk.netlify.app/"
+        image="/images/digital_cleanup_day.webp"
+        title="Digital Skraldedag 2025 (3rd semester case-project)"
+        description="This project was the first case-project on 3rd semester. Here, we had to make a Danish pendant to a campaign called Digital Cleanup Day. In the beginning, I really liked where we were going with this project. But, I just didn't like the way it ended up turning out. It didn't work as well as I had hoped, and I just think it just looks messy, unprofessional and unfinished."
+        ariaLabel="View project: Digital Skraldedag 2025 (3rd semester case-project)"
+      />
+      <Card image="/images/404_error.webp" title="No project yet" description="No project has been done yet. Please stay tuned." />
+      <Card image="/images/404_error.webp" title="No project yet" description="No project has been done yet. Please stay tuned." />
     </div>
   </section>
 

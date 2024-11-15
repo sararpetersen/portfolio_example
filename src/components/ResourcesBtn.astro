@@ -1,0 +1,23 @@
+---
+const { url, label } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  class="relative z-10 text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-6 py-3 inline-flex items-center justify-center overflow-hidden group mt-8 transition duration-300 uppercase hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
+>
+  <span class="button-text flex items-center gap-2 text-sm relative z-10 w-full text-center uppercase">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+      ></path>
+    </svg>
+    {label}
+  </span>
+  <span
+    class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
+  ></span>
+</a>
