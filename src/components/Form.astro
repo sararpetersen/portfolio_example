@@ -1,0 +1,49 @@
+---
+
+---
+
+<!-- Form -->
+<form class="space-y-4 flex-1 w-full lg:w-[45%]" name="contact" method="POST" action="/thank_you" netlify>
+  <input
+    type="text"
+    placeholder="Name..."
+    name="name"
+    class="md:w-[70%] w-full p-3 bg-blue-800 text-grey-500 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+    required
+    aria-label="Name"
+  />
+  <input
+    type="email"
+    placeholder="Email..."
+    name="email"
+    class="md:w-[70%] w-full p-3 bg-blue-800 text-grey-500 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+    required
+    aria-label="Email"
+  />
+  <textarea
+    placeholder="Message..."
+    name="message"
+    class="md:w-[70%] w-full p-3 bg-blue-800 text-grey-500 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+    rows="12"
+    required
+    aria-label="Message"></textarea>
+  <!-- Button -->
+  <div class="button-container mx-auto">
+    <button
+      type="submit"
+      class="form-button relative text-grey-500 bg-red-500 font-bold rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center overflow-hidden group w-full md:w-[15%] mt-4 transition duration-300 hover:shadow-lg hover:shadow-red-500 hover:bg-red-600"
+    >
+      <span class="button-text flex justify-center items-center gap-2 text-sm relative z-[1] w-full text-center uppercase">
+        Send
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+          <path
+            d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"
+          ></path>
+        </svg>
+      </span>
+      <span
+        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 transition-all duration-500 ease-in-out translate-x-full group-hover:translate-x-0"
+      ></span>
+    </button>
+  </div>
+</form>
