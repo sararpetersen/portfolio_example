@@ -10,14 +10,14 @@ const { title, subtitle, subtitleBreak = false, description, link, ariaLabel, ex
       subtitleBreak ? (
         <>
           <br />
-          <em class="text-gray-400">({subtitle})</em>
+          <em class="text-grey-500">({subtitle})</em>
         </>
       ) : (
-        <em class="text-gray-400"> ({subtitle})</em>
+        <em class="text-grey-600"> ({subtitle})</em>
       )
     }
   </h3>
-  <p class="mt-6 text-gray-300">{description}</p>
+  <p class="mt-6 text-grey-600">{description}</p>
   {
     extraSpacing && (
       <>
