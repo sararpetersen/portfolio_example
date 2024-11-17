@@ -1,20 +1,36 @@
 ---
-const { url = null, image, title, description, ariaLabel = "" } = Astro.props;
+// src/components/Card.astro
+const {
+  url = null,
+  image,
+  titleMain, // First part of the title
+  titleSub = "", // Second part of the title, optional
+  description,
+  ariaLabel = "",
+} = Astro.props;
 ---
 
 {
   url ? (
     <a href={url} target="_blank" aria-label={ariaLabel} class="group">
-      <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition duration-500 group-hover:bg-[#445165]">
         <div class="h-[300px] bg-cover bg-center rounded-t-lg" style={`background-image: url(${image});`} />
-        <h3 class="text-xl font-semibold text-grey-500 mt-4">{title}</h3>
+        <h3 class="text-xl font-semibold text-grey-500 mt-4">
+          {titleMain}
+          <br />
+          {titleSub}
+        </h3>
         <p class="text-grey-600 mt-2 leading-7">{description}</p>
       </div>
     </a>
   ) : (
-    <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+    <div class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition duration-500 group-hover:bg-[#445165]">
       <div class="h-[300px] bg-cover bg-center rounded-t-lg" style={`background-image: url(${image});`} />
-      <h3 class="text-xl font-semibold text-grey-500 mt-4">{title}</h3>
+      <h3 class="text-xl font-semibold text-grey-500 mt-4">
+        {titleMain}
+        <br />
+        {titleSub}
+      </h3>
       <p class="text-grey-600 mt-2 leading-7">{description}</p>
     </div>
   )
