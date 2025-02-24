@@ -22,7 +22,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
   </section>
 
   <!-- Personal Background Section -->
-  <section id="personal-background" class="container max-w-screen-xl mx-auto md:pt-8 pt-4 py-6 px-4">
+  <section id="personal-background" class="container max-w-screen-xl mx-auto md:pt-8 pt-4">
     <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="text-3xl font-bold text-grey-500">My journey</h3>
@@ -63,8 +63,8 @@ import HomepageBtn from "../components/HomepageBtn.astro";
     </div>
   </section>
   <!-- Personal Philosophy Section -->
-  <div id="philosophy" class="md:pt-8 pt-12">
-    <section class="container bg-opacity-80 max-w-screen-lg mx-auto py-6 px-4 z-10">
+  <div id="philosophy" class="md:pt-20 pt-16">
+    <section class="container bg-opacity-80 max-w-screen-lg mx-auto z-10">
       <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-grey-500">Personal philosophy</h3>
         <p class="mt-4 text-grey-600 mx-auto md:max-w-full">
@@ -93,19 +93,11 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div class="flex items-start">
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
             <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Growth through collaboration</h4>
-              <p class="text-grey-600 text-base">Collaboration sparks creativity and new perspectives, helping me grow with each project.</p>
-            </div>
-          </div>
-          <!-- Philosophy Item 4 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Inclusive communication</h4>
               <p class="text-grey-600 text-base">Open communication creates supportive environments where everyone can thrive.</p>
             </div>
           </div>
-          <!-- Philosophy Item 5 -->
+          <!-- Philosophy Item 4 -->
           <div class="flex items-start">
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
             <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
@@ -119,19 +111,18 @@ import HomepageBtn from "../components/HomepageBtn.astro";
   </div>
 
   <!-- Interests & Hobbies Section -->
-  <div id="interests" class="pt-12 md:pt-8">
-    <section class="container max-w-screen-xl mx-auto px-4">
+  <div id="interests" class="md:pt-20 pt-16">
+    <section class="container max-w-screen-xl mx-auto">
       <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-grey-500">Interests & hobbies</h3>
         <p class="mt-4 text-grey-600">
           Outside of my professional pursuits, I have a diverse range of interests. Whether it's about being creative, nerding out about different
           things, or simply just doing something entertaining&mdash; I always have or come up with something to do during my spare-time.
         </p>
-        <div class="mt-8 space-y-8">
+        <div class="grid md:grid-cols-2 grid-cols-1 mt-12 gap-12">
           <!-- Interest Item 1 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Reading</h4>
               <p class="text-grey-600 text-base">
                 From fantasy, crime, YA, and everything in between, books are an ideal way to challenge my mind and imagination.
@@ -139,9 +130,8 @@ import HomepageBtn from "../components/HomepageBtn.astro";
             </div>
           </div>
           <!-- Interest Item 2 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Gaming</h4>
               <p class="text-grey-600 text-base">
                 From Nintendo-classics to modern adventures, I find gaming a great way to unwind, escape from reality, and forget the daily struggles.
@@ -149,9 +139,8 @@ import HomepageBtn from "../components/HomepageBtn.astro";
             </div>
           </div>
           <!-- Interest Item 3 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Crafting & DIY</h4>
               <p class="text-grey-600 text-base">
                 I love getting hands-on with projects like drawing, making keychains, and creating bead-plates to keep my mind busy.
@@ -159,19 +148,17 @@ import HomepageBtn from "../components/HomepageBtn.astro";
             </div>
           </div>
           <!-- Interest Item 4 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">YouTube-content</h4>
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
+              <h4 class="text-xl font-semibold text-grey-500">Youtube-content</h4>
               <p class="text-grey-600 text-base">
                 I always find something to watch on YouTube during my downtime&mdash; whether it's tech, movies, music, lifestyle, or gaming.
               </p>
             </div>
           </div>
           <!-- Interest Item 5 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Watching movies & TV series</h4>
               <p class="text-grey-600 text-base">
                 Watching a movie or a TV series, every now and then, is a nice way for me to unwind and refresh my mind&mdash; just like with
@@ -180,19 +167,8 @@ import HomepageBtn from "../components/HomepageBtn.astro";
             </div>
           </div>
           <!-- Interest Item 6 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Working out</h4>
-              <p class="text-grey-600 text-base">
-                I find regular exercise to be a wonderful way to stay healthy and motivated, on both a physical and mental level.
-              </p>
-            </div>
-          </div>
-          <!-- Interest Item 7 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
+          <div>
+            <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Photography</h4>
               <p class="text-grey-600 text-base">
                 Whether it's moments, landscapes, or something else entirely, I always find time to capture the world around me.
