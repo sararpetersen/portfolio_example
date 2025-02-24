@@ -3,9 +3,9 @@ import "../styles/global.css";
 ---
 
 <footer class="bg-blue-800 py-6">
-  <div class="container mx-auto flex flex-col items-center md:flex-row md:justify-evenly md:items-start">
+  <div class="container mx-auto flex flex-col items-start md:flex-row md:justify-evenly">
     <!-- Logo -->
-    <div id="footer-logo" class="flex justify-center items-center relative font-bold transition-opacity duration-300 ease-in-out group mb-4 md:mb-0">
+    <div id="footer-logo" class="flex justify-center items-center relative font-bold transition-opacity duration-300 ease-in-out group mb-8 md:mb-0">
       <a href="/" class="relative inline-block w-20 h-20">
         <img
           src="/logo.svg"
@@ -21,8 +21,8 @@ import "../styles/global.css";
     </div>
 
     <!-- Navigation Links -->
-    <nav class="some1 flex md:flex-row flex-col items-center md:text-center text-left mb-4 md:mb-0 gap-8">
-      <div class="flex flex-col items-center md:items-start">
+    <nav class="some1 flex md:flex-row flex-col items-start md:ml-0 ml-4 mb-8 md:mb-0 gap-8">
+      <div class="flex flex-col items-start">
         <a href="/" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">Home</a>
         <a href="/#about" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">About</a>
         <a href="/#values" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">Values & mission</a>
@@ -30,7 +30,7 @@ import "../styles/global.css";
         <a href="/#projects" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">Highlighted projects</a>
       </div>
 
-      <div class="flex flex-col items-center md:items-start md:text-center text-left mb-4 md:mb-0 ml-4">
+      <div class="flex flex-col items-start mb-4 md:mb-0">
         <!-- Add ml-4 for spacing -->
         <a href="/#resources" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">Contact & resources</a>
         <a href="/other" class="hover:text-red-500 mb-2 dark:text-grey-600 text-base">Other projects</a>
@@ -41,9 +41,9 @@ import "../styles/global.css";
     </nav>
 
     <!-- Social Media Links -->
-    <div id="footer-social" class="flex flex-col items-center text-center mb-4 md:mb-0">
+    <div id="footer-social" class="flex flex-col md:items-center items-start mb-8 md:ml-0 ml-4 md:mb-0">
       <h1 class="dark:text-grey-500 font-bold text-lg mb-4 uppercase">Follow me on social media</h1>
-      <div class="flex space-x-3 justify-evenly max-w-xs gap-2">
+      <div class="flex space-x-3 justify-evenly max-w-xs">
         <a href="https://www.facebook.com/profile.php?id=61558070190613" target="_blank" aria-label="Facebook">
           <svg
             class="w-[40] h-[40] dark:text-grey-500 hover:text-red-500 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
@@ -98,7 +98,7 @@ import "../styles/global.css";
     </div>
 
     <!-- Contact Information -->
-    <div id="footer-contact" class="flex flex-col items-center md:items-start md:text-center text-left md:mt-0 mt-8 mb-4 md:mb-0">
+    <div id="footer-contact" class="flex flex-col items-start md:mt-0 mt-8 mb-8 md:ml-0 ml-4 md:mb-0">
       <h1 class="text-lg font-bold mb-2 uppercase dark:text-grey-500">Contact me</h1>
       <div class="some1 flex items-center">
         <svg
