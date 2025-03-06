@@ -1,10 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
-import AboutBtn from "../components/AboutBtn.astro";
-import ResourcesBtn from "../components/ResourcesBtn.astro";
-import ProjectsBtn from "../components/ProjectsBtn.astro";
-import OtherBtn from "../components/OtherBtn.astro";
+import Button from "../components/Button.astro";
 import Form from "../components/Form.astro";
 ---
 
@@ -15,50 +12,55 @@ import Form from "../components/Form.astro";
   ogdescription="Portfolio-site for Sara Ringkow Petersen"
 >
   <!-- Hero Section -->
-  <section id="hero" class="relative container max-w-3xl mx-auto py-16">
+  <section id="hero" class="relative container max-w-4xl mx-auto py-16">
     <!-- Content of Hero Section (kept on top with z-index) -->
     <div class="relative z-10">
-      <h1 id="hero-title" class="font-bold text-grey-500 tracking-wider md:pt-44 pt-32">Hey there!</h1>
-      <h2 id="hero-subtitle" class="font-medium text-grey-500 mt-4 mb-12 tracking-widest">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-grey-600 mt-6 md:mx-auto md:max-w-3xl max-w-md">
+      <h1 id="hero-title" class="display font-bold text-grey-500 tracking-wider md:mt-desktop-top mt-mobil-top pt-8">Hey there!</h1>
+      <h2 id="hero-subtitle" class="font-medium text-grey-500 mt-8 mb-12 tracking-widest">Welcome to my portfolio</h2>
+      <p id="hero-text" class="text-grey-600 mt-6 md:mx-auto md:max-w-4xl max-w-md">
         Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
         digital experiences. Further down the page, you can read a bit about who I am, look through some of my projects&mdash; highlighted or not &mdash;or
         simply reach out if you have any questions or just want to say hi. <br /><br />Use the navigation menu to navigate around to the different
         sections or subpages, or click the button down below to go directly to my projects.
       </p>
-      <div id="hero-button" class="button-container">
-        <ProjectsBtn />
+      <div id="hero-button" class="pt-8">
+        <a class="btn_container" href="/#projects">
+          <Button variant="primary" size="small">View projects</Button>
+        </a>
       </div>
     </div>
   </section>
   <!-- About Section -->
-  <section id="about" class="container max-w-screen-xl mx-auto md:pt-20 pt-16 py-6 px-4">
-    <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+  <section id="about" class="container max-w-screen-xl mx-auto md:mt-desktop-top mt-mobil-top py-6 px-4">
+    <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25 flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
         <h3 class="font-bold text-grey-500 md:max-w-3xl max-w-md">About me</h3>
         <p class="mt-2 text-grey-600">
-          As a multimedia-designer, I <span class="highlight-text text-red-500 font-bold text-base">specialise</span> in UX and web design, with a strong
-          focus on <span class="highlight-text text-red-500 font-bold text-base">accessibility</span> and inclusive design. I have a deep understanding
-          of the meaning of design, its impact on usability, and the overall importance of creating visually engaging and user-friendly interfaces. As
-          someone who's <span class="highlight-text text-red-500 font-bold text-base">late-diagnosed</span>
+          As a multimedia-designer, I <span class="highlight-text text-red-500 font-bold">specialise</span> in UX and web design, with a strong focus on
+          <span class="highlight-text text-red-500 font-bold">accessibility</span> and inclusive design. I have a deep understanding of the meaning of
+          design, its impact on usability, and the overall importance of creating visually engaging and user-friendly interfaces. As someone who's <span
+            class="highlight-text text-red-500 font-bold">late-diagnosed</span
+          >
           with autism, I know what it's like to be a person who's not fully capable of certain things and have limited understanding of the world around
-          them. This has led me to my <span class="highlight-text text-red-500 font-bold text-base">main goal</span>&mdash; to create digital
-          experiences that are accessible and inclusive for all users, regardless of their disabilities.
+          them. This has led me to my <span class="highlight-text text-red-500 font-bold">main goal</span>&mdash; to create digital experiences that
+          are accessible and inclusive for all users, regardless of their disabilities.
         </p>
         <p class="mt-4 text-grey-600 md:max-w-3xl max-w-sm">
-          <span class="highlight-text text-red-500 font-bold text-base">Creativity</span> is at the heart of everything I do, driving me to explore the
-          world of design with enthusiasm and curiosity. Each project
-          <span class="highlight-text text-red-500 font-bold text-base">presents a chance</span> to transform ideas into meaningful experiences. I thrive
-          on the excitement of
-          <span class="highlight-text text-red-500 font-bold text-base">experimenting with new techniques</span> and discovering innovative ways to bring
-          concepts to life. As I journey through this ever-evolving field, I look forward to <span
-            class="highlight-text text-red-500 font-bold text-base">embracing new challenges</span
-          > and forging connections that <span class="highlight-text text-red-500 font-bold text-base">inspire</span> growth and creativity. The future
-          holds endless possibilities, and I'm eager to see where this path will lead me.
+          <span class="highlight-text text-red-500 font-bold">Creativity</span> is at the heart of everything I do, driving me to explore the world of
+          design with enthusiasm and curiosity. Each project
+          <span class="highlight-text text-red-500 font-bold">presents a chance</span> to transform ideas into meaningful experiences. I thrive on the
+          excitement of
+          <span class="highlight-text text-red-500 font-bold">experimenting with new techniques</span> and discovering innovative ways to bring concepts
+          to life. As I journey through this ever-evolving field, I look forward to <span class="highlight-text text-red-500 font-bold"
+            >embracing new challenges</span
+          > and forging connections that <span class="highlight-text text-red-500 font-bold">inspire</span> growth and creativity. The future holds endless
+          possibilities, and I'm eager to see where this path will lead me.
         </p>
         <!-- Button Container -->
         <div class="flex justify-start w-full mt-8">
-          <AboutBtn />
+          <a class="btn_container" href="/about_me">
+            <Button variant="primary" size="small">Read more about me</Button>
+          </a>
         </div>
       </div>
       <div class="flex justify-center lg:w-1/2 mt-24 lg:mt-0">
@@ -67,55 +69,11 @@ import Form from "../components/Form.astro";
     </div>
   </section>
 
-  <!-- Values Section -->
-  <div id="values" class="pt-16 md:pt-20">
-    <section class="container max-w-screen-xl mx-auto py-6 px-4 md:px-10">
-      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500 text-center md:text-left">Values & mission</h3>
-        <p class="values-text mt-2 mb-12 text-grey-600 md:max-w-3xl max-w-sm">
-          My journey in design is guided by principles of accessibility, creativity, and inclusivity, <br /> ensuring every user has an exceptional experience.
-        </p>
-        <div class="mt-8 space-y-4 md:space-y-8">
-          <!-- Value Item 1 -->
-          <div class="flex items-start">
-            <div class="hidden md:block w-8 h-8 bg-red-500 rounded-full items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-10 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Accessibility first</h4>
-              <p class="text-grey-600 text-base">
-                I believe in designing for everyone, creating experiences that are accessible to all users, regardless of ability.
-              </p>
-            </div>
-          </div>
-          <!-- Value Item 2 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-10 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">User-centered design</h4>
-              <p class="text-grey-600 text-base">
-                My goal is to create intuitive, user-friendly interfaces that resonate with users and serve their needs.
-              </p>
-            </div>
-          </div>
-          <!-- Value Item 3 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-10 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Continuous growth</h4>
-              <p class="text-grey-600 text-base">
-                I'm committed to learning and evolving with new design trends and technologies to push boundaries in digital experiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- Skills Section -->
   <div id="skills" class="pt-16 md:pt-20">
     <section id="skills" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500">Skills & tools</h3>
+      <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25">
+        <h3 class="font-bold text-grey-500">Skills & tools</h3>
         <p class="mt-2 mb-12 text-grey-600 md:max-w-3xl max-w-sm">
           Here’s a quick overview of my skills, tools, and technologies that <br class="hidden md:block" /> I use to bring digital experiences to life.
         </p>
@@ -157,8 +115,8 @@ import Form from "../components/Form.astro";
   <!-- Workflow Section -->
   <div id="workflow">
     <section id="workflow-section" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500">Process & workflow</h3>
+      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-[5px] shadow-drop25">
+        <h3 class="font-bold text-grey-500">Process & workflow</h3>
         <p class="mt-2 mb-12 text-grey-600 md:max-w-3xl max-w-md">
           I follow a structured process to ensure every project meets its full potential, from concept to final design.
         </p>
@@ -168,7 +126,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Planning & strategy</h4>
-              <p class="text-grey-600 text-base">Creating a to-do list to get an overview of the project and what needs to be done.</p>
+              <p class="text-grey-600">Creating a to-do list to get an overview of the project and what needs to be done.</p>
             </div>
           </div>
           <!-- Workflow Step 2 -->
@@ -176,7 +134,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Research & discovery</h4>
-              <p class="text-grey-600 text-base">Understanding the project-goals, audience, and challenges.</p>
+              <p class="text-grey-600">Understanding the project-goals, audience, and challenges.</p>
             </div>
           </div>
           <!-- Workflow Step 3 -->
@@ -184,7 +142,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Design & development</h4>
-              <p class="text-grey-600 text-base">Creating wireframes, prototypes, and final design-elements.</p>
+              <p class="text-grey-600">Creating wireframes, prototypes, and final design-elements.</p>
             </div>
           </div>
           <!-- Workflow Step 4 -->
@@ -192,7 +150,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Coding & testing</h4>
-              <p class="text-grey-600 text-base">Building the project from the ground up.</p>
+              <p class="text-grey-600">Building the project from the ground up.</p>
             </div>
           </div>
           <!-- Workflow Step 5 -->
@@ -200,7 +158,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Final testing & feedback</h4>
-              <p class="text-grey-600 text-base">Gathering feedback and refining to achieve the best user-experience.</p>
+              <p class="text-grey-600">Gathering feedback and refining to achieve the best user-experience.</p>
             </div>
           </div>
           <!-- Workflow Step 6 -->
@@ -208,7 +166,7 @@ import Form from "../components/Form.astro";
             <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
             <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Deployment</h4>
-              <p class="text-grey-600 text-base">Deploying the project to production.</p>
+              <p class="text-grey-600">Deploying the project to production.</p>
             </div>
           </div>
         </div>
@@ -216,10 +174,10 @@ import Form from "../components/Form.astro";
     </section>
   </div>
   <!-- Projects Section -->
-  <div id="projects" class="md:pt-20 pt-16 py-6 px-4">
-    <section id="project-section" class="container max-w-screen-xl mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-lg shadow-lg mt-8">
-      <h3 class="text-3xl font-bold max-w-4xl mx-auto text-grey-500 md:pt-5 pt-4">Highlighted projects</h3>
-      <p class="mt-2 mb-10 text-grey-600 md:max-w-4xl max-w-md mx-auto text-base">
+  <div id="projects" class="md:mt-desktop-top mt-mobil-top py-6 px-4">
+    <section id="project-section" class="container max-w-screen-xl mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-[5px] shadow-drop25 mt-8">
+      <h3 class="font-bold max-w-4xl mx-auto text-grey-500 md:pt-5 pt-4">Highlighted cases</h3>
+      <p class="mt-4 mb-10 text-grey-600 md:max-w-4xl max-w-md mx-auto">
         I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
         When studying this sort of thing, you're bound to have both favourite and least favourite projects. Because you can't always decide what kind
         of project you have to do. I've decided to highlight some of the projects that I'm most proud of.
@@ -227,12 +185,14 @@ import Form from "../components/Form.astro";
 
       <div id="projects-grid" class="flex flex-col items-start md:max-w-4xl max-w-sm mx-auto space-y-4 mb-8">
         <div class="w-full">
-          <em class="text-grey-700 text-base">Click on the boxes corresponding to each project to see more.</em>
+          <em class="text-grey-700">Click on the boxes corresponding to each project to see more.</em>
         </div>
 
         <!-- Button Container -->
         <div class="flex justify-start w-full">
-          <OtherBtn />
+          <a href="/other" class="btn_container">
+            <Button variant="primary" size="small">See other projects</Button>
+          </a>
         </div>
       </div>
 
@@ -255,7 +215,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: Entrance exam (1st semester)"
                 >
@@ -275,7 +235,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: UX/UI-site (1st semester project)"
                 >
@@ -296,7 +256,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://makomiteen.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: The MAK committee (1st semester case-project)"
                 >
@@ -316,7 +276,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: Portfolio-site (1st semester exam-project)"
                 >
@@ -336,7 +296,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://t8-karrusel.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: Karrusel Festival (2nd semester case-project)"
                 >
@@ -357,7 +317,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://itmv-t9.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: I Tråd Med Verden (2nd semester case-project)"
                 >
@@ -378,7 +338,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://volander-art.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: Volander Art (2nd semester exam-project)"
                 >
@@ -399,7 +359,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://srp-profile.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: Digital application (3rd semester side-project)"
                 >
@@ -421,7 +381,7 @@ import Form from "../components/Form.astro";
                 <a
                   href="https://singleusesucks-plasticchange.netlify.app/"
                   target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   aria-label="View project: #SingleUseSucks (3rd semester case-project)"
                 >
@@ -441,7 +401,7 @@ import Form from "../components/Form.astro";
                 <!-- Carousel Item 11 -->
                 <a
                   href="https://hojskolendk002.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   target="_blank"
                   aria-label="View project: HÖJSKOLENDK (3rd semester case-project)"
@@ -463,7 +423,7 @@ import Form from "../components/Form.astro";
                 <!-- Carousel Item 12 -->
                 <a
                   href="https://vinens-essens.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   target="_blank"
                   aria-label="View project: Vinens Essens (3rd semester exam-project)"
@@ -484,7 +444,7 @@ import Form from "../components/Form.astro";
                 <!-- Carousel Item 13 -->
                 <a
                   href="https://kadaver.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-lg shadow-lg hover:bg-[#445165] transition duration-300"
+                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
                   style="width: 400px;"
                   target="_blank"
                   aria-label="View project: Kadaver (internship case-project)"
@@ -510,73 +470,79 @@ import Form from "../components/Form.astro";
   </div>
 
   <!-- Resources Section -->
-  <div id="resources" class="md:pt-20 pt-16">
+  <div id="resources" class="md:mt-desktop-top mt-mobil-top">
     <section id="resources" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-blue-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500">Resources</h3>
+      <div class="bg-blue-700 bg-opacity-80 p-8 rounded-[5px] shadow-drop25">
+        <h3 class="font-bold text-grey-500">Resources</h3>
         <p class="mt-2 mb-12 text-grey-600 leading-7">
           Access additional materials to learn more about my<br class="hidden md:block" />work, skills, and experience.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
           <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md">
+          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
             <h4 class="text-xl font-semibold text-grey-500">Resume (EN)</h4>
             <p class="text-grey-600 mt-2 md:text-center text-left">Look through my resume to get an overview of my professional background.</p>
-            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8" label="SEE MORE" />
+            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8">
+              <Button variant="primary" size="small">See more</Button>
+            </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md">
+          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
             <h4 class="text-xl font-semibold text-grey-500">Resume (DA)</h4>
             <p class="text-grey-600 mt-2 md:text-center text-left">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
-            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056" label="SE MERE" />
+            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056">
+              <Button variant="primary" size="small">Se mere</Button>
+            </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md">
+          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
             <h4 class="text-xl font-semibold text-grey-500">Application template (EN)</h4>
             <p class="text-grey-600 mt-2 md:text-center text-left">Take a look at what I include when I send out applications.</p>
-            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603" label="SEE MORE" />
+            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603">
+              <Button variant="primary" size="small">See more</Button>
+            </a>
           </div>
           <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 bg-opacity-90 p-6 rounded-lg shadow-md">
+          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
             <h4 class="text-xl font-semibold text-grey-500">Application template (DA)</h4>
             <p class="text-grey-600 mt-2 md:text-center text-left">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
-            <ResourcesBtn url="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693" label="SE MERE" />
+            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693">
+              <Button variant="primary" size="small">Se mere</Button>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <section id="contact" class="container mx-auto pb-20 md:py-12 md:px-6 py-6 px-4 md:pt-20 pt-16">
+  <section id="contact" class="container max-w-3xl mx-auto pb-20 md:py-12 md:px-6 py-6 px-4 md:mt-desktop-top mt-mobil-top">
     <!-- Contact Information Section -->
     <div id="contact-info-container" class="mb-8">
-      <h3 id="contact-title" class="font-bold text-grey-500 md:max-w-none max-w-sm mx-auto">Let's talk!</h3>
-      <p id="contact-text" class="mt-2 mb-12 text-grey-600 md:max-w-none max-w-sm mx-auto leading-7">
+      <h3 id="contact-title" class="font-bold text-grey-500 mx-auto">Let's talk!</h3>
+      <p id="contact-text" class="mt-2 mb-12 text-grey-600 mx-auto leading-7">
         I'm always eager to connect with new people. <br class="md:block hidden" />Feel free to reach out with any questions or comments. <br
           class="md:block hidden"
         /> Then I'll get back to you as soon as I can!
       </p>
     </div>
 
-    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-8 justify-center">
-      <Form />
-
+    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-8 md:justify-start justify-center">
       <!-- Image and Contact Info Box -->
-      <div id="contact-container" class="flex flex-col md:items-start items-center md:pt-0 pt-20">
+      <div id="contact-container" class="flex flex-row items-center md:pt-0 pt-20">
         <!-- Image -->
         <img src="images/pfp.webp" alt="portrait of Sara" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg mb-7 md:mr-4" />
 
         <!-- Contact Information Box -->
-        <div id="contact-info" class="p-4 md:p-6 bg-blue-800 bg-opacity-90 text-grey-500 rounded-lg shadow-lg">
+        <div id="contact-info" class="p-4 md:p-6 bg-blue-800 bg-opacity-90 text-grey-500 rounded-[5px] shadow-drop25">
           <h4 class="text-xl md:text-2xl font-semibold text-grey-500">Contact information:</h4>
           <ul class="mt-4 space-y-2">
-            <li class="some1 text-base">
+            <li class="some1">
               <strong class="text-grey-500">Email:</strong><br class="md:hidden block" />
               <a href="mailto:sara.ringkow@gmail.com" class="text-grey-600 hover:text-red-500 py-1">sara.ringkow@gmail.com</a>
               <span class="text-grey-600">/</span>
               <a href="mailto:sape0003@stud.kea.dk" class="text-grey-600 hover:text-red-500 py-1">sape0003@stud.kea.dk</a>
             </li>
-            <li class="some1 md:pt-0 pt-4 text-base">
+            <li class="some1 md:pt-0 pt-4">
               <strong class="text-grey-500">Phone:</strong><br class="md:hidden block" />
               <a href="tel:+4542428807" class="text-grey-600 hover:text-red-500 py-1">+45 42 42 88 07</a>
             </li>

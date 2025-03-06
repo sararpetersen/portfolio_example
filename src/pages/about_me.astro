@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
-import HomepageBtn from "../components/HomepageBtn.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
@@ -23,33 +23,31 @@ import HomepageBtn from "../components/HomepageBtn.astro";
 
   <!-- Personal Background Section -->
   <section id="personal-background" class="container max-w-screen-xl mx-auto md:pt-8 pt-4">
-    <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+    <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25 flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-8">
-        <h3 class="text-3xl font-bold text-grey-500">My journey</h3>
-        <p class="mt-4 text-grey-600 text-base">
-          Growing up in the <span class="highlight-text text-red-500 font-bold text-base">northern suburbs of Zealand</span>, I discovered my love for
-          creativity early on. From drawing to small projects, I always came up with something to do. This passion for creativity, however.. deep
-          down, I always knew that I wanted to
-          <span class="highlight-text text-red-500 font-bold text-base">make it a career</span>&mdash; something I could do for a living. But that,
-          combined with my newfound interest in <span class="highlight-text text-red-500 font-bold text-base">technology</span>, made me doubtful. I
-          had no idea of what you could become, with those two things. <span class="highlight-text text-red-500 font-bold text-base">Animator</span> was
-          an option. That was the first thing I considered. But after seeing how hard it was to get the proper education for that, I had to try and find
-          something else. After having taken a lot of detours, in the form of high-school and singular courses, I eventually found my way to
-          <span class="highlight-text text-red-500 font-bold text-base">multimedia-design</span> through an open-house event. The moment I heard about
-          it, I knew I had to give it a try. It combined the best of both worlds&mdash; creativity and technology. And that was enough for me to apply.
+        <h3 class="font-bold text-grey-500">My journey</h3>
+        <p class="mt-4 text-grey-600">
+          Growing up in the <span class="text-red-500 font-bold">northern suburbs of Zealand</span>, I discovered my love for creativity early on.
+          From drawing to small projects, I always came up with something to do. This passion for creativity, however.. deep down, I always knew that
+          I wanted to
+          <span class="text-red-500 font-bold">make it a career</span>&mdash; something I could do for a living. But that, combined with my newfound
+          interest in <span class="text-red-500 font-bold">technology</span>, made me doubtful. I had no idea of what you could become, with those two
+          things. <span class="text-red-500 font-bold">Animator</span> was an option. That was the first thing I considered. But after seeing how hard
+          it was to get the proper education for that, I had to try and find something else. After having taken a lot of detours, in the form of high-school
+          and singular courses, I eventually found my way to
+          <span class="text-red-500 font-bold">multimedia-design</span> through an open-house event. The moment I heard about it, I knew I had to give
+          it a try. It combined the best of both worlds&mdash; creativity and technology. And that was enough for me to apply.
         </p>
-        <p class="mt-4 text-grey-600 text-base">
-          After starting my studies, I quickly realised the importance of <span class="highlight-text text-red-500 font-bold text-base"
-            >accessibility</span
-          > in digital design, both for myself and others. It became clear that creating <span class="highlight-text text-red-500 font-bold text-base"
-            >inclusive experiences</span
-          > was not just about meeting technical standards, but about making meaningful connections for everyone, regardless of their abilities.
+        <p class="mt-4 text-grey-600">
+          After starting my studies, I quickly realised the importance of <span class="text-red-500 font-bold">accessibility</span> in digital design,
+          both for myself and others. It became clear that creating <span class="highlight-text text-red-500 font-bold">inclusive experiences</span> was
+          not just about meeting technical standards, but about making meaningful connections for everyone, regardless of their abilities.
         </p>
-        <p class="mt-4 text-grey-600 text-base">
-          This understanding sparked a deeper <span class="highlight-text text-red-500 font-bold text-base"
-            >drive within me to focus on accessibility</span
-          > as a core-principle in my work. As I continue to grow in the few months that I have left of my studies, I’m determined to design digital platforms
-          that <span class="highlight-text text-red-500 font-bold text-base">remove barriers</span> and ensure a more inclusive experience for all.
+        <p class="mt-4 text-grey-600">
+          This understanding sparked a deeper <span class="text-red-500 font-bold">drive within me to focus on accessibility</span> as a core-principle
+          in my work. As I continue to grow in the few months that I have left of my studies, I’m determined to design digital platforms that <span
+            class="text-red-500 font-bold">remove barriers</span
+          > and ensure a more inclusive experience for all.
         </p>
       </div>
       <div class="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
@@ -62,59 +60,12 @@ import HomepageBtn from "../components/HomepageBtn.astro";
       </div>
     </div>
   </section>
-  <!-- Personal Philosophy Section -->
-  <div id="philosophy" class="md:pt-20 pt-16">
-    <section class="container bg-opacity-80 max-w-screen-lg mx-auto z-10">
-      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500">Personal philosophy</h3>
-        <p class="mt-4 text-grey-600 mx-auto md:max-w-full">
-          My philosophy in both life and work is based on the belief that everyone, regardless of ability, should have the chance to engage with the
-          digital world. Whether it's through intuitive interfaces or innovative technology, I'm dedicated to designing spaces that are inclusive and
-          accessible to all users.
-        </p>
-        <div class="mt-8 space-y-8">
-          <!-- Philosophy Item 1 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 mx-auto max-w-xs md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Empathy as a core-principle</h4>
-              <p class="text-grey-600 text-base">Empathy drives design by understanding user-needs, creating impactful solutions.</p>
-            </div>
-          </div>
-          <!-- Philosophy Item 2 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Accessibility as a core-value</h4>
-              <p class="text-grey-600 text-base">Accessibility is key to inclusive design, ensuring everyone can enjoy digital experiences.</p>
-            </div>
-          </div>
-          <!-- Philosophy Item 3 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Inclusive communication</h4>
-              <p class="text-grey-600 text-base">Open communication creates supportive environments where everyone can thrive.</p>
-            </div>
-          </div>
-          <!-- Philosophy Item 4 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold mt-1"></div>
-            <div class="md:ml-8 max-w-xs mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Purpose-driven design</h4>
-              <p class="text-grey-600 text-base text-md">Purposeful design ensures each element enhances the user-experience.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 
   <!-- Interests & Hobbies Section -->
-  <div id="interests" class="md:pt-20 pt-16">
+  <div id="interests" class="md:mt-desktop-top mt-mobil-top">
     <section class="container max-w-screen-xl mx-auto">
-      <div class="bg-blue-800 bg-opacity-70 p-8 rounded-lg shadow-lg">
-        <h3 class="text-3xl font-bold text-grey-500">Interests & hobbies</h3>
+      <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25">
+        <h3 class="font-bold text-grey-500">Interests & hobbies</h3>
         <p class="mt-4 text-grey-600">
           Outside of my professional pursuits, I have a diverse range of interests. Whether it's about being creative, nerding out about different
           things, or simply just doing something entertaining&mdash; I always have or come up with something to do during my spare-time.
@@ -124,7 +75,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Reading</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 From fantasy, crime, YA, and everything in between, books are an ideal way to challenge my mind and imagination.
               </p>
             </div>
@@ -133,7 +84,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Gaming</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 From Nintendo-classics to modern adventures, I find gaming a great way to unwind, escape from reality, and forget the daily struggles.
               </p>
             </div>
@@ -142,7 +93,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Crafting & DIY</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 I love getting hands-on with projects like drawing, making keychains, and creating bead-plates to keep my mind busy.
               </p>
             </div>
@@ -151,7 +102,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Youtube-content</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 I always find something to watch on YouTube during my downtime&mdash; whether it's tech, movies, music, lifestyle, or gaming.
               </p>
             </div>
@@ -160,7 +111,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Watching movies & TV series</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 Watching a movie or a TV series, every now and then, is a nice way for me to unwind and refresh my mind&mdash; just like with
                 video-games and YouTube.
               </p>
@@ -170,7 +121,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
           <div>
             <div class="max-w-xs mx-auto md:max-w-full">
               <h4 class="text-xl font-semibold text-grey-500">Photography</h4>
-              <p class="text-grey-600 text-base">
+              <p class="text-grey-600">
                 Whether it's moments, landscapes, or something else entirely, I always find time to capture the world around me.
               </p>
             </div>
@@ -182,7 +133,9 @@ import HomepageBtn from "../components/HomepageBtn.astro";
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto pb-16 pt-8 text-center">
-    <HomepageBtn />
+    <a href="/" class="mt-8 btn_container">
+      <Button variant="primary" size="small">Back to frontpage</Button>
+    </a>
   </section>
   <script>
     import { animate, inView } from "motion";

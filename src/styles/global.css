@@ -10,7 +10,6 @@ html {
 
 .some1 a {
   position: relative;
-  font-size: 1rem /* 16px */;
   line-height: 1.5rem /* 24px */;
 }
 
@@ -39,14 +38,4 @@ html {
 
 #footer-contact a {
   text-decoration: none;
-}
-
-a,
-.form-button,
-.project-button,
-button,
-button input,
-input,
-textarea {
-  cursor: pointer;
 }

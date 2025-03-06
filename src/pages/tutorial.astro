@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
-import HomepageBtn from "../components/HomepageBtn.astro";
+import Button from "../components/Button.astro";
 import TutorialCard from "../components/TutorialCard.astro";
 ---
 
@@ -13,7 +13,7 @@ import TutorialCard from "../components/TutorialCard.astro";
 >
   <!-- Tutorials Section -->
   <div id="tutorials">
-    <section class="container mx-auto py-8 px-4 bg-blue-800 bg-opacity-70 rounded-lg shadow-lg">
+    <section class="container mx-auto py-8 px-4 bg-blue-800 bg-opacity-70 rounded-[5px] shadow-drop25">
       <h2 id="tutorials-title" class="max-w-2xl mx-auto font-bold md:text-left text-center text-grey-500 md:pt-36 pt-32">Tutorials & tips</h2>
       <p id="tutorials-text" class="text-grey-600 max-w-2xl mx-auto md:text-left text-center leading-7 pb-16 mt-4">
         Here are some of the tutorials, articles, and tips that I've found most useful during my studies. Here, you can find everything from
@@ -76,33 +76,35 @@ import TutorialCard from "../components/TutorialCard.astro";
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto pb-16 pt-8 text-center">
-    <HomepageBtn />
+    <a href="/" class="mt-8 btn_container">
+      <Button variant="primary" size="small">Back to frontpage</Button>
+    </a>
+
+    <script>
+      import { animate, inView } from "motion";
+      /*Entrance Animation*/
+      animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+      /** inView Animations */
+      const elementmedanimation1 = document.querySelector("#tutorials-grid");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation2 = document.querySelector("#tutorials-title");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation3 = document.querySelector("#tutorials-text");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation4 = document.querySelector(".button-container");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+      });
+    </script>
   </section>
-
-  <script>
-    import { animate, inView } from "motion";
-    /*Entrance Animation*/
-    animate("body", { opacity: [0, 1] }, { duration: 1 });
-
-    /** inView Animations */
-    const elementmedanimation1 = document.querySelector("#tutorials-grid");
-    inView(elementmedanimation1, () => {
-      elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation2 = document.querySelector("#tutorials-title");
-    inView(elementmedanimation2, () => {
-      elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-    });
-
-    const elementmedanimation3 = document.querySelector("#tutorials-text");
-    inView(elementmedanimation3, () => {
-      elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-    });
-
-    const elementmedanimation4 = document.querySelector(".button-container");
-    inView(elementmedanimation4, () => {
-      elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
-    });
-  </script>
 </MainLayout>

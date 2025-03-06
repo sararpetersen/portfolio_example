@@ -2,7 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import "../styles/tobii.min.css";
-import HomepageBtn from "../components/HomepageBtn.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
@@ -12,7 +12,7 @@ import HomepageBtn from "../components/HomepageBtn.astro";
   ogdescription="Gallery and media from the creator"
 >
   <!-- Gallery Section -->
-  <section id="gallery" class="container mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-lg shadow-lg">
+  <section id="gallery" class="container mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-[5px] shadow-drop25">
     <!-- Intro Section -->
     <div class="mb-12">
       <h2 class="heading-title max-w-2xl mx-auto font-bold md:text-left text-center text-grey-500 md:pt-36 pt-32">Gallery & media</h2>
@@ -585,62 +585,64 @@ import HomepageBtn from "../components/HomepageBtn.astro";
   </section>
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto pb-16 pt-8 text-center">
-    <HomepageBtn />
+    <a href="/" class="mt-8 btn_container">
+      <Button variant="primary" size="small">Back to frontpage</Button>
+    </a>
   </section>
+  <script is:inline src="/tobii.min.js"></script>
+  <script defer>
+    const tobii = new Tobii();
+  </script>
+  <script>
+    import { animate, inView } from "motion";
+    /*Entrance Animation*/
+    animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+    /** inView Animations */
+    const elementmedanimation1 = document.querySelector(".main");
+    inView(elementmedanimation1, () => {
+      elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation2 = document.querySelector(".heading-title");
+    inView(elementmedanimation2, () => {
+      elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+    });
+
+    const elementmedanimation3 = document.querySelector(".heading-text");
+    inView(elementmedanimation3, () => {
+      elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+    });
+
+    const elementmedanimation4 = document.querySelector(".button-container");
+    inView(elementmedanimation4, () => {
+      elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+    });
+  </script>
+
+  <style>
+    p,
+    em,
+    h2 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .grid-text {
+      text-transform: uppercase;
+    }
+
+    .expanded {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 50;
+      transition: all 0.3s ease-in-out;
+    }
+    .expanded img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </MainLayout>
-<script is:inline src="/tobii.min.js"></script>
-<script defer>
-  const tobii = new Tobii();
-</script>
-<script>
-  import { animate, inView } from "motion";
-  /*Entrance Animation*/
-  animate("body", { opacity: [0, 1] }, { duration: 1 });
-
-  /** inView Animations */
-  const elementmedanimation1 = document.querySelector(".main");
-  inView(elementmedanimation1, () => {
-    elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
-  });
-
-  const elementmedanimation2 = document.querySelector(".heading-title");
-  inView(elementmedanimation2, () => {
-    elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-  });
-
-  const elementmedanimation3 = document.querySelector(".heading-text");
-  inView(elementmedanimation3, () => {
-    elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-  });
-
-  const elementmedanimation4 = document.querySelector(".button-container");
-  inView(elementmedanimation4, () => {
-    elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
-  });
-</script>
-
-<style>
-  p,
-  em,
-  h2 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .grid-text {
-    text-transform: uppercase;
-  }
-
-  .expanded {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 50;
-    transition: all 0.3s ease-in-out;
-  }
-  .expanded img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-</style>

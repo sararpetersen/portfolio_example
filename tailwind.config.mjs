@@ -48,8 +48,64 @@ export default {
       almarai: ["Almarai", "sans-serif"],
       exo: ["Exo", "sans-serif"],
     },
+
+    fontSize: {
+      "display-desktop": ["6.5rem", { lineHeight: "5.5rem" }],
+      "display-mobile": ["3.9rem", { lineHeight: "3.5rem" }],
+      "h1-desktop": ["4.8rem", { lineHeight: "3.75rem" }],
+      "h1-mobile": ["3.5rem", { lineHeight: "3.75rem" }],
+      "h2-desktop": ["4rem", { lineHeight: "3.75rem" }],
+      "h2-mobile": ["2.5rem", { lineHeight: "2.5rem" }],
+      "h3-desktop": ["2.3rem", { lineHeight: "2.5rem" }],
+      "h3-mobile": ["2rem", { lineHeight: "2.25rem" }],
+      "h4-desktop": ["1.8rem", { lineHeight: "2.25rem" }],
+      "h4-mobile": ["1.4rem", { lineHeight: "1.875rem" }],
+      "p-desktop": ["1.125rem", { lineHeight: "1.875rem" }],
+      "p-mobile": ["1rem", { lineHeight: "1.5rem" }],
+      "a-desktop": ["1.125rem", { lineHeight: "1.875rem" }],
+      "a-mobile": ["1rem", { lineHeight: "1.5rem" }],
+    },
+    fontWeight: {
+      light: "300",
+      regular: "400",
+      semibold: "600",
+      bold: "700",
+      black: "900",
+    },
+    borderWidth: {
+      DEFAULT: "1px",
+      0: "0px",
+      2: "2px",
+      3: "3px",
+      4: "4px",
+    },
+    borderRadius: {
+      DEFAULT: "1.25rem",
+      none: "0px",
+      s: "5px",
+      sm: "10px",
+      m: "15px",
+      md: "30px",
+      lg: "40px",
+      full: "9999px",
+    },
+    boxShadow: {
+      drop25: "4px 4px 4px 0 rgb(0 0 0 / 0.25)",
+      drop50: "4px 4px 4px 0 rgb(0 0 0 / 0.50)",
+      inner25: "0 4px 4px 0 rgb(0 0 0 / 0.25) inset",
+      inner50: "0 4px 4px 0 rgb(0 0 0 / 0.50) inset",
+    },
+
+    extend: {
+      spacing: {
+        gap: "40px", // Keeps the 30px gap
+        "mobil-bottom": "100px", // Slightly reduced bottom spacing for mobile
+        "desktop-bottom": "120px", // Reduced bottom spacing for desktop
+        "mobil-top": "100px", // Reduced top spacing for mobile
+        "desktop-top": "120px", // Reduced top spacing for desktop
+      },
+    },
   },
-  extend: {},
 
   plugins: [
     require("@tailwindcss/typography"),

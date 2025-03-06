@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
-import HomepageBtn from "../components/HomepageBtn.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
@@ -16,30 +16,32 @@ import HomepageBtn from "../components/HomepageBtn.astro";
       <h1 class="heading-title text-6xl font-bold text-grey-500 uppercase">Thank you!</h1>
       <p class="heading-text text-xl leading-7 text-grey-600">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
       <div class="button-container mt-8">
-        <HomepageBtn />
+        <a href="/" class="mt-8 btn_container">
+          <Button variant="primary" size="small">Back to frontpage</Button>
+        </a>
       </div>
+
+      <script>
+        import { animate, inView } from "motion";
+        /*Entrance Animation*/
+        animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+        /** inView Animations */
+        const elementmedanimation1 = document.querySelector(".heading-title");
+        inView(elementmedanimation1, () => {
+          elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
+        });
+
+        const elementmedanimation2 = document.querySelector(".heading-text");
+        inView(elementmedanimation2, () => {
+          elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementmedanimation3 = document.querySelector(".button-container");
+        inView(elementmedanimation3, () => {
+          elementmedanimation3.classList.add("animate__animated", "animate__fadeInRight");
+        });
+      </script>
     </div>
-
-    <script>
-      import { animate, inView } from "motion";
-      /*Entrance Animation*/
-      animate("body", { opacity: [0, 1] }, { duration: 1 });
-
-      /** inView Animations */
-      const elementmedanimation1 = document.querySelector(".heading-title");
-      inView(elementmedanimation1, () => {
-        elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
-      });
-
-      const elementmedanimation2 = document.querySelector(".heading-text");
-      inView(elementmedanimation2, () => {
-        elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
-      });
-
-      const elementmedanimation3 = document.querySelector(".button-container");
-      inView(elementmedanimation3, () => {
-        elementmedanimation3.classList.add("animate__animated", "animate__fadeInRight");
-      });
-    </script>
   </div>
 </MainLayout>
