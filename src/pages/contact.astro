@@ -9,40 +9,42 @@ import MainLayout from "../layouts/MainLayout.astro";
   ogtitle="SRP portfolio - contact"
   ogdescription="Contact Sara Ringkow Petersen"
 >
-  <section id="contact" class="container mx-auto pb-20 md:py-12 md:px-6 py-6 px-4 md:mt-desktop-top mt-mobil-top">
+  <section id="contact" class="container mx-auto md:px-6 px-8 md:mt-desktop-top mt-mobil-top">
     <!-- Contact Information Section -->
-    <div id="contact-info-container" class="mb-8 md:mx-auto md:max-w-3xl max-w-md">
-      <h2 id="contact-title" class="font-bold text-gray-50">Let's talk!</h2>
-      <p id="contact-text" class="mt-4 mb-12 text-gray-100 leading-7">
-        I'm always eager to connect with new people. Feel free to reach out with any questions or comments, or if you have a project in mind that
-        you'd like to discuss and want me to be part of. Then I'll get back to you as soon as I can!
-      </p>
-    </div>
-
-    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-12 justify-center">
+    <div id="contact-form-container" class="md:pt-16 pt-4 flex flex-col md:flex-row gap-12 justify-center">
       <!-- Image and Contact Info Box -->
-      <div id="contact-container" class="flex flex-col md:flex-row items-center md:pt-0 pt-20">
+      <div id="contact-container" class="flex flex-col md:flex-row items-center">
         <!-- Image -->
         <img
           src="images/pfp.webp"
           alt="portrait of Sara"
-          class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg mb-7 md:mb-0 md:mr-7"
+          class="w-48 h-48 md:w-[350px] md:h-[350px] object-cover rounded-full shadow-drop25 mb-12 md:mb-0 md:mr-12"
         />
 
         <!-- Contact Information Box -->
-        <div id="contact-info" class="p-4 md:p-6 bg-blue-700 text-gray-50 rounded-[5px] shadow-drop25">
-          <ul class="space-y-2">
-            <li class="some1">
-              <strong class="text-gray-50">Email:</strong><br class="md:hidden block" />
-              <a href="mailto:sara.ringkow@gmail.com" class="text-gray-100 hover:text-red-500 py-1">sara.ringkow@gmail.com</a>
-              <span class="text-gray-100">/</span>
-              <a href="mailto:sape0003@stud.kea.dk" class="text-gray-100 hover:text-red-500 py-1">sape0003@stud.kea.dk</a>
-            </li>
-            <li class="some1 md:pt-0 pt-4">
-              <strong class="text-gray-50">Phone:</strong><br class="md:hidden block" />
-              <a href="tel:+4542428807" class="text-gray-100 hover:text-red-500 py-1">+45 42 42 88 07</a>
-            </li>
-          </ul>
+        <div class="space-y-4">
+          <h1 id="contact-title" class="md:text-left text-center md:text-h2-desktop text-h2-mobile font-bold text-gray-50">Let's talk!</h1>
+          <hr class="border-gray-700 md:col-span-12 col-start-2 col-span-10 md:pb-10 pb-6" />
+          <div id="contact-info" class="p-4 md:p-6 bg-blue-700 text-gray-50 rounded-[5px] shadow-drop25">
+            <ul class="md:space-y-4 space-y-2">
+              <li class="some1">
+                <strong class="text-gray-50">Email:</strong><br class="md:hidden block" />
+                <a href="mailto:sara.ringkow@gmail.com" class="text-gray-100 hover:text-red-500 py-1">sara.ringkow@gmail.com</a>
+                <span class="text-gray-100">/</span>
+                <a href="mailto:sape0003@stud.kea.dk" class="text-gray-100 hover:text-red-500 py-1">sape0003@stud.kea.dk</a>
+              </li>
+              <li class="some1 md:pt-0 pt-4">
+                <strong class="text-gray-50">Phone:</strong><br class="md:hidden block" />
+                <a href="tel:+4542428807" class="text-gray-100 hover:text-red-500 py-1">+45 42 42 88 07</a>
+              </li>
+              <li class="some1 md:pt-0 pt-4">
+                <strong class="text-gray-50">Linkedin:</strong><br class="md:hidden block" />
+                <a href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/" class="text-gray-100 hover:text-red-500 py-1">
+                  linkedin.com/in/sara-ringkow-petersen
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
