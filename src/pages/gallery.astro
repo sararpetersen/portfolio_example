@@ -12,31 +12,30 @@ import Button from "../components/Button.astro";
   ogdescription="Gallery and media from the creator"
 >
   <!-- Gallery Section -->
-  <section id="gallery" class="container mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-[5px] shadow-drop25">
+  <section
+    id="gallery"
+    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 mx-auto relative max-w-6xl md:text-left text-center"
+  >
     <!-- Intro Section -->
-    <div class="mb-12">
-      <h2 class="heading-title max-w-2xl mx-auto font-bold md:text-left text-center text-grey-500 md:pt-36 pt-32">Gallery & media</h2>
-      <p class="heading-text text-grey-600 mt-4 max-w-2xl mx-auto md:text-left text-center">
-        A collection of the different media that I've made and used during my studies. It includes snippets of research from old projects,
-        screenshots, videos, and more.<br /><br />
-        <em class="text-grey-700">Click on the different media-types to enlarge them.</em>
-      </p>
+    <div class="mb-12 col-span-12">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-50">Gallery & media</h1>
+      <p class="text-gray-200 md:text-left text-center md:pt-5 pt-4 pb-2">Click on the different media-types to enlarge them.</p>
     </div>
 
     <!-- Media Grid -->
-    <div class="main grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="main col-span-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Media Item 1 -->
       <div class="relative group w-full h-64 overflow-hidden">
         <a href="/images/entrance_exam.webp" class="w-full h-full lightbox" aria-label="Entrance-exam (frontpage)">
           <img
             src="/images/entrance_exam.webp"
             alt="Screenshot of the entrance-exam for the frontpage"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg shadow-md"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-[5px] shadow-drop5"
           />
           <div
             class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Entrance-exam <br /><em class="text-grey-600">(frontpage)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Entrance-exam <br /><em class="text-gray-100">(frontpage)</em></p>
           </div>
         </a>
       </div>
@@ -47,13 +46,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/t2_studiestartsproeve7.png"
             alt="Screenshot of the entrance-exam for the computer-page"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Entrance-exam <br /><em class="text-grey-600">(computer-page)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Entrance-exam <br /><em class="text-gray-100">(computer-page)</em>
             </p>
           </div>
         </a>
@@ -64,13 +63,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/ux_presentation.png"
             alt="Screenshot of the presentation for the UX/UI-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              UX/UI-site <br /><em class="text-grey-600">(presentation)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              UX/UI-site <br /><em class="text-gray-100">(presentation)</em>
             </p>
           </div>
         </a>
@@ -82,12 +81,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/moodboard_t3_ux.WEBP"
             alt="Screenshot of the moodboard for the UX/UI-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Moodboard <br /><em class="text-grey-600">(UX/UI-site)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Moodboard <br /><em class="text-gray-100">(UX/UI-site)</em></p>
           </div>
         </a>
       </div>
@@ -97,12 +96,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/animation-site.webp"
             alt="Screenshot of the frontpage for the animation-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Animation-site <br /><em class="text-grey-600">(frontpage)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Animation-site <br /><em class="text-gray-100">(frontpage)</em></p>
           </div>
         </a>
       </div>
@@ -113,13 +112,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/t4_state_machine.jpg"
             alt="Screenshot of the state-machine diagram for the animation-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Animation-site <br /><em class="text-grey-600">(state-machine diagram)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Animation-site <br /><em class="text-gray-100">(state-machine diagram)</em>
             </p>
           </div>
         </a>
@@ -131,13 +130,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/t4_paper_prototype.jpg"
             alt="Picture of the paper-prototype for the animation-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Animation-site <br /><em class="text-grey-600">(paper-prototype)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Animation-site <br /><em class="text-gray-100">(paper-prototype)</em>
             </p>
           </div>
         </a>
@@ -148,12 +147,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/videosite.webp"
             alt="Screenshot of the main-page for the videosite"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Videosite <br /><em class="text-grey-600">(main-page)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Videosite <br /><em class="text-gray-100">(main-page)</em></p>
           </div>
         </a>
       </div>
@@ -163,13 +162,13 @@ import Button from "../components/Button.astro";
         <a href="/videos/interview.mp4" data-type="iframe" class="w-full h-full lightbox" aria-label="Video-site (interview | DA)">
           <video
             src="/videos/interview.mp4"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
             controls></video>
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Video-site <br /><em class="text-grey-600">(interview | DA)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Video-site <br /><em class="text-gray-100">(interview | DA)</em>
             </p>
           </div>
         </a>
@@ -181,13 +180,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/mak.webp"
             alt="Screenshot of the frontpage for the MAK committee site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              The MAK committee <br /><em class="text-grey-600">(frontpage)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              The MAK committee <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
         </a>
@@ -198,13 +197,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/mak_nyheder.png"
             alt="Screenshot of the news-page for the MAK committee site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              The MAK committee <br /><em class="text-grey-600">(news-page)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              The MAK committee <br /><em class="text-gray-100">(news-page)</em>
             </p>
           </div>
         </a>
@@ -216,13 +215,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/portfolio_lofi.png"
             alt="Screenshot of the lo-fi wireframe for the first portfolio-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              First portfolio-site <br /><em class="text-grey-600">(lo-fi wireframe)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              First portfolio-site <br /><em class="text-gray-100">(lo-fi wireframe)</em>
             </p>
           </div>
         </a>
@@ -234,13 +233,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/1st_portfolio.webp"
             alt="Screenshot of the frontpage for the first portfolio-site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              First portfolio-site <br /><em class="text-grey-600">(frontpage)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              First portfolio-site <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
         </a>
@@ -251,12 +250,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/vildmad.webp"
             alt="Screenshot of the frontpage for Vild Mad"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Vild Mad <br /><em class="text-grey-600">(frontpage)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Vild Mad <br /><em class="text-gray-100">(frontpage)</em></p>
           </div>
         </a>
       </div>
@@ -267,13 +266,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/karrusel.webp"
             alt="Screenshot of the frontpage for Karrusel Festival"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Karrusel Festival<br /><em class="text-grey-600">(frontpage)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Karrusel Festival<br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
         </a>
@@ -285,13 +284,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/itmv.webp"
             alt="Screenshot of the top-section for I Tråd Med Verden"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              I Tråd Med Verden <br /><em class="text-grey-600">(top-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              I Tråd Med Verden <br /><em class="text-gray-100">(top-section)</em>
             </p>
           </div>
         </a>
@@ -303,12 +302,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/susse_volander.webp"
             alt="Screenshot of the frontpage for Volander Art"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg uppercase">Volander Art <br /><em class="text-grey-600">(frontpage)</em></p>
+            <p class="text-gray-50 font-semibold text-lg uppercase">Volander Art <br /><em class="text-gray-100">(frontpage)</em></p>
           </div>
         </a>
       </div>
@@ -318,12 +317,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/styletile_2.png"
             alt="Screenshot of the style-tile for Volander Art"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">Style-tile <br /><em class="text-grey-600">(Volander Art)</em></p>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">Style-tile <br /><em class="text-gray-100">(Volander Art)</em></p>
           </div>
         </a>
       </div>
@@ -334,13 +333,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/digital_cleanup_day.webp"
             alt="Screenshot of the frontpage for Digital Skraldedag 2025"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Digital Skraldedag <br /><em class="text-grey-600">(frontpage)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Digital Skraldedag <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
         </a>
@@ -351,13 +350,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/internship_prep.webp"
             alt="Screenshot of the hero-section for the digital application"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Digital application <br /><em class="text-grey-600">(hero-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Digital application <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
         </a>
@@ -369,13 +368,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/background.webp"
             alt="Picture of the old background-image for the digital application"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Digital application <br /><em class="text-grey-600">(old background-image)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Digital application <br /><em class="text-gray-100">(old background-image)</em>
             </p>
           </div>
         </a>
@@ -391,13 +390,13 @@ import Button from "../components/Button.astro";
         >
           <video
             src="/videos/application_video.mp4"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
             controls></video>
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Internship-preparations<br /><em class="text-grey-600">(application-video | DA)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Internship-preparations<br /><em class="text-gray-100">(application-video | DA)</em>
             </p>
           </div>
         </a>
@@ -409,13 +408,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/singleusesucks.webp"
             alt="Screenshot of the hero-section for #SingleUseSucks"
-            class="w-full h-full rounded-lg shadow-md object-cover duration-300 transition-transform group-hover:scale-105"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-[5px] shadow-drop5"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              #SingleUseSucks <br /><em class="text-grey-600">(hero-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              #SingleUseSucks <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
         </a>
@@ -427,13 +426,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/access.webp"
             alt="Screenshot of the top-section for the ACCESS font site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              ACCESS - selfmade font <br /><em class="text-grey-600">(top-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              ACCESS - selfmade font <br /><em class="text-gray-100">(top-section)</em>
             </p>
           </div>
         </a>
@@ -445,13 +444,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/access_mockup.webp"
             alt="Picture of the mockup for the ACCESS font site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              ACCESS - selfmade font <br /><em class="text-grey-600">(mockup)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              ACCESS - selfmade font <br /><em class="text-gray-100">(mockup)</em>
             </p>
           </div>
         </a>
@@ -463,13 +462,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/workflow.webp"
             alt="Screenshot of the research-workflow for the new portfolio-site (this website)"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              New portfolio-site <br /><em class="text-grey-600">(research-workflow)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              New portfolio-site <br /><em class="text-gray-100">(research-workflow)</em>
             </p>
           </div>
         </a>
@@ -481,13 +480,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/2nd_portfolio.jpeg"
             alt="Screenshot of the first wireframe-iteration for the new portfolio-site (this website)"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              New portfolio-site <br /><em class="text-grey-600">(1st wireframe-iteration)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              New portfolio-site <br /><em class="text-gray-100">(1st wireframe-iteration)</em>
             </p>
           </div>
         </a>
@@ -498,13 +497,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/2nd_portfolio2.webp"
             alt="Screenshot of the second wireframe-iteration for the new portfolio-site (this website)"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              New portfolio-site <br /><em class="text-grey-600">(2nd wireframe-iteration)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              New portfolio-site <br /><em class="text-gray-100">(2nd wireframe-iteration)</em>
             </p>
           </div>
         </a>
@@ -516,13 +515,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/hojskolendk.webp"
             alt="Screenshot of the hero-section for the HÖJSKOLENDK site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              HÖJSKOLENDK <br /><em class="text-grey-600">(hero-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              HÖJSKOLENDK <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
         </a>
@@ -534,13 +533,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/hojskolendk_infomeeting.webp"
             alt="Screenshot of the infomeeting-page for the HÖJSKOLENDK site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              HÖJSKOLENDK <br /><em class="text-grey-600">(infomeeting-page)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              HÖJSKOLENDK <br /><em class="text-gray-100">(infomeeting-page)</em>
             </p>
           </div>
         </a>
@@ -552,13 +551,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/vinens_essens.webp"
             alt="Screenshot of the hero-section for the Vinens Essens site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Vinens Essens <br /><em class="text-grey-600">(hero-section)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Vinens Essens <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
         </a>
@@ -570,13 +569,13 @@ import Button from "../components/Button.astro";
           <img
             src="/images/vinens_essens_listview.webp"
             alt="Screenshot of the listview-page for the Vinens Essens site"
-            class="w-full h-full rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full rounded-[5px] shadow-drop5 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-grey-500 font-semibold text-lg text-center uppercase">
-              Vinens Essens <br /><em class="text-grey-600">(listview-page)</em>
+            <p class="text-gray-50 font-semibold text-lg text-center uppercase">
+              Vinens Essens <br /><em class="text-gray-100">(listview-page)</em>
             </p>
           </div>
         </a>
@@ -584,9 +583,9 @@ import Button from "../components/Button.astro";
     </div>
   </section>
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 pt-8 text-center">
+  <section class="button-container mx-auto pb-16 pt-16 text-center">
     <a href="/" class="mt-8 btn_container">
-      <Button variant="primary" size="small">Back to frontpage</Button>
+      <Button variant="primary" size="small">Back to homepage</Button>
     </a>
   </section>
   <script is:inline src="/tobii.min.js"></script>

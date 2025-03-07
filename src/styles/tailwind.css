@@ -83,6 +83,6 @@
 
   /* Button Text */
   .btn_container a {
-    @apply font-bold text-grey-50 text-[10px];
+    @apply font-bold text-gray-50 text-[10px];
   }
 }

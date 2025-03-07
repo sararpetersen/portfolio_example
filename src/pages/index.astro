@@ -2,7 +2,6 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import Button from "../components/Button.astro";
-import Form from "../components/Form.astro";
 ---
 
 <MainLayout
@@ -12,185 +11,31 @@ import Form from "../components/Form.astro";
   ogdescription="Portfolio-site for Sara Ringkow Petersen"
 >
   <!-- Hero Section -->
-  <section id="hero" class="relative container max-w-4xl mx-auto py-16">
+  <section id="hero" class="relative container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pb-0 md:pt-16 pt-0 max-w-7xl mx-auto">
     <!-- Content of Hero Section (kept on top with z-index) -->
-    <div class="relative z-10">
-      <h1 id="hero-title" class="display font-bold text-grey-500 tracking-wider md:mt-desktop-top mt-mobil-top pt-8">Hey there!</h1>
-      <h2 id="hero-subtitle" class="font-medium text-grey-500 mt-8 mb-12 tracking-widest">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-grey-600 mt-6 md:mx-auto md:max-w-4xl max-w-md">
-        Hi! <br class="md:hidden block" /> I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible
-        digital experiences. Further down the page, you can read a bit about who I am, look through some of my projects&mdash; highlighted or not &mdash;or
-        simply reach out if you have any questions or just want to say hi. <br /><br />Use the navigation menu to navigate around to the different
-        sections or subpages, or click the button down below to go directly to my projects.
+    <div class="relative md:col-span-12 col-start-2 col-span-10 mx-auto">
+      <h1 id="hero-title" class="display font-bold text-gray-50 tracking-wider pt-8">Hey there!</h1>
+      <h2 id="hero-subtitle" class="font-medium text-gray-50 mt-8 mb-12 tracking-widest">Welcome to my portfolio</h2>
+      <p id="hero-text" class="text-gray-100 md:mt-0 mb-4 max-w-5xl">
+        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences. If
+        you're interested in learning more about me or just want to get in touch, feel free to reach out through the contact-page. Or look through the
+        other pages, if you're looking for something else.
       </p>
-      <div id="hero-button" class="pt-8">
-        <a class="btn_container" href="/#projects">
-          <Button variant="primary" size="small">View projects</Button>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- About Section -->
-  <section id="about" class="container max-w-screen-xl mx-auto md:mt-desktop-top mt-mobil-top py-6 px-4">
-    <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25 flex flex-col lg:flex-row items-center">
-      <div class="lg:w-1/2 lg:pr-8">
-        <h3 class="font-bold text-grey-500 md:max-w-3xl max-w-md">About me</h3>
-        <p class="mt-2 text-grey-600">
-          As a multimedia-designer, I <span class="highlight-text text-red-500 font-bold">specialise</span> in UX and web design, with a strong focus on
-          <span class="highlight-text text-red-500 font-bold">accessibility</span> and inclusive design. I have a deep understanding of the meaning of
-          design, its impact on usability, and the overall importance of creating visually engaging and user-friendly interfaces. As someone who's <span
-            class="highlight-text text-red-500 font-bold">late-diagnosed</span
-          >
-          with autism, I know what it's like to be a person who's not fully capable of certain things and have limited understanding of the world around
-          them. This has led me to my <span class="highlight-text text-red-500 font-bold">main goal</span>&mdash; to create digital experiences that
-          are accessible and inclusive for all users, regardless of their disabilities.
-        </p>
-        <p class="mt-4 text-grey-600 md:max-w-3xl max-w-sm">
-          <span class="highlight-text text-red-500 font-bold">Creativity</span> is at the heart of everything I do, driving me to explore the world of
-          design with enthusiasm and curiosity. Each project
-          <span class="highlight-text text-red-500 font-bold">presents a chance</span> to transform ideas into meaningful experiences. I thrive on the
-          excitement of
-          <span class="highlight-text text-red-500 font-bold">experimenting with new techniques</span> and discovering innovative ways to bring concepts
-          to life. As I journey through this ever-evolving field, I look forward to <span class="highlight-text text-red-500 font-bold"
-            >embracing new challenges</span
-          > and forging connections that <span class="highlight-text text-red-500 font-bold">inspire</span> growth and creativity. The future holds endless
-          possibilities, and I'm eager to see where this path will lead me.
-        </p>
-        <!-- Button Container -->
-        <div class="flex justify-start w-full mt-8">
-          <a class="btn_container" href="/about_me">
-            <Button variant="primary" size="small">Read more about me</Button>
-          </a>
-        </div>
-      </div>
-      <div class="flex justify-center lg:w-1/2 mt-24 lg:mt-0">
-        <img src="images/pfp3.webp" alt="portrait of Sara" class="w-48 h-48 md:w-[400px] md:h-[400px] rounded-full shadow-md object-cover" />
-      </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <div id="skills" class="pt-16 md:pt-20">
-    <section id="skills" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-blue-800 bg-opacity-70 p-8 rounded-[5px] shadow-drop25">
-        <h3 class="font-bold text-grey-500">Skills & tools</h3>
-        <p class="mt-2 mb-12 text-grey-600 md:max-w-3xl max-w-sm">
-          Here’s a quick overview of my skills, tools, and technologies that <br class="hidden md:block" /> I use to bring digital experiences to life.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          <!-- Skill Item -->
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">HTML & CSS</p>
-          </div>
-          <!-- Skill Item -->
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">JavaScript & frameworks</p>
-          </div>
-          <!-- Skill Item -->
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">UX & UI Design</p>
-          </div>
-        </div>
-        <!-- Skill Item(s) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">Figma & Canva</p>
-          </div>
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">Photoshop & Illustrator</p>
-          </div>
-          <div class="flex items-center">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <p class="md:ml-8 text-grey-600">Git & GitHub</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <!-- Workflow Section -->
-  <div id="workflow">
-    <section id="workflow-section" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-gray-700 bg-opacity-80 p-8 rounded-[5px] shadow-drop25">
-        <h3 class="font-bold text-grey-500">Process & workflow</h3>
-        <p class="mt-2 mb-12 text-grey-600 md:max-w-3xl max-w-md">
-          I follow a structured process to ensure every project meets its full potential, from concept to final design.
-        </p>
-        <div class="mt-8 space-y-8">
-          <!-- Workflow Step 1 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Planning & strategy</h4>
-              <p class="text-grey-600">Creating a to-do list to get an overview of the project and what needs to be done.</p>
-            </div>
-          </div>
-          <!-- Workflow Step 2 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Research & discovery</h4>
-              <p class="text-grey-600">Understanding the project-goals, audience, and challenges.</p>
-            </div>
-          </div>
-          <!-- Workflow Step 3 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Design & development</h4>
-              <p class="text-grey-600">Creating wireframes, prototypes, and final design-elements.</p>
-            </div>
-          </div>
-          <!-- Workflow Step 4 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Coding & testing</h4>
-              <p class="text-grey-600">Building the project from the ground up.</p>
-            </div>
-          </div>
-          <!-- Workflow Step 5 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Final testing & feedback</h4>
-              <p class="text-grey-600">Gathering feedback and refining to achieve the best user-experience.</p>
-            </div>
-          </div>
-          <!-- Workflow Step 6 -->
-          <div class="flex items-start">
-            <div class="w-8 h-8 bg-red-500 rounded-full hidden md:block items-center justify-center text-grey-500 font-bold"></div>
-            <div class="md:ml-8 max-w-xs md:mx-auto md:max-w-full">
-              <h4 class="text-xl font-semibold text-grey-500">Deployment</h4>
-              <p class="text-grey-600">Deploying the project to production.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
   <!-- Projects Section -->
-  <div id="projects" class="md:mt-desktop-top mt-mobil-top py-6 px-4">
-    <section id="project-section" class="container max-w-screen-xl mx-auto py-6 px-4 bg-blue-800 bg-opacity-70 rounded-[5px] shadow-drop25 mt-8">
-      <h3 class="font-bold max-w-4xl mx-auto text-grey-500 md:pt-5 pt-4">Highlighted cases</h3>
-      <p class="mt-4 mb-10 text-grey-600 md:max-w-4xl max-w-md mx-auto">
-        I have worked on a lot of different projects in the past, each different in its own way. However, some of them are not as important as others.
-        When studying this sort of thing, you're bound to have both favourite and least favourite projects. Because you can't always decide what kind
-        of project you have to do. I've decided to highlight some of the projects that I'm most proud of.
-      </p>
-
-      <div id="projects-grid" class="flex flex-col items-start md:max-w-4xl max-w-sm mx-auto space-y-4 mb-8">
-        <div class="w-full">
-          <em class="text-grey-700">Click on the boxes corresponding to each project to see more.</em>
-        </div>
+  <div id="projects" class="grid grid-cols-12 md:mt-16 mt-0 md:pb-0 pb-16 md:pt-16 pt-0 max-w-6xl mx-auto">
+    <hr class="border-gray-700 md:my-12 my-8 md:col-span-12 col-start-2 col-span-10" />
+    <section id="project-section" class="md:col-span-12 col-start-2 col-span-10">
+      <h2 class="font-bold text-gray-50 md:pt-5 pt-4 pb-2">Cases</h2>
+      <p class="text-gray-200">Click on the boxes corresponding to each project <br class="md:hidden block" /> to see more.</p>
+      <div id="projects-grid" class="flex flex-col md:items-start justify-center">
+        <div class="w-full"></div>
 
         <!-- Button Container -->
-        <div class="flex justify-start w-full">
-          <a href="/other" class="btn_container">
+        <div class="flex justify-start pt-8">
+          <a href=" other" class="btn_container">
             <Button variant="primary" size="small">See other projects</Button>
           </a>
         </div>
@@ -200,267 +45,469 @@ import Form from "../components/Form.astro";
 
       <div class="min-h-[350px] relative">
         <div class="container mx-auto w-full overflow-hidden relative">
-          <div class="w-full h-full absolute">
-            <div class="w-1/4 h-full absolute z-30 left-0" style="background: linear-gradient(to right, rgb(22, 31, 42), rgba(22, 31, 42, 0));"></div>
-            <div class="w-1/4 h-full absolute z-30 right-0" style="background: linear-gradient(to left, rgb(31, 41, 55), rgba(22, 31, 42, 0));"></div>
-          </div>
-
           <div id="logo-slider" class="logo-slider overflow-hidden">
             <div class="marquee">
-              <div
-                class="carousel-items flex items-center justify-center"
-                style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;"
-              >
-                <!-- Carousel Item 1 -->
-                <a
-                  href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: Entrance exam (1st semester)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Entrance-exam <br /> (1st semester project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/entrance_exam.webp"
-                    alt="Screenshot of the frontpage for the entrance-exam"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This project was my very first project, created as part of the entrance-exam to my studies. It's a site that revolves around
-                    computers. We made this to showcase what we had learned during the first three weeks.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 2 -->
-                <a
-                  href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: UX/UI-site (1st semester project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">UX/UI-site <br /> (1st semester project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/ux_site.webp"
-                    alt="Screenshot of the frontpage for the UX/UI-site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was our first real project after the entrance-exam. Here, we had to create a site that revolved around a topic of our own
-                    choice. Since I'm a huge fan of almost everything that spells Nintendo and Super Mario, I chose to create a sort of Super Mario
-                    wikipedia-site.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 3 -->
-                <a
-                  href="https://makomiteen.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: The MAK committee (1st semester case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">The MAK committee <br /> (1st semester case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/mak.webp"
-                    alt="Screenshot of the frontpage for the MAK committee site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the very first case-project. We had to redesign a website for a business of our own choice. We chose the non-global
-                    organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine was/is volunteering for.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 4 -->
-                <a
-                  href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: Portfolio-site (1st semester exam-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Portfolio-site <br /> (1st semester exam-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/1st_portfolio.webp"
-                    alt="Screenshot of the frontpage for the first portfolio-site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the first portfolio-site that I made, which was made as part of our 1st semester exam-project. Here, we had to make our
-                    own portfolio, completely from scratch.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 5 -->
-                <a
-                  href="https://t8-karrusel.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: Karrusel Festival (2nd semester case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Karrusel Festival <br />(2nd semester case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/karrusel.webp"
-                    alt="Screenshot of the frontpage for the Karrusel Festival site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. Their
-                    original website was basically set up as a one-pager, even though it wasn't, so we had to make it more user-friendly and easier to
-                    navigate.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 6 -->
-                <a
-                  href="https://itmv-t9.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: I Tråd Med Verden (2nd semester case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">I Tråd Med Verden <br />(2nd semester case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/itmv.webp"
-                    alt="Screenshot of the top-section for the I Tråd Med Verden site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
-                      >I Tråd Med Verden</em
-                    >, that had to showcase who they were, what they did and much more.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 7 -->
-                <a
-                  href="https://volander-art.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: Volander Art (2nd semester exam-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Volander Art <br />(2nd semester exam-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/susse_volander.webp"
-                    alt="Screenshot of the frontpage for the Volander Art site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We went with
-                    the artist Susse Volander. Her site was very outdated, large, and overall really hard to navigate. So, we chose the most important
-                    pages, combined some of the sub-pages, and gave the entire site a revamp.
-                  </p>
-                </a>
-
-                <!-- Carousel Item 9 -->
-                <a
-                  href="https://srp-profile.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: Digital application (3rd semester side-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Digital application <br /> (3rd semester side-project)</span
+              <div class="carousel-items flex items-center justify-center" style="width: fit-content; animation: carouselAnim 120s infinite linear;">
+                <div class="carousel-track flex items-center">
+                  <!-- Carousel Item 3 -->
+                  <a
+                    href="https://makomiteen.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: The MAK committee (1st semester case-project)"
                   >
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/internship_prep.webp"
-                    alt="Screenshot of the hero-section for the digital application"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was a small project, made as part of our internship preparations. Here, we had to make a so-called <em
-                      >Personal Professional Profile</em
-                    >&mdash; a sort of digital application that could be used as part of our actual internship application.
-                  </p>
-                </a>
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >The MAK committee <br /> (1st semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/mak.webp"
+                      alt="Screenshot of the frontpage for the MAK committee site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the very first case-project that I made, during my studies. We had to redesign a website for a business of our own
+                      choice. We chose the non-global organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine
+                      was/is volunteering for.
+                    </p>
+                  </a>
 
-                <!-- Carousel Item 10 -->
-                <a
-                  href="https://singleusesucks-plasticchange.netlify.app/"
-                  target="_blank"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  aria-label="View project: #SingleUseSucks (3rd semester case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">#SingleUseSucks <br /> (3rd semester case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="images/singleusesucks.webp"
-                    alt="Screenshot of the hero-section for the #SingleUseSucks site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the second case-project on 3rd semester. Here, we had to make a site based off of a slogan that <em>Plastic Change</em>,
-                    the organisation that we made the project for, used a lot on their social media. The site had to inlcude surprise-elements,
-                    animations, and so much more, to make it stand out.
-                  </p>
-                </a>
+                  <!-- Carousel Item 4 -->
+                  <a
+                    href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Portfolio-site (1st semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Portfolio-site <br /> (1st semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/1st_portfolio.webp"
+                      alt="Screenshot of the frontpage for the first portfolio-site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the first portfolio-site that I made, which was made as part of our 1st semester exam-project. Here, we had to make our
+                      own portfolio, completely from scratch.
+                    </p>
+                  </a>
 
-                <!-- Carousel Item 11 -->
-                <a
-                  href="https://hojskolendk002.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  target="_blank"
-                  aria-label="View project: HÖJSKOLENDK (3rd semester case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">HÖJSKOLENDK <br /> (3rd semester case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="/images/hojskolendk.webp"
-                    alt="Screenshot of the top-section for the HÖJSKOLENDK site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the third case-project on 3rd semester, before the final project. Here, we had to redesign a website for a folk high
-                    school called
-                    <em>HÖJSKOLENDK</em>, a school that offers international travels to different countries. Their original website was very messy, so
-                    they wanted a cleaner and more simplified version.
-                  </p>
-                </a>
+                  <!-- Carousel Item 5 -->
+                  <a
+                    href="https://t8-karrusel.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Karrusel Festival (2nd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Karrusel Festival <br />(2nd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/karrusel.webp"
+                      alt="Screenshot of the frontpage for the Karrusel Festival site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. Their
+                      original website was basically set up as a one-pager, even though it wasn't, so we had to make it more user-friendly and easier
+                      to navigate.
+                    </p>
+                  </a>
 
-                <!-- Carousel Item 12 -->
-                <a
-                  href="https://vinens-essens.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  target="_blank"
-                  aria-label="View project: Vinens Essens (3rd semester exam-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Vinens Essens <br /> (3rd semester exam-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="/images/vinens_essens.webp"
-                    alt="Screenshot of the top-section for the Vinens Essens site"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the exam-project on 3rd semester. Here, we had to design a website based off of the subject 'subcriptions'. We had the
-                    option to either go with an existing site or go with our own concept. We chose the second option, and came up with a business
-                    called <em>Vinens Essens</em>&mdash; a wine company that sells different wine-boxes on a monthly subcription.
-                  </p>
-                </a>
+                  <!-- Carousel Item 6 -->
+                  <a
+                    href="https://itmv-t9.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: I Tråd Med Verden (2nd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >I Tråd Med Verden <br />(2nd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/itmv.webp"
+                      alt="Screenshot of the top-section for the I Tråd Med Verden site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
+                        >I Tråd Med Verden</em
+                      >, that had to showcase who they were, what they did and what their purpose was.
+                    </p>
+                  </a>
 
-                <!-- Carousel Item 13 -->
-                <a
-                  href="https://kadaver.netlify.app/"
-                  class="carousel-focus flex items-center flex-col relative bg-gray-700 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 hover:bg-blue-600 transition duration-300 ease-in-out"
-                  style="width: 400px;"
-                  target="_blank"
-                  aria-label="View project: Kadaver (internship case-project)"
-                >
-                  <span class="text-grey-500 font-bold mb-3 p-2 md:text-left text-center">Kadaver ApS <br /> (internship case-project)</span>
-                  <img
-                    class="h-[150px] w-[150px] rounded-full shadow-2xl object-cover aspect-[1/1] flex-shrink-0"
-                    src="/images/kadaver.webp"
-                    alt="Screenshot of the top-section for Kadaver's redesigned website"
-                  />
-                  <p class="mt-3 md:text-left text-center leading-7 p-4 text-grey-600">
-                    This was the first project that I did during my internship at the advertising-agency <em>Kadaver</em>. Here, I had to come up with
-                    a redesign for Kadaver's original website. Their original site was done in Squarespace, so making that in code and not CMS was
-                    very interesting.
-                  </p>
-                </a>
+                  <!-- Carousel Item 7 -->
+                  <a
+                    href="https://volander-art.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Volander Art (2nd semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Volander Art <br />(2nd semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/susse_volander.webp"
+                      alt="Screenshot of the frontpage for the Volander Art site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We went
+                      with the artist Susse Volander. Her site was very outdated, large, and overall really hard to navigate. So, we chose the most
+                      important pages, combined some of the sub-pages, and gave the entire site a revamp.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 9 -->
+                  <a
+                    href="https://srp-profile.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Digital application (3rd semester side-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Digital application <br /> (3rd semester side-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/internship_prep.webp"
+                      alt="Screenshot of the hero-section for the digital application"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was a small project, made as part of our internship-preparations on 3rd semester. Here, we had to make a so-called <em
+                        >Personal Professional Profile</em
+                      >&mdash; a sort of digital application that could be used as part of our actual internship application.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 10 -->
+                  <a
+                    href="https://singleusesucks-plasticchange.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: #SingleUseSucks (3rd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >#SingleUseSucks <br /> (3rd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/singleusesucks.webp"
+                      alt="Screenshot of the hero-section for the #SingleUseSucks site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the second case-project on 3rd semester. Here, we had to make a site based off of a slogan that <em>Plastic Change</em
+                      >, the organisation that we made the project for, used a lot on their social media. The site had to inlcude surprise-elements
+                      and a variety of different features and animations, to make it stand out.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 11 -->
+                  <a
+                    href="https://hojskolendk002.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: HÖJSKOLENDK (3rd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >HÖJSKOLENDK <br /> (3rd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/hojskolendk.webp"
+                      alt="Screenshot of the top-section for the HÖJSKOLENDK site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the third case-project on 3rd semester, before the final project. Here, we had to redesign a website for a folk high
+                      school called
+                      <em>HÖJSKOLENDK</em>, a school that offers international travels to different countries. Their original website was very messy,
+                      so they wanted a cleaner and more simplified version.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 12 -->
+                  <a
+                    href="https://vinens-essens.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: Vinens Essens (3rd semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Vinens Essens <br /> (3rd semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/vinens_essens.webp"
+                      alt="Screenshot of the top-section for the Vinens Essens site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the exam-project on 3rd semester. Here, we had to design a website based off of the subject 'subcriptions'. We had the
+                      option to either go with an existing site or go with our own concept. We chose the second option, and came up with a business
+                      called <em>Vinens Essens</em>&mdash; a wine company that sells different wine-boxes on a monthly subcription.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 13 -->
+                  <a
+                    href="https://kadaver.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: Kadaver (internship case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center">Kadaver ApS <br /> (internship case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/kadaver.webp"
+                      alt="Screenshot of the top-section for Kadaver's redesigned website"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the first project that I did during my internship on 4th semester at the advertising-agency <em>Kadaver</em>. Here, I
+                      had to come up with a redesign for Kadaver's current website. The site hadn't been updated in 5 years, so I had to make it look
+                      modern and up-to-date. It was also originally done in Squarespace, so translating that into code was very interesting.
+                    </p>
+                  </a>
+
+                  <!-- Duplicate the first item to create a loop -->
+                  <!-- Carousel Item 3 -->
+                  <a
+                    href="https://makomiteen.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: The MAK committee (1st semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >The MAK committee <br /> (1st semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/mak.webp"
+                      alt="Screenshot of the frontpage for the MAK committee site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the very first case-project that I did, during my studies. We had to redesign a website for a business of our own
+                      choice. We chose the non-global organisation MAK <em>(the central-America committee)</em>, that a former classmate of mine
+                      was/is volunteering for.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 4 -->
+                  <a
+                    href="https://sararingkow.dk/kea/06_eksamen/portfolio_eksamen/index.html"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Portfolio-site (1st semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Portfolio-site <br /> (1st semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/1st_portfolio.webp"
+                      alt="Screenshot of the frontpage for the first portfolio-site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the first portfolio-site that I made, which was made as part of our 1st semester exam-project. Here, we had to make our
+                      own portfolio, completely from scratch.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 5 -->
+                  <a
+                    href="https://t8-karrusel.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Karrusel Festival (2nd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Karrusel Festival <br />(2nd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/karrusel.webp"
+                      alt="Screenshot of the frontpage for the Karrusel Festival site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the second case-project on 2nd semester. Here, we had to redesign a website for a rave-festival called Karrusel. Their
+                      original website was basically set up as a one-pager, even though it wasn't, so we had to make it more user-friendly and easier
+                      to navigate.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 6 -->
+                  <a
+                    href="https://itmv-t9.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: I Tråd Med Verden (2nd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >I Tråd Med Verden <br />(2nd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/itmv.webp"
+                      alt="Screenshot of the top-section for the I Tråd Med Verden site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the third case-project on 2nd semester. Here, we had to make a webfeature for a social-economic business called <em
+                        >I Tråd Med Verden</em
+                      >, that had to showcase who they were, what they did and what their purpose was.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 7 -->
+                  <a
+                    href="https://volander-art.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Volander Art (2nd semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Volander Art <br />(2nd semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/susse_volander.webp"
+                      alt="Screenshot of the frontpage for the Volander Art site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the exam-project on 2nd semester. Yet again, we had to redesign a website for a business of our own choice. We went
+                      with the artist Susse Volander. Her site was very outdated, large, and overall really hard to navigate. So, we chose the most
+                      important pages, combined some of the sub-pages, and gave the entire site a revamp.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 9 -->
+                  <a
+                    href="https://srp-profile.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: Digital application (3rd semester side-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Digital application <br /> (3rd semester side-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/internship_prep.webp"
+                      alt="Screenshot of the hero-section for the digital application"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was a small project, made as part of our internship-preparations on 3rd semester. Here, we had to make a so-called <em
+                        >Personal Professional Profile</em
+                      >&mdash; a sort of digital application that could be used as part of our actual internship application.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 10 -->
+                  <a
+                    href="https://singleusesucks-plasticchange.netlify.app/"
+                    target="_blank"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    aria-label="View project: #SingleUseSucks (3rd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >#SingleUseSucks <br /> (3rd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="images/singleusesucks.webp"
+                      alt="Screenshot of the hero-section for the #SingleUseSucks site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the second case-project on 3rd semester. Here, we had to make a site based off of a slogan that <em>Plastic Change</em
+                      >, the organisation that we made the project for, used a lot on their social media. The site had to inlcude surprise-elements
+                      and a variety of different features and animations, to make it stand out.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 11 -->
+                  <a
+                    href="https://hojskolendk002.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: HÖJSKOLENDK (3rd semester case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >HÖJSKOLENDK <br /> (3rd semester case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/hojskolendk.webp"
+                      alt="Screenshot of the top-section for the HÖJSKOLENDK site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the third case-project on 3rd semester, before the final project. Here, we had to redesign a website for a folk high
+                      school called
+                      <em>HÖJSKOLENDK</em>, a school that offers international travels to different countries. Their original website was very messy,
+                      so they wanted a cleaner and more simplified version.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 12 -->
+                  <a
+                    href="https://vinens-essens.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: Vinens Essens (3rd semester exam-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center"
+                      >Vinens Essens <br /> (3rd semester exam-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/vinens_essens.webp"
+                      alt="Screenshot of the top-section for the Vinens Essens site"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the exam-project on 3rd semester. Here, we had to design a website based off of the subject 'subcriptions'. We had the
+                      option to either go with an existing site or go with our own concept. We chose the second option, and came up with a business
+                      called <em>Vinens Essens</em>&mdash; a wine company that sells different wine-boxes on a monthly subcription.
+                    </p>
+                  </a>
+
+                  <!-- Carousel Item 13 -->
+                  <a
+                    href="https://kadaver.netlify.app/"
+                    class="carousel-focus flex items-center flex-col relative bg-blue-700 hover:bg-blue-600 hover:-translate-y-1 mx-5 my-10 px-4 py-3 rounded-[5px] shadow-drop25 transition duration-300 ease-in-out"
+                    style="width: 400px;"
+                    target="_blank"
+                    aria-label="View project: Kadaver (internship case-project)"
+                  >
+                    <span class="text-2xl text-gray-50 font-bold mb-3 p-2 md:text-left text-center">Kadaver ApS <br /> (internship case-project)</span
+                    >
+                    <img
+                      class="h-[150px] w-[150px] rounded-full shadow-drop25 object-cover aspect-[1/1] flex-shrink-0"
+                      src="/images/kadaver.webp"
+                      alt="Screenshot of the top-section for Kadaver's redesigned website"
+                    />
+                    <p class="mt-3 md:text-left text-center leading-7 p-4 text-gray-100">
+                      This was the first project that I did during my internship on 4th semester at the advertising-agency <em>Kadaver</em>. Here, I
+                      had to come up with a redesign for Kadaver's current website. The site hadn't been updated in 5 years, so I had to make it look
+                      modern and up-to-date. It was also originally done in Squarespace, so translating that into code was very interesting.
+                    </p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -469,162 +516,35 @@ import Form from "../components/Form.astro";
     </section>
   </div>
 
-  <!-- Resources Section -->
-  <div id="resources" class="md:mt-desktop-top mt-mobil-top">
-    <section id="resources" class="container max-w-screen-lg mx-auto py-6 px-4">
-      <div class="bg-blue-700 bg-opacity-80 p-8 rounded-[5px] shadow-drop25">
-        <h3 class="font-bold text-grey-500">Resources</h3>
-        <p class="mt-2 mb-12 text-grey-600 leading-7">
-          Access additional materials to learn more about my<br class="hidden md:block" />work, skills, and experience.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
-          <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
-            <h4 class="text-xl font-semibold text-grey-500">Resume (EN)</h4>
-            <p class="text-grey-600 mt-2 md:text-center text-left">Look through my resume to get an overview of my professional background.</p>
-            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8">
-              <Button variant="primary" size="small">See more</Button>
-            </a>
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
-            <h4 class="text-xl font-semibold text-grey-500">Resume (DA)</h4>
-            <p class="text-grey-600 mt-2 md:text-center text-left">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
-            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056">
-              <Button variant="primary" size="small">Se mere</Button>
-            </a>
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
-            <h4 class="text-xl font-semibold text-grey-500">Application template (EN)</h4>
-            <p class="text-grey-600 mt-2 md:text-center text-left">Take a look at what I include when I send out applications.</p>
-            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603">
-              <Button variant="primary" size="small">See more</Button>
-            </a>
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col md:items-center items-start bg-blue-800 p-6 rounded-[5px] shadow-drop25">
-            <h4 class="text-xl font-semibold text-grey-500">Application template (DA)</h4>
-            <p class="text-grey-600 mt-2 md:text-center text-left">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
-            <a class="mt-4 btn_container" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693">
-              <Button variant="primary" size="small">Se mere</Button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <section id="contact" class="container max-w-3xl mx-auto pb-20 md:py-12 md:px-6 py-6 px-4 md:mt-desktop-top mt-mobil-top">
-    <!-- Contact Information Section -->
-    <div id="contact-info-container" class="mb-8">
-      <h3 id="contact-title" class="font-bold text-grey-500 mx-auto">Let's talk!</h3>
-      <p id="contact-text" class="mt-2 mb-12 text-grey-600 mx-auto leading-7">
-        I'm always eager to connect with new people. <br class="md:block hidden" />Feel free to reach out with any questions or comments. <br
-          class="md:block hidden"
-        /> Then I'll get back to you as soon as I can!
-      </p>
-    </div>
-
-    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-8 md:justify-start justify-center">
-      <!-- Image and Contact Info Box -->
-      <div id="contact-container" class="flex flex-row items-center md:pt-0 pt-20">
-        <!-- Image -->
-        <img src="images/pfp.webp" alt="portrait of Sara" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg mb-7 md:mr-4" />
-
-        <!-- Contact Information Box -->
-        <div id="contact-info" class="p-4 md:p-6 bg-blue-800 bg-opacity-90 text-grey-500 rounded-[5px] shadow-drop25">
-          <h4 class="text-xl md:text-2xl font-semibold text-grey-500">Contact information:</h4>
-          <ul class="mt-4 space-y-2">
-            <li class="some1">
-              <strong class="text-grey-500">Email:</strong><br class="md:hidden block" />
-              <a href="mailto:sara.ringkow@gmail.com" class="text-grey-600 hover:text-red-500 py-1">sara.ringkow@gmail.com</a>
-              <span class="text-grey-600">/</span>
-              <a href="mailto:sape0003@stud.kea.dk" class="text-grey-600 hover:text-red-500 py-1">sape0003@stud.kea.dk</a>
-            </li>
-            <li class="some1 md:pt-0 pt-4">
-              <strong class="text-grey-500">Phone:</strong><br class="md:hidden block" />
-              <a href="tel:+4542428807" class="text-grey-600 hover:text-red-500 py-1">+45 42 42 88 07</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <style>
-    /* Default animation behavior (for users with no preference) */
-    @media (prefers-reduced-motion: no-preference) {
-      .logo-slider {
-        max-width: 1920px;
-        min-width: 320px;
-        width: 100%;
-        display: flex;
-        padding-block: 5px;
-        overflow: hidden; /* Hide overflow for smoother scrolling */
-      }
-
-      .marquee {
-        display: flex;
-        align-items: center;
-        animation: marquee 120s linear infinite; /* Default speed */
-        justify-content: flex-start; /* Start from the left */
-      }
-
-      .carousel-focus:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-      }
-    }
-
-    /* Slower animation for reduced motion users */
-    @media (prefers-reduced-motion: reduce) {
-      .logo-slider {
-        max-width: 1920px;
-        min-width: 320px;
-        width: 100%;
-        display: flex;
-        padding-block: 5px;
-        overflow: hidden; /* Hide overflow for smoother scrolling */
-      }
-
-      .marquee {
-        display: flex;
-        align-items: center;
-        animation: marquee-reduced 150s linear infinite; /* Slower animation */
-        justify-content: flex-start;
-      }
-
-      .carousel-focus:hover {
-        transform: scale(1.02); /* Slightly smaller scale for reduced motion */
-        transition: transform 0.3s ease;
-      }
-    }
-
-    /* Keyframes for normal-speed marquee */
-    @keyframes marquee {
+    @keyframes float {
       0% {
-        transform: translateX(35%); /* Start from the right */
+        transform: translatey(0);
+      }
+      50% {
+        transform: translatey(-10px);
       }
       100% {
-        transform: translateX(-100%); /* Move to the left */
+        transform: translatey(0);
+      }
+    }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes carouselAnim {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
       }
     }
 
-    /* Keyframes for reduced motion */
-    @keyframes marquee-reduced {
-      0% {
-        transform: translateX(35%); /* Start from the right */
-      }
-      100% {
-        transform: translateX(-100%); /* Move to the left */
-      }
-    }
-
-    .button-container a:hover,
-    .project-button:hover {
-      transform: translate(0, -5px);
-      transition: transform 0.3s ease;
+    .carousel-track {
+      display: flex;
+      width: max-content;
+      animation: carouselAnim 200s linear infinite;
     }
   </style>
 
@@ -654,57 +574,9 @@ import Form from "../components/Form.astro";
       elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
     });
 
-    const aboutSection = document.querySelector("#about");
-
-    inView(
-      aboutSection,
-      () => {
-        aboutSection.classList.add("animate__animated", "animate__fadeInRight");
-      },
-      {
-        amount: 0.2, // Trigger when 20% of the section is in view
-        once: true, // Only trigger once
-      }
-    );
-
-    const elementmedanimation5 = document.querySelector("#values");
-    inView(elementmedanimation5, () => {
-      elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
     const elementmedanimation6 = document.querySelector("#projects");
     inView(elementmedanimation6, () => {
       elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
-    });
-
-    const elementmedanimation7 = document.querySelector("#contact-info-container");
-    inView(elementmedanimation7, () => {
-      elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation8 = document.querySelector("#contact-form-container");
-    inView(elementmedanimation8, () => {
-      elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
-    });
-
-    const elementmedanimation9 = document.querySelector("#contact-container");
-    inView(elementmedanimation9, () => {
-      elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation10 = document.querySelector("#skills");
-    inView(elementmedanimation10, () => {
-      elementmedanimation10.classList.add("animate__animated", "animate__fadeInRight");
-    });
-
-    const elementmedanimation11 = document.querySelector("#workflow");
-    inView(elementmedanimation11, () => {
-      elementmedanimation11.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation12 = document.querySelector("#resources");
-    inView(elementmedanimation12, () => {
-      elementmedanimation12.classList.add("animate__animated", "animate__fadeInRight");
     });
   </script>
 </MainLayout>

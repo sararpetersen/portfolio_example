@@ -1,0 +1,74 @@
+---
+import Button from "../components/Button.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="Contact"
+  description="Contact Sara Ringkow Petersen"
+  ogtitle="SRP portfolio - contact"
+  ogdescription="Contact Sara Ringkow Petersen"
+>
+  <section id="contact" class="container mx-auto pb-20 md:py-12 md:px-6 py-6 px-4 md:mt-desktop-top mt-mobil-top">
+    <!-- Contact Information Section -->
+    <div id="contact-info-container" class="mb-8 md:mx-auto md:max-w-3xl max-w-md">
+      <h2 id="contact-title" class="font-bold text-gray-50">Let's talk!</h2>
+      <p id="contact-text" class="mt-4 mb-12 text-gray-100 leading-7">
+        I'm always eager to connect with new people. Feel free to reach out with any questions or comments, or if you have a project in mind that
+        you'd like to discuss and want me to be part of. Then I'll get back to you as soon as I can!
+      </p>
+    </div>
+
+    <div id="contact-form-container" class="mt-8 flex flex-col lg:flex-row gap-12 justify-center">
+      <!-- Image and Contact Info Box -->
+      <div id="contact-container" class="flex flex-col md:flex-row items-center md:pt-0 pt-20">
+        <!-- Image -->
+        <img
+          src="images/pfp.webp"
+          alt="portrait of Sara"
+          class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg mb-7 md:mb-0 md:mr-7"
+        />
+
+        <!-- Contact Information Box -->
+        <div id="contact-info" class="p-4 md:p-6 bg-blue-700 text-gray-50 rounded-[5px] shadow-drop25">
+          <ul class="space-y-2">
+            <li class="some1">
+              <strong class="text-gray-50">Email:</strong><br class="md:hidden block" />
+              <a href="mailto:sara.ringkow@gmail.com" class="text-gray-100 hover:text-red-500 py-1">sara.ringkow@gmail.com</a>
+              <span class="text-gray-100">/</span>
+              <a href="mailto:sape0003@stud.kea.dk" class="text-gray-100 hover:text-red-500 py-1">sape0003@stud.kea.dk</a>
+            </li>
+            <li class="some1 md:pt-0 pt-4">
+              <strong class="text-gray-50">Phone:</strong><br class="md:hidden block" />
+              <a href="tel:+4542428807" class="text-gray-100 hover:text-red-500 py-1">+45 42 42 88 07</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="button-container mx-auto pb-16 pt-16 text-center">
+    <a href="/" class="mt-8 btn_container">
+      <Button variant="primary" size="small">Back to homepage</Button>
+    </a>
+  </section>
+
+  <script>
+    import { inView } from "motion";
+
+    const elementmedanimation7 = document.querySelector("#contact-info-container");
+    inView(elementmedanimation7, () => {
+      elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation8 = document.querySelector("#contact-form-container");
+    inView(elementmedanimation8, () => {
+      elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const elementmedanimation9 = document.querySelector("#contact-container");
+    inView(elementmedanimation9, () => {
+      elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+  </script>
+</MainLayout>
