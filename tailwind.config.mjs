@@ -45,8 +45,8 @@ export default {
     },
 
     fontFamily: {
-      almarai: ["Almarai", "sans-serif"],
-      exo: ["Exo", "sans-serif"],
+      lato: ["Lato", "sans-serif"],
+      playfair: ["Playfair", "serif"],
     },
 
     fontSize: {
@@ -60,9 +60,9 @@ export default {
       "h3-mobile": ["2rem", { lineHeight: "2.25rem" }],
       "h4-desktop": ["1.8rem", { lineHeight: "2.25rem" }],
       "h4-mobile": ["1.4rem", { lineHeight: "1.875rem" }],
-      "p-desktop": ["1.125rem", { lineHeight: "1.875rem" }],
+      "p-desktop": ["1.100rem", { lineHeight: "1.875rem" }],
       "p-mobile": ["1rem", { lineHeight: "1.5rem" }],
-      "a-desktop": ["1.125rem", { lineHeight: "1.875rem" }],
+      "a-desktop": ["1.100rem", { lineHeight: "1.875rem" }],
       "a-mobile": ["1rem", { lineHeight: "1.5rem" }],
     },
     fontWeight: {

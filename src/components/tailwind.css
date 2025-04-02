@@ -4,32 +4,23 @@
 
 @layer base {
   .display {
-    @apply font-playfair text-display-mobile font-bold;
+    @apply font-exo text-display-mobile;
   }
 
   h1 {
-    @apply font-playfair text-h1-mobile font-bold;
+    @apply font-exo text-h1-mobile;
   }
 
   h2 {
-    @apply font-playfair text-h2-mobile font-bold;
+    @apply font-exo text-h2-mobile;
   }
 
   h3 {
-    @apply font-playfair text-h3-mobile font-bold;
-  }
-
-  h4 {
-    @apply font-playfair text-h4-mobile;
+    @apply font-exo text-h3-mobile;
   }
 
   span {
     @apply text-h4-mobile;
-  }
-
-  #personal-background span,
-  .highlight-text {
-    @apply text-p-mobile;
   }
 
   p,
@@ -55,10 +46,6 @@
       @apply text-h3-desktop;
     }
 
-    h4 {
-      @apply text-h4-desktop;
-    }
-
     span {
       @apply text-h4-desktop;
     }
@@ -77,6 +64,6 @@
 
   /* Button Text */
   .btn_container a {
-    @apply font-bold text-gray-50 text-[10px];
+    @apply font-bold text-gray-950 text-[10px];
   }
 }

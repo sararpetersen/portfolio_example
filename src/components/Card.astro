@@ -4,7 +4,8 @@ const {
   url = null,
   image,
   titleMain, // First part of the title
-  titleSub = "", // Second part of the title, optional
+  Semester = "", // Second part of the title, optional
+  Year = "", // Third part of the title, optional
   description,
   ariaLabel = "",
 } = Astro.props;
@@ -12,26 +13,40 @@ const {
 
 {
   url ? (
-    <a href={url} target="_blank" aria-label={ariaLabel} class="group">
-      <div class="bg-blue-700 p-6 rounded-[5px] shadow-drop25 hover:-translate-y-1 transition duration-500 group-hover:bg-blue-500">
-        <div class="h-[300px] bg-cover bg-center rounded-t-[5px]" style={`background-image: url(${image});`} />
-        <h3 class="text-2xl font-semibold text-gray-50 mt-4">
-          {titleMain}
-          <br />
-          {titleSub}
-        </h3>
-        <p class="text-gray-200 mt-2 leading-7">{description}</p>
+    <a href={url} target="_blank" aria-label={ariaLabel} class="group-container">
+      <div class="hover:opacity-80 hover:-translate-y-1 transition duration-300 ease-in-out">
+        <div />
+        <img src={image} alt={titleMain} class="h-[300px] object-cover w-full border border-gray-950" />
+        <div class="text py-6">
+          <h3 class="font-bold text-gray-950">
+            {titleMain}
+            <br />
+          </h3>
+          <h4 class="text-h4-mobile font-bold text-gray-950 md:pb-4 pb-3">
+            {Semester}
+            <span class="font-normal text-h4-mobile"> {Year}</span>
+          </h4>
+          <hr class="border-gray-950 mb-5 md:w-[60%] w-[90%]" />
+          <p class="text-gray-950 mt-2">{description}</p>
+        </div>
       </div>
     </a>
   ) : (
-    <div class="bg-blue-700 p-6 rounded-[5px] shadow-drop25 hover:-translate-y-1 transition duration-500 group-hover:bg-blue-500">
-      <div class="h-[300px] bg-cover bg-center rounded-t-[5px]" style={`background-image: url(${image});`} />
-      <h3 class="text-2xl font-semibold text-gray-50 mt-4">
-        {titleMain}
-        <br />
-        {titleSub}
-      </h3>
-      <p class="text-gray-200 mt-2 leading-7">{description}</p>
+    <div class="hover:-translate-y-1 transition duration-300 ease-in-out">
+      <div />
+      <img src={image} alt={titleMain} class="h-[300px] object-cover w-full border border-gray-950" />
+      <div class="text py-6">
+        <h3 class="font-bold text-gray-950">
+          {titleMain}
+          <br />
+        </h3>
+        <h4 class="text-h4-mobile font-bold text-gray-950 md:pb-4 pb-3">
+          {Semester}
+          <span class="font-normal text-h4-mobile"> {Year}</span>
+        </h4>
+        <hr class="border-gray-950 mb-5 md:w-[60%] w-[90%]" />
+        <p class="text-gray-950 mt-2">{description}</p>
+      </div>
     </div>
   )
 }
