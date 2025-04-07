@@ -15,17 +15,17 @@ import "../styles/global.css";
     </div>
 
     <!-- Desktop Navigation -->
-    <ul class="some1 hidden lg:flex space-x-6 items-center">
-      <li><a href="/" class="hover:text-red-500 py-2">Home</a></li>
-      <li><a href="/about_me" class="hover:text-red-500 py-2">About</a></li>
-      <li><a href="/contact" class="hover:text-red-500 py-2">Contact</a></li>
+    <ul class="hidden lg:flex space-x-6 items-center">
+      <li class="some1"><a href="/" class="hover:text-red-500 py-1">Home</a></li>
+      <li class="some1"><a href="/about_me" class="hover:text-red-500 py-1">About</a></li>
+      <li class="some1"><a href="/contact" class="hover:text-red-500 py-1">Contact</a></li>
 
       <!-- Vertical Divider -->
       <div class="border-r border-gray-950 h-16 mx-2"></div>
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
-        <a href="#" class="hover:text-red-500 py-2 flex items-center">
+        <a href="#" class="hover:text-red-500 py-1 flex items-center">
           Explore
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -41,11 +41,11 @@ import "../styles/global.css";
         </a>
         <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-[165px] bg-gray-50 border border-gray-950 z-10">
           <ul>
-            <li class="py-2 px-4 transition duration-300 border-b border-gray-950">
-              <a href="/other" class="hover:text-red-500 py-2">Other projects</a>
+            <li class="py-1 px-4 transition duration-300 border-b border-gray-950">
+              <a href="/other" class="hover:text-red-500 py-1">Other projects</a>
             </li>
-            <li class="py-2 px-4 transition duration-300">
-              <a href="/gallery" class="hover:text-red-500 py-2">Gallery & media</a>
+            <li class="py-1 px-4 transition duration-300">
+              <a href="/gallery" class="hover:text-red-500 py-1">Gallery & media</a>
             </li>
           </ul>
         </div>
@@ -92,20 +92,20 @@ import "../styles/global.css";
     style="display: none;"
   >
     <ul>
-      <li class="some1 text-center py-3 hover:text-red-500 transition duration-300">
-        <a href="/#hero" class="some1 text-center py-3 hover:text-red-500 transition duration-300">Home</a>
+      <li class="some1 text-center py-1">
+        <a href="/#hero" class="py-1 hover:text-red-500 transition duration-300">Home</a>
       </li>
-      <li class="some1 text-center py-3 hover:text-red-500 transition duration-300 ease-in-out">
-        <a href="/about_me">About</a>
+      <li class="some1 text-center py-1">
+        <a href="/about_me" class="py-1 hover:text-red-500 transition duration-300">About</a>
       </li>
-      <li class="some1 text-center py-3 hover:text-red-500 transition duration-300 ease-in-out">
-        <a href="/contact">Contact</a>
+      <li class="some1 text-center py-1">
+        <a href="/contact" class="py-1 hover:text-red-500 transition duration-300">Contact</a>
       </li>
-      <li class="some1 text-center py-3 hover:text-red-500 transition duration-300 ease-in-out">
-        <a href="/other">Other projects</a>
+      <li class="some1 text-center py-1">
+        <a href="/other" class="py-1 hover:text-red-500 transition duration-300">Other projects</a>
       </li>
-      <li class="some1 text-center py-3 hover:text-red-500 transition duration-300 ease-in-out">
-        <a href="/gallery">Gallery & media</a>
+      <li class="some1 text-center py-1 pb-4">
+        <a href="/gallery" class="py-1 hover:text-red-500 transition duration-300">Gallery & media</a>
       </li>
     </ul>
   </nav>

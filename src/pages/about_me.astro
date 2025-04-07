@@ -34,7 +34,7 @@ import Button from "../components/Button.astro";
               src="/images/pfp3.webp"
               alt="portrait of Sara"
               loading="lazy"
-              class="w-48 h-48 md:w-[300px] md:h-[300px] rounded-full border border-gray-950 object-cover float-right ml-12 mt-8 mb-4 shape-circle"
+              class="w-48 h-48 md:w-[300px] md:h-[300px] rounded-full border border-gray-950 object-cover md:float-right float-end md:ml-12 mt-8 mb-4 shape-circle"
             /><br />
           </p>
           <p class="text-gray-950">
@@ -56,7 +56,7 @@ import Button from "../components/Button.astro";
     <section class="container max-w-6xl mx-auto flex items-center justify-center md:px-2 px-8">
       <div>
         <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
-        <div class="grid md:grid-cols-2 grid-cols-1 mt-12 gap-16">
+        <div class="grid md:grid-cols-2 grid-cols-1 mt-12 md:gap-16 gap-8">
           <!-- Interest Item 1 -->
           <div>
             <div>
@@ -140,7 +140,7 @@ import Button from "../components/Button.astro";
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
             <a
-              class="mt-5 btn_container w-[30%]"
+              class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8"
               target="_blank"
             >
@@ -154,7 +154,7 @@ import Button from "../components/Button.astro";
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
             <a
-              class="mt-5 btn_container w-[30%]"
+              class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056"
               target="_blank"
             >
@@ -168,7 +168,7 @@ import Button from "../components/Button.astro";
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
             <a
-              class="mt-5 btn_container w-[30%]"
+              class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603"
               target="_blank"
             >
@@ -182,7 +182,7 @@ import Button from "../components/Button.astro";
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger.</p>
             <a
-              class="mt-5 btn_container w-[30%]"
+              class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693"
               target="_blank"
             >
@@ -196,7 +196,7 @@ import Button from "../components/Button.astro";
   </div>
 
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 pt-16 text-center">
+  <section class="button-container mx-auto pb-16 pt-20 text-center">
     <a href="/" class="mt-8 btn_container">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
