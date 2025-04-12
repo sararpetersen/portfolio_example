@@ -18,9 +18,9 @@ import Cases from "../components/Cases.astro";
       <h1 id="hero-title" class="display font-bold text-gray-950 md:pt-0 pt-8">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-medium text-gray-950 mt-4 mb-10">Welcome to my portfolio</h2>
       <p id="hero-text" class="text-gray-950 md:mt-0 mb-16 md:max-w-4xl">
-        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for cx0reating engaging and accessible digital experiences.
-        If you're interested in learning more about me or just want to get in touch, feel free to reach out through the contact-page. Or look through
-        the other pages, if you're looking for something else!
+        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences. If
+        you're interested in learning more about me or just want to get in touch, feel free to reach out through the contact-page. Or look through the
+        other pages, if you're looking for something else!
       </p>
     </div>
   </section>
@@ -58,5 +58,10 @@ import Cases from "../components/Cases.astro";
   const elementmedanimation4 = document.querySelector("#hero-button");
   inView(elementmedanimation4, () => {
     elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
+  });
+
+  const elementmedanimation5 = document.querySelector("#project-section");
+  inView(elementmedanimation5, () => {
+    elementmedanimation5.classList.add("animate__animated", "animate__slideInLeft");
   });
 </script>
