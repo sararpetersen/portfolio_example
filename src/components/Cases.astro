@@ -1,6 +1,4 @@
 ---
-import Button from "./Button.astro";
-
 const fetchCards = async () => {
   const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
     method: "GET",
@@ -13,28 +11,30 @@ const fetchCards = async () => {
 };
 
 const projects = await fetchCards();
+const ariaLabel = "View project: ";
 ---
 
 <!-- Carousel -->
-<div class="carousel overflow-hidden w-full">
+<div class="carousel w-full">
   <ul class="carousel-track grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-16 md:pb-16 pb-8">
     {
       projects.map((project) => (
-        <div class="flex flex-col">
-          <img class="w-full h-[400px] object-cover border border-gray-950" src={project.image} alt={project.name} />
-          <div class="flex flex-col pt-2">
-            <h3 class="font-bold pt-5">{project.name}</h3>
-            <h4 class="text-h4-mobile md:pb-3 pt-0 pb-2 text-gray-950 italic">
-              <span class="text-h4-mobile font-bold text-gray-950">Semester:</span> {project.semester}
+        <div class="flex flex-col border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-[2px] transition duration-300 ease-in-out">
+          <img class="w-[600px] h-[400px] object-cover rounded-t-[5px] border-b border-gray-950" src={project.image} alt={project.name} />
+          <div class="flex flex-col p-6 md:pt-12 pt-8">
+            <hr class="border-gray-950 mb-3 md:w-[90%] w-full" />
+            <h3 class="pt-5">{project.name}</h3>
+            <h4 class="font-dense md:pb-3 pb-2 pt-1 text-gray-950">
+              <span class="font-bold text-gray-950">Semester:</span> {project.semester}
             </h4>
-            <hr class="border-gray-950 mb-5 md:w-[60%] w-[90%]" />
-            <p class="pb-6 text-gray-950">{project.description}</p>
-            <a class="text-blue-600 inline-block pt-2" href={project.url} target="_blank">
-              <div class="spacing" />
-              <Button variant="primary" size="small">
-                See project
-              </Button>
-            </a>
+            <hr class="border-gray-950 mb-8 mt-3 md:w-[90%] w-full" />
+            <p class="pb-6 text-gray-950 max-w-lg mb-auto">{project.description}</p>
+            <hr class="border-gray-950 mb-5 mt-3 md:w-[90%] w-full" />
+            <div class="px-4 py-2 w-fit text-gray-50 border border-gray-950 bg-red-500 hover:bg-red-600 transition duration-300 ease-in-out">
+              <a href={project.url} target="_blank" aria-label={ariaLabel} class="italic font-bold text-[14px] uppercase">
+                Click here to see project
+              </a>
+            </div>
           </div>
         </div>
       ))

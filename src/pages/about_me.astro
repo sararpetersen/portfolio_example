@@ -12,41 +12,46 @@ import Button from "../components/Button.astro";
 >
   <section
     id="about-me"
-    class="grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
+    class="grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
     <div class="relative md:col-span-12 col-start-2 col-span-10">
-      <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950 md:pb-20 pb-8">About me</h1>
+      <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
     </div>
   </section>
-
+  <div class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
+    <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
+    <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-20 pb-8" />
+  </div>
   <!-- Personal Background Section -->
   <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto">
     <div class="flex flex-col lg:flex-row items-center justify-center md:col-span-12 col-start-2 col-span-10">
-      <div class="flex flex-col lg:flex-row items-center">
-        <div class="relative">
-          <h3 class="md:text-h4-desktop text-h4-mobile font-bold text-gray-950">Creativity has always been a part of me..</h3>
-          <p class="mt-4 text-gray-950">
-            I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash; just everything that spelled
-            "creativity". I knew deep down that, when I grew up, I wanted to make it a career. As I became older, however, I also started to become
-            interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing.<br />
-            <img
-              src="/images/pfp3.webp"
-              alt="portrait of Sara"
-              loading="lazy"
-              class="w-48 h-48 md:w-[300px] md:h-[300px] rounded-full border border-gray-950 object-cover md:float-right float-end md:ml-12 mt-8 mb-4 shape-circle"
-            /><br />
-          </p>
-          <p class="text-gray-950">
-            After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through
-            an open-house event that I attended. It was a degree that combined both creativity and technology, and I knew right away that it was the
-            right fit for me. <br />Through my studies, I quickly realised the important role that accessibility played in digital design. Having been
-            late-diagnosed with autism gave me firsthand-insight into the challenges of navigating a world that isn't always accessible to everyone.
-            So that became my goal&mdash; to create digital experiences that remove barriers and ensure inclusivity for all. <br /><br />With
-            accessibility at the core of my work, I strive to design engaging, user-friendly platforms that make a difference. Every project is an
-            opportunity to merge creativity with purpose, and I look forward to growing, innovating, and shaping a more inclusive digital world.
-          </p>
-        </div>
+      <div class="grid md:grid-cols-2 grid-cols-1 items-center">
+        <h2 class="text-[50px] font-dense font-bold text-gray-950 h-[20%] md:pb-0 pb-12">Creativity has always been a part of me..</h2>
+
+        <p class="mt-4 text-gray-950">
+          <span class="font-bold text-[20px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
+          just everything that spelled "creativity". I knew deep down that, when I grew up, I wanted to make it a career. As I became older, however, I
+          also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right
+          thing.<br /><br />
+        </p>
+        <img
+          src="/images/pfp3.webp"
+          alt="portrait of Sara"
+          loading="lazy"
+          class="w-48 h-48 md:w-[400px] md:h-[400px] rounded-full border border-gray-950 object-cover hidden md:block"
+        />
+        <p class="text-gray-950">
+          After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through an
+          open-house event at the school that I now attend. It was a degree that combined both creativity and technology, and I knew right away that
+          it was the right fit for me. <br />Through my studies, I quickly realised the important role that accessibility played in digital design. As
+          someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. So that has
+          become my goal&mdash; to create digital experiences that remove barriers and ensure inclusivity for all. <br /><br />With accessibility at
+          the core of my work, I strive to design engaging, user-friendly platforms that make a difference. Every project is an opportunity to merge
+          creativity with purpose, and I look forward to growing, innovating, and shaping a more inclusive digital world.<span
+            class="font-bold text-[20px] italic">"</span
+          >
+        </p>
       </div>
     </div>
   </section>
@@ -60,7 +65,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 1 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">Reading</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">Reading</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 Books are my gateway to new worlds, where I can immerse myself in different genres and explore fascinating stories.
@@ -71,7 +76,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 2 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">Gaming</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">Gaming</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 Gaming is a way for me to experience incredible stories and challenges, all while having fun in virtual spaces.
@@ -82,7 +87,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 3 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">Crafting & DIY</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 I enjoy getting creative with DIY projects, whether it's drawing, making keychains, or crafting something unique.
@@ -93,7 +98,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 4 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">YouTube-content</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">YouTube-content</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 I find great inspiration and entertainment through YouTube&mdash; whether it's about tech, movies, or games.
@@ -104,7 +109,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 5 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">Watching movies & TV series</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 Watching movies and TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
@@ -115,7 +120,7 @@ import Button from "../components/Button.astro";
           <!-- Interest Item 6 -->
           <div>
             <div>
-              <h4 class="text-h4-mobile pb-2 font-bold text-gray-950">Photography</h4>
+              <h4 class="pb-2 font-dense font-bold text-gray-950">Photography</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
                 Through photography, I capture moments that inspire me, allowing me to preserve the beauty of the world around me.
@@ -136,7 +141,7 @@ import Button from "../components/Button.astro";
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
           <!-- Resource Item -->
           <div class="flex flex-col">
-            <h4 class="text-h4-mobile font-bold text-gray-950 pb-2">Resume (EN)</h4>
+            <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
             <a
@@ -150,7 +155,7 @@ import Button from "../components/Button.astro";
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col">
-            <h4 class="text-h4-mobile font-bold text-gray-950 pb-2">Resume (DA)</h4>
+            <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (DA)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
             <a
@@ -164,7 +169,7 @@ import Button from "../components/Button.astro";
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col">
-            <h4 class="text-h4-mobile font-bold text-gray-950 pb-2">Application template (EN)</h4>
+            <h4 class="pb-2 font-dense font-bold text-gray-950">Application template (EN)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
             <a
@@ -238,11 +243,4 @@ import Button from "../components/Button.astro";
       elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
     });
   </script>
-
-  <style>
-    .shape-circle {
-      shape-outside: circle();
-      clip-path: circle();
-    }
-  </style>
 </MainLayout>

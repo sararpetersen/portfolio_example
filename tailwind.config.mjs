@@ -40,13 +40,14 @@ export default {
         700: "#4f4f4f",
         800: "#454545",
         900: "#3d3d3d",
-        950: "#292929",
+        950: "#1d1d1d",
       },
     },
 
     fontFamily: {
       lato: ["Lato", "sans-serif"],
-      playfair: ["Playfair", "serif"],
+      vollkorn: ["Vollkorn", "serif"],
+      dense: ["Dense", "sans-serif"],
     },
 
     fontSize: {

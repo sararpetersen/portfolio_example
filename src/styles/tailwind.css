@@ -4,23 +4,23 @@
 
 @layer base {
   .display {
-    @apply font-playfair text-display-mobile font-bold;
+    @apply font-vollkorn text-display-mobile font-bold;
   }
 
   h1 {
-    @apply font-playfair text-h1-mobile font-bold;
+    @apply font-vollkorn text-h1-mobile font-bold;
   }
 
   h2 {
-    @apply font-playfair text-h2-mobile font-bold;
+    @apply font-vollkorn text-h2-mobile font-bold;
   }
 
   h3 {
-    @apply font-playfair text-h3-mobile font-bold;
+    @apply font-vollkorn text-h3-mobile font-bold;
   }
 
   h4 {
-    @apply font-playfair text-h4-mobile;
+    @apply font-vollkorn text-h4-mobile;
   }
 
   span {
@@ -35,7 +35,7 @@
   p,
   li,
   a {
-    @apply text-p-mobile;
+    @apply text-p-mobile font-light;
   }
 
   @media (min-width: 768px) {
@@ -71,7 +71,7 @@
     p,
     li,
     a {
-      @apply text-p-desktop;
+      @apply text-p-desktop font-light;
     }
   }
 
