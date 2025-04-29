@@ -17,18 +17,20 @@ import Cases from "../components/Cases.astro";
     <div class="relative md:pb-0 md:col-span-12 col-span-10 col-start-2 mx-auto flex flex-col justify-center">
       <h1 id="hero-title" class="display text-gray-950 md:pt-0 pt-8">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-dense text-gray-950 mt-4 mb-10">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-gray-950 md:mt-0 mb-16 md:max-w-4xl">
+      <p id="hero-text" class="text-gray-950 md:mt-0 md:mb-16 mb-4 md:max-w-4xl">
         I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences. If
         you're interested in learning more about me or just want to get in touch, feel free to reach out through the contact-page. Or look through the
         other pages, if you're looking for something else!
       </p>
     </div>
   </section>
-  <hr class="mx-auto border-gray-950 mt-5 md:w-[70%] w-[90%]" />
-  <hr class="mx-auto border-gray-950 mt-5 md:w-[50%] w-[70%]" />
+  <div class="md:max-w-none max-w-6xl mx-auto md:px-2 px-8">
+    <hr class="md:mx-auto border-gray-950 mt-5 md:w-[70%] w-[90%]" />
+    <hr class="md:mx-auto border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
+  </div>
 
   <!-- Projects Section -->
-  <div class="grid grid-cols-12 md:mt-16 mt-0 md:pb-0 pb-16 md:pt-8 pt-0 max-w-7xl mx-auto"></div>
+  <div class="grid grid-cols-12 md:mt-16 mt-0 md:pb-0 pb-16 max-w-7xl mx-auto"></div>
   <div id="projects" class="grid grid-cols-12 max-w-7xl mx-auto">
     <section id="project-section" class="md:col-span-12 col-start-2 col-span-10">
       <Cases />
