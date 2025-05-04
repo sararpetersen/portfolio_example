@@ -24,7 +24,7 @@ import "../styles/global.css";
       <div class="border-r border-gray-950 h-16 mx-2"></div>
 
       <!-- Explore Dropdown with Arrow -->
-      <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
+      <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false" x-cloak>
         <a href="#" class="hover:text-red-500 py-1 flex items-center">
           Explore
           <svg
@@ -87,6 +87,7 @@ import "../styles/global.css";
     class="flex flex-col content-center lg:hidden"
     x-show="showmenu"
     x-transition=""
+    x-cloak
     x-on:click="showmenu = false"
     x-on:click.outside="showmenu = false"
     style="display: none;"
@@ -110,3 +111,9 @@ import "../styles/global.css";
     </ul>
   </nav>
 </header>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>

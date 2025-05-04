@@ -26,6 +26,7 @@ import Card from "../components/Card.astro";
         Year="1st semester"
         description="This was the third project on 1st semester. Here, we had to make a game from scratch using Javascript and CSS. Things were looking good, until it didn't. I messed up big-time on the coding-part, which resulted in the game not working at all. I also didn't manage to make a proper landing-page for it."
         ariaLabel="View project: Animation-site (1st semester)"
+        tools={["HTML", "CSS", "JavaScript"]}
       />
       <Card
         url="https://sararingkow.github.io/videosite_v3/"
@@ -33,6 +34,7 @@ import Card from "../components/Card.astro";
         titleMain="Video-site"
         Semester="Semester: "
         Year="1st semester"
+        tools={["HTML", "CSS", "JavaScript"]}
         description="This was the fourth project on 1st semester. Here, we had to go out and film an interview of a person with a certain passion, and then make a site for it. Although I am proud of the video-product itself, I'm not so proud of the site that I made for it. I just feel like I could've done much more with it."
         ariaLabel="View project: Video-site (1st semester)"
       />
@@ -42,6 +44,7 @@ import Card from "../components/Card.astro";
         titleMain="Vild Mad"
         Semester="Semester: "
         Year="2nd semester"
+        tools={["HTML", "CSS", "JSON", "JavaScript"]}
         description="This was the first case-project on 2nd semester. Here, we had to make a website— subsequent to the original —for an organisation called Vild Mad. If I hadn't ended up in a group with a bad work-dynamic, I think this project would've turned out great."
         ariaLabel="View project: Vild Mad (2nd semester case-project)"
       />
@@ -51,11 +54,26 @@ import Card from "../components/Card.astro";
         titleMain="Digital Skraldedag 2025"
         Semester="Semester: "
         Year="3rd semester"
+        tools={["Astro", "Tailwind", "JavaScript"]}
         description="This was the first case-project on 3rd semester. Here, we had to make a Danish pendant to a campaign called Digital Cleanup Day. In the beginning, I really liked where we were going with this project. But, I just didn't like the way it ended up turning out."
         ariaLabel="View project: Digital Skraldedag 2025 (3rd semester case-project)"
       />
-      <Card image="/images/404_error.webp" titleMain="No project yet" description="No project has been done yet. Please stay tuned." />
-      <Card image="/images/404_error.webp" titleMain="No project yet" description="No project has been done yet. Please stay tuned." />
+      <Card
+        image="/images/404_error.webp"
+        titleMain="No project yet"
+        Semester="Semester: "
+        Year="TBA"
+        description="No project has been done yet. Please stay tuned."
+        tools={["No tools"]}
+      />
+      <Card
+        image="/images/404_error.webp"
+        titleMain="No project yet"
+        Semester="Semester: "
+        Year="TBA"
+        description="No project has been done yet. Please stay tuned."
+        tools={["No tools"]}
+      />
     </div>
   </section>
 
@@ -89,11 +107,6 @@ import Card from "../components/Card.astro";
     animate("body", { opacity: [0, 1] }, { duration: 1 });
 
     /** inView Animations */
-    const elementmedanimation1 = document.querySelector("#other-projects-grid");
-    inView(elementmedanimation1, () => {
-      elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
     const elementmedanimation2 = document.querySelector(".heading-title");
     inView(elementmedanimation2, () => {
       elementmedanimation2.classList.add("animate__animated", "animate__backInRight");

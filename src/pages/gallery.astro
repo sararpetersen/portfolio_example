@@ -14,16 +14,20 @@ import Button from "../components/Button.astro";
   <!-- Gallery Section -->
   <section
     id="gallery"
-    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 mx-auto relative max-w-6xl md:text-left text-center"
+    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 pb-8 mx-auto relative max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
     <div class="mb-12 col-span-12">
       <h1 class="heading-title font-bold md:text-left text-center text-gray-950">Gallery & media</h1>
       <p class="heading-text text-gray-950 md:text-left text-center md:pt-5 pt-4 pb-2">Click on the different media-types to enlarge them.</p>
+      <div id="lines" class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
+        <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
+        <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
+      </div>
     </div>
 
     <!-- Media Grid -->
-    <div class="main col-span-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div id="media-grid" class="main col-span-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Media Item 1 -->
       <div class="relative group w-full h-64 overflow-hidden">
         <a href="/images/entrance_exam.webp" class="w-full h-full lightbox" aria-label="Entrance-exam (frontpage)">
@@ -35,7 +39,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Entrance-exam <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -53,7 +57,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Entrance-exam <br /><em class="text-gray-100">(computer-page)</em>
             </p>
           </div>
@@ -70,7 +74,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               UX/UI-site <br /><em class="text-gray-100">(presentation)</em>
             </p>
           </div>
@@ -88,7 +92,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Moodboard <br /><em class="text-gray-100">(UX/UI-site)</em>
             </p>
           </div>
@@ -105,7 +109,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Animation-site <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -123,7 +127,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Animation-site <br /><em class="text-gray-100">(state-machine diagram)</em>
             </p>
           </div>
@@ -141,7 +145,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Animation-site <br /><em class="text-gray-100">(paper-prototype)</em>
             </p>
           </div>
@@ -158,7 +162,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Videosite <br /><em class="text-gray-100">(main-page)</em>
             </p>
           </div>
@@ -175,7 +179,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Video-site <br /><em class="text-gray-100">(interview | DA)</em>
             </p>
           </div>
@@ -193,7 +197,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               The MAK committee <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -210,7 +214,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               The MAK committee <br /><em class="text-gray-100">(news-page)</em>
             </p>
           </div>
@@ -228,7 +232,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               First portfolio-site <br /><em class="text-gray-100">(lo-fi wireframe)</em>
             </p>
           </div>
@@ -246,7 +250,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               First portfolio-site <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -263,7 +267,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Vild Mad <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -281,7 +285,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Karrusel Festival<br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -299,7 +303,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               I Tråd Med Verden <br /><em class="text-gray-100">(top-section)</em>
             </p>
           </div>
@@ -317,7 +321,9 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="text-gray-50 font-semibold text-lg uppercase">Volander Art <br /><em class="text-gray-100">(frontpage)</em></p>
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
+              Volander Art <br /><em class="text-gray-100">(frontpage)</em>
+            </p>
           </div>
         </a>
       </div>
@@ -332,7 +338,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Style-tile <br /><em class="text-gray-100">(Volander Art)</em>
             </p>
           </div>
@@ -350,7 +356,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Digital Skraldedag <br /><em class="text-gray-100">(frontpage)</em>
             </p>
           </div>
@@ -367,7 +373,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Digital application <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -385,7 +391,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Digital application <br /><em class="text-gray-100">(old background-image)</em>
             </p>
           </div>
@@ -407,7 +413,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Internship-preparations<br /><em class="text-gray-100">(application-video | DA)</em>
             </p>
           </div>
@@ -425,7 +431,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               #SingleUseSucks <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -443,7 +449,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               ACCESS - selfmade font <br /><em class="text-gray-100">(top-section)</em>
             </p>
           </div>
@@ -461,7 +467,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               ACCESS - selfmade font <br /><em class="text-gray-100">(mockup)</em>
             </p>
           </div>
@@ -473,13 +479,13 @@ import Button from "../components/Button.astro";
         <a href="/images/workflow.webp" class="w-full h-full lightbox" aria-label="New portfolio-site (research-workflow)">
           <img
             src="/images/workflow.webp"
-            alt="Screenshot of the research-workflow for the new portfolio-site (this website)"
+            alt="Screenshot of the research-workflow for the new portfolio-site (this website | old design)"
             class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               New portfolio-site <br /><em class="text-gray-100">(research-workflow)</em>
             </p>
           </div>
@@ -491,14 +497,14 @@ import Button from "../components/Button.astro";
         <a href="/images/2nd_portfolio.jpeg" class="w-full h-full lightbox" aria-label="New portfolio-site (1st wireframe-iteration)">
           <img
             src="/images/2nd_portfolio.jpeg"
-            alt="Screenshot of the first wireframe-iteration for the new portfolio-site (this website)"
+            alt="Screenshot of the first wireframe-iteration for the new portfolio-site (this website | old design 1)"
             class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
-              New portfolio-site <br /><em class="text-gray-100">(1st wireframe-iteration)</em>
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
+              New portfolio-site <br /><em class="text-gray-100">(old wireframe-iteration 1)</em>
             </p>
           </div>
         </a>
@@ -508,14 +514,14 @@ import Button from "../components/Button.astro";
         <a href="/images/2nd_portfolio2.webp" class="w-full h-full lightbox" aria-label="New portfolio-site (2nd wireframe-iteration)">
           <img
             src="/images/2nd_portfolio2.webp"
-            alt="Screenshot of the second wireframe-iteration for the new portfolio-site (this website)"
+            alt="Screenshot of the second wireframe-iteration for the new portfolio-site (this website | old design 2)"
             class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
-              New portfolio-site <br /><em class="text-gray-100">(2nd wireframe-iteration)</em>
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
+              New portfolio-site <br /><em class="text-gray-100">(old wireframe-iteration 2)</em>
             </p>
           </div>
         </a>
@@ -532,7 +538,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               HÖJSKOLENDK <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -550,7 +556,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               HÖJSKOLENDK <br /><em class="text-gray-100">(infomeeting-page)</em>
             </p>
           </div>
@@ -568,7 +574,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Vinens Essens <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -586,7 +592,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Vinens Essens <br /><em class="text-gray-100">(listview-page)</em>
             </p>
           </div>
@@ -604,7 +610,7 @@ import Button from "../components/Button.astro";
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Kadaver <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -617,12 +623,12 @@ import Button from "../components/Button.astro";
           <img
             src="/images/superheltedagen.webp"
             alt="Screenshot of the hero-section for the Superheltedagen site"
-            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
+            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div
             class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <p class="font-vollkorn text-gray-50 font-semibold text-lg text-center uppercase">
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
               Superheltedagen <br /><em class="text-gray-100">(hero-section)</em>
             </p>
           </div>
@@ -665,6 +671,20 @@ import Button from "../components/Button.astro";
     const elementmedanimation4 = document.querySelector(".button-container");
     inView(elementmedanimation4, () => {
       elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const elementmedanimation5 = document.querySelector("#lines");
+    inView(elementmedanimation5, () => {
+      elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
+    });
+
+    const grid = document.querySelectorAll("#media-grid > div");
+
+    grid.forEach((grid, index) => {
+      inView(grid, () => {
+        grid.classList.add("animate__animated", "animate__fadeInUp");
+        grid.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+      });
     });
   </script>
 

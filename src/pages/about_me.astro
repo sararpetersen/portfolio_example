@@ -19,28 +19,24 @@ import Button from "../components/Button.astro";
       <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
     </div>
   </section>
-  <div class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
+  <div id="lines" class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
     <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
     <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-20 pb-8" />
   </div>
   <!-- Personal Background Section -->
   <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto">
-    <div class="flex flex-col lg:flex-row items-center justify-center md:col-span-12 col-start-2 col-span-10">
-      <div class="grid md:grid-cols-2 grid-cols-1 items-center">
-        <h2 class="text-[50px] font-dense font-bold text-gray-950 h-[20%] md:pb-0 pb-12">Creativity has always been a part of me..</h2>
-
+    <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center md:col-span-12 col-start-2 col-span-10">
+      <div class="items-center md:pb-0 pb-8">
+        <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-8">
+          Creativity has always been a part of me..
+        </h2>
         <p class="mt-4 text-gray-950">
           <span class="font-bold text-[20px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
           just everything that spelled "creativity". I knew deep down that, when I grew up, I wanted to make it a career. As I became older, however, I
           also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right
           thing.<br /><br />
         </p>
-        <img
-          src="/images/pfp3.webp"
-          alt="portrait of Sara"
-          loading="lazy"
-          class="w-48 h-48 md:w-[400px] md:h-[400px] rounded-full border border-gray-950 object-cover hidden md:block"
-        />
+
         <p class="text-gray-950">
           After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through an
           open-house event at the school that I now attend. It was a degree that combined both creativity and technology, and I knew right away that
@@ -53,6 +49,93 @@ import Button from "../components/Button.astro";
           >
         </p>
       </div>
+      <div class="flex items-center justify-start md:justify-end">
+        <img src="/images/pfp3.webp" alt="portrait of Sara" class="w-[450px] h-[500px] object-cover border border-gray-950" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="container max-w-6xl mx-auto md:mt-desktop-top mt-mobil-top md:px-2 px-8">
+    <h3 class="text-gray-950 mb-12">My journey so far</h3>
+    <div id="timeline-line" class="relative border-l-2 border-gray-300 pl-6">
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">2017 – 2018</p>
+        <h4 class="font-dense font-bold text-gray-950">Advertisement-distributor | FK Distribution A/S</h4>
+        <p class="text-gray-700">My first actual job, that I got during my final year of primary school.</p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">2018 – 2019</p>
+        <h4 class="font-dense font-bold text-gray-950">10th grade | Egeskolen</h4>
+        <p class="text-gray-700">After primary school, I decided to continue studying, as my grades weren't good enough to apply for high school.</p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">February 2018 – may 2019</p>
+        <h4 class="font-dense font-bold text-gray-950">Shop-assistant u. 18 | Netto, Vanløse</h4>
+        <p class="text-gray-700">
+          Applied for this job, shortly after I quit as an advertisement-distributor. I only had the job for 3 months, but that was more than enough
+          for me to realise that retail and customer-handling wasn't my thing.
+        </p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">August 2019 – june 2021</p>
+        <h4 class="font-dense font-bold text-gray-950">HF | Egedal Gymnasium & HF</h4>
+        <p class="text-gray-700">
+          After 10th grade, my grades were finally good enough for me to apply for high school, and I applied for the one I was most interested in.
+          During my time there, my main-subjects were art, society-class and psychology.
+        </p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">June 2021 – december 2022</p>
+        <h4 class="font-dense font-bold text-gray-950">Assistant in webshop | Lloyd Concept Store Copenhagen*</h4>
+        <p class="text-gray-700">
+          This was a job that I got after graduating from high school, through a family-aquaintance. Here, I did order-management (finding and
+          packing) and cleaning. It was a good way for me to keep me occupied during my gap-year, until I figured out what I wanted to do.
+        </p>
+        <p class="italic text-gray-700 text-sm mt-2">* I went on a 6-month leave during my time there, due to my stay at Bosei (folk high school)</p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">January 2022 – june 2022</p>
+        <h4 class="font-dense font-bold text-gray-950">Bosei Sports Folk High School | Gap-year</h4>
+        <p class="text-gray-700">
+          During my 6-month leave at Lloyd, I went to stay at Bosei Sports Folk High School, where I spent the rest of my gap-year. Here, I studied
+          Japanese&mdash; both the language and the culture &mdash;and also did a bit of gaming and sports.
+        </p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">August 2022 – may 2023</p>
+        <h4 class="font-dense font-bold text-gray-950">Singular courses in History (dropped*) and Japanese (lvl. 0-B) | Frederiksberg VUC & STX</h4>
+        <p class="text-gray-700">
+          After my gap-year, I decided to continue studying, as I wanted to improve my grades and maybe apply for a higher education. I chose
+          Japanese, my new-found interest after Bosei. And History, because my grade from high school was low.
+        </p>
+        <p class="italic text-gray-700 text-sm mt-2">* Had to drop it due to work and just continue with one course</p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">August 2023 – present</p>
+        <h4 class="font-dense font-bold text-gray-950">Multimedia-design | KEA – Københavns Erhvervsakademi</h4>
+        <p class="text-gray-700">
+          After my singular courses, I applied for the multimedia-design degree, after having attended an open-house event at KEA. I was really
+          interested in this degree, as it combined creativity with technology, and I knew that it would be a good fit for me.
+        </p>
+      </div>
+
+      <div class="mb-10">
+        <p class="text-sm text-gray-600 mb-1">January 2025 – april 2025</p>
+        <h4 class="font-dense font-bold text-gray-950">Junior Creative/intern | Kadaver ApS</h4>
+        <p class="text-gray-700">
+          As part of my fourth and final semester on the multimedia-design degree, I had to complete a 10-week internship. I chose to do my internship
+          at the advertising-agency Kadaver, which was recommended to me by an aquaintance. During my internship, I redesigned websites for both
+          Kadaver themselves, and also one of their biggest clients.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -61,7 +144,7 @@ import Button from "../components/Button.astro";
     <section class="container max-w-6xl mx-auto flex items-center justify-center md:px-2 px-8">
       <div>
         <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
-        <div class="grid md:grid-cols-2 grid-cols-1 mt-12 md:gap-16 gap-8">
+        <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 mt-12 md:gap-16 gap-8">
           <!-- Interest Item 1 -->
           <div>
             <div>
@@ -134,11 +217,11 @@ import Button from "../components/Button.astro";
   </div>
 
   <!-- Resources Section -->
-  <div id="resources" class="md:mt-desktop-top mt-mobil-top">
-    <section id="resources" class="container max-w-6xl mx-auto md:px-2 px-8">
+  <div class="resources md:mt-desktop-top mt-mobil-top">
+    <section class="container max-w-6xl mx-auto md:px-2 px-8">
       <div>
         <h3 class="font-bold text-gray-950">Resources</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
+        <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
           <!-- Resource Item -->
           <div class="flex flex-col">
             <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
@@ -146,7 +229,7 @@ import Button from "../components/Button.astro";
             <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
             <a
               class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:3fb15420-6acd-4cc6-b38b-11478bb6eef8"
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:64ad8373-1912-4e34-aa64-5396885ef33c"
               target="_blank"
             >
               <Button variant="primary" size="small">See more</Button>
@@ -160,7 +243,7 @@ import Button from "../components/Button.astro";
             <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
             <a
               class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bcc2546f-db89-4116-8fce-c76a76a1c056"
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:af8d80a0-8eb6-4f31-8640-59b2ff3caa83"
               target="_blank"
             >
               <Button variant="primary" size="small">Se mere</Button>
@@ -169,12 +252,12 @@ import Button from "../components/Button.astro";
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col">
-            <h4 class="pb-2 font-dense font-bold text-gray-950">Application template (EN)</h4>
+            <h4 class="pb-2 font-dense font-bold text-gray-950">Application-template (EN)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
             <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
             <a
               class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:8d1c4e55-dd87-4809-bd66-702774bd2603"
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:75e9d1b3-7cc2-4520-921d-15cb2eb49201"
               target="_blank"
             >
               <Button variant="primary" size="small">See more</Button>
@@ -183,12 +266,12 @@ import Button from "../components/Button.astro";
           </div>
           <!-- Resource Item -->
           <div class="flex flex-col">
-            <h4 class="text-h4-mobile font-bold text-gray-950 pb-2">Application template (DA)</h4>
+            <h4 class="font-dense font-bold text-gray-950 pb-2">Application-template (DA)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger.</p>
+            <p class="text-gray-950">Tag et kig på hvad jeg inkluderer, når jeg sender ansøgninger.</p>
             <a
               class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:c7a945dd-6222-43db-8899-a0c899158693"
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bbdd4db8-79c5-4d85-9fbb-ed404b83483c"
               target="_blank"
             >
               <Button variant="primary" size="small">Se mere</Button>
@@ -218,7 +301,7 @@ import Button from "../components/Button.astro";
       elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
     });
 
-    const elementmedanimation2 = document.querySelector("#more-about-me-text");
+    const elementmedanimation2 = document.querySelector("#lines");
     inView(elementmedanimation2, () => {
       elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
     });
@@ -228,19 +311,36 @@ import Button from "../components/Button.astro";
       elementmedanimation3.classList.add("animate__animated", "animate__fadeInLeft");
     });
 
-    const elementmedanimation4 = document.querySelector("#interests");
-    inView(elementmedanimation4, () => {
-      elementmedanimation4.classList.add("animate__animated", "animate__fadeInLeft");
-    });
-
-    const elementmedanimation5a = document.querySelector("#resources");
-    inView(elementmedanimation5a, () => {
-      elementmedanimation5a.classList.add("animate__animated", "animate__fadeInRight");
-    });
-
     const elementmedanimation6 = document.querySelector(".button-container");
     inView(elementmedanimation6, () => {
       elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const boxes = document.querySelectorAll("#timeline-line > div");
+
+    boxes.forEach((boxes, index) => {
+      inView(boxes, () => {
+        boxes.classList.add("animate__animated", "animate__fadeInUp");
+        boxes.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+      });
+    });
+
+    const sections = document.querySelectorAll("#interests-and-hobbies > div");
+
+    sections.forEach((sections, index) => {
+      inView(sections, () => {
+        sections.classList.add("animate__animated", "animate__fadeInUp");
+        sections.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+      });
+    });
+
+    const section = document.querySelectorAll("#resources-section > div");
+
+    section.forEach((section, index) => {
+      inView(section, () => {
+        section.classList.add("animate__animated", "animate__fadeInUp");
+        section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+      });
     });
   </script>
 </MainLayout>

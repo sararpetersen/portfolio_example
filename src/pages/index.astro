@@ -15,7 +15,7 @@ import Cases from "../components/Cases.astro";
   <section id="hero" class="relative container grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8">
     <!-- Content of Hero Section (kept on top with z-index) -->
     <div class="relative md:pb-0 md:col-span-12 col-span-10 col-start-2 mx-auto flex flex-col justify-center">
-      <h1 id="hero-title" class="display text-gray-950 md:pt-0 pt-8">Hey there!</h1>
+      <h1 id="hero-title" class="display text-gray-950 md:pt-12 pt-8">Hey there!</h1>
       <h2 id="hero-subtitle" class="font-dense text-gray-950 mt-4 mb-10">Welcome to my portfolio</h2>
       <p id="hero-text" class="text-gray-950 md:mt-0 md:mb-16 mb-4 md:max-w-4xl">
         I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences. If
@@ -24,7 +24,7 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
   </section>
-  <div class="md:max-w-none max-w-6xl mx-auto md:px-2 px-8">
+  <div id="lines" class="md:max-w-none max-w-6xl mx-auto md:px-2 px-8">
     <hr class="md:mx-auto border-gray-950 mt-5 md:w-[70%] w-[90%]" />
     <hr class="md:mx-auto border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
   </div>
@@ -59,13 +59,8 @@ import Cases from "../components/Cases.astro";
     elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
   });
 
-  const elementmedanimation4 = document.querySelector("#hero-button");
+  const elementmedanimation4 = document.querySelector("#lines");
   inView(elementmedanimation4, () => {
     elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
-  });
-
-  const elementmedanimation5 = document.querySelector("#project-section");
-  inView(elementmedanimation5, () => {
-    elementmedanimation5.classList.add("animate__animated", "animate__slideInLeft");
   });
 </script>
