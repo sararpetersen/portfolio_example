@@ -27,17 +27,6 @@
     @apply text-h4-mobile;
   }
 
-  #personal-background span,
-  .highlight-text {
-    @apply text-p-mobile;
-  }
-
-  p,
-  li,
-  a {
-    @apply text-p-mobile font-light;
-  }
-
   @media (min-width: 768px) {
     .display {
       @apply text-display-desktop;
@@ -63,20 +52,38 @@
       @apply text-h4-desktop;
     }
 
-    #personal-background span,
-    .highlight-text {
-      @apply text-p-desktop;
-    }
-
-    p,
-    li,
-    a {
-      @apply text-p-desktop font-light;
+    /* Button Text */
+    .btn_container a {
+      @apply font-bold text-gray-50 text-[10px];
     }
   }
 
-  /* Button Text */
-  .btn_container a {
-    @apply font-bold text-gray-50 text-[10px];
+  /* Base style for toggle switch */
+  .toggle-switch {
+    @apply relative inline-flex h-5 w-10 items-center rounded-full bg-gray-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-300;
+  }
+
+  /* When pressed (active) */
+  .toggle-switch[aria-pressed="true"] {
+    @apply bg-red-600;
+  }
+
+  /* The white circle inside the switch */
+  .toggle-circle {
+    @apply inline-block h-4 w-4 transform rounded-full bg-gray-50 shadow-drop25 transition-transform duration-300 translate-x-1;
+  }
+
+  /* Move the circle to the right when active */
+  .toggle-switch[aria-pressed="true"] .toggle-circle {
+    @apply translate-x-5;
+  }
+
+  /* Extra hover effect for fun */
+  .toggle-switch:hover {
+    @apply bg-red-500;
+  }
+
+  body.dark .toggle-switch:hover {
+    @apply bg-red-500;
   }
 }

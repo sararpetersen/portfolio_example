@@ -14,7 +14,7 @@ import Card from "../components/Card.astro";
   <!-- Other Projects Section -->
   <section
     id="other-projects"
-    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 mx-auto relative max-w-6xl"
+    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-6 mx-auto relative max-w-6xl"
   >
     <h1 class="heading-title col-span-12 font-bold text-gray-950 md:text-left text-center md:pb-20 pb-8">Other projects</h1>
     <div id="other-projects-grid" class="col-span-12 grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-gap">
@@ -26,7 +26,7 @@ import Card from "../components/Card.astro";
         Year="1st semester"
         description="This was the third project on 1st semester. Here, we had to make a game from scratch using Javascript and CSS. Things were looking good, until it didn't. I messed up big-time on the coding-part, which resulted in the game not working at all. I also didn't manage to make a proper landing-page for it."
         ariaLabel="View project: Animation-site (1st semester)"
-        tools={["HTML", "CSS", "JavaScript"]}
+        tools={["HTML", "CSS", "JS"]}
       />
       <Card
         url="https://sararingkow.github.io/videosite_v3/"
@@ -34,7 +34,7 @@ import Card from "../components/Card.astro";
         titleMain="Video-site"
         Semester="Semester: "
         Year="1st semester"
-        tools={["HTML", "CSS", "JavaScript"]}
+        tools={["HTML", "CSS", "JS"]}
         description="This was the fourth project on 1st semester. Here, we had to go out and film an interview of a person with a certain passion, and then make a site for it. Although I am proud of the video-product itself, I'm not so proud of the site that I made for it. I just feel like I could've done much more with it."
         ariaLabel="View project: Video-site (1st semester)"
       />
@@ -44,7 +44,7 @@ import Card from "../components/Card.astro";
         titleMain="Vild Mad"
         Semester="Semester: "
         Year="2nd semester"
-        tools={["HTML", "CSS", "JSON", "JavaScript"]}
+        tools={["HTML", "CSS", "JSON", "JS"]}
         description="This was the first case-project on 2nd semester. Here, we had to make a website— subsequent to the original —for an organisation called Vild Mad. If I hadn't ended up in a group with a bad work-dynamic, I think this project would've turned out great."
         ariaLabel="View project: Vild Mad (2nd semester case-project)"
       />
@@ -54,7 +54,7 @@ import Card from "../components/Card.astro";
         titleMain="Digital Skraldedag 2025"
         Semester="Semester: "
         Year="3rd semester"
-        tools={["Astro", "Tailwind", "JavaScript"]}
+        tools={["Astro", "Tailwind", "JS"]}
         description="This was the first case-project on 3rd semester. Here, we had to make a Danish pendant to a campaign called Digital Cleanup Day. In the beginning, I really liked where we were going with this project. But, I just didn't like the way it ended up turning out."
         ariaLabel="View project: Digital Skraldedag 2025 (3rd semester case-project)"
       />
@@ -99,27 +99,35 @@ import Card from "../components/Card.astro";
       transform: translate(0, -5px);
       transition: transform 0.3s ease;
     }
+
+    body.dark .heading-title {
+      color: #f6f6f6;
+    }
   </style>
 
   <script>
-    import { animate, inView } from "motion";
-    /*Entrance Animation*/
-    animate("body", { opacity: [0, 1] }, { duration: 1 });
+    import { inView } from "motion";
 
     /** inView Animations */
-    const elementmedanimation2 = document.querySelector(".heading-title");
-    inView(elementmedanimation2, () => {
-      elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const reduceMotion = document.body.classList.contains("reduce-motion");
 
-    const elementmedanimation3 = document.querySelector(".heading-text");
-    inView(elementmedanimation3, () => {
-      elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-    });
+      if (!reduceMotion) {
+        const elementmedanimation2 = document.querySelector(".heading-title");
+        inView(elementmedanimation2, () => {
+          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+        });
 
-    const elementmedanimation4 = document.querySelector(".button-container");
-    inView(elementmedanimation4, () => {
-      elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+        const elementmedanimation3 = document.querySelector(".heading-text");
+        inView(elementmedanimation3, () => {
+          elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementmedanimation4 = document.querySelector(".button-container");
+        inView(elementmedanimation4, () => {
+          elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+        });
+      }
     });
   </script>
 </MainLayout>

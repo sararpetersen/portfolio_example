@@ -2,30 +2,93 @@
 import "../styles/global.css";
 ---
 
+<!-- Accessibility settings bar -->
+<div id="accessibility-bar" class="fixed w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
+  <!-- Gear Icon -->
+  <button id="accessibilityToggle" class="svg-gear focus:outline-none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-6 hover:text-blue-500 transition duration-300 ease-in-out"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
+
+  <!-- Accessibility Options -->
+  <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 origin-left scale-x-0 opacity-0">
+    <!-- Text Size Toggle -->
+    <div class="flex items-center gap-2">
+      <label for="textSizeToggle" class="cursor-pointer md:block hidden">Stor tekst</label>
+      <button id="textSizeToggle" aria-pressed="false" class="toggle-switch">
+        <span class="toggle-circle"></span>
+      </button>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="flex items-center gap-2">
+      <label for="darkModeToggle" class="cursor-pointer md:block hidden">Mørk tilstand</label>
+      <button id="darkModeToggle" aria-pressed="false" class="toggle-switch">
+        <span class="toggle-circle"></span>
+      </button>
+    </div>
+
+    <!-- Reduce Motion Toggle -->
+    <div class="flex items-center gap-2">
+      <label for="motionToggle" class="cursor-pointer md:block hidden">Fjern animationer</label>
+      <button id="motionToggle" aria-pressed="false" class="toggle-switch">
+        <span class="toggle-circle"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <header
-  class="fixed border-gray-950 border-b w-full top-0 left-0 right-0 md:p-4 p-2 md:px-0 px-6 bg-gray-50 text-gray-950 z-50"
+  id="header"
+  class="fixed border-gray-950 border-b w-full top-0 left-0 right-0 md:p-4 p-2 md:px-0 px-6 bg-gray-50 text-gray-950 z-30"
   x-data="{ showmenu: false, showDropdown: false }"
 >
-  <nav class="container mx-auto flex justify-between items-center">
+  <nav class="container mx-auto flex justify-between items-center pt-[30px]">
     <!-- Logo Section -->
-    <div id="logo" class="relative font-bold transition-opacity duration-300 ease-in-out w-20 h-20">
-      <a href="/#hero" class="w-full h-full">
-        <img src="/logo.svg" alt="logo" class="hover:opacity-50 transition-opacity duration-300 ease-in-out object-contain w-full h-full" />
+    <div>
+      <a href="/" aria-label="Go to homepage" class="focus:outline-none focus:ring-2 focus:ring-red-300">
+        <img
+          src="/logo.svg"
+          alt="Normal logo for my website, with two of my initials"
+          class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-light"
+        />
+        <img
+          src="/logo_white.svg"
+          alt="White logo for my website, with two of my initials"
+          class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-dark"
+        />
       </a>
     </div>
 
     <!-- Desktop Navigation -->
     <ul class="hidden lg:flex space-x-6 items-center">
-      <li class="some1"><a href="/" class="hover:text-red-500 py-1">Home</a></li>
-      <li class="some1"><a href="/about_me" class="hover:text-red-500 py-1">About</a></li>
-      <li class="some1"><a href="/contact" class="hover:text-red-500 py-1">Contact</a></li>
+      <li class="some1">
+        <a href="/" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to homepage">Home</a>
+      </li>
+      <li class="some1">
+        <a href="/about_me" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to about-page">About</a>
+      </li>
+      <li class="some1">
+        <a href="/contact" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to contact-page"
+          >Contact</a
+        >
+      </li>
 
       <!-- Vertical Divider -->
-      <div class="border-r border-gray-950 h-16 mx-2"></div>
+      <div id="vertical-divider" class="border-r border-gray-950 h-12 mx-2"></div>
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false" x-cloak>
-        <a href="#" class="hover:text-red-500 py-1 flex items-center">
+        <a href="#" class="hover:text-red-500 py-1 flex items-center focus:outline-none focus:ring-2 focus:ring-red-300">
           Explore
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -39,13 +102,21 @@ import "../styles/global.css";
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
           </svg>
         </a>
-        <div x-show="showDropdown" x-transition class="absolute left-0 mt-2 w-[165px] bg-gray-50 border border-gray-950 z-10">
+        <div x-show="showDropdown" x-transition class="dropdown1 absolute left-0 mt-2 w-[165px] bg-gray-50 border border-gray-950 z-10">
           <ul>
-            <li class="py-1 px-4 transition duration-300 border-b border-gray-950">
-              <a href="/other" class="hover:text-red-500 py-1">Other projects</a>
+            <li id="other" class="py-1 px-4 transition duration-300 border-b border-gray-950">
+              <a
+                href="/other"
+                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300"
+                aria-label="Go to 'other projects'-page">Other projects</a
+              >
             </li>
             <li class="py-1 px-4 transition duration-300">
-              <a href="/gallery" class="hover:text-red-500 py-1">Gallery & media</a>
+              <a
+                href="/gallery"
+                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300"
+                aria-label="Go to 'gallery & media'-page">Gallery & media</a
+              >
             </li>
           </ul>
         </div>
@@ -61,7 +132,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 text-gray-950 hover:text-red-500 transition duration-300"
+          class="size-8 text-gray-950 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -73,7 +144,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 text-gray-950 hover:text-red-500 transition duration-300"
+          class="size-8 text-gray-950 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
         </svg>
@@ -94,19 +165,39 @@ import "../styles/global.css";
   >
     <ul>
       <li class="some1 text-center py-1">
-        <a href="/#hero" class="py-1 hover:text-red-500 transition duration-300">Home</a>
+        <a
+          href="/#hero"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Go to homepage">Home</a
+        >
       </li>
       <li class="some1 text-center py-1">
-        <a href="/about_me" class="py-1 hover:text-red-500 transition duration-300">About</a>
+        <a
+          href="/about_me"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Go to about-page">About</a
+        >
       </li>
       <li class="some1 text-center py-1">
-        <a href="/contact" class="py-1 hover:text-red-500 transition duration-300">Contact</a>
+        <a
+          href="/contact"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Go to contact-page">Contact</a
+        >
       </li>
       <li class="some1 text-center py-1">
-        <a href="/other" class="py-1 hover:text-red-500 transition duration-300">Other projects</a>
+        <a
+          href="/other"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Go to 'other projects'-page">Other projects</a
+        >
       </li>
       <li class="some1 text-center py-1 pb-4">
-        <a href="/gallery" class="py-1 hover:text-red-500 transition duration-300">Gallery & media</a>
+        <a
+          href="/gallery"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Go to 'gallery & media'-page">Gallery & media</a
+        >
       </li>
     </ul>
   </nav>
@@ -116,4 +207,129 @@ import "../styles/global.css";
   [x-cloak] {
     display: none !important;
   }
+
+  /* Dark Mode */
+  body.dark #header {
+    background-color: #333333;
+    color: #f6f6f6;
+    border-bottom: none;
+    box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 0.25);
+  }
+  body.dark #accessibility-bar {
+    background-color: #222222;
+    color: #f6f6f6;
+  }
+  body.dark #header .dropdown1 {
+    background-color: #454545;
+    color: #f6f6f6;
+    border-color: #6d6d6d;
+  }
+
+  body.dark #header #other {
+    border-color: #6d6d6d;
+  }
+
+  /* Button styles for dark mode */
+  body.dark .toggle-switch {
+    background-color: #666;
+  }
+  body.dark .toggle-circle {
+    background-color: #fff;
+  }
+
+  body.dark #vertical-divider {
+    border-color: #f6f6f6;
+  }
+
+  /* Text Size Mode */
+  body.text-large {
+    font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+  }
+
+  /* Reduce Motion Mode */
+  body.reduce-motion * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    transition:
+      font-size 0.3s ease,
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Logo */
+  /* Light mode logo */
+  .logo-dark {
+    display: none;
+  }
+
+  /* Dark mode logo */
+  body.dark .logo-light {
+    display: none;
+  }
+
+  body.dark .logo-dark {
+    display: block;
+  }
 </style>
+
+<script>
+  // Utility function to initialize toggle
+  function initToggle(toggleId, className, storageKey) {
+    const toggleButton = document.getElementById(toggleId);
+    const savedState = localStorage.getItem(storageKey) === "true";
+
+    // Apply saved state
+    if (savedState) {
+      document.body.classList.add(className);
+      toggleButton.setAttribute("aria-pressed", "true");
+    } else {
+      toggleButton.setAttribute("aria-pressed", "false");
+    }
+
+    // Set up click handler
+    toggleButton.addEventListener("click", () => {
+      const isPressed = toggleButton.getAttribute("aria-pressed") === "true";
+      const newState = !isPressed;
+
+      toggleButton.setAttribute("aria-pressed", String(newState));
+      document.body.classList.toggle(className, newState);
+      localStorage.setItem(storageKey, String(newState));
+    });
+  }
+
+  // Initialize each toggle
+  initToggle("textSizeToggle", "text-large", "textSizeEnabled");
+  initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
+  initToggle("darkModeToggle", "dark", "darkModeEnabled");
+
+  // Accessibility-toggle
+  const toggleButton = document.getElementById("accessibilityToggle");
+  const options = document.getElementById("accessibilityOptions");
+
+  // Function to show or hide the options based on state
+  function setToggleState(isOpen) {
+    if (isOpen) {
+      options.classList.remove("scale-x-0", "opacity-0");
+      options.classList.add("scale-x-100", "opacity-100");
+    } else {
+      options.classList.remove("scale-x-100", "opacity-100");
+      options.classList.add("scale-x-0", "opacity-0");
+    }
+  }
+
+  // Load saved state from localStorage
+  let isOpen = localStorage.getItem("accessibilityOpen") === "true";
+  setToggleState(isOpen);
+
+  // On click: toggle state, update localStorage and UI
+  toggleButton.addEventListener("click", () => {
+    isOpen = !isOpen;
+    localStorage.setItem("accessibilityOpen", isOpen);
+    setToggleState(isOpen);
+  });
+</script>

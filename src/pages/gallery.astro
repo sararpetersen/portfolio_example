@@ -14,13 +14,13 @@ import Button from "../components/Button.astro";
   <!-- Gallery Section -->
   <section
     id="gallery"
-    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-8 pb-8 mx-auto relative max-w-6xl md:text-left text-center"
+    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-6 pb-8 mx-auto relative max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
     <div class="mb-12 col-span-12">
       <h1 class="heading-title font-bold md:text-left text-center text-gray-950">Gallery & media</h1>
       <p class="heading-text text-gray-950 md:text-left text-center md:pt-5 pt-4 pb-2">Click on the different media-types to enlarge them.</p>
-      <div id="lines" class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
+      <div id="lines" class="max-w-6xl mx-auto md:px-2 px-6 hidden md:block">
         <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
         <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
       </div>
@@ -648,43 +648,47 @@ import Button from "../components/Button.astro";
     const tobii = new Tobii();
   </script>
   <script>
-    import { animate, inView } from "motion";
-    /*Entrance Animation*/
-    animate("body", { opacity: [0, 1] }, { duration: 1 });
+    import { inView } from "motion";
 
     /** inView Animations */
-    const elementmedanimation1 = document.querySelector(".main");
-    inView(elementmedanimation1, () => {
-      elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const reduceMotion = document.body.classList.contains("reduce-motion");
 
-    const elementmedanimation2 = document.querySelector(".heading-title");
-    inView(elementmedanimation2, () => {
-      elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-    });
+      if (!reduceMotion) {
+        const elementmedanimation1 = document.querySelector(".main");
+        inView(elementmedanimation1, () => {
+          elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+        });
 
-    const elementmedanimation3 = document.querySelector(".heading-text");
-    inView(elementmedanimation3, () => {
-      elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-    });
+        const elementmedanimation2 = document.querySelector(".heading-title");
+        inView(elementmedanimation2, () => {
+          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+        });
 
-    const elementmedanimation4 = document.querySelector(".button-container");
-    inView(elementmedanimation4, () => {
-      elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
-    });
+        const elementmedanimation3 = document.querySelector(".heading-text");
+        inView(elementmedanimation3, () => {
+          elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+        });
 
-    const elementmedanimation5 = document.querySelector("#lines");
-    inView(elementmedanimation5, () => {
-      elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
-    });
+        const elementmedanimation4 = document.querySelector(".button-container");
+        inView(elementmedanimation4, () => {
+          elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+        });
 
-    const grid = document.querySelectorAll("#media-grid > div");
+        const elementmedanimation5 = document.querySelector("#lines");
+        inView(elementmedanimation5, () => {
+          elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
+        });
 
-    grid.forEach((grid, index) => {
-      inView(grid, () => {
-        grid.classList.add("animate__animated", "animate__fadeInUp");
-        grid.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-      });
+        const grid = document.querySelectorAll("#media-grid > div");
+
+        grid.forEach((grid, index) => {
+          inView(grid, () => {
+            grid.classList.add("animate__animated", "animate__fadeInUp");
+            grid.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
+      }
     });
   </script>
 
@@ -705,6 +709,15 @@ import Button from "../components/Button.astro";
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    body.dark .heading-title,
+    body.dark .heading-text {
+      color: #f6f6f6;
+    }
+
+    body.dark #lines hr {
+      border-color: #6d6d6d;
     }
   </style>
 </MainLayout>

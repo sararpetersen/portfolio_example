@@ -12,6 +12,8 @@ const fetchCards = async () => {
 
 const projects = await fetchCards();
 const ariaLabel = "View project: ";
+
+import Button from "./Button.astro";
 ---
 
 <!-- Carousel -->
@@ -19,7 +21,7 @@ const ariaLabel = "View project: ";
   <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-16 md:pb-16 pb-8">
     {
       projects.map((project) => (
-        <div class="flex flex-col border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-2 transition duration-300 ease-in-out">
+        <div id="card" class="flex flex-col border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200  transition duration-300 ease-in-out">
           <img class="w-[600px] h-[400px] object-cover rounded-t-[5px] border-b border-gray-950" src={project.image} alt={project.name} />
           <div class="flex flex-col p-6 pt-4">
             <h3 class="pt-5">{project.name}</h3>
@@ -35,9 +37,11 @@ const ariaLabel = "View project: ";
             <hr class="border-gray-950 mb-6 mt-3 md:w-[90%] w-full" />
             <p class="pb-2 text-gray-950 max-w-lg">{project.description}</p>
             <hr class="border-gray-950 mb-6 mt-4 md:w-[90%] w-full" />
-            <div class="px-4 py-2 w-fit text-gray-50 border border-gray-950 bg-red-500 hover:bg-red-600 transition duration-300 ease-in-out">
-              <a href={project.url} target="_blank" aria-label={ariaLabel} class="italic font-bold text-[14px] uppercase">
-                Click here to see project
+            <div>
+              <a href={project.url} target="_blank" aria-label={ariaLabel}>
+                <Button variant="primary" size="small" text="View Project">
+                  Click here to see project
+                </Button>
               </a>
             </div>
           </div>
@@ -48,14 +52,48 @@ const ariaLabel = "View project: ";
 </div>
 
 <script>
-  import { animate, inView } from "motion";
+  import { inView } from "motion";
 
-  const cases = document.querySelectorAll("#project-cards > div");
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
 
-  cases.forEach((cases, index) => {
-    inView(cases, () => {
-      cases.classList.add("animate__animated", "animate__fadeInUp");
-      cases.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-    });
+    if (!reduceMotion) {
+      const cases = document.querySelectorAll("#project-cards > div");
+
+      cases.forEach((cases, index) => {
+        inView(cases, () => {
+          cases.classList.add("animate__animated", "animate__fadeInUp");
+          cases.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+    }
   });
 </script>
+
+<style>
+  body.dark #project-cards > div {
+    background-color: #454545;
+    border-color: #6d6d6d;
+  }
+
+  body.dark #project-cards > div:hover {
+    background-color: #5b5b5b;
+    border-color: #7d7d7d;
+  }
+
+  body.dark #project-cards > div:focus {
+    border-color: #e48181;
+  }
+
+  body.dark #project-cards > div h3,
+  body.dark #project-cards > div h4,
+  body.dark #project-cards > div p,
+  body.dark #project-cards > div span {
+    color: #f6f6f6;
+  }
+
+  body.dark #project-cards > div hr,
+  body.dark #project-cards > div img {
+    border-color: #6d6d6d;
+  }
+</style>

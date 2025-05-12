@@ -12,14 +12,14 @@ import Button from "../components/Button.astro";
 >
   <section
     id="about-me"
-    class="grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
+    class="grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-0 px-6 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
     <div class="relative md:col-span-12 col-start-2 col-span-10">
       <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
     </div>
   </section>
-  <div id="lines" class="max-w-6xl mx-auto md:px-2 px-8 hidden md:block">
+  <div id="lines" class="max-w-6xl mx-auto md:px-2 px-6 hidden md:block">
     <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
     <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-20 pb-8" />
   </div>
@@ -30,33 +30,34 @@ import Button from "../components/Button.astro";
         <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-8">
           Creativity has always been a part of me..
         </h2>
-        <p class="mt-4 text-gray-950">
+        <p id="personal-background-text" class="mt-4 text-gray-950">
           <span class="font-bold text-[20px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
           just everything that spelled "creativity". I knew deep down that, when I grew up, I wanted to make it a career. As I became older, however, I
           also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right
           thing.<br /><br />
-        </p>
-
-        <p class="text-gray-950">
-          After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through an
-          open-house event at the school that I now attend. It was a degree that combined both creativity and technology, and I knew right away that
-          it was the right fit for me. <br />Through my studies, I quickly realised the important role that accessibility played in digital design. As
-          someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. So that has
-          become my goal&mdash; to create digital experiences that remove barriers and ensure inclusivity for all. <br /><br />With accessibility at
-          the core of my work, I strive to design engaging, user-friendly platforms that make a difference. Every project is an opportunity to merge
-          creativity with purpose, and I look forward to growing, innovating, and shaping a more inclusive digital world.<span
+          After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through an open-house
+          event at the school that I now attend. It was a degree that combined both creativity and technology, and I knew right away that it was the right
+          fit for me. <br />Through my studies, I quickly realised the important role that accessibility played in digital design. As someone who's
+          late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. So that has become my
+          goal&mdash; to create digital experiences that remove barriers and ensure inclusivity for all. <br /><br />With accessibility at the core of
+          my work, I strive to design engaging, user-friendly platforms that make a difference. Every project is an opportunity to merge creativity
+          with purpose, and I look forward to growing, innovating, and shaping a more inclusive digital world.<span
             class="font-bold text-[20px] italic">"</span
           >
         </p>
       </div>
       <div class="flex items-center justify-start md:justify-end">
-        <img src="/images/pfp3.webp" alt="portrait of Sara" class="w-[450px] h-[500px] object-cover border border-gray-950" />
+        <img
+          src="/images/pfp3.webp"
+          alt="Portrait of Sara (taken during the internship at Kadaver)"
+          class="w-[450px] h-[500px] object-cover border border-gray-950"
+        />
       </div>
     </div>
   </section>
 
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:mt-desktop-top mt-mobil-top md:px-2 px-8">
+  <section id="timeline" class="container max-w-6xl mx-auto md:mt-desktop-top mt-mobil-top md:px-2 px-6">
     <h3 class="text-gray-950 mb-12">My journey so far</h3>
     <div id="timeline-line" class="relative border-l-2 border-gray-300 pl-6">
       <div class="mb-10">
@@ -141,7 +142,7 @@ import Button from "../components/Button.astro";
 
   <!-- Interests & Hobbies Section -->
   <div id="interests" class="md:mt-desktop-top mt-mobil-top">
-    <section class="container max-w-6xl mx-auto flex items-center justify-center md:px-2 px-8">
+    <section class="container max-w-6xl mx-auto flex items-center justify-center md:px-2 px-6">
       <div>
         <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
         <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 mt-12 md:gap-16 gap-8">
@@ -218,7 +219,7 @@ import Button from "../components/Button.astro";
 
   <!-- Resources Section -->
   <div class="resources md:mt-desktop-top mt-mobil-top">
-    <section class="container max-w-6xl mx-auto md:px-2 px-8">
+    <section class="container max-w-6xl mx-auto md:px-2 px-6">
       <div>
         <h3 class="font-bold text-gray-950">Resources</h3>
         <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
@@ -231,6 +232,7 @@ import Button from "../components/Button.astro";
               class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:64ad8373-1912-4e34-aa64-5396885ef33c"
               target="_blank"
+              aria-label="Resume (EN)"
             >
               <Button variant="primary" size="small">See more</Button>
             </a>
@@ -245,6 +247,7 @@ import Button from "../components/Button.astro";
               class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:af8d80a0-8eb6-4f31-8640-59b2ff3caa83"
               target="_blank"
+              aria-label="Resume (DA)"
             >
               <Button variant="primary" size="small">Se mere</Button>
             </a>
@@ -259,6 +262,7 @@ import Button from "../components/Button.astro";
               class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:75e9d1b3-7cc2-4520-921d-15cb2eb49201"
               target="_blank"
+              aria-label="Application-template (EN)"
             >
               <Button variant="primary" size="small">See more</Button>
             </a>
@@ -268,11 +272,12 @@ import Button from "../components/Button.astro";
           <div class="flex flex-col">
             <h4 class="font-dense font-bold text-gray-950 pb-2">Application-template (DA)</h4>
             <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Tag et kig på hvad jeg inkluderer, når jeg sender ansøgninger.</p>
+            <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
             <a
               class="mt-5 btn_container md:w-[30%]"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bbdd4db8-79c5-4d85-9fbb-ed404b83483c"
               target="_blank"
+              aria-label="Application-template (DA)"
             >
               <Button variant="primary" size="small">Se mere</Button>
             </a>
@@ -285,62 +290,88 @@ import Button from "../components/Button.astro";
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto pb-16 pt-20 text-center">
-    <a href="/" class="mt-8 btn_container">
+    <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
   </section>
   <script>
-    import { animate, inView } from "motion";
-    /*Entrance Animation*/
-    animate("body", { opacity: [0, 1] }, { duration: 1 });
+    import { inView } from "motion";
 
     //inView animations
+    document.addEventListener("DOMContentLoaded", () => {
+      const reduceMotion = document.body.classList.contains("reduce-motion");
 
-    const elementmedanimation1 = document.querySelector("#more-about-me-title");
-    inView(elementmedanimation1, () => {
-      elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-    });
+      if (!reduceMotion) {
+        const elementmedanimation1 = document.querySelector("#more-about-me-title");
+        inView(elementmedanimation1, () => {
+          elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+        });
 
-    const elementmedanimation2 = document.querySelector("#lines");
-    inView(elementmedanimation2, () => {
-      elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-    });
+        const elementmedanimation2 = document.querySelector("#lines");
+        inView(elementmedanimation2, () => {
+          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+        });
 
-    const elementmedanimation3 = document.querySelector("#personal-background");
-    inView(elementmedanimation3, () => {
-      elementmedanimation3.classList.add("animate__animated", "animate__fadeInLeft");
-    });
+        const elementmedanimation3 = document.querySelector("#personal-background h2");
+        inView(elementmedanimation3, () => {
+          elementmedanimation3.classList.add("animate__animated", "animate__fadeInRight");
+        });
 
-    const elementmedanimation6 = document.querySelector(".button-container");
-    inView(elementmedanimation6, () => {
-      elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
-    });
+        const elementmedanimation4 = document.querySelector("#personal-background p");
+        inView(elementmedanimation4, () => {
+          elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+        });
 
-    const boxes = document.querySelectorAll("#timeline-line > div");
+        const elementmedanimation5 = document.querySelector("#personal-background img");
+        inView(elementmedanimation5, () => {
+          elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+        });
 
-    boxes.forEach((boxes, index) => {
-      inView(boxes, () => {
-        boxes.classList.add("animate__animated", "animate__fadeInUp");
-        boxes.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-      });
-    });
+        const elementmedanimation6 = document.querySelector(".button-container");
+        inView(elementmedanimation6, () => {
+          elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+        });
 
-    const sections = document.querySelectorAll("#interests-and-hobbies > div");
+        const boxes = document.querySelectorAll("#timeline-line > div");
 
-    sections.forEach((sections, index) => {
-      inView(sections, () => {
-        sections.classList.add("animate__animated", "animate__fadeInUp");
-        sections.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-      });
-    });
+        boxes.forEach((boxes, index) => {
+          inView(boxes, () => {
+            boxes.classList.add("animate__animated", "animate__fadeInUp");
+            boxes.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
 
-    const section = document.querySelectorAll("#resources-section > div");
+        const sections = document.querySelectorAll("#interests-and-hobbies > div");
 
-    section.forEach((section, index) => {
-      inView(section, () => {
-        section.classList.add("animate__animated", "animate__fadeInUp");
-        section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-      });
+        sections.forEach((sections, index) => {
+          inView(sections, () => {
+            sections.classList.add("animate__animated", "animate__fadeInUp");
+            sections.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
+
+        const section = document.querySelectorAll("#resources-section > div");
+
+        section.forEach((section, index) => {
+          inView(section, () => {
+            section.classList.add("animate__animated", "animate__fadeInUp");
+            section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
+      }
     });
   </script>
+
+  <style>
+    body.dark #more-about-me-title,
+    body.dark p,
+    body.dark h2,
+    body.dark h3,
+    body.dark h4 {
+      color: #f6f6f6;
+    }
+    body.dark hr {
+      border-color: #6d6d6d;
+    }
+  </style>
 </MainLayout>

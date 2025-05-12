@@ -54,4 +54,29 @@ const { title } = Astro.props;
     font-family: "Dense";
     src: url(/fonts/dense/Dense-Regular.woff) format("woff");
   }
+
+  body.dark {
+    background-color: #333333;
+    color: #f6f6f6;
+  }
+
+  body.dark .toggle-switch {
+    background-color: #666;
+  }
+  body.dark .toggle-circle {
+    background-color: #fff;
+  }
+
+  .text-large a,
+  .text-large button,
+  .text-large span,
+  .text-large p {
+    font-size: 1.2rem;
+  }
 </style>
+
+<script>
+  import { animate, inView } from "motion";
+  /*Entrance Animation*/
+  animate("body", { opacity: [0, 1] }, { duration: 1 });
+</script>

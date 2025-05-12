@@ -3,7 +3,8 @@ import { style } from "motion";
 
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling = "relative z-10 font-bold rounded-[5px] border border-gray-950 text-sm px-6 py-3 transition duration-300 ease-in-out uppercase";
+const buttonStyling =
+  "main-button relative z-10 rounded-[5px] border border-gray-950 text-sm px-6 py-3 transition duration-300 ease-in-out uppercase focus:outline-none focus:ring-2 focus:ring-red-300";
 
 const variantClasses = {
   primary: "text-gray-50 bg-red-500 hover:bg-red-600",
@@ -17,3 +18,18 @@ const sizeClasses = {
 ---
 
 <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot button /></button>
+
+<style>
+  body.dark .main-button {
+    background-color: transparent;
+    color: #f6f6f6;
+    border: #f6f6f6 1px solid;
+    font-weight: 500;
+  }
+
+  body.dark .main-button:hover {
+    background-color: #1d1d1d;
+    color: #f6f6f6;
+    border: #1d1d1d 1px solid;
+  }
+</style>

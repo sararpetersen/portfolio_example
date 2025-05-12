@@ -24,7 +24,7 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
   </section>
-  <div id="lines" class="md:max-w-none max-w-6xl mx-auto md:px-2 px-8">
+  <div id="lines" class="md:max-w-none max-w-6xl mx-auto md:px-2 px-6">
     <hr class="md:mx-auto border-gray-950 mt-5 md:w-[70%] w-[90%]" />
     <hr class="md:mx-auto border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
   </div>
@@ -39,28 +39,43 @@ import Cases from "../components/Cases.astro";
 </MainLayout>
 
 <script>
-  import { animate, inView } from "motion";
-  /*Entrance Animation*/
-  animate("body", { opacity: [0, 1] }, { duration: 1 });
+  import { inView } from "motion";
 
-  /** inView Animations */
-  const elementmedanimation1 = document.querySelector("#hero-title");
-  inView(elementmedanimation1, () => {
-    elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
 
-  const elementmedanimation2 = document.querySelector("#hero-subtitle");
-  inView(elementmedanimation2, () => {
-    elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-  });
+    if (!reduceMotion) {
+      const elementmedanimation1 = document.querySelector("#hero-title");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+      });
 
-  const elementmedanimation3 = document.querySelector("#hero-text");
-  inView(elementmedanimation3, () => {
-    elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-  });
+      const elementmedanimation2 = document.querySelector("#hero-subtitle");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
 
-  const elementmedanimation4 = document.querySelector("#lines");
-  inView(elementmedanimation4, () => {
-    elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
+      const elementmedanimation3 = document.querySelector("#hero-text");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation4 = document.querySelector("#lines");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
+      });
+    }
   });
 </script>
+
+<style>
+  body.dark #hero-title,
+  body.dark #hero-subtitle,
+  body.dark #hero-text {
+    color: #f6f6f6;
+  }
+
+  body.dark #lines hr {
+    border-color: #f6f6f6;
+  }
+</style>
