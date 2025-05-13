@@ -4,14 +4,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout
-  title="Contact"
-  description="Contact Sara Ringkow Petersen"
-  ogtitle="SRP portfolio - contact"
-  ogdescription="Contact Sara Ringkow Petersen"
+  title="SRP portfolio | Contact"
+  description="Contact Sara"
+  ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
+  ogdescription="Contact Sara through her email-address or phone-number"
 >
-  <section id="contact" class="container mx-auto md:px-6 px-4 md:mt-desktop-top mt-mobil-top">
+  <section id="contact" class="container mx-auto md:px-6 px-4 md:mt-desktop-top mt-mobil-top md:pt-20 pt-8">
     <!-- Contact Information Section -->
-    <div id="contact-form-container" class="md:pt-16 pt-12 flex flex-col md:flex-row gap-12 justify-center">
+    <div id="contact-form-container" class="md:pt-0 pt-12 flex flex-col md:flex-row gap-12 justify-center">
       <!-- Image and Contact Info Box -->
       <div id="contact-container" class="flex flex-col md:flex-row items-center">
         <!-- Image -->
@@ -23,7 +23,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <!-- Contact Information Box -->
         <div class="space-y-4">
-          <h1 id="contact-title" class="md:text-left text-center md:text-h2-desktop text-h2-mobile font-dense font-bold text-gray-950 md:pb-5 pb-2">
+          <h1 id="contact-title" class="md:text-left text-center md:text-h2-desktop text-h2-mobile font-dense text-gray-950 md:pb-5 pb-2">
             Let's talk!
           </h1>
           <div id="contact-info" class="py-4 md:py-6 border-y border-gray-950 text-gray-950">
@@ -76,19 +76,24 @@ import MainLayout from "../layouts/MainLayout.astro";
       const reduceMotion = document.body.classList.contains("reduce-motion");
 
       if (!reduceMotion) {
-        const elementmedanimation7 = document.querySelector("#contact-info-container");
+        const elementmedanimation7 = document.querySelector("#contact-container img");
         inView(elementmedanimation7, () => {
           elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
         });
 
-        const elementmedanimation8 = document.querySelector("#contact-form-container");
+        const elementmedanimation8 = document.querySelector("#contact-container h1");
         inView(elementmedanimation8, () => {
           elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
         });
 
-        const elementmedanimation9 = document.querySelector("#contact-container");
+        const elementmedanimation9 = document.querySelector("#contact-info");
         inView(elementmedanimation9, () => {
-          elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
+          elementmedanimation9.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
+        const elementmedanimation10 = document.querySelector(".button-container");
+        inView(elementmedanimation10, () => {
+          elementmedanimation10.classList.add("animate__animated", "animate__fadeInRight");
         });
       }
     });
@@ -106,6 +111,10 @@ import MainLayout from "../layouts/MainLayout.astro";
     body.dark #contact-info strong,
     body.dark #contact-info a {
       color: #f6f6f6;
+    }
+
+    body.dark #contact-info a:hover {
+      color: #d3302f;
     }
   </style>
 </MainLayout>

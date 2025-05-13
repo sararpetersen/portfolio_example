@@ -6,26 +6,28 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout
-  title="Gallery"
-  description="Gallery and media from the creator of the portfolio"
-  ogtitle="SRP portfolio - gallery"
-  ogdescription="Gallery and media from the creator"
+  title="SRP portfolio | Gallery"
+  description="Gallery and media from Saras projects"
+  ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
+  ogdescription="See the gallery with all the different media-types from a majority of Saras projects"
 >
   <!-- Gallery Section -->
   <section
-    id="gallery"
-    class="container grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-4 px-6 pb-8 mx-auto relative max-w-6xl md:text-left text-center"
+    class="main grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-20 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="mb-12 col-span-12">
-      <h1 class="heading-title font-bold md:text-left text-center text-gray-950">Gallery & media</h1>
-      <p class="heading-text text-gray-950 md:text-left text-center md:pt-5 pt-4 pb-2">Click on the different media-types to enlarge them.</p>
-      <div id="lines" class="max-w-6xl mx-auto md:px-6 px-4 hidden md:block">
-        <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
-        <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-12 pb-8" />
-      </div>
+    <div class="relative col-span-12 md:pt-0 pt-12">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-4">Gallery & media</h1>
+      <p class="heading-text text-gray-950 md:pb-0 pb-16">Click on the different media-types to enlarge them.</p>
     </div>
 
+    <div id="lines" class="hidden md:block col-span-9 md:pb-20 pb-8">
+      <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
+      <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
+    </div>
+  </section>
+  <!-- Personal Background Section -->
+  <section id="gallery" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto md:px-0 px-8">
     <!-- Media Grid -->
     <div id="media-grid" class="main col-span-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Media Item 1 -->
@@ -717,6 +719,11 @@ import Button from "../components/Button.astro";
     }
 
     body.dark #lines hr {
+      border-color: #6d6d6d;
+    }
+
+    body.dark #media-grid img,
+    body.dark #media-grid a {
       border-color: #6d6d6d;
     }
   </style>

@@ -5,7 +5,7 @@ import "../styles/global.css";
 <!-- Accessibility settings bar -->
 <div id="accessibility-bar" class="fixed w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
   <!-- Gear Icon -->
-  <button id="accessibilityToggle" class="svg-gear focus:outline-none focus:ring-2 focus:ring-red-300">
+  <button id="accessibilityToggle" class="svg-gear focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -20,10 +20,10 @@ import "../styles/global.css";
   </button>
 
   <!-- Accessibility Options -->
-  <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 origin-left scale-x-0 opacity-0">
+  <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0">
     <!-- Text Size Toggle -->
     <div class="flex items-center gap-2">
-      <label for="textSizeToggle" class="cursor-pointer md:block hidden">Stor tekst</label>
+      <label for="textSizeToggle" class="cursor-pointer md:block hidden">Larger text</label>
       <button id="textSizeToggle" aria-pressed="false" class="toggle-switch">
         <span class="toggle-circle"></span>
       </button>
@@ -31,7 +31,7 @@ import "../styles/global.css";
 
     <!-- Dark Mode Toggle -->
     <div class="flex items-center gap-2">
-      <label for="darkModeToggle" class="cursor-pointer md:block hidden">Mørk tilstand</label>
+      <label for="darkModeToggle" class="cursor-pointer md:block hidden">Dark-mode</label>
       <button id="darkModeToggle" aria-pressed="false" class="toggle-switch">
         <span class="toggle-circle"></span>
       </button>
@@ -39,7 +39,7 @@ import "../styles/global.css";
 
     <!-- Reduce Motion Toggle -->
     <div class="flex items-center gap-2">
-      <label for="motionToggle" class="cursor-pointer md:block hidden">Fjern animationer</label>
+      <label for="motionToggle" class="cursor-pointer md:block hidden">Remove animations</label>
       <button id="motionToggle" aria-pressed="false" class="toggle-switch">
         <span class="toggle-circle"></span>
       </button>
@@ -55,7 +55,7 @@ import "../styles/global.css";
   <nav class="container mx-auto flex justify-between items-center pt-[30px]">
     <!-- Logo Section -->
     <div>
-      <a href="/" aria-label="Go to homepage" class="focus:outline-none focus:ring-2 focus:ring-red-300">
+      <a href="/" aria-label="Go to homepage">
         <img
           src="/logo.svg"
           alt="Normal logo for my website, with two of my initials"
@@ -72,14 +72,24 @@ import "../styles/global.css";
     <!-- Desktop Navigation -->
     <ul class="hidden lg:flex space-x-6 items-center">
       <li class="some1">
-        <a href="/" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to homepage">Home</a>
+        <a
+          href="/"
+          class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          aria-label="Go to homepage">Home</a
+        >
       </li>
       <li class="some1">
-        <a href="/about_me" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to about-page">About</a>
+        <a
+          href="/about_me"
+          class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          aria-label="Go to about-page">About</a
+        >
       </li>
       <li class="some1">
-        <a href="/contact" class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300" aria-label="Go to contact-page"
-          >Contact</a
+        <a
+          href="/contact"
+          class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          aria-label="Go to contact-page">Contact</a
         >
       </li>
 
@@ -88,7 +98,10 @@ import "../styles/global.css";
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false" x-cloak>
-        <a href="#" class="hover:text-red-500 py-1 flex items-center focus:outline-none focus:ring-2 focus:ring-red-300">
+        <a
+          href="#"
+          class="hover:text-red-500 py-1 flex items-center focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+        >
           Explore
           <svg
             class="w-4 h-4 ml-2 transition-transform duration-300 transform"
@@ -107,14 +120,14 @@ import "../styles/global.css";
             <li id="other" class="py-1 px-4 transition duration-300 border-b border-gray-950">
               <a
                 href="/other"
-                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300"
+                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
                 aria-label="Go to 'other projects'-page">Other projects</a
               >
             </li>
             <li class="py-1 px-4 transition duration-300">
               <a
                 href="/gallery"
-                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300"
+                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
                 aria-label="Go to 'gallery & media'-page">Gallery & media</a
               >
             </li>
@@ -132,7 +145,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="size-8 hover:text-red-500 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -144,7 +157,7 @@ import "../styles/global.css";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="size-8 hover:text-red-500 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-300"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
         </svg>
@@ -167,35 +180,35 @@ import "../styles/global.css";
       <li class="some1 text-center py-1">
         <a
           href="/#hero"
-          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to homepage">Home</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/about_me"
-          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to about-page">About</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/contact"
-          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to contact-page">Contact</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/other"
-          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to 'other projects'-page">Other projects</a
         >
       </li>
       <li class="some1 text-center py-1 pb-4">
         <a
           href="/gallery"
-          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to 'gallery & media'-page">Gallery & media</a
         >
       </li>

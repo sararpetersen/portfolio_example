@@ -5,29 +5,30 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout
-  title="About me"
-  description="About the creator of the portfolio"
-  ogtitle="SRP portfolio - about me"
-  ogdescription="About the creator of the portfolio"
+  title="SRP portfolio | About me"
+  description="About Sara and her background"
+  ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
+  ogdescription="Learn more about Sara"
 >
   <section
     id="about-me"
-    class="grid grid-cols-12 md:mt-desktop-top mt-mobil-top md:pt-16 pt-8 md:px-0 px-6 mx-auto relative container max-w-6xl md:text-left text-center"
+    class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative md:col-span-12 col-start-2 col-span-10">
+    <div class="relative md:col-span-12 col-start-2 col-span-10 md:pt-0 pt-12">
       <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
     </div>
+
+    <div id="lines" class="hidden md:block col-span-7 md:pb-20 pb-8">
+      <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
+      <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
+    </div>
   </section>
-  <div id="lines" class="max-w-6xl mx-auto md:px-6 px-4 hidden md:block">
-    <hr class="border-gray-950 mt-5 md:w-[70%] w-[90%]" />
-    <hr class="border-gray-950 mt-5 md:w-[50%] w-[70%] md:pb-20 pb-8" />
-  </div>
   <!-- Personal Background Section -->
   <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center md:col-span-12 col-start-2 col-span-10">
       <div class="items-center md:pb-0 pb-8">
-        <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-8">
+        <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-4">
           Creativity has always been a part of me..
         </h2>
         <p id="personal-background-text" class="mt-4 text-gray-950">
@@ -152,7 +153,7 @@ import Button from "../components/Button.astro";
               <h4 class="pb-2 font-dense font-bold text-gray-950">Reading</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
-                Books are my gateway to new worlds, where I can immerse myself in different genres and explore fascinating stories.
+                Books are my gateway to new worlds and an escape from the real world, where I can immerse myself and explore fascinating stories.
               </p>
               <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
             </div>
@@ -174,7 +175,7 @@ import Button from "../components/Button.astro";
               <h4 class="pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
-                I enjoy getting creative with DIY projects, whether it's drawing, making keychains, or crafting something unique.
+                I love getting creative with DIY-projects&mdash; whether it's drawing, making keychains, or crafting something unique.
               </p>
               <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
             </div>
@@ -196,7 +197,7 @@ import Button from "../components/Button.astro";
               <h4 class="pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
               <p class="text-gray-950">
-                Watching movies and TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
+                Watching a movie or a TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
               </p>
               <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
             </div>
@@ -206,9 +207,7 @@ import Button from "../components/Button.astro";
             <div>
               <h4 class="pb-2 font-dense font-bold text-gray-950">Photography</h4>
               <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                Through photography, I capture moments that inspire me, allowing me to preserve the beauty of the world around me.
-              </p>
+              <p class="text-gray-950">I like to capture moments that inspires me, allowing me to preserve the beauty of the world around me.</p>
               <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
             </div>
           </div>
@@ -314,12 +313,12 @@ import Button from "../components/Button.astro";
 
         const elementmedanimation3 = document.querySelector("#personal-background h2");
         inView(elementmedanimation3, () => {
-          elementmedanimation3.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation3.classList.add("animate__animated", "animate__fadeInDown");
         });
 
         const elementmedanimation4 = document.querySelector("#personal-background p");
         inView(elementmedanimation4, () => {
-          elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation4.classList.add("animate__animated", "animate__slideInRight");
         });
 
         const elementmedanimation5 = document.querySelector("#personal-background img");

@@ -17,7 +17,7 @@ const {
     <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
       <div class="hover:opacity-80 hover:-translate-y-1 transition duration-300 ease-in-out border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200">
         <div />
-        <img src={image} alt={titleMain} class="h-[300px] object-cover w-full border border-gray-950" />
+        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover border-b border-gray-950" />
         <div class="text px-6 py-6">
           <h3 class="font-bold text-gray-950">
             {titleMain}
@@ -43,7 +43,7 @@ const {
     <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
       <div class="border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-2 transition duration-300 ease-in-out">
         <div />
-        <img src={image} alt={titleMain} class="h-[300px] object-cover w-full border border-gray-950" />
+        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover border-b border-gray-950" />
         <div class="text px-6 py-6">
           <h3 class="font-bold text-gray-950">
             {titleMain}
@@ -84,6 +84,11 @@ const {
 <style>
   body.dark #card > div {
     background-color: #454545;
+    border-color: #6d6d6d;
+  }
+
+  body.dark #card > div > img,
+  body.dark #card hr {
     border-color: #6d6d6d;
   }
 
