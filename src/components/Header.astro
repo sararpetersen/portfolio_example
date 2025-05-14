@@ -21,14 +21,6 @@ import "../styles/global.css";
 
   <!-- Accessibility Options -->
   <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0">
-    <!-- Text Size Toggle -->
-    <div class="flex items-center gap-2">
-      <label for="textSizeToggle" class="cursor-pointer md:block hidden">Larger text</label>
-      <button id="textSizeToggle" aria-pressed="false" class="toggle-switch">
-        <span class="toggle-circle"></span>
-      </button>
-    </div>
-
     <!-- Dark Mode Toggle -->
     <div class="flex items-center gap-2">
       <label for="darkModeToggle" class="cursor-pointer md:block hidden">Dark-mode</label>
@@ -49,7 +41,7 @@ import "../styles/global.css";
 
 <header
   id="header"
-  class="fixed border-gray-950 border-b w-full top-0 left-0 right-0 md:p-4 p-2 md:px-0 px-6 bg-gray-50 text-gray-950 z-30"
+  class="fixed shadow-drop25 w-full top-0 left-0 right-0 md:p-4 p-2 md:px-0 px-6 bg-gray-50 text-gray-950 z-30"
   x-data="{ showmenu: false, showDropdown: false }"
 >
   <nav class="container mx-auto flex justify-between items-center pt-[30px]">
@@ -94,7 +86,7 @@ import "../styles/global.css";
       </li>
 
       <!-- Vertical Divider -->
-      <div id="vertical-divider" class="border-r border-gray-950 h-12 mx-2"></div>
+      <div id="vertical-divider" class="border-r border-gray-400 h-12 mx-2"></div>
 
       <!-- Explore Dropdown with Arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false" x-cloak>
@@ -115,9 +107,9 @@ import "../styles/global.css";
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
           </svg>
         </a>
-        <div x-show="showDropdown" x-transition class="dropdown1 absolute left-0 mt-2 w-[165px] bg-gray-50 border border-gray-950 z-10">
+        <div x-show="showDropdown" x-transition class="dropdown1 absolute left-0 mt-2 w-[165px] bg-gray-50 border border-gray-400 shadow-drop25 z-10">
           <ul>
-            <li id="other" class="py-1 px-4 transition duration-300 border-b border-gray-950">
+            <li id="other" class="py-1 px-4 transition duration-300">
               <a
                 href="/other"
                 class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
@@ -258,12 +250,6 @@ import "../styles/global.css";
     border-color: #f6f6f6;
   }
 
-  /* Text Size Mode */
-  body.text-large {
-    font-size: 1.2rem;
-    font-family: "Lato", sans-serif;
-  }
-
   /* Reduce Motion Mode */
   body.reduce-motion * {
     transition: none !important;
@@ -320,7 +306,6 @@ import "../styles/global.css";
   }
 
   // Initialize each toggle
-  initToggle("textSizeToggle", "text-large", "textSizeEnabled");
   initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
   initToggle("darkModeToggle", "dark", "darkModeEnabled");
 

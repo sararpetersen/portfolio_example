@@ -15,9 +15,9 @@ const {
 {
   url ? (
     <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
-      <div class="hover:opacity-80 hover:-translate-y-1 transition duration-300 ease-in-out border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200">
+      <div class="hover:opacity-80 hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200">
         <div />
-        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover border-b border-gray-950" />
+        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover" />
         <div class="text px-6 py-6">
           <h3 class="font-bold text-gray-950">
             {titleMain}
@@ -34,16 +34,16 @@ const {
               ))}
             </div>
           )}
-          <hr class="border-gray-950 mb-5 md:w-[60%] w-[90%]" />
+          <hr class="border-gray-400 mb-5 md:w-[60%] w-[90%]" />
           <p class="text-gray-950 mt-2">{description}</p>
         </div>
       </div>
     </a>
   ) : (
     <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
-      <div class="border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-2 transition duration-300 ease-in-out">
+      <div class="border-l-4 border border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-2 transition duration-300 ease-in-out">
         <div />
-        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover border-b border-gray-950" />
+        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover" />
         <div class="text px-6 py-6">
           <h3 class="font-bold text-gray-950">
             {titleMain}
@@ -60,7 +60,7 @@ const {
               ))}
             </div>
           )}
-          <hr class="border-gray-950 mb-5 md:w-[60%] w-[90%]" />
+          <hr class="border-gray-400 mb-5 md:w-[60%] w-[90%]" />
           <p class="text-gray-950 mt-2">{description}</p>
         </div>
       </div>

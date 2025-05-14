@@ -23,6 +23,11 @@
     @apply font-vollkorn text-h4-mobile;
   }
 
+  p,
+  a {
+    @apply font-lato text-p-mobile;
+  }
+
   span {
     @apply text-h4-mobile;
   }
@@ -48,13 +53,13 @@
       @apply text-h4-desktop;
     }
 
-    span {
-      @apply text-h4-desktop;
+    p,
+    a {
+      @apply text-p-desktop;
     }
 
-    /* Button Text */
-    .btn_container a {
-      @apply font-bold text-gray-50 text-[10px];
+    span {
+      @apply text-h4-desktop;
     }
   }
 

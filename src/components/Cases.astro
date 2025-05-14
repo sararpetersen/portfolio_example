@@ -18,11 +18,14 @@ import Button from "./Button.astro";
 
 <!-- Carousel -->
 <div class="carousel w-full">
-  <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-16 md:pb-16 pb-8">
+  <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 gap-gap">
     {
       projects.map((project) => (
-        <div id="card" class="flex flex-col border border-gray-950 rounded-[5px] bg-gray-100 hover:bg-gray-200  transition duration-300 ease-in-out">
-          <img class="w-[600px] h-[400px] object-cover rounded-t-[5px] border-b border-gray-950" src={project.image} alt={project.name} />
+        <div
+          id="card"
+          class="flex flex-col border border-l-4 border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
+        >
+          <img class="w-full h-[400px] object-cover border-b border-gray-200 rounded-t-[5px]" src={project.image} alt={project.name} />
           <div class="flex flex-col p-6 pt-4">
             <h3 class="pt-5">{project.name}</h3>
             <h4 class="font-dense md:pb-3 pb-2 pt-1 text-gray-950">
@@ -34,9 +37,9 @@ import Button from "./Button.astro";
                   <p class="rounded-full px-4 p-2 font-semibold border border-gray-950 uppercase bg-gray-950 text-gray-50 text-sm">{tool}</p>
                 ))}
             </div>
-            <hr class="border-gray-950 mb-6 mt-3 md:w-[90%] w-full" />
+            <hr class="border-gray-400 mb-6 mt-3 md:w-[90%] w-full" />
             <p class="pb-2 text-gray-950 max-w-lg">{project.description}</p>
-            <hr class="border-gray-950 mb-6 mt-4 md:w-[90%] w-full" />
+            <hr class="border-gray-400 mb-6 mt-4 md:w-[90%] w-full" />
             <div>
               <a href={project.url} target="_blank" aria-label={ariaLabel}>
                 <Button variant="primary" size="small" text="View Project">

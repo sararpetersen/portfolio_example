@@ -3,17 +3,17 @@ import { style } from "motion";
 
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling =
-  "main-button relative z-10 rounded-[5px] border border-gray-950 text-sm px-6 py-3 transition duration-300 ease-in-out uppercase focus:outline-none focus:ring-2 focus:ring-red-300";
+const buttonStyling = "px-6 p-2 font-semibold rounded-[5px] transition duration-300 uppercase";
 
 const variantClasses = {
-  primary: "text-gray-50 bg-red-500 hover:bg-red-600",
+  primary: "main-button text-gray-50 bg-red-500 hover:bg-red-600 hover:border-red-600",
+  secondary: "secondary-button text-gray-50 bg-gray-800 hover:bg-gray-700 hover:border-gray-700",
 };
 
 const sizeClasses = {
   large: "text-3xl",
   medium: "text-2xl",
-  small: "text-md",
+  small: "text-[14px]",
 };
 ---
 
@@ -24,12 +24,25 @@ const sizeClasses = {
     background-color: transparent;
     color: #f6f6f6;
     border: #f6f6f6 1px solid;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   body.dark .main-button:hover {
     background-color: #d3302f;
     color: #f6f6f6;
     border: #d3302f 1px solid;
+  }
+
+  body.dark .secondary-button {
+    background-color: transparent;
+    color: #f6f6f6;
+    border: #f6f6f6 1px solid;
+    font-weight: 700;
+  }
+
+  body.dark .secondary-button:hover {
+    background-color: #4f4f4f;
+    color: #f6f6f6;
+    border: #4f4f4f 1px solid;
   }
 </style>

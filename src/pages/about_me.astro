@@ -15,11 +15,11 @@ import Button from "../components/Button.astro";
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative md:col-span-12 col-start-2 col-span-10 md:pt-0 pt-12">
+    <div class="relative md:col-span-12 col-start-2 col-span-10 pt-12">
       <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
     </div>
 
-    <div id="lines" class="hidden md:block col-span-7 md:pb-20 pb-8">
+    <div id="lines" class="hidden md:block col-span-7 md:pb-16 pb-8">
       <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
       <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
     </div>
@@ -48,19 +48,15 @@ import Button from "../components/Button.astro";
         </p>
       </div>
       <div class="flex items-center justify-start md:justify-end">
-        <img
-          src="/images/pfp3.webp"
-          alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="w-[450px] h-[500px] object-cover border border-gray-950"
-        />
+        <img src="/images/pfp3.webp" alt="Portrait of Sara (taken during the internship at Kadaver)" class="w-[450px] h-[500px] object-cover" />
       </div>
     </div>
   </section>
 
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:mt-desktop-top mt-mobil-top md:px-6 px-4">
-    <h3 class="text-gray-950 mb-12">My journey so far</h3>
-    <div id="timeline-line" class="relative border-l-2 border-gray-300 pl-6">
+  <section id="timeline" class="container max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-6 px-4">
+    <h3 class="text-gray-950 pb-8">My journey so far</h3>
+    <div id="timeline-line" class="relative border-l-2 border-gray-400 pl-6">
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">2017 – 2018</p>
         <h4 class="font-dense font-bold text-gray-950">Advertisement-distributor | FK Distribution A/S</h4>
@@ -142,150 +138,110 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Interests & Hobbies Section -->
-  <div id="interests" class="md:mt-desktop-top mt-mobil-top">
-    <section class="container max-w-6xl mx-auto flex items-center justify-center md:px-6 px-4">
-      <div>
-        <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
-        <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 mt-12 md:gap-16 gap-8">
-          <!-- Interest Item 1 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">Reading</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                Books are my gateway to new worlds and an escape from the real world, where I can immerse myself and explore fascinating stories.
-              </p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-          <!-- Interest Item 2 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">Gaming</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                Gaming is a way for me to experience incredible stories and challenges, all while having fun in virtual spaces.
-              </p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-          <!-- Interest Item 3 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                I love getting creative with DIY-projects&mdash; whether it's drawing, making keychains, or crafting something unique.
-              </p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-          <!-- Interest Item 4 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">YouTube-content</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                I find great inspiration and entertainment through YouTube&mdash; whether it's about tech, movies, or games.
-              </p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-          <!-- Interest Item 5 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">
-                Watching a movie or a TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
-              </p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-          <!-- Interest Item 6 -->
-          <div>
-            <div>
-              <h4 class="pb-2 font-dense font-bold text-gray-950">Photography</h4>
-              <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-              <p class="text-gray-950">I like to capture moments that inspires me, allowing me to preserve the beauty of the world around me.</p>
-              <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-            </div>
-          </div>
-        </div>
+  <section id="interests" class="md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-6 px-4">
+    <div class="flex flex-col pb-8">
+      <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
+    </div>
+    <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
+      <!-- Interest Item 1 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Reading</h4>
+        <p class="text-gray-950">Books are my escape from the real world, where I can immerse myself and explore fascinating stories.</p>
       </div>
-    </section>
-  </div>
+      <!-- Interest Item 2 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Gaming</h4>
+        <p class="text-gray-950">
+          Gaming is a way for me to experience incredible stories and unique worlds, all while having fun in a virtual space.
+        </p>
+      </div>
+      <!-- Interest Item 3 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
+        <p class="text-gray-950">
+          I love getting creative with DIY-projects&mdash; whether it's drawing, making keychains, or something else entirely.
+        </p>
+      </div>
+      <!-- Interest Item 4 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">YouTube-content</h4>
+        <p class="text-gray-950">I find great inspiration and entertainment through YouTube&mdash; whether it's about tech, movies, or games.</p>
+      </div>
+      <!-- Interest Item 5 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
+        <p class="text-gray-950">
+          Watching a movie or a TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
+        </p>
+      </div>
+      <!-- Interest Item 6 -->
+      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Photography</h4>
+        <p class="text-gray-950">I like to capture moments that inspires me, allowing me to preserve the beauty of the world around me.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Resources Section -->
-  <div class="resources md:mt-desktop-top mt-mobil-top">
-    <section class="container max-w-6xl mx-auto md:px-6 px-4">
-      <div>
-        <h3 class="font-bold text-gray-950">Resources</h3>
-        <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
-          <!-- Resource Item -->
-          <div class="flex flex-col">
-            <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
-            <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
-            <a
-              class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:64ad8373-1912-4e34-aa64-5396885ef33c"
-              target="_blank"
-              aria-label="Resume (EN)"
-            >
-              <Button variant="primary" size="small">See more</Button>
-            </a>
-            <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col">
-            <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (DA)</h4>
-            <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
-            <a
-              class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:af8d80a0-8eb6-4f31-8640-59b2ff3caa83"
-              target="_blank"
-              aria-label="Resume (DA)"
-            >
-              <Button variant="primary" size="small">Se mere</Button>
-            </a>
-            <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col">
-            <h4 class="pb-2 font-dense font-bold text-gray-950">Application-template (EN)</h4>
-            <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
-            <a
-              class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:75e9d1b3-7cc2-4520-921d-15cb2eb49201"
-              target="_blank"
-              aria-label="Application-template (EN)"
-            >
-              <Button variant="primary" size="small">See more</Button>
-            </a>
-            <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-          </div>
-          <!-- Resource Item -->
-          <div class="flex flex-col">
-            <h4 class="font-dense font-bold text-gray-950 pb-2">Application-template (DA)</h4>
-            <hr class="border-gray-950 mb-5 md:w-full w-[90%]" />
-            <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
-            <a
-              class="mt-5 btn_container md:w-[30%]"
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bbdd4db8-79c5-4d85-9fbb-ed404b83483c"
-              target="_blank"
-              aria-label="Application-template (DA)"
-            >
-              <Button variant="primary" size="small">Se mere</Button>
-            </a>
-            <hr class="border-gray-950 mt-5 md:w-full w-[90%]" />
-          </div>
+  <section class="resources md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-6 px-4">
+    <div>
+      <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
+      <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gap">
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
+          <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:64ad8373-1912-4e34-aa64-5396885ef33c"
+            target="_blank"
+            aria-label="Resume (EN)"
+          >
+            <Button variant="secondary" size="small">See more</Button>
+          </a>
+        </div>
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (DA)</h4>
+          <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:af8d80a0-8eb6-4f31-8640-59b2ff3caa83"
+            target="_blank"
+            aria-label="Resume (DA)"
+          >
+            <Button variant="secondary" size="small">Se mere</Button>
+          </a>
+        </div>
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="pb-2 font-dense font-bold text-gray-950">Application-template (EN)</h4>
+          <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:75e9d1b3-7cc2-4520-921d-15cb2eb49201"
+            target="_blank"
+            aria-label="Application-template (EN)"
+          >
+            <Button variant="secondary" size="small">See more</Button>
+          </a>
+        </div>
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="font-dense font-bold text-gray-950 pb-2">Application-template (DA)</h4>
+          <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:bbdd4db8-79c5-4d85-9fbb-ed404b83483c"
+            target="_blank"
+            aria-label="Application-template (DA)"
+          >
+            <Button variant="secondary" size="small">Se mere</Button>
+          </a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto pb-16 pt-20 text-center">
@@ -293,84 +249,87 @@ import Button from "../components/Button.astro";
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
   </section>
-  <script>
-    import { inView } from "motion";
-
-    //inView animations
-    document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion");
-
-      if (!reduceMotion) {
-        const elementmedanimation1 = document.querySelector("#more-about-me-title");
-        inView(elementmedanimation1, () => {
-          elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementmedanimation2 = document.querySelector("#lines");
-        inView(elementmedanimation2, () => {
-          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-        });
-
-        const elementmedanimation3 = document.querySelector("#personal-background h2");
-        inView(elementmedanimation3, () => {
-          elementmedanimation3.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation4 = document.querySelector("#personal-background p");
-        inView(elementmedanimation4, () => {
-          elementmedanimation4.classList.add("animate__animated", "animate__slideInRight");
-        });
-
-        const elementmedanimation5 = document.querySelector("#personal-background img");
-        inView(elementmedanimation5, () => {
-          elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation6 = document.querySelector(".button-container");
-        inView(elementmedanimation6, () => {
-          elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const boxes = document.querySelectorAll("#timeline-line > div");
-
-        boxes.forEach((boxes, index) => {
-          inView(boxes, () => {
-            boxes.classList.add("animate__animated", "animate__fadeInUp");
-            boxes.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-
-        const sections = document.querySelectorAll("#interests-and-hobbies > div");
-
-        sections.forEach((sections, index) => {
-          inView(sections, () => {
-            sections.classList.add("animate__animated", "animate__fadeInUp");
-            sections.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-
-        const section = document.querySelectorAll("#resources-section > div");
-
-        section.forEach((section, index) => {
-          inView(section, () => {
-            section.classList.add("animate__animated", "animate__fadeInUp");
-            section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-      }
-    });
-  </script>
-
-  <style>
-    body.dark #more-about-me-title,
-    body.dark p,
-    body.dark h2,
-    body.dark h3,
-    body.dark h4 {
-      color: #f6f6f6;
-    }
-    body.dark hr {
-      border-color: #6d6d6d;
-    }
-  </style>
 </MainLayout>
+<script>
+  import { inView } from "motion";
+
+  //inView animations
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
+
+    if (!reduceMotion) {
+      const elementmedanimation1 = document.querySelector("#more-about-me-title");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation2 = document.querySelector("#lines");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation3 = document.querySelector("#personal-background h2");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const elementmedanimation4 = document.querySelector("#personal-background p");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__slideInRight");
+      });
+
+      const elementmedanimation5 = document.querySelector("#personal-background img");
+      inView(elementmedanimation5, () => {
+        elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation6 = document.querySelector(".button-container");
+      inView(elementmedanimation6, () => {
+        elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const boxes = document.querySelectorAll("#timeline-line > div");
+
+      boxes.forEach((boxes, index) => {
+        inView(boxes, () => {
+          boxes.classList.add("animate__animated", "animate__fadeInUp");
+          boxes.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+
+      const sections = document.querySelectorAll("#interests-and-hobbies > div");
+
+      sections.forEach((sections, index) => {
+        inView(sections, () => {
+          sections.classList.add("animate__animated", "animate__fadeInUp");
+          sections.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+
+      const section = document.querySelectorAll("#resources-section > div");
+
+      section.forEach((section, index) => {
+        inView(section, () => {
+          section.classList.add("animate__animated", "animate__fadeInUp");
+          section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  body.dark #more-about-me-title,
+  body.dark p,
+  body.dark h2,
+  body.dark h3,
+  body.dark h4 {
+    color: #f6f6f6;
+  }
+
+  body.dark #interests-and-hobbies > div,
+  body.dark #resources-section > div {
+    background-color: #454545;
+    border-color: #6d6d6d;
+  }
+</style>

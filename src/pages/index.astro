@@ -12,69 +12,258 @@ import Cases from "../components/Cases.astro";
   ogdescription="The first page of the portfolio"
 >
   <!-- Hero Section -->
-  <section id="hero" class="relative container grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8">
-    <!-- Content of Hero Section (kept on top with z-index) -->
-    <div class="relative md:pb-0 md:col-span-12 col-span-10 col-start-2 mx-auto flex flex-col justify-center">
-      <h1 id="hero-title" class="display text-gray-950 md:pt-12 pt-8">Hey there!</h1>
-      <h2 id="hero-subtitle" class="font-dense text-gray-950 mt-4 md:mb-10 mb-8">Welcome to my portfolio</h2>
-      <p id="hero-text" class="text-gray-950 md:mt-0 md:mb-10 mb-12 md:max-w-4xl">
-        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences. If
-        you're interested in learning more about me or just want to get in touch, feel free to reach out through the contact-page. Or look through the
-        other pages, if you're looking for something else!
+  <section
+    class="hero-section grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom w-full h-screen md:px-0 px-4 relative"
+  >
+    <div class="absolute inset-0 md:mt-12 mt-0 max-w-7xl mx-auto md:px-0 px-8 z-20 grid grid-cols-12 gap-6 content-center md:pb-20 pb-0 h-full">
+      <h1 id="hero-title" class="display col-span-12">Hey there!</h1>
+      <h2 id="hero-text" class="pb-4 font-dense col-span-12 text-gray-50 max-w-3xl">Welcome to my portfolio</h2>
+      <p id="hero-text2" class="col-span-10">
+        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences.
+        Below here, you'll find a collection of my highlighted and most recent projects, along with a little bit more information about me and my
+        work-style. If that's not what you're looking for, check out some of the other pages, here on my portfolio. And, if you're interested in
+        working together, don't hesitate to get in touch!
       </p>
     </div>
-    <div id="lines" class="md:max-w-none max-w-6xl col-span-12 md:pb-20 pb-8 hidden md:block">
-      <hr class="mx-auto border-gray-950 mt-6 md:w-[70%] w-[90%]" />
-      <hr class="mx-auto border-gray-950 mt-3 md:w-[50%] w-[70%]" />
+
+    <div class="hero_image w-full h-full absolute inset-0 z-0">
+      <img
+        src="/images/background.webp"
+        alt="Hero-image for the frontpage of the portfolio"
+        class="w-full h-full object-cover brightness-75 grayscale"
+      />
+    </div>
+
+    <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[50%] z-0"></div>
+
+    <div id="scroll-down" class="absolute bottom-[3%] md:bottom-[2.5%] w-full flex justify-center z-[20]">
+      <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-red-300">
+        <div class="float flex flex-col items-center hover:opacity-80 transition duration-300 ease-in-out">
+          <p class="text-[18px] text-gray-50 font-semibold">Go further down the page</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-8 h-8 sm:w-12 sm:h-12 text-gray-50 transition duration-300 ease-in-out"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+          </svg>
+        </div>
+      </a>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="project-section" class="grid grid-cols-12 md:mt-16 mt-0 md:pb-0 pb-16 max-w-7xl mx-auto">
-    <div class="col-span-12 md:px-0 px-8">
+  <section id="project-section" class="grid grid-cols-12 md:mt-desktop-top pt-4 max-w-7xl mx-auto">
+    <div class="col-span-12 px-6">
       <Cases />
     </div>
   </section>
-</MainLayout>
 
-<script>
-  import { inView } from "motion";
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top px-6">
+    <div class="container mx-auto max-w-6xl col-span-12">
+      <h3 class="mb-2 text-gray-950">What people say about me and my work</h3>
+      <p class="text-gray-950 md:mb-12 mb-8 leading-6">
+        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br />Below are a few testimonials from people
+        that have seen my work in action:
+      </p>
+      <div id="testimonials-cards" class="grid md:grid-cols-2 gap-gap md:mt-12 mt-8">
+        <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
+          <p class="text-gray-950 italic">“Quote coming soon”</p>
+          <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
+        </blockquote>
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const reduceMotion = document.body.classList.contains("reduce-motion");
+        <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
+          <p class="text-gray-950 italic">“Quote coming soon”</p>
+          <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
+        </blockquote>
+      </div>
+      <hr class="max-w-6xl border-gray-400 mt-12 w-[35%]" />
 
-    if (!reduceMotion) {
-      const elementmedanimation1 = document.querySelector("#hero-title");
-      inView(elementmedanimation1, () => {
-        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-      });
+      <div id="more-about-me" class="more-about-me-button col-span-12">
+        <h3 class="mt-4 pb-3 font-dense text-[28px] text-gray-950">Wanna know where I got my qualities and skills from?</h3>
+        <div class="button-container">
+          <a aria-label="Go to about-page" href="/about_me">
+            <Button variant="secondary" size="small">Learn more about me here</Button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      const elementmedanimation2 = document.querySelector("#hero-subtitle");
-      inView(elementmedanimation2, () => {
-        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-      });
+  <!-- How I work Section -->
+  <section id="how-i-work" class="relative md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom z-10 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="mb-2 text-gray-950">From idea to reality&mdash; this is how I do it</h3>
+      <p class="text-gray-950 md:mb-12 mb-8 leading-6">
+        My design-process ensures that every solution is user-centered, accessible and visually engaging.<br />When working on a project&mdash;
+        usually when done alone &mdash;I go through the following steps:
+      </p>
 
-      const elementmedanimation3 = document.querySelector("#hero-text");
-      inView(elementmedanimation3, () => {
-        elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-      });
+      <div id="process-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gap text-center">
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <div class="mb-4 text-4xl">🧠</div>
+          <h4 class="font-dense font-bold text-gray-950 mb-2">Empathize</h4>
+          <p class="text-gray-950">I start by exploring user-needs by testing and doing research, to understand the problem and its context.</p>
+        </div>
 
-      const elementmedanimation4 = document.querySelector("#lines");
-      inView(elementmedanimation4, () => {
-        elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
-      });
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <div class="mb-4 text-4xl">💡</div>
+          <h4 class="font-dense font-bold text-gray-950 mb-2">Ideate & plan</h4>
+          <p class="text-gray-950">I begin to brainstorm creative solutions and organize my process with Trello, Notion and Figma.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <div class="mb-4 text-4xl">🎨</div>
+          <h4 class="font-dense font-bold text-gray-950 mb-2">Design & build</h4>
+          <p class="text-gray-950">I design the solution in Figma and code it with Tailwind and Astro, supplied with CSS and Javascript.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-col items-center p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <div class="mb-4 text-4xl">🔁</div>
+          <h4 class="font-dense font-bold text-gray-950 mb-2">Test & improve</h4>
+          <p class="text-gray-950">I do thorough testing to ensure functionality and refine for clarity, accessibility and quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { inView } from "motion";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const reduceMotion = document.body.classList.contains("reduce-motion");
+
+      if (!reduceMotion) {
+        const elementmedanimation1 = document.querySelector("#hero-title");
+        inView(elementmedanimation1, () => {
+          elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementmedanimation2 = document.querySelector("#hero-text");
+        inView(elementmedanimation2, () => {
+          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+        });
+
+        const elementmedanimation3 = document.querySelector("#hero-text2");
+        inView(elementmedanimation3, () => {
+          elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementmedanimation6 = document.querySelector("#testimonials h3");
+        inView(elementmedanimation6, () => {
+          elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
+        });
+
+        const elementmedanimation6a = document.querySelector("#testimonials p");
+        inView(elementmedanimation6a, () => {
+          elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation7 = document.querySelector("#how-i-work h3");
+        inView(elementmedanimation7, () => {
+          elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
+        });
+
+        const elementmedanimation8 = document.querySelector("#how-i-work p");
+        inView(elementmedanimation8, () => {
+          elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation9 = document.querySelector("#more-about-me h3");
+        inView(elementmedanimation9, () => {
+          elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
+        });
+
+        const elementmedanimation10 = document.querySelector("#testimonials hr");
+        inView(elementmedanimation10, () => {
+          elementmedanimation10.classList.add("animate__animated", "animate__bounceInLeft");
+        });
+
+        const elementmedanimation11 = document.querySelector(".button-container");
+        inView(elementmedanimation11, () => {
+          elementmedanimation11.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation12 = document.querySelector("#scroll-down");
+        inView(elementmedanimation12, () => {
+          elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
+        });
+
+        const testimonials = document.querySelectorAll("#testimonials-cards > blockquote");
+
+        testimonials.forEach((testimonials, index) => {
+          inView(testimonials, () => {
+            testimonials.classList.add("animate__animated", "animate__fadeInUp");
+            testimonials.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
+
+        const process = document.querySelectorAll("#process-cards > div");
+
+        process.forEach((process, index) => {
+          inView(process, () => {
+            process.classList.add("animate__animated", "animate__fadeInUp");
+            process.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          });
+        });
+      }
+    });
+  </script>
+
+  <style>
+    /* Floating Animation */
+    @keyframes float {
+      0% {
+        transform: translatey(0);
+      }
+      50% {
+        transform: translatey(-10px);
+      }
+      100% {
+        transform: translatey(0);
+      }
     }
-  });
-</script>
 
-<style>
-  body.dark #hero-title,
-  body.dark #hero-subtitle,
-  body.dark #hero-text {
-    color: #f6f6f6;
-  }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
 
-  body.dark #lines hr {
-    border-color: #f6f6f6;
-  }
-</style>
+    #hero-title,
+    #hero-subtitle,
+    #hero-text,
+    #hero-text2 {
+      color: #f6f6f6;
+    }
+
+    body.dark #testimonials h3,
+    body.dark #how-i-work h3,
+    body.dark #more-about-me h3,
+    body.dark #more-about-me p,
+    body.dark #testimonials p,
+    body.dark #testimonials blockquote,
+    body.dark #how-i-work p,
+    body.dark #how-i-work h4 {
+      color: #f6f6f6;
+    }
+
+    body.dark #testimonials hr,
+    body.dark #how-i-work hr,
+    body.dark #more-about-me hr {
+      border-color: #6d6d6d;
+    }
+
+    body.dark #process-cards div,
+    body.dark #testimonials-cards blockquote {
+      background-color: #454545;
+      border-color: #6d6d6d;
+    }
+  </style>
+</MainLayout>

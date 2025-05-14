@@ -9,24 +9,22 @@ import MainLayout from "../layouts/MainLayout.astro";
   ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
   ogdescription="Contact Sara through her email-address or phone-number"
 >
-  <section id="contact" class="container mx-auto md:px-6 px-4 md:mt-desktop-top mt-mobil-top md:pt-20 pt-8">
+  <section id="contact" class="container mx-auto md:px-6 px-4 md:pt-desktop-top pt-mobil-top">
     <!-- Contact Information Section -->
-    <div id="contact-form-container" class="md:pt-0 pt-12 flex flex-col md:flex-row gap-12 justify-center">
+    <div id="contact-form-container" class="flex flex-col md:flex-row gap-12 justify-center md:pt-24 pt-12">
       <!-- Image and Contact Info Box -->
       <div id="contact-container" class="flex flex-col md:flex-row items-center">
         <!-- Image -->
         <img
           src="/images/pfp.webp"
           alt="School-portrait of Sara (taken during the internship-preparations)"
-          class="w-48 h-48 md:w-[350px] md:h-[350px] object-cover rounded-full border border-gray-950 mb-12 md:mb-0 md:mr-12"
+          class="w-48 h-48 md:w-[350px] md:h-[350px] object-cover rounded-full mb-12 md:mb-0 md:mr-12"
         />
 
         <!-- Contact Information Box -->
         <div class="space-y-4">
-          <h1 id="contact-title" class="md:text-left text-center md:text-h2-desktop text-h2-mobile font-dense text-gray-950 md:pb-5 pb-2">
-            Let's talk!
-          </h1>
-          <div id="contact-info" class="py-4 md:py-6 border-y border-gray-950 text-gray-950">
+          <h1 id="contact-title" class="md:text-left text-center font-dense text-gray-950 md:pb-4 pb-2">Let's talk!</h1>
+          <div id="contact-info" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200 text-gray-950">
             <ul class="md:space-y-4 space-y-2">
               <li class="some1">
                 <strong class="text-gray-950">Email:</strong><br class="md:hidden block" />
@@ -106,6 +104,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     body.dark #contact-info {
       border-color: #6d6d6d;
+      background-color: #454545;
     }
 
     body.dark #contact-info strong,
