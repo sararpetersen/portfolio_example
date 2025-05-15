@@ -24,27 +24,25 @@ import Button from "../components/Button.astro";
       <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
     </div>
   </section>
-  <!-- Personal Background Section -->
-  <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto">
+  <!-- Personal Background -->
+  <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-automd:px-0 px-6">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center md:col-span-12 col-start-2 col-span-10">
       <div class="items-center md:pb-0 pb-8">
         <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-4">
           Creativity has always been a part of me..
         </h2>
         <p id="personal-background-text" class="mt-4 text-gray-950">
-          <span class="font-bold text-[20px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
-          just everything that spelled "creativity". I knew deep down that, when I grew up, I wanted to make it a career. As I became older, however, I
-          also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right
-          thing.<br /><br />
-          After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design through an open-house
-          event at the school that I now attend. It was a degree that combined both creativity and technology, and I knew right away that it was the right
-          fit for me. <br />Through my studies, I quickly realised the important role that accessibility played in digital design. As someone who's
-          late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. So that has become my
-          goal&mdash; to create digital experiences that remove barriers and ensure inclusivity for all. <br /><br />With accessibility at the core of
-          my work, I strive to design engaging, user-friendly platforms that make a difference. Every project is an opportunity to merge creativity
-          with purpose, and I look forward to growing, innovating, and shaping a more inclusive digital world.<span
-            class="font-bold text-[20px] italic">"</span
-          >
+          <span class="font-bold text-[25px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
+          just everything that spelled <em>'creativity'</em> in general. I knew deep down that when I grew up, I wanted to make it a career. As I became
+          older, however, I also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled
+          to find the right thing.<br /><br />
+          After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design. It was a degree
+          that combined the best of both worlds, and I just knew that it was the perfect fit for me. <br />Through my studies, I quickly realised the
+          important role that accessibility played in digital design. As someone who's late-diagnosed with autism, I know what it's like navigating a
+          world that isn't always accessible to everyone. So that has become my goal&mdash; to create digital experiences that remove barriers and
+          ensure inclusivity for all. <br /><br />With accessibility at the core of my work, I strive to design engaging, user-friendly platforms that
+          make a difference. Every project is an opportunity to merge creativity with purpose, and I look forward to growing, innovating, and shaping
+          a more inclusive digital world.<span class="font-bold text-[25px] italic">"</span>
         </p>
       </div>
       <div class="flex items-center justify-start md:justify-end">
@@ -53,8 +51,45 @@ import Button from "../components/Button.astro";
     </div>
   </section>
 
+  <!-- Strengths and Weaknesses -->
+  <section class="strength-weaknesses md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
+    <div class="flex flex-col pb-8">
+      <h3 class="font-bold text-gray-950">Strengths and weaknesses</h3>
+    </div>
+    <div id="strengths-and-weaknesses" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
+      <!-- Strength Item 1 -->
+      <div id="strengths" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Strengths</h4>
+        <ul class="list-decimal pl-4 space-y-2 text-gray-950">
+          <li><strong>Adaptability: </strong><br />I can easily adjust to new situations and environments</li>
+          <li><strong>Multitasking: </strong><br />I can handle multiple tasks and projects at the same time</li>
+          <li><strong>Attention to detail: </strong><br />I often spot errors that others might've overlooked or missed</li>
+          <li><strong>Time-management: </strong><br />I can prioritise tasks and manage my time effectively</li>
+        </ul>
+      </div>
+      <!-- Weakness Item 2 -->
+      <div id="weaknesses" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <h4 class="pb-2 font-dense font-bold text-gray-950">Weaknesses</h4>
+        <ul class="list-decimal pl-4 space-y-2 text-gray-950">
+          <li>
+            <strong>Overthinking: </strong><br />I often overthink, even over the simplest tasks and decisions
+          </li>
+          <li>
+            <strong>Overload: </strong><br />I get easily overwhelmed, if I have too much on my plate
+          </li>
+          <li>
+            <strong>Mental shutdown: </strong><br />I sometimes shut down completely, if I'm in a stressful situation
+          </li>
+          <li>
+            <strong>Procrastination: </strong><br />I tend to procrastinate, when I've hit a roadblock
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-6 px-4">
+  <section id="timeline" class="container max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
     <h3 class="text-gray-950 pb-8">My journey so far</h3>
     <div id="timeline-line" class="relative border-l-2 border-gray-400 pl-6">
       <div class="mb-10">
@@ -120,8 +155,8 @@ import Button from "../components/Button.astro";
         <p class="text-sm text-gray-600 mb-1">August 2023 – present</p>
         <h4 class="font-dense font-bold text-gray-950">Multimedia-design | KEA – Københavns Erhvervsakademi</h4>
         <p class="text-gray-700">
-          After my singular courses, I applied for the multimedia-design degree, after having attended an open-house event at KEA. I was really
-          interested in this degree, as it combined creativity with technology, and I knew that it would be a good fit for me.
+          After my singular courses, I applied for the multimedia-design degree, after having attended an open-house event at KEA. It was here that I
+          started my studies in the world of digital design.
         </p>
       </div>
 
@@ -137,10 +172,10 @@ import Button from "../components/Button.astro";
     </div>
   </section>
 
-  <!-- Interests & Hobbies Section -->
-  <section id="interests" class="md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-6 px-4">
+  <!-- Interests and Hobbies -->
+  <section id="interests" class="md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
     <div class="flex flex-col pb-8">
-      <h3 class="font-bold text-gray-950">Interests & hobbies</h3>
+      <h3 class="font-bold text-gray-950">Interests and hobbies</h3>
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
       <!-- Interest Item 1 -->
@@ -183,7 +218,7 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Resources Section -->
-  <section class="resources md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-6 px-4">
+  <section class="resources md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
     <div>
       <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gap">
@@ -323,12 +358,14 @@ import Button from "../components/Button.astro";
   body.dark p,
   body.dark h2,
   body.dark h3,
-  body.dark h4 {
+  body.dark h4,
+  body.dark ul li {
     color: #f6f6f6;
   }
 
   body.dark #interests-and-hobbies > div,
-  body.dark #resources-section > div {
+  body.dark #resources-section > div,
+  body.dark #strengths-and-weaknesses > div {
     background-color: #454545;
     border-color: #6d6d6d;
   }
