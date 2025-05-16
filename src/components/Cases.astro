@@ -11,44 +11,35 @@ const fetchCards = async () => {
 };
 
 const projects = await fetchCards();
-const ariaLabel = "View project: ";
-
-import Button from "./Button.astro";
 ---
 
 <!-- Carousel -->
-<div class="carousel w-full">
-  <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap">
+<div class="carousel w-full col-span-12">
+  <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       projects.map((project) => (
-        <div
-          id="card"
-          class="flex flex-col border border-l-4 border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
-        >
-          <img class="w-full h-[400px] object-cover border-b border-gray-200 rounded-t-[5px]" src={project.image} alt={project.name} />
-          <div class="flex flex-col p-6 pt-4">
-            <h3 class="pt-4 text-[30px]">{project.name}</h3>
-            <h4 class="font-dense md:pb-3 pb-2 pt-1 text-gray-950">
-              <span class="font-bold text-gray-950">Semester:</span> {project.semester}
-            </h4>
-            <div class="flex flex-row flex-wrap gap-2 pt-2 pb-4">
-              {project.tools &&
-                project.tools.map((tool) => (
-                  <p class="rounded-full px-4 p-2 font-semibold border border-gray-950 uppercase bg-gray-950 text-gray-50 text-sm">{tool}</p>
-                ))}
+        <li class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-200 hover:border-gray-300">
+          {" "}
+          <a href={project.url} target="_blank" aria-label={`Link to ${project.name}`}>
+            <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
+
+            <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute bottom-0 left-0 right-0 p-4">
+                <h1 class="text-h4-desktop font-bold text-gray-50">{project.name}</h1>
+                <h2 class="text-h4-desktop font-dense font-regular italic pb-2 text-gray-50">
+                  <span class="font-bold text-gray-50">Semester:</span> {project.semester}
+                </h2>
+
+                <div class="flex flex-row flex-wrap gap-2 py-2">
+                  {project.tools &&
+                    project.tools.map((tool) => (
+                      <p class="rounded-full px-4 py-2 font-semibold border border-red-500 uppercase bg-red-500 text-gray-50 text-sm">{tool}</p>
+                    ))}
+                </div>
+              </div>
             </div>
-            <hr class="border-gray-400 mb-6 mt-3 md:w-[90%] w-full" />
-            <p class="pb-2 text-gray-950 max-w-lg">{project.description}</p>
-            <hr class="border-gray-400 mb-6 mt-4 md:w-[90%] w-full" />
-            <div>
-              <a href={project.url} target="_blank" aria-label={ariaLabel}>
-                <Button variant="primary" size="small" text="View Project">
-                  Click here to see project
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
+          </a>
+        </li>
       ))
     }
   </ul>
@@ -61,7 +52,7 @@ import Button from "./Button.astro";
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
     if (!reduceMotion) {
-      const cases = document.querySelectorAll("#project-cards > div");
+      const cases = document.querySelectorAll("#project-cards > li");
 
       cases.forEach((cases, index) => {
         inView(cases, () => {
@@ -74,29 +65,24 @@ import Button from "./Button.astro";
 </script>
 
 <style>
-  body.dark #project-cards > div {
+  body.dark #project-cards > li {
     background-color: #454545;
     border-color: #6d6d6d;
   }
 
-  body.dark #project-cards > div:hover {
+  body.dark #project-cards > li:hover {
     background-color: #5b5b5b;
     border-color: #7d7d7d;
   }
 
-  body.dark #project-cards > div:focus {
+  body.dark #project-cards > li:focus {
     border-color: #e48181;
   }
 
-  body.dark #project-cards > div h3,
-  body.dark #project-cards > div h4,
-  body.dark #project-cards > div p,
-  body.dark #project-cards > div span {
+  body.dark #project-cards > li h1,
+  body.dark #project-cards > li h2,
+  body.dark #project-cards > li p,
+  body.dark #project-cards > li span {
     color: #f6f6f6;
-  }
-
-  body.dark #project-cards > div hr,
-  body.dark #project-cards > div img {
-    border-color: #6d6d6d;
   }
 </style>

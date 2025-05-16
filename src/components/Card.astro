@@ -1,105 +1,65 @@
 ---
-// src/components/Card.astro
-const {
-  url = null,
-  image,
-  titleMain, // First part of the title
-  Semester = "", // Second part of the title, optional
-  Year = "", // Third part of the title, optional
-  tools = [], // add this line
-  description,
-  ariaLabel = "",
-} = Astro.props;
+const { url = null, image, titleMain, Semester = "", Year = "", tools = [], description, ariaLabel = "" } = Astro.props;
 ---
 
-{
-  url ? (
-    <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
-      <div class="hover:opacity-80 hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200">
-        <div />
-        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover" />
-        <div class="text px-6 py-6">
-          <h3 class="font-bold text-gray-950">
-            {titleMain}
-            <br />
-          </h3>
-          <h4 class="font-dense font-bold text-gray-950 md:pb-4 pb-3">
-            {Semester}
-            <span class="font-normal"> {Year}</span>
-          </h4>
-          {tools.length > 0 && (
-            <div class="flex flex-wrap gap-2 pt-2 pb-4">
-              {tools.map((tool) => (
-                <span class={`rounded-full font-semibold px-4 p-2 bg-gray-950 text-gray-50 uppercase text-sm`}>{tool}</span>
-              ))}
-            </div>
-          )}
-          <hr class="border-gray-400 mb-5 md:w-[60%] w-[90%]" />
-          <p class="text-gray-950 mt-2">{description}</p>
-        </div>
-      </div>
-    </a>
-  ) : (
-    <a id="card" href={url} target="_blank" aria-label={ariaLabel} class="group-container">
-      <div class="border-l-4 border border-gray-200 hover:border-gray-300 rounded-[5px] bg-gray-100 hover:bg-gray-200 hover:-translate-y-2 transition duration-300 ease-in-out">
-        <div />
-        <img src={image} alt={titleMain} class="w-[600px] h-[400px] rounded-t-[5px] object-cover" />
-        <div class="text px-6 py-6">
-          <h3 class="font-bold text-gray-950">
-            {titleMain}
-            <br />
-          </h3>
-          <h4 class="font-dense font-bold text-gray-950 md:pb-3 pb-2 pt-1">
-            {Semester}
-            <span class="font-normal font-dense"> {Year}</span>
-          </h4>
-          {tools.length > 0 && (
-            <div class="flex flex-wrap gap-2 pt-2 pb-4">
-              {tools.map((tool) => (
-                <span class={`rounded-full font-semibold px-4 p-2 bg-gray-950 text-gray-50 uppercase text-sm`}>{tool}</span>
-              ))}
-            </div>
-          )}
-          <hr class="border-gray-400 mb-5 md:w-[60%] w-[90%]" />
-          <p class="text-gray-950 mt-2">{description}</p>
-        </div>
-      </div>
-    </a>
-  )
-}
+<a
+  href={url}
+  target="_blank"
+  aria-label={ariaLabel}
+  class="relative overflow-hidden rounded-2xl group block hover:-translate-y-1 transition duration-300 ease-in-out h-[300px] cursor-pointer border-l-4 border border-gray-200 hover:border-gray-300"
+>
+  <img src={image} alt={titleMain} class="w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <div class="absolute bottom-0 left-0 right-0 p-4">
+      <h1 class="text-h4-desktop font-bold text-gray-50">{titleMain}</h1>
+      <h2 class="text-h4-desktop font-dense font-regular pb-2 text-gray-50">{Semester} <span class="font-regular italic">{Year}</span></h2>
+
+      {
+        tools.length > 0 && (
+          <div class="flex flex-wrap mt-4">
+            {tools.map((tool) => (
+              <span class="rounded-full px-4 p-2 font-semibold uppercase bg-red-500 text-gray-50 text-sm mr-2 mb-2">{tool}</span>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</a>
 
 <script>
   import { inView } from "motion";
 
-  const cards = document.querySelectorAll("#card > div");
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
 
-  cards.forEach((cards, index) => {
-    inView(cards, () => {
-      cards.classList.add("animate__animated", "animate__fadeInUp");
-      cards.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-    });
+    if (!reduceMotion) {
+      const cards = document.querySelectorAll("a.group");
+
+      cards.forEach((card, index) => {
+        inView(card, () => {
+          card.classList.add("animate__animated", "animate__fadeInUp");
+          card.style.animationDelay = `${index * 0.2}s`;
+        });
+      });
+    }
   });
 </script>
 
 <style>
-  body.dark #card > div {
+  body.dark a.group {
     background-color: #454545;
     border-color: #6d6d6d;
   }
 
-  body.dark #card > div > img,
-  body.dark #card hr {
-    border-color: #6d6d6d;
-  }
-
-  body.dark #card > div:hover {
+  body.dark a.group:hover {
     background-color: #5b5b5b;
     border-color: #7d7d7d;
   }
 
-  body.dark #card h3,
-  body.dark #card h4,
-  body.dark #card p {
+  body.dark a.group h4,
+  body.dark a.group p,
+  body.dark a.group span {
     color: #f6f6f6;
   }
 </style>

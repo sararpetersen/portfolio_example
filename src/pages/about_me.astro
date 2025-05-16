@@ -15,34 +15,36 @@ import Button from "../components/Button.astro";
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative md:col-span-12 col-start-2 col-span-10 pt-12">
-      <h1 id="more-about-me-title" class="font-bold md:text-left text-center text-gray-950">About me</h1>
+    <div class="relative col-span-12 md:pt-12 pt-16">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-4">About me</h1>
+      <p class="heading-text leading-6 text-gray-950 md:pb-0 pb-16 max-w-3xl">
+        Read a little bit about me, my background and who I am. You'll also find the templates that I've used for my resume and applications, at the
+        very bottom of the page.
+      </p>
     </div>
 
-    <div id="lines" class="hidden md:block col-span-7 md:pb-16 pb-8">
+    <div id="lines" class="hidden md:block col-span-9 md:pb-20 pb-8">
       <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
       <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
     </div>
   </section>
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto md:px-0 px-6">
-    <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center md:col-span-12 col-start-2 col-span-10">
+    <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
       <div class="items-center md:pb-0 pb-8">
-        <h2 class="text-[50px] md:text-left text-center font-dense text-gray-950 md:pb-0 pb-8 md:pt-0 pt-4">
-          Creativity has always been a part of me..
-        </h2>
-        <p id="personal-background-text" class="mt-4 text-gray-950">
-          <span class="font-bold text-[25px] italic">"</span> I've always loved being creative. From a young age, I've enjoyed drawing, painting, and crafting&mdash;
-          just everything that spelled <em>'creativity'</em> in general. I knew deep down that when I grew up, I wanted to make it a career. As I became
-          older, however, I also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled
-          to find the right thing.<br /><br />
+        <p id="personal-background-text" class="text-gray-950 leading-6">
+          I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelled <em
+            >"creativity"</em
+          > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become
+          interested in technology. And now wanting a career that combined both that and creativity, I really struggled to find the right thing.<br
+          /><br />
           After first having gone through high school, folk high school and singular courses, I eventually stumbled upon multimedia-design. It was a degree
-          that combined the best of both worlds, and I just knew that it was the perfect fit for me. <br />Through my studies, I quickly realised the
-          important role that accessibility played in digital design. As someone who's late-diagnosed with autism, I know what it's like navigating a
-          world that isn't always accessible to everyone. So that has become my goal&mdash; to create digital experiences that remove barriers and
-          ensure inclusivity for all. <br /><br />With accessibility at the core of my work, I strive to design engaging, user-friendly platforms that
-          make a difference. Every project is an opportunity to merge creativity with purpose, and I look forward to growing, innovating, and shaping
-          a more inclusive digital world.<span class="font-bold text-[25px] italic">"</span>
+          that combined the best of both worlds, and I just knew right away that it was the perfect fit for me. <br />Through my studies, I quickly
+          realised the important role that accessibility plays in digital design. As someone who's late-diagnosed with autism, I know what it's like
+          navigating a world that isn't always accessible to everyone. So that has become my goal&mdash; to create digital experiences that remove
+          barriers and ensure inclusivity for all. <br /><br />With accessibility at the core of my work, I strive to design engaging, user-friendly
+          platforms that make a difference. Every project is an opportunity to merge creativity with purpose, and I look forward to growing,
+          innovating and shaping a more inclusive digital world.
         </p>
       </div>
       <div class="flex items-center justify-start md:justify-end">
@@ -52,15 +54,15 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Strengths and Weaknesses -->
-  <section class="strength-weaknesses md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
+  <section id="strengths-weaknesses" class="strength-and-weaknesses md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
     <div class="flex flex-col pb-8">
       <h3 class="font-bold text-gray-950">Strengths and weaknesses</h3>
     </div>
-    <div id="strengths-and-weaknesses" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
+    <div id="strengths-weaknesses-container" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
       <!-- Strength Item 1 -->
       <div id="strengths" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Strengths</h4>
-        <ul class="list-decimal pl-4 space-y-2 text-gray-950">
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Strengths</h4>
+        <ul class="list-decimal pl-4 space-y-3 text-gray-950">
           <li><strong>Adaptability: </strong><br />I can easily adjust to new situations and environments</li>
           <li><strong>Multitasking: </strong><br />I can handle multiple tasks and projects at the same time</li>
           <li><strong>Attention to detail: </strong><br />I often spot errors that others might've overlooked or missed</li>
@@ -69,8 +71,8 @@ import Button from "../components/Button.astro";
       </div>
       <!-- Weakness Item 2 -->
       <div id="weaknesses" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Weaknesses</h4>
-        <ul class="list-decimal pl-4 space-y-2 text-gray-950">
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Weaknesses</h4>
+        <ul class="list-decimal pl-4 space-y-3 text-gray-950">
           <li>
             <strong>Overthinking: </strong><br />I often overthink, even over the simplest tasks and decisions
           </li>
@@ -94,20 +96,26 @@ import Button from "../components/Button.astro";
     <div id="timeline-line" class="relative border-l-2 border-gray-400 pl-6">
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">2017 – 2018</p>
-        <h4 class="font-dense font-bold text-gray-950">Advertisement-distributor | FK Distribution A/S</h4>
-        <p class="text-gray-700">My first actual job, that I got during my final year of primary school.</p>
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Advertisement-distributor | FK Distribution A/S</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
+          My first actual job that I got during my final year of primary school. Here, I handed out ads in a selected area near my home, and I did
+          that about once a week for about a year.
+        </p>
       </div>
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">2018 – 2019</p>
-        <h4 class="font-dense font-bold text-gray-950">10th grade | Egeskolen</h4>
-        <p class="text-gray-700">After primary school, I decided to continue studying, as my grades weren't good enough to apply for high school.</p>
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">10th grade | Egeskolen</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
+          After primary school, I decided to continue studying, as my grades weren't good enough to apply for high school. It ended up being one of
+          the best decisions of my life, because it really just gave me the buffer that I needed to continue onward.
+        </p>
       </div>
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">February 2018 – may 2019</p>
-        <h4 class="font-dense font-bold text-gray-950">Shop-assistant u. 18 | Netto, Vanløse</h4>
-        <p class="text-gray-700">
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Shop-assistant u. 18 | Netto, Vanløse</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
           Applied for this job, shortly after I quit as an advertisement-distributor. I only had the job for 3 months, but that was more than enough
           for me to realise that retail and customer-handling wasn't my thing.
         </p>
@@ -115,8 +123,8 @@ import Button from "../components/Button.astro";
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">August 2019 – june 2021</p>
-        <h4 class="font-dense font-bold text-gray-950">HF | Egedal Gymnasium & HF</h4>
-        <p class="text-gray-700">
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">HF | Egedal Gymnasium & HF</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
           After 10th grade, my grades were finally good enough for me to apply for high school, and I applied for the one I was most interested in.
           During my time there, my main-subjects were art, society-class and psychology.
         </p>
@@ -124,8 +132,8 @@ import Button from "../components/Button.astro";
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">June 2021 – december 2022</p>
-        <h4 class="font-dense font-bold text-gray-950">Assistant in webshop | Lloyd Concept Store Copenhagen*</h4>
-        <p class="text-gray-700">
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Assistant in webshop | Lloyd Concept Store Copenhagen*</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
           This was a job that I got after graduating from high school, through a family-aquaintance. Here, I did order-management (finding and
           packing) and cleaning. It was a good way for me to keep me occupied during my gap-year, until I figured out what I wanted to do.
         </p>
@@ -134,39 +142,41 @@ import Button from "../components/Button.astro";
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">January 2022 – june 2022</p>
-        <h4 class="font-dense font-bold text-gray-950">Bosei Sports Folk High School | Gap-year</h4>
-        <p class="text-gray-700">
-          During my 6-month leave at Lloyd, I went to stay at Bosei Sports Folk High School, where I spent the rest of my gap-year. Here, I studied
-          Japanese&mdash; both the language and the culture &mdash;and also did a bit of gaming and sports.
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Bosei Sports Folk High School | Gap-year</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
+          During my 6-month leave at Lloyd, I went to stay at Bosei Sports Folk High School, which is where I spent a majority of my gap-year. Here, I
+          studied Japanese&mdash; both the language and the culture &mdash;and also did a bit of gaming and sports.
         </p>
       </div>
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">August 2022 – may 2023</p>
-        <h4 class="font-dense font-bold text-gray-950">Singular courses in History (dropped*) and Japanese (lvl. 0-B) | Frederiksberg VUC & STX</h4>
-        <p class="text-gray-700">
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">
+          Singular courses in History (dropped*) and Japanese (lvl. 0-B) | Frederiksberg VUC & STX
+        </h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
           After my gap-year, I decided to continue studying, as I wanted to improve my grades and maybe apply for a higher education. I chose
-          Japanese, my new-found interest after Bosei. And History, because my grade from high school was low.
+          Japanese, my new-found interest after Bosei. And history, because my grade from high school was low.
         </p>
         <p class="italic text-gray-700 text-sm mt-2">* Had to drop it due to work and just continue with one course</p>
       </div>
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">August 2023 – present</p>
-        <h4 class="font-dense font-bold text-gray-950">Multimedia-design | KEA – Københavns Erhvervsakademi</h4>
-        <p class="text-gray-700">
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Multimedia-design | KEA – Københavns Erhvervsakademi</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
           After my singular courses, I applied for the multimedia-design degree, after having attended an open-house event at KEA. It was here that I
-          started my studies in the world of digital design.
+          started my studies in the field of digital design, and learned all that I know now.
         </p>
       </div>
 
       <div class="mb-10">
         <p class="text-sm text-gray-600 mb-1">January 2025 – april 2025</p>
-        <h4 class="font-dense font-bold text-gray-950">Junior Creative/intern | Kadaver ApS</h4>
-        <p class="text-gray-700">
-          As part of my fourth and final semester on the multimedia-design degree, I had to complete a 10-week internship. I chose to do my internship
-          at the advertising-agency Kadaver, which was recommended to me by an aquaintance. During my internship, I redesigned websites for both
-          Kadaver themselves, and also one of their biggest clients.
+        <h4 class="text-h4-desktop font-dense font-bold text-gray-950 mb-2">Junior Creative/intern | Kadaver ApS</h4>
+        <p class="text-gray-700 leading-6 md:max-w-3xl max-w-none">
+          On the fourth and final semester of my degree, I had to complete a 10-week internship. I chose the advertising-agency Kadaver, which was
+          recommended to me by an aquaintance. During my internship, I redesigned websites for both Kadaver themselves and also one of their biggest
+          clients.
         </p>
       </div>
     </div>
@@ -180,51 +190,51 @@ import Button from "../components/Button.astro";
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
       <!-- Interest Item 1 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Reading</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Reading</h4>
         <p class="text-gray-950">Books are my escape from the real world, where I can immerse myself and explore fascinating stories.</p>
       </div>
       <!-- Interest Item 2 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Gaming</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Gaming</h4>
         <p class="text-gray-950">
           Gaming is a way for me to experience incredible stories and unique worlds, all while having fun in a virtual space.
         </p>
       </div>
       <!-- Interest Item 3 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Crafting & DIY</h4>
         <p class="text-gray-950">
           I love getting creative with DIY-projects&mdash; whether it's drawing, making keychains, or something else entirely.
         </p>
       </div>
       <!-- Interest Item 4 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">YouTube-content</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">YouTube-content</h4>
         <p class="text-gray-950">I find great inspiration and entertainment through YouTube&mdash; whether it's about tech, movies, or games.</p>
       </div>
       <!-- Interest Item 5 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Watching movies & TV series</h4>
         <p class="text-gray-950">
           Watching a movie or a TV series gives me the chance to unwind, discover new stories, and explore a variety of genres.
         </p>
       </div>
       <!-- Interest Item 6 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-        <h4 class="pb-2 font-dense font-bold text-gray-950">Photography</h4>
+        <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Photography</h4>
         <p class="text-gray-950">I like to capture moments that inspires me, allowing me to preserve the beauty of the world around me.</p>
       </div>
     </div>
   </section>
 
   <!-- Resources Section -->
-  <section class="resources md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
+  <section id="resources" class="resources-section md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
     <div>
       <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gap">
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-          <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
+          <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Resume (EN)</h4>
           <p class="text-gray-950">Look through my resume to get an overview of my professional background.</p>
           <a
             class="mt-5 btn_container md:w-[30%]"
@@ -237,7 +247,7 @@ import Button from "../components/Button.astro";
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-          <h4 class="pb-2 font-dense font-bold text-gray-950">Resume (DA)</h4>
+          <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Resume (DA)</h4>
           <p class="text-gray-950">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
           <a
             class="mt-5 btn_container md:w-[30%]"
@@ -250,7 +260,7 @@ import Button from "../components/Button.astro";
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-          <h4 class="pb-2 font-dense font-bold text-gray-950">Application-template (EN)</h4>
+          <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Application-template (EN)</h4>
           <p class="text-gray-950">Take a look at what I include when I send out applications.</p>
           <a
             class="mt-5 btn_container md:w-[30%]"
@@ -263,7 +273,7 @@ import Button from "../components/Button.astro";
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-          <h4 class="font-dense font-bold text-gray-950 pb-2">Application-template (DA)</h4>
+          <h4 class="text-h4-desktop pb-2 font-dense font-bold text-gray-950">Application-template (DA)</h4>
           <p class="text-gray-950">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
           <a
             class="mt-5 btn_container md:w-[30%]"
@@ -293,19 +303,19 @@ import Button from "../components/Button.astro";
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
     if (!reduceMotion) {
-      const elementmedanimation1 = document.querySelector("#more-about-me-title");
+      const elementmedanimation1 = document.querySelector(".heading-title");
       inView(elementmedanimation1, () => {
-        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+        elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
       });
 
-      const elementmedanimation2 = document.querySelector("#lines");
+      const elementmedanimation2 = document.querySelector(".heading-text");
       inView(elementmedanimation2, () => {
-        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+        elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
       });
 
-      const elementmedanimation3 = document.querySelector("#personal-background h2");
+      const elementmedanimation3 = document.querySelector("#lines");
       inView(elementmedanimation3, () => {
-        elementmedanimation3.classList.add("animate__animated", "animate__fadeInDown");
+        elementmedanimation3.classList.add("animate__animated", "animate__backInRight");
       });
 
       const elementmedanimation4 = document.querySelector("#personal-background p");
@@ -318,9 +328,29 @@ import Button from "../components/Button.astro";
         elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
       });
 
-      const elementmedanimation6 = document.querySelector(".button-container");
+      const elementmedanimation6 = document.querySelector("#interests h3");
       inView(elementmedanimation6, () => {
         elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6a = document.querySelector(".strength-and-weaknesses h3");
+      inView(elementmedanimation6a, () => {
+        elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6b = document.querySelector("#resources h3");
+      inView(elementmedanimation6b, () => {
+        elementmedanimation6b.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6c = document.querySelector("#timeline h3");
+      inView(elementmedanimation6c, () => {
+        elementmedanimation6c.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation7 = document.querySelector(".button-container");
+      inView(elementmedanimation7, () => {
+        elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
       });
 
       const boxes = document.querySelectorAll("#timeline-line > div");
@@ -349,24 +379,38 @@ import Button from "../components/Button.astro";
           section.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
         });
       });
+
+      const section2 = document.querySelectorAll("#strengths-weaknesses-container > div");
+
+      section2.forEach((section2, index) => {
+        inView(section2, () => {
+          section2.classList.add("animate__animated", "animate__fadeInUp");
+          section2.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
     }
   });
 </script>
 
 <style>
-  body.dark #more-about-me-title,
-  body.dark p,
-  body.dark h2,
+  body.dark .heading-title,
+  body.dark .heading-text,
   body.dark h3,
   body.dark h4,
-  body.dark ul li {
+  body.dark p,
+  body.dark li,
+  body.dark a {
     color: #f6f6f6;
   }
 
   body.dark #interests-and-hobbies > div,
   body.dark #resources-section > div,
-  body.dark #strengths-and-weaknesses > div {
+  body.dark #strengths-weaknesses-container > div {
     background-color: #454545;
+    border-color: #6d6d6d;
+  }
+
+  body.dark #lines hr {
     border-color: #6d6d6d;
   }
 </style>

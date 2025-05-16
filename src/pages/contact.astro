@@ -9,21 +9,25 @@ import MainLayout from "../layouts/MainLayout.astro";
   ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
   ogdescription="Contact Sara through her email-address or phone-number"
 >
-  <section id="contact" class="container mx-auto md:px-6 px-4 md:pt-desktop-top pt-mobil-top">
+  <section id="contact" class="container mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <!-- Contact Information Section -->
-    <div id="contact-form-container" class="flex flex-col md:flex-row gap-12 justify-center md:pt-24 pt-12">
+    <div id="contact-form-container" class="flex flex-col md:flex-row gap-gap justify-center md:pt-28 pt-24">
       <!-- Image and Contact Info Box -->
-      <div id="contact-container" class="flex flex-col md:flex-row items-center">
+      <div id="contact-container" class="md:col-span-10 col-span-12 flex flex-col md:flex-row items-center">
         <!-- Image -->
         <img
           src="/images/pfp.webp"
           alt="School-portrait of Sara (taken during the internship-preparations)"
-          class="w-48 h-48 md:w-[350px] md:h-[350px] object-cover rounded-full mb-12 md:mb-0 md:mr-12"
+          class="w-56 h-56 md:w-[350px] md:h-[350px] object-cover rounded-full mb-12 md:mb-0 md:mr-16"
         />
 
         <!-- Contact Information Box -->
-        <div class="space-y-4">
-          <h1 id="contact-title" class="md:text-left text-center font-dense text-gray-950 md:pb-4 pb-2">Let's talk!</h1>
+        <div>
+          <h1 id="contact-title" class="md:text-left text-center text-gray-950 mb-4">Let's talk!</h1>
+          <p id="contact-text" class="md:text-left text-center leading-6 pb-12">
+            If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can reach me via the different
+            contact-methods below.
+          </p>
           <div id="contact-info" class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200 text-gray-950">
             <ul class="md:space-y-4 space-y-2">
               <li class="some1">
@@ -62,7 +66,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </section>
   <section class="button-container mx-auto pb-16 pt-20 text-center">
-    <a href="/" class="mt-8 btn_container">
+    <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
   </section>
@@ -79,9 +83,14 @@ import MainLayout from "../layouts/MainLayout.astro";
           elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
         });
 
-        const elementmedanimation8 = document.querySelector("#contact-container h1");
+        const elementmedanimation8 = document.querySelector("#contact-title");
         inView(elementmedanimation8, () => {
-          elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation8.classList.add("animate__animated", "animate__backInRight");
+        });
+
+        const elementmedanimation8a = document.querySelector("#contact-text");
+        inView(elementmedanimation8a, () => {
+          elementmedanimation8a.classList.add("animate__animated", "animate__backInLeft");
         });
 
         const elementmedanimation9 = document.querySelector("#contact-info");

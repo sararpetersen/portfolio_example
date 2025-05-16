@@ -16,9 +16,11 @@ import Button from "../components/Button.astro";
     class="main grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-20 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative col-span-12 pt-12">
+    <div class="relative col-span-12 md:pt-12 pt-16">
       <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-4">Gallery & media</h1>
-      <p class="heading-text text-gray-950 md:pb-0 pb-16">Click on the different media-types to enlarge them.</p>
+      <p class="heading-text leading-6 text-gray-950 md:pb-0 pb-16 max-w-3xl">
+        A gallery filled with all the different media-types from a majority of my projects. Just click on the different media-types to enlarge them.
+      </p>
     </div>
 
     <div id="lines" class="hidden md:block col-span-9 md:pb-20 pb-8">
@@ -476,59 +478,6 @@ import Button from "../components/Button.astro";
         </a>
       </div>
 
-      <!-- Media Item 26 -->
-      <div class="relative group w-full h-64 overflow-hidden">
-        <a href="/images/workflow.webp" class="w-full h-full lightbox" aria-label="New portfolio-site (research-workflow)">
-          <img
-            src="/images/workflow.webp"
-            alt="Screenshot of the research-workflow for the new portfolio-site (this website | old design)"
-            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
-              New portfolio-site <br /><em class="text-gray-100">(research-workflow)</em>
-            </p>
-          </div>
-        </a>
-      </div>
-
-      <!-- Media Item 27 -->
-      <div class="relative group w-full h-64 overflow-hidden">
-        <a href="/images/2nd_portfolio.jpeg" class="w-full h-full lightbox" aria-label="New portfolio-site (1st wireframe-iteration)">
-          <img
-            src="/images/2nd_portfolio.jpeg"
-            alt="Screenshot of the first wireframe-iteration for the new portfolio-site (this website | old design 1)"
-            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
-              New portfolio-site <br /><em class="text-gray-100">(old wireframe-iteration 1)</em>
-            </p>
-          </div>
-        </a>
-      </div>
-      <!-- Media Item 28 -->
-      <div class="relative group w-full h-64 overflow-hidden">
-        <a href="/images/2nd_portfolio2.webp" class="w-full h-full lightbox" aria-label="New portfolio-site (2nd wireframe-iteration)">
-          <img
-            src="/images/2nd_portfolio2.webp"
-            alt="Screenshot of the second wireframe-iteration for the new portfolio-site (this website | old design 2)"
-            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105 brightness-[120%] contrast-[110%]"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">
-              New portfolio-site <br /><em class="text-gray-100">(old wireframe-iteration 2)</em>
-            </p>
-          </div>
-        </a>
-      </div>
-
       <!-- Media Item 29 -->
       <div class="relative group w-full h-64 overflow-hidden">
         <a href="/images/hojskolendk.webp" class="w-full h-full lightbox" aria-label="HÖJSKOLENDK (hero-section)">
@@ -636,95 +585,111 @@ import Button from "../components/Button.astro";
           </div>
         </a>
       </div>
+
+      <!-- Media Item 34 -->
+      <div class="relative group w-full h-64 overflow-hidden">
+        <a href="/images/404_error.webp" class="w-full h-full lightbox" aria-label="No media available yet">
+          <img
+            src="/images/404_error.webp"
+            alt="No media to show, as of now"
+            class="w-full h-full border border-gray-950 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <p class="font-dense text-gray-50 font-semibold text-center text-[25px] uppercase">No media</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 pt-16 text-center">
-    <a href="/" class="mt-8 btn_container">
+  <section class="button-container mx-auto pb-16 md:pt-12 pt-16 text-center">
+    <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
   </section>
-  <script is:inline src="/tobii.min.js"></script>
-  <script defer>
-    const tobii = new Tobii();
-  </script>
-  <script>
-    import { inView } from "motion";
-
-    /** inView Animations */
-    document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion");
-
-      if (!reduceMotion) {
-        const elementmedanimation1 = document.querySelector(".main");
-        inView(elementmedanimation1, () => {
-          elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation2 = document.querySelector(".heading-title");
-        inView(elementmedanimation2, () => {
-          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-        });
-
-        const elementmedanimation3 = document.querySelector(".heading-text");
-        inView(elementmedanimation3, () => {
-          elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementmedanimation4 = document.querySelector(".button-container");
-        inView(elementmedanimation4, () => {
-          elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation5 = document.querySelector("#lines");
-        inView(elementmedanimation5, () => {
-          elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
-        });
-
-        const grid = document.querySelectorAll("#media-grid > div");
-
-        grid.forEach((grid, index) => {
-          inView(grid, () => {
-            grid.classList.add("animate__animated", "animate__fadeInUp");
-            grid.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-      }
-    });
-  </script>
-
-  <style>
-    .grid-text {
-      text-transform: uppercase;
-    }
-
-    .expanded {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 50;
-      transition: all 0.3s ease-in-out;
-    }
-    .expanded img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    body.dark .heading-title,
-    body.dark .heading-text {
-      color: #f6f6f6;
-    }
-
-    body.dark #lines hr {
-      border-color: #6d6d6d;
-    }
-
-    body.dark #media-grid img,
-    body.dark #media-grid a {
-      border-color: #6d6d6d;
-    }
-  </style>
 </MainLayout>
+<script is:inline src="/tobii.min.js"></script>
+<script defer>
+  const tobii = new Tobii();
+</script>
+<script>
+  import { inView } from "motion";
+
+  /** inView Animations */
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
+
+    if (!reduceMotion) {
+      const elementmedanimation1 = document.querySelector(".main");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation2 = document.querySelector(".heading-title");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation3 = document.querySelector(".heading-text");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation4 = document.querySelector(".button-container");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation5 = document.querySelector("#lines");
+      inView(elementmedanimation5, () => {
+        elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const grid = document.querySelectorAll("#media-grid > div");
+
+      grid.forEach((grid, index) => {
+        inView(grid, () => {
+          grid.classList.add("animate__animated", "animate__fadeInUp");
+          grid.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  .grid-text {
+    text-transform: uppercase;
+  }
+
+  .expanded {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    transition: all 0.3s ease-in-out;
+  }
+  .expanded img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  body.dark .heading-title,
+  body.dark .heading-text {
+    color: #f6f6f6;
+  }
+
+  body.dark #lines hr {
+    border-color: #6d6d6d;
+  }
+
+  body.dark #media-grid img,
+  body.dark #media-grid a {
+    border-color: #6d6d6d;
+  }
+</style>
