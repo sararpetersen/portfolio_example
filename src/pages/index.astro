@@ -12,18 +12,30 @@ import Cases from "../components/Cases.astro";
   ogdescription="The first page of the portfolio"
 >
   <!-- Hero Section -->
-  <section
-    class="hero-section grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom w-full h-screen md:px-0 px-4 relative"
-  >
-    <div class="absolute inset-0 mt-12 max-w-7xl mx-auto md:px-0 px-8 z-20 grid grid-cols-12 gap-6 content-center md:pb-20 pb-16 h-full">
-      <h1 id="hero-title" class="display col-span-12">Hey there!</h1>
-      <h2 id="hero-text" class="pb-4 font-dense col-span-12 text-gray-50 max-w-3xl">Welcome to my portfolio</h2>
-      <p id="hero-text2" class="col-span-12 md:col-span-10 leading-6">
-        I'm Sara Ringkow Petersen, an aspiring multimedia-designer with a strong passion for creating engaging and accessible digital experiences.
-        Below here, you'll find a collection of my highlighted and most recent projects, along with a little bit more information about me and my
-        work-style. If that's not what you're looking for, check out some of the other pages, here on my portfolio. And, if you're interested in
-        working together, don't hesitate to get in touch!
-      </p>
+  <section class="hero-section grid grid-cols-12 md:pt-0 pt-mobil-top w-full h-screen md:px-0 px-4 relative">
+    <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-40">
+      <div class="grid md:grid-cols-12 md:gap-8 items-center justify-center h-full">
+        <!-- Text content -->
+        <div class="md:col-span-7 col-span-12">
+          <h1 id="hero-title" class="display pb-3">Hey there!</h1>
+          <h2 id="hero-text" class="md:text-h3-desktop text-h3-mobile font-dense pb-5">
+            I'm Sara Ringkow Petersen, a multimedia-designer with a passion for crafting digital experiences that are both creative and accessible
+          </h2>
+          <p id="hero-text2" class="leading-7">
+            Here you'll find a selection of my recent and highlighted projects, as well as a bit about me and how I like to work. Feel free to explore
+            the rest of my portfolio if you're curious — and if you think we'd be a good match, I'd love to hear from you!
+          </p>
+        </div>
+
+        <!-- Image with fade-in animation -->
+        <div id="hero-image" class="md:col-span-5 col-span-12 flex justify-center">
+          <img
+            src="/images/pfp4.webp"
+            alt="AI-generated portrait of Sara"
+            class="w-[300px] h-[300px] md:w-[400px] md:h-[400px] border-l-4 border border-gray-400 rounded-full object-cover"
+          />
+        </div>
+      </div>
     </div>
 
     <div class="hero_image w-full h-full absolute inset-0 z-0">
@@ -36,7 +48,7 @@ import Cases from "../components/Cases.astro";
 
     <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[50%] z-0"></div>
 
-    <div id="scroll-down" class="absolute bottom-[1%] md:bottom-[2.5%] w-full flex justify-center z-[20]">
+    <div id="scroll-down" class="hidden md:flex absolute bottom-[1%] md:bottom-[2.5%] w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-red-300">
         <div class="float flex flex-col items-center hover:opacity-80 transition duration-300 ease-in-out">
           <p class="text-[18px] text-gray-50 font-semibold">Go further down the page</p>
@@ -58,8 +70,8 @@ import Cases from "../components/Cases.astro";
   <!-- Projects Section -->
   <section id="project-section" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top max-w-7xl mx-auto">
     <div class="container col-span-12">
-      <h3 class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Highlighted projects</h3>
-      <p class="col-span-12 text-gray-950 md:px-0 px-6 mb-8">A selection of my older and most recent projects.</p>
+      <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Highlighted projects</h3>
+      <p id="project-text" class="col-span-12 text-gray-950 md:px-0 px-6 mb-8">A selection of my older and most recent projects.</p>
     </div>
     <div class="col-span-12 md:px-0 px-6">
       <Cases />
@@ -70,23 +82,23 @@ import Cases from "../components/Cases.astro";
   <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top px-6">
     <div class="container mx-auto max-w-6xl col-span-12">
       <h3 class="mb-2 text-gray-950">What people say about me and my work</h3>
-      <p class="text-gray-950 md:mb-12 mb-8 leading-6">
+      <p class="text-gray-950 md:mb-12 mb-8 leading-7">
         I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br />Below are a few testimonials from people
         that have seen my work in action:
       </p>
       <div id="testimonials-cards" class="grid md:grid-cols-3 gap-gap md:mt-12 mt-8">
         <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-6">“Quote coming soon”</p>
+          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
           <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
         </blockquote>
 
         <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-6">“Quote coming soon”</p>
+          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
           <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
         </blockquote>
 
         <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-6">“Quote coming soon”</p>
+          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
           <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
         </blockquote>
       </div>
@@ -107,7 +119,7 @@ import Cases from "../components/Cases.astro";
   <section id="how-i-work" class="relative md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom z-10 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 class="mb-2 text-gray-950">From idea to reality&mdash; this is how I do it</h3>
-      <p class="text-gray-950 md:mb-12 mb-8 leading-6">
+      <p class="text-gray-950 md:mb-12 mb-8 leading-7">
         My design-process ensures that every solution is user-centered, accessible and visually engaging.<br />When working on a project&mdash;
         usually when done alone &mdash;I go through the following steps:
       </p>
@@ -163,7 +175,7 @@ import Cases from "../components/Cases.astro";
 
         const elementmedanimation3 = document.querySelector("#hero-text2");
         inView(elementmedanimation3, () => {
-          elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+          elementmedanimation3.classList.add("animate__animated", "animate__slideInLeft");
         });
 
         const elementmedanimation6 = document.querySelector("#testimonials h3");
@@ -206,6 +218,21 @@ import Cases from "../components/Cases.astro";
           elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
         });
 
+        const elementmedanimation13 = document.querySelector("#project-section h3");
+        inView(elementmedanimation13, () => {
+          elementmedanimation13.classList.add("animate__animated", "animate__fadeInLeft");
+        });
+
+        const elementmedanimation14 = document.querySelector("#project-section p");
+        inView(elementmedanimation14, () => {
+          elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation15 = document.querySelector("#hero-image img");
+        inView(elementmedanimation15, () => {
+          elementmedanimation15.classList.add("animate__animated", "animate__bounceInDown");
+        });
+
         const testimonials = document.querySelectorAll("#testimonials-cards > blockquote");
 
         testimonials.forEach((testimonials, index) => {
@@ -246,7 +273,6 @@ import Cases from "../components/Cases.astro";
     }
 
     #hero-title,
-    #hero-subtitle,
     #hero-text,
     #hero-text2 {
       color: #f6f6f6;
@@ -274,6 +300,10 @@ import Cases from "../components/Cases.astro";
     body.dark #process-cards div,
     body.dark #testimonials-cards blockquote {
       background-color: #454545;
+      border-color: #6d6d6d;
+    }
+
+    body.dark #hero-image img {
       border-color: #6d6d6d;
     }
   </style>

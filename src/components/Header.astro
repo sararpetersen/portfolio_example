@@ -129,7 +129,7 @@ import "../styles/global.css";
     </ul>
 
     <!-- Burger Menu Button (Mobile Only) -->
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+    <button id="burgermenu" aria-label="Show mobile-menu" class="lg:hidden" x-on:click="showmenu = !showmenu">
       <template x-if="showmenu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -160,6 +160,7 @@ import "../styles/global.css";
   <!-- Mobile Menu (Hidden on Larger Screens) -->
   <nav
     id="mobilmenu"
+    aria-label="Mobile-menu"
     class="flex flex-col content-center lg:hidden"
     x-show="showmenu"
     x-transition=""
