@@ -129,6 +129,11 @@ import Card from "../components/Card.astro";
         inView(elementmedanimation4, () => {
           elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
         });
+
+        const elementmedanimation5 = document.querySelector("#lines");
+        inView(elementmedanimation5, () => {
+          elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
+        });
       }
     });
   </script>
