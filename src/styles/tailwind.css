@@ -70,7 +70,7 @@
 
   /* When pressed (active) */
   .toggle-switch[aria-pressed="true"] {
-    @apply bg-red-600;
+    @apply bg-red-700;
   }
 
   /* The white circle inside the switch */

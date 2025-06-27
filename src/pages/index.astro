@@ -48,7 +48,7 @@ import Cases from "../components/Cases.astro";
 
     <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[50%] z-0"></div>
 
-    <div id="scroll-down" class="flex absolute bottom-[1%] md:bottom-[2.5%] w-full justify-center z-[20]">
+    <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-red-300">
         <div class="float flex flex-col items-center hover:opacity-80 transition duration-300 ease-in-out">
           <p class="text-[18px] text-gray-50 font-semibold">Go further down the page</p>
@@ -80,41 +80,27 @@ import Cases from "../components/Cases.astro";
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top px-6">
-    <div class="container mx-auto max-w-6xl col-span-12">
-      <h3 class="mb-2 text-gray-950">What people say about me and my work</h3>
+    <div class="container max-w-6xl mx-auto col-span-12">
+      <h3 class="mb-2 text-gray-950">What is said about me <br class="md:hidden block" /> and my work?</h3>
       <p class="text-gray-950 md:mb-12 mb-8 leading-7">
-        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br />Below are a few testimonials from people
-        that have seen my work in action:
+        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br />Below are a some testimonials from people
+        that have seen my work in action <em>(there are more to come)</em>.
       </p>
-      <div id="testimonials-cards" class="grid md:grid-cols-3 gap-gap md:mt-12 mt-8">
+      <div id="testimonials-cards" class="grid grid-cols-1 md:mt-10 mt-8">
         <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
-          <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
+          <p class="text-gray-950 italic leading-7">
+            "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
+              >[...]</em
+            > Both in team-configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that met
+            the client's needs&mdash; this has been the case in both her work with design and coding."
+          </p>
+          <p class="mt-4 text-sm font-semibold text-gray-700">
+            – Jacob Klintrup, partner and creative strategic director <br /><em>(on behalf of the team at Kadaver)</em>
+          </p>
         </blockquote>
-
-        <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
-          <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
-        </blockquote>
-
-        <blockquote class="bg-gray-100 rounded-2xl p-6 border-l-4 border border-gray-200">
-          <p class="text-gray-950 italic leading-7">“Quote coming soon”</p>
-          <p class="mt-4 text-sm font-semibold text-gray-700">– Name, title & relation (to be added)</p>
-        </blockquote>
-      </div>
-      <hr class="max-w-6xl border-gray-400 mt-12 w-[35%]" />
-
-      <div id="more-about-me" class="more-about-me-button col-span-12">
-        <h3 class="mt-4 pb-3 font-dense text-[28px] text-gray-950">Wanna know where I got my qualities and skills from?</h3>
-        <div class="button-container">
-          <a aria-label="Go to about-page" href="/about_me">
-            <Button variant="secondary" size="small">Learn more about me here</Button>
-          </a>
-        </div>
       </div>
     </div>
   </section>
-
   <!-- How I work Section -->
   <section id="how-i-work" class="relative md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom z-10 px-6">
     <div class="max-w-6xl mx-auto">
@@ -155,156 +141,150 @@ import Cases from "../components/Cases.astro";
       </div>
     </div>
   </section>
-
-  <script>
-    import { inView } from "motion";
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion");
-
-      if (!reduceMotion) {
-        const elementmedanimation1 = document.querySelector("#hero-title");
-        inView(elementmedanimation1, () => {
-          elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementmedanimation2 = document.querySelector("#hero-text");
-        inView(elementmedanimation2, () => {
-          elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
-        });
-
-        const elementmedanimation3 = document.querySelector("#hero-text2");
-        inView(elementmedanimation3, () => {
-          elementmedanimation3.classList.add("animate__animated", "animate__slideInLeft");
-        });
-
-        const elementmedanimation6 = document.querySelector("#testimonials h3");
-        inView(elementmedanimation6, () => {
-          elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation6a = document.querySelector("#testimonials p");
-        inView(elementmedanimation6a, () => {
-          elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation7 = document.querySelector("#how-i-work h3");
-        inView(elementmedanimation7, () => {
-          elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation8 = document.querySelector("#how-i-work p");
-        inView(elementmedanimation8, () => {
-          elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation9 = document.querySelector("#more-about-me h3");
-        inView(elementmedanimation9, () => {
-          elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation10 = document.querySelector("#testimonials hr");
-        inView(elementmedanimation10, () => {
-          elementmedanimation10.classList.add("animate__animated", "animate__bounceInLeft");
-        });
-
-        const elementmedanimation11 = document.querySelector(".button-container");
-        inView(elementmedanimation11, () => {
-          elementmedanimation11.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation12 = document.querySelector("#scroll-down");
-        inView(elementmedanimation12, () => {
-          elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation13 = document.querySelector("#project-section h3");
-        inView(elementmedanimation13, () => {
-          elementmedanimation13.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation14 = document.querySelector("#project-section p");
-        inView(elementmedanimation14, () => {
-          elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation15 = document.querySelector("#hero-image img");
-        inView(elementmedanimation15, () => {
-          elementmedanimation15.classList.add("animate__animated", "animate__bounceInDown");
-        });
-
-        const testimonials = document.querySelectorAll("#testimonials-cards > blockquote");
-
-        testimonials.forEach((testimonials, index) => {
-          inView(testimonials, () => {
-            testimonials.classList.add("animate__animated", "animate__fadeInUp");
-            testimonials.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-
-        const process = document.querySelectorAll("#process-cards > div");
-
-        process.forEach((process, index) => {
-          inView(process, () => {
-            process.classList.add("animate__animated", "animate__fadeInUp");
-            process.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-      }
-    });
-  </script>
-
-  <style>
-    /* Floating Animation */
-    @keyframes float {
-      0% {
-        transform: translatey(0);
-      }
-      50% {
-        transform: translatey(-10px);
-      }
-      100% {
-        transform: translatey(0);
-      }
-    }
-
-    .float {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    #hero-title,
-    #hero-text,
-    #hero-text2 {
-      color: #f6f6f6;
-    }
-
-    body.dark #testimonials h3,
-    body.dark #how-i-work h3,
-    body.dark #more-about-me h3,
-    body.dark #more-about-me p,
-    body.dark #testimonials p,
-    body.dark #testimonials blockquote,
-    body.dark #how-i-work p,
-    body.dark #how-i-work h4,
-    body.dark #project-section h3,
-    body.dark #project-section p {
-      color: #f6f6f6;
-    }
-
-    body.dark #testimonials hr,
-    body.dark #how-i-work hr,
-    body.dark #more-about-me hr {
-      border-color: #6d6d6d;
-    }
-
-    body.dark #process-cards div,
-    body.dark #testimonials-cards blockquote {
-      background-color: #454545;
-      border-color: #6d6d6d;
-    }
-
-    body.dark #hero-image img {
-      border-color: #6d6d6d;
-    }
-  </style>
 </MainLayout>
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
+
+    if (!reduceMotion) {
+      const elementmedanimation1 = document.querySelector("#hero-title");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation2 = document.querySelector("#hero-text");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation3 = document.querySelector("#hero-text2");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__slideInLeft");
+      });
+
+      const elementmedanimation6 = document.querySelector("#testimonials h3");
+      inView(elementmedanimation6, () => {
+        elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation6a = document.querySelector("#testimonials p");
+      inView(elementmedanimation6a, () => {
+        elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation7 = document.querySelector("#how-i-work h3");
+      inView(elementmedanimation7, () => {
+        elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation8 = document.querySelector("#how-i-work p");
+      inView(elementmedanimation8, () => {
+        elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation9 = document.querySelector("#more-about-me h3");
+      inView(elementmedanimation9, () => {
+        elementmedanimation9.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation11 = document.querySelector(".button-container");
+      inView(elementmedanimation11, () => {
+        elementmedanimation11.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation12 = document.querySelector("#scroll-down");
+      inView(elementmedanimation12, () => {
+        elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const elementmedanimation13 = document.querySelector("#project-section h3");
+      inView(elementmedanimation13, () => {
+        elementmedanimation13.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation14 = document.querySelector("#project-section p");
+      inView(elementmedanimation14, () => {
+        elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation15 = document.querySelector("#hero-image img");
+      inView(elementmedanimation15, () => {
+        elementmedanimation15.classList.add("animate__animated", "animate__bounceInDown");
+      });
+
+      const testimonials = document.querySelectorAll("#testimonials-cards > blockquote");
+
+      testimonials.forEach((testimonials, index) => {
+        inView(testimonials, () => {
+          testimonials.classList.add("animate__animated", "animate__fadeInUp");
+          testimonials.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+
+      const process = document.querySelectorAll("#process-cards > div");
+
+      process.forEach((process, index) => {
+        inView(process, () => {
+          process.classList.add("animate__animated", "animate__fadeInUp");
+          process.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Floating Animation */
+  @keyframes float {
+    0% {
+      transform: translatey(0);
+    }
+    50% {
+      transform: translatey(-10px);
+    }
+    100% {
+      transform: translatey(0);
+    }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  #hero-title,
+  #hero-text,
+  #hero-text2 {
+    color: #f6f6f6;
+  }
+
+  body.dark #testimonials h3,
+  body.dark #how-i-work h3,
+  body.dark #more-about-me h3,
+  body.dark #more-about-me p,
+  body.dark #testimonials p,
+  body.dark #testimonials blockquote,
+  body.dark #how-i-work p,
+  body.dark #how-i-work h4,
+  body.dark #project-section h3,
+  body.dark #project-section p {
+    color: #f6f6f6;
+  }
+
+  body.dark #testimonials hr,
+  body.dark #how-i-work hr,
+  body.dark #more-about-me hr {
+    border-color: #6d6d6d;
+  }
+
+  body.dark #process-cards div,
+  body.dark #testimonials-cards blockquote {
+    background-color: #454545;
+    border-color: #6d6d6d;
+  }
+
+  body.dark #hero-image img {
+    border-color: #6d6d6d;
+  }
+</style>
