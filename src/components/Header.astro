@@ -5,12 +5,16 @@ import "../styles/global.css";
 <!-- Accessibility settings bar -->
 <div id="accessibility-bar" class="fixed w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
   <!-- Gear Icon -->
-  <button id="accessibilityToggle" class="svg-gear focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out">
+  <button
+    id="accessibilityToggle"
+    class="svg-gear focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+    aria-label="Accessibility-settings"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      class="size-6 hover:text-red-500 transition duration-300 ease-in-out"
+      class="size-6 hover:text-red-700 transition duration-300 ease-in-out"
     >
       <path
         fill-rule="evenodd"
@@ -23,16 +27,16 @@ import "../styles/global.css";
   <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0">
     <!-- Dark Mode Toggle -->
     <div class="flex items-center gap-2">
-      <label for="darkModeToggle" class="cursor-pointer md:block hidden">Dark-mode</label>
-      <button id="darkModeToggle" aria-pressed="false" class="toggle-switch">
+      <span id="darkModeToggleLabel" class="md:block hidden text-gray-50">Dark-mode</span>
+      <button id="darkModeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle dark-mode">
         <span class="toggle-circle"></span>
       </button>
     </div>
 
     <!-- Reduce Motion Toggle -->
     <div class="flex items-center gap-2">
-      <label for="motionToggle" class="cursor-pointer md:block hidden">Remove animations</label>
-      <button id="motionToggle" aria-pressed="false" class="toggle-switch">
+      <span id="motionToggleLabel" class="md:block hidden text-gray-50">Remove animations</span>
+      <button id="motionToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle 'remove animations'">
         <span class="toggle-circle"></span>
       </button>
     </div>
@@ -50,12 +54,12 @@ import "../styles/global.css";
       <a href="/" aria-label="Go to homepage">
         <img
           src="/logo.svg"
-          alt="Normal logo for my website, with two of my initials"
+          alt="Logo for my website, with two of my initials (current color)"
           class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-light"
         />
         <img
           src="/logo_white.svg"
-          alt="White logo for my website, with two of my initials"
+          alt="Logo for my website, with two of my initials (white)"
           class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-dark"
         />
       </a>
@@ -85,10 +89,7 @@ import "../styles/global.css";
         >
       </li>
 
-      <!-- Vertical Divider -->
-      <div id="vertical-divider" class="border-r border-gray-400 h-12 mx-2"></div>
-
-      <!-- Explore Dropdown with Arrow -->
+      <!-- Explore-dropdown with arrow -->
       <li class="relative" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false" x-cloak>
         <a
           href="#"
@@ -121,6 +122,13 @@ import "../styles/global.css";
                 href="/gallery"
                 class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
                 aria-label="Go to 'gallery & media'-page">Gallery & media</a
+              >
+            </li>
+            <li class="py-1 px-4 transition duration-300">
+              <a
+                href="/accessibility"
+                class="hover:text-red-500 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+                aria-label="Go to 'blog'-page">Accessibility</a
               >
             </li>
           </ul>
@@ -173,36 +181,43 @@ import "../styles/global.css";
       <li class="some1 text-center py-1">
         <a
           href="/#hero"
-          class="py-1 hover:text-gray-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to homepage">Home</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/about_me"
-          class="py-1 hover:text-gray-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to about-page">About</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/contact"
-          class="py-1 hover:text-gray-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to contact-page">Contact</a
         >
       </li>
       <li class="some1 text-center py-1">
         <a
           href="/other"
-          class="py-1 hover:text-gray-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
           aria-label="Go to 'other projects'-page">Other projects</a
+        >
+      </li>
+      <li class="some1 text-center py-1">
+        <a
+          href="/gallery"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          aria-label="Go to 'gallery & media'-page">Gallery & media</a
         >
       </li>
       <li class="some1 text-center py-1 pb-4">
         <a
-          href="/gallery"
-          class="py-1 hover:text-gray-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
-          aria-label="Go to 'gallery & media'-page">Gallery & media</a
+          href="/accessibility"
+          class="py-1 hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          aria-label="Go to 'blog'-page">Accessibility</a
         >
       </li>
     </ul>
@@ -247,10 +262,6 @@ import "../styles/global.css";
     background-color: #fff;
   }
 
-  body.dark #vertical-divider {
-    border-color: #f6f6f6;
-  }
-
   /* Reduce Motion Mode */
   body.reduce-motion * {
     transition: none !important;
@@ -278,6 +289,18 @@ import "../styles/global.css";
 
   body.dark .logo-dark {
     display: block;
+  }
+
+  #accessibilityOptions span {
+    font-size: 17.6px;
+  }
+
+  #header a:hover {
+    color: #d60000;
+  }
+
+  body.dark #header a:hover {
+    color: #ff1f1f;
   }
 </style>
 
