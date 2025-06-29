@@ -164,6 +164,11 @@ import Cases from "../components/Cases.astro";
         elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
       });
 
+      const elementmedanimation2 = document.querySelector("#hero-text");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
       const elementmedanimation6 = document.querySelector("#testimonials h3");
       inView(elementmedanimation6, () => {
         elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
