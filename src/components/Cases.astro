@@ -26,9 +26,7 @@ const projects = await fetchCards();
             <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <div class="absolute bottom-0 left-0 right-0 p-4">
                 <h1 class="text-h4-desktop font-bold text-gray-50">{project.name}</h1>
-                <h2 class="text-h4-desktop font-dense font-regular italic pb-2 text-gray-50">
-                  <span class="font-bold text-gray-50">Semester:</span> {project.semester}
-                </h2>
+                <h2 class="text-h4-mobile font-light italic pb-2 text-gray-50">{project.semester}</h2>
 
                 <div class="flex flex-row flex-wrap gap-2 py-2">
                   {project.tools &&

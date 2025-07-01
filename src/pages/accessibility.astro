@@ -11,17 +11,12 @@ import "../styles/global.css";
   ogdescription="See what makes this portfolio accessible"
 >
   <section id="accessibility" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-6">
-    <div class="col-span-12 md:pt-12 pt-16">
-      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-4">Accessibility on the site</h1>
-      <p class="heading-text leading-7 md:text-left text-center text-gray-950 md:pb-0 pb-16 max-w-3xl">
+    <div class="col-span-12 md:pt-12 pt-16 md:pb-0 pb-8">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-8">Accessibility on the site</h1>
+      <p class="heading-text md:text-left text-center text-gray-800 md:pb-0 pb-16 max-w-3xl">
         Accessibility isn't just a design consideration&mdash; it's a responsibility. As someone who understands the importance of inclusive
         experiences, I've made it a priority to ensure that this portfolio is accessible to all users, regardless of ability, device or environment.
       </p>
-    </div>
-
-    <div id="lines" class="hidden md:block col-span-9">
-      <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
-      <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
     </div>
   </section>
 
@@ -29,16 +24,17 @@ import "../styles/global.css";
   <section id="accessibility-features" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-0 md:px-0 px-6">
     <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
       <div>
-        <h2 id="accessibility-features-title" class="md:text-h3-desktop text-h3-mobile text-gray-950 mb-4">Implemented features</h2>
+        <h2 id="accessibility-features-title" class="md:text-h3-desktop text-h3-mobile font-bold text-gray-950 mb-4">Implemented features</h2>
         <!-- List -->
-        <ul id="accessibility-features-list" class="list-none text-gray-950 space-y-3 md:order-1 order-2 w-fit">
+        <ul id="accessibility-features-list" class="list-none text-gray-800 space-y-3 md:order-1 order-2 w-fit">
           <li>► Semantic and structured HTML</li>
           <li>► Alt-text on all images</li>
           <li>► ARIA-labels where needed</li>
+          <li>► Contrast-friendly colours</li>
+          <li>► Accessible and readable font-styles</li>
           <li>► Keyboard-navigable components</li>
-          <li>► Focus-indicators on interactive elements</li>
+          <li>► Focus-states on interactive elements</li>
           <li>► Dark-mode and 'remove animations'-functions</li>
-          <li>► Color-contrast meets WCAG 2.1 guidelines at level AA</li>
         </ul>
       </div>
       <!-- Image -->
@@ -46,7 +42,7 @@ import "../styles/global.css";
         <img
           src="/illustrations/accessibility_image.svg"
           alt="Illustration of accessibility-features"
-          class="w-full max-w-[400px] md:max-w-[450px]"
+          class="w-full max-w-[400px] md:max-w-[450px] rounded-2xl border-r-4 border border-gray-200 mt-6 md:mt-0"
         />
       </div>
     </div>
@@ -55,11 +51,11 @@ import "../styles/global.css";
   <!-- Accessibility-testing -->
   <section id="accessibility-testing" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
     <h3 id="accessibility-testing-title" class="col-span-12 text-gray-950 mb-4">Accessibility-testing</h3>
-    <p id="accessibility-testing-text" class="max-w-2xl col-span-12 text-gray-950 mb-8 leading-7">
+    <p id="accessibility-testing-text" class="max-w-2xl col-span-12 text-gray-800 mb-8">
       To ensure a high level of accessibility, I use a combination of manual testing and automated tools. Some of these tools include:
     </p>
-    <ul id="accessibility-testing-list" class="col-span-12 list-none text-gray-950 space-y-2">
-      <li><strong>✅ WAVE:</strong> For structure, contrast, and alt-text evaluation</li>
+    <ul id="accessibility-testing-list" class="col-span-12 list-none text-gray-800 space-y-2">
+      <li><strong>✅ WAVE:</strong> For structure, contrast and alt-text evaluation</li>
       <li><strong>✅ Lighthouse:</strong> To check performance- and accessibility-scores</li>
       <li><strong>✅ Keyboard-only navigation:</strong> To ensure all interactive elements are reachable and usable</li>
     </ul>
@@ -68,9 +64,9 @@ import "../styles/global.css";
   <!-- Continuous improvement -->
   <section id="continuous-improvement" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
     <h3 id="continuous-improvement-title" class="col-span-12 text-gray-950 mb-4">Continuous improvement</h3>
-    <p id="continuous-improvement-text" class="col-span-12 text-gray-950 max-w-4xl p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
-      Accessibility is an ongoing process. As I continue to grow as a designer, I'm committed to learning more about inclusive practices and improving
-      this site based on user-feedback and new standards.
+    <p id="continuous-improvement-text" class="col-span-12 text-gray-800 max-w-4xl p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      Accessibility is an ongoing process in the design-industry. And as I continue to grow as a designer, I'm deeply committed to learning more about
+      inclusive practices and improving this site based on user-feedback and new standards.
     </p>
   </section>
 
@@ -97,11 +93,6 @@ import "../styles/global.css";
       const elementmedanimation2 = document.querySelector(".heading-text");
       inView(elementmedanimation2, () => {
         elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
-      });
-
-      const elementmedanimation3 = document.querySelector("#lines");
-      inView(elementmedanimation3, () => {
-        elementmedanimation3.classList.add("animate__animated", "animate__backInRight");
       });
 
       const elementmedanimation4 = document.querySelector(".button-container");

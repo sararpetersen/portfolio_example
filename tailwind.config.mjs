@@ -45,9 +45,9 @@ export default {
     },
 
     fontFamily: {
-      lato: ["Lato", "sans-serif"],
-      vollkorn: ["Vollkorn", "serif"],
-      dense: ["Dense", "sans-serif"],
+      tahoma: ["Tahoma", "sans-serif"],
+      helvetica: ["Helvetica", "sans-serif"],
+      almarai: ["Almarai", "sans-serif"],
     },
 
     fontSize: {

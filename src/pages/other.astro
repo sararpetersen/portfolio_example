@@ -16,17 +16,12 @@ import Card from "../components/Card.astro";
     id="other-projects"
     class="container grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-6 mx-auto relative max-w-6xl md:text-left text-center"
   >
-    <div class="relative col-span-12 md:pt-12 pt-16">
-      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-4">Other projects</h1>
-      <p class="heading-text leading-7 text-gray-950 md:pb-0 pb-16 max-w-3xl">
+    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20 pb-8">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-8">Other projects</h1>
+      <p class="heading-text text-gray-800 max-w-3xl">
         A collection of some of my least favourite projects. There are some unfinished ones, and then there's ones that I'm just not proud of&mdash;
         but they're still worth checking out.
       </p>
-    </div>
-
-    <div id="lines" class="hidden md:block col-span-9 md:pb-20 pb-8">
-      <hr class="border-gray-950 mt-6 md:w-[70%] w-[90%]" />
-      <hr class="border-gray-950 mt-3 md:w-[50%] w-[70%]" />
     </div>
 
     <div id="other-projects-grid" class="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap text-left">
@@ -128,11 +123,6 @@ import Card from "../components/Card.astro";
         const elementmedanimation4 = document.querySelector(".button-container");
         inView(elementmedanimation4, () => {
           elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation5 = document.querySelector("#lines");
-        inView(elementmedanimation5, () => {
-          elementmedanimation5.classList.add("animate__animated", "animate__backInRight");
         });
       }
     });
