@@ -1,4 +1,38 @@
 ---
+const fetchCards = async () => {
+  const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
+    },
+  });
+  return response.ok ? await response.json() : [];
+};
+
+const cards = await fetchCards();
+
+function breakTitle(title, maxLength = 25) {
+  if (title.length > maxLength) {
+    const words = title.split(" ");
+    let line = "";
+    let lines = [];
+
+    words.forEach((word) => {
+      if ((line + " " + word).length <= maxLength) {
+        line += " " + word;
+      } else {
+        lines.push(line.trim());
+        line = word;
+      }
+    });
+
+    lines.push(line.trim());
+    return lines;
+  }
+  return [title];
+}
+
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import Button from "../components/Button.astro";
@@ -60,7 +94,9 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top max-w-7xl mx-auto">
     <div class="container col-span-12">
       <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Highlighted projects</h3>
-      <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">A selection of my older and most recent projects.</p>
+      <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">
+        A selection of my older and most recent projects. Click on the one you want to learn more about.
+      </p>
     </div>
     <div class="col-span-12 md:px-0 px-6">
       <Cases />

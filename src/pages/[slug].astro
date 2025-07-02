@@ -1,0 +1,221 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+
+export async function getStaticPaths() {
+  const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases", {
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
+    },
+  });
+
+  const projects = await response.json();
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: {
+      project,
+      allProjects: projects,
+    },
+  }));
+}
+
+const { project, allProjects } = Astro.props;
+
+// ✅ Sort by ID (or change to .year or .created_at if needed)
+const sortedProjects = [...allProjects].sort((a, b) => a.id - b.id);
+
+// 🔁 Find current project in sorted array
+const currentIndex = sortedProjects.findIndex((p) => p.slug === project.slug);
+
+// ⬅️ ➡️ Get previous and next projects
+const prevProject = currentIndex > 0 ? sortedProjects[currentIndex - 1] : null;
+const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[currentIndex + 1] : null;
+---
+
+<MainLayout title={project.name} description={project.description} ogtitle={project.name} ogdescription={project.description}>
+  <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-24 mt-12 md:px-0 px-6">
+    <!-- Navigation Arrows -->
+    <div id="navigation" class="some1 col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8">
+      <a
+        href="/"
+        id="back-to-homepage"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+        aria-label="Go to homepage">↑ Back to homepage</a
+      >
+
+      <div id="navigation-arrows" class="some1 flex gap-4 ml-auto">
+        {
+          prevProject && (
+            <a
+              href={`/${prevProject.slug}`}
+              class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out flex items-center text-gray-800"
+              aria-label="Go to previous project"
+            >
+              ← {prevProject.name}
+            </a>
+          )
+        }
+        {
+          nextProject && (
+            <a
+              href={`/${nextProject.slug}`}
+              class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out flex items-center text-gray-800"
+              aria-label="Go to next project"
+            >
+              {nextProject.name} →
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div id="project-titles" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
+      <h1 id="project-title" class="font-bold md:text-h2-desktop text-h4-desktop md:mb-4">{project.name}</h1>
+      <h2 id="project-semester" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800">{project.year}</h2>
+    </div>
+
+    <!-- Content Columns -->
+    <div id="project-content" class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
+      <!-- Image Column -->
+      <div id="project-image">
+        <img src={project.image} alt={project.name} class="w-full rounded-xl object-cover border border-l-4 border-gray-200 hover:border-gray-300" />
+      </div>
+
+      <!-- Text Column -->
+      <div id="project-description" class="space-y-6">
+        <p id="project-text" class="text-gray-800">{project.description}</p>
+
+        <!-- Tools Used -->
+        <div id="tools-used" class="mt-8">
+          <h3 class="text-h4-mobile italic font-bold text-gray-950 mb-2">Tools used:</h3>
+          <div id="tools-list" class="flex flex-wrap gap-2 mb-12">
+            {
+              project.tools &&
+                project.tools.map((tool) => (
+                  <span class="rounded-full px-4 py-2 font-semibold border border-red-700 uppercase bg-red-700 text-gray-50 text-sm">{tool}</span>
+                ))
+            }
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div id="view-project" class="view-button">
+          <a href={project.url} target="_blank" aria-label={`View project: ${project.name}`}>
+            <Button variant="secondary" size="small">View project</Button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Link Section -->
+  <section
+    id="gallery-link"
+    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
+  >
+    <div id="gallery-link-content" class="col-span-12 bg-gray-100 border-l-4 border border-gray-200 rounded-2xl p-6">
+      <h3 class="text-h4-desktop font-bold text-gray-950 mb-4">Curious to see more?</h3>
+      <p class="text-gray-800 mb-8">
+        Explore images, videos and other sorts of media from a large selection of my projects in the portfolios gallery. It's everything from sketches
+        and wireframes, to moodboards, style-tiles, videos and screenshots of different pages from a variety of projects. Just click the button below.
+      </p>
+      <a href="/gallery" aria-label="Go to 'gallery'">
+        <Button variant="secondary" size="small">Go to <em>Gallery</em></Button>
+      </a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  body.dark #navigation-arrows a,
+  body.dark #project-titles h1,
+  body.dark #project-titles h2,
+  body.dark #project-description p,
+  body.dark #tools-used h3,
+  body.dark #tools-used span,
+  body.dark #gallery-link h3,
+  body.dark #gallery-link p {
+    color: #f6f6f6;
+  }
+
+  body.dark #navigation-arrows a:hover {
+    color: #ff1f1f;
+  }
+
+  body.dark #project-image img {
+    border-color: #6d6d6d;
+  }
+
+  body.dark #gallery-link div {
+    background-color: #454545;
+    border-color: #6d6d6d;
+  }
+</style>
+
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
+
+    if (!reduceMotion) {
+      const elementmedanimation2 = document.querySelector("#project-title");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation3 = document.querySelector("#project-semester");
+      inView(elementmedanimation3, () => {
+        elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation4 = document.querySelector("#project-text");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation5 = document.querySelector("#tools-used h3");
+      inView(elementmedanimation5, () => {
+        elementmedanimation5.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const elementmedanimation5a = document.querySelector("#project-content img");
+      inView(elementmedanimation5a, () => {
+        elementmedanimation5a.classList.add("animate__animated", "animate__slideInLeft");
+      });
+
+      const elementmedanimation5b = document.querySelector("#gallery-link");
+      inView(elementmedanimation5b, () => {
+        elementmedanimation5b.classList.add("animate__animated", "animate__fadeInUp");
+      });
+
+      const elementmedanimation5c = document.querySelector("#view-project");
+      inView(elementmedanimation5c, () => {
+        elementmedanimation5c.classList.add("animate__animated", "animate__rotateInDownLeft");
+      });
+
+      const elementmedanimation5d = document.querySelector("#navigation-arrows");
+      inView(elementmedanimation5d, () => {
+        elementmedanimation5d.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const elementmedanimation5e = document.querySelector("#back-to-homepage");
+      inView(elementmedanimation5e, () => {
+        elementmedanimation5e.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const tools = document.querySelectorAll("#tools-list > span");
+
+      tools.forEach((tools, index) => {
+        inView(tools, () => {
+          tools.classList.add("animate__animated", "animate__fadeInUp");
+          tools.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
+    }
+  });
+</script>

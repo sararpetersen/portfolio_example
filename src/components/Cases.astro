@@ -20,12 +20,12 @@ const projects = await fetchCards();
       projects.map((project) => (
         <li class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-200 hover:border-gray-300">
           {" "}
-          <a href={project.url} target="_blank" aria-label={`Link to ${project.name}`}>
+          <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
             <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
 
             <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h1 class="text-h4-desktop font-bold text-gray-50">{project.name}</h1>
+                <h1 class="text-h4-mobile font-bold text-gray-50">{project.name}</h1>
                 <h2 class="text-h4-mobile font-light italic pb-2 text-gray-50">{project.semester}</h2>
 
                 <div class="flex flex-row flex-wrap gap-2 py-2">
