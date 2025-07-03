@@ -4,23 +4,23 @@
 
 @layer base {
   .display {
-    @apply font-tahoma text-display-mobile font-bold italic;
+    @apply font-tahoma text-display-mobile font-bold italic leading-7;
   }
 
   h1 {
-    @apply font-tahoma text-h1-mobile italic;
+    @apply font-tahoma text-h1-mobile italic leading-7;
   }
 
   h2 {
-    @apply font-helvetica text-h2-mobile italic;
+    @apply font-helvetica text-h2-mobile italic leading-7;
   }
 
   h3 {
-    @apply font-helvetica text-h3-mobile font-bold italic;
+    @apply font-helvetica text-h3-mobile font-bold italic leading-7;
   }
 
   h4 {
-    @apply font-helvetica text-h4-mobile font-bold italic;
+    @apply font-helvetica text-h4-mobile font-bold italic leading-7;
   }
 
   p,
