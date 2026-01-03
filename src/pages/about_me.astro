@@ -27,132 +27,165 @@ import Button from "../components/Button.astro";
   <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto md:px-0 px-6">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
       <div class="items-center md:pb-0 pb-8">
-        <p id="personal-background-text" class="text-gray-800">
-          I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em
-            >"creativity"</em
-          > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become
-          interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing.<br /><br />
-          After first having gone through high school, folk high school, and singular courses, I eventually stumbled upon multimedia design. It was a programme
-          that combined the best of both worlds, and I just knew right away that it was the perfect fit for me. <br />Through my studies, I quickly
-          realised the important role that accessibility plays in digital design. As someone who's late-diagnosed with autism, I know what it's like
-          navigating a world that isn't always accessible to everyone. So that has become my goal&mdash; to create digital experiences that remove
-          barriers and ensure inclusivity for all. <br /><br />With accessibility at the core of my work, I strive to design engaging, user-friendly
-          platforms that make a difference. Every project is an opportunity to merge creativity with purpose, and I look forward to growing,
-          innovating and shaping a more inclusive digital world. <br />To build further on this, I've chosen to continue my studies by taking a top-up
-          bachelor's in digital concept development. This next step will allow me to strengthen my skills in concept development, strategy, and
-          innovation, while still keeping accessibility and user experience as guiding principles. By expanding my knowledge in both design and
-          business strategy, I aim to bridge the gap between creative ideas and impactful solutions&mdash; ensuring that what I create not only looks
-          good, but also works for everyone.
-        </p>
+        <!-- Tabs -->
+        <div class="flex gap-2 mb-6 border-b border-gray-300">
+          <button
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-red-700 transition duration-300"
+            data-tab="background"
+          >
+            Background
+          </button>
+          <button
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-red-700 transition duration-300"
+            data-tab="inspiration"
+          >
+            Inspiration
+          </button>
+          <button class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-red-700 transition duration-300" data-tab="goals">
+            Goals
+          </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="background" class="tab-content active text-gray-800">
+          <p>
+            I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em
+              >"creativity"</em
+            > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become
+            interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing. This internal
+            conflict between my artistic interests and my growing curiosity about tech kept me searching for a path that could harmonise these two passions.
+            It wasn't until I discovered multimedia design that I finally found the answer I'd been looking for.
+          </p>
+        </div>
+
+        <div id="inspiration" class="tab-content hidden text-gray-800">
+          <p>
+            As someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. This
+            personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the potential of inclusive
+            design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation, or semantic HTML, I
+            find purpose in solving accessibility challenges and seeing how small design decisions can have a meaningful impact on people's lives.
+          </p>
+        </div>
+
+        <div id="goals" class="tab-content hidden text-gray-800">
+          <p>
+            My goal is to create digital experiences that are accessible and inclusive for everyone. I believe that good design isn't just about
+            aesthetics&mdash; it's about removing barriers and ensuring all users are include. Through my work, I strive to merge creativity with
+            purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my future
+            career and make a real difference in how people interact with digital products.
+          </p>
+        </div>
       </div>
       <div class="flex items-center justify-start md:justify-end">
         <img
           src="/images/pfp3.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="md:w-[450px] w-[300px] md:h-[650px] h-[500px] object-cover"
+          class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-200"
         />
       </div>
     </div>
   </section>
 
+  <script>
+    document.querySelectorAll(".tab-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const tabName = button.getAttribute("data-tab");
+
+        document.querySelectorAll(".tab-btn").forEach((btn) => {
+          btn.classList.remove("active", "border-b-red-700", "font-semibold");
+          btn.classList.add("border-b-transparent", "text-gray-600");
+        });
+
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.add("hidden");
+          content.classList.remove("active");
+        });
+
+        button.classList.add("active", "border-b-red-700", "font-semibold");
+        button.classList.remove("border-b-transparent", "text-gray-600");
+
+        const content = document.getElementById(tabName);
+        content.classList.remove("hidden");
+        content.classList.add("active");
+      });
+    });
+
+    // Set the initial active tab
+    document.querySelector(".tab-btn[data-tab='background']").click();
+  </script>
+
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
     <h3 class="text-gray-950 pb-8">My journey so far</h3>
-    <div id="timeline-line" class="relative border-l-2 border-gray-400 pl-6">
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">2017 – 2018</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Advertisement-distributor | FK Distribution A/S</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          This was my first actual job that I got during my final year of primary school. Here, I handed out ads in a selected area near my home, and
-          I did that about once a week for about a year.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">2018 – 2019</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">10th grade | Egeskolen</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          After primary school, I decided to continue studying, as my grades weren't good enough to apply for high school. It ended up being one of
-          the best decisions of my life, because it just gave me the buffer that I needed to continue onward.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">February 2018 – may 2019</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Shop-assistant u. 18 | Netto, Vanløse</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          Applied for this job shortly after I quit as an advertisement distributor. I only had the job for 3 months, but that was more than enough
-          for me to realise that retail and customer-handling wasn't my thing.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">August 2019 – june 2021</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">HF | Egedal Gymnasium & HF</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          After 10th grade, my grades were finally good enough for me to apply for high school, and I applied for the one I was most interested in.
-          During my time there, my main subjects were art, society class and psychology.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">June 2021 – december 2022</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Assistant in webshop | Lloyd Concept Store Copenhagen*</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          This was a job that I got after graduating from high school, through a family acquaintance. Here, I did order management (finding and
-          packing) and cleaning. It was a good way for me to keep myself occupied during my gap year, until I figured out what I wanted to do.
-        </p>
-        <p class="italic text-gray-700 text-sm mt-2">* I went on a 6-month leave during my time there, due to my stay at Bosei (folk high school)</p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">January 2022 – june 2022</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Bosei Sports Folk High School | Gap-year</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          During my 6-month leave at Lloyd, I went to stay at Bosei Sports Folk High School, which is where I spent the majority of my gap year. Here,
-          I studied Japanese&mdash; both the language and the culture &mdash;and also did a bit of gaming and sports.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">August 2022 – may 2023</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">
-          Singular courses in History (dropped*) and Japanese (lvl. 0-B) | Frederiksberg VUC & STX
-        </h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          After my gap year, I decided to continue studying, as I wanted to improve my grades and maybe apply for higher education. I chose Japanese,
-          my newfound interest after Bosei. And history, because my grade in high school was low.
-        </p>
-        <p class="italic text-gray-700 text-sm mt-2">* Had to drop it due to work and just continue with one course</p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">August 2023 – june 2025</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Multimedia Design | KEA – Københavns Erhvervsakademi</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          After my singular courses, I applied for the Multimedia Design programme, after having attended an open-house event at KEA. It was here that
-          I started my studies in the field of digital design and learned all that I know now.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">January 2025 – april 2025</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Junior Creative/intern | Kadaver ApS</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          In the fourth and final semester of my studies, I had to complete a 10-week internship. I chose the advertising agency Kadaver, which was
-          recommended to me by an acquaintance. During my internship, I redesigned websites for both Kadaver itself and one of its biggest clients.
-        </p>
-      </div>
-
-      <div class="mb-10">
-        <p class="text-sm text-gray-600 mb-1">Present</p>
-        <h4 class="text-h4-mobile font-dense font-bold text-gray-950 mb-2">Digital Concept Development | Zealand – Sjællands Erhvervsakademi</h4>
-        <p class="text-gray-700 md:max-w-3xl max-w-none">
-          After having graduated from KEA, I decided to continue my studies at Zealand, where I'm currently enrolled in the Digital Concept
-          Development programme. This programme focuses on developing digital concepts and products, and it allows me to further enhance my skills in
-          digital design and development.
-        </p>
-      </div>
+    <div id="timeline-line" class="relative">
+      <!-- Timeline items -->
+      {
+        [
+          {
+            year: "2017 – 2018",
+            title: "Advertisement-distributor | FK Distribution A/S",
+            desc: "This was my first actual job that I got during my final year of primary school. Here, I handed out ads in a selected area near my home.",
+          },
+          {
+            year: "2018 – 2019",
+            title: "10th grade | Egeskolen",
+            desc: "After primary school, I decided to continue studying. It ended up being one of the best decisions of my life.",
+          },
+          {
+            year: "February 2018 – May 2019",
+            title: "Shop-assistant u. 18 | Netto, Vanløse",
+            desc: "Applied for this job shortly after I quit as an advertisement distributor. I realized retail wasn't my thing.",
+          },
+          {
+            year: "August 2019 – June 2021",
+            title: "HF | Egedal Gymnasium & HF",
+            desc: "My grades were finally good enough for high school. My main subjects were art, society class and psychology.",
+          },
+          {
+            year: "June 2021 – December 2022",
+            title: "Assistant in webshop | Lloyd Concept Store Copenhagen",
+            desc: "Order management and cleaning. A good way to keep myself occupied during my gap year.",
+            note: "* 6-month leave for Bosei Folk High School",
+          },
+          {
+            year: "January 2022 – June 2022",
+            title: "Bosei Sports Folk High School | Gap-year",
+            desc: "I studied Japanese—both the language and culture—and also did gaming and sports.",
+          },
+          {
+            year: "August 2022 – May 2023",
+            title: "Singular courses | Frederiksberg VUC & STX",
+            desc: "I continued studying to improve my grades. I chose Japanese and History courses.",
+          },
+          {
+            year: "August 2023 – June 2025",
+            title: "Multimedia Design | KEA",
+            desc: "I applied after attending an open-house event at KEA. This is where I learned digital design.",
+          },
+          {
+            year: "January 2025 – April 2025",
+            title: "Junior Creative/Intern | Kadaver ApS",
+            desc: "A 10-week internship where I redesigned websites for Kadaver and one of its biggest clients.",
+          },
+          {
+            year: "Present",
+            title: "Digital Concept Development | Zealand",
+            desc: "I'm now enrolled in the Digital Concept Development programme, focusing on developing digital concepts and products.",
+          },
+        ].map((item, index) => (
+          <div class={`mb-8 pb-8 border-b border-gray-300 flex gap-6 ${index === 9 ? "last:border-b-0" : ""}`}>
+            <div class="flex flex-col items-center">
+              <div class="w-4 h-4 bg-red-700 rounded-full border-4 border-white ring-2 ring-gray-300 sticky top-8" />
+            </div>
+            <div class="flex-1 pt-1">
+              <p class="text-xs font-semibold text-red-700 mb-1 uppercase">{item.year}</p>
+              <h4 class="text-h4-mobile font-bold text-gray-950 mb-2">{item.title}</h4>
+              <p class="text-gray-700 text-sm">{item.desc}</p>
+              {item.note && <p class="italic text-gray-600 text-xs mt-2">{item.note}</p>}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 
@@ -161,7 +194,7 @@ import Button from "../components/Button.astro";
     <div class="flex flex-col pb-8">
       <h3 class="font-bold text-gray-950">Interests and hobbies</h3>
     </div>
-    <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-gap">
+    <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
       <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Reading</h4>
@@ -203,30 +236,20 @@ import Button from "../components/Button.astro";
   <section id="resources" class="resources-section md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
     <div>
       <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
-      <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gap">
+      <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Resume (EN)</h4>
-          <p class="text-gray-800">Look through my resume to get an overview of my professional background.</p>
-          <a
-            class="mt-5 btn_container md:w-[30%]"
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:e093c952-28f9-42b6-b745-8cdc5938a012"
-            target="_blank"
-            aria-label="See resume (EN)"
-          >
+          <p class="text-gray-800">Look through my resume to get an overview of my background.</p>
+          <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen (EN).pdf" target="_blank" aria-label="See resume (EN)">
             <Button variant="secondary" size="small">See resume</Button>
           </a>
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">CV (DA)</h4>
-          <p class="text-gray-800">Kig mit CV igennem for at få en oversigt over min professionelle baggrund.</p>
-          <a
-            class="mt-5 btn_container md:w-[30%]"
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:4484bae5-9641-449f-bb8b-490181b02696"
-            target="_blank"
-            aria-label="See resume (DA)"
-          >
+          <p class="text-gray-800">Kig mit CV igennem for at få en oversigt over min baggrund.</p>
+          <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen (DA).pdf" target="_blank" aria-label="See resume (DA)">
             <Button variant="secondary" size="small">Se CV</Button>
           </a>
         </div>
@@ -236,7 +259,7 @@ import Button from "../components/Button.astro";
           <p class="text-gray-800">Take a look at what I include when I send out applications.</p>
           <a
             class="mt-5 btn_container md:w-[50%]"
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:6645918a-cc9e-4749-980d-5228b39fe007"
+            href="/pdfs/application_template_sararpetersen_EN.pdf"
             target="_blank"
             aria-label="See application-template (EN)"
           >
@@ -249,11 +272,39 @@ import Button from "../components/Button.astro";
           <p class="text-gray-800">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
           <a
             class="mt-5 btn_container md:w-[50%]"
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:4ef6a45a-1f14-40b3-8e78-6bd0434b797e"
+            href="/pdfs/application_template_sararpetersen_DA.pdf"
             target="_blank"
             aria-label="See application-template (DA)"
           >
             <Button variant="secondary" size="small">Se ansøgningsskabelon</Button>
+          </a>
+        </div>
+
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="text-h4-mobile pb-2 text-gray-950">Info about disability allowance (EN)</h4>
+          <p class="text-gray-800">Take a look at what measures that needs to be taken for me to be able to work, as someone with a disability.</p>
+          <a
+            class="mt-5 btn_container md:w-[50%]"
+            href="/pdfs/begraensning_handicaptilaeg_EN.pdf"
+            target="_blank"
+            aria-label="See info-document (EN)"
+          >
+            <Button variant="secondary" size="small">See info-document</Button>
+          </a>
+        </div>
+
+        <!-- Resource Item -->
+        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+          <h4 class="text-h4-mobile pb-2 text-gray-950">Info vedrørende handicaptillæg (DA)</h4>
+          <p class="text-gray-800">Tag et kig på hvad der skal tages hensyn til for at jeg kan arbejde, som en person med en funktionsnedsættelse.</p>
+          <a
+            class="mt-5 btn_container md:w-[50%]"
+            href="/pdfs/begraensning_handicaptilaeg_DA.pdf"
+            target="_blank"
+            aria-label="See info-document (DA)"
+          >
+            <Button variant="secondary" size="small">Se info-dokument</Button>
           </a>
         </div>
       </div>
@@ -285,9 +336,19 @@ import Button from "../components/Button.astro";
         elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
       });
 
-      const elementmedanimation4 = document.querySelector("#personal-background p");
+      const elementmedanimation4 = document.querySelector("#personal-background #background");
       inView(elementmedanimation4, () => {
         elementmedanimation4.classList.add("animate__animated", "animate__slideInRight");
+      });
+
+      const elementmedanimation4a = document.querySelector("#personal-background #inspiration");
+      inView(elementmedanimation4a, () => {
+        elementmedanimation4a.classList.add("animate__animated", "animate__slideInRight");
+      });
+
+      const elementmedanimation4b = document.querySelector("#personal-background #goals");
+      inView(elementmedanimation4b, () => {
+        elementmedanimation4b.classList.add("animate__animated", "animate__slideInRight");
       });
 
       const elementmedanimation5 = document.querySelector("#personal-background img");
@@ -366,8 +427,13 @@ import Button from "../components/Button.astro";
   body.dark h4,
   body.dark p,
   body.dark li,
-  body.dark a {
+  body.dark a,
+  body.dark .tab-btn {
     color: #f6f6f6;
+  }
+
+  body.dark .tab-btn:hover {
+    color: #ff2626;
   }
 
   body.dark #interests-and-hobbies > div,
@@ -378,6 +444,10 @@ import Button from "../components/Button.astro";
   }
 
   body.dark #lines hr {
+    border-color: #6d6d6d;
+  }
+
+  body.dark .portrait {
     border-color: #6d6d6d;
   }
 </style>

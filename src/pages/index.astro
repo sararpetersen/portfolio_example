@@ -48,15 +48,15 @@ import Cases from "../components/Cases.astro";
   <!-- Hero Section -->
   <section class="hero-section grid grid-cols-12 md:pt-0 pt-mobil-top w-full h-screen md:px-0 px-4 relative">
     <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-32">
-      <div class="grid grid-cols-12 items-center justify-center h-full">
+      <div id="hero-content" class="grid grid-cols-12 items-center justify-center h-full">
         <!-- Text content -->
-        <div class="col-span-12">
-          <h1 id="hero-title" class="display md:pb-7 pb-5 font-dense">Sara Ringkow Petersen</h1>
-          <h2 class="italic font-light pb-2 text-gray-50 max-w-3xl leading-7" id="hero-text" class="">
-            <span>Multimedia-designer |</span><span> UX-design </span><span>| web-development </span><span> | creative problem-solving </span><span>
-              | inclusive digital solutions</span
-            >
-          </h2>
+        <div id="hero-content" class="col-span-12">
+          <h1 class="text-gray-50 display pb-4 font-dense">Sara Ringkow Petersen</h1>
+          <h2 class="italic text-gray-50 text-[2.5rem]">Multimedia Designer & Concept Developer</h2>
+          <div class="space h-4"></div>
+          <p class="text-gray-50 text-[1.4rem] font-light pb-2 max-w-3xl leading-8">
+            Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy
+          </p>
         </div>
       </div>
     </div>
@@ -117,8 +117,9 @@ import Cases from "../components/Cases.astro";
       <div id="who-am-i" class="md:order-1 order-2 p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
         <h3 class="text-h4-mobile md:text-h4-desktop font-bold text-gray-950 mb-2">Who am I?</h3>
         <p class="text-gray-800">
-          I'm a newly graduated multimedia designer with a creative mind and a deep interest in accessibility, user experience and digital
-          storytelling. With a background in both design and development, I aim to build inclusive solutions that look good and feel great to use.
+          I'm a multimedia designer and bachelor student in digital concept development with a creative mind and an interest in accessibility, user
+          experience and digital storytelling. With a background in both design and development, I aim to build solutions that look good and feel
+          great to use.
         </p>
       </div>
 
@@ -246,7 +247,7 @@ import Cases from "../components/Cases.astro";
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
     if (!reduceMotion) {
-      const elementmedanimation1 = document.querySelector("#hero-title");
+      const elementmedanimation1 = document.querySelector("#hero-content h1");
       inView(elementmedanimation1, () => {
         elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
       });
@@ -346,21 +347,22 @@ import Cases from "../components/Cases.astro";
         elementmedanimation26.classList.add("animate__animated", "animate__fadeInDown");
       });
 
+      const elementmedanimation27 = document.querySelector("#hero-content h2");
+      inView(elementmedanimation27, () => {
+        elementmedanimation27.classList.add("animate__animated", "animate__fadeInDown");
+      });
+
+      const elementmedanimation28 = document.querySelector("#hero-content p");
+      inView(elementmedanimation28, () => {
+        elementmedanimation28.classList.add("animate__animated", "animate__fadeInUp");
+      });
+
       const process = document.querySelectorAll("#process-cards > div");
 
       process.forEach((process, index) => {
         inView(process, () => {
           process.classList.add("animate__animated", "animate__fadeInUp");
           process.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-        });
-      });
-
-      const hero = document.querySelectorAll("#hero-text > span");
-
-      hero.forEach((hero, index) => {
-        inView(hero, () => {
-          hero.classList.add("animate__animated", "animate__fadeInUp");
-          hero.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
         });
       });
 
@@ -394,9 +396,9 @@ import Cases from "../components/Cases.astro";
     animation: float 3s ease-in-out infinite;
   }
 
-  #hero-title,
-  #hero-text,
-  #hero-text2 {
+  .hero-title,
+  .hero-subtitle,
+  .hero-text {
     color: #f6f6f6;
   }
 
@@ -433,5 +435,10 @@ import Cases from "../components/Cases.astro";
 
   body.dark #portfolio-intro img {
     border-color: #6d6d6d;
+  }
+
+  #hero-subtitle-text,
+  #hero-text-content {
+    display: inline-block;
   }
 </style>
