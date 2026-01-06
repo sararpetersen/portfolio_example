@@ -41,16 +41,16 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <nav id="navigation" class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8">
       <a
         href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
         aria-label="Go to homepage">↑ Back to homepage</a
       >
 
       <div class="flex gap-4 ml-auto">
         {
-          prevProject && (
+          prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ← {prevProject.name}
@@ -58,10 +58,10 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           )
         }
         {
-          nextProject && (
+          nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-red-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               {nextProject.name} →
@@ -76,6 +76,17 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <h1 id="project-title" class="font-bold md:text-h2-desktop text-h4-desktop md:mb-4 mb-2 text-gray-950">{project.name}</h1>
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
     </header>
+
+    <!-- Prototype Notice for Vibeloop and UngeForum -->
+    {
+      (project.slug === "vibeloop" || project.slug === "ungeforum") && (
+        <div id="figma-notice" class="col-span-12 bg-yellow-100 border-l-4 border border-yellow-200 rounded-full p-4 mb-8">
+          <p id="figma-notice-text" class="text-gray-800">
+            This project is presented as an interactive prototype created in Figma.
+          </p>
+        </div>
+      )
+    }
 
     <!-- Content Grid -->
     <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
@@ -106,7 +117,9 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         }
         <div id="project-link" class="btn-container">
           <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.name}`}>
-            <Button variant="secondary" size="small">View project</Button>
+            <Button variant="secondary" size="small">
+              {project.slug === "escape-room" ? "View case" : "View project"}
+            </Button>
           </a>
         </div>
       </div>
@@ -115,7 +128,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
   <!-- Gallery Section -->
   <section id="gallery" class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6">
-    <div class="col-span-12 bg-gray-100 border-l-4 border-gray-200 rounded-2xl p-6">
+    <div class="col-span-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 p-6">
       <h3 class="text-h4-desktop font-bold text-gray-950 mb-4">Curious to see more?</h3>
       <p id="gallery-text" class="text-gray-800 mb-8">
         Explore images, videos, and media from my projects in the gallery. From sketches and wireframes to moodboards and screenshots.
@@ -136,6 +149,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     color: #f6f6f6;
   }
 
+  body.dark #figma-notice {
+    background-color: #38476f;
+    border-color: #6074a4;
+    color: #f6f6f6;
+  }
+
   body.dark a {
     color: #f6f6f6;
   }
@@ -149,8 +168,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark section:last-child div {
-    background-color: #454545;
     border-color: #6d6d6d;
+    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
   }
 </style>
 
@@ -184,9 +203,19 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       elementmedanimation6.classList.add("animate__animated", "animate__fadeInUp");
     });
 
+    const elementmedanimation5 = document.querySelector("#project-image");
+    inView(elementmedanimation5, () => {
+      elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
     const elementmedanimation7 = document.querySelector("#gallery");
     inView(elementmedanimation7, () => {
       elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
+    });
+
+    const elementmedanimation8 = document.querySelector("#figma-notice");
+    inView(elementmedanimation8, () => {
+      elementmedanimation8.classList.add("animate__animated", "animate__backInDown");
     });
   });
 </script>

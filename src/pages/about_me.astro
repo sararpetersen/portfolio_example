@@ -175,7 +175,7 @@ import Button from "../components/Button.astro";
         ].map((item, index) => (
           <div class={`mb-8 pb-8 border-b border-gray-300 flex gap-6 ${index === 9 ? "last:border-b-0" : ""}`}>
             <div class="flex flex-col items-center">
-              <div class="w-4 h-4 bg-red-700 rounded-full border-4 border-white ring-2 ring-gray-300 sticky top-8" />
+              <div id="timeline-circle" class="w-4 h-4 bg-red-700 rounded-full border-4 border-white ring-2 ring-gray-300 sticky top-8" />
             </div>
             <div class="flex-1 pt-1">
               <p class="text-xs font-semibold text-red-700 mb-1 uppercase">{item.year}</p>
@@ -196,36 +196,36 @@ import Button from "../components/Button.astro";
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Reading</h4>
         <p class="text-gray-800">Books are my escape from the real world, where I can immerse myself and explore fascinating stories.</p>
       </div>
       <!-- Interest Item 2 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Gaming</h4>
         <p class="text-gray-800">Gaming is a way for me to experience incredible stories and unique worlds, no matter how complex they may be.</p>
       </div>
       <!-- Interest Item 3 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">YouTube-content</h4>
         <p class="text-gray-800">I find great inspiration and entertainment through YouTube&mdash; whether it's about tech, movies or games.</p>
       </div>
       <!-- Interest Item 4 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Watching movies & TV-series</h4>
         <p class="text-gray-800">
           I love watching a movie or a TV series, every once in a while&mdash; it gives me a way of escape and a chance to relax.
         </p>
       </div>
       <!-- Interest Item 5 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Building with LEGO</h4>
         <p class="text-gray-800">
           I love building a variety of different LEGO sets, as it puts my mind at ease and allows me to focus on something else.
         </p>
       </div>
       <!-- Interest Item 6 -->
-      <div class="p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Photography</h4>
         <p class="text-gray-800">I like to capture images of things happening around me&mdash; whether it's nature, people or anything else.</p>
       </div>
@@ -238,7 +238,7 @@ import Button from "../components/Button.astro";
       <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Resume (EN)</h4>
           <p class="text-gray-800">Look through my resume to get an overview of my background.</p>
           <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen (EN).pdf" target="_blank" aria-label="See resume (EN)">
@@ -246,7 +246,7 @@ import Button from "../components/Button.astro";
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">CV (DA)</h4>
           <p class="text-gray-800">Kig mit CV igennem for at få en oversigt over min baggrund.</p>
           <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen (DA).pdf" target="_blank" aria-label="See resume (DA)">
@@ -254,7 +254,7 @@ import Button from "../components/Button.astro";
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Application-template (EN)</h4>
           <p class="text-gray-800">Take a look at what I include when I send out applications.</p>
           <a
@@ -267,7 +267,7 @@ import Button from "../components/Button.astro";
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Ansøgningsskabelon (DA)</h4>
           <p class="text-gray-800">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
           <a
@@ -281,7 +281,7 @@ import Button from "../components/Button.astro";
         </div>
 
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Info about disability allowance (EN)</h4>
           <p class="text-gray-800">Take a look at what measures that needs to be taken for me to be able to work, as someone with a disability.</p>
           <a
@@ -295,7 +295,7 @@ import Button from "../components/Button.astro";
         </div>
 
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gray-100 rounded-2xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Info vedrørende handicaptillæg (DA)</h4>
           <p class="text-gray-800">Tag et kig på hvad der skal tages hensyn til for at jeg kan arbejde, som en person med en funktionsnedsættelse.</p>
           <a
@@ -432,15 +432,21 @@ import Button from "../components/Button.astro";
     color: #f6f6f6;
   }
 
-  body.dark .tab-btn:hover {
-    color: #ff2626;
+  body.dark .tab-btn:hover,
+  body.dark .tab-btn.active {
+    color: #ffadad;
+    border-color: #ffadad;
+  }
+
+  body.dark #timeline-circle {
+    background-color: #ff1f1f;
   }
 
   body.dark #interests-and-hobbies > div,
   body.dark #resources-section > div,
   body.dark #strengths-weaknesses-container > div {
-    background-color: #454545;
     border-color: #6d6d6d;
+    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
   }
 
   body.dark #lines hr {
@@ -449,5 +455,11 @@ import Button from "../components/Button.astro";
 
   body.dark .portrait {
     border-color: #6d6d6d;
+  }
+
+  .tab-btn.active,
+  .tab-btn:hover {
+    border-color: #d60000;
+    color: #d60000;
   }
 </style>
