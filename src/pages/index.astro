@@ -51,10 +51,10 @@ import Cases from "../components/Cases.astro";
       <div id="hero-content" class="grid grid-cols-12 items-center justify-center h-full">
         <!-- Text content -->
         <div id="hero-content" class="col-span-12">
-          <h1 class="text-gray-50 display pb-4 font-dense">Sara Ringkow Petersen</h1>
-          <h2 class="italic text-gray-50 text-[2.5rem]">Multimedia Designer & Concept Developer</h2>
+          <h1 class="text-gray-50 display pb-4">Sara Ringkow Petersen</h1>
+          <h2 class="italic text-gray-50 md:text-[2.5rem] text-[2rem]">Multimedia Designer & Concept Developer</h2>
           <div class="space h-4"></div>
-          <p class="text-gray-50 text-[1.4rem] font-light pb-2 max-w-3xl leading-8">
+          <p class="text-gray-50 md:text-[1.4rem] text-[1.2rem] font-light pb-2 max-w-3xl leading-8">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy
           </p>
         </div>
@@ -94,13 +94,14 @@ import Cases from "../components/Cases.astro";
 
   <section id="project-section" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top max-w-7xl mx-auto">
     <div class="container col-span-12">
-      <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Highlighted projects</h3>
+      <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Projects</h3>
       <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">
-        A selection of my older and most recent projects. Click on the one you want to learn more about.
+        Below are some of the projects I've worked on during my studies and internships.<br class="hidden md:block" />Click on any of the cards to
+        read more about the project, the process and the outcome.
       </p>
     </div>
     <div class="col-span-12 md:px-0 px-6">
-      <Cases />
+      <Cases projects={cards.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))} />
     </div>
   </section>
 
