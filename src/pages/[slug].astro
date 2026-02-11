@@ -41,7 +41,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <nav id="navigation" class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8">
       <a
         href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
         aria-label="Go to homepage">↑ Back to homepage</a
       >
 
@@ -50,7 +50,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ← {prevProject.name}
@@ -61,7 +61,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               {nextProject.name} →
@@ -109,7 +109,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
               </h3>
               <div class="flex flex-wrap gap-2 mb-12">
                 {project.tools.map((tool) => (
-                  <span class="rounded-full px-4 py-2 font-semibold border border-red-700 bg-red-700 text-gray-50 text-sm uppercase">{tool}</span>
+                  <span class="rounded-full px-4 py-2 font-semibold border border-blue-500 bg-blue-500 text-gray-50 text-sm uppercase">{tool}</span>
                 ))}
               </div>
             </div>
@@ -118,7 +118,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         <div id="project-link" class="btn-container">
           <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.name}`}>
             <Button variant="secondary" size="small">
-              {project.slug === "escape-room" ? "View case" : "View project"}
+              {project.slug === "escape-room" ? "Read concept PDF" : "View project"}
             </Button>
           </a>
         </div>
@@ -126,17 +126,42 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6">
-    <div class="col-span-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 p-6">
-      <h3 class="text-h4-desktop font-bold text-gray-950 mb-4">Curious to see more?</h3>
-      <p id="gallery-text" class="text-gray-800 mb-8">
-        Explore images, videos, and media from my projects in the gallery. From sketches and wireframes to moodboards and screenshots.
-      </p>
-      <a href="/gallery" aria-label="Go to gallery">
-        <Button variant="secondary" size="small">Go to <em>Gallery</em></Button>
-      </a>
+  <!-- Related Projects Section -->
+  <section
+    id="related-projects"
+    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
+  >
+    <div id="related-projects-title" class="col-span-12 mb-8">
+      <h2 class="text-h3-desktop font-bold text-gray-950 mb-2">More projects</h2>
     </div>
+
+    {
+      (() => {
+        const randomProjects = sortedProjects.sort(() => 0.5 - Math.random()).slice(0, 3);
+        return (
+          <div class="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-6">
+            {randomProjects.map((proj) => (
+              <a href={`/${proj.slug}`} class="group">
+                <div
+                  id="related-project-card"
+                  class="rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 hover:border-gray-300 transition duration-300"
+                >
+                  <img src={proj.image} alt={proj.name} class="w-full h-48 object-cover" loading="lazy" />
+                  <div id="related-project-info" class="p-4 border-t border-gray-200 group-hover:border-gray-300 transition duration-300">
+                    <h3 id="related-project-title" class="text-h4-mobile font-bold text-gray-950 mb-2">
+                      {proj.name}
+                    </h3>
+                    <p id="related-project-year" class="text-sm text-gray-800">
+                      {proj.year}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        );
+      })()
+    }
   </section>
 </MainLayout>
 
@@ -160,16 +185,38 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark a:hover {
-    color: #ff1f1f;
+    color: #0ea5e9;
   }
 
   body.dark #project-image {
     border-color: #6d6d6d;
   }
 
-  body.dark section:last-child div {
+  body.dark section:last-child .col-span-12 > div > a > div {
     border-color: #6d6d6d;
     background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+  }
+
+  body.dark #related-projects h2 {
+    color: #f6f6f6;
+  }
+
+  body.dark #related-projects a > div {
+    border-color: #6d6d6d;
+    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+  }
+
+  body.dark #related-projects a > div:hover {
+    border-color: #d1d1d1;
+    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+  }
+
+  body.dark #related-projects a > div > div {
+    border-color: #6d6d6d;
+  }
+
+  body.dark #related-projects a > div > div:hover {
+    border-color: #d1d1d1;
   }
 </style>
 
@@ -216,6 +263,19 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     const elementmedanimation8 = document.querySelector("#figma-notice");
     inView(elementmedanimation8, () => {
       elementmedanimation8.classList.add("animate__animated", "animate__backInDown");
+    });
+
+    const cards = document.querySelectorAll("#related-projects a > div");
+    cards.forEach((card) => {
+      inView(card, () => {
+        card.classList.add("animate__animated", "animate__fadeInUp");
+        card.style.animationDelay = `${Math.random() * 0.5}s`; // Random delay for a staggered effect
+      });
+    });
+
+    const elementmedanimation9 = document.querySelector("#related-projects-title");
+    inView(elementmedanimation9, () => {
+      elementmedanimation9.classList.add("animate__animated", "animate__backInRight");
     });
   });
 </script>

@@ -6,9 +6,10 @@ const { variant = "primary", size = "medium" } = Astro.props;
 const buttonStyling = "px-6 p-2 font-semibold rounded-[5px] transition duration-300 uppercase";
 
 const variantClasses = {
-  primary: "main-button text-gray-50 bg-red-700 hover:bg-red-800 hover:border-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out",
+  primary:
+    "main-button text-gray-50 bg-blue-500 hover:bg-blue-600 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
   secondary:
-    "secondary-button text-gray-50 bg-gray-800 hover:bg-gray-700 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out",
+    "secondary-button text-gray-50 bg-gray-800 hover:bg-gray-700 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
 };
 
 const sizeClasses = {
@@ -29,9 +30,9 @@ const sizeClasses = {
   }
 
   body.dark .main-button:hover {
-    background-color: #ff1f1f;
+    background-color: #0ea5e9;
     color: #f6f6f6;
-    border: #ff1f1f 1px solid;
+    border: #0ea5e9 1px solid;
   }
 
   body.dark .secondary-button {

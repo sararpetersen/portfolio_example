@@ -50,13 +50,43 @@ import Cases from "../components/Cases.astro";
     <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-32">
       <div id="hero-content" class="grid grid-cols-12 items-center justify-center h-full">
         <!-- Text content -->
-        <div id="hero-content" class="col-span-12">
+        <div class="col-span-12">
           <h1 class="text-gray-50 display pb-4">Sara Ringkow Petersen</h1>
           <h2 class="italic text-gray-50 md:text-[2.5rem] text-[2rem]">Multimedia Designer & Concept Developer</h2>
           <div class="space h-4"></div>
           <p class="text-gray-50 md:text-[1.4rem] text-[1.2rem] font-light pb-2 max-w-3xl leading-8">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy
           </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="/contact" class="rounded-[5px] px-6 py-3 bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"> Contact me </a>
+
+            <div class="relative inline-block">
+              <details class="group">
+                <summary
+                  class="flex items-center justify-between gap-2 list-none rounded-[5px] px-6 py-3 border border-gray-500 text-gray-100 font-semibold hover:bg-gray-700 transition cursor-pointer"
+                >
+                  Resume/CV
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6 transition-transform duration-300 group-open:rotate-180 ease-in-out"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                  </span>
+                </summary>
+
+                <div class="absolute mt-2 w-48 rounded-xl border border-gray-600 bg-gray-800 shadow-lg p-2 z-50">
+                  <a class="block px-3 py-2 rounded-lg hover:bg-gray-700 text-gray-100" href="/files/CV_DA.pdf" target="_blank">CV (DA)</a>
+                  <a class="block px-3 py-2 rounded-lg hover:bg-gray-700 text-gray-100" href="/files/Resume_EN.pdf" target="_blank">Resume (EN)</a>
+                </div>
+              </details>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -72,7 +102,7 @@ import Cases from "../components/Cases.astro";
     <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[50%] z-0"></div>
 
     <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] w-full justify-center z-[20]">
-      <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-red-300">
+      <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-blue-300">
         <div class="float flex flex-col items-center hover:opacity-80 transition duration-300 ease-in-out">
           <p class="text-gray-50 font-bold">Go further down the page</p>
           <svg
@@ -165,7 +195,7 @@ import Cases from "../components/Cases.astro";
     <div class="container max-w-6xl mx-auto col-span-12">
       <h3 class="mb-2 text-gray-950">What others say about me</h3>
       <p class="text-gray-800 md:mb-12 mb-8 max-w-4xl">
-        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br class="hidden md:block" /> Below are a some testimonials
+        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br class="hidden md:block" /> Below are some testimonials
         from people that have seen my work in action <em>(there are more to come)</em>.
       </p>
       <div id="testimonials-cards" class="grid grid-cols-1 md:mt-10 mt-8">
@@ -195,7 +225,7 @@ import Cases from "../components/Cases.astro";
       <div class="accessibility-button">
         <a
           href="/accessibility"
-          class="btn_container focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
+          class="btn_container focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
           aria-label="Go to 'accessibility'"
         >
           <Button variant="secondary" size="small">Go to <em>Accessibility</em></Button>

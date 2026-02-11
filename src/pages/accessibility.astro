@@ -26,15 +26,15 @@ import "../styles/global.css";
       <div>
         <h2 id="accessibility-features-title" class="md:text-h3-desktop text-h3-mobile font-bold text-gray-950 mb-4">Implemented features</h2>
         <!-- List -->
-        <ul id="accessibility-features-list" class="list-none text-gray-800 space-y-3 md:order-1 order-2 w-fit">
-          <li>► Semantic and structured HTML</li>
-          <li>► Alt-text on all images</li>
-          <li>► ARIA-labels where needed</li>
-          <li>► Contrast-friendly colours</li>
-          <li>► Accessible and readable font-styles</li>
-          <li>► Keyboard-navigable components</li>
-          <li>► Focus-states on interactive elements</li>
-          <li>► Dark-mode and 'remove animations'-functions</li>
+        <ul id="accessibility-features-list" class="list-disc pl-6 text-gray-800 space-y-3 md:order-1 order-2 w-fit">
+          <li>Semantic and structured HTML</li>
+          <li>Alt-text on all images</li>
+          <li>ARIA-labels where needed</li>
+          <li>Contrast-friendly colours</li>
+          <li>Accessible and readable font-styles</li>
+          <li>Keyboard-navigable components</li>
+          <li>Focus-states on interactive elements</li>
+          <li>Dark-mode and 'remove animations'-functions</li>
         </ul>
       </div>
       <!-- Image -->
@@ -58,6 +58,19 @@ import "../styles/global.css";
       <li><strong>✅ WAVE:</strong> For structure, contrast and alt-text evaluation</li>
       <li><strong>✅ Lighthouse:</strong> To check performance- and accessibility-scores</li>
       <li><strong>✅ Keyboard-only navigation:</strong> To ensure all interactive elements are reachable and usable</li>
+    </ul>
+  </section>
+
+  <!-- Known limitations -->
+  <section id="known-limitations" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
+    <h3 id="known-limitations-title" class="col-span-12 text-gray-950 mb-4">Known limitations</h3>
+    <p id="known-limitations-text" class="col-span-12 text-gray-800 mb-8">
+      While I've made a strong effort to ensure accessibility, there are some known limitations:
+    </p>
+    <ul id="known-limitations-list" class="list-disc pl-6 mt-2 col-span-12 text-gray-800 space-y-2">
+      <li>Some interactive elements may not be fully accessible in all browsers</li>
+      <li>Some animations may not be fully accessible for users with motion sensitivities</li>
+      <li>Some older browsers may not support all accessibility features</li>
     </ul>
   </section>
 
@@ -150,6 +163,25 @@ import "../styles/global.css";
       inView(elementmedanimation11, () => {
         elementmedanimation11.classList.add("animate__animated", "animate__fadeInLeft");
       });
+
+      const elementmedanimation12 = document.querySelector("#known-limitations-title");
+      inView(elementmedanimation12, () => {
+        elementmedanimation12.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation13 = document.querySelector("#known-limitations-text");
+      inView(elementmedanimation13, () => {
+        elementmedanimation13.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const list3 = document.querySelectorAll("#known-limitations-list > li");
+
+      list3.forEach((list3, index) => {
+        inView(list3, () => {
+          list3.classList.add("animate__animated", "animate__fadeInUp");
+          list3.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+        });
+      });
     }
   });
 </script>
@@ -162,7 +194,9 @@ import "../styles/global.css";
   body.dark #continuous-improvement-title,
   body.dark #continuous-improvement-text,
   body.dark .heading-title,
-  body.dark .heading-text {
+  body.dark .heading-text,
+  body.dark #known-limitations-title,
+  body.dark #known-limitations-text {
     color: #f6f6f6;
   }
 

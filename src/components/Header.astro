@@ -7,14 +7,14 @@ import "../styles/global.css";
   <!-- Gear Icon -->
   <button
     id="accessibilityToggle"
-    class="svg-gear focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+    class="svg-gear focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
     aria-label="Accessibility-settings"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      class="size-6 hover:text-red-700 transition duration-300 ease-in-out"
+      class="size-6 hover:text-blue-500 transition duration-300 ease-in-out"
     >
       <path
         fill-rule="evenodd"
@@ -70,28 +70,28 @@ import "../styles/global.css";
       <li class="some1">
         <a
           href="/"
-          class="hover:text-red-700 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Go to homepage">Home</a
         >
       </li>
       <li class="some1">
         <a
           href="/about_me"
-          class="hover:text-red-700 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Go to about-page">About</a
         >
       </li>
       <li class="some1">
         <a
           href="/contact"
-          class="hover:text-red-700 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Go to contact-page">Contact</a
         >
       </li>
       <li class="some1">
         <a
           href="/accessibility"
-          class="hover:text-red-700 py-1 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Go to accessibility-page">Accessibility</a
         >
       </li>
@@ -105,7 +105,7 @@ import "../styles/global.css";
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-300"
+            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -117,192 +117,193 @@ import "../styles/global.css";
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-300"
+            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
           </svg>
         </template>
       </button>
+
+      <!-- Mobile Menu (Hidden on Larger Screens) -->
+      <nav
+        id="mobilmenu"
+        aria-label="Mobile-menu"
+        class="flex flex-col content-center lg:hidden"
+        x-show="showmenu"
+        x-transition=""
+        x-cloak
+        x-on:click="showmenu = false"
+        x-on:click.outside="showmenu = false"
+        style="display: none;"
+      >
+        <ul>
+          <li class="some1 text-center py-1">
+            <a
+              href="/#hero"
+              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
+              aria-label="Go to homepage">Home</a
+            >
+          </li>
+          <li class="some1 text-center py-1">
+            <a
+              href="/about_me"
+              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
+              aria-label="Go to about-page">About</a
+            >
+          </li>
+          <li class="some1 text-center py-1">
+            <a
+              href="/contact"
+              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
+              aria-label="Go to contact-page">Contact</a
+            >
+          </li>
+          <li class="some1 text-center py-1 pb-4">
+            <a
+              href="/accessibility"
+              tabindex="-1"
+              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
+              aria-label="Go to 'blog'-page">Accessibility</a
+            >
+          </li>
+        </ul>
+      </nav>
     </ul>
 
-    <!-- Mobile Menu (Hidden on Larger Screens) -->
-    <nav
-      id="mobilmenu"
-      aria-label="Mobile-menu"
-      class="flex flex-col content-center lg:hidden"
-      x-show="showmenu"
-      x-transition=""
-      x-cloak
-      x-on:click="showmenu = false"
-      x-on:click.outside="showmenu = false"
-      style="display: none;"
-    >
-      <ul>
-        <li class="some1 text-center py-1">
-          <a
-            href="/#hero"
-            class="py-1 hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
-            aria-label="Go to homepage">Home</a
-          >
-        </li>
-        <li class="some1 text-center py-1">
-          <a
-            href="/about_me"
-            class="py-1 hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
-            aria-label="Go to about-page">About</a
-          >
-        </li>
-        <li class="some1 text-center py-1">
-          <a
-            href="/contact"
-            class="py-1 hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
-            aria-label="Go to contact-page">Contact</a
-          >
-        </li>
-        <li class="some1 text-center py-1 pb-4">
-          <a
-            href="/accessibility"
-            class="py-1 hover:text-red-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 ease-in-out"
-            aria-label="Go to 'blog'-page">Accessibility</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </nav>
-
-  <style>
-    [x-cloak] {
-      display: none !important;
-    }
-
-    /* Dark Mode */
-    body.dark #header {
-      background-color: #333333;
-      color: #f6f6f6;
-      border-bottom: none;
-      box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 0.25);
-    }
-    body.dark #accessibility-bar {
-      background-color: #222222;
-      color: #f6f6f6;
-    }
-    body.dark #header .dropdown1 {
-      background-color: #454545;
-      color: #f6f6f6;
-      border-color: #6d6d6d;
-    }
-
-    body.dark #header #mobilmenu {
-      color: #f6f6f6;
-    }
-
-    body.dark #header #other {
-      border-color: #6d6d6d;
-    }
-
-    /* Button styles for dark mode */
-    body.dark .toggle-switch {
-      background-color: #666;
-    }
-    body.dark .toggle-circle {
-      background-color: #fff;
-    }
-
-    /* Reduce Motion Mode */
-    body.reduce-motion * {
-      transition: none !important;
-      animation: none !important;
-      scroll-behavior: auto !important;
-    }
-
-    body {
-      transition:
-        font-size 0.3s ease,
-        background-color 0.3s ease,
-        color 0.3s ease;
-    }
-
-    /* Logo */
-    /* Light mode logo */
-    .logo-dark {
-      display: none;
-    }
-
-    /* Dark mode logo */
-    body.dark .logo-light {
-      display: none;
-    }
-
-    body.dark .logo-dark {
-      display: block;
-    }
-
-    #accessibilityOptions span {
-      font-size: 17.6px;
-    }
-
-    #header a:hover {
-      color: #d60000;
-    }
-
-    body.dark #header a:hover {
-      color: #ff1f1f;
-    }
-  </style>
-
-  <script>
-    // Utility function to initialize toggle
-    function initToggle(toggleId, className, storageKey) {
-      const toggleButton = document.getElementById(toggleId);
-      const savedState = localStorage.getItem(storageKey) === "true";
-
-      // Apply saved state
-      if (savedState) {
-        document.body.classList.add(className);
-        toggleButton.setAttribute("aria-pressed", "true");
-      } else {
-        toggleButton.setAttribute("aria-pressed", "false");
+    <style>
+      [x-cloak] {
+        display: none !important;
       }
 
-      // Set up click handler
-      toggleButton.addEventListener("click", () => {
-        const isPressed = toggleButton.getAttribute("aria-pressed") === "true";
-        const newState = !isPressed;
-
-        toggleButton.setAttribute("aria-pressed", String(newState));
-        document.body.classList.toggle(className, newState);
-        localStorage.setItem(storageKey, String(newState));
-      });
-    }
-
-    // Initialize each toggle
-    initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
-    initToggle("darkModeToggle", "dark", "darkModeEnabled");
-
-    // Accessibility-toggle
-    const toggleButton = document.getElementById("accessibilityToggle");
-    const options = document.getElementById("accessibilityOptions");
-
-    // Function to show or hide the options based on state
-    function setToggleState(isOpen) {
-      if (isOpen) {
-        options.classList.remove("scale-x-0", "opacity-0");
-        options.classList.add("scale-x-100", "opacity-100");
-      } else {
-        options.classList.remove("scale-x-100", "opacity-100");
-        options.classList.add("scale-x-0", "opacity-0");
+      /* Dark Mode */
+      body.dark #header {
+        background-color: #333333;
+        color: #f6f6f6;
+        border-bottom: none;
+        box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 0.25);
       }
-    }
+      body.dark #accessibility-bar {
+        background-color: #222222;
+        color: #f6f6f6;
+      }
+      body.dark #header .dropdown1 {
+        background-color: #454545;
+        color: #f6f6f6;
+        border-color: #6d6d6d;
+      }
 
-    // Load saved state from localStorage
-    let isOpen = localStorage.getItem("accessibilityOpen") === "true";
-    setToggleState(isOpen);
+      body.dark #header #mobilmenu {
+        color: #f6f6f6;
+      }
 
-    // On click: toggle state, update localStorage and UI
-    toggleButton.addEventListener("click", () => {
-      isOpen = !isOpen;
-      localStorage.setItem("accessibilityOpen", isOpen);
+      body.dark #header #other {
+        border-color: #6d6d6d;
+      }
+
+      /* Button styles for dark mode */
+      body.dark .toggle-switch {
+        background-color: #666;
+      }
+      body.dark .toggle-circle {
+        background-color: #fff;
+      }
+
+      /* Reduce Motion Mode */
+      body.reduce-motion * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      body {
+        transition:
+          font-size 0.3s ease,
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      /* Logo */
+      /* Light mode logo */
+      .logo-dark {
+        display: none;
+      }
+
+      /* Dark mode logo */
+      body.dark .logo-light {
+        display: none;
+      }
+
+      body.dark .logo-dark {
+        display: block;
+      }
+
+      #accessibilityOptions span {
+        font-size: 17.6px;
+      }
+
+      #header a:hover {
+        color: #0ea5e9;
+      }
+
+      body.dark #header a:hover {
+        color: #0ea5e9;
+      }
+    </style>
+
+    <script>
+      // Utility function to initialize toggle
+      function initToggle(toggleId, className, storageKey) {
+        const toggleButton = document.getElementById(toggleId);
+        const savedState = localStorage.getItem(storageKey) === "true";
+
+        // Apply saved state
+        if (savedState) {
+          document.body.classList.add(className);
+          toggleButton.setAttribute("aria-pressed", "true");
+        } else {
+          toggleButton.setAttribute("aria-pressed", "false");
+        }
+
+        // Set up click handler
+        toggleButton.addEventListener("click", () => {
+          const isPressed = toggleButton.getAttribute("aria-pressed") === "true";
+          const newState = !isPressed;
+
+          toggleButton.setAttribute("aria-pressed", String(newState));
+          document.body.classList.toggle(className, newState);
+          localStorage.setItem(storageKey, String(newState));
+        });
+      }
+
+      // Initialize each toggle
+      initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
+      initToggle("darkModeToggle", "dark", "darkModeEnabled");
+
+      // Accessibility-toggle
+      const toggleButton = document.getElementById("accessibilityToggle");
+      const options = document.getElementById("accessibilityOptions");
+
+      // Function to show or hide the options based on state
+      function setToggleState(isOpen) {
+        if (isOpen) {
+          options.classList.remove("scale-x-0", "opacity-0");
+          options.classList.add("scale-x-100", "opacity-100");
+        } else {
+          options.classList.remove("scale-x-100", "opacity-100");
+          options.classList.add("scale-x-0", "opacity-0");
+        }
+      }
+
+      // Load saved state from localStorage
+      let isOpen = localStorage.getItem("accessibilityOpen") === "true";
       setToggleState(isOpen);
-    });
-  </script>
+
+      // On click: toggle state, update localStorage and UI
+      toggleButton.addEventListener("click", () => {
+        isOpen = !isOpen;
+        localStorage.setItem("accessibilityOpen", isOpen);
+        setToggleState(isOpen);
+      });
+    </script>
+  </nav>
 </header>
