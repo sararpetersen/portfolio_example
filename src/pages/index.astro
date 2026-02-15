@@ -47,46 +47,29 @@ import Cases from "../components/Cases.astro";
 >
   <!-- Hero Section -->
   <section class="hero-section grid grid-cols-12 md:pt-0 pt-mobil-top w-full h-screen md:px-0 px-4 relative">
-    <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-32">
+    <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-30">
       <div id="hero-content" class="grid grid-cols-12 items-center justify-center h-full">
         <!-- Text content -->
         <div class="col-span-12">
+          <div id="status" class="md:mb-6 mb-4 flex items-center gap-2 justify-start text-sm">
+            <span class="relative flex md:h-3.5 md:w-3.5 h-2.5 w-2.5" aria-hidden="true">
+              <!-- soft pulse ring -->
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+
+              <!-- solid dot -->
+              <span class="relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400"></span>
+            </span>
+
+            <strong class="text-gray-50 md:text-[1.2rem] text-[1rem]">Status:</strong><span class="text-gray-200 md:text-[1.2rem] text-[1rem]"
+              >Open for internship</span
+            >
+          </div>
           <h1 class="text-gray-50 display pb-4">Sara Ringkow Petersen</h1>
-          <h2 class="italic text-gray-50 md:text-[2.5rem] text-[2rem]">Multimedia Designer & Concept Developer</h2>
+          <h2 class="italic text-gray-50 md:text-[2.5rem] text-[1.3rem]">Multimedia Designer & Concept Developer</h2>
           <div class="space h-4"></div>
-          <p class="text-gray-50 md:text-[1.4rem] text-[1.2rem] font-light pb-2 max-w-3xl leading-8">
+          <p class="text-gray-50 md:text-[1.4rem] text-[1rem] font-light pb-2 max-w-3xl leading-8">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy
           </p>
-          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href="/contact" class="rounded-[5px] px-6 py-3 bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"> Contact me </a>
-
-            <div class="relative inline-block">
-              <details class="group">
-                <summary
-                  class="flex items-center justify-between gap-2 list-none rounded-[5px] px-6 py-3 border border-gray-500 text-gray-100 font-semibold hover:bg-gray-700 transition cursor-pointer"
-                >
-                  Resume/CV
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="size-6 transition-transform duration-300 group-open:rotate-180 ease-in-out"
-                    >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                  </span>
-                </summary>
-
-                <div class="absolute mt-2 w-48 rounded-xl border border-gray-600 bg-gray-800 shadow-lg p-2 z-50">
-                  <a class="block px-3 py-2 rounded-lg hover:bg-gray-700 text-gray-100" href="/files/CV_DA.pdf" target="_blank">CV (DA)</a>
-                  <a class="block px-3 py-2 rounded-lg hover:bg-gray-700 text-gray-100" href="/files/Resume_EN.pdf" target="_blank">Resume (EN)</a>
-                </div>
-              </details>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -95,23 +78,23 @@ import Cases from "../components/Cases.astro";
       <img
         src="/images/hero_image.webp"
         alt="Hero-image for the frontpage of the portfolio"
-        class="w-full h-full object-cover brightness-75 grayscale"
+        class="w-full h-full object-cover brightness-[0.5] grayscale"
       />
     </div>
 
     <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[50%] z-0"></div>
 
-    <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] w-full justify-center z-[20]">
-      <a href="#project-section" aria-label="Go further down" class="focus:outline-none focus:ring-2 focus:ring-blue-300">
-        <div class="float flex flex-col items-center hover:opacity-80 transition duration-300 ease-in-out">
-          <p class="text-gray-50 font-bold">Go further down the page</p>
+    <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] left-[40%] w-auto items-center justify-center z-[20]">
+      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
+        <div class="float flex flex-col items-center transition duration-300 ease-in-out">
+          <p class="text-[1.2rem] text-gray-50 font-bold">Go further down the page</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-8 h-8 sm:w-12 sm:h-12 text-gray-50 transition duration-300 ease-in-out"
+            class="w-8 h-8 sm:w-12 sm:h-12 text-gray-50 transition duration-300 ease-in-out scroll-icon"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
@@ -121,7 +104,6 @@ import Cases from "../components/Cases.astro";
   </section>
 
   <!-- Projects Section -->
-
   <section id="project-section" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top max-w-7xl mx-auto">
     <div class="container col-span-12">
       <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Projects</h3>
@@ -136,142 +118,68 @@ import Cases from "../components/Cases.astro";
   </section>
 
   <!-- Intro Section: -->
-  <section id="portfolio-intro" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
-    <div class="container col-span-12">
-      <h3 class="mb-2 text-gray-950">The 3 W's behind the work</h3>
-      <p class="text-gray-800 max-w-4xl md:mb-12 mb-8">
-        My work is shaped by a blend of curiosity, creativity and a deep respect for inclusive design. The following gives you a quick look at who I
-        am as a designer, what I do and the values that shape the way I work.
-      </p>
-    </div>
-    <div id="intro-grid" class="grid md:grid-cols-3 grid-cols-1 col-span-12 gap-6">
-      <!-- Who I am -->
-      <div id="who-am-i" class="md:order-1 order-2 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-        <h3 class="text-h4-mobile md:text-h4-desktop font-bold text-gray-950 mb-2">Who am I?</h3>
-        <p class="text-gray-800">
-          I'm a multimedia designer and bachelor student in digital concept development with a creative mind and an interest in accessibility, user
-          experience and digital storytelling. With a background in both design and development, I aim to build solutions that look good and feel
-          great to use.
-        </p>
+  <section id="about-preview" class="max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom relative px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center md:px-0 px-6">
+      <!-- Image -->
+      <div class="flex md:justify-end justify-center md:order-1 order-2">
+        <img src="/images/pfp3.webp" alt="Picture of Sara" class="border-l-4 border border-gray-200 rounded-2xl object-cover w-[550px] h-[350px]" />
       </div>
 
-      <!-- What I do -->
-      <div id="what-do-i-do" class="md:order-2 order-1 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-        <h3 class="text-h4-mobile md:text-h4-desktop font-bold text-gray-950 mb-2">What do I do?</h3>
-        <p class="text-gray-800">
-          I design and develop websites, interfaces and digital concepts that focus on clarity, usability and inclusion&mdash; especially for people
-          with special needs. My work spans from wireframing, prototyping, coding, accessibility auditing, user-testing, and so much more.
-        </p>
-      </div>
+      <!-- Text -->
+      <div id="about-preview-text">
+        <h3 class="mb-4">About me</h3>
 
-      <!-- Why I do it -->
-      <div
-        id="why-do-i-do-it"
-        class="md:order-3 order-3 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200"
-      >
-        <h3 class="text-h4-mobile md:text-h4-desktop font-bold text-gray-950 mb-2">Why do I do it?</h3>
-        <p class="text-gray-800">
-          I'm passionate about inclusive practices and strive to ensure that my work is accessible and inclusive for everyone. I believe that everyone
-          should be able to access and use digital solutions, regardless of who they are.
+        <p
+          class="mb-6 text-gray-800 max-w-4xl mx-auto md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200"
+        >
+          I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centered design. I enjoy creating digital
+          experiences that combine visual clarity, thoughtful structure, and functional development. My work spans UX/UI design, concept development,
+          and front-end implementation, allowing me to bring ideas from early concept to finished product. I'm especially motivated by designing
+          solutions that are intuitive, inclusive, and meaningful for the people who use them.
         </p>
-      </div>
-    </div>
 
-    <div id="want-to-know-more-about-me" class="col-span-12 md:mt-12 mt-8">
-      <div>
-        <h3 class="md:text-h4-desktop text-h4-mobile text-gray-950 font-bold mb-2">Wanna know more about me?</h3>
-        <p class="text-gray-800 max-w-4xl mb-8">Click the button below to find out.</p>
-      </div>
-      <div class="know-more-button">
-        <a href="/about_me" class="btn_container md:w-[50%]">
-          <Button variant="secondary" size="small">Go to <em>About me</em></Button>
-        </a>
+        <!-- Optional subtle link -->
+        <div class="btn_container">
+          <a aria-label="Learn more about me" id="about-preview-link" href="/about" class="mt-4">
+            <Button variant="secondary" size="small">Learn more about me</Button>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top px-6">
-    <div class="container max-w-6xl mx-auto col-span-12">
-      <h3 class="mb-2 text-gray-950">What others say about me</h3>
-      <p class="text-gray-800 md:mb-12 mb-8 max-w-4xl">
-        I take pride in my work and strive to deliver high-quality solutions that exceed expectations.<br class="hidden md:block" /> Below are some testimonials
-        from people that have seen my work in action <em>(there are more to come)</em>.
-      </p>
-      <div id="testimonials-cards" class="grid grid-cols-1 md:mt-10 mt-8">
-        <blockquote class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 p-8 mb-8">
+  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6">
+    <div class="container max-w-7xl mx-auto col-span-12 grid md:grid-cols-2 md:gap-10 gap-4 items-center justify-center md:px-0 px-6">
+      <!-- Left: Heading + small context -->
+      <div id="testimonial-heading">
+        <h3 class="mb-2">Featured testimonial</h3>
+        <p class="text-gray-800 leading-relaxed max-w-prose mx-auto md:mx-0">A short quote from someone I've worked with.</p>
+      </div>
+
+      <!-- Right: Testimonial card -->
+      <figure id="testimonial-card" class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 p-8">
+        <blockquote>
           <p class="text-gray-800 italic">
             "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
               >[...]</em
             > Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet
             the client's needs&mdash; this has been the case in both her work with design and coding."
           </p>
-          <p class="mt-4 text-sm text-gray-700 font-semibold">
-            – Jacob Klintrup, partner and creative strategic director <br /><em class="text-gray-700">(on behalf of the team at Kadaver ApS)</em>
-          </p>
         </blockquote>
-      </div>
-    </div>
-  </section>
 
-  <!-- Accessibility Section -->
-  <section id="accessibility-section" class="md:pt-desktop-top pt-mobil-top px-6">
-    <div id="accessibility-container" class="max-w-6xl mx-auto">
-      <h3 class="text-gray-950">How is this site accessible?</h3>
-      <p class="mt-4 mb-8 text-gray-800 max-w-4xl">
-        As a designer who's committed to inclusive practices, I've made it my top priority to ensure that this portfolio can be used by everyone,
-        regardless of their needs. Read more about what measures I've taken to ensure that this site is accessible via the button below.
-      </p>
-      <div class="accessibility-button">
-        <a
-          href="/accessibility"
-          class="btn_container focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
-          aria-label="Go to 'accessibility'"
-        >
-          <Button variant="secondary" size="small">Go to <em>Accessibility</em></Button>
-        </a>
-      </div>
-    </div>
-  </section>
+        <figcaption class="mt-6 flex items-center gap-4">
+          <!-- Optional avatar circle (leave empty or add an image) -->
+          <div class="h-12 w-12 rounded-full bg-gray-700/60 border border-gray-600 flex items-center justify-center">
+            <span class="font-semibold text-sm">JK</span>
+          </div>
 
-  <!-- How I work Section -->
-  <section id="how-i-work" class="relative md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom px-6">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="mb-2 text-gray-950">From idea to reality&mdash; this is how I do it</h3>
-      <p class="text-gray-800 md:mb-12 mb-8">
-        My design process ensures that every solution is user-centred, accessible and visually engaging.<br class="hidden md:block" />When working on
-        a project&mdash; usually when done alone &mdash;I go through the following steps:
-      </p>
-
-      <div id="process-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gap text-center">
-        <!-- Step 1 -->
-        <div class="flex flex-col items-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-          <div class="mb-4 text-4xl">🧠</div>
-          <h4 class="text-h4-mobile text-gray-950 mb-2">Empathize</h4>
-          <p class="text-gray-800">I start by exploring user needs by testing and doing research to understand the problem and its context.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="flex flex-col items-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-          <div class="mb-4 text-4xl">💡</div>
-          <h4 class="text-h4-mobile text-gray-950 mb-2">Ideate & plan</h4>
-          <p class="text-gray-800">I begin to brainstorm creative solutions and organise my process with Trello, Notion and Figma.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="flex flex-col items-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-          <div class="mb-4 text-4xl">🎨</div>
-          <h4 class="text-h4-mobile text-gray-950 mb-2">Design & build</h4>
-          <p class="text-gray-800">I design the solution in Figma and code it with Tailwind and Astro, supplied with CSS and JavaScript.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="flex flex-col items-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-          <div class="mb-4 text-4xl">🔁</div>
-          <h4 class="text-h4-mobile text-gray-950 mb-2">Test & improve</h4>
-          <p class="text-gray-800">I do thorough testing to ensure functionality and refine for clarity, accessibility and quality.</p>
-        </div>
-      </div>
+          <div>
+            <p class="font-semibold text-gray-700">Jacob Klintrup</p>
+            <p class="text-gray-500 text-sm">Creative Strategic Director, Kadaver ApS</p>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -287,24 +195,19 @@ import Cases from "../components/Cases.astro";
           elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
         });
 
-        const elementmedanimation6 = document.querySelector("#testimonials h3");
+        const elementmedanimation6 = document.querySelector("#testimonial-heading h3");
         inView(elementmedanimation6, () => {
-          elementmedanimation6.classList.add("animate__animated", "animate__fadeInLeft");
+          elementmedanimation6.classList.add("animate__animated", "animate__backInLeft");
         });
 
-        const elementmedanimation6a = document.querySelector("#testimonials p");
+        const elementmedanimation6a = document.querySelector("#testimonial-heading p");
         inView(elementmedanimation6a, () => {
           elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
         });
 
-        const elementmedanimation7 = document.querySelector("#how-i-work h3");
+        const elementmedanimation7 = document.querySelector("#testimonial-card");
         inView(elementmedanimation7, () => {
-          elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation8 = document.querySelector("#how-i-work p");
-        inView(elementmedanimation8, () => {
-          elementmedanimation8.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation7.classList.add("animate__animated", "animate__fadeInDown");
         });
 
         const elementmedanimation12 = document.querySelector("#scroll-down");
@@ -314,7 +217,7 @@ import Cases from "../components/Cases.astro";
 
         const elementmedanimation13 = document.querySelector("#project-section h3");
         inView(elementmedanimation13, () => {
-          elementmedanimation13.classList.add("animate__animated", "animate__fadeInLeft");
+          elementmedanimation13.classList.add("animate__animated", "animate__backInLeft");
         });
 
         const elementmedanimation14 = document.querySelector("#project-section p");
@@ -327,61 +230,6 @@ import Cases from "../components/Cases.astro";
           elementmedanimation15.classList.add("animate__animated", "animate__bounceInDown");
         });
 
-        const elementmedanimation16 = document.querySelector("#accessibility-section h3");
-        inView(elementmedanimation16, () => {
-          elementmedanimation16.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation17 = document.querySelector("#accessibility-section p");
-        inView(elementmedanimation17, () => {
-          elementmedanimation17.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation18 = document.querySelector(".accessibility-button");
-        inView(elementmedanimation18, () => {
-          elementmedanimation18.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation19 = document.querySelector("#testimonials h3");
-        inView(elementmedanimation19, () => {
-          elementmedanimation19.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation20 = document.querySelector("#testimonials p");
-        inView(elementmedanimation20, () => {
-          elementmedanimation20.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation21 = document.querySelector("#testimonials-cards");
-        inView(elementmedanimation21, () => {
-          elementmedanimation21.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementmedanimation22 = document.querySelector("#portfolio-intro h3");
-        inView(elementmedanimation22, () => {
-          elementmedanimation22.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation23 = document.querySelector("#portfolio-intro p");
-        inView(elementmedanimation23, () => {
-          elementmedanimation23.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation24 = document.querySelector("#want-to-know-more-about-me h3");
-        inView(elementmedanimation24, () => {
-          elementmedanimation24.classList.add("animate__animated", "animate__fadeInLeft");
-        });
-
-        const elementmedanimation25 = document.querySelector("#want-to-know-more-about-me p");
-        inView(elementmedanimation25, () => {
-          elementmedanimation25.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation26 = document.querySelector(".know-more-button");
-        inView(elementmedanimation26, () => {
-          elementmedanimation26.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
         const elementmedanimation27 = document.querySelector("#hero-content h2");
         inView(elementmedanimation27, () => {
           elementmedanimation27.classList.add("animate__animated", "animate__fadeInDown");
@@ -392,13 +240,29 @@ import Cases from "../components/Cases.astro";
           elementmedanimation28.classList.add("animate__animated", "animate__fadeInUp");
         });
 
-        const process = document.querySelectorAll("#process-cards > div");
+        const elementmedanimation29 = document.querySelector("#status");
+        inView(elementmedanimation29, () => {
+          elementmedanimation29.classList.add("animate__animated", "animate__fadeInDown");
+        });
 
-        process.forEach((process, index) => {
-          inView(process, () => {
-            process.classList.add("animate__animated", "animate__fadeInUp");
-            process.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
+        const elementmedanimation30 = document.querySelector("#about-preview-text h3");
+        inView(elementmedanimation30, () => {
+          elementmedanimation30.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementmedanimation31 = document.querySelector("#about-preview-text p");
+        inView(elementmedanimation31, () => {
+          elementmedanimation31.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation32 = document.querySelector(".btn_container");
+        inView(elementmedanimation32, () => {
+          elementmedanimation32.classList.add("animate__animated", "animate__fadeInDown");
+        });
+
+        const elementmedanimation33 = document.querySelector("#about-preview img");
+        inView(elementmedanimation33, () => {
+          elementmedanimation33.classList.add("animate__animated", "animate__fadeInUp");
         });
 
         const intro1 = document.querySelectorAll("#intro-grid > div");
@@ -414,7 +278,7 @@ import Cases from "../components/Cases.astro";
   </script>
 
   <style>
-    /* Floating Animation */
+    /* Animations */
     @keyframes float {
       0% {
         transform: translatey(0);
@@ -431,18 +295,28 @@ import Cases from "../components/Cases.astro";
       animation: float 3s ease-in-out infinite;
     }
 
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+    .animate-ping {
+      animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    /* Hero-section */
     .hero-title,
     .hero-subtitle,
     .hero-text {
       color: #f6f6f6;
     }
 
+    /* Dark-mode */
     body.dark #portfolio-intro h3,
     body.dark #portfolio-intro p,
     body.dark #testimonials h3,
-    body.dark #how-i-work h3,
-    body.dark #more-about-me h3,
-    body.dark #more-about-me p,
     body.dark #testimonials p,
     body.dark #testimonials blockquote,
     body.dark #testimonials blockquote em,
@@ -450,8 +324,8 @@ import Cases from "../components/Cases.astro";
     body.dark #how-i-work h4,
     body.dark #project-section h3,
     body.dark #project-section p,
-    body.dark #accessibility-section h3,
-    body.dark #accessibility-section p {
+    body.dark #about-preview-text h3,
+    body.dark #about-preview-text p {
       color: #f6f6f6;
     }
 
@@ -463,18 +337,35 @@ import Cases from "../components/Cases.astro";
 
     body.dark #process-cards div,
     body.dark #testimonials-cards blockquote,
-    body.dark #intro-grid > div {
+    body.dark #intro-grid > div,
+    body.dark #about-preview-text p,
+    body.dark #testimonial-card {
       border-color: #6d6d6d;
       background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
     }
 
-    body.dark #portfolio-intro img {
+    body.dark #about-preview img {
       border-color: #6d6d6d;
     }
 
+    /* Miscellaneous */
     #hero-subtitle-text,
     #hero-text-content {
       display: inline-block;
+    }
+
+    body.dark .hero_image img {
+      border-bottom: 1px solid #6d6d6d;
+    }
+
+    .scroll-link:hover .scroll-icon {
+      color: #3a7cf7;
+      transform: scale(1.1);
+    }
+
+    body.dark #process-cards div svg {
+      color: #f6f6f6;
+      background: transparent;
     }
   </style>
 </MainLayout>

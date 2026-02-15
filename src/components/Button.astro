@@ -3,13 +3,13 @@ import { style } from "motion";
 
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling = "px-6 p-2 font-semibold rounded-[5px] transition duration-300 uppercase";
+const buttonStyling = "px-6 py-[10px] font-semibold rounded-[5px] transition duration-300 uppercase";
 
 const variantClasses = {
   primary:
-    "main-button text-gray-50 bg-blue-500 hover:bg-blue-600 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
+    "main-button text-gray-50 bg-blue-500 border-blue-500 hover:bg-blue-600 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
   secondary:
-    "secondary-button text-gray-50 bg-gray-800 hover:bg-gray-700 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
+    "secondary-button text-gray-50 bg-gray-800 hover:bg-gray-600 hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
 };
 
 const sizeClasses = {
@@ -30,9 +30,9 @@ const sizeClasses = {
   }
 
   body.dark .main-button:hover {
-    background-color: #0ea5e9;
+    background-color: #3a7cf7;
     color: #f6f6f6;
-    border: #0ea5e9 1px solid;
+    border: #3a7cf7 1px solid;
   }
 
   body.dark .secondary-button {
@@ -43,8 +43,8 @@ const sizeClasses = {
   }
 
   body.dark .secondary-button:hover {
-    background-color: #6d6d6d;
+    background-color: #5d5d5d;
     color: #f6f6f6;
-    border: #6d6d6d 1px solid;
+    border: #5d5d5d 1px solid;
   }
 </style>

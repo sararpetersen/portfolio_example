@@ -30,7 +30,7 @@ import Button from "../components/Button.astro";
         <!-- Tabs -->
         <div class="flex gap-2 mb-6 border-b border-gray-300">
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
             data-tab="background"
             aria-current="page"
             aria-selected="true"
@@ -38,14 +38,14 @@ import Button from "../components/Button.astro";
             Background
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
             data-tab="inspiration"
             aria-selected="false"
           >
             Inspiration
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
             data-tab="goals"
             aria-selected="false"
           >
@@ -85,7 +85,7 @@ import Button from "../components/Button.astro";
       </div>
       <div class="flex items-center justify-start md:justify-end">
         <img
-          src="/images/pfp3.webp"
+          src="/images/pfp2.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
           class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-200"
         />
@@ -385,12 +385,8 @@ import Button from "../components/Button.astro";
 
   body.dark .tab-btn:hover,
   body.dark .tab-btn.active {
-    color: #ffadad;
-    border-color: #ffadad;
-  }
-
-  body.dark #timeline-circle {
-    background-color: #0ea5e9;
+    color: #3a7cf7;
+    border-color: #3a7cf7;
   }
 
   body.dark #interests-and-hobbies > div,
@@ -410,7 +406,7 @@ import Button from "../components/Button.astro";
 
   .tab-btn.active,
   .tab-btn:hover {
-    border-color: #0ea5e9;
-    color: #0ea5e9;
+    border-color: #3a7cf7;
+    color: #3a7cf7;
   }
 </style>

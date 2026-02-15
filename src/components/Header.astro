@@ -3,7 +3,7 @@ import "../styles/global.css";
 ---
 
 <!-- Accessibility settings bar -->
-<div id="accessibility-bar" class="fixed w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
+<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
   <!-- Gear Icon -->
   <button
     id="accessibilityToggle"
@@ -18,8 +18,8 @@ import "../styles/global.css";
     >
       <path
         fill-rule="evenodd"
-        d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
-        clip-rule="evenodd"></path>
+        d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349a7.493 7.493 0 0 0 .986-.57c.166-.115.334-.126.45-.083l1.019.382a1.875 1.875 0 0 0 2.282-.818l.922-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.598 7.598 0 0 0 0-1.139c-.015-.2.059-.352.153-.43l.841-.692a1.875 1.875 0 0 0 .432-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.019.382c-.115.043-.283.031-.45-.082a7.493 7.493 0 0 0-.986-.57c-.182-.088-.277-.228-.297-.35L14.927 4A1.875 1.875 0 0 0 13.078 2.25H11.078zM12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z"
+      ></path>
     </svg>
   </button>
 
@@ -45,16 +45,16 @@ import "../styles/global.css";
 
 <header
   id="header"
-  class="fixed shadow-drop25 w-full top-0 left-0 right-0 md:p-4 p-2 md:px-0 px-6 bg-gray-50 text-gray-950 z-30"
+  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 px-6 bg-gray-50 text-gray-950 z-30"
   x-data="{ showmenu: false, showDropdown: false }"
 >
-  <nav class="container mx-auto flex justify-between items-center pt-[30px]">
+  <div class="flex items-center justify-between">
     <!-- Logo Section -->
-    <div>
+    <div class="flex-shrink-0">
       <a href="/" aria-label="Go to homepage">
         <img
           src="/logo.svg"
-          alt="Logo for my website, with two of my initials (current color)"
+          alt="Logo for my website, with two of my initials (black)"
           class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-light"
         />
         <img
@@ -67,243 +67,196 @@ import "../styles/global.css";
 
     <!-- Desktop Navigation -->
     <ul class="hidden lg:flex space-x-6 items-center">
-      <li class="some1">
-        <a
-          href="/"
-          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Go to homepage">Home</a
-        >
-      </li>
-      <li class="some1">
-        <a
-          href="/about_me"
-          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Go to about-page">About</a
-        >
-      </li>
-      <li class="some1">
-        <a
-          href="/contact"
-          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Go to contact-page">Contact</a
-        >
-      </li>
-      <li class="some1">
-        <a
-          href="/accessibility"
-          class="hover:text-blue-500 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Go to accessibility-page">Accessibility</a
-        >
-      </li>
-
-      <!-- Burger Menu Button (Mobile Only) -->
-      <button id="burgermenu" aria-label="Show mobile-menu" class="lg:hidden" x-on:click="showmenu = !showmenu">
-        <template x-if="showmenu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </template>
-        <template x-if="!showmenu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-8 hover:text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
-          </svg>
-        </template>
-      </button>
-
-      <!-- Mobile Menu (Hidden on Larger Screens) -->
-      <nav
-        id="mobilmenu"
-        aria-label="Mobile-menu"
-        class="flex flex-col content-center lg:hidden"
-        x-show="showmenu"
-        x-transition=""
-        x-cloak
-        x-on:click="showmenu = false"
-        x-on:click.outside="showmenu = false"
-        style="display: none;"
-      >
-        <ul>
-          <li class="some1 text-center py-1">
-            <a
-              href="/#hero"
-              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
-              aria-label="Go to homepage">Home</a
-            >
-          </li>
-          <li class="some1 text-center py-1">
-            <a
-              href="/about_me"
-              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
-              aria-label="Go to about-page">About</a
-            >
-          </li>
-          <li class="some1 text-center py-1">
-            <a
-              href="/contact"
-              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
-              aria-label="Go to contact-page">Contact</a
-            >
-          </li>
-          <li class="some1 text-center py-1 pb-4">
-            <a
-              href="/accessibility"
-              tabindex="-1"
-              class="py-1 hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out"
-              aria-label="Go to 'blog'-page">Accessibility</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <li class="some1"><a href="/" class="py-1" aria-label="Go to homepage">Home</a></li>
+      <li class="some1"><a href="/about_me" class="py-1" aria-label="Go to about-page">About</a></li>
+      <li class="some1"><a href="/contact" class="py-1" aria-label="Go to contact-page">Contact</a></li>
+      <li class="some1"><a href="/accessibility" class="py-1" aria-label="Go to accessibility-page">Accessibility</a></li>
     </ul>
 
-    <style>
-      [x-cloak] {
-        display: none !important;
-      }
+    <!-- Mobile Burger (shows below lg) -->
+    <button id="burgermenu" aria-label="Show mobile-menu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+      <!-- Hamburger -->
+      <svg
+        x-show="!showmenu"
+        x-cloak
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+      </svg>
 
-      /* Dark Mode */
-      body.dark #header {
-        background-color: #333333;
-        color: #f6f6f6;
-        border-bottom: none;
-        box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 0.25);
-      }
-      body.dark #accessibility-bar {
-        background-color: #222222;
-        color: #f6f6f6;
-      }
-      body.dark #header .dropdown1 {
-        background-color: #454545;
-        color: #f6f6f6;
-        border-color: #6d6d6d;
-      }
+      <!-- X -->
+      <svg
+        x-show="showmenu"
+        x-cloak
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
 
-      body.dark #header #mobilmenu {
-        color: #f6f6f6;
-      }
-
-      body.dark #header #other {
-        border-color: #6d6d6d;
-      }
-
-      /* Button styles for dark mode */
-      body.dark .toggle-switch {
-        background-color: #666;
-      }
-      body.dark .toggle-circle {
-        background-color: #fff;
-      }
-
-      /* Reduce Motion Mode */
-      body.reduce-motion * {
-        transition: none !important;
-        animation: none !important;
-        scroll-behavior: auto !important;
-      }
-
-      body {
-        transition:
-          font-size 0.3s ease,
-          background-color 0.3s ease,
-          color 0.3s ease;
-      }
-
-      /* Logo */
-      /* Light mode logo */
-      .logo-dark {
-        display: none;
-      }
-
-      /* Dark mode logo */
-      body.dark .logo-light {
-        display: none;
-      }
-
-      body.dark .logo-dark {
-        display: block;
-      }
-
-      #accessibilityOptions span {
-        font-size: 17.6px;
-      }
-
-      #header a:hover {
-        color: #0ea5e9;
-      }
-
-      body.dark #header a:hover {
-        color: #0ea5e9;
-      }
-    </style>
-
-    <script>
-      // Utility function to initialize toggle
-      function initToggle(toggleId, className, storageKey) {
-        const toggleButton = document.getElementById(toggleId);
-        const savedState = localStorage.getItem(storageKey) === "true";
-
-        // Apply saved state
-        if (savedState) {
-          document.body.classList.add(className);
-          toggleButton.setAttribute("aria-pressed", "true");
-        } else {
-          toggleButton.setAttribute("aria-pressed", "false");
-        }
-
-        // Set up click handler
-        toggleButton.addEventListener("click", () => {
-          const isPressed = toggleButton.getAttribute("aria-pressed") === "true";
-          const newState = !isPressed;
-
-          toggleButton.setAttribute("aria-pressed", String(newState));
-          document.body.classList.toggle(className, newState);
-          localStorage.setItem(storageKey, String(newState));
-        });
-      }
-
-      // Initialize each toggle
-      initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
-      initToggle("darkModeToggle", "dark", "darkModeEnabled");
-
-      // Accessibility-toggle
-      const toggleButton = document.getElementById("accessibilityToggle");
-      const options = document.getElementById("accessibilityOptions");
-
-      // Function to show or hide the options based on state
-      function setToggleState(isOpen) {
-        if (isOpen) {
-          options.classList.remove("scale-x-0", "opacity-0");
-          options.classList.add("scale-x-100", "opacity-100");
-        } else {
-          options.classList.remove("scale-x-100", "opacity-100");
-          options.classList.add("scale-x-0", "opacity-0");
-        }
-      }
-
-      // Load saved state from localStorage
-      let isOpen = localStorage.getItem("accessibilityOpen") === "true";
-      setToggleState(isOpen);
-
-      // On click: toggle state, update localStorage and UI
-      toggleButton.addEventListener("click", () => {
-        isOpen = !isOpen;
-        localStorage.setItem("accessibilityOpen", isOpen);
-        setToggleState(isOpen);
-      });
-    </script>
+  <!-- Mobile Menu (below lg) -->
+  <nav
+    id="mobilmenu"
+    aria-label="Open mobile-menu"
+    class="lg:hidden"
+    x-show="showmenu"
+    x-transition
+    x-cloak
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
+      <li class="some1"><a href="/#hero" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to homepage">Home</a></li>
+      <li class="some1"><a href="/about_me" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to about-page">About</a></li>
+      <li class="some1"><a href="/contact" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to contact-page">Contact</a></li>
+      <li class="some1">
+        <a href="/accessibility" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to accessibility-page">Accessibility</a>
+      </li>
+    </ul>
   </nav>
 </header>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+
+  /* Dark Mode */
+  body.dark #header {
+    background: #1d1d1d;
+    color: #f6f6f6;
+  }
+
+  body.dark #accessibility-bar {
+    background-color: #0c0c0c;
+    color: #f6f6f6;
+  }
+
+  body.dark #header #mobilmenu {
+    color: #f6f6f6;
+  }
+
+  body.dark #header #other {
+    border-color: #6d6d6d;
+  }
+
+  /* Button styles for dark mode */
+  body.dark .toggle-switch {
+    background-color: #666;
+  }
+  body.dark .toggle-circle {
+    background-color: #fff;
+  }
+
+  /* Reduce Motion Mode */
+  body.reduce-motion * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    transition:
+      font-size 0.3s ease,
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Logo */
+  /* Light mode logo */
+  .logo-dark {
+    display: none;
+  }
+
+  /* Dark mode logo */
+  body.dark .logo-light {
+    display: none;
+  }
+
+  body.dark .logo-dark {
+    display: block;
+  }
+
+  #accessibilityOptions span {
+    font-size: 17.6px;
+  }
+
+  #header a:hover {
+    color: #5fa0fb;
+  }
+
+  body.dark #header a:hover {
+    color: #5fa0fb;
+  }
+
+  body.dark #burgermenu svg:hover {
+    color: #5fa0fb;
+  }
+</style>
+
+<script>
+  // Utility function to initialize toggle
+  function initToggle(toggleId: string, className: string, storageKey: string): void {
+    const toggleButton = document.getElementById(toggleId);
+    const savedState = localStorage.getItem(storageKey) === "true";
+
+    // Apply saved state
+    if (savedState) {
+      document.body.classList.add(className);
+      toggleButton?.setAttribute("aria-pressed", "true");
+    } else {
+      toggleButton?.setAttribute("aria-pressed", "false");
+    }
+
+    // Set up click handler
+    toggleButton?.addEventListener("click", () => {
+      const isPressed = toggleButton.getAttribute("aria-pressed") === "true";
+      const newState = !isPressed;
+
+      toggleButton.setAttribute("aria-pressed", String(newState));
+      document.body.classList.toggle(className, newState);
+      localStorage.setItem(storageKey, String(newState));
+    });
+  }
+
+  // Initialize each toggle
+  initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
+  initToggle("darkModeToggle", "dark", "darkModeEnabled");
+
+  // Accessibility-toggle
+  const toggleButton = document.getElementById("accessibilityToggle");
+  const options = document.getElementById("accessibilityOptions");
+
+  // Function to show or hide the options based on state
+  function setToggleState(isOpen: boolean): void {
+    if (isOpen) {
+      options?.classList.remove("scale-x-0", "opacity-0");
+      options?.classList.add("scale-x-100", "opacity-100");
+    } else {
+      options?.classList.remove("scale-x-100", "opacity-100");
+      options?.classList.add("scale-x-0", "opacity-0");
+    }
+  }
+
+  // Load saved state from localStorage
+  let isOpen = localStorage.getItem("accessibilityOpen") === "true";
+  setToggleState(isOpen);
+
+  // On click: toggle state, update localStorage and UI
+  toggleButton?.addEventListener("click", () => {
+    isOpen = !isOpen;
+    localStorage.setItem("accessibilityOpen", String(isOpen));
+    setToggleState(isOpen);
+  });
+</script>

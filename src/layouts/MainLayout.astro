@@ -5,6 +5,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
+import Alpine from "alpinejs";
 const { title } = Astro.props;
 
 const schemamarkup = {
@@ -12,8 +13,8 @@ const schemamarkup = {
   "@type": "Person",
   name: "Sara Ringkow Petersen",
   url: "https://srp-portfolio.netlify.app/",
-  jobTitle: "Multimedia-designer",
-  description: "An aspiring multimedia-designer passionate about accessible, user-friendly digital solutions.",
+  jobTitle: "Multimedia-designer & Digital Concept Developer",
+  description: "A multimedia-designer and an aspiring concept developer passionate about accessible, user-friendly digital solutions.",
   sameAs: ["https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"],
 };
 ---
@@ -54,8 +55,9 @@ const schemamarkup = {
 
 <style>
   body.dark {
-    background-color: #333333;
+    background: #141414;
     color: #f6f6f6;
+    box-shadow: none;
   }
 
   body.dark .toggle-switch {
@@ -78,4 +80,9 @@ const schemamarkup = {
   import { animate, inView } from "motion";
   /*Entrance Animation*/
   animate("body", { opacity: [0, 1] }, { duration: 1 });
+</script>
+
+<script is:inline>
+  window.Alpine = Alpine;
+  Alpine.start();
 </script>

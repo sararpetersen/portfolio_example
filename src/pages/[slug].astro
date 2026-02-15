@@ -41,7 +41,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <nav id="navigation" class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8">
       <a
         href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
         aria-label="Go to homepage">↑ Back to homepage</a
       >
 
@@ -50,7 +50,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ← {prevProject.name}
@@ -61,7 +61,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-500 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               {nextProject.name} →
@@ -185,7 +185,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark a:hover {
-    color: #0ea5e9;
+    color: #5fa0fb;
   }
 
   body.dark #project-image {
