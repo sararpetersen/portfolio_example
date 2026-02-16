@@ -70,7 +70,9 @@ import "../styles/global.css";
       <li class="some1"><a href="/" class="py-1" aria-label="Go to homepage">Home</a></li>
       <li class="some1"><a href="/about_me" class="py-1" aria-label="Go to about-page">About</a></li>
       <li class="some1"><a href="/contact" class="py-1" aria-label="Go to contact-page">Contact</a></li>
+      <li id="vertical-border" class="border-l border-gray-500 h-6"></li>
       <li class="some1"><a href="/accessibility" class="py-1" aria-label="Go to accessibility-page">Accessibility</a></li>
+      <li class="some1"><a href="/ai-ethics" class="py-1" aria-label="Go to AI ethics-page">AI Ethics</a></li>
     </ul>
 
     <!-- Mobile Burger (shows below lg) -->
@@ -117,11 +119,14 @@ import "../styles/global.css";
     x-on:click.outside="showmenu = false"
   >
     <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
-      <li class="some1"><a href="/#hero" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to homepage">Home</a></li>
-      <li class="some1"><a href="/about_me" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to about-page">About</a></li>
-      <li class="some1"><a href="/contact" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to contact-page">Contact</a></li>
+      <li class="some1"><a href="/#hero" class="py-1 hover:text-blue-500 transition" aria-label="Go to homepage">Home</a></li>
+      <li class="some1"><a href="/about_me" class="py-1 hover:text-blue-500 transition" aria-label="Go to about-page">About</a></li>
+      <li class="some1"><a href="/contact" class="py-1 hover:text-blue-500 transition" aria-label="Go to contact-page">Contact</a></li>
       <li class="some1">
-        <a href="/accessibility" class="py-1 hover:text-[#0b1220] transition" aria-label="Go to accessibility-page">Accessibility</a>
+        <a href="/accessibility" class="py-1 hover:text-blue-500 transition" aria-label="Go to accessibility-page">Accessibility</a>
+      </li>
+      <li class="some1">
+        <a href="/ai-ethics" class="py-1 hover:text-blue-500 transition" aria-label="Go to AI ethics-page">AI Ethics</a>
       </li>
     </ul>
   </nav>
@@ -147,7 +152,8 @@ import "../styles/global.css";
     color: #f6f6f6;
   }
 
-  body.dark #header #other {
+  body.dark #header #other,
+  body.dark #vertical-border {
     border-color: #6d6d6d;
   }
 

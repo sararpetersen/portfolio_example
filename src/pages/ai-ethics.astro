@@ -1,0 +1,246 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+---
+
+<MainLayout
+  title="SRP portfolio | AI Ethics"
+  description="Information about AI use and ethics in this portfolio"
+  ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
+  ogdescription="Learn about responsible AI use in this portfolio"
+>
+  <section id="ai-ethics" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-6">
+    <div class="col-span-12 md:pt-12 pt-16 md:pb-0 pb-8">
+      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-8">AI ethics & responsible use</h1>
+      <p class="heading-text md:text-left text-center text-gray-800 md:pb-0 pb-16 max-w-3xl">
+        AI tools are becoming integral to design and development. I believe in transparency and responsible use of these tools, understanding both the
+        potential and limitations of these technologies while maintaining human creativity and critical thinking.
+      </p>
+    </div>
+  </section>
+
+  <!-- AI Tools Used -->
+  <section id="ai-tools-used" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-0 md:px-0 px-6">
+    <div class="col-span-12">
+      <h2 id="ai-tools-title" class="md:text-h3-desktop text-h3-mobile font-bold text-gray-950 mb-8">AI tools used in this portfolio</h2>
+      <div id="ai-tools-list" class="grid md:grid-cols-3 grid-cols-1 gap-6">
+        <div id="ai-tools-1" class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-l-4 border-gray-200">
+          <h3 class="text-h4-mobile mb-3">GitHub Copilot</h3>
+          <p class="text-gray-800 mb-3">Used for code suggestions and refactoring assistance during development.</p>
+          <p class="text-gray-700">
+            <strong class="text-gray-950">How I use it responsibly:</strong><br /> Always verify suggestions, maintain code quality standards, and ensure
+            all logic is understood and intentional.
+          </p>
+        </div>
+        <div id="ai-tools-2" class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-l-4 border-gray-200">
+          <h3 class="text-h4-mobile mb-3">Design assistance</h3>
+          <p class="text-gray-800 mb-3">AI tools helped with color palette generation and layout ideation.</p>
+          <p class="text-gray-700">
+            <strong class="text-gray-950">How I use it responsibly:</strong><br /> Use AI as inspiration, not as final design. All final decisions are human-made
+            and intentional.
+          </p>
+        </div>
+        <div id="ai-tools-3" class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-l-4 border-gray-200">
+          <h3 class="text-h4-mobile mb-3">Content writing</h3>
+          <p class="text-gray-800 mb-3">AI assisted with brainstorming and refining portfolio content.</p>
+          <p class="text-gray-700">
+            <strong class="text-gray-950">How I use it responsibly:</strong><br /> All text reflects my genuine experience and values. AI is a tool for
+            iteration, not creation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethical Considerations -->
+  <section id="ethical-considerations" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
+    <div class="col-span-12 md:col-span-6">
+      <h3 id="ethical-title" class="mb-6">Ethical principles</h3>
+      <ul id="ethical-list" class="list-disc pl-6 text-gray-800 space-y-3">
+        <li><strong>Transparency:</strong><br /> I disclose where AI was used in my process</li>
+        <li><strong>Authenticity:</strong><br /> All work remains genuinely mine – AI doesn't replace, it enhances</li>
+        <li><strong>Verification:</strong><br /> I critically review all AI-generated content for accuracy and bias</li>
+        <li><strong>Attribution:</strong><br /> Tools are credited where they contributed significantly</li>
+        <li><strong>Continuous learning:</strong><br /> I stay informed about AI ethics and industry standards</li>
+      </ul>
+    </div>
+    <div id="ethical-image" class="col-span-12 md:col-span-6 flex justify-center">
+      <img
+        src="/images/ai-ethics.webp"
+        alt="Image of balanced AI ethics"
+        class="w-[400px] h-[400px] mt-8 md:mt-0 border border-r-4 border-gray-200 rounded-3xl"
+      />
+    </div>
+  </section>
+
+  <!-- Limitations & Biases -->
+  <section id="limitations-biases" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
+    <h3 id="limitations-title" class="col-span-12 mb-6">Understanding AI limitations and biases</h3>
+    <p id="limitations-text" class="col-span-12 text-gray-800 mb-8">
+      AI tools are powerful, but they have inherent limitations and potential biases. I'm aware of:
+    </p>
+    <ul id="limitations-list" class="col-span-12 list-disc pl-6 text-gray-800 space-y-2">
+      <li>AI can perpetuate biases present in its training data</li>
+      <li>AI may generate plausible-sounding but incorrect information</li>
+      <li>AI lacks true understanding and contextual nuance that humans provide</li>
+      <li>Over-reliance on AI can reduce critical thinking and creativity</li>
+      <li>Privacy and data security concerns with cloud-based AI services</li>
+    </ul>
+  </section>
+
+  <!-- Human-AI Balance -->
+  <section id="human-ai-balance" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
+    <h3 id="balance-title" class="col-span-12 mb-4">The human-AI partnership</h3>
+    <div id="balance-card" class="col-span-12 p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-l-4 border-gray-200">
+      <p id="balance-text" class="text-gray-800">
+        I view AI as a collaborative tool, not a replacement for human judgment. My role as a designer and developer is to bring intentionality,
+        creativity, ethical considerations, and critical thinking to every decision. AI accelerates certain processes, but the strategic vision, user
+        empathy, and problem-solving remain fundamentally human.
+      </p>
+    </div>
+  </section>
+
+  <!-- Navigation Back to Portfolio -->
+  <section class="button-container mx-auto pb-16 md:pt-24 pt-16 text-center">
+    <a href="/" class="mt-8 btn_container">
+      <Button variant="primary" size="small">Back to homepage</Button>
+    </a>
+  </section>
+</MainLayout>
+
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion");
+
+    if (!reduceMotion) {
+      const elementmedanimation1 = document.querySelector(".heading-title");
+      inView(elementmedanimation1, () => {
+        elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
+      });
+
+      const elementmedanimation2 = document.querySelector(".heading-text");
+      inView(elementmedanimation2, () => {
+        elementmedanimation2.classList.add("animate__animated", "animate__backInRight");
+      });
+
+      const elementmedanimation4 = document.querySelector(".button-container");
+      inView(elementmedanimation4, () => {
+        elementmedanimation4.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation5 = document.querySelector("#ethical-image");
+      inView(elementmedanimation5, () => {
+        elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation6 = document.querySelector("#ethical-title");
+      inView(elementmedanimation6, () => {
+        elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6a = document.querySelector("#ai-tools-title");
+      inView(elementmedanimation6a, () => {
+        elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6b = document.querySelector("#limitations-title");
+      inView(elementmedanimation6b, () => {
+        elementmedanimation6b.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6c = document.querySelector("#limitations-text");
+      inView(elementmedanimation6c, () => {
+        elementmedanimation6c.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const elementmedanimation6d = document.querySelector("#balance-title");
+      inView(elementmedanimation6d, () => {
+        elementmedanimation6d.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6e = document.querySelector("#balance-card");
+      inView(elementmedanimation6e, () => {
+        elementmedanimation6e.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+
+      const list = document.querySelectorAll("#ethical-list > li");
+      list.forEach((item, index) => {
+        inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${index * 0.2}s`;
+        });
+      });
+
+      const aiToolsCards = document.querySelectorAll("#ai-tools-used > div > div > div");
+      aiToolsCards.forEach((card, index) => {
+        inView(card, () => {
+          card.classList.add("animate__animated", "animate__fadeInUp");
+          card.style.animationDelay = `${index * 0.15}s`;
+        });
+      });
+
+      const elementmedanimation7 = document.querySelector("#limitations-title");
+      inView(elementmedanimation7, () => {
+        elementmedanimation7.classList.add("animate__animated", "animate__slideInRight");
+      });
+
+      const list2 = document.querySelectorAll("#limitations-list > li");
+      list2.forEach((item, index) => {
+        inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${index * 0.2}s`;
+        });
+      });
+
+      const elementmedanimation8 = document.querySelector("#human-ai-balance");
+      inView(elementmedanimation8, () => {
+        elementmedanimation8.classList.add("animate__animated", "animate__fadeInUp");
+      });
+    }
+  });
+</script>
+
+<style>
+  body.dark #ai-tools-title,
+  body.dark #ethical-title,
+  body.dark #limitations-title,
+  body.dark #balance-title,
+  body.dark .heading-title,
+  body.dark .heading-text,
+  body.dark #limitations-text,
+  body.dark #ai-tools-1 strong,
+  body.dark #ai-tools-2 strong,
+  body.dark #ai-tools-3 strong {
+    color: #f6f6f6;
+  }
+
+  body.dark #ethical-list > li,
+  body.dark #limitations-list > li,
+  body.dark #balance-text {
+    color: #f6f6f6;
+  }
+
+  body.dark #ai-tools-used > div > div > div {
+    background-color: #3a3a3a;
+    border-color: #6d6d6d;
+    color: #f6f6f6;
+  }
+
+  body.dark #ai-tools-used > div > div > div > h3,
+  body.dark #ai-tools-used > div > div > div > p {
+    color: #f6f6f6;
+  }
+
+  body.dark #balance-card,
+  body.dark #ai-tools-used > div > div > div {
+    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+    border-color: #6d6d6d;
+  }
+
+  body.dark #ethical-image > img {
+    filter: invert(1);
+  }
+</style>

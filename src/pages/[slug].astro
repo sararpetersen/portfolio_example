@@ -22,7 +22,19 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project, allProjects } = Astro.props;
+interface Project {
+  id: number;
+  slug: string;
+  name: string;
+  description: string;
+  year: string;
+  image: string;
+  tools?: string[];
+  url: string;
+  ai_used?: boolean;
+}
+
+const { project, allProjects } = Astro.props as { project: Project; allProjects: Project[] };
 
 // ✅ Sort by ID (or change to .year or .created_at if needed)
 const sortedProjects = [...allProjects].sort((a, b) => a.id - b.id);
@@ -77,16 +89,33 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
     </header>
 
-    <!-- Prototype Notice for Vibeloop and UngeForum -->
-    {
-      (project.slug === "vibeloop" || project.slug === "ungeforum") && (
-        <div id="figma-notice" class="col-span-12 bg-yellow-100 border-l-4 border border-yellow-200 rounded-full p-4 mb-8">
-          <p id="figma-notice-text" class="text-gray-800">
-            This project is presented as an interactive prototype created in Figma.
-          </p>
-        </div>
-      )
-    }
+    <!-- AI Notice -->
+    <div class="col-span-12 mb-8 flex flex-col md:flex-row items-center justify-center gap-4">
+      {
+        project.ai_used && (
+          <div class="flex items-center gap-3 bg-blue-100 border border-l-4 border-blue-200 rounded-full p-4 w-full" id="ai-notice">
+            <div>
+              <span class="text-gray-800 text-[14px] leading-normal">
+                AI-tools may have been used during ideation, research, or visual exploration
+              </span>
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Figma Notice -->
+      {
+        project.slug === "vibeloop" || project.slug === "ungeforum"
+          ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
+              <div class="flex items-center gap-3 bg-yellow-100 border border-l-4 border-yellow-200 rounded-full p-4 w-full" id="figma-notice">
+                <div>
+                  <p class="text-gray-800 text-[14px] leading-normal">This project is presented as an interactive prototype created in Figma</p>
+                </div>
+              </div>
+            )
+          : null
+      }
+    </div>
 
     <!-- Content Grid -->
     <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
@@ -180,6 +209,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     color: #f6f6f6;
   }
 
+  body.dark #ai-notice {
+    background-color: #2d4a6c;
+    border-color: #4069a1;
+    color: #f6f6f6;
+  }
+
   body.dark a {
     color: #f6f6f6;
   }
@@ -263,6 +298,11 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     const elementmedanimation8 = document.querySelector("#figma-notice");
     inView(elementmedanimation8, () => {
       elementmedanimation8.classList.add("animate__animated", "animate__backInDown");
+    });
+
+    const elementmedanimation10 = document.querySelector("#ai-notice");
+    inView(elementmedanimation10, () => {
+      elementmedanimation10.classList.add("animate__animated", "animate__backInDown");
     });
 
     const cards = document.querySelectorAll("#related-projects a > div");
