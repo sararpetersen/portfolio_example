@@ -76,7 +76,7 @@ import "../styles/global.css";
 
   <!-- Limitations & Biases -->
   <section id="limitations-biases" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
-    <h3 id="limitations-title" class="col-span-12 mb-6">Understanding AI limitations and biases</h3>
+    <h3 id="limitations-title" class="col-span-12 mb-4">Understanding AI limitations and biases</h3>
     <p id="limitations-text" class="col-span-12 text-gray-800 mb-8">
       AI tools are powerful, but they have inherent limitations and potential biases. I'm aware of:
     </p>
@@ -170,7 +170,7 @@ import "../styles/global.css";
       list.forEach((item, index) => {
         inView(item, () => {
           item.classList.add("animate__animated", "animate__fadeInUp");
-          item.style.animationDelay = `${index * 0.2}s`;
+          (item as HTMLElement).style.animationDelay = `${index * 0.2}s`;
         });
       });
 
@@ -178,7 +178,7 @@ import "../styles/global.css";
       aiToolsCards.forEach((card, index) => {
         inView(card, () => {
           card.classList.add("animate__animated", "animate__fadeInUp");
-          card.style.animationDelay = `${index * 0.15}s`;
+          (card as HTMLElement).style.animationDelay = `${index * 0.15}s`;
         });
       });
 
@@ -191,7 +191,7 @@ import "../styles/global.css";
       list2.forEach((item, index) => {
         inView(item, () => {
           item.classList.add("animate__animated", "animate__fadeInUp");
-          item.style.animationDelay = `${index * 0.2}s`;
+          (item as HTMLElement).style.animationDelay = `${index * 0.2}s`;
         });
       });
 

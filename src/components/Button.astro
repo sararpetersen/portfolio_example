@@ -1,6 +1,4 @@
 ---
-import { style } from "motion";
-
 const { variant = "primary", size = "medium" } = Astro.props;
 
 const buttonStyling = "px-6 py-[10px] font-semibold rounded-[5px] transition duration-300 uppercase";
@@ -13,13 +11,13 @@ const variantClasses = {
 };
 
 const sizeClasses = {
-  large: "text-3xl",
-  medium: "text-2xl",
+  large: "text-[18px]",
+  medium: "text-[16px]",
   small: "text-[14px]",
 };
 ---
 
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot button /></button>
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
 
 <style>
   body.dark .main-button {

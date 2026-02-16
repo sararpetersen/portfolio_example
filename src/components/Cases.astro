@@ -72,12 +72,12 @@ const projects = propProjects ?? (await fetchCards());
   import { inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const cards = Array.from(document.querySelectorAll("#project-cards > li"));
+    const cards = Array.from(document.querySelectorAll("#project-cards > li")) as HTMLElement[];
 
     // Keyboard accessibility
     cards.forEach((card) => {
       card.setAttribute("tabindex", "0");
-      card.addEventListener("keydown", (e) => {
+      card.addEventListener("keydown", (e: KeyboardEvent) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           const link = card.querySelector("a");

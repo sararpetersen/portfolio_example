@@ -50,7 +50,10 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 <MainLayout title={project.name} description={project.description} ogtitle={project.name} ogdescription={project.description}>
   <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-24 mt-12 md:px-0 px-6">
     <!-- Navigation -->
-    <nav id="navigation" class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8">
+    <nav
+      id="navigation"
+      class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8 md:pt-0 pt-4"
+    >
       <a
         href="/"
         class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -89,33 +92,32 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
     </header>
 
-    <!-- AI Notice -->
-    <div class="col-span-12 mb-8 flex flex-col md:flex-row items-center justify-center gap-4">
-      {
-        project.ai_used && (
-          <div class="flex items-center gap-3 bg-blue-100 border border-l-4 border-blue-200 rounded-full p-4 w-full" id="ai-notice">
-            <div>
-              <span class="text-gray-800 text-[14px] leading-normal">
-                AI-tools may have been used during ideation, research, or visual exploration
-              </span>
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Figma Notice -->
-      {
-        project.slug === "vibeloop" || project.slug === "ungeforum"
-          ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
-              <div class="flex items-center gap-3 bg-yellow-100 border border-l-4 border-yellow-200 rounded-full p-4 w-full" id="figma-notice">
-                <div>
-                  <p class="text-gray-800 text-[14px] leading-normal">This project is presented as an interactive prototype created in Figma</p>
-                </div>
+    <!-- Figma Notice -->
+    {
+      project.slug === "vibeloop" || project.slug === "ungeforum"
+        ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
+            <div
+              class="flex items-center gap-3 col-span-12 bg-[#E9EFF4] border border-l-4 border-[#7E9BB5] rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
+              id="figma-notice"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="text-[#5C728A] flex-shrink-0"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+              </svg>
+              <div>
+                <p class="text-[#5C728A] md:text-[14.5px] text-[12px]">This project is presented as an interactive prototype created in Figma</p>
               </div>
-            )
-          : null
-      }
-    </div>
+            </div>
+          )
+        : null
+    }
 
     <!-- Content Grid -->
     <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
@@ -160,7 +162,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     id="related-projects"
     class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
   >
-    <div id="related-projects-title" class="col-span-12 mb-8">
+    <div id="related-projects-title" class="col-span-12 mb-4">
       <h2 class="text-h3-desktop font-bold text-gray-950 mb-2">More projects</h2>
     </div>
 
@@ -209,9 +211,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     color: #f6f6f6;
   }
 
-  body.dark #ai-notice {
-    background-color: #2d4a6c;
-    border-color: #4069a1;
+  body.dark #figma-notice svg {
     color: #f6f6f6;
   }
 
@@ -276,7 +276,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     document.querySelectorAll("#tools-list").forEach((tool, i) => {
       inView(tool, () => {
         tool.classList.add("animate__animated", "animate__rotateInDownLeft");
-        tool.style.animationDelay = `${i * 0.2}s`;
+        (tool as HTMLElement).style.animationDelay = `${i * 0.2}s`;
       });
     });
 
@@ -307,9 +307,10 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     const cards = document.querySelectorAll("#related-projects a > div");
     cards.forEach((card) => {
-      inView(card, () => {
-        card.classList.add("animate__animated", "animate__fadeInUp");
-        card.style.animationDelay = `${Math.random() * 0.5}s`; // Random delay for a staggered effect
+      const cardEl = card as HTMLElement;
+      inView(cardEl, () => {
+        cardEl.classList.add("animate__animated", "animate__fadeInUp");
+        cardEl.style.animationDelay = `${Math.random() * 0.5}s`; // Random delay for a staggered effect
       });
     });
 

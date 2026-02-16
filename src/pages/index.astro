@@ -78,7 +78,7 @@ import Cases from "../components/Cases.astro";
       <img src="/images/hero_image.webp" alt="Hero-image for the frontpage of the portfolio" class="w-full h-full object-cover grayscale" />
     </div>
 
-    <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[70%] z-0"></div>
+    <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[80%] z-0"></div>
 
     <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] left-[40%] w-auto items-center justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
@@ -109,7 +109,7 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
     <div class="col-span-12 md:px-0 px-6">
-      <Cases projects={cards.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))} />
+      <Cases projects={cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())} />
     </div>
   </section>
 
@@ -265,8 +265,8 @@ import Cases from "../components/Cases.astro";
 
         intro1.forEach((intro1, index) => {
           inView(intro1, () => {
-            intro1.classList.add("animate__animated", "animate__fadeInUp");
-            intro1.style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+            (intro1 as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
+            (intro1 as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
           });
         });
       }
@@ -351,7 +351,7 @@ import Cases from "../components/Cases.astro";
     }
 
     body.dark .hero_image img {
-      border-bottom: 1px solid #6d6d6d;
+      border-bottom: 1px solid #3a3a3a;
     }
 
     .scroll-link:hover .scroll-icon {
