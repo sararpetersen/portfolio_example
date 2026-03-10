@@ -21,7 +21,7 @@ const projects = propProjects ?? (await fetchCards());
     {
       projects.map((project) => (
         <li
-          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-200 hover:border-gray-300"
+          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-500 hover:border-gray-400"
           data-id={project.id ?? ""}
           data-name={project.name ? project.name.toLowerCase() : ""}
         >

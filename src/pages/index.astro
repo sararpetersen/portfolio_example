@@ -46,51 +46,55 @@ import Cases from "../components/Cases.astro";
   ogdescription="A page for projects, information and other things about Sara"
 >
   <!-- Hero Section -->
-  <section class="hero-section grid grid-cols-12 md:pt-0 pt-mobil-top w-full h-screen md:px-0 px-4 relative">
-    <div class="absolute inset-0 max-w-7xl mx-auto md:px-0 px-8 z-20 md:mt-0 mt-30">
-      <div id="hero-content" class="grid grid-cols-12 items-center justify-center h-full">
-        <!-- Text content -->
-        <div class="col-span-12">
-          <div id="status" class="md:mb-6 mb-4 flex items-center gap-2 justify-start text-sm">
+  <section id="hero" class="hero-section relative w-full md:px-16 px-4 overflow-hidden">
+    <div class="relative z-20 mx-auto md:px-0 px-2">
+      <div id="hero-content" class="grid grid-cols-12 items-center min-h-screen pt-[11rem] md:pb-20 pb-8 gap-y-12">
+        <div class="col-span-12 lg:col-span-7 hero-panel">
+          <div id="status" class="hero-status md:mb-8 mb-6 flex items-center gap-3 justify-start text-sm">
             <span class="relative flex md:h-3.5 md:w-3.5 h-2.5 w-2.5" aria-hidden="true">
-              <!-- soft pulse ring -->
               <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-
-              <!-- solid dot -->
               <span class="relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400"></span>
             </span>
 
-            <strong class="text-gray-50 md:text-[1.2rem] text-[1rem]">Status:</strong><span class="text-gray-200 md:text-[1.2rem] text-[1rem]"
-              >Open for internship</span
-            >
+            <p class="text-gray-50" aria-label="Indicates that I'm currently open for internship opportunities">
+              <strong class="font-semibold">Status:</strong>
+              Open for internship
+            </p>
           </div>
-          <h1 class="text-gray-50 display pb-4">Sara Ringkow Petersen</h1>
-          <h2 class="italic text-gray-50 md:text-[2.5rem] text-[1.3rem]">Multimedia Designer & Concept Developer</h2>
-          <div class="space h-4"></div>
-          <p class="text-gray-50 md:text-[1.4rem] text-[1rem] font-light pb-2 max-w-3xl leading-8">
-            Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy
+
+          <h1 class="hero-title text-gray-950 display pb-5">Sara Ringkow Petersen</h1>
+          <h2 class="hero-role text-gray-950 pb-5">Multimedia Designer & Concept Developer</h2>
+          <p class="hero-lead text-gray-950 font-light pb-8 max-w-3xl">
+            Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
+
+          <div id="hero-cta" class="flex flex-wrap items-center gap-4">
+            <a href="#project-section" aria-label="Go to projects section" class="md:hidden block">
+              <Button variant="primary" size="medium">See projects</Button>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-5">
+          <div id="hero-image" class="hero-image-wrap relative shadow-drop25">
+            <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
+            <img src="/images/hero_image.webp" alt="Hero image for Sara's portfolio" class="hero-image object-cover" />
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="hero_image w-full h-full absolute inset-0 z-0">
-      <img src="/images/hero_image.webp" alt="Hero-image for the frontpage of the portfolio" class="w-full h-full object-cover grayscale" />
-    </div>
-
-    <div id="overlay1" class="absolute top-0 left-0 w-full h-full bg-gray-950 bg-opacity-[80%] z-0"></div>
-
-    <div id="scroll-down" class="hidden md:block absolute bottom-[1%] md:bottom-[2.5%] left-[40%] w-auto items-center justify-center z-[20]">
+    <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
         <div class="float flex flex-col items-center transition duration-300 ease-in-out">
-          <p class="text-[1.2rem] text-gray-50 font-bold">Go further down the page</p>
+          <p class="text-gray-950 font-semibold">Scroll to projects</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-8 h-8 sm:w-12 sm:h-12 text-gray-50 transition duration-300 ease-in-out scroll-icon"
+            class="w-8 h-8 sm:w-10 sm:h-10 text-gray-950 transition duration-300 ease-in-out scroll-icon"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
@@ -99,10 +103,16 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Projects Section -->
-  <section id="project-section" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top max-w-7xl mx-auto">
+  <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto">
     <div class="container col-span-12">
-      <h3 id="project-title" class="col-span-12 mb-2 text-gray-950 md:px-0 px-6">Projects</h3>
+      <h3 id="project-title" class="col-span-12 mb-4 font-zen text-gray-950 md:px-0 px-6">Projects</h3>
       <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">
         Below are some of the projects I've worked on during my studies and internships. <br class="hidden md:block" />Click on any of the cards to
         read more about the project, the process and the outcome.
@@ -113,20 +123,26 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Intro Section: -->
-  <section id="about-preview" class="max-w-7xl mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom relative px-6">
+  <section id="about-preview" class="max-w-7xl mx-auto relative px-6">
     <div class="grid md:grid-cols-2 gap-12 items-center md:px-0 px-6">
       <!-- Image -->
       <div class="flex md:justify-end justify-center md:order-1 order-2">
-        <img src="/images/pfp3.webp" alt="Picture of Sara" class="border-r-4 border border-gray-200 rounded-2xl object-cover w-[550px] h-[350px]" />
+        <img src="/images/pfp3.webp" alt="Picture of Sara" class="border-r-4 border border-gray-500 rounded-2xl object-cover w-[550px] h-[350px]" />
       </div>
 
       <!-- Text -->
       <div id="about-preview-text">
-        <h3 class="mb-4">About me</h3>
+        <h3 class="mb-4 font-zen">About me</h3>
 
         <p
-          class="mb-6 text-gray-800 max-w-4xl mx-auto md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200"
+          class="mb-6 text-gray-800 max-w-4xl mx-auto md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
         >
           I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital
           experiences that combine visual clarity, thoughtful structure, and functionality. My work spans UX/UI design, concept development, and
@@ -144,17 +160,23 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Testimonials Section -->
   <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6">
     <div class="container max-w-7xl mx-auto col-span-12 grid md:grid-cols-2 md:gap-10 gap-4 items-center justify-center md:px-0 px-6">
       <!-- Left: Heading + small context -->
       <div id="testimonial-heading">
-        <h3 class="mb-2">Featured testimonial</h3>
-        <p class="text-gray-800 leading-relaxed max-w-prose mx-auto md:mx-0">A short quote from someone I've worked with.</p>
+        <h3 class="mb-4 font-zen">Featured testimonial</h3>
+        <p class="text-gray-800 leading-relaxed max-w-prose md:mx-0">A short quote from someone I've worked with.</p>
       </div>
 
       <!-- Right: Testimonial card -->
-      <figure id="testimonial-card" class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 p-8">
+      <figure id="testimonial-card" class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8">
         <blockquote>
           <p class="text-gray-800 italic">
             "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
@@ -166,13 +188,13 @@ import Cases from "../components/Cases.astro";
 
         <figcaption class="mt-6 flex items-center gap-4">
           <!-- Optional avatar circle (leave empty or add an image) -->
-          <div class="h-12 w-12 rounded-full bg-gray-700/60 border border-gray-600 flex items-center justify-center">
+          <div class="h-12 w-12 rounded-full bg-gray-400/60 border border-gray-600 flex items-center justify-center">
             <span class="font-semibold text-sm">JK</span>
           </div>
 
           <div>
-            <p class="font-semibold text-gray-700">Jacob Klintrup</p>
-            <p class="text-gray-500 text-sm">Creative Strategic Director, Kadaver ApS</p>
+            <p class="font-semibold">Jacob Klintrup</p>
+            <p class="text-gray-700 text-sm">Creative Strategic Director, Kadaver ApS</p>
           </div>
         </figcaption>
       </figure>
@@ -221,9 +243,9 @@ import Cases from "../components/Cases.astro";
           elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
         });
 
-        const elementmedanimation15 = document.querySelector("#hero-image img");
+        const elementmedanimation15 = document.querySelector("#hero-image");
         inView(elementmedanimation15, () => {
-          elementmedanimation15.classList.add("animate__animated", "animate__bounceInDown");
+          elementmedanimation15.classList.add("animate__animated", "animate__bounceInRight");
         });
 
         const elementmedanimation27 = document.querySelector("#hero-content h2");
@@ -231,9 +253,14 @@ import Cases from "../components/Cases.astro";
           elementmedanimation27.classList.add("animate__animated", "animate__fadeInDown");
         });
 
-        const elementmedanimation28 = document.querySelector("#hero-content p");
+        const elementmedanimation28 = document.querySelector("#hero-content .hero-lead");
         inView(elementmedanimation28, () => {
           elementmedanimation28.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
+        const elementmedanimation28a = document.querySelector("#hero-cta");
+        inView(elementmedanimation28a, () => {
+          elementmedanimation28a.classList.add("animate__animated", "animate__bounceInDown");
         });
 
         const elementmedanimation29 = document.querySelector("#status");
@@ -269,6 +296,19 @@ import Cases from "../components/Cases.astro";
             (intro1 as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
           });
         });
+
+        document.querySelectorAll("#section-divider").forEach((divider) => {
+          inView(divider, () => {
+            divider.classList.add("animate__animated", "animate__bounceInDown");
+            divider.addEventListener(
+              "animationend",
+              () => {
+                divider.classList.remove("animate__animated", "animate__bounceInDown");
+              },
+              { once: true },
+            );
+          });
+        });
       }
     });
   </script>
@@ -298,18 +338,85 @@ import Cases from "../components/Cases.astro";
         opacity: 0;
       }
     }
+
     .animate-ping {
       animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
     /* Hero-section */
-    .hero-title,
-    .hero-subtitle,
-    .hero-text {
-      color: #f6f6f6;
+
+    .hero-status {
+      width: fit-content;
+      padding: 0.5rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid #686868;
+      background: linear-gradient(90deg, #4f6a5a, #7f9b8a);
+    }
+
+    .hero-role {
+      font-size: clamp(1.4rem, 2.2vw, 2.25rem);
+      line-height: 1.25;
+      font-style: italic;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.25vw, 1.35rem);
+      line-height: 1.8;
+    }
+
+    .hero-image-wrap {
+      border: 1px solid rgb(246 246 246 / 28%);
+      border-radius: 1.75rem;
+      background: linear-gradient(165deg, rgb(246 246 246 / 6%), rgb(246 246 246 / 0%));
+      padding: 0.8rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 1.15rem;
+      object-position: center 28%;
+      border: 1px solid rgb(246 246 246 / 16%);
+    }
+
+    .hero-image-accent {
+      position: absolute;
+      z-index: -1;
+      width: 70%;
+      height: 40%;
+      right: -16px;
+      bottom: -18px;
+      border-radius: 1.2rem;
+      background: linear-gradient(145deg, rgb(58 124 247 / 45%), rgb(58 124 247 / 2%));
+      border: 1px solid rgb(95 160 251 / 45%);
+      filter: blur(0.2px);
+    }
+
+    @media (min-width: 768px) {
+      .hero-image-wrap {
+        margin-left: 0.8rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-image-wrap {
+        margin: 0 auto;
+      }
+
+      .hero-image {
+        aspect-ratio: 5 / 4;
+      }
+
+      .hero-image-accent {
+        right: -10px;
+        bottom: -10px;
+      }
     }
 
     /* Dark-mode */
+    body.dark .hero-title,
+    body.dark .hero-role,
+    body.dark .hero-lead,
     body.dark #portfolio-intro h3,
     body.dark #portfolio-intro p,
     body.dark #testimonials h3,
@@ -350,13 +457,27 @@ import Cases from "../components/Cases.astro";
       display: inline-block;
     }
 
-    body.dark .hero_image img {
-      border-bottom: 1px solid #3a3a3a;
+    body.dark .hero-status {
+      background: rgba(59, 59, 59, 0.82);
+    }
+
+    body.dark .hero-image-wrap {
+      border-color: rgba(149, 149, 149, 0.7);
+      background: rgb(18 18 18 / 74%);
     }
 
     .scroll-link:hover .scroll-icon {
-      color: #3a7cf7;
+      color: var(--brand-primary);
       transform: scale(1.1);
+    }
+
+    #scroll-down {
+      color: #1d1d1d;
+    }
+
+    body.dark #scroll-down .scroll-icon,
+    body.dark #scroll-down p {
+      color: #f6f6f6;
     }
 
     body.dark #process-cards div svg {

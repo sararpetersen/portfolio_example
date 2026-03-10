@@ -17,6 +17,11 @@ const timelineItems: TimelineItem[] = [
     desc: "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
   },
   {
+    year: "August 2022 – May 2023",
+    title: "Japanese (Level 0-B) | Frederiksberg VUC & STX",
+    desc: "Completed a singular course in Japanese language, focusing on basic grammar, vocabulary and cultural understanding.",
+  },
+  {
     year: "August 2023 – June 2025",
     title: "Multimedia Design | Copenhagen School of Design and Technology (KEA)",
     desc: "Studied UX/UI, digital design and frontend development, and worked hands-on with design tools, prototyping and web projects.",
@@ -50,8 +55,8 @@ const timelineItems: TimelineItem[] = [
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20 pb-8">
-      <h1 class="heading-title font-bold md:text-left text-center text-gray-950 mb-8">About me</h1>
+    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20">
+      <h1 class="heading-title font-zen md:text-left text-center text-gray-950 mb-8">About me</h1>
       <p class="heading-text text-gray-800 md:pb-0 pb-16 max-w-3xl">
         Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the
         very bottom of the page.
@@ -122,7 +127,7 @@ const timelineItems: TimelineItem[] = [
         <img
           src="/images/pfp2.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-200"
+          class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-500"
         />
       </div>
     </div>
@@ -156,9 +161,15 @@ const timelineItems: TimelineItem[] = [
     document.querySelector<HTMLButtonElement>(".tab-btn[data-tab='background']")?.click();
   </script>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:px-0 px-6">
-    <h3 class="text-gray-950 pb-8">My journey so far</h3>
+  <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6">
+    <h3 class="font-zen text-gray-950 pb-10">The highlights of my journey</h3>
     <div id="timeline-line" class="relative">
       <!-- Timeline items -->
       {
@@ -179,54 +190,58 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Interests and Hobbies -->
-  <section id="interests" class="md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
+  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6">
     <div class="flex flex-col pb-8">
-      <h3 class="font-bold text-gray-950">Interests and hobbies</h3>
+      <h3 class="font-zen text-gray-950">Interests and hobbies</h3>
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Reading</h4>
         <p class="text-gray-800">There's nothing like getting lost in a good book&mdash; it's my go-to way to unwind and explore new worlds.</p>
       </div>
       <!-- Interest Item 2 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Gaming</h4>
         <p class="text-gray-800">Video games let me step into different realities and tackle challenges in ways that feel completely immersive.</p>
       </div>
-      <!-- Interest Item 3 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">YouTube-content</h4>
-        <p class="text-gray-800">From tech breakdowns to movie analyses&mdash; YouTube is where I discover new ideas and stay entertained.</p>
-      </div>
       <!-- Interest Item 4 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Watching movies & TV-series</h4>
-        <p class="text-gray-800">A good film or series is perfect for switching off from the day and just enjoying some quality storytelling.</p>
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+        <h4 class="text-h4-mobile pb-2 text-gray-950">Japanese culture</h4>
+        <p class="text-gray-800">
+          I'm inspired by Japanese aesthetics, culture, and language, especially the balance between simplicity, detail, and thoughtful storytelling.
+        </p>
       </div>
       <!-- Interest Item 5 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
         <h4 class="text-h4-mobile pb-2 text-gray-950">Building with LEGO</h4>
         <p class="text-gray-800">
           There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.
         </p>
       </div>
-      <!-- Interest Item 6 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Photography</h4>
-        <p class="text-gray-800">I love capturing moments that tell a story&mdash; whether it's nature, people, or just random everyday details.</p>
-      </div>
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Resources Section -->
-  <section id="resources" class="resources-section md:pt-desktop-top pt-mobil-top max-w-6xl mx-auto md:px-0 px-6">
+  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6">
     <div>
-      <h3 class="font-bold text-gray-950 pb-8">Resources</h3>
+      <h3 class="font-zen text-gray-950 pb-8">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Resume (EN)</h4>
           <p class="text-gray-800">Look through my resume to get an overview of my background.</p>
           <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" aria-label="See resume (EN)">
@@ -234,7 +249,7 @@ const timelineItems: TimelineItem[] = [
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
           <h4 class="text-h4-mobile pb-2 text-gray-950">CV (DA)</h4>
           <p class="text-gray-800">Kig mit CV igennem for at få en oversigt over min baggrund.</p>
           <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" aria-label="See resume (DA)">
@@ -242,7 +257,7 @@ const timelineItems: TimelineItem[] = [
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Application-template (EN)</h4>
           <p class="text-gray-800">Take a look at what I include when I send out applications.</p>
           <a
@@ -255,7 +270,7 @@ const timelineItems: TimelineItem[] = [
           </a>
         </div>
         <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200">
+        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
           <h4 class="text-h4-mobile pb-2 text-gray-950">Ansøgningsskabelon (DA)</h4>
           <p class="text-gray-800">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
           <a
@@ -271,8 +286,14 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
+
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 pt-20 text-center">
+  <section class="button-container mx-auto pb-16 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
@@ -368,12 +389,16 @@ const timelineItems: TimelineItem[] = [
         });
       });
 
-      const section2 = document.querySelectorAll("#strengths-weaknesses-container > div");
-
-      section2.forEach((section2, index) => {
-        inView(section2, () => {
-          section2.classList.add("animate__animated", "animate__fadeInUp");
-          (section2 as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+      document.querySelectorAll("#section-divider").forEach((divider) => {
+        inView(divider, () => {
+          divider.classList.add("animate__animated", "animate__bounceInDown");
+          divider.addEventListener(
+            "animationend",
+            () => {
+              divider.classList.remove("animate__animated", "animate__bounceInDown");
+            },
+            { once: true },
+          );
         });
       });
     }
@@ -394,8 +419,8 @@ const timelineItems: TimelineItem[] = [
 
   body.dark .tab-btn:hover,
   body.dark .tab-btn.active {
-    color: #3a7cf7;
-    border-color: #3a7cf7;
+    color: var(--brand-primary-soft);
+    border-color: var(--brand-primary-soft);
   }
 
   body.dark #interests-and-hobbies > div,
@@ -415,7 +440,7 @@ const timelineItems: TimelineItem[] = [
 
   .tab-btn.active,
   .tab-btn:hover {
-    border-color: #3a7cf7;
-    color: #3a7cf7;
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
   }
 </style>

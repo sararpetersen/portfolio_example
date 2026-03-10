@@ -45,7 +45,7 @@ import "../styles/global.css";
 
 <header
   id="header"
-  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 px-6 bg-gray-50 text-gray-950 z-30"
+  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 md:px-16 bg-gray-50 text-gray-950 z-30"
   x-data="{ showmenu: false, showDropdown: false }"
 >
   <div class="flex items-center justify-between">
@@ -70,9 +70,7 @@ import "../styles/global.css";
       <li class="some1"><a href="/" class="py-1" aria-label="Go to homepage">Home</a></li>
       <li class="some1"><a href="/about_me" class="py-1" aria-label="Go to about-page">About</a></li>
       <li class="some1"><a href="/contact" class="py-1" aria-label="Go to contact-page">Contact</a></li>
-      <li id="vertical-border" class="border-l border-gray-500 h-6"></li>
       <li class="some1"><a href="/accessibility" class="py-1" aria-label="Go to accessibility-page">Accessibility</a></li>
-      <li class="some1"><a href="/ai-ethics" class="py-1" aria-label="Go to AI ethics-page">AI Ethics</a></li>
     </ul>
 
     <!-- Mobile Burger (shows below lg) -->
@@ -124,9 +122,6 @@ import "../styles/global.css";
       <li class="some1"><a href="/contact" class="py-1 hover:text-blue-500 transition" aria-label="Go to contact-page">Contact</a></li>
       <li class="some1">
         <a href="/accessibility" class="py-1 hover:text-blue-500 transition" aria-label="Go to accessibility-page">Accessibility</a>
-      </li>
-      <li class="some1">
-        <a href="/ai-ethics" class="py-1 hover:text-blue-500 transition" aria-label="Go to AI ethics-page">AI Ethics</a>
       </li>
     </ul>
   </nav>
@@ -200,15 +195,15 @@ import "../styles/global.css";
   }
 
   #header a:hover {
-    color: #5fa0fb;
+    color: var(--brand-primary-soft);
   }
 
   body.dark #header a:hover {
-    color: #5fa0fb;
+    color: var(--brand-primary-soft);
   }
 
   body.dark #burgermenu svg:hover {
-    color: #5fa0fb;
+    color: var(--brand-primary-soft);
   }
 </style>
 

@@ -4,11 +4,11 @@
 
 @layer base {
   .display {
-    @apply font-tahoma text-display-mobile font-bold italic;
+    @apply font-zen text-display-mobile font-bold italic;
   }
 
   h1 {
-    @apply font-tahoma text-h1-mobile italic;
+    @apply font-helvetica text-h1-mobile italic;
   }
 
   h2 {

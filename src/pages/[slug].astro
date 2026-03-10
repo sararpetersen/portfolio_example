@@ -56,7 +56,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     >
       <a
         href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
         aria-label="Go to homepage">↑ Back to homepage</a
       >
 
@@ -65,7 +65,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ← {prevProject.name}
@@ -76,7 +76,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               {nextProject.name} →
@@ -88,7 +88,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
-      <h1 id="project-title" class="font-bold md:text-h2-desktop text-h4-desktop md:mb-4 mb-2 text-gray-950">{project.name}</h1>
+      <h1 id="project-title" class="font-zen md:text-h2-desktop text-h4-desktop md:mb-4 mb-2 text-gray-950">{project.name}</h1>
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
     </header>
 
@@ -125,7 +125,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         id="project-image"
         src={project.image}
         alt={project.name}
-        class="w-full rounded-xl object-cover border-l-4 border border-gray-200"
+        class="w-full rounded-xl object-cover border-l-4 border border-gray-500"
         loading="lazy"
       />
 
@@ -148,22 +148,21 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         }
         <div id="project-link" class="btn-container">
           <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.name}`}>
-            <Button variant="secondary" size="small">
-              {project.slug === "escape-room" ? "Read concept PDF" : "View project"}
-            </Button>
+            <Button variant="secondary" size="small">View project</Button>
           </a>
         </div>
       </div>
     </div>
   </section>
-
+  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
+    <div class="h-px w-24 bg-red-400"></div>
+    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
+    <div class="h-px w-24 bg-red-400"></div>
+  </div>
   <!-- Related Projects Section -->
-  <section
-    id="related-projects"
-    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
-  >
+  <section id="related-projects" class="max-w-6xl grid grid-cols-12 mx-auto md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6">
     <div id="related-projects-title" class="col-span-12 mb-4">
-      <h2 class="text-h3-desktop font-bold text-gray-950 mb-2">More projects</h2>
+      <h2 class="text-h3-desktop font-zen text-gray-950 mb-2">More projects</h2>
     </div>
 
     {
@@ -172,17 +171,17 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         return (
           <div class="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-6">
             {randomProjects.map((proj) => (
-              <a href={`/${proj.slug}`} class="group">
-                <div
-                  id="related-project-card"
-                  class="rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-200 hover:border-gray-300 transition duration-300"
-                >
-                  <img src={proj.image} alt={proj.name} class="w-full h-48 object-cover" loading="lazy" />
-                  <div id="related-project-info" class="p-4 border-t border-gray-200 group-hover:border-gray-300 transition duration-300">
-                    <h3 id="related-project-title" class="text-h4-mobile font-bold text-gray-950 mb-2">
-                      {proj.name}
-                    </h3>
-                    <p id="related-project-year" class="text-sm text-gray-800">
+              <a href={`/${proj.slug}`} class="group block rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:from-gray-100 hover:to-gray-200 hover:border-gray-400 group-focus-visible:-translate-y-1">
+                  <img
+                    src={proj.image}
+                    alt={proj.name}
+                    class="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  <div class="related-project-info p-4 border-t border-gray-500 transition-colors duration-300">
+                    <h3 class="related-project-title text-h4-mobile font-bold text-gray-950 mb-2">{proj.name}</h3>
+                    <p class="related-project-year text-sm text-gray-800 transition-colors duration-300 group-hover:text-gray-950 group-focus-visible:text-gray-950">
                       {proj.year}
                     </p>
                   </div>
@@ -220,7 +219,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark a:hover {
-    color: #5fa0fb;
+    color: var(--brand-primary-soft);
   }
 
   body.dark #project-image {
@@ -236,22 +235,23 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     color: #f6f6f6;
   }
 
-  body.dark #related-projects a > div {
+  body.dark .related-project-card {
     border-color: #6d6d6d;
     background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
   }
 
-  body.dark #related-projects a > div:hover {
-    border-color: #d1d1d1;
-    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+  body.dark .related-project-card:hover,
+  body.dark .related-project-card:focus-visible {
+    background: linear-gradient(to bottom right, #4a4a4a, #3a3a3a);
   }
 
-  body.dark #related-projects a > div > div {
+  body.dark .related-project-info {
     border-color: #6d6d6d;
   }
 
-  body.dark #related-projects a > div > div:hover {
-    border-color: #d1d1d1;
+  body.dark .related-project-title,
+  body.dark .related-project-year {
+    color: #f6f6f6;
   }
 </style>
 
@@ -305,7 +305,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       elementmedanimation10.classList.add("animate__animated", "animate__backInDown");
     });
 
-    const cards = document.querySelectorAll("#related-projects a > div");
+    const cards = document.querySelectorAll(".related-project-card");
     cards.forEach((card) => {
       const cardEl = card as HTMLElement;
       inView(cardEl, () => {
@@ -317,6 +317,19 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     const elementmedanimation9 = document.querySelector("#related-projects-title");
     inView(elementmedanimation9, () => {
       elementmedanimation9.classList.add("animate__animated", "animate__backInRight");
+    });
+
+    document.querySelectorAll("#section-divider").forEach((divider) => {
+      inView(divider, () => {
+        divider.classList.add("animate__animated", "animate__bounceInDown");
+        divider.addEventListener(
+          "animationend",
+          () => {
+            divider.classList.remove("animate__animated", "animate__bounceInDown");
+          },
+          { once: true },
+        );
+      });
     });
   });
 </script>

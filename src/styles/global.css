@@ -4,8 +4,74 @@
   box-sizing: border-box;
 }
 
+:root {
+  --washi-bg: #f7f2e8;
+  --washi-highlight: rgba(255, 255, 255, 0.72);
+  --ink-indigo: rgba(29, 54, 139, 0.12);
+  --seal-vermilion: #bb4a34;
+  --seal-vermilion-soft: rgba(187, 74, 52, 0.14);
+  --brand-primary: #556f84;
+  --brand-primary-soft: #748da0;
+  --brand-primary-strong: #455c6f;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body.site-shell {
+  background-color: var(--washi-bg);
+  background-image:
+    linear-gradient(180deg, var(--washi-highlight), rgba(247, 242, 232, 0.94)),
+    radial-gradient(circle at 1px 1px, rgba(41, 57, 88, 0.05) 1px, transparent 0);
+  background-size:
+    auto,
+    26px 26px;
+}
+
+body.site-shell::before,
+body.site-shell::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.site-shell::before {
+  top: 7.5rem;
+  right: -5.5rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at center, var(--seal-vermilion-soft) 0 31%, transparent 32%),
+    radial-gradient(circle at center, rgba(95, 160, 251, 0.08) 0 58%, transparent 59%);
+}
+
+body.site-shell::after {
+  left: -2rem;
+  bottom: 2rem;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 9999px;
+  background-image:
+    radial-gradient(circle at center, var(--ink-indigo) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
+  background-position:
+    0 0,
+    9px 9px;
+  background-size: 18px 18px;
+  mask-image: radial-gradient(circle at center, black 36%, transparent 75%);
+}
+
+.site-main {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-main > * {
+  position: relative;
+  z-index: 1;
 }
 
 .some1 a {
@@ -19,7 +85,7 @@ html {
   width: 100%;
   height: 2px;
   border-radius: 4px;
-  background-color: #5fa0fb;
+  background-color: var(--brand-primary-soft);
   bottom: 0;
   left: 0;
   transform-origin: right;
@@ -28,7 +94,7 @@ html {
 }
 
 .some1 a:hover {
-  color: #5fa0fb;
+  color: var(--brand-primary-soft);
 }
 
 .some1 a:hover::before {
@@ -36,6 +102,60 @@ html {
   transform: scaleX(1);
 }
 
+.some1 a::after {
+  content: "";
+  position: absolute;
+  right: -0.65rem;
+  top: 0.15rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  background-color: var(--seal-vermilion);
+  opacity: 0;
+  transform: rotate(45deg) scale(0.7);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.some1 a:hover::after,
+.some1 a:focus-visible::after {
+  opacity: 0.9;
+  transform: rotate(45deg) scale(1);
+}
+
 #footer-contact a {
   text-decoration: none;
+}
+
+body.dark.site-shell {
+  --brand-primary: #8fa8b8;
+  --brand-primary-soft: #b5c8d5;
+  --brand-primary-strong: #c6d6e0;
+  background-color: #141414;
+  background-image:
+    linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(20, 20, 20, 0.98)),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+}
+
+body.dark.site-shell::before {
+  background:
+    radial-gradient(circle at center, rgba(187, 74, 52, 0.12) 0 31%, transparent 32%),
+    radial-gradient(circle at center, rgba(95, 160, 251, 0.1) 0 58%, transparent 59%);
+}
+
+body.dark.site-shell::after {
+  background-image:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
+}
+
+@font-face {
+  font-family: "Nico Moji";
+  src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.svg#Nico Moji") format("svg");
 }
