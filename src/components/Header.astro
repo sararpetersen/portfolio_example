@@ -7,7 +7,7 @@ import "../styles/global.css";
   <!-- Gear Icon -->
   <button
     id="accessibilityToggle"
-    class="svg-gear focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+    class="svg-gear focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
     aria-label="Accessibility-settings"
   >
     <svg
@@ -51,26 +51,29 @@ import "../styles/global.css";
   <div class="flex items-center justify-between">
     <!-- Logo Section -->
     <div class="flex-shrink-0">
-      <a href="/" aria-label="Go to homepage">
+      <a href="/" aria-label="Go to homepage" class="group inline-block">
         <img
           src="/logo.svg"
           alt="Logo for my website, with two of my initials (black)"
-          class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-light"
+          class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.03] group-hover:drop-shadow-[0_0_14px_rgba(11,18,32,0.18)] logo-light"
         />
         <img
           src="/logo_white.svg"
           alt="Logo for my website, with two of my initials (white)"
-          class="h-16 hover:opacity-50 transition duration-300 ease-in-out logo-dark"
+          class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.03] group-hover:drop-shadow-[0_0_14px_rgba(156,174,187,0.45)] logo-dark"
         />
       </a>
     </div>
 
     <!-- Desktop Navigation -->
     <ul class="hidden lg:flex space-x-6 items-center">
-      <li class="some1"><a href="/" class="py-1" aria-label="Go to homepage">Home</a></li>
-      <li class="some1"><a href="/about_me" class="py-1" aria-label="Go to about-page">About</a></li>
-      <li class="some1"><a href="/contact" class="py-1" aria-label="Go to contact-page">Contact</a></li>
-      <li class="some1"><a href="/accessibility" class="py-1" aria-label="Go to accessibility-page">Accessibility</a></li>
+      <li class="some1"><a href="/" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to homepage">Home</a></li>
+      <li class="some1">
+        <a href="/about_me" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to about-page">About</a>
+      </li>
+      <li class="some1">
+        <a href="/contact" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to contact-page">Contact</a>
+      </li>
     </ul>
 
     <!-- Mobile Burger (shows below lg) -->
@@ -84,7 +87,7 @@ import "../styles/global.css";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
       </svg>
@@ -98,7 +101,7 @@ import "../styles/global.css";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="size-8 hover:text-[#0b1220] transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -117,11 +120,24 @@ import "../styles/global.css";
     x-on:click.outside="showmenu = false"
   >
     <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
-      <li class="some1"><a href="/#hero" class="py-1 hover:text-blue-500 transition" aria-label="Go to homepage">Home</a></li>
-      <li class="some1"><a href="/about_me" class="py-1 hover:text-blue-500 transition" aria-label="Go to about-page">About</a></li>
-      <li class="some1"><a href="/contact" class="py-1 hover:text-blue-500 transition" aria-label="Go to contact-page">Contact</a></li>
       <li class="some1">
-        <a href="/accessibility" class="py-1 hover:text-blue-500 transition" aria-label="Go to accessibility-page">Accessibility</a>
+        <a href="/#hero" class="py-1 hover:text-blue-500 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to homepage"
+          >Home</a
+        >
+      </li>
+      <li class="some1">
+        <a
+          href="/about_me"
+          class="py-1 hover:text-blue-500 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
+          aria-label="Go to about-page">About</a
+        >
+      </li>
+      <li class="some1">
+        <a
+          href="/contact"
+          class="py-1 hover:text-blue-500 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
+          aria-label="Go to contact-page">Contact</a
+        >
       </li>
     </ul>
   </nav>

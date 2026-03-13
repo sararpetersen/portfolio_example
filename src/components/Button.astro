@@ -5,9 +5,9 @@ const buttonStyling = "inline-flex items-center justify-center px-6 py-[10px] bo
 
 const variantClasses = {
   primary:
-    "main-button text-gray-50 bg-[#2f3f4c] border-[#2f3f4c] hover:bg-[#3a4d5c] hover:border-[#3a4d5c] hover:text-gray-50 focus:outline-none ease-in-out",
+    "main-button text-gray-50 bg-[#2f3f4c] border-[#2f3f4c] hover:bg-[#3a4d5c] hover:border-[#3a4d5c] hover:text-gray-50 focus:outline-none focus:ring-2  focus:ring-[#9caebb] ease-in-out",
   secondary:
-    "secondary-button text-[#1d1d1d] bg-transparent border-[#2f3f4c] hover:bg-[#2f3f4c] hover:text-gray-50 hover:border-[#2f3f4c] focus:outline-none ease-in-out",
+    "secondary-button text-[#1d1d1d] bg-transparent border-[#2f3f4c] hover:bg-[#2f3f4c] hover:text-gray-50 hover:border-[#2f3f4c] focus:outline-none focus:ring-2  focus:ring-[#9caebb] ease-in-out",
 };
 
 const sizeClasses = {
@@ -49,12 +49,6 @@ const sizeClasses = {
   .secondary-button:focus-visible::before {
     opacity: 1;
     transform: scaleX(1);
-  }
-
-  .main-button:focus-visible,
-  .secondary-button:focus-visible {
-    outline: 2px solid #bb4a34;
-    outline-offset: 2px;
   }
 
   body.dark .main-button {

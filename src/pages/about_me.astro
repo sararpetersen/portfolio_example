@@ -161,14 +161,8 @@ const timelineItems: TimelineItem[] = [
     document.querySelector<HTMLButtonElement>(".tab-btn[data-tab='background']")?.click();
   </script>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6">
+  <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
     <h3 class="font-zen text-gray-950 pb-10">The highlights of my journey</h3>
     <div id="timeline-line" class="relative">
       <!-- Timeline items -->
@@ -190,14 +184,8 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Interests and Hobbies -->
-  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6">
+  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
     <div class="flex flex-col pb-8">
       <h3 class="font-zen text-gray-950">Interests and hobbies</h3>
     </div>
@@ -229,14 +217,8 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Resources Section -->
-  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6">
+  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
     <div>
       <h3 class="font-zen text-gray-950 pb-8">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -286,14 +268,8 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 text-center">
+  <section class="button-container mx-auto pb-16 pt-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
@@ -389,7 +365,7 @@ const timelineItems: TimelineItem[] = [
         });
       });
 
-      document.querySelectorAll("#section-divider").forEach((divider) => {
+      document.querySelectorAll("#").forEach((divider) => {
         inView(divider, () => {
           divider.classList.add("animate__animated", "animate__bounceInDown");
           divider.addEventListener(

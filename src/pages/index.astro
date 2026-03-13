@@ -85,7 +85,7 @@ import Cases from "../components/Cases.astro";
     </div>
 
     <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
-      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
+      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-[#9caebb] scroll-link">
         <div class="float flex flex-col items-center transition duration-300 ease-in-out">
           <p class="text-gray-950 font-semibold">Scroll to projects</p>
           <svg
@@ -103,14 +103,8 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Projects Section -->
-  <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto">
+  <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobile-top">
     <div class="container col-span-12">
       <h3 id="project-title" class="col-span-12 mb-4 font-zen text-gray-950 md:px-0 px-6">Projects</h3>
       <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">
@@ -123,14 +117,8 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Intro Section: -->
-  <section id="about-preview" class="max-w-7xl mx-auto relative px-6">
+  <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobile-top">
     <div class="grid md:grid-cols-2 gap-12 items-center md:px-0 px-6">
       <!-- Image -->
       <div class="flex md:justify-end justify-center md:order-1 order-2">
@@ -160,14 +148,8 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-
   <!-- Testimonials Section -->
-  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6">
+  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobile-top">
     <div class="container max-w-7xl mx-auto col-span-12 grid md:grid-cols-2 md:gap-10 gap-4 items-center justify-center md:px-0 px-6">
       <!-- Left: Heading + small context -->
       <div id="testimonial-heading">
@@ -297,7 +279,7 @@ import Cases from "../components/Cases.astro";
           });
         });
 
-        document.querySelectorAll("#section-divider").forEach((divider) => {
+        document.querySelectorAll("#").forEach((divider) => {
           inView(divider, () => {
             divider.classList.add("animate__animated", "animate__bounceInDown");
             divider.addEventListener(

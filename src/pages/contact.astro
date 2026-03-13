@@ -122,12 +122,8 @@ import MainLayout from "../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
-  <div id="section-divider" class="flex items-center justify-center py-12 opacity-40 md:pt-desktop-top pt-mobile-top">
-    <div class="h-px w-24 bg-red-400"></div>
-    <span class="mx-4 text-sm tracking-widest text-gray-400">•</span>
-    <div class="h-px w-24 bg-red-400"></div>
-  </div>
-  <section class="button-container mx-auto pb-16 text-center">
+
+  <section class="button-container mx-auto pb-16 pt-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
@@ -170,7 +166,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           elementmedanimation11.classList.add("animate__animated", "animate__fadeInRight");
         });
 
-        document.querySelectorAll("#section-divider").forEach((divider) => {
+        document.querySelectorAll("#").forEach((divider) => {
           inView(divider, () => {
             divider.classList.add("animate__animated", "animate__bounceInDown");
             divider.addEventListener(

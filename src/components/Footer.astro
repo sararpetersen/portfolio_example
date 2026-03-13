@@ -6,11 +6,11 @@ import "../styles/global.css";
   <div class="container mx-auto flex flex-col items-start md:flex-row md:justify-between">
     <!-- Logo -->
     <div id="footer-logo" class="flex justify-center items-center relative font-bold transition-opacity duration-300 ease-in-out mb-8 md:mb-0">
-      <a href="/" class="w-20 h-20">
+      <a href="/" class="group w-20 h-20">
         <img
           src="/logo_white.svg"
           alt="Logo for my website, with two of my initials"
-          class="hover:opacity-50 transition-opacity duration-300 ease-in-out object-contain w-full h-full"
+          class="object-contain w-full h-full transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.03] group-hover:drop-shadow-[0_0_14px_rgba(156,174,187,0.45)]"
         />
       </a>
     </div>
@@ -21,26 +21,20 @@ import "../styles/global.css";
         <a
           href="/"
           aria-label="Go to homepage"
-          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
           >Home</a
         >
         <a
           href="/about_me"
           aria-label="Go to about-page"
-          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
           >About</a
         >
         <a
           href="/contact"
           aria-label="Go to contact-page"
-          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
           >Contact</a
-        >
-        <a
-          href="/accessibility"
-          aria-label="Go to accessibility-page"
-          class="hover:text-blue-500 py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
-          >Accessibility</a
         >
       </div>
     </nav>
@@ -52,7 +46,7 @@ import "../styles/global.css";
           href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"
           target="_blank"
           aria-label="Go to my LinkedIn-profile (external link)"
-          class="flex items-center justify-center"
+          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
         >
           <svg
             class="w-[40] h-[40] text-gray-50 hover:text-blue-500 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
@@ -74,7 +68,7 @@ import "../styles/global.css";
           href="https://github.com/sararpetersen"
           target="_blank"
           aria-label="Go to my Github-page (external link)"
-          class="flex items-center justify-center"
+          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +105,7 @@ import "../styles/global.css";
         </svg>
         <a
           href="mailto:sara.ringkow@gmail.com"
-          class="text-gray-50 py-1 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="text-gray-50 py-1 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
           aria-label="Send an email to 'sara.ringkow@gmail.com'">sara.ringkow@gmail.com</a
         >
       </div>
@@ -132,7 +126,7 @@ import "../styles/global.css";
         </svg>
         <a
           href="tel:+4542428807"
-          class="text-gray-50 py-1 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="text-gray-50 py-1 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
           aria-label="Call '+45 42 42 88 07'">+45 42 42 88 07</a
         >
       </div>

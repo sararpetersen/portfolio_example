@@ -148,14 +148,3 @@ body.dark.site-shell::after {
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
 }
-
-@font-face {
-  font-family: "Nico Moji";
-  src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot");
-  src:
-    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot?#iefix") format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff2") format("woff2"),
-    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff") format("woff"),
-    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.ttf") format("truetype"),
-    url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.svg#Nico Moji") format("svg");
-}
