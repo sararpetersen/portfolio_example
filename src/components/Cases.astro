@@ -21,7 +21,7 @@ const projects = propProjects ?? (await fetchCards());
     {
       projects.map((project) => (
         <li
-          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-500 hover:border-gray-400"
+          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-500 hover:border-gray-400 shadow-sm"
           data-id={project.id ?? ""}
           data-name={project.name ? project.name.toLowerCase() : ""}
         >
@@ -37,7 +37,7 @@ const projects = propProjects ?? (await fetchCards());
                   <div class="flex flex-row flex-wrap gap-2 py-2">
                     {project.tools &&
                       project.tools.map((tool) => (
-                        <p class="rounded-full px-4 py-2 font-semibold border border-blue-500 uppercase bg-blue-500 text-gray-50 text-sm">{tool}</p>
+                        <p class="rounded-full px-4 py-2 font-semibold border border-blue-600 uppercase bg-blue-600 text-gray-50 text-sm">{tool}</p>
                       ))}
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const projects = propProjects ?? (await fetchCards());
                   <div class="flex flex-row flex-wrap gap-2 py-2">
                     {project.tools &&
                       project.tools.map((tool) => (
-                        <p class="rounded-full px-4 py-2 font-semibold border border-blue-500 uppercase bg-blue-500 text-gray-50 text-sm">{tool}</p>
+                        <p class="rounded-full px-4 py-2 font-semibold border border-blue-600 uppercase bg-blue-600 text-gray-50 text-sm">{tool}</p>
                       ))}
                   </div>
                 </div>
@@ -141,17 +141,17 @@ const projects = propProjects ?? (await fetchCards());
 
 <style>
   body.dark #project-cards > li {
-    background-color: #454545;
-    border-color: #6d6d6d;
+    background-color: #404040;
+    border-color: #727272;
   }
 
   body.dark #project-cards > li:hover {
-    background-color: #5b5b5b;
-    border-color: #7d7d7d;
+    background-color: #535353;
+    border-color: #a3a3a3;
   }
 
   body.dark #project-cards > li:focus {
-    border-color: #92c2fe;
+    border-color: #90b0c4;
   }
 
   body.dark #project-cards > li h1,

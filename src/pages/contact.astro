@@ -25,10 +25,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <!-- Contact Information Box -->
         <div>
-          <p id="contact-title-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3 md:text-left text-center">Contact</p>
+          <p
+            id="contact-title-label"
+            class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4 md:text-left text-center"
+          >
+            Contact
+          </p>
           <h1
             id="contact-title"
-            class="heading-title uppercase tracking-[0.18em] font-zen md:text-left text-center text-gray-950 mb-8 text-4xl md:text-5xl"
+            class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center text-gray-950 mb-9 text-4xl md:text-5xl"
           >
             Let's talk!
           </h1>
@@ -42,7 +47,7 @@ import MainLayout from "../layouts/MainLayout.astro";
               >LinkedIn or email. I usually reply within 24–48 hours on weekdays.</span
             >
           </p>
-          <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+          <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm">
             <ul class="md:space-y-6 space-y-4">
               <li class="some1 flex items-start gap-4">
                 <svg
@@ -65,7 +70,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="mailto:sara.ringkow@gmail.com"
                     aria-label="Send email to 'sara.ringkow@gmail.com'"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded px-1"
+                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
                     >sara.ringkow@gmail.com</a
                   >
                 </div>
@@ -91,7 +96,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="tel:+4542428807"
                     aria-label="Call +45 42 42 88 07"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded px-1"
+                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
                     >+45 42 42 88 07</a
                   >
                 </div>
@@ -117,7 +122,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"
                     aria-label="Go to 'linkedin.com/in/sara-ringkow-petersen' (external link)"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded px-1"
+                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
                     >linkedin.com/in/sara-ringkow-petersen</a
                   >
                 </div>
@@ -199,8 +204,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     }
 
     body.dark #contact-info {
-      border-color: #6d6d6d;
-      background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+      border-color: #727272;
+      background: linear-gradient(to bottom right, #404040, #272727);
     }
 
     body.dark #contact-info strong,
@@ -210,11 +215,11 @@ import MainLayout from "../layouts/MainLayout.astro";
     body.dark #contact-preferred span,
     body.dark .some1 svg,
     body.dark #contact-title-label {
-      color: #f6f6f6;
+      color: #e6e6e6;
     }
 
     body.dark #contact-info a:hover {
-      color: #d3302f;
+      color: #dc6d57;
     }
   </style>
 </MainLayout>

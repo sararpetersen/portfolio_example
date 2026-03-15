@@ -5,14 +5,14 @@
 }
 
 :root {
-  --washi-bg: #f7f2e8;
-  --washi-highlight: rgba(255, 255, 255, 0.72);
-  --ink-indigo: rgba(29, 54, 139, 0.12);
+  --washi-bg: #f4f8fa;
+  --washi-highlight: rgba(242, 248, 249, 0.72);
+  --ink-indigo: rgba(51, 72, 87, 0.12);
   --seal-vermilion: #bb4a34;
   --seal-vermilion-soft: rgba(187, 74, 52, 0.14);
-  --brand-primary: #556f84;
-  --brand-primary-soft: #b5c8d5;
-  --brand-primary-strong: #455c6f;
+  --brand-primary: #477b93;
+  --brand-primary-soft: #b7cdd9;
+  --brand-primary-strong: #375567;
 }
 
 html {
@@ -22,8 +22,8 @@ html {
 body.site-shell {
   background-color: var(--washi-bg);
   background-image:
-    linear-gradient(180deg, var(--washi-highlight), rgba(247, 242, 232, 0.94)),
-    radial-gradient(circle at 1px 1px, rgba(41, 57, 88, 0.05) 1px, transparent 0);
+    linear-gradient(180deg, var(--washi-highlight), rgba(244, 248, 250, 0.94)),
+    radial-gradient(circle at 1px 1px, rgba(55, 85, 103, 0.05) 1px, transparent 0);
   background-size:
     auto,
     26px 26px;
@@ -45,7 +45,7 @@ body.site-shell::before {
   border-radius: 9999px;
   background:
     radial-gradient(circle at center, var(--seal-vermilion-soft) 0 31%, transparent 32%),
-    radial-gradient(circle at center, rgba(95, 160, 251, 0.08) 0 58%, transparent 59%);
+    radial-gradient(circle at center, rgba(98, 151, 174, 0.08) 0 58%, transparent 59%);
 }
 
 body.site-shell::after {
@@ -124,23 +124,34 @@ body.site-shell::after {
 }
 
 body.dark.site-shell {
-  --brand-primary: #8fa8b8;
-  --brand-primary-soft: #b5c8d5;
-  --brand-primary-strong: #c6d6e0;
-  background-color: #141414;
+  --brand-primary: #6887a8;
+  --brand-primary-soft: #b7cdd9;
+  --brand-primary-strong: #90b0c4;
+  background-color: #1a1a1a;
   background-image:
-    linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(20, 20, 20, 0.98)),
+    linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(11, 11, 11, 0.98)),
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
 }
 
 body.dark.site-shell::before {
   background:
     radial-gradient(circle at center, rgba(187, 74, 52, 0.12) 0 31%, transparent 32%),
-    radial-gradient(circle at center, rgba(95, 160, 251, 0.1) 0 58%, transparent 59%);
+    radial-gradient(circle at center, rgba(98, 151, 174, 0.1) 0 58%, transparent 59%);
 }
 
 body.dark.site-shell::after {
   background-image:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
+}
+
+@font-face {
+  font-family: "HIRO MISAKE";
+  src: url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.svg#HIRO MISAKE") format("svg");
 }

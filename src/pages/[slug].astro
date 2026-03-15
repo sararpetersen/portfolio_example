@@ -56,7 +56,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     >
       <a
         href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-400"
         aria-label="Go to homepage">↑ Back to homepage</a
       >
 
@@ -65,7 +65,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-[#9caebb] text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-pale-400 text-gray-800"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ← {prevProject.name}
@@ -76,7 +76,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-[#9caebb] text-gray-800"
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-pale-400 text-gray-800"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               {nextProject.name} →
@@ -88,8 +88,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
-      <p id="project-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Project</p>
-      <h1 id="project-title" class="font-zen md:text-h2-desktop text-h4-desktop uppercase tracking-[0.18em] mb-4 text-gray-950">
+      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Project</p>
+      <h1 id="project-title" class="font-hiro md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] mb-5 text-gray-950">
         {project.name}
       </h1>
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
@@ -100,7 +100,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       project.slug === "vibeloop" || project.slug === "ungeforum"
         ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
             <div
-              class="flex items-center gap-3 col-span-12 bg-[#E9EFF4] border border-l-4 border-[#7E9BB5] rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
+              class="flex items-center gap-3 col-span-12 bg-pale-100 border border-l-4 border-pale-500 rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
               id="figma-notice"
             >
               <svg
@@ -108,14 +108,14 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
                 width="30"
                 height="30"
                 fill="currentColor"
-                class="text-[#5C728A] flex-shrink-0"
+                class="text-pale-700 flex-shrink-0"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
               </svg>
               <div>
-                <p class="text-[#5C728A] md:text-[14.5px] text-[12px]">This project is presented as an interactive prototype created in Figma</p>
+                <p class="text-pale-700 md:text-[14.5px] text-[12px]">This project is presented as an interactive prototype created in Figma</p>
               </div>
             </div>
           )
@@ -143,7 +143,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
               </h3>
               <div class="flex flex-wrap gap-2 mb-12">
                 {project.tools.map((tool) => (
-                  <span class="rounded-full px-4 py-2 font-semibold border border-blue-500 bg-blue-500 text-gray-50 text-sm uppercase">{tool}</span>
+                  <span class="rounded-full px-4 py-2 font-semibold border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
                 ))}
               </div>
             </div>
@@ -164,8 +164,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
   >
     <div id="related-projects-title" class="col-span-12 mb-4">
-      <p id="related-projects-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Selected work</p>
-      <h2 class="text-h3-desktop uppercase tracking-[0.18em] font-zen text-gray-950 mb-4">More projects</h2>
+      <p id="related-projects-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Selected work</p>
+      <h2 class="text-h3-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro text-gray-950 mb-5">More projects</h2>
     </div>
 
     {
@@ -174,8 +174,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         return (
           <div class="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-6">
             {randomProjects.map((proj) => (
-              <a href={`/${proj.slug}`} class="group block rounded-3xl focus:outline-none focus:ring-2  focus:ring-[#9caebb]">
-                <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:from-gray-100 hover:to-gray-200 hover:border-gray-400 group-focus-visible:-translate-y-1">
+              <a href={`/${proj.slug}`} class="group block rounded-3xl focus:outline-none focus:ring-2 focus:ring-pale-400">
+                <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:from-gray-100 hover:to-gray-200 hover:border-gray-400 group-focus-visible:-translate-y-1">
                   <img
                     src={proj.image}
                     alt={proj.name}
@@ -204,12 +204,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   body.dark p,
   body.dark h3,
   body.dark span {
-    color: #f6f6f6;
+    color: #e6e6e6;
   }
 
   body.dark #figma-notice {
-    background-color: #38476f;
-    border-color: #6074a4;
+    background-color: #334857;
+    border-color: #6297ae;
     color: #f6f6f6;
   }
 
@@ -226,12 +226,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark #project-image {
-    border-color: #6d6d6d;
+    border-color: #727272;
   }
 
   body.dark section:last-child .col-span-12 > div > a > div {
-    border-color: #6d6d6d;
-    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+    border-color: #727272;
+    background: linear-gradient(to bottom right, #404040, #272727);
   }
 
   body.dark #related-projects h2 {
@@ -239,17 +239,17 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   }
 
   body.dark .related-project-card {
-    border-color: #6d6d6d;
-    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+    border-color: #727272;
+    background: linear-gradient(to bottom right, #404040, #272727);
   }
 
   body.dark .related-project-card:hover,
   body.dark .related-project-card:focus-visible {
-    background: linear-gradient(to bottom right, #4a4a4a, #3a3a3a);
+    background: linear-gradient(to bottom right, #535353, #404040);
   }
 
   body.dark .related-project-info {
-    border-color: #6d6d6d;
+    border-color: #727272;
   }
 
   body.dark .related-project-title,

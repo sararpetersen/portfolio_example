@@ -4,15 +4,15 @@
 
 @layer base {
   .display {
-    @apply font-zen text-display-mobile font-bold;
+    @apply font-hiro text-display-mobile font-bold;
   }
 
   h1 {
-    @apply font-inter text-h1-mobile italic;
+    @apply font-inter text-h1-mobile font-bold italic;
   }
 
   h2 {
-    @apply font-inter text-h2-mobile italic;
+    @apply font-inter text-h2-mobile font-bold italic;
   }
 
   h3 {
@@ -65,7 +65,7 @@
 
   /* Base style for toggle switch */
   .toggle-switch {
-    @apply relative inline-flex h-5 w-10 items-center rounded-full bg-gray-500 transition-colors duration-300 focus:outline-none focus:ring-2  focus:ring-[#9caebb];
+    @apply relative inline-flex h-5 w-10 items-center rounded-full bg-gray-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-pale-400;
   }
 
   /* When pressed (active) */

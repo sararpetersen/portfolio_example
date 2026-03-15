@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => (path === "/" ? currentPath === "/" : currentPath.startsWith(path));
 ---
 
 <!-- Accessibility settings bar -->
@@ -7,7 +10,7 @@ import "../styles/global.css";
   <!-- Gear Icon -->
   <button
     id="accessibilityToggle"
-    class="svg-gear focus:outline-none focus:ring-2 focus:ring-[#9caebb] transition duration-300 ease-in-out"
+    class="svg-gear focus:outline-none focus:ring-2 focus:ring-pale-400 transition duration-300 ease-in-out"
     aria-label="Accessibility-settings"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 transition duration-300 ease-in-out">
@@ -50,24 +53,41 @@ import "../styles/global.css";
         <img
           src="/logo.svg"
           alt="Logo for my website, with two of my initials (black)"
-          class="h-16 opacity-[0.85] transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-light"
+          class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-light"
         />
         <img
           src="/logo_white.svg"
           alt="Logo for my website, with two of my initials (white)"
-          class="h-16 opacity-[0.85] transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-dark"
+          class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-dark"
         />
       </a>
     </div>
 
     <!-- Desktop Navigation -->
     <ul class="hidden lg:flex space-x-6 items-center">
-      <li class="some1"><a href="/" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to homepage">Home</a></li>
       <li class="some1">
-        <a href="/about_me" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to about-page">About</a>
+        <a
+          href="/"
+          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/") ? "page" : undefined}
+          aria-label="Go to homepage">Home</a
+        >
       </li>
       <li class="some1">
-        <a href="/contact" class="py-1 focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to contact-page">Contact</a>
+        <a
+          href="/about_me"
+          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/about_me") ? "page" : undefined}
+          aria-label="Go to about-page">About</a
+        >
+      </li>
+      <li class="some1">
+        <a
+          href="/contact"
+          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/contact") ? "page" : undefined}
+          aria-label="Go to contact-page">Contact</a
+        >
       </li>
     </ul>
 
@@ -82,7 +102,7 @@ import "../styles/global.css";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
+        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-pale-400"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
       </svg>
@@ -96,7 +116,7 @@ import "../styles/global.css";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9caebb]"
+        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-pale-400"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -116,13 +136,28 @@ import "../styles/global.css";
   >
     <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
       <li class="some1">
-        <a href="/#hero" class="py-1 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to homepage">Home</a>
+        <a
+          href="/#hero"
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/") ? "page" : undefined}
+          aria-label="Go to homepage">Home</a
+        >
       </li>
       <li class="some1">
-        <a href="/about_me" class="py-1 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to about-page">About</a>
+        <a
+          href="/about_me"
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/about_me") ? "page" : undefined}
+          aria-label="Go to about-page">About</a
+        >
       </li>
       <li class="some1">
-        <a href="/contact" class="py-1 transition focus:outline-none focus:ring-2 focus:ring-[#9caebb]" aria-label="Go to contact-page">Contact</a>
+        <a
+          href="/contact"
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/contact") ? "page" : undefined}
+          aria-label="Go to contact-page">Contact</a
+        >
       </li>
     </ul>
   </nav>
@@ -141,21 +176,41 @@ import "../styles/global.css";
     color: var(--brand-primary);
   }
 
+  #header .some1 a[aria-current="page"]::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  #header .some1 a[aria-current="page"]::after {
+    opacity: 0.9;
+    transform: rotate(45deg) scale(1);
+  }
+
   #header #mobilmenu a:hover svg,
   #header #burgermenu:hover svg {
     color: var(--brand-primary);
   }
 
+  body.dark #header #mobilmenu a:hover svg,
+  body.dark #header #burgermenu:hover svg,
+  body.dark #header a:hover {
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark #header .some1 a[aria-current="page"]::before {
+    background-color: var(--brand-primary-soft);
+  }
+
   /* Dark Mode */
   body.dark #header {
-    background: #1d1d1d;
+    background: #1a1a1a;
     color: #f6f6f6;
     box-shadow: none;
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid #404040;
   }
 
   body.dark #accessibility-bar {
-    background-color: #0c0c0c;
+    background-color: #0b0b0b;
     color: #f6f6f6;
   }
 
@@ -163,16 +218,21 @@ import "../styles/global.css";
     color: #f6f6f6;
   }
 
+  body.dark #header a[aria-current="page"],
+  body.dark #mobilmenu a[aria-current="page"] {
+    color: var(--brand-primary-soft);
+  }
+
   body.dark #vertical-border {
-    border-color: #6d6d6d;
+    border-color: #727272;
   }
 
   /* Button styles for dark mode */
   body.dark .toggle-switch {
-    background-color: #666;
+    background-color: #727272;
   }
   body.dark .toggle-circle {
-    background-color: #fff;
+    background-color: #fafafa;
   }
 
   /* Reduce Motion Mode */

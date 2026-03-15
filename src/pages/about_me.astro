@@ -56,8 +56,8 @@ const timelineItems: TimelineItem[] = [
   >
     <!-- Intro Section -->
     <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20">
-      <p id="about-me-title-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Profile</p>
-      <h1 class="heading-title uppercase tracking-[0.18em] font-zen md:text-left text-center text-gray-950 mb-8">About me</h1>
+      <p id="about-me-title-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Profile</p>
+      <h1 class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center text-gray-950 mb-9">About me</h1>
       <p class="heading-text text-gray-800 md:pb-0 pb-16 max-w-3xl">
         Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the
         very bottom of the page.
@@ -71,7 +71,7 @@ const timelineItems: TimelineItem[] = [
         <!-- Tabs -->
         <div class="flex gap-2 mb-6 border-b border-gray-300">
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="background"
             aria-current="page"
             aria-selected="true"
@@ -79,14 +79,14 @@ const timelineItems: TimelineItem[] = [
             Background
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="inspiration"
             aria-selected="false"
           >
             Inspiration
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-[#52728e] transition duration-300"
+            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="goals"
             aria-selected="false"
           >
@@ -164,8 +164,8 @@ const timelineItems: TimelineItem[] = [
 
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <p id="timeline-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Timeline</p>
-    <h3 class="font-zen text-gray-950 pb-10 uppercase tracking-[0.18em]">The highlights of my journey</h3>
+    <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Timeline</p>
+    <h3 class="font-hiro text-gray-950 pb-10 uppercase tracking-[0.14em] md:tracking-[0.18em]">The highlights of my journey</h3>
     <div id="timeline-line" class="relative">
       <!-- Timeline items -->
       {
@@ -189,8 +189,8 @@ const timelineItems: TimelineItem[] = [
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div class="flex flex-col mb-6">
-      <p id="interests-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Interests</p>
-      <h3 class="font-zen text-gray-950 mb-4 uppercase tracking-[0.18em]">Interests and hobbies</h3>
+      <p id="interests-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Interests</p>
+      <h3 class="font-hiro text-gray-950 mb-5 uppercase tracking-[0.14em] md:tracking-[0.18em]">Interests and hobbies</h3>
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
@@ -223,8 +223,8 @@ const timelineItems: TimelineItem[] = [
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div>
-      <p id="resources-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Resources</p>
-      <h3 class="font-zen text-gray-950 pb-8 uppercase tracking-[0.18em]">Resources</h3>
+      <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Resources</p>
+      <h3 class="font-hiro text-gray-950 pb-8 uppercase tracking-[0.14em] md:tracking-[0.18em]">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
@@ -426,16 +426,16 @@ const timelineItems: TimelineItem[] = [
   body.dark #interests-and-hobbies > div,
   body.dark #resources-section > div,
   body.dark #strengths-weaknesses-container > div {
-    border-color: #6d6d6d;
-    background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);
+    border-color: #727272;
+    background: linear-gradient(to bottom right, #404040, #272727);
   }
 
   body.dark #lines hr {
-    border-color: #6d6d6d;
+    border-color: #727272;
   }
 
   body.dark .portrait {
-    border-color: #6d6d6d;
+    border-color: #727272;
   }
 
   .tab-btn.active,
