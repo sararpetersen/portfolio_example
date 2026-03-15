@@ -62,8 +62,8 @@ import Cases from "../components/Cases.astro";
             </p>
           </div>
 
-          <h1 class="hero-title text-gray-950 display pb-5">Sara Ringkow Petersen</h1>
-          <h2 class="hero-role text-gray-950 pb-5">Multimedia Designer & Concept Developer</h2>
+          <h1 class="hero-title text-gray-950 display pb-6">Sara Ringkow Petersen</h1>
+          <h2 class="hero-role text-gray-950 pb-6">Multimedia Designer & Concept Developer</h2>
           <p class="hero-lead text-gray-950 font-light pb-8 max-w-3xl">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
@@ -87,7 +87,7 @@ import Cases from "../components/Cases.astro";
     <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-[#9caebb] scroll-link">
         <div class="float flex flex-col items-center transition duration-300 ease-in-out">
-          <p class="text-gray-950 font-semibold">Scroll to projects</p>
+          <p class="uppercase tracking-[0.22em] text-xs text-gray-500">Scroll to projects</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -104,22 +104,29 @@ import Cases from "../components/Cases.astro";
   </section>
 
   <!-- Projects Section -->
-  <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobile-top">
+  <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
-      <h3 id="project-title" class="col-span-12 mb-4 font-zen text-gray-950 md:px-0 px-6">Projects</h3>
-      <p id="project-text" class="col-span-12 text-gray-800 md:px-0 px-6 mb-8">
-        Below are some of the projects I've worked on during my studies and internships. <br class="hidden md:block" />Click on any of the cards to
-        read more about the project, the process and the outcome.
+      <!-- eyebrow label -->
+      <p id="project-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Selected work</p>
+
+      <!-- title -->
+      <h3 id="project-title" class="col-span-12 uppercase tracking-[0.18em] font-zen text-gray-950 md:mb-6 mb-4">Projects</h3>
+
+      <!-- description -->
+      <p id="project-text" class="col-span-12 text-gray-700 mb-10 leading-relaxed">
+        Below are some of the projects I've worked on during my studies and internships.
+        <br class="hidden md:block" />
+        Click on any of the cards to read more about the project, the process and the outcome.
       </p>
     </div>
-    <div class="col-span-12 md:px-0 px-6">
+    <div class="col-span-12">
       <Cases projects={cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())} />
     </div>
   </section>
 
   <!-- Intro Section: -->
-  <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobile-top">
-    <div class="grid md:grid-cols-2 gap-12 items-center md:px-0 px-6">
+  <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Image -->
       <div class="flex md:justify-end justify-center md:order-1 order-2">
         <img src="/images/pfp3.webp" alt="Picture of Sara" class="border-r-4 border border-gray-500 rounded-2xl object-cover w-[550px] h-[350px]" />
@@ -127,10 +134,13 @@ import Cases from "../components/Cases.astro";
 
       <!-- Text -->
       <div id="about-preview-text">
-        <h3 class="mb-4 font-zen">About me</h3>
+        <p id="about-preview-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Profile</p>
+
+        <h3 class="uppercase tracking-[0.18em] md:mb-6 mb-4 font-zen text-gray-950">About me</h3>
 
         <p
-          class="mb-6 text-gray-800 max-w-4xl mx-auto md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
+          id="about-preview-text-paragraph"
+          class="mb-6 text-gray-700 max-w-xl leading-relaxed md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
         >
           I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital
           experiences that combine visual clarity, thoughtful structure, and functionality. My work spans UX/UI design, concept development, and
@@ -138,7 +148,6 @@ import Cases from "../components/Cases.astro";
           intuitive, inclusive, and meaningful for the people who use them.
         </p>
 
-        <!-- Optional subtle link -->
         <div class="btn_container">
           <a aria-label="Learn more about me" id="about-preview-link" href="/about_me" class="mt-4">
             <Button variant="secondary" size="small">Learn more about me</Button>
@@ -149,18 +158,23 @@ import Cases from "../components/Cases.astro";
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobile-top">
+  <section id="testimonials" class="grid grid-cols-12 max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container max-w-7xl mx-auto col-span-12 grid md:grid-cols-2 md:gap-10 gap-4 items-center justify-center md:px-0 px-6">
       <!-- Left: Heading + small context -->
       <div id="testimonial-heading">
-        <h3 class="mb-4 font-zen">Featured testimonial</h3>
-        <p class="text-gray-800 leading-relaxed max-w-prose md:mx-0">A short quote from someone I've worked with.</p>
+        <p class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Recommendation</p>
+
+        <h3 class="uppercase tracking-[0.18em] md:mb-6 mb-4 font-zen text-gray-950">Featured testimonial</h3>
+
+        <p id="testimonial-context" class="text-gray-700 leading-relaxed max-w-xl md:mx-0 md:mb-0 mb-2">
+          A short quote from someone I've worked with.
+        </p>
       </div>
 
       <!-- Right: Testimonial card -->
-      <figure id="testimonial-card" class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8">
+      <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8">
         <blockquote>
-          <p class="text-gray-800 italic">
+          <p class="text-gray-800 italic leading-relaxed">
             "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
               >[...]</em
             > Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet
@@ -169,14 +183,13 @@ import Cases from "../components/Cases.astro";
         </blockquote>
 
         <figcaption class="mt-6 flex items-center gap-4">
-          <!-- Optional avatar circle (leave empty or add an image) -->
           <div class="h-12 w-12 rounded-full bg-gray-400/60 border border-gray-600 flex items-center justify-center">
             <span class="font-semibold text-sm">JK</span>
           </div>
 
           <div>
-            <p class="font-semibold">Jacob Klintrup</p>
-            <p class="text-gray-700 text-sm">Creative Strategic Director, Kadaver ApS</p>
+            <p class="font-semibold text-gray-950">Jacob Klintrup</p>
+            <p class="text-gray-700 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
           </div>
         </figcaption>
       </figure>
@@ -202,7 +215,12 @@ import Cases from "../components/Cases.astro";
 
         const elementmedanimation6a = document.querySelector("#testimonial-heading p");
         inView(elementmedanimation6a, () => {
-          elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation6a.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
+        const elementmedanimation6b = document.querySelector("#testimonial-context");
+        inView(elementmedanimation6b, () => {
+          elementmedanimation6b.classList.add("animate__animated", "animate__fadeInRight");
         });
 
         const elementmedanimation7 = document.querySelector("#testimonial-card");
@@ -215,14 +233,19 @@ import Cases from "../components/Cases.astro";
           elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
         });
 
-        const elementmedanimation13 = document.querySelector("#project-section h3");
+        const elementmedanimation13 = document.querySelector("#project-title");
         inView(elementmedanimation13, () => {
           elementmedanimation13.classList.add("animate__animated", "animate__backInLeft");
         });
 
-        const elementmedanimation14 = document.querySelector("#project-section p");
+        const elementmedanimation14 = document.querySelector("#project-text");
         inView(elementmedanimation14, () => {
           elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        const elementmedanimation14a = document.querySelector("#project-label");
+        inView(elementmedanimation14a, () => {
+          elementmedanimation14a.classList.add("animate__animated", "animate__fadeInUp");
         });
 
         const elementmedanimation15 = document.querySelector("#hero-image");
@@ -255,9 +278,14 @@ import Cases from "../components/Cases.astro";
           elementmedanimation30.classList.add("animate__animated", "animate__backInLeft");
         });
 
-        const elementmedanimation31 = document.querySelector("#about-preview-text p");
+        const elementmedanimation31 = document.querySelector("#about-preview-label");
         inView(elementmedanimation31, () => {
-          elementmedanimation31.classList.add("animate__animated", "animate__fadeInRight");
+          elementmedanimation31.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
+        const elementmedanimation31a = document.querySelector("#about-preview-text-paragraph");
+        inView(elementmedanimation31a, () => {
+          elementmedanimation31a.classList.add("animate__animated", "animate__fadeInRight");
         });
 
         const elementmedanimation32 = document.querySelector(".btn_container");
@@ -410,7 +438,8 @@ import Cases from "../components/Cases.astro";
     body.dark #project-section h3,
     body.dark #project-section p,
     body.dark #about-preview-text h3,
-    body.dark #about-preview-text p {
+    body.dark #about-preview-text-paragraph,
+    body.dark #about-preview-label {
       color: #f6f6f6;
     }
 
@@ -423,7 +452,7 @@ import Cases from "../components/Cases.astro";
     body.dark #process-cards div,
     body.dark #testimonials-cards blockquote,
     body.dark #intro-grid > div,
-    body.dark #about-preview-text p,
+    body.dark #about-preview-text-paragraph,
     body.dark #testimonial-card {
       border-color: #6d6d6d;
       background: linear-gradient(to bottom right, #3a3a3a, #2d2d2d);

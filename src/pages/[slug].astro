@@ -88,7 +88,10 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
-      <h1 id="project-title" class="font-zen md:text-h2-desktop text-h4-desktop md:mb-4 mb-2 text-gray-950">{project.name}</h1>
+      <p id="project-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Project</p>
+      <h1 id="project-title" class="font-zen md:text-h2-desktop text-h4-desktop uppercase tracking-[0.18em] mb-4 text-gray-950">
+        {project.name}
+      </h1>
       <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
     </header>
 
@@ -161,7 +164,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
   >
     <div id="related-projects-title" class="col-span-12 mb-4">
-      <h2 class="text-h3-desktop font-zen text-gray-950 mb-2">More projects</h2>
+      <p id="related-projects-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Selected work</p>
+      <h2 class="text-h3-desktop uppercase tracking-[0.18em] font-zen text-gray-950 mb-4">More projects</h2>
     </div>
 
     {
@@ -258,9 +262,11 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   import { inView } from "motion";
 
   const elements = [
+    { selector: "#project-label", animation: "animate__fadeInUp" },
     { selector: "#project-title", animation: "animate__backInRight" },
     { selector: "#project-subtitle", animation: "animate__backInLeft" },
     { selector: "#project-description", animation: "animate__fadeInRight" },
+    { selector: "#related-projects-label", animation: "animate__fadeInUp" },
   ];
 
   document.addEventListener("DOMContentLoaded", () => {

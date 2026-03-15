@@ -59,14 +59,14 @@ export default {
 
     fontFamily: {
       zen: ["Zen Old Mincho", "serif"],
-      helvetica: ["Helvetica", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
       almarai: ["Almarai", "sans-serif"],
     },
 
     fontSize: {
       "display-desktop": ["5.8rem", { lineHeight: "5.5rem" }],
-      "display-mobile": ["3.9rem", { lineHeight: "3.5rem" }],
-      "h1-desktop": ["4.8rem", { lineHeight: "3.75rem" }],
+      "display-mobile": ["3.7rem", { lineHeight: "3.5rem" }],
+      "h1-desktop": ["4.6rem", { lineHeight: "3.75rem" }],
       "h1-mobile": ["3.5rem", { lineHeight: "3.75rem" }],
       "h2-desktop": ["3rem", { lineHeight: "3.75rem" }],
       "h2-mobile": ["2.5rem", { lineHeight: "2.5rem" }],

@@ -25,8 +25,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <!-- Contact Information Box -->
         <div>
-          <h1 id="contact-title" class="heading-title font-zen md:text-left text-center text-gray-950 mb-8 text-4xl md:text-5xl">Let's talk!</h1>
-          <p id="contact-text" class="md:text-left text-center text-gray-800 pb-9 text-lg leading-relaxed">
+          <p id="contact-title-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3 md:text-left text-center">Contact</p>
+          <h1
+            id="contact-title"
+            class="heading-title uppercase tracking-[0.18em] font-zen md:text-left text-center text-gray-950 mb-8 text-4xl md:text-5xl"
+          >
+            Let's talk!
+          </h1>
+          <p id="contact-text" class="md:text-left text-center text-gray-800 pb-9 text-lg leading-relaxed max-w-xl">
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can reach me via the different
             contact methods below.
           </p>
@@ -123,7 +129,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </section>
 
-  <section class="button-container mx-auto pb-16 pt-20 text-center">
+  <section class="button-container mx-auto py-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
@@ -136,6 +142,11 @@ import MainLayout from "../layouts/MainLayout.astro";
       const reduceMotion = document.body.classList.contains("reduce-motion");
 
       if (!reduceMotion) {
+        const elementmedanimation7a = document.querySelector("#contact-title-label");
+        inView(elementmedanimation7a, () => {
+          elementmedanimation7a.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
         const elementmedanimation7 = document.querySelector("#contact-container img");
         inView(elementmedanimation7, () => {
           elementmedanimation7.classList.add("animate__animated", "animate__fadeInLeft");
@@ -197,7 +208,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     body.dark #contact-text,
     body.dark #contact-preferred strong,
     body.dark #contact-preferred span,
-    body.dark .some1 svg {
+    body.dark .some1 svg,
+    body.dark #contact-title-label {
       color: #f6f6f6;
     }
 

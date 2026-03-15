@@ -56,7 +56,8 @@ const timelineItems: TimelineItem[] = [
   >
     <!-- Intro Section -->
     <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20">
-      <h1 class="heading-title font-zen md:text-left text-center text-gray-950 mb-8">About me</h1>
+      <p id="about-me-title-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Profile</p>
+      <h1 class="heading-title uppercase tracking-[0.18em] font-zen md:text-left text-center text-gray-950 mb-8">About me</h1>
       <p class="heading-text text-gray-800 md:pb-0 pb-16 max-w-3xl">
         Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the
         very bottom of the page.
@@ -64,7 +65,7 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
   <!-- Personal Background -->
-  <section id="personal-background" class="container grid grid-cols-12 md:pt-0 max-w-6xl mx-auto md:px-0 px-6">
+  <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
       <div class="items-center md:pb-0 pb-8">
         <!-- Tabs -->
@@ -162,8 +163,9 @@ const timelineItems: TimelineItem[] = [
   </script>
 
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
-    <h3 class="font-zen text-gray-950 pb-10">The highlights of my journey</h3>
+  <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+    <p id="timeline-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Timeline</p>
+    <h3 class="font-zen text-gray-950 pb-10 uppercase tracking-[0.18em]">The highlights of my journey</h3>
     <div id="timeline-line" class="relative">
       <!-- Timeline items -->
       {
@@ -185,9 +187,10 @@ const timelineItems: TimelineItem[] = [
   </section>
 
   <!-- Interests and Hobbies -->
-  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
-    <div class="flex flex-col pb-8">
-      <h3 class="font-zen text-gray-950">Interests and hobbies</h3>
+  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+    <div class="flex flex-col mb-6">
+      <p id="interests-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Interests</p>
+      <h3 class="font-zen text-gray-950 mb-4 uppercase tracking-[0.18em]">Interests and hobbies</h3>
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
@@ -218,9 +221,10 @@ const timelineItems: TimelineItem[] = [
   </section>
 
   <!-- Resources Section -->
-  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobile-top">
+  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div>
-      <h3 class="font-zen text-gray-950 pb-8">Resources</h3>
+      <p id="resources-label" class="uppercase tracking-[0.25em] text-[11px] text-gray-500 mb-3">Resources</p>
+      <h3 class="font-zen text-gray-950 pb-8 uppercase tracking-[0.18em]">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
@@ -269,7 +273,7 @@ const timelineItems: TimelineItem[] = [
   </section>
 
   <!-- Navigation Back to Portfolio -->
-  <section class="button-container mx-auto pb-16 pt-20 text-center">
+  <section class="button-container mx-auto py-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
       <Button variant="primary" size="small">Back to homepage</Button>
     </a>
@@ -283,6 +287,11 @@ const timelineItems: TimelineItem[] = [
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
     if (!reduceMotion) {
+      const elementmedanimation0 = document.querySelector("#about-me-title-label");
+      inView(elementmedanimation0, () => {
+        elementmedanimation0.classList.add("animate__animated", "animate__fadeInUp");
+      });
+
       const elementmedanimation1 = document.querySelector(".heading-title");
       inView(elementmedanimation1, () => {
         elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
@@ -331,6 +340,21 @@ const timelineItems: TimelineItem[] = [
       const elementmedanimation6c = document.querySelector("#timeline h3");
       inView(elementmedanimation6c, () => {
         elementmedanimation6c.classList.add("animate__animated", "animate__fadeInRight");
+      });
+
+      const elementmedanimation6d = document.querySelector("#timeline-label");
+      inView(elementmedanimation6d, () => {
+        elementmedanimation6d.classList.add("animate__animated", "animate__fadeInUp");
+      });
+
+      const elementmedanimation6e = document.querySelector("#interests-label");
+      inView(elementmedanimation6e, () => {
+        elementmedanimation6e.classList.add("animate__animated", "animate__fadeInUp");
+      });
+
+      const elementmedanimation6f = document.querySelector("#resources-label");
+      inView(elementmedanimation6f, () => {
+        elementmedanimation6f.classList.add("animate__animated", "animate__fadeInUp");
       });
 
       const elementmedanimation7 = document.querySelector(".button-container");
