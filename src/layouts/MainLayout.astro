@@ -36,9 +36,254 @@ const schemamarkup = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
-    <link href="https://db.onlinewebfonts.com/c/cb016801ac894736ed4b03c945631927?family=HIRO+MISAKE" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet" />
+
+    <!-- i18n: Language switching -->
+    <script is:inline>
+      window.__i18n = (function () {
+        var t = {
+          en: {
+            "nav.home": "Home",
+            "nav.about": "About",
+            "nav.contact": "Contact",
+            "settings.darkmode": "Dark-mode",
+            "settings.animations": "Remove animations",
+            "hero.status": "Open for internship",
+            "hero.role": "Multimedia Designer & Concept Developer",
+            "hero.lead": "Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.",
+            "hero.cta": "See projects",
+            "hero.scroll": "Scroll to projects",
+            "projects.label": "Selected work",
+            "projects.title": "Projects",
+            "projects.text":
+              'Below are some of the projects I\'ve worked on during my studies and internships.<br class="hidden md:block" />Click on any of the cards to read more about the project, the process and the outcome.',
+            "project.back": "↑ Back to homepage",
+            "project.label": "Project",
+            "project.figma.notice": "This project is presented as an interactive prototype created in Figma",
+            "project.tools": "Tools used:",
+            "project.view": "View project",
+            "project.related.label": "Selected work",
+            "project.related.title": "More projects",
+            "about.preview.label": "Profile",
+            "about.preview.title": "About me",
+            "about.preview.text":
+              "I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital experiences that combine visual clarity, thoughtful structure, and functionality. My work spans UX/UI design, concept development, and coding, enabling me to take ideas from early concept to finished product. I'm especially motivated by designing solutions that are intuitive, inclusive, and meaningful for the people who use them.",
+            "about.preview.cta": "Learn more about me",
+            "testimonials.label": "Recommendation",
+            "testimonials.title": "Featured testimonial",
+            "testimonials.context": "A short quote from someone I've worked with.",
+            "testimonials.quote":
+              "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <span class='italic font-semibold text-[16px]'>[...]</span> Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that met the client's needs&mdash; this has been the case in both her work with design and coding.",
+            "about.label": "Profile",
+            "about.title": "About me",
+            "about.intro":
+              "Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the very bottom of the page.",
+            "about.tab.background": "Background",
+            "about.tab.inspiration": "Inspiration",
+            "about.tab.goals": "Goals",
+            "about.background.text":
+              "I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em>\"creativity\"</em> in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing. This internal conflict between my artistic interests and my growing curiosity about tech kept me searching for a path that could harmonise these two passions. It wasn't until I discovered Multimedia Design that I finally found the answer I'd been looking for.",
+            "about.inspiration.text":
+              "As someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. This personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the potential of inclusive design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation, or semantic HTML, I find purpose in solving accessibility challenges and seeing how small design decisions can have a meaningful impact on people's lives.",
+            "about.goals.text":
+              "My goal is to create digital experiences that are accessible and inclusive for everyone. I believe that good design isn't just about aesthetics&mdash; it's about removing barriers and ensuring all users are included. Through my work, I strive to merge creativity with purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my future career and make a real difference in how people interact with digital products.",
+            "timeline.label": "Timeline",
+            "timeline.title": "The highlights of my journey",
+            "timeline.0.year": "August 2019 – June 2021",
+            "timeline.0.title": "HF (Higher Preparatory Examination) | Egedal Gymnasium & HF",
+            "timeline.0.desc":
+              "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
+            "timeline.1.year": "August 2022 – May 2023",
+            "timeline.1.title": "Japanese (Level 0-B) | Frederiksberg VUC & STX",
+            "timeline.1.desc": "Completed a HF singular course in Japanese, focusing on basic grammar, vocabulary and cultural understanding.",
+            "timeline.2.year": "August 2023 – June 2025",
+            "timeline.2.title": "Multimedia Design | Copenhagen School of Design and Technology (KEA)",
+            "timeline.2.desc": "Studied UX/UI, digital design and coding, and worked hands-on with design tools, prototyping and web projects.",
+            "timeline.3.year": "January 2025 – April 2025",
+            "timeline.3.title": "Junior Creative/intern | Kadaver ApS",
+            "timeline.3.desc":
+              "Worked with website redesigns, information structure and client documentation while gaining real experience in a creative agency.",
+            "timeline.4.year": "Present",
+            "timeline.4.title": "Digital Concept Development | Academy of Technologies and Business (Zealand)",
+            "timeline.4.desc":
+              "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on storytelling, strategy and experience design.",
+            "timeline.5.year": "Present",
+            "timeline.5.title": "Student Buddy | Academy of Technologies and Business (Zealand)",
+            "timeline.5.desc":
+              "Helping international students feel welcome, supporting them in their studies and everyday life, and being someone they can easily reach out to.",
+            "interests.label": "Interests",
+            "interests.title": "Interests and hobbies",
+            "interest.reading.title": "Reading",
+            "interest.reading.text": "There's nothing like getting lost in a good book&mdash; it's my go-to way to unwind and explore new worlds.",
+            "interest.gaming.title": "Gaming",
+            "interest.gaming.text": "Video games let me step into different realities and tackle challenges in ways that feel completely immersive.",
+            "interest.japanese.title": "Japanese culture",
+            "interest.japanese.text":
+              "I'm inspired by Japanese aesthetics, culture, and language, especially the balance between simplicity, detail, and thoughtful storytelling.",
+            "interest.lego.title": "Building with LEGO",
+            "interest.lego.text":
+              "There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.",
+            "resources.label": "Resources",
+            "resources.title": "Resources",
+            "resource.resume.en.title": "Resume (EN)",
+            "resource.resume.en.desc": "Look through my resume to get an overview of my background.",
+            "resource.resume.en.btn": "See resume",
+            "resource.app.en.title": "Application-template (EN)",
+            "resource.app.en.desc": "Take a look at what I include when I send out applications.",
+            "resource.app.en.btn": "See application-template",
+            "contact.label": "Contact",
+            "contact.title": "Let's talk!",
+            "contact.text":
+              "If you're interested in working together, don't hesitate to get in touch.<br class=\"hidden md:block\" />You can reach me via the different contact methods below.",
+            "contact.preferred":
+              '<strong class="text-gray-950">Preferred: </strong><br/><span class="text-gray-800 text-sm">LinkedIn or email. I usually reply within 24\u201348 hours on weekdays.</span>',
+            "contact.info.email": "Email:",
+            "contact.info.phone": "Phone:",
+            "contact.info.linkedin": "LinkedIn:",
+            "btn.back": "Back to homepage",
+          },
+          da: {
+            "nav.home": "Hjem",
+            "nav.about": "Om",
+            "nav.contact": "Kontakt",
+            "settings.darkmode": "M\u00f8rk tilstand",
+            "settings.animations": "Fjern animationer",
+            "hero.status": "\u00c5ben for praktik",
+            "hero.role": "Multimediedesigner & konceptudvikler",
+            "hero.lead":
+              "Passioneret for at skabe tilg\u00e6ngelige, brugercentrerede digitale oplevelser, der kombinerer design, udvikling og strategi.",
+            "hero.cta": "Se projekter",
+            "hero.scroll": "Gå til projekter",
+            "projects.label": "Udvalgte projekter",
+            "projects.title": "Projekter",
+            "projects.text":
+              'Herunder finder du nogle af de projekter, jeg har arbejdet p\u00e5 under mine studier og praktikophold.<br class="hidden md:block" /> Klik p\u00e5 et af kortene for at l\u00e6se mere om projektet, processen og resultatet.',
+            "project.back": "↑ Tilbage til forsiden",
+            "project.label": "Projekt",
+            "project.figma.notice": "Dette projekt pr\u00e6senteres som en interaktiv prototype lavet i Figma",
+            "project.tools": "Værktøjer brugt:",
+            "project.view": "Se projekt",
+            "project.related.label": "Udvalgte projekter",
+            "project.related.title": "Flere projekter",
+            "about.preview.label": "Profil",
+            "about.preview.title": "Om mig",
+            "about.preview.text":
+              "Jeg er en multimediedesigner og konceptudvikler med et st\u00e6rkt fokus p\u00e5 tilg\u00e6ngelighed og brugercentreret design. Jeg nyder at skabe digitale oplevelser, der kombinerer visuel klarhed, gennemt\u00e6nkt struktur og funktionalitet. Mit arbejde sp\u00e6nder over UX/UI-design, konceptudvikling og kodning, hvilket giver mig mulighed for at tage id\u00e9er fra det tidlige koncept til det f\u00e6rdige produkt. Jeg er s\u00e6rligt motiveret af at designe l\u00f8sninger, der er intuitive, inkluderende og meningsfulde for de mennesker, der bruger dem.",
+            "about.preview.cta": "L\u00e6s mere om mig",
+            "testimonials.label": "Anbefaling",
+            "testimonials.title": "Fremh\u00e6vet anbefaling",
+            "testimonials.context": "Et kort citat fra \u00e9n, jeg har arbejdet med.",
+            "testimonials.quote":
+              'Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <span class="italic font-semibold text-[16px]">[...]</span> Både i teamkonstallaioner og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.',
+            "about.label": "Profil",
+            "about.title": "Om mig",
+            "about.intro":
+              'L\u00e6s lidt om mig, min baggrund og hvem jeg er. Nederst p\u00e5 siden finder du de skabeloner, <br class="hidden md:block" />jeg har brugt til mit CV og mine ans\u00f8gninger.',
+            "about.tab.background": "Baggrund",
+            "about.tab.inspiration": "Inspiration",
+            "about.tab.goals": "M\u00e5l",
+            "about.background.text":
+              'Jeg har altid elsket at være kreativ. Allerede fra en tidlig alder nød jeg at tegne, male og være kreativ generelt&mdash; bare alt det, der i bund og grund handlede om <em>"kreativitet"</em>. Jeg vidste inderst inde, at jeg en dag gerne ville gøre det til en karriere. Dog efterhånden som jeg blev ældre, begyndte jeg også at interessere mig for teknologi. Og fordi jeg gerne ville finde en karriere, der kombinerede begge dele, havde jeg svært ved at finde den rette vej. Denne indre konflikt mellem mine kreative interesser og min voksende nysgerrighed for teknologi gjorde, at jeg længe søgte efter en vej, hvor disse to kunne forenes. Det var først da jeg opdagede multimediedesign, at jeg fandt det, jeg havde ledt efter.',
+            "about.inspiration.text":
+              "Som én der er sen-diagnosticeret med autisme, ved jeg, hvordan det er at navigere i en verden, der ikke altid er tilgængelig for alle. Den personlige erfaring har præget min måde at se og arbejde med digitale oplevelser på. Jeg bliver inspireret af potentialet i inkluderende design til at skabe løsninger, hvor alle kan være med. Uanset om det handler om gennemtænkte farvevalg, tydelig navigation eller semantisk HTML, finder jeg motivation i at løse tilgængelighedsudfordringer og i at se, hvordan små designvalg kan gøre en stor forskel i menneskers hverdag.",
+            "about.goals.text":
+              "Mit mål er at skabe digitale oplevelser, der er tilgængelige og inkluderende for alle. Jeg tror på, at godt design ikke kun handler om æstetik&mdash; det handler om at fjerne barrierer og sikre, at alle brugere bliver inkluderet. Gennem mit arbejde stræber jeg efter at kombinere kreativitet med formål, hvor tilgængelighed og brugeroplevelse altid er i fokus. Jeg ønsker at bringe min passion for inkluderende design med ind i min fremtidige karriere og gøre en reel forskel i måden, hvorpå mennesker interagerer med digitale løsninger.",
+            "timeline.label": "Tidslinje",
+            "timeline.title": "H\u00f8jdepunkterne i min rejse",
+            "timeline.0.year": "August 2019 – Juni 2021",
+            "timeline.0.title": "HF | Egedal Gymnasium & HF",
+            "timeline.0.desc":
+              "Gennemf\u00f8rte gymnasiet med en retning i billedkunst, samfundsfag og psykologi, hvilket satte gang i min interesse for kreativitet, mennesker og kommunikation.",
+            "timeline.1.year": "August 2022 – Maj 2023",
+            "timeline.1.title": "Japansk (0-B niveau) | Frederiksberg VUC & STX",
+            "timeline.1.desc": "Gennemførte HF-enkeltfag i Japansk med fokus på grundlæggende grammatik, ordforråd og kulturforståelse.",
+            "timeline.2.year": "August 2023 – Juni 2025",
+            "timeline.2.title": "Multimediedesign | Københavns Erhvervsakademi (KEA)",
+            "timeline.2.desc": "Studerede UX/UI, digitalt design og kodning og arbejdede praktisk med designværktøjer, prototyping og webprojekter.",
+            "timeline.3.year": "Januar 2025 – April 2025",
+            "timeline.3.title": "Junior Creative/praktikant | Kadaver ApS",
+            "timeline.3.desc":
+              "Arbejdede med website-redesigns, informationsstruktur og kundedokumentation, mens jeg fik reel erfaring i et kreativt bureau.",
+            "timeline.4.year": "Nu",
+            "timeline.4.title": "Digital Konceptudvikling | Sjællands Erhvervsakademi (Zealand)",
+            "timeline.4.desc":
+              "Studerer i \u00f8jeblikket, hvordan man oms\u00e6tter id\u00e9er til brugerrettede digitale koncepter, med st\u00e6rkt fokus p\u00e5 strategi og adfærdsdesign.",
+            "timeline.5.year": "Nu",
+            "timeline.5.title": "Student Buddy | Sjællands Erhvervsakademi (Zealand)",
+            "timeline.5.desc":
+              "Hj\u00e6lper internationale studerende med at finde sig til rette, st\u00f8tter dem i deres studier og hverdag, og er \u00e9n, de nemt kan henvende sig til.",
+            "interests.label": "Interesser",
+            "interests.title": "Interesser og hobbyer",
+            "interest.reading.title": "L\u00e6sning",
+            "interest.reading.text":
+              "Der er intet som at fordybe sig i en god bog&mdash; det er min go-to m\u00e5de at slappe af og udforske nye verdener p\u00e5.",
+            "interest.gaming.title": "Gaming",
+            "interest.gaming.text":
+              "Videospil giver mig mulighed for at tr\u00e6de ind i andre verdener og tackle udfordringer p\u00e5 en fuldst\u00e6ndig fordybende m\u00e5de.",
+            "interest.japanese.title": "Japansk kultur",
+            "interest.japanese.text":
+              "Jeg elsker og er inspireret af japansk \u00e6stetik, kultur og sprog&mdash; is\u00e6r balancen mellem enkelhed, detalje og gennemts\u00e6nkt historiefortælling.",
+            "interest.lego.title": "Bygge LEGO",
+            "interest.lego.text":
+              "Der er noget m\u00e6rkeligt terapeutisk ved at klikke LEGO-klodser sammen. Det er mit kreative frirum, der ikke kr\u00e6ver en sk\u00e6rm.",
+            "resources.label": "Ressourcer",
+            "resources.title": "Ressourcer",
+            "resource.cv.da.title": "CV (DA)",
+            "resource.cv.da.desc": "Kig mit CV igennem for at f\u00e5 en oversigt over min baggrund.",
+            "resource.cv.da.btn": "Se CV",
+            "resource.app.da.title": "Ans\u00f8gningsskabelon (DA)",
+            "resource.app.da.desc": "Tag et kig p\u00e5 hvad jeg inkluderer n\u00e5r jeg sender ans\u00f8gninger ud.",
+            "resource.app.da.btn": "Se ans\u00f8gningsskabelon",
+            "contact.label": "Kontakt",
+            "contact.title": "Lad os snakke!",
+            "contact.text":
+              "Hvis du er interesseret i at samarbejde, er du meget velkommen til at tage kontakt. Du kan få fat p\u00e5 mig via de forskellige kontaktmetoder herunder.",
+            "contact.preferred":
+              '<strong class="text-gray-950">Foretrukket: </strong><br/><span class="text-gray-800 text-sm">LinkedIn eller email. Jeg svarer normalt inden for 24-48 timer p\u00e5 hverdage.</span>',
+            "contact.info.email": "Email:",
+            "contact.info.phone": "Telefon:",
+            "contact.info.linkedin": "LinkedIn:",
+            "btn.back": "Tilbage til forsiden",
+          },
+        };
+
+        function apply(lang) {
+          document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var key = el.getAttribute("data-i18n");
+            if (t[lang] && t[lang][key] !== undefined) {
+              el.innerHTML = t[lang][key];
+            }
+          });
+          document.documentElement.lang = lang === "da" ? "da" : "en";
+          var enBtn = document.getElementById("lang-toggle-en");
+          var daBtn = document.getElementById("lang-toggle-da");
+          if (enBtn && daBtn) {
+            enBtn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+            daBtn.setAttribute("aria-pressed", lang === "da" ? "true" : "false");
+            enBtn.classList.toggle("active-lang", lang === "en");
+            daBtn.classList.toggle("active-lang", lang === "da");
+          }
+        }
+
+        return {
+          apply: apply,
+          setLang: function (lang) {
+            localStorage.setItem("lang", lang);
+            apply(lang);
+            window.dispatchEvent(new CustomEvent("langchange", { detail: { lang: lang } }));
+          },
+          getLang: function () {
+            return localStorage.getItem("lang") || "en";
+          },
+        };
+      })();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        window.__i18n.apply(window.__i18n.getLang());
+      });
+    </script>
   </head>
-  <body class="site-shell bg-gray-50 text-gray-950">
+  <body class="site-shell bg-pale-100">
     <header>
       <Header />
       <ScrollToTop />
@@ -56,16 +301,16 @@ const schemamarkup = {
 
 <style>
   body.dark {
-    background: #1a1a1a;
-    color: #f6f6f6;
+    background: var(--dark-bg);
+    color: var(--text-on-dark);
     box-shadow: none;
   }
 
   body.dark .toggle-switch {
-    background-color: #727272;
+    background-color: var(--dark-border);
   }
   body.dark .toggle-circle {
-    background-color: #fafafa;
+    background-color: var(--toggle-circle-dark);
   }
 </style>
 

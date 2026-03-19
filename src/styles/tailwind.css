@@ -4,28 +4,28 @@
 
 @layer base {
   .display {
-    @apply font-hiro text-display-mobile font-bold;
+    @apply font-hiro text-display-mobile font-bold text-gray-800;
   }
 
   h1 {
-    @apply font-inter text-h1-mobile font-bold italic;
+    @apply font-inter text-h1-mobile font-bold italic text-gray-800;
   }
 
   h2 {
-    @apply font-inter text-h2-mobile font-bold italic;
+    @apply font-inter text-h2-mobile italic text-gray-800;
   }
 
   h3 {
-    @apply font-inter text-h3-mobile font-bold italic;
+    @apply font-inter text-h3-mobile font-bold italic text-gray-800;
   }
 
   h4 {
-    @apply font-inter text-h4-mobile font-bold italic;
+    @apply font-inter text-h4-mobile font-bold italic text-gray-800;
   }
 
   p,
   a {
-    @apply font-almarai text-p-mobile leading-7;
+    @apply font-almarai text-p-mobile leading-7 text-gray-600;
   }
 
   span {
@@ -34,28 +34,28 @@
 
   @media (min-width: 768px) {
     .display {
-      @apply text-display-desktop;
+      @apply text-display-desktop font-bold text-gray-800;
     }
 
     h1 {
-      @apply text-h1-desktop;
+      @apply text-h1-desktop font-bold italic text-gray-800;
     }
 
     h2 {
-      @apply text-h2-desktop;
+      @apply text-h2-desktop font-bold italic text-gray-800;
     }
 
     h3 {
-      @apply text-h3-desktop;
+      @apply text-h3-desktop font-bold italic text-gray-800;
     }
 
     h4 {
-      @apply text-h4-desktop;
+      @apply text-h4-desktop font-bold italic text-gray-800;
     }
 
     p,
     a {
-      @apply text-p-desktop leading-7;
+      @apply text-p-desktop leading-7 text-gray-600;
     }
 
     span {

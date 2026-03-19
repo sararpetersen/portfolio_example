@@ -58,19 +58,19 @@ import Cases from "../components/Cases.astro";
 
             <p class="text-gray-50" aria-label="Indicates that I'm currently open for internship opportunities">
               <strong class="font-semibold">Status:</strong>
-              Open for internship
+              <span class="text-[16px]" data-i18n="hero.status">Open for internship</span>
             </p>
           </div>
 
-          <h1 class="hero-title text-gray-950 display pb-6">Sara Ringkow Petersen</h1>
-          <h2 class="hero-role text-gray-950 pb-6">Multimedia Designer & Concept Developer</h2>
-          <p class="hero-lead text-gray-950 font-light pb-8 max-w-3xl">
+          <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
+          <h2 class="hero-role text-gray-700 pb-6" data-i18n="hero.role">Multimedia Designer & Concept Developer</h2>
+          <p class="hero-lead text-gray-600 font-light pb-8 max-w-3xl" data-i18n="hero.lead">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
 
-          <div id="hero-cta" class="flex flex-wrap items-center gap-4">
+          <div id="hero-cta" class="btn-container flex flex-wrap items-center gap-4">
             <a href="#project-section" aria-label="Go to projects section" class="md:hidden block">
-              <Button variant="primary" size="medium">See projects</Button>
+              <Button variant="primary" size="medium"><span data-i18n="hero.cta">See projects</span></Button>
             </a>
           </div>
         </div>
@@ -87,14 +87,14 @@ import Cases from "../components/Cases.astro";
     <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-pale-400 scroll-link">
         <div class="float flex flex-col items-center transition duration-300 ease-in-out">
-          <p class="uppercase tracking-[0.22em] text-xs text-gray-500">Scroll to projects</p>
+          <p class="uppercase tracking-[0.22em] text-xs text-gray-500" data-i18n="hero.scroll">Scroll to projects</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-8 h-8 sm:w-10 sm:h-10 text-gray-950 transition duration-300 ease-in-out scroll-icon"
+            class="w-8 h-8 sm:w-10 sm:h-10 transition duration-300 ease-in-out scroll-icon"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
@@ -107,13 +107,17 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
       <!-- eyebrow label -->
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Selected work</p>
+      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="projects.label">
+        Selected work
+      </p>
 
       <!-- title -->
-      <h3 id="project-title" class="col-span-12 uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro text-gray-950 md:mb-7 mb-5">Projects</h3>
+      <h3 id="project-title" class="col-span-12 uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:mb-7 mb-5" data-i18n="projects.title">
+        Projects
+      </h3>
 
       <!-- description -->
-      <p id="project-text" class="col-span-12 text-gray-700 mb-12 leading-relaxed">
+      <p id="project-text" class="col-span-12 text-gray-600 mb-12 leading-relaxed" data-i18n="projects.text">
         Below are some of the projects I've worked on during my studies and internships.
         <br class="hidden md:block" />
         Click on any of the cards to read more about the project, the process and the outcome.
@@ -134,13 +138,20 @@ import Cases from "../components/Cases.astro";
 
       <!-- Text -->
       <div id="about-preview-text">
-        <p id="about-preview-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Profile</p>
+        <p
+          id="about-preview-label"
+          class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
+          data-i18n="about.preview.label"
+        >
+          Profile
+        </p>
 
-        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro text-gray-950">About me</h3>
+        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro" data-i18n="about.preview.title">About me</h3>
 
         <p
           id="about-preview-text-paragraph"
-          class="mb-6 text-gray-700 max-w-xl leading-relaxed md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm"
+          class="mb-6 text-gray-600 max-w-xl leading-relaxed md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm"
+          data-i18n="about.preview.text"
         >
           I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital
           experiences that combine visual clarity, thoughtful structure, and functionality. My work spans UX/UI design, concept development, and
@@ -150,7 +161,7 @@ import Cases from "../components/Cases.astro";
 
         <div class="btn_container">
           <a aria-label="Learn more about me" id="about-preview-link" href="/about_me" class="mt-4">
-            <Button variant="secondary" size="small">Learn more about me</Button>
+            <Button variant="secondary" size="small"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
           </a>
         </div>
       </div>
@@ -162,19 +173,19 @@ import Cases from "../components/Cases.astro";
     <div class="container max-w-7xl mx-auto col-span-12 grid md:grid-cols-2 md:gap-10 gap-4 items-center justify-center md:px-0 px-6">
       <!-- Left: Heading + small context -->
       <div id="testimonial-heading">
-        <p class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Recommendation</p>
+        <p class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="testimonials.label">Recommendation</p>
 
-        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro text-gray-950">Featured testimonial</h3>
+        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro" data-i18n="testimonials.title">Featured testimonial</h3>
 
-        <p id="testimonial-context" class="text-gray-700 leading-relaxed max-w-xl md:mx-0 md:mb-0 mb-2">
+        <p id="testimonial-context" class="text-gray-600 max-w-xl md:mx-0 md:mb-0 mb-2" data-i18n="testimonials.context">
           A short quote from someone I've worked with.
         </p>
       </div>
 
       <!-- Right: Testimonial card -->
       <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 shadow-sm">
-        <blockquote>
-          <p class="text-gray-800 italic leading-relaxed">
+        <blockquote class="text-gray-600 italic" data-i18n="testimonials.quote">
+          <p>
             "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
               >[...]</em
             > Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet
@@ -183,13 +194,9 @@ import Cases from "../components/Cases.astro";
         </blockquote>
 
         <figcaption class="mt-6 flex items-center gap-4">
-          <div class="h-12 w-12 rounded-full bg-gray-400/60 border border-gray-600 flex items-center justify-center">
-            <span class="font-semibold text-sm">JK</span>
-          </div>
-
           <div>
-            <p class="font-semibold text-gray-950">Jacob Klintrup</p>
-            <p class="text-gray-700 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
+            <p class="font-semibold">Jacob Klintrup</p>
+            <p class="text-gray-600 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
           </div>
         </figcaption>
       </figure>
@@ -440,13 +447,13 @@ import Cases from "../components/Cases.astro";
     body.dark #about-preview-text h3,
     body.dark #about-preview-text-paragraph,
     body.dark #about-preview-label {
-      color: #e6e6e6;
+      color: var(--text-on-dark-soft);
     }
 
     body.dark #testimonials hr,
     body.dark #how-i-work hr,
     body.dark #more-about-me hr {
-      border-color: #727272;
+      border-color: var(--dark-border);
     }
 
     body.dark #process-cards div,
@@ -454,12 +461,12 @@ import Cases from "../components/Cases.astro";
     body.dark #intro-grid > div,
     body.dark #about-preview-text-paragraph,
     body.dark #testimonial-card {
-      border-color: #727272;
-      background: linear-gradient(to bottom right, #404040, #272727);
+      border-color: var(--dark-border);
+      background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     }
 
     body.dark #about-preview img {
-      border-color: #727272;
+      border-color: var(--dark-border);
     }
 
     /* Miscellaneous */
@@ -483,16 +490,16 @@ import Cases from "../components/Cases.astro";
     }
 
     #scroll-down {
-      color: #1a1a1a;
+      color: var(--dark-bg);
     }
 
     body.dark #scroll-down .scroll-icon,
     body.dark #scroll-down p {
-      color: #f6f6f6;
+      color: var(--text-on-dark);
     }
 
     body.dark #process-cards div svg {
-      color: #f6f6f6;
+      color: var(--text-on-dark);
       background: transparent;
     }
   </style>

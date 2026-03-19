@@ -28,23 +28,25 @@ import MainLayout from "../layouts/MainLayout.astro";
           <p
             id="contact-title-label"
             class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4 md:text-left text-center"
+            data-i18n="contact.label"
           >
             Contact
           </p>
           <h1
             id="contact-title"
-            class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center text-gray-950 mb-9 text-4xl md:text-5xl"
+            class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center mb-9 text-4xl md:text-5xl"
+            data-i18n="contact.title"
           >
             Let's talk!
           </h1>
-          <p id="contact-text" class="md:text-left text-center text-gray-800 pb-9 text-lg leading-relaxed max-w-xl">
+          <p id="contact-text" class="md:text-left text-center text-gray-800 pb-9 text-lg leading-relaxed max-w-xl" data-i18n="contact.text">
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can reach me via the different
             contact methods below.
           </p>
           <!-- Preferred Contact Method Section -->
-          <p id="contact-preferred" class="md:text-left text-center pb-8 text-sm italic">
-            <strong class="text-gray-950">Preferred: </strong><br class="hidden md:block" /><span class="text-gray-800 text-sm"
-              >LinkedIn or email. I usually reply within 24–48 hours on weekdays.</span
+          <p id="contact-preferred" class="md:text-left text-center pb-8 text-sm italic" data-i18n="contact.preferred">
+            <strong class="text-gray-800">Preferred: </strong><br class="hidden md:block" /><span class="text-gray-600 text-sm"
+              >LinkedIn or email. I usually reply within 24-48 hours on weekdays.</span
             >
           </p>
           <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm">
@@ -56,7 +58,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-7 h-7 mr-2 text-gray-700"
+                  class="w-7 h-7 mr-2 text-gray-600"
                   aria-hidden="true"
                 >
                   <path
@@ -66,12 +68,11 @@ import MainLayout from "../layouts/MainLayout.astro";
                   ></path>
                 </svg>
                 <div>
-                  <strong class="text-gray-950 block mb-2">Email:</strong>
+                  <strong class="text-gray-950 block mb-2" data-i18n="contact.info.email">Email:</strong>
                   <a
                     href="mailto:sara.ringkow@gmail.com"
                     aria-label="Send email to 'sara.ringkow@gmail.com'"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
-                    >sara.ringkow@gmail.com</a
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded">sara.ringkow@gmail.com</a
                   >
                 </div>
               </li>
@@ -82,7 +83,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-7 h-7 mr-2 text-gray-700"
+                  class="w-7 h-7 mr-2 text-gray-600"
                   aria-hidden="true"
                 >
                   <path
@@ -92,18 +93,17 @@ import MainLayout from "../layouts/MainLayout.astro";
                   ></path>
                 </svg>
                 <div>
-                  <strong class="text-gray-950 block mb-2">Phone:</strong>
+                  <strong class="text-gray-800 block mb-2" data-i18n="contact.info.phone">Phone:</strong>
                   <a
                     href="tel:+4542428807"
                     aria-label="Call +45 42 42 88 07"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
-                    >+45 42 42 88 07</a
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded">+45 42 42 88 07</a
                   >
                 </div>
               </li>
               <li class="some1 flex items-start gap-4">
                 <svg
-                  class="w-8 h-8 mr-2 text-gray-700"
+                  class="w-8 h-8 mr-2 text-gray-600"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="45"
@@ -118,11 +118,11 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <path d="M7.2 8.809H4V19.5h3.2V8.809Z"></path>
                 </svg>
                 <div>
-                  <strong class="text-gray-950 block mb-2">LinkedIn:</strong>
+                  <strong class="text-gray-800 block mb-2" data-i18n="contact.info.linkedin">LinkedIn:</strong>
                   <a
                     href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"
                     aria-label="Go to 'linkedin.com/in/sara-ringkow-petersen' (external link)"
-                    class="text-gray-800 hover:text-gray-700 transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded px-1"
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded"
                     >linkedin.com/in/sara-ringkow-petersen</a
                   >
                 </div>
@@ -136,7 +136,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <section class="button-container mx-auto py-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
-      <Button variant="primary" size="small">Back to homepage</Button>
+      <Button variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
     </a>
   </section>
 
@@ -199,27 +199,31 @@ import MainLayout from "../layouts/MainLayout.astro";
   </script>
 
   <style>
-    body.dark h1 {
-      color: #f6f6f6;
+    :global(body.dark #contact-title) {
+      color: var(--text-on-dark);
     }
 
-    body.dark #contact-info {
-      border-color: #727272;
-      background: linear-gradient(to bottom right, #404040, #272727);
+    :global(body.dark #contact-info) {
+      border-color: var(--dark-border);
+      background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     }
 
-    body.dark #contact-info strong,
-    body.dark #contact-info a,
-    body.dark #contact-text,
-    body.dark #contact-preferred strong,
-    body.dark #contact-preferred span,
-    body.dark .some1 svg,
-    body.dark #contact-title-label {
-      color: #e6e6e6;
+    :global(body.dark #contact-info strong),
+    :global(body.dark #contact-info a),
+    :global(body.dark #contact-text),
+    :global(body.dark #contact-preferred strong),
+    :global(body.dark #contact-preferred span),
+    :global(body.dark .some1 svg),
+    :global(body.dark #contact-title-label) {
+      color: var(--text-on-dark-soft);
     }
 
-    body.dark #contact-info a:hover {
-      color: #dc6d57;
+    :global(body.dark #contact-info a:hover) {
+      color: var(--brand-primary-soft);
+    }
+
+    :global(#contact-info a:hover) {
+      color: var(--brand-primary);
     }
   </style>
 </MainLayout>

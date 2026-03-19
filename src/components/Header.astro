@@ -6,12 +6,14 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 ---
 
 <!-- Accessibility settings bar -->
-<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-950 text-gray-50 flex items-center h-9 p-4 z-50">
+<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-800 text-gray-50 flex items-center h-9 p-4 z-50">
   <!-- Gear Icon -->
   <button
     id="accessibilityToggle"
     class="svg-gear focus:outline-none focus:ring-2 focus:ring-pale-400 transition duration-300 ease-in-out"
     aria-label="Accessibility-settings"
+    aria-controls="accessibilityOptions"
+    aria-expanded="false"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 transition duration-300 ease-in-out">
       <path
@@ -22,10 +24,14 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   </button>
 
   <!-- Accessibility Options -->
-  <div id="accessibilityOptions" class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0">
+  <div
+    id="accessibilityOptions"
+    class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0"
+    aria-hidden="true"
+  >
     <!-- Dark Mode Toggle -->
     <div class="flex items-center gap-2">
-      <span id="darkModeToggleLabel" class="md:block hidden text-gray-50">Dark-mode</span>
+      <span id="darkModeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.darkmode">Dark-mode</span>
       <button id="darkModeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle dark-mode">
         <span class="toggle-circle"></span>
       </button>
@@ -33,17 +39,36 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
     <!-- Reduce Motion Toggle -->
     <div class="flex items-center gap-2">
-      <span id="motionToggleLabel" class="md:block hidden text-gray-50">Remove animations</span>
+      <span id="motionToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.animations">Remove animations</span>
       <button id="motionToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle 'remove animations'">
         <span class="toggle-circle"></span>
       </button>
     </div>
   </div>
+
+  <!-- Language Toggle -->
+  <div class="ml-auto flex items-center gap-1">
+    <button
+      id="lang-toggle-en"
+      data-lang="en"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-pale-400"
+      aria-label="Switch to English"
+      aria-pressed="true">EN</button
+    >
+    <span class="text-gray-500 text-xs" aria-hidden="true">/</span>
+    <button
+      id="lang-toggle-da"
+      data-lang="da"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-pale-400"
+      aria-label="Skift til dansk"
+      aria-pressed="false">DA</button
+    >
+  </div>
 </div>
 
 <header
   id="header"
-  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 md:px-16 bg-gray-50 text-gray-950 z-30"
+  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 md:px-16 bg-gray-50 z-30"
   x-data="{ showmenu: false, showDropdown: false }"
 >
   <div class="flex items-center justify-between">
@@ -57,7 +82,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         />
         <img
           src="/logo_white.svg"
-          alt="Logo for my website, with two of my initials (white)"
+          alt=""
+          aria-hidden="true"
           class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-dark"
         />
       </a>
@@ -70,7 +96,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/"
           class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/") ? "page" : undefined}
-          aria-label="Go to homepage">Home</a
+          aria-label="Go to homepage"
+          data-i18n="nav.home">Home</a
         >
       </li>
       <li class="some1">
@@ -78,7 +105,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/about_me"
           class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/about_me") ? "page" : undefined}
-          aria-label="Go to about-page">About</a
+          aria-label="Go to about-page"
+          data-i18n="nav.about">About</a
         >
       </li>
       <li class="some1">
@@ -86,13 +114,21 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/contact"
           class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/contact") ? "page" : undefined}
-          aria-label="Go to contact-page">Contact</a
+          aria-label="Go to contact-page"
+          data-i18n="nav.contact">Contact</a
         >
       </li>
     </ul>
 
     <!-- Mobile Burger (shows below lg) -->
-    <button id="burgermenu" aria-label="Show mobile-menu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+    <button
+      id="burgermenu"
+      aria-label="Show mobile-menu"
+      aria-controls="mobilmenu"
+      x-bind:aria-expanded="showmenu ? 'true' : 'false'"
+      class="lg:hidden"
+      x-on:click="showmenu = !showmenu"
+    >
       <!-- Hamburger -->
       <svg
         x-show="!showmenu"
@@ -127,6 +163,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   <nav
     id="mobilmenu"
     aria-label="Open mobile-menu"
+    x-bind:aria-hidden="showmenu ? 'false' : 'true'"
     class="lg:hidden"
     x-show="showmenu"
     x-transition
@@ -140,7 +177,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/#hero"
           class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/") ? "page" : undefined}
-          aria-label="Go to homepage">Home</a
+          aria-label="Go to homepage"
+          data-i18n="nav.home">Home</a
         >
       </li>
       <li class="some1">
@@ -148,7 +186,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/about_me"
           class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/about_me") ? "page" : undefined}
-          aria-label="Go to about-page">About</a
+          aria-label="Go to about-page"
+          data-i18n="nav.about">About</a
         >
       </li>
       <li class="some1">
@@ -156,7 +195,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           href="/contact"
           class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/contact") ? "page" : undefined}
-          aria-label="Go to contact-page">Contact</a
+          aria-label="Go to contact-page"
+          data-i18n="nav.contact">Contact</a
         >
       </li>
     </ul>
@@ -191,6 +231,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     color: var(--brand-primary);
   }
 
+  /* Dark Mode */
+  body.dark #header a {
+    color: var(--text-on-dark);
+  }
+
+  body.dark #header #mobilmenu a:hover {
+    color: var(--brand-primary-soft);
+  }
+
   body.dark #header #mobilmenu a:hover svg,
   body.dark #header #burgermenu:hover svg,
   body.dark #header a:hover {
@@ -203,19 +252,19 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
   /* Dark Mode */
   body.dark #header {
-    background: #1a1a1a;
-    color: #f6f6f6;
+    background: var(--dark-bg);
+    color: var(--text-on-dark);
     box-shadow: none;
-    border-bottom: 1px solid #404040;
+    border-bottom: 1px solid var(--dark-border);
   }
 
   body.dark #accessibility-bar {
-    background-color: #0b0b0b;
-    color: #f6f6f6;
+    background-color: var(--dark-surface-strong);
+    color: var(--text-on-dark);
   }
 
   body.dark #header #mobilmenu {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 
   body.dark #header a[aria-current="page"],
@@ -224,15 +273,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   }
 
   body.dark #vertical-border {
-    border-color: #727272;
+    border-color: var(--dark-border);
   }
 
   /* Button styles for dark mode */
   body.dark .toggle-switch {
-    background-color: #727272;
+    background-color: var(--dark-border);
   }
   body.dark .toggle-circle {
-    background-color: #fafafa;
+    background-color: var(--toggle-circle-dark);
   }
 
   /* Reduce Motion Mode */
@@ -273,6 +322,18 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   body.dark #burgermenu svg:hover {
     color: var(--brand-primary-soft);
   }
+
+  .lang-btn {
+    color: var(--dark-border);
+    transition: color 0.2s ease;
+  }
+  .lang-btn.active-lang {
+    color: var(--text-on-dark);
+    font-weight: 700;
+  }
+  .lang-btn:hover {
+    color: var(--brand-primary-soft);
+  }
 </style>
 
 <script>
@@ -304,6 +365,21 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
   initToggle("darkModeToggle", "dark", "darkModeEnabled");
 
+  // Language toggle
+  const langButtons = document.querySelectorAll<HTMLButtonElement>(".lang-btn");
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang") || "en";
+      (window as any).__i18n?.setLang(lang);
+    });
+  });
+  // Sync lang button state on load
+  const currentLang = localStorage.getItem("lang") || "en";
+  document.getElementById("lang-toggle-en")?.classList.toggle("active-lang", currentLang === "en");
+  document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
+  document.getElementById("lang-toggle-da")?.classList.toggle("active-lang", currentLang === "da");
+  document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", currentLang === "da" ? "true" : "false");
+
   // Accessibility-toggle
   const toggleButton = document.getElementById("accessibilityToggle");
   const options = document.getElementById("accessibilityOptions");
@@ -313,9 +389,13 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     if (isOpen) {
       options?.classList.remove("scale-x-0", "opacity-0");
       options?.classList.add("scale-x-100", "opacity-100");
+      toggleButton?.setAttribute("aria-expanded", "true");
+      options?.setAttribute("aria-hidden", "false");
     } else {
       options?.classList.remove("scale-x-100", "opacity-100");
       options?.classList.add("scale-x-0", "opacity-0");
+      toggleButton?.setAttribute("aria-expanded", "false");
+      options?.setAttribute("aria-hidden", "true");
     }
   }
 

@@ -26,8 +26,12 @@ interface Project {
   id: number;
   slug: string;
   name: string;
+  semester?: string;
   description: string;
+  description_da?: string;
   year: string;
+  year_da?: string;
+  semester_da?: string;
   image: string;
   tools?: string[];
   url: string;
@@ -57,7 +61,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <a
         href="/"
         class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-400"
-        aria-label="Go to homepage">↑ Back to homepage</a
+        aria-label="Go to homepage"
+        data-i18n="project.back">↑ Back to homepage</a
       >
 
       <div class="flex gap-4 ml-auto">
@@ -88,11 +93,20 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Project</p>
-      <h1 id="project-title" class="font-hiro md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] mb-5 text-gray-950">
+      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="project.label">
+        Project
+      </p>
+      <h1 id="project-title" class="font-hiro md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] mb-5">
         {project.name}
       </h1>
-      <h2 id="project-subtitle" class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-800 leading-7">{project.year}</h2>
+      <h2
+        id="project-subtitle"
+        class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-600 leading-7"
+        data-year={project.year || ""}
+        data-year-da={project.year_da || ""}
+      >
+        {project.semester || project.year}
+      </h2>
     </header>
 
     <!-- Figma Notice -->
@@ -100,7 +114,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       project.slug === "vibeloop" || project.slug === "ungeforum"
         ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
             <div
-              class="flex items-center gap-3 col-span-12 bg-pale-100 border border-l-4 border-pale-500 rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
+              class="flex items-center gap-3 col-span-12 bg-red-500 border border-l-4 border-red-700 rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
               id="figma-notice"
             >
               <svg
@@ -108,14 +122,16 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
                 width="30"
                 height="30"
                 fill="currentColor"
-                class="text-pale-700 flex-shrink-0"
+                class="text-gray-50 flex-shrink-0"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
               </svg>
               <div>
-                <p class="text-pale-700 md:text-[14.5px] text-[12px]">This project is presented as an interactive prototype created in Figma</p>
+                <p class="text-gray-50 md:text-[14.5px] text-[12px]" data-i18n="project.figma.notice">
+                  This project is presented as an interactive prototype created in Figma
+                </p>
               </div>
             </div>
           )
@@ -133,12 +149,19 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       />
 
       <div class="space-y-6">
-        <p id="project-description" class="text-gray-800">{project.description}</p>
+        <p
+          id="project-description"
+          class="text-gray-600"
+          data-description={project.description || ""}
+          data-description-da={project.description_da || ""}
+        >
+          {project.description}
+        </p>
 
         {
           project.tools && (
             <div id="tools-list">
-              <h3 id="tools-title" class="text-h4-mobile italic font-bold text-gray-950 mb-2">
+              <h3 id="tools-title" class="text-h4-mobile italic font-bold mb-2" data-i18n="project.tools">
                 Tools used:
               </h3>
               <div class="flex flex-wrap gap-2 mb-12">
@@ -151,7 +174,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         }
         <div id="project-link" class="btn-container">
           <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.name}`}>
-            <Button variant="secondary" size="small">View project</Button>
+            <Button variant="secondary" size="small"><span data-i18n="project.view">View project</span></Button>
           </a>
         </div>
       </div>
@@ -164,8 +187,14 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
   >
     <div id="related-projects-title" class="col-span-12 mb-4">
-      <p id="related-projects-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Selected work</p>
-      <h2 class="text-h3-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro text-gray-950 mb-5">More projects</h2>
+      <p
+        id="related-projects-label"
+        class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
+        data-i18n="project.related.label"
+      >
+        Selected work
+      </p>
+      <h2 class="text-h3-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro mb-5" data-i18n="project.related.title">More projects</h2>
     </div>
 
     {
@@ -183,8 +212,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
                     loading="lazy"
                   />
                   <div class="related-project-info p-4 border-t border-gray-500 transition-colors duration-300">
-                    <h3 class="related-project-title text-h4-mobile font-bold text-gray-950 mb-2">{proj.name}</h3>
-                    <p class="related-project-year text-sm text-gray-800 transition-colors duration-300 group-hover:text-gray-950 group-focus-visible:text-gray-950">
+                    <h3 class="related-project-title text-h4-mobile font-bold mb-2">{proj.name}</h3>
+                    <p
+                      class="related-project-year text-sm text-gray-600 transition-colors duration-300"
+                      data-year={proj.year || ""}
+                      data-year-da={proj.year_da || ""}
+                    >
                       {proj.year}
                     </p>
                   </div>
@@ -201,60 +234,53 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 <style>
   body.dark #project-header h1,
   body.dark #project-header h2,
-  body.dark p,
-  body.dark h3,
-  body.dark span {
-    color: #e6e6e6;
-  }
-
-  body.dark #figma-notice {
-    background-color: #334857;
-    border-color: #6297ae;
-    color: #f6f6f6;
-  }
-
-  body.dark #figma-notice svg {
-    color: #f6f6f6;
+  body.dark #project-description,
+  body.dark #tools-title {
+    color: var(--text-on-dark);
   }
 
   body.dark a {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 
   body.dark a:hover {
     color: var(--brand-primary-soft);
   }
 
+  body.dark #figma-notice {
+    border-color: #f4a6a6;
+  }
+
   body.dark #project-image {
-    border-color: #727272;
+    border-color: var(--dark-border);
   }
 
   body.dark section:last-child .col-span-12 > div > a > div {
-    border-color: #727272;
-    background: linear-gradient(to bottom right, #404040, #272727);
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark #related-projects h2 {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 
   body.dark .related-project-card {
-    border-color: #727272;
-    background: linear-gradient(to bottom right, #404040, #272727);
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark .related-project-card:hover,
   body.dark .related-project-card:focus-visible {
-    background: linear-gradient(to bottom right, #535353, #404040);
+    background: linear-gradient(to bottom right, var(--dark-border), var(--dark-gradient-start));
   }
 
   body.dark .related-project-info {
-    border-color: #727272;
+    border-color: var(--dark-border);
   }
 
   body.dark .related-project-title,
   body.dark .related-project-year {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 </style>
 
@@ -269,7 +295,42 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     { selector: "#related-projects-label", animation: "animate__fadeInUp" },
   ];
 
-  document.addEventListener("DOMContentLoaded", () => {
+  const applyDatabaseTranslations = (lang: string) => {
+    const descriptionEl = document.querySelector("#project-description") as HTMLElement | null;
+    const subtitleEl = document.querySelector("#project-subtitle") as HTMLElement | null;
+
+    if (descriptionEl) {
+      const description = descriptionEl.dataset.description || "";
+      const descriptionDa = descriptionEl.dataset.descriptionDa || "";
+      const currentDescription = lang === "da" ? descriptionDa || description : description;
+      descriptionEl.textContent = currentDescription;
+    }
+
+    const getCurrentPeriod = (el: HTMLElement) => {
+      const year = el.dataset.year || "";
+      const yearDa = el.dataset.yearDa || "";
+      const semester = el.dataset.semester || "";
+      const semesterDa = el.dataset.semesterDa || "";
+
+      const currentYear = lang === "da" ? yearDa || year : year;
+      const currentSemester = lang === "da" ? semesterDa || semester : semester;
+
+      return currentSemester || currentYear;
+    };
+
+    if (subtitleEl) {
+      subtitleEl.textContent = getCurrentPeriod(subtitleEl);
+    }
+
+    document.querySelectorAll(".related-project-year").forEach((yearEl) => {
+      const element = yearEl as HTMLElement;
+      element.textContent = getCurrentPeriod(element);
+    });
+  };
+
+  const getLang = () => localStorage.getItem("lang") || "en";
+
+  const initAnimations = () => {
     if (document.body.classList.contains("reduce-motion")) return;
 
     elements.forEach(({ selector, animation }) => {
@@ -285,55 +346,85 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       });
     });
 
-    const elementmedanimation6 = document.querySelector("#project-link");
-    inView(elementmedanimation6, () => {
-      elementmedanimation6.classList.add("animate__animated", "animate__fadeInUp");
-    });
+    const elementmedanimation6 = document.querySelector("#project-link") as HTMLElement | null;
+    if (elementmedanimation6) {
+      inView(elementmedanimation6, () => {
+        elementmedanimation6.classList.add("animate__animated", "animate__fadeInUp");
+      });
+    }
 
-    const elementmedanimation5 = document.querySelector("#project-image");
-    inView(elementmedanimation5, () => {
-      elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
-    });
+    const elementmedanimation5 = document.querySelector("#project-image") as HTMLElement | null;
+    if (elementmedanimation5) {
+      inView(elementmedanimation5, () => {
+        elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
+      });
+    }
 
-    const elementmedanimation7 = document.querySelector("#gallery");
-    inView(elementmedanimation7, () => {
-      elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
-    });
+    const elementmedanimation7 = document.querySelector("#gallery") as HTMLElement | null;
+    if (elementmedanimation7) {
+      inView(elementmedanimation7, () => {
+        elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
+      });
+    }
 
-    const elementmedanimation8 = document.querySelector("#figma-notice");
-    inView(elementmedanimation8, () => {
-      elementmedanimation8.classList.add("animate__animated", "animate__backInDown");
-    });
+    const elementmedanimation8 = document.querySelector("#figma-notice") as HTMLElement | null;
+    if (elementmedanimation8) {
+      inView(elementmedanimation8, () => {
+        elementmedanimation8.classList.add("animate__animated", "animate__backInDown");
+      });
+    }
 
-    const elementmedanimation10 = document.querySelector("#ai-notice");
-    inView(elementmedanimation10, () => {
-      elementmedanimation10.classList.add("animate__animated", "animate__backInDown");
-    });
+    const elementmedanimation10 = document.querySelector("#ai-notice") as HTMLElement | null;
+    if (elementmedanimation10) {
+      inView(elementmedanimation10, () => {
+        elementmedanimation10.classList.add("animate__animated", "animate__backInDown");
+      });
+    }
 
     const cards = document.querySelectorAll(".related-project-card");
     cards.forEach((card) => {
       const cardEl = card as HTMLElement;
       inView(cardEl, () => {
         cardEl.classList.add("animate__animated", "animate__fadeInUp");
-        cardEl.style.animationDelay = `${Math.random() * 0.5}s`; // Random delay for a staggered effect
+        cardEl.style.animationDelay = `${Math.random() * 0.5}s`;
       });
     });
 
-    const elementmedanimation9 = document.querySelector("#related-projects-title");
-    inView(elementmedanimation9, () => {
-      elementmedanimation9.classList.add("animate__animated", "animate__backInRight");
-    });
+    const elementmedanimation9 = document.querySelector("#related-projects-title") as HTMLElement | null;
+    if (elementmedanimation9) {
+      inView(elementmedanimation9, () => {
+        elementmedanimation9.classList.add("animate__animated", "animate__backInRight");
+      });
+    }
+  };
 
-    document.querySelectorAll("#").forEach((divider) => {
-      inView(divider, () => {
-        divider.classList.add("animate__animated", "animate__bounceInDown");
-        divider.addEventListener(
-          "animationend",
-          () => {
-            divider.classList.remove("animate__animated", "animate__bounceInDown");
-          },
-          { once: true },
-        );
+  const syncDatabaseTranslations = () => {
+    applyDatabaseTranslations(getLang());
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    syncDatabaseTranslations();
+    try {
+      initAnimations();
+    } catch {
+      // Keep page functional even if animations fail.
+    }
+  });
+
+  document.addEventListener("astro:page-load", () => {
+    syncDatabaseTranslations();
+  });
+
+  window.addEventListener("langchange", (event: Event) => {
+    const customEvent = event as CustomEvent;
+    const lang = customEvent.detail?.lang || getLang();
+    applyDatabaseTranslations(lang);
+  });
+
+  document.querySelectorAll("#lang-toggle-en, #lang-toggle-da").forEach((button) => {
+    button.addEventListener("click", () => {
+      requestAnimationFrame(() => {
+        syncDatabaseTranslations();
       });
     });
   });

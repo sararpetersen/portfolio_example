@@ -5,14 +5,26 @@
 }
 
 :root {
-  --washi-bg: #f4f8fa;
-  --washi-highlight: rgba(242, 248, 249, 0.72);
+  --washi-bg: #f7f3ef;
+  --washi-highlight: rgba(255, 253, 252, 0.72);
   --ink-indigo: rgba(51, 72, 87, 0.12);
-  --seal-vermilion: #bb4a34;
-  --seal-vermilion-soft: rgba(187, 74, 52, 0.14);
+  --seal-vermilion: #e63946;
+  --seal-vermilion-soft: rgba(230, 57, 70, 0.14);
   --brand-primary: #477b93;
-  --brand-primary-soft: #b7cdd9;
+  --brand-primary-tint: #deebef;
+  --brand-primary-soft: #c0d7e1;
   --brand-primary-strong: #375567;
+  --dark-bg: #121212;
+  --dark-surface: #1f1f1f;
+  --dark-surface-strong: #0a0a0a;
+  --dark-border: #7b7b7b;
+  --dark-gradient-start: #2e2e2e;
+  --dark-gradient-end: #1f1f1f;
+  --dark-surface-hover: #535353;
+  --dark-border-strong: #a3a3a3;
+  --text-on-dark: #f0ebe6;
+  --text-on-dark-soft: #dcd6d0;
+  --toggle-circle-dark: #f7f3ef;
 }
 
 html {
@@ -98,7 +110,7 @@ body.site-shell::after {
   transform: scaleX(1);
 }
 
-.some1 a::after {
+#header .some1 a::after {
   content: "";
   position: absolute;
   right: -0.65rem;
@@ -113,8 +125,8 @@ body.site-shell::after {
     transform 0.25s ease;
 }
 
-.some1 a:hover::after,
-.some1 a:focus-visible::after {
+#header .some1 a:hover::after,
+#header .some1 a:focus-visible::after {
   opacity: 0.9;
   transform: rotate(45deg) scale(1);
 }
@@ -123,13 +135,18 @@ body.site-shell::after {
   text-decoration: none;
 }
 
+.btn_container span,
+.btn-container span {
+  font-size: 14px;
+}
+
 body.dark.site-shell {
-  --brand-primary: #6887a8;
-  --brand-primary-soft: #b7cdd9;
-  --brand-primary-strong: #90b0c4;
-  background-color: #1a1a1a;
+  --brand-primary: #6297ae;
+  --brand-primary-soft: #c0d7e1;
+  --brand-primary-strong: #95bccb;
+  background-color: var(--dark-bg);
   background-image:
-    linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(11, 11, 11, 0.98)),
+    linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98)),
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
 }
 
@@ -143,15 +160,4 @@ body.dark.site-shell::after {
   background-image:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
-}
-
-@font-face {
-  font-family: "HIRO MISAKE";
-  src: url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.eot");
-  src:
-    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.eot?#iefix") format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.woff2") format("woff2"),
-    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.woff") format("woff"),
-    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.ttf") format("truetype"),
-    url("https://db.onlinewebfonts.com/t/cb016801ac894736ed4b03c945631927.svg#HIRO MISAKE") format("svg");
 }

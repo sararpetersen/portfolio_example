@@ -56,9 +56,13 @@ const timelineItems: TimelineItem[] = [
   >
     <!-- Intro Section -->
     <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20">
-      <p id="about-me-title-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Profile</p>
-      <h1 class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center text-gray-950 mb-9">About me</h1>
-      <p class="heading-text text-gray-800 md:pb-0 pb-16 max-w-3xl">
+      <p id="about-me-title-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="about.label">
+        Profile
+      </p>
+      <h1 class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center mb-9" data-i18n="about.title">
+        About me
+      </h1>
+      <p class="heading-text text-gray-600 md:pb-0 pb-16 max-w-3xl" data-i18n="about.intro">
         Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the
         very bottom of the page.
       </p>
@@ -69,34 +73,58 @@ const timelineItems: TimelineItem[] = [
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
       <div class="items-center md:pb-0 pb-8">
         <!-- Tabs -->
-        <div class="flex gap-2 mb-6 border-b border-gray-300">
+        <div class="flex gap-2 mb-6 border-b border-gray-300" role="tablist" aria-label="Personal background tabs">
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            id="tab-background"
+            type="button"
+            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="background"
-            aria-current="page"
+            role="tab"
+            aria-controls="background"
             aria-selected="true"
+            tabindex="0"
+            data-i18n="about.tab.background"
           >
             Background
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            id="tab-inspiration"
+            type="button"
+            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="inspiration"
+            role="tab"
+            aria-controls="inspiration"
             aria-selected="false"
+            tabindex="-1"
+            data-i18n="about.tab.inspiration"
           >
             Inspiration
           </button>
           <button
-            class="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            id="tab-goals"
+            type="button"
+            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
             data-tab="goals"
+            role="tab"
+            aria-controls="goals"
             aria-selected="false"
+            tabindex="-1"
+            data-i18n="about.tab.goals"
           >
             Goals
           </button>
         </div>
 
         <!-- Tab Content -->
-        <div id="background" class="tab-content active text-gray-800">
-          <p>
+        <div
+          id="background"
+          class="tab-content active text-gray-600"
+          role="tabpanel"
+          aria-labelledby="tab-background"
+          aria-hidden="false"
+          tabindex="0"
+        >
+          <p data-i18n="about.background.text">
             I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em
               >"creativity"</em
             > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become
@@ -106,8 +134,15 @@ const timelineItems: TimelineItem[] = [
           </p>
         </div>
 
-        <div id="inspiration" class="tab-content hidden text-gray-800">
-          <p>
+        <div
+          id="inspiration"
+          class="tab-content hidden text-gray-600"
+          role="tabpanel"
+          aria-labelledby="tab-inspiration"
+          aria-hidden="true"
+          tabindex="0"
+        >
+          <p data-i18n="about.inspiration.text">
             As someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. This
             personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the potential of inclusive
             design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation, or semantic HTML, I
@@ -115,8 +150,8 @@ const timelineItems: TimelineItem[] = [
           </p>
         </div>
 
-        <div id="goals" class="tab-content hidden text-gray-800">
-          <p>
+        <div id="goals" class="tab-content hidden text-gray-600" role="tabpanel" aria-labelledby="tab-goals" aria-hidden="true" tabindex="0">
+          <p data-i18n="about.goals.text">
             My goal is to create digital experiences that are accessible and inclusive for everyone. I believe that good design isn't just about
             aesthetics&mdash; it's about removing barriers and ensuring all users are included. Through my work, I strive to merge creativity with
             purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my future
@@ -135,26 +170,57 @@ const timelineItems: TimelineItem[] = [
   </section>
 
   <script>
-    document.querySelectorAll(".tab-btn").forEach((button) => {
+    const tabButtons = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
+    const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
+
+    tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const tabName = button.getAttribute("data-tab");
+        if (!tabName) return;
 
-        document.querySelectorAll(".tab-btn").forEach((btn) => {
+        tabButtons.forEach((btn) => {
           btn.classList.remove("active", "border-b-blue-500", "font-semibold");
           btn.classList.add("border-b-transparent", "text-gray-600");
+          btn.setAttribute("aria-selected", "false");
+          btn.setAttribute("tabindex", "-1");
+          btn.removeAttribute("aria-current");
         });
 
-        document.querySelectorAll(".tab-content").forEach((content) => {
+        tabContents.forEach((content) => {
           content.classList.add("hidden");
           content.classList.remove("active");
+          content.setAttribute("aria-hidden", "true");
         });
 
         button.classList.add("active", "border-b-blue-500", "font-semibold");
         button.classList.remove("border-b-transparent", "text-gray-600");
+        button.setAttribute("aria-selected", "true");
+        button.setAttribute("tabindex", "0");
+        button.setAttribute("aria-current", "page");
 
         const content = document.getElementById(tabName);
+        if (!content) return;
         content.classList.remove("hidden");
         content.classList.add("active");
+        content.setAttribute("aria-hidden", "false");
+      });
+
+      button.addEventListener("keydown", (event) => {
+        const key = event.key;
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(key)) return;
+
+        event.preventDefault();
+        const tabs = Array.from(tabButtons);
+        const currentIndex = tabs.indexOf(button);
+
+        let nextIndex = currentIndex;
+        if (key === "ArrowRight") nextIndex = (currentIndex + 1) % tabs.length;
+        if (key === "ArrowLeft") nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        if (key === "Home") nextIndex = 0;
+        if (key === "End") nextIndex = tabs.length - 1;
+
+        tabs[nextIndex].focus();
+        tabs[nextIndex].click();
       });
     });
 
@@ -164,8 +230,10 @@ const timelineItems: TimelineItem[] = [
 
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Timeline</p>
-    <h3 class="font-hiro text-gray-950 pb-10 uppercase tracking-[0.14em] md:tracking-[0.18em]">The highlights of my journey</h3>
+    <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="timeline.label">
+      Timeline
+    </p>
+    <h3 class="font-hiro pb-10 uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="timeline.title">The highlights of my journey</h3>
     <div id="timeline-line" class="relative">
       <!-- Timeline items -->
       {
@@ -175,10 +243,20 @@ const timelineItems: TimelineItem[] = [
               <div id="timeline-circle" class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white ring-2 ring-gray-300 sticky top-8" />
             </div>
             <div class="flex-1 pt-1">
-              <p class="text-xs font-semibold text-blue-500 mb-1 uppercase">{item.year}</p>
-              <h4 class="text-h4-mobile font-bold text-gray-950 mb-2">{item.title}</h4>
-              <p class="text-gray-700 text-sm">{item.desc}</p>
-              {item.note && <p class="italic text-gray-600 text-xs mt-2">{item.note}</p>}
+              <p class="text-xs font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${index}.year`}>
+                {item.year}
+              </p>
+              <h4 class="text-h4-mobile font-bold mb-2" data-i18n={`timeline.${index}.title`}>
+                {item.title}
+              </h4>
+              <p class="text-gray-600 text-sm" data-i18n={`timeline.${index}.desc`}>
+                {item.desc}
+              </p>
+              {item.note && (
+                <p class="italic text-gray-400 text-xs mt-2" data-i18n={`timeline.${index}.note`}>
+                  {item.note}
+                </p>
+              )}
             </div>
           </div>
         ))
@@ -189,31 +267,37 @@ const timelineItems: TimelineItem[] = [
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div class="flex flex-col mb-6">
-      <p id="interests-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Interests</p>
-      <h3 class="font-hiro text-gray-950 mb-5 uppercase tracking-[0.14em] md:tracking-[0.18em]">Interests and hobbies</h3>
+      <p id="interests-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="interests.label">
+        Interests
+      </p>
+      <h3 class="font-hiro mb-5 uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="interests.title">Interests and hobbies</h3>
     </div>
     <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Interest Item 1 -->
       <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Reading</h4>
-        <p class="text-gray-800">There's nothing like getting lost in a good book&mdash; it's my go-to way to unwind and explore new worlds.</p>
+        <h4 class="text-h4-mobile pb-2" data-i18n="interest.reading.title">Reading</h4>
+        <p class="text-gray-600" data-i18n="interest.reading.text">
+          There's nothing like getting lost in a good book&mdash; it's my go-to way to unwind and explore new worlds.
+        </p>
       </div>
       <!-- Interest Item 2 -->
       <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Gaming</h4>
-        <p class="text-gray-800">Video games let me step into different realities and tackle challenges in ways that feel completely immersive.</p>
+        <h4 class="text-h4-mobile pb-2" data-i18n="interest.gaming.title">Gaming</h4>
+        <p class="text-gray-600" data-i18n="interest.gaming.text">
+          Video games let me step into different realities and tackle challenges in ways that feel completely immersive.
+        </p>
       </div>
       <!-- Interest Item 4 -->
       <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Japanese culture</h4>
-        <p class="text-gray-800">
+        <h4 class="text-h4-mobile pb-2" data-i18n="interest.japanese.title">Japanese culture</h4>
+        <p class="text-gray-600" data-i18n="interest.japanese.text">
           I'm inspired by Japanese aesthetics, culture, and language, especially the balance between simplicity, detail, and thoughtful storytelling.
         </p>
       </div>
       <!-- Interest Item 5 -->
       <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2 text-gray-950">Building with LEGO</h4>
-        <p class="text-gray-800">
+        <h4 class="text-h4-mobile pb-2" data-i18n="interest.lego.title">Building with LEGO</h4>
+        <p class="text-gray-600" data-i18n="interest.lego.text">
           There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.
         </p>
       </div>
@@ -223,49 +307,65 @@ const timelineItems: TimelineItem[] = [
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div>
-      <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4">Resources</p>
-      <h3 class="font-hiro text-gray-950 pb-8 uppercase tracking-[0.14em] md:tracking-[0.18em]">Resources</h3>
+      <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="resources.label">
+        Resources
+      </p>
+      <h3 class="font-hiro pb-8 uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="resources.title">Resources</h3>
       <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2 text-gray-950">Resume (EN)</h4>
-          <p class="text-gray-800">Look through my resume to get an overview of my background.</p>
-          <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" aria-label="See resume (EN)">
-            <Button variant="secondary" size="small">See resume</Button>
+          <h4 class="text-h4-mobile pb-2" data-i18n="resource.resume.en.title">Resume (EN)</h4>
+          <p class="text-gray-600" data-i18n="resource.resume.en.desc">Look through my resume to get an overview of my background.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="/pdfs/CV_sararpetersen_(EN).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="See resume (EN)"
+          >
+            <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">See resume</span></Button>
           </a>
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2 text-gray-950">CV (DA)</h4>
-          <p class="text-gray-800">Kig mit CV igennem for at få en oversigt over min baggrund.</p>
-          <a class="mt-5 btn_container md:w-[30%]" href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" aria-label="See resume (DA)">
-            <Button variant="secondary" size="small">Se CV</Button>
+          <h4 class="text-h4-mobile pb-2" data-i18n="resource.cv.da.title">CV (DA)</h4>
+          <p class="text-gray-600" data-i18n="resource.cv.da.desc">Kig mit CV igennem for at få en oversigt over min baggrund.</p>
+          <a
+            class="mt-5 btn_container md:w-[30%]"
+            href="/pdfs/CV_sararpetersen_(DA).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="See resume (DA)"
+          >
+            <Button variant="secondary" size="small"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
           </a>
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2 text-gray-950">Application-template (EN)</h4>
-          <p class="text-gray-800">Take a look at what I include when I send out applications.</p>
+          <h4 class="text-h4-mobile pb-2" data-i18n="resource.app.en.title">Application-template (EN)</h4>
+          <p class="text-gray-600" data-i18n="resource.app.en.desc">Take a look at what I include when I send out applications.</p>
           <a
             class="mt-5 btn_container md:w-[50%]"
             href="/pdfs/application_template_sararpetersen_(EN).pdf"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="See application-template (EN)"
           >
-            <Button variant="secondary" size="small">See application-template</Button>
+            <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">See application-template</span></Button>
           </a>
         </div>
         <!-- Resource Item -->
         <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2 text-gray-950">Ansøgningsskabelon (DA)</h4>
-          <p class="text-gray-800">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
+          <h4 class="text-h4-mobile pb-2" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
+          <p class="text-gray-600" data-i18n="resource.app.da.desc">Tag et kig på hvad jeg inkluderer når jeg sender ansøgninger ud.</p>
           <a
             class="mt-5 btn_container md:w-[50%]"
             href="/pdfs/application_template_sararpetersen_(DA).pdf"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="See application-template (DA)"
           >
-            <Button variant="secondary" size="small">Se ansøgningsskabelon</Button>
+            <Button variant="secondary" size="small"><span data-i18n="resource.app.da.btn">Se ansøgningsskabelon</span></Button>
           </a>
         </div>
       </div>
@@ -275,7 +375,7 @@ const timelineItems: TimelineItem[] = [
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto py-20 text-center">
     <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
-      <Button variant="primary" size="small">Back to homepage</Button>
+      <Button variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
     </a>
   </section>
 </MainLayout>
@@ -414,7 +514,7 @@ const timelineItems: TimelineItem[] = [
   body.dark li,
   body.dark a,
   body.dark .tab-btn {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 
   body.dark .tab-btn:hover,
@@ -426,16 +526,16 @@ const timelineItems: TimelineItem[] = [
   body.dark #interests-and-hobbies > div,
   body.dark #resources-section > div,
   body.dark #strengths-weaknesses-container > div {
-    border-color: #727272;
-    background: linear-gradient(to bottom right, #404040, #272727);
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark #lines hr {
-    border-color: #727272;
+    border-color: var(--dark-border);
   }
 
   body.dark .portrait {
-    border-color: #727272;
+    border-color: var(--dark-border);
   }
 
   .tab-btn.active,

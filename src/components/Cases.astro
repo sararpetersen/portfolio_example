@@ -29,10 +29,18 @@ const projects = propProjects ?? (await fetchCards());
             <div aria-label={`View project: ${project.name}`}>
               <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
 
-              <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <h1 class="text-h4-mobile font-bold text-gray-50">{project.name}</h1>
-                  <h2 class="text-h4-mobile font-light italic pb-2 text-gray-50">{project.semester}</h2>
+                  <h2
+                    class="card-period text-h4-mobile font-light italic pb-2 text-gray-50"
+                    data-semester={project.semester || ""}
+                    data-semester-da={project.semester_da || ""}
+                    data-year={project.year || ""}
+                    data-year-da={project.year_da || ""}
+                  >
+                    {project.semester || project.year}
+                  </h2>
 
                   <div class="flex flex-row flex-wrap gap-2 py-2">
                     {project.tools &&
@@ -47,10 +55,18 @@ const projects = propProjects ?? (await fetchCards());
             <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
               <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
 
-              <div class="absolute inset-0 bg-gray-950 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <h1 class="text-h4-mobile font-bold text-gray-50">{project.name}</h1>
-                  <h2 class="text-h4-mobile font-light italic pb-2 text-gray-50">{project.semester}</h2>
+                  <h2
+                    class="card-period text-h4-mobile font-light italic pb-2 text-gray-50"
+                    data-semester={project.semester || ""}
+                    data-semester-da={project.semester_da || ""}
+                    data-year={project.year || ""}
+                    data-year-da={project.year_da || ""}
+                  >
+                    {project.semester || project.year}
+                  </h2>
 
                   <div class="flex flex-row flex-wrap gap-2 py-2">
                     {project.tools &&
@@ -71,7 +87,30 @@ const projects = propProjects ?? (await fetchCards());
 <script>
   import { inView } from "motion";
 
+  const getLang = () => localStorage.getItem("lang") || "en";
+
+  const applyCardTranslations = (lang: string) => {
+    const getCurrentPeriod = (el: HTMLElement) => {
+      const year = el.dataset.year || "";
+      const yearDa = el.dataset.yearDa || "";
+      const semester = el.dataset.semester || "";
+      const semesterDa = el.dataset.semesterDa || "";
+
+      const currentYear = lang === "da" ? yearDa || year : year;
+      const currentSemester = lang === "da" ? semesterDa || semester : semester;
+
+      return currentSemester || currentYear;
+    };
+
+    document.querySelectorAll(".card-period").forEach((periodEl) => {
+      const element = periodEl as HTMLElement;
+      element.textContent = getCurrentPeriod(element);
+    });
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
+    applyCardTranslations(getLang());
+
     const cards = Array.from(document.querySelectorAll("#project-cards > li")) as HTMLElement[];
 
     // Keyboard accessibility
@@ -137,27 +176,37 @@ const projects = propProjects ?? (await fetchCards());
       { amount: 0.2 },
     );
   });
+
+  document.addEventListener("astro:page-load", () => {
+    applyCardTranslations(getLang());
+  });
+
+  window.addEventListener("langchange", (event: Event) => {
+    const customEvent = event as CustomEvent;
+    const lang = customEvent.detail?.lang || getLang();
+    applyCardTranslations(lang);
+  });
 </script>
 
 <style>
   body.dark #project-cards > li {
-    background-color: #404040;
-    border-color: #727272;
+    background-color: var(--dark-gradient-start);
+    border-color: var(--dark-border);
   }
 
   body.dark #project-cards > li:hover {
-    background-color: #535353;
-    border-color: #a3a3a3;
+    background-color: var(--dark-surface-hover);
+    border-color: var(--dark-border-strong);
   }
 
   body.dark #project-cards > li:focus {
-    border-color: #90b0c4;
+    border-color: var(--brand-primary-soft);
   }
 
   body.dark #project-cards > li h1,
   body.dark #project-cards > li h2,
   body.dark #project-cards > li p,
   body.dark #project-cards > li span {
-    color: #f6f6f6;
+    color: var(--text-on-dark);
   }
 </style>
