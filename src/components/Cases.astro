@@ -129,52 +129,12 @@ const projects = propProjects ?? (await fetchCards());
 
     if (reduceMotion) return;
 
-    const container = document.getElementById("project-cards");
-    let hasAnimated = false;
-
-    // Start hidden
-    cards.forEach((card) => {
-      card.style.opacity = "0";
-    });
-
-    function animateStaggeredByPosition() {
-      // Sort by actual visual position (top-to-bottom, left-to-right)
-      const sorted = [...cards].sort((a, b) => {
-        const ra = a.getBoundingClientRect();
-        const rb = b.getBoundingClientRect();
-
-        // Primary: top
-        const topDiff = ra.top - rb.top;
-        if (Math.abs(topDiff) > 5) return topDiff; // small tolerance
-
-        // Secondary: left
-        return ra.left - rb.left;
-      });
-
-      sorted.forEach((card, index) => {
-        // restart animation cleanly
-        card.classList.remove("animate__animated", "animate__fadeInRight");
-        card.style.animationDelay = `${index * 90}ms`;
-        void card.offsetWidth; // force reflow
-
-        card.style.opacity = "1";
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 60}ms`;
+      inView(card, () => {
         card.classList.add("animate__animated", "animate__fadeInRight");
       });
-    }
-
-    inView(
-      container,
-      () => {
-        if (hasAnimated) return;
-        hasAnimated = true;
-
-        // wait a tick so layout is stable (images/fonts)
-        requestAnimationFrame(() => {
-          requestAnimationFrame(animateStaggeredByPosition);
-        });
-      },
-      { amount: 0.2 },
-    );
+    });
   });
 
   document.addEventListener("astro:page-load", () => {

@@ -128,6 +128,100 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <!-- Revamped Projects Section -->
+  <section id="revamped-section" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14">
+    <p id="revamped-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="revamped.label">
+      Case update
+    </p>
+
+    <h3 id="revamped-title" class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-5 mb-4 font-hiro" data-i18n="revamped.title">
+      Revamped projects
+    </h3>
+
+    <p id="revamped-text" class="text-gray-600 mb-6 leading-relaxed max-w-4xl text-sm md:text-base" data-i18n="revamped.text">
+      A selection of older school projects that I later redesigned and rebuilt. These first two cases are from my first semester on Multimedia Design,
+      and each of them includes links to both the original version and the updated result.
+    </p>
+
+    <div class="space-y-4">
+      <article class="rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+        <h4 class="font-semibold text-lg mb-2">Computer Site (DA)</h4>
+
+        <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
+          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
+            <p id="revamped-cs-before-desc" class="text-gray-600 leading-relaxed" data-i18n="revamped.cs.before.desc">
+              The original hand-in from the course.
+            </p>
+            <a
+              href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open old 'Computer Site' project in a new tab (DA)"
+              class="mt-auto w-fit"
+            >
+              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.old">Old project</span></Button>
+            </a>
+          </div>
+
+          <div class="hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+
+          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
+            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.cs.after.desc">Redesigned with updated styling and layout choices.</p>
+            <a
+              href="https://computer-site.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open revamped 'Computer Site' project in a new tab (DA)"
+              class="mt-auto w-fit"
+            >
+              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.revamped">Revamped</span></Button>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+        <h4 class="font-semibold text-lg mb-2">The Great Mushroom Kingdom Wiki</h4>
+
+        <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
+          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
+            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.wiki.before.desc">The original version made for the assignment.</p>
+            <a
+              href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open old 'The Great Mushroom Kingdom Wiki' project in a new tab"
+              class="mt-auto w-fit"
+            >
+              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.old">Old project</span></Button>
+            </a>
+          </div>
+
+          <div class="hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+
+          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
+            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.wiki.after.desc">
+              Redesigned with a tidier setup and a stronger visual direction.
+            </p>
+            <a
+              href="https://mario-wiki.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open revamped 'The Great Mushroom Kingdom Wiki' project in a new tab"
+              class="mt-auto w-fit"
+            >
+              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.revamped">Revamped</span></Button>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- Intro Section: -->
   <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
     <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -161,7 +255,7 @@ import Cases from "../components/Cases.astro";
 
         <div class="btn_container">
           <a aria-label="Learn more about me" id="about-preview-link" href="/about_me" class="mt-4">
-            <Button variant="secondary" size="small"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
+            <Button variant="primary" size="small"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
           </a>
         </div>
       </div>
@@ -305,6 +399,28 @@ import Cases from "../components/Cases.astro";
           elementmedanimation33.classList.add("animate__animated", "animate__fadeInUp");
         });
 
+        const elementRevampedLabel = document.querySelector("#revamped-label");
+        inView(elementRevampedLabel, () => {
+          elementRevampedLabel.classList.add("animate__animated", "animate__fadeInUp");
+        });
+
+        const elementRevampedTitle = document.querySelector("#revamped-title");
+        inView(elementRevampedTitle, () => {
+          elementRevampedTitle.classList.add("animate__animated", "animate__backInLeft");
+        });
+
+        const elementRevampedText = document.querySelector("#revamped-text");
+        inView(elementRevampedText, () => {
+          elementRevampedText.classList.add("animate__animated", "animate__fadeInRight");
+        });
+
+        document.querySelectorAll("#revamped-section article").forEach((article, index) => {
+          inView(article, () => {
+            (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
+            (article as HTMLElement).style.animationDelay = `${index * 0.15}s`;
+          });
+        });
+
         const intro1 = document.querySelectorAll("#intro-grid > div");
 
         intro1.forEach((intro1, index) => {
@@ -444,6 +560,9 @@ import Cases from "../components/Cases.astro";
     body.dark #how-i-work h4,
     body.dark #project-section h3,
     body.dark #project-section p,
+    body.dark #revamped-section h3,
+    body.dark #revamped-section h4,
+    body.dark #revamped-section p,
     body.dark #about-preview-text h3,
     body.dark #about-preview-text-paragraph,
     body.dark #about-preview-label {
@@ -460,9 +579,22 @@ import Cases from "../components/Cases.astro";
     body.dark #testimonials-cards blockquote,
     body.dark #intro-grid > div,
     body.dark #about-preview-text-paragraph,
-    body.dark #testimonial-card {
+    body.dark #testimonial-card,
+    body.dark #revamped-section article {
       border-color: var(--dark-border);
       background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    }
+
+    body.dark #revamped-section article > div > div {
+      border-color: var(--dark-border);
+    }
+
+    body.dark #revamped-section .revamped-box {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    #revamped-section .revamped-box > a button {
+      white-space: nowrap;
     }
 
     body.dark #about-preview img {
@@ -501,6 +633,10 @@ import Cases from "../components/Cases.astro";
     body.dark #process-cards div svg {
       color: var(--text-on-dark);
       background: transparent;
+    }
+
+    span {
+      font-size: 14px;
     }
   </style>
 </MainLayout>
