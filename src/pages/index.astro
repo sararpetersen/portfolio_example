@@ -107,7 +107,11 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
       <!-- eyebrow label -->
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="projects.label">
+      <p
+        id="project-label"
+        class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
+        data-i18n="projects.label"
+      >
         Selected work
       </p>
 
@@ -130,7 +134,11 @@ import Cases from "../components/Cases.astro";
 
   <!-- Revamped Projects Section -->
   <section id="revamped-section" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14">
-    <p id="revamped-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="revamped.label">
+    <p
+      id="revamped-label"
+      class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3"
+      data-i18n="revamped.label"
+    >
       Case update
     </p>
 
@@ -144,13 +152,13 @@ import Cases from "../components/Cases.astro";
     </p>
 
     <div class="space-y-4">
-      <article class="rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
-        <h4 class="font-semibold text-lg mb-2">Computer Site (DA)</h4>
+      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+        <h4 class="revamped-card-title font-semibold text-lg mb-2">Computer Site (DA)</h4>
 
         <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
           <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
-            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
-            <p id="revamped-cs-before-desc" class="text-gray-600 leading-relaxed" data-i18n="revamped.cs.before.desc">
+            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
+            <p id="revamped-cs-before-desc" class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.before.desc">
               The original hand-in from the course.
             </p>
             <a
@@ -164,11 +172,13 @@ import Cases from "../components/Cases.astro";
             </a>
           </div>
 
-          <div class="hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
 
           <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
-            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
-            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.cs.after.desc">Redesigned with updated styling and layout choices.</p>
+            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
+            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.after.desc">
+              Redesigned with updated styling and layout choices.
+            </p>
             <a
               href="https://computer-site.netlify.app/"
               target="_blank"
@@ -182,13 +192,15 @@ import Cases from "../components/Cases.astro";
         </div>
       </article>
 
-      <article class="rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
-        <h4 class="font-semibold text-lg mb-2">The Great Mushroom Kingdom Wiki</h4>
+      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+        <h4 class="revamped-card-title font-semibold text-lg mb-2">The Great Mushroom Kingdom Wiki</h4>
 
         <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
           <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
-            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
-            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.wiki.before.desc">The original version made for the assignment.</p>
+            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
+            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.before.desc">
+              The original version made for the assignment.
+            </p>
             <a
               href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
               target="_blank"
@@ -200,11 +212,11 @@ import Cases from "../components/Cases.astro";
             </a>
           </div>
 
-          <div class="hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
 
           <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
-            <p class="uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
-            <p class="text-gray-600 leading-relaxed" data-i18n="revamped.wiki.after.desc">
+            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
+            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.after.desc">
               Redesigned with a tidier setup and a stronger visual direction.
             </p>
             <a
@@ -234,7 +246,7 @@ import Cases from "../components/Cases.astro";
       <div id="about-preview-text">
         <p
           id="about-preview-label"
-          class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
+          class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
           data-i18n="about.preview.label"
         >
           Profile
@@ -301,145 +313,49 @@ import Cases from "../components/Cases.astro";
     import { inView } from "motion";
 
     document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion");
+      const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (!reduceMotion) {
-        const elementmedanimation1 = document.querySelector("#hero-content h1");
-        inView(elementmedanimation1, () => {
-          elementmedanimation1.classList.add("animate__animated", "animate__backInLeft");
-        });
+        const registerInView = (selector: string, animationClass: string) => {
+          const element = document.querySelector(selector);
+          if (!element) return;
 
-        const elementmedanimation6 = document.querySelector("#testimonial-heading h3");
-        inView(elementmedanimation6, () => {
-          elementmedanimation6.classList.add("animate__animated", "animate__backInLeft");
-        });
+          inView(element, () => {
+            (element as HTMLElement).classList.add("animate__animated", animationClass);
+          });
+        };
 
-        const elementmedanimation6a = document.querySelector("#testimonial-heading p");
-        inView(elementmedanimation6a, () => {
-          elementmedanimation6a.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementmedanimation6b = document.querySelector("#testimonial-context");
-        inView(elementmedanimation6b, () => {
-          elementmedanimation6b.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation7 = document.querySelector("#testimonial-card");
-        inView(elementmedanimation7, () => {
-          elementmedanimation7.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation12 = document.querySelector("#scroll-down");
-        inView(elementmedanimation12, () => {
-          elementmedanimation12.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation13 = document.querySelector("#project-title");
-        inView(elementmedanimation13, () => {
-          elementmedanimation13.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementmedanimation14 = document.querySelector("#project-text");
-        inView(elementmedanimation14, () => {
-          elementmedanimation14.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation14a = document.querySelector("#project-label");
-        inView(elementmedanimation14a, () => {
-          elementmedanimation14a.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementmedanimation15 = document.querySelector("#hero-image");
-        inView(elementmedanimation15, () => {
-          elementmedanimation15.classList.add("animate__animated", "animate__bounceInRight");
-        });
-
-        const elementmedanimation27 = document.querySelector("#hero-content h2");
-        inView(elementmedanimation27, () => {
-          elementmedanimation27.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation28 = document.querySelector("#hero-content .hero-lead");
-        inView(elementmedanimation28, () => {
-          elementmedanimation28.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementmedanimation28a = document.querySelector("#hero-cta");
-        inView(elementmedanimation28a, () => {
-          elementmedanimation28a.classList.add("animate__animated", "animate__bounceInDown");
-        });
-
-        const elementmedanimation29 = document.querySelector("#status");
-        inView(elementmedanimation29, () => {
-          elementmedanimation29.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation30 = document.querySelector("#about-preview-text h3");
-        inView(elementmedanimation30, () => {
-          elementmedanimation30.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementmedanimation31 = document.querySelector("#about-preview-label");
-        inView(elementmedanimation31, () => {
-          elementmedanimation31.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementmedanimation31a = document.querySelector("#about-preview-text-paragraph");
-        inView(elementmedanimation31a, () => {
-          elementmedanimation31a.classList.add("animate__animated", "animate__fadeInRight");
-        });
-
-        const elementmedanimation32 = document.querySelector(".btn_container");
-        inView(elementmedanimation32, () => {
-          elementmedanimation32.classList.add("animate__animated", "animate__fadeInDown");
-        });
-
-        const elementmedanimation33 = document.querySelector("#about-preview img");
-        inView(elementmedanimation33, () => {
-          elementmedanimation33.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementRevampedLabel = document.querySelector("#revamped-label");
-        inView(elementRevampedLabel, () => {
-          elementRevampedLabel.classList.add("animate__animated", "animate__fadeInUp");
-        });
-
-        const elementRevampedTitle = document.querySelector("#revamped-title");
-        inView(elementRevampedTitle, () => {
-          elementRevampedTitle.classList.add("animate__animated", "animate__backInLeft");
-        });
-
-        const elementRevampedText = document.querySelector("#revamped-text");
-        inView(elementRevampedText, () => {
-          elementRevampedText.classList.add("animate__animated", "animate__fadeInRight");
+        [
+          ["#hero-content h1", "animate__fadeInUp"],
+          ["#testimonial-heading h3", "animate__fadeInUp"],
+          ["#testimonial-heading p", "animate__fadeInUp"],
+          ["#testimonial-context", "animate__fadeInRight"],
+          ["#testimonial-card", "animate__fadeInDown"],
+          ["#scroll-down", "animate__fadeInDown"],
+          ["#project-title", "animate__fadeInUp"],
+          ["#project-text", "animate__fadeInRight"],
+          ["#project-label", "animate__fadeInUp"],
+          ["#hero-image", "animate__fadeInRight"],
+          ["#hero-content h2", "animate__fadeInDown"],
+          ["#hero-content .hero-lead", "animate__fadeInUp"],
+          ["#hero-cta", "animate__fadeInUp"],
+          ["#status", "animate__fadeInDown"],
+          ["#about-preview-text h3", "animate__fadeInUp"],
+          ["#about-preview-label", "animate__fadeInUp"],
+          ["#about-preview-text-paragraph", "animate__fadeInRight"],
+          [".btn_container", "animate__fadeInDown"],
+          ["#about-preview img", "animate__fadeInUp"],
+          ["#revamped-label", "animate__fadeInUp"],
+          ["#revamped-title", "animate__fadeInUp"],
+          ["#revamped-text", "animate__fadeInRight"],
+        ].forEach(([selector, animationClass]) => {
+          registerInView(selector, animationClass);
         });
 
         document.querySelectorAll("#revamped-section article").forEach((article, index) => {
           inView(article, () => {
             (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
             (article as HTMLElement).style.animationDelay = `${index * 0.15}s`;
-          });
-        });
-
-        const intro1 = document.querySelectorAll("#intro-grid > div");
-
-        intro1.forEach((intro1, index) => {
-          inView(intro1, () => {
-            (intro1 as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
-            (intro1 as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
-          });
-        });
-
-        document.querySelectorAll("#").forEach((divider) => {
-          inView(divider, () => {
-            divider.classList.add("animate__animated", "animate__bounceInDown");
-            divider.addEventListener(
-              "animationend",
-              () => {
-                divider.classList.remove("animate__animated", "animate__bounceInDown");
-              },
-              { once: true },
-            );
           });
         });
       }
@@ -474,6 +390,98 @@ import Cases from "../components/Cases.astro";
 
     .animate-ping {
       animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .animate__animated {
+      --animate-duration: 0.75s;
+    }
+
+    html.has-js body:not(.reduce-motion) #hero-content h1,
+    html.has-js body:not(.reduce-motion) #testimonial-heading h3,
+    html.has-js body:not(.reduce-motion) #testimonial-heading p,
+    html.has-js body:not(.reduce-motion) #testimonial-context,
+    html.has-js body:not(.reduce-motion) #testimonial-card,
+    html.has-js body:not(.reduce-motion) #scroll-down,
+    html.has-js body:not(.reduce-motion) #project-title,
+    html.has-js body:not(.reduce-motion) #project-text,
+    html.has-js body:not(.reduce-motion) #project-label,
+    html.has-js body:not(.reduce-motion) #hero-image,
+    html.has-js body:not(.reduce-motion) #hero-content h2,
+    html.has-js body:not(.reduce-motion) #hero-content .hero-lead,
+    html.has-js body:not(.reduce-motion) #hero-cta,
+    html.has-js body:not(.reduce-motion) #status,
+    html.has-js body:not(.reduce-motion) #about-preview-text h3,
+    html.has-js body:not(.reduce-motion) #about-preview-label,
+    html.has-js body:not(.reduce-motion) #about-preview-text-paragraph,
+    html.has-js body:not(.reduce-motion) .btn_container,
+    html.has-js body:not(.reduce-motion) #about-preview img,
+    html.has-js body:not(.reduce-motion) #revamped-label,
+    html.has-js body:not(.reduce-motion) #revamped-title,
+    html.has-js body:not(.reduce-motion) #revamped-text,
+    html.has-js body:not(.reduce-motion) #revamped-section article {
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    .section-kicker {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.82;
+    }
+
+    #project-title,
+    #revamped-title,
+    #about-preview-text h3,
+    #testimonial-heading h3 {
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    #project-text,
+    #revamped-text,
+    #testimonial-context {
+      max-width: 62ch;
+    }
+
+    .revamped-card {
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    .revamped-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(71, 123, 147, 0.65);
+      box-shadow: 0 12px 28px -18px rgba(55, 85, 103, 0.8);
+    }
+
+    .revamped-card-title {
+      font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+      letter-spacing: 0.01em;
+    }
+
+    .revamped-phase {
+      width: fit-content;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(55, 85, 103, 0.3);
+      border-radius: 9999px;
+      padding: 0.22rem 0.58rem;
+      background: rgba(222, 235, 239, 0.68);
+    }
+
+    .revamped-desc {
+      line-height: 1.55;
+      font-size: 0.96rem;
+    }
+
+    .revamped-arrow {
+      font-size: 1.2rem;
+      color: var(--brand-primary-strong);
+      opacity: 0.75;
     }
 
     /* Hero-section */
@@ -593,6 +601,22 @@ import Cases from "../components/Cases.astro";
       background: rgba(255, 255, 255, 0.04);
     }
 
+    body.dark .revamped-card:hover {
+      border-color: rgba(192, 215, 225, 0.7);
+      box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.85);
+    }
+
+    body.dark .revamped-phase {
+      border-color: rgba(192, 215, 225, 0.44);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-on-dark-soft);
+    }
+
+    body.dark .revamped-arrow {
+      color: var(--brand-primary-soft);
+      opacity: 0.85;
+    }
+
     #revamped-section .revamped-box > a button {
       white-space: nowrap;
     }
@@ -608,12 +632,17 @@ import Cases from "../components/Cases.astro";
     }
 
     body.dark .hero-status {
-      background: rgba(59, 59, 59, 0.82);
+      border-color: color-mix(in srgb, var(--dark-border) 58%, var(--brand-primary-soft) 42%);
+      background: color-mix(in srgb, var(--dark-surface) 76%, var(--brand-primary-strong) 24%);
     }
 
     body.dark .hero-image-wrap {
-      border-color: rgba(114, 114, 114, 0.7);
-      background: rgb(11 11 11 / 74%);
+      border-color: color-mix(in srgb, var(--dark-border) 64%, var(--brand-primary-soft) 36%);
+      background: linear-gradient(
+        165deg,
+        color-mix(in srgb, var(--dark-surface) 78%, var(--brand-primary-strong) 22%),
+        color-mix(in srgb, var(--dark-surface-strong) 88%, var(--brand-primary-strong) 12%)
+      );
     }
 
     .scroll-link:hover .scroll-icon {
