@@ -114,7 +114,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       project.slug === "vibeloop" || project.slug === "ungeforum"
         ? (project.slug === "vibeloop" || project.slug === "ungeforum") && (
             <div
-              class="flex items-center justify-center md:justify-start gap-3 col-span-12 bg-red-500 border border-l-4 border-red-700 rounded-full md:p-4 p-3 md:w-[35rem] w-full mb-8"
+              class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-red-500 border border-l-4 border-red-700 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-[35rem] w-full mb-8"
               id="figma-notice"
             >
               <svg
@@ -128,8 +128,11 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
               </svg>
-              <div>
-                <p class="text-gray-50 md:text-[14.5px] text-[12px]" data-i18n="project.figma.notice">
+              <div class="min-w-0 flex-1">
+                <p
+                  class="text-gray-50 md:text-[14.5px] text-[10px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
+                  data-i18n="project.figma.notice"
+                >
                   This project is presented as an interactive prototype created in Figma
                 </p>
               </div>
