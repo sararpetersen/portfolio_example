@@ -92,24 +92,6 @@ body.site-shell::after {
   position: relative;
 }
 
-.site-main > section:not(#hero)::after {
-  content: "";
-  position: absolute;
-  top: clamp(0.4rem, 1.3vw, 0.95rem);
-  right: clamp(0.85rem, 2.8vw, 1.8rem);
-  width: 1.15rem;
-  height: 1.15rem;
-  border-radius: 0.24rem;
-  border: 1px solid rgba(147, 35, 44, 0.24);
-  transform: rotate(45deg);
-  background:
-    radial-gradient(circle at 50% 50%, rgba(198, 48, 60, 0.56) 0 2px, transparent 2.5px),
-    linear-gradient(135deg, rgba(230, 57, 70, 0.16), rgba(71, 123, 147, 0.08));
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
-}
-
 #global-section-progress {
   pointer-events: none;
 }
@@ -251,14 +233,6 @@ body.dark.site-shell::after {
   background-image:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
-}
-
-body.dark .site-main > section:not(#hero)::after {
-  border-color: rgba(240, 235, 230, 0.26);
-  background:
-    radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.66) 0 2px, transparent 2.5px),
-    linear-gradient(135deg, rgba(230, 57, 70, 0.24), rgba(149, 188, 203, 0.12));
-  opacity: 0.52;
 }
 
 body.dark .section-progress-list {
