@@ -25,13 +25,13 @@ const fetchCards = async () => {
 const cards = await fetchCards();
 const sortedCards = cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
-function breakTitle(title, maxLength = 25) {
+function breakTitle(title: string, maxLength: number = 25): string[] {
   if (title.length > maxLength) {
     const words = title.split(" ");
     let line = "";
-    let lines = [];
+    let lines: string[] = [];
 
-    words.forEach((word) => {
+    words.forEach((word: string) => {
       if ((line + " " + word).length <= maxLength) {
         line += " " + word;
       } else {
