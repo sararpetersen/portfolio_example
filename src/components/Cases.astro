@@ -27,7 +27,7 @@ const projects = propProjects ?? (await fetchCards());
         >
           {project.slug === "no-project" ? (
             <div aria-label={`View project: ${project.name}`}>
-              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
+              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
 
               <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -53,7 +53,7 @@ const projects = propProjects ?? (await fetchCards());
             </div>
           ) : (
             <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
-              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" />
+              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
 
               <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -130,9 +130,10 @@ const projects = propProjects ?? (await fetchCards());
     if (reduceMotion) return;
 
     cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 60}ms`;
       inView(card, () => {
-        card.classList.add("animate__animated", "animate__fadeInRight");
+        card.classList.add("animate__animated", "animate__fadeInUp");
+        card.style.animationDelay = `${index * 60}ms`;
+        card.style.animationDuration = "1.4s";
       });
     });
   });

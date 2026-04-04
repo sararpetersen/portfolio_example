@@ -7,6 +7,9 @@ import "animate.css";
 import "../styles/global.css";
 import Alpine from "alpinejs";
 const { title } = Astro.props;
+const siteUrl = "https://srp-portfolio.netlify.app";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const socialImageUrl = new URL("/images/hero_image.webp", siteUrl).toString();
 
 const schemamarkup = {
   "@context": "https://schema.org",
@@ -36,6 +39,14 @@ const schemamarkup = {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={Astro.props.ogtitle} />
     <meta property="og:description" content={Astro.props.ogdescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:site_name" content="SRP Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={Astro.props.ogtitle} />
+    <meta name="twitter:description" content={Astro.props.ogdescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
@@ -59,7 +70,8 @@ const schemamarkup = {
             "projects.label": "Selected work",
             "projects.title": "Projects",
             "projects.text":
-              'Below are some of the projects I\'ve worked on during my studies and internships.<br class="hidden md:block" /> Click on any of the cards to read more about the project, the process and the outcome.',
+              'Below are some of the projects I\'ve worked on during my studies and internships.<br class="md:hidden block" /> Click on any of the cards to read more about the project, the process and the outcome.',
+            "projects.empty": "Projects are temporarily unavailable. Please check back in a moment.",
             "project.back": "↑ Back to homepage",
             "project.label": "Project",
             "project.figma.notice": "This project is presented as an interactive prototype created in Figma",
@@ -152,12 +164,18 @@ const schemamarkup = {
             "contact.label": "Contact",
             "contact.title": "Let's talk!",
             "contact.text":
-              "If you're interested in working together, don't hesitate to get in touch.<br class=\"hidden md:block\" />You can reach me via the different contact methods below.",
-            "contact.preferred":
-              '<strong class="text-gray-950">Preferred: </strong><br/><span class="text-gray-800 text-sm">LinkedIn or email. I usually reply within 24\u201348 hours on weekdays.</span>',
+              "If you're interested in working together, don't hesitate to get in touch.<br class=\"hidden md:block\" />Use the form below or reach me directly via the contact methods listed here.",
             "contact.info.email": "Email:",
             "contact.info.phone": "Phone:",
             "contact.info.linkedin": "LinkedIn:",
+            "contact.form.label": "Get in touch",
+            "contact.form.title": "Send me a message",
+            "contact.form.subtitle":
+              "Feel free to reach out with any questions or inquiries. I'll get back to you as soon as possible. If you're looking for a collaborator for your next digital project, tell me a bit about your idea.",
+            "contact.form.name": "Name",
+            "contact.form.email": "Email",
+            "contact.form.message": "Message",
+            "contact.form.submit": "Send message",
             "btn.back": "Back to homepage",
           },
           da: {
@@ -176,6 +194,7 @@ const schemamarkup = {
             "projects.title": "Projekter",
             "projects.text":
               'Herunder finder du nogle af de projekter, jeg har arbejdet p\u00e5 under mine studier og praktikophold.<br class="hidden md:block" /> Klik p\u00e5 et af kortene for at l\u00e6se mere om projektet, processen og resultatet.',
+            "projects.empty": "Projekterne er midlertidigt utilg\u00e6ngelige. Pr\u00f8v igen om et \u00f8jeblik.",
             "project.back": "↑ Tilbage til forsiden",
             "project.label": "Projekt",
             "project.figma.notice": "Dette projekt pr\u00e6senteres som en interaktiv prototype lavet i Figma",
@@ -270,12 +289,18 @@ const schemamarkup = {
             "contact.label": "Kontakt",
             "contact.title": "Lad os snakke!",
             "contact.text":
-              "Hvis du er interesseret i at samarbejde, er du meget velkommen til at tage kontakt. Du kan få fat p\u00e5 mig via de forskellige kontaktmetoder herunder.",
-            "contact.preferred":
-              '<strong class="text-gray-950">Foretrukket: </strong><br/><span class="text-gray-800 text-sm">LinkedIn eller email. Jeg svarer normalt inden for 24-48 timer p\u00e5 hverdage.</span>',
+              "Hvis du er interesseret i at samarbejde, er du meget velkommen til at tage kontakt. Brug formularen herunder eller skriv direkte via kontaktoplysningerne.",
             "contact.info.email": "Email:",
             "contact.info.phone": "Telefon:",
             "contact.info.linkedin": "LinkedIn:",
+            "contact.form.label": "Kom i kontakt",
+            "contact.form.title": "Send mig en besked",
+            "contact.form.subtitle":
+              "Skriv gerne, hvis du har spørgsmål eller forespørgsler. Jeg vender tilbage hurtigst muligt. Hvis du leder efter en samarbejdspartner til dit næste digitale projekt, så fortæl gerne lidt om din idé.",
+            "contact.form.name": "Navn",
+            "contact.form.email": "Email",
+            "contact.form.message": "Besked",
+            "contact.form.submit": "Send besked",
             "btn.back": "Tilbage til forsiden",
           },
         };
@@ -322,13 +347,6 @@ const schemamarkup = {
       <ScrollToTop />
     </header>
 
-    <nav id="global-section-progress" class="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-[120]" aria-label="Section progress">
-      <div class="section-progress-list">
-        <span class="section-progress-rail" aria-hidden="true"></span>
-        <span id="global-section-progress-fill" class="section-progress-fill" aria-hidden="true"></span>
-      </div>
-    </nav>
-
     <main class="site-main scroll-vertical overflow-x-hidden">
       <slot />
     </main>
@@ -358,99 +376,6 @@ const schemamarkup = {
   import { animate } from "motion";
   /*Entrance Animation*/
   animate("body", { opacity: [0, 1] }, { duration: 1 });
-</script>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const progressRoot = document.getElementById("global-section-progress");
-    if (!progressRoot) return;
-
-    const progressList = progressRoot.querySelector(".section-progress-list");
-    const progressFill = document.getElementById("global-section-progress-fill");
-    if (!progressList || !progressFill) return;
-
-    const rawSections = Array.from(document.querySelectorAll("main.site-main section[id]"));
-    const sections = rawSections.filter((section) => {
-      const id = section.getAttribute("id");
-      return Boolean(id && id.trim());
-    });
-
-    if (sections.length < 2) {
-      progressRoot.classList.add("hidden");
-      return;
-    }
-
-    const limitedSections = sections.slice(0, 8);
-
-    const toLabel = (section, index) => {
-      const heading = section.querySelector("h1, h2, h3, h4");
-      if (heading && heading.textContent) {
-        return `Go to ${heading.textContent.trim()} section`;
-      }
-      const fromId = section.id.replace(/[-_]+/g, " ").trim();
-      if (fromId.length > 0) {
-        return `Go to ${fromId} section`;
-      }
-      return `Go to section ${index + 1}`;
-    };
-
-    const markerLinks = limitedSections.map((section, index) => {
-      const link = document.createElement("a");
-      link.href = `#${section.id}`;
-      link.className = "section-progress-link";
-      link.setAttribute("data-target", section.id);
-      link.setAttribute("aria-label", toLabel(section, index));
-      progressList.appendChild(link);
-      return link;
-    });
-
-    const setActiveSection = (activeId) => {
-      markerLinks.forEach((link) => {
-        const isActive = link.getAttribute("data-target") === activeId;
-        link.classList.toggle("is-active", isActive);
-        if (isActive) {
-          link.setAttribute("aria-current", "location");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-    };
-
-    const updateScrollProgress = () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = total > 0 ? Math.min(Math.max(window.scrollY / total, 0), 1) : 0;
-      progressFill.style.setProperty("--section-progress", String(ratio));
-    };
-
-    const updateActiveSection = () => {
-      const probePoint = window.scrollY + window.innerHeight * 0.4;
-      let currentId = limitedSections[0].id;
-
-      limitedSections.forEach((section) => {
-        if (section.offsetTop <= probePoint) {
-          currentId = section.id;
-        }
-      });
-
-      setActiveSection(currentId);
-    };
-
-    const updateUi = () => {
-      updateScrollProgress();
-      updateActiveSection();
-    };
-
-    markerLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        const id = link.getAttribute("data-target");
-        if (id) setActiveSection(id);
-      });
-    });
-
-    updateUi();
-    window.addEventListener("scroll", updateUi, { passive: true });
-    window.addEventListener("resize", updateUi);
-  });
 </script>
 
 <script is:inline>

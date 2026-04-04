@@ -164,6 +164,9 @@ const timelineItems: TimelineItem[] = [
           src="/images/pfp2.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
           class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-500"
+          width="400"
+          height="450"
+          loading="lazy"
         />
       </div>
     </div>
@@ -396,79 +399,39 @@ const timelineItems: TimelineItem[] = [
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
     if (!reduceMotion) {
-      const elementmedanimation0 = document.querySelector("#about-me-title-label");
-      inView(elementmedanimation0, () => {
-        elementmedanimation0.classList.add("animate__animated", "animate__fadeInUp");
-      });
+      let animationIndex = 0;
+      const registerInView = (selector: string, animationClass: string = "animate__fadeInUp") => {
+        const element = document.querySelector(selector) as HTMLElement | null;
+        if (!element) return;
 
-      const elementmedanimation1 = document.querySelector(".heading-title");
-      inView(elementmedanimation1, () => {
-        elementmedanimation1.classList.add("animate__animated", "animate__backInRight");
-      });
+        const delayMs = animationIndex * 60;
+        inView(element, () => {
+          element.classList.add("animate__animated", animationClass);
+          element.style.animationDelay = `${delayMs}ms`;
+          element.style.animationDuration = "1.6s";
+        });
 
-      const elementmedanimation2 = document.querySelector(".heading-text");
-      inView(elementmedanimation2, () => {
-        elementmedanimation2.classList.add("animate__animated", "animate__backInLeft");
-      });
+        animationIndex++;
+      };
 
-      const elementmedanimation4 = document.querySelector("#personal-background #background");
-      inView(elementmedanimation4, () => {
-        elementmedanimation4.classList.add("animate__animated", "animate__slideInRight");
-      });
-
-      const elementmedanimation4a = document.querySelector("#personal-background #inspiration");
-      inView(elementmedanimation4a, () => {
-        elementmedanimation4a.classList.add("animate__animated", "animate__slideInRight");
-      });
-
-      const elementmedanimation4b = document.querySelector("#personal-background #goals");
-      inView(elementmedanimation4b, () => {
-        elementmedanimation4b.classList.add("animate__animated", "animate__slideInRight");
-      });
-
-      const elementmedanimation5 = document.querySelector("#personal-background img");
-      inView(elementmedanimation5, () => {
-        elementmedanimation5.classList.add("animate__animated", "animate__fadeInLeft");
-      });
-
-      const elementmedanimation6 = document.querySelector("#interests h3");
-      inView(elementmedanimation6, () => {
-        elementmedanimation6.classList.add("animate__animated", "animate__fadeInRight");
-      });
-
-      const elementmedanimation6a = document.querySelector(".strength-and-weaknesses h3");
-      inView(elementmedanimation6a, () => {
-        elementmedanimation6a.classList.add("animate__animated", "animate__fadeInRight");
-      });
-
-      const elementmedanimation6b = document.querySelector("#resources h3");
-      inView(elementmedanimation6b, () => {
-        elementmedanimation6b.classList.add("animate__animated", "animate__fadeInRight");
-      });
-
-      const elementmedanimation6c = document.querySelector("#timeline h3");
-      inView(elementmedanimation6c, () => {
-        elementmedanimation6c.classList.add("animate__animated", "animate__fadeInRight");
-      });
-
-      const elementmedanimation6d = document.querySelector("#timeline-label");
-      inView(elementmedanimation6d, () => {
-        elementmedanimation6d.classList.add("animate__animated", "animate__fadeInUp");
-      });
-
-      const elementmedanimation6e = document.querySelector("#interests-label");
-      inView(elementmedanimation6e, () => {
-        elementmedanimation6e.classList.add("animate__animated", "animate__fadeInUp");
-      });
-
-      const elementmedanimation6f = document.querySelector("#resources-label");
-      inView(elementmedanimation6f, () => {
-        elementmedanimation6f.classList.add("animate__animated", "animate__fadeInUp");
-      });
-
-      const elementmedanimation7 = document.querySelector(".button-container");
-      inView(elementmedanimation7, () => {
-        elementmedanimation7.classList.add("animate__animated", "animate__fadeInRight");
+      [
+        "#about-me-title-label",
+        ".heading-title",
+        ".heading-text",
+        "#personal-background #background",
+        "#personal-background #inspiration",
+        "#personal-background #goals",
+        "#personal-background img",
+        "#interests h3",
+        ".strength-and-weaknesses h3",
+        "#resources h3",
+        "#timeline h3",
+        "#timeline-label",
+        "#interests-label",
+        "#resources-label",
+        ".button-container",
+      ].forEach((selector) => {
+        registerInView(selector);
       });
 
       const boxes = document.querySelectorAll("#timeline-line > div");
@@ -476,7 +439,8 @@ const timelineItems: TimelineItem[] = [
       boxes.forEach((boxes, index) => {
         inView(boxes, () => {
           boxes.classList.add("animate__animated", "animate__fadeInUp");
-          (boxes as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          (boxes as HTMLElement).style.animationDelay = `${index * 60}ms`;
+          (boxes as HTMLElement).style.animationDuration = "1.4s";
         });
       });
 
@@ -485,7 +449,8 @@ const timelineItems: TimelineItem[] = [
       sections.forEach((sections, index) => {
         inView(sections, () => {
           sections.classList.add("animate__animated", "animate__fadeInUp");
-          (sections as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          (sections as HTMLElement).style.animationDelay = `${index * 60}ms`;
+          (sections as HTMLElement).style.animationDuration = "1.4s";
         });
       });
 
@@ -494,7 +459,8 @@ const timelineItems: TimelineItem[] = [
       section.forEach((section, index) => {
         inView(section, () => {
           section.classList.add("animate__animated", "animate__fadeInUp");
-          (section as HTMLElement).style.animationDelay = `${index * 0.2}s`; // Delay each image by 0.2s
+          (section as HTMLElement).style.animationDelay = `${index * 60}ms`;
+          (section as HTMLElement).style.animationDuration = "1.4s";
         });
       });
 

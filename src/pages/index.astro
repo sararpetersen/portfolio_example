@@ -1,16 +1,29 @@
 ---
 const fetchCards = async () => {
-  const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
-    },
-  });
-  return response.ok ? await response.json() : [];
+  try {
+    const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
+      },
+    });
+
+    if (!response.ok) {
+      console.warn(`API error: ${response.status} ${response.statusText}`);
+      return [];
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error("Failed to fetch portfolio cases:", error);
+    return [];
+  }
 };
 
 const cards = await fetchCards();
+const sortedCards = cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
 function breakTitle(title, maxLength = 25) {
   if (title.length > maxLength) {
@@ -78,7 +91,14 @@ import Cases from "../components/Cases.astro";
         <div class="col-span-12 lg:col-span-5">
           <div id="hero-image" class="hero-image-wrap relative shadow-drop25">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
-            <img src="/images/hero_image.webp" alt="Hero image for Sara's portfolio" class="hero-image object-cover" />
+            <img
+              src="/images/hero_image.webp"
+              alt="Hero image for Sara's portfolio"
+              class="hero-image object-cover"
+              width="500"
+              height="500"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
@@ -86,7 +106,7 @@ import Cases from "../components/Cases.astro";
 
     <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-pale-400 scroll-link">
-        <div class="float flex flex-col items-center transition duration-300 ease-in-out">
+        <div class="flex flex-col items-center transition duration-300 ease-in-out">
           <p class="uppercase tracking-[0.22em] text-xs text-gray-500" data-i18n="hero.scroll">Scroll to projects</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,11 +127,7 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
       <!-- eyebrow label -->
-      <p
-        id="project-label"
-        class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
-        data-i18n="projects.label"
-      >
+      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="projects.label">
         Selected work
       </p>
 
@@ -128,17 +144,21 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
     <div class="col-span-12">
-      <Cases projects={cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())} />
+      {
+        sortedCards.length > 0 ? (
+          <Cases projects={sortedCards} />
+        ) : (
+          <p class="rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700" data-i18n="projects.empty">
+            Projects are temporarily unavailable. Please check back in a moment.
+          </p>
+        )
+      }
     </div>
   </section>
 
   <!-- Revamped Projects Section -->
   <section id="revamped-section" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14">
-    <p
-      id="revamped-label"
-      class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3"
-      data-i18n="revamped.label"
-    >
+    <p id="revamped-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="revamped.label">
       Case update
     </p>
 
@@ -239,14 +259,21 @@ import Cases from "../components/Cases.astro";
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Image -->
       <div class="flex md:justify-end justify-center md:order-1 order-2">
-        <img src="/images/pfp3.webp" alt="Picture of Sara" class="border-r-4 border border-gray-500 rounded-2xl object-cover w-[550px] h-[350px]" />
+        <img
+          src="/images/pfp3.webp"
+          alt="Picture of Sara"
+          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-[550px] h-[350px]"
+          width="550"
+          height="350"
+          loading="lazy"
+        />
       </div>
 
       <!-- Text -->
       <div id="about-preview-text">
         <p
           id="about-preview-label"
-          class="section-kicker uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
+          class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4"
           data-i18n="about.preview.label"
         >
           Profile
@@ -316,12 +343,14 @@ import Cases from "../components/Cases.astro";
       const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (!reduceMotion) {
-        const registerInView = (selector: string, animationClass: string) => {
+        const registerInView = (selector: string, animationClass: string, delayMs = 0) => {
           const element = document.querySelector(selector);
           if (!element) return;
 
           inView(element, () => {
             (element as HTMLElement).classList.add("animate__animated", animationClass);
+            (element as HTMLElement).style.animationDelay = `${delayMs}ms`;
+            (element as HTMLElement).style.animationDuration = "1.6s";
           });
         };
 
@@ -329,33 +358,34 @@ import Cases from "../components/Cases.astro";
           ["#hero-content h1", "animate__fadeInUp"],
           ["#testimonial-heading h3", "animate__fadeInUp"],
           ["#testimonial-heading p", "animate__fadeInUp"],
-          ["#testimonial-context", "animate__fadeInRight"],
-          ["#testimonial-card", "animate__fadeInDown"],
-          ["#scroll-down", "animate__fadeInDown"],
+          ["#testimonial-context", "animate__fadeInUp"],
+          ["#testimonial-card", "animate__fadeInUp"],
+          ["#scroll-down", "animate__fadeInUp"],
           ["#project-title", "animate__fadeInUp"],
-          ["#project-text", "animate__fadeInRight"],
+          ["#project-text", "animate__fadeInUp"],
           ["#project-label", "animate__fadeInUp"],
-          ["#hero-image", "animate__fadeInRight"],
-          ["#hero-content h2", "animate__fadeInDown"],
+          ["#hero-image", "animate__fadeInUp"],
+          ["#hero-content h2", "animate__fadeInUp"],
           ["#hero-content .hero-lead", "animate__fadeInUp"],
           ["#hero-cta", "animate__fadeInUp"],
-          ["#status", "animate__fadeInDown"],
+          ["#status", "animate__fadeInUp"],
           ["#about-preview-text h3", "animate__fadeInUp"],
           ["#about-preview-label", "animate__fadeInUp"],
-          ["#about-preview-text-paragraph", "animate__fadeInRight"],
-          [".btn_container", "animate__fadeInDown"],
+          ["#about-preview-text-paragraph", "animate__fadeInUp"],
+          [".btn_container", "animate__fadeInUp"],
           ["#about-preview img", "animate__fadeInUp"],
           ["#revamped-label", "animate__fadeInUp"],
           ["#revamped-title", "animate__fadeInUp"],
-          ["#revamped-text", "animate__fadeInRight"],
-        ].forEach(([selector, animationClass]) => {
-          registerInView(selector, animationClass);
+          ["#revamped-text", "animate__fadeInUp"],
+        ].forEach(([selector, animationClass], index) => {
+          registerInView(selector, animationClass, index * 60);
         });
 
         document.querySelectorAll("#revamped-section article").forEach((article, index) => {
           inView(article, () => {
             (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
-            (article as HTMLElement).style.animationDelay = `${index * 0.15}s`;
+            (article as HTMLElement).style.animationDelay = `${index * 60}ms`;
+            (article as HTMLElement).style.animationDuration = "1.4s";
           });
         });
       }
@@ -364,22 +394,6 @@ import Cases from "../components/Cases.astro";
 
   <style>
     /* Animations */
-    @keyframes float {
-      0% {
-        transform: translatey(0);
-      }
-      50% {
-        transform: translatey(-10px);
-      }
-      100% {
-        transform: translatey(0);
-      }
-    }
-
-    .float {
-      animation: float 3s ease-in-out infinite;
-    }
-
     @keyframes ping {
       75%,
       100% {
@@ -393,7 +407,7 @@ import Cases from "../components/Cases.astro";
     }
 
     .animate__animated {
-      --animate-duration: 0.75s;
+      --animate-duration: 1.6s;
     }
 
     html.has-js body:not(.reduce-motion) #hero-content h1,
@@ -421,13 +435,6 @@ import Cases from "../components/Cases.astro";
     html.has-js body:not(.reduce-motion) #revamped-section article {
       opacity: 0;
       will-change: transform, opacity;
-    }
-
-    .section-kicker {
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.82;
     }
 
     #project-title,

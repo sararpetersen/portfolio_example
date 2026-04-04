@@ -92,73 +92,6 @@ body.site-shell::after {
   position: relative;
 }
 
-#global-section-progress {
-  pointer-events: none;
-}
-
-.section-progress-list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.72rem;
-  padding: 0.72rem 0.42rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(55, 85, 103, 0.22);
-  background: rgba(247, 243, 239, 0.72);
-  backdrop-filter: blur(6px);
-  pointer-events: auto;
-  box-shadow: 0 10px 28px -24px rgba(31, 31, 31, 0.9);
-}
-
-.section-progress-rail,
-.section-progress-fill {
-  position: absolute;
-  top: 0.95rem;
-  bottom: 0.95rem;
-  left: 50%;
-  width: 2px;
-  border-radius: 9999px;
-  transform: translateX(-50%);
-}
-
-.section-progress-rail {
-  background: rgba(55, 85, 103, 0.24);
-}
-
-.section-progress-fill {
-  background: #477b93;
-  transform: translateX(-50%) scaleY(var(--section-progress, 0));
-  transform-origin: top;
-  transition: transform 0.18s ease-out;
-}
-
-.section-progress-link {
-  position: relative;
-  width: 0.78rem;
-  height: 0.78rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(55, 85, 103, 0.44);
-  background: rgba(255, 255, 255, 0.84);
-  z-index: 1;
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.section-progress-link:hover {
-  transform: scale(1.1);
-  border-color: var(--brand-primary);
-}
-
-.section-progress-link.is-active {
-  transform: scale(1.16);
-  border-color: color-mix(in srgb, var(--brand-primary) 78%, #111 22%);
-  background: var(--brand-primary);
-  box-shadow: 0 0 0 3px rgba(71, 123, 147, 0.18);
-}
-
 .some1 a {
   position: relative;
   line-height: 1.5rem /* 24px */;
@@ -233,28 +166,4 @@ body.dark.site-shell::after {
   background-image:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
-}
-
-body.dark .section-progress-list {
-  border-color: color-mix(in srgb, var(--dark-border) 72%, var(--brand-primary) 28%);
-  background: color-mix(in srgb, var(--dark-surface) 86%, #000 14%);
-  box-shadow: 0 12px 28px -20px rgba(0, 0, 0, 0.95);
-}
-
-body.dark .section-progress-rail {
-  background: rgba(240, 235, 230, 0.26);
-}
-
-body.dark .section-progress-fill {
-  background: color-mix(in srgb, var(--brand-primary) 70%, #95bccb 30%);
-}
-
-body.dark .section-progress-link {
-  border-color: color-mix(in srgb, var(--dark-border-strong) 68%, var(--brand-primary) 32%);
-  background: color-mix(in srgb, var(--dark-surface-strong) 80%, var(--dark-surface) 20%);
-}
-
-body.dark .section-progress-link:hover,
-body.dark .section-progress-link.is-active {
-  border-color: color-mix(in srgb, var(--brand-primary) 72%, #b8d6e2 28%);
 }
