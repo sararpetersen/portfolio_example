@@ -67,17 +67,19 @@ const schemamarkup = {
             "hero.lead": "Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.",
             "hero.cta": "See projects",
             "hero.scroll": "Scroll to projects",
-            "projects.label": "Selected work",
-            "projects.title": "Projects",
+            "projects.label": "Featured work",
+            "projects.title": "Selected cases",
             "projects.text":
-              'Below are some of the projects I\'ve worked on during my studies and internships.<br class="md:hidden block" /> Click on any of the cards to read more about the project, the process and the outcome.',
+              "Below is a selection of projects that I've worked on during my studies and internships. Click on any of the cards to read more about the project, the process and the outcome.",
             "projects.empty": "Projects are temporarily unavailable. Please check back in a moment.",
             "project.back": "↑ Back to homepage",
             "project.label": "Project",
             "project.figma.notice": "This project is presented as an interactive prototype created in Figma",
+            "project.db.notice":
+              "The images on the gallery page are no longer visible due to the original database being inactive. This does not reflect the original functionality of the project.",
             "project.tools": "Tools used:",
             "project.view": "View project",
-            "project.related.label": "Selected work",
+            "project.related.label": "Featured work",
             "project.related.title": "More projects",
             "about.preview.label": "Profile",
             "about.preview.title": "About me",
@@ -156,10 +158,8 @@ const schemamarkup = {
             "resources.label": "Resources",
             "resources.title": "Resources",
             "resource.resume.en.title": "Resume (EN)",
-            "resource.resume.en.desc": "Look through my resume to get an overview of my background.",
             "resource.resume.en.btn": "See resume",
             "resource.app.en.title": "Application-template (EN)",
-            "resource.app.en.desc": "Take a look at what I include when I send out applications.",
             "resource.app.en.btn": "See application-template",
             "contact.label": "Contact",
             "contact.title": "Let's talk!",
@@ -190,14 +190,16 @@ const schemamarkup = {
               "Passioneret for at skabe tilg\u00e6ngelige, brugercentrerede digitale oplevelser, der kombinerer design, udvikling og strategi.",
             "hero.cta": "Se projekter",
             "hero.scroll": "Gå til projekter",
-            "projects.label": "Udvalgte projekter",
-            "projects.title": "Projekter",
+            "projects.label": "Fremhævede projekter",
+            "projects.title": "Udvalgte cases",
             "projects.text":
-              'Herunder finder du nogle af de projekter, jeg har arbejdet p\u00e5 under mine studier og praktikophold.<br class="hidden md:block" /> Klik p\u00e5 et af kortene for at l\u00e6se mere om projektet, processen og resultatet.',
+              "Nedenfor finder du et udvalg af projekter, som jeg har arbejdet p\u00e5 under mine studier og praktikophold. Klik p\u00e5 ét af kortene for at l\u00e6se mere om projektet, processen og resultatet.",
             "projects.empty": "Projekterne er midlertidigt utilg\u00e6ngelige. Pr\u00f8v igen om et \u00f8jeblik.",
             "project.back": "↑ Tilbage til forsiden",
             "project.label": "Projekt",
             "project.figma.notice": "Dette projekt pr\u00e6senteres som en interaktiv prototype lavet i Figma",
+            "project.db.notice":
+              "Billederne på galleri-siden er ikke længere synlige, fordi den oprindelige database ikke længere er aktiv. Dette afspejler ikke projektets oprindelige funktionalitet.",
             "project.tools": "Værktøjer brugt:",
             "project.view": "Se projekt",
             "project.related.label": "Udvalgte projekter",
@@ -211,7 +213,7 @@ const schemamarkup = {
             "testimonials.title": "Fremh\u00e6vet anbefaling",
             "testimonials.context": "Et kort citat fra \u00e9n, jeg har arbejdet med.",
             "testimonials.quote":
-              'Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <span class="italic font-semibold text-[16px]">[...]</span> Både i teamkonstallaioner og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.',
+              'Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <span class="italic font-semibold text-[16px]">[...]</span> Både i teamkonstellationer og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.',
             "revamped.label": "Caseopdatering",
             "revamped.title": "Opgraderede projekter",
             "revamped.text":
@@ -274,12 +276,14 @@ const schemamarkup = {
               "Jeg elsker b\u00e5de Nintendo og Super Mario-serien&mdash; selvom jeg godt kan indr\u00f8mme, at jeg ikke er s\u00e6rlig god til de fleste af spillene, kun ganske f\u00e5. Der er bare noget magisk ved de verdener, der bliver ved med at tr\u00e6kke mig tilbage.",
             "interest.japanese.title": "Japansk kultur",
             "interest.japanese.text":
-              "Jeg elsker og er inspireret af japansk \u00e6stetik, kultur og sprog&mdash; is\u00e6r balancen mellem enkelhed, detalje og gennemts\u00e6nkt historiefortælling.",
+              "Jeg elsker og er inspireret af japansk \u00e6stetik, kultur og sprog&mdash; is\u00e6r balancen mellem enkelhed, detalje og gennemt\u00e6nkt historiefortælling.",
             "interest.lego.title": "Bygge LEGO",
             "interest.lego.text":
               "Der er noget m\u00e6rkeligt terapeutisk ved at klikke LEGO-klodser sammen. Det er mit kreative frirum, der ikke kr\u00e6ver en sk\u00e6rm.",
             "resources.label": "Ressourcer",
             "resources.title": "Ressourcer",
+            "resource.resume.en.title": "Resume (EN)",
+            "resource.resume.en.desc": "Kig mit engelske resume igennem for at få en oversigt over min baggrund.",
             "resource.cv.da.title": "CV (DA)",
             "resource.cv.da.desc": "Kig mit CV igennem for at f\u00e5 en oversigt over min baggrund.",
             "resource.cv.da.btn": "Se CV",
@@ -342,12 +346,17 @@ const schemamarkup = {
     </script>
   </head>
   <body class="site-shell bg-pale-100">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-gray-800 focus:text-gray-50 focus:px-4 focus:py-2 focus:rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-pale-400"
+      >Skip to main content</a
+    >
     <header>
       <Header />
       <ScrollToTop />
     </header>
 
-    <main class="site-main scroll-vertical overflow-x-hidden">
+    <main id="main-content" class="site-main scroll-vertical overflow-x-hidden">
       <slot />
     </main>
 

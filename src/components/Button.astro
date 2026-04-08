@@ -1,6 +1,4 @@
 ---
-const { variant = "primary", size = "medium" } = Astro.props;
-
 const buttonStyling = "inline-flex items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase";
 
 const variantClasses = {
@@ -8,22 +6,38 @@ const variantClasses = {
     "main-button text-gray-50 bg-blue-900 border-blue-900 hover:bg-blue-700 hover:border-blue-700 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-pale-400 ease-in-out",
   secondary:
     "secondary-button text-gray-900 bg-transparent border-blue-900 hover:bg-blue-900 hover:text-gray-50 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-pale-400 ease-in-out",
-};
+} as const;
 
 const sizeClasses = {
   large: "text-[18px]",
   medium: "text-[16px]",
   small: "text-[14px]",
-};
+} as const;
+
+type Variant = keyof typeof variantClasses;
+type Size = keyof typeof sizeClasses;
+
+interface Props {
+  variant?: Variant;
+  size?: Size;
+}
+
+const { variant = "primary", size = "medium" } = Astro.props as Props;
 ---
 
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
+<button class={buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[size]}><slot /></button>
 
 <style>
   .main-button,
   .secondary-button {
     position: relative;
     overflow: hidden;
+  }
+
+  .main-button > span,
+  .secondary-button > span {
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .main-button::before,

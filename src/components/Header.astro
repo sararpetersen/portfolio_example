@@ -96,35 +96,37 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     </div>
 
     <!-- Desktop Navigation -->
-    <ul class="hidden lg:flex space-x-6 items-center">
-      <li class="some1">
-        <a
-          href="/"
-          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
-          aria-current={isActive("/") ? "page" : undefined}
-          aria-label="Go to homepage"
-          data-i18n="nav.home">Home</a
-        >
-      </li>
-      <li class="some1">
-        <a
-          href="/about_me"
-          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
-          aria-current={isActive("/about_me") ? "page" : undefined}
-          aria-label="Go to about-page"
-          data-i18n="nav.about">About</a
-        >
-      </li>
-      <li class="some1">
-        <a
-          href="/contact"
-          class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
-          aria-current={isActive("/contact") ? "page" : undefined}
-          aria-label="Go to contact-page"
-          data-i18n="nav.contact">Contact</a
-        >
-      </li>
-    </ul>
+    <nav aria-label="Main navigation">
+      <ul class="hidden lg:flex space-x-6 items-center">
+        <li class="some1">
+          <a
+            href="/"
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
+            aria-current={isActive("/") ? "page" : undefined}
+            aria-label="Go to homepage"
+            data-i18n="nav.home">Home</a
+          >
+        </li>
+        <li class="some1">
+          <a
+            href="/about_me"
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
+            aria-current={isActive("/about_me") ? "page" : undefined}
+            aria-label="Go to about-page"
+            data-i18n="nav.about">About</a
+          >
+        </li>
+        <li class="some1">
+          <a
+            href="/contact"
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
+            aria-current={isActive("/contact") ? "page" : undefined}
+            aria-label="Go to contact-page"
+            data-i18n="nav.contact">Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
     <!-- Mobile Burger (shows below lg) -->
     <button
@@ -261,7 +263,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     background: var(--dark-bg);
     color: var(--text-on-dark);
     box-shadow: none;
-    border-bottom: 1px solid var(--dark-border);
+    border-bottom: 1px solid #333;
   }
 
   body.dark #accessibility-bar {

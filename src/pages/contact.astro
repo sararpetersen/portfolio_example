@@ -36,18 +36,21 @@ import MainLayout from "../layouts/MainLayout.astro";
           >
             Contact
           </p>
-          <h1
-            id="contact-title"
-            class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center mb-9 text-4xl md:text-5xl"
-            data-i18n="contact.title"
-          >
-            Let's talk!
-          </h1>
+          <div id="contact-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-9">
+            <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">連絡</span>
+            <h1
+              id="contact-title"
+              class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:text-left text-center text-4xl md:text-5xl"
+              data-i18n="contact.title"
+            >
+              Let's talk!
+            </h1>
+          </div>
           <p id="contact-text" class="md:text-left text-center text-gray-800 pb-9 leading-relaxed max-w-xl" data-i18n="contact.text">
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can use the form below or reach
             me directly via the contact methods listed here.
           </p>
-          <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm">
+          <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
             <ul class="md:space-y-6 space-y-4">
               <li class="some1 flex items-start gap-4">
                 <svg
@@ -142,13 +145,16 @@ import MainLayout from "../layouts/MainLayout.astro";
       >
         Get in touch
       </p>
-      <h2
-        id="contact-form-title"
-        class="text-h3-desktop heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro mb-6"
-        data-i18n="contact.form.title"
-      >
-        Send me a message
-      </h2>
+      <div id="contact-form-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-6">
+        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">対話</span>
+        <h2
+          id="contact-form-title"
+          class="text-h3-desktop heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro"
+          data-i18n="contact.form.title"
+        >
+          Send me a message
+        </h2>
+      </div>
       <p id="contact-form-subtitle" class="text-gray-600 mb-8 max-w-2xl" data-i18n="contact.form.subtitle">
         Feel free to reach out with any questions or inquiries. I'll get back to you as soon as possible. If you're looking for a collaborator for
         your next digital project, tell me a bit about your idea.
@@ -164,7 +170,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           action="/contact?submitted=true"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          class="space-y-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 shadow-sm"
+          class="space-y-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8"
         >
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden">
@@ -229,7 +235,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       </div>
 
       <aside id="contact-form-media" class="hidden md:block">
-        <div class="rounded-3xl border border-gray-500 border-r-4 overflow-hidden shadow-sm bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="rounded-3xl border border-gray-500 border-r-4 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
           <img
             src="/images/contact_image.webp"
             alt="Decorative workspace scene for the contact section"
@@ -273,10 +279,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         [
           "#contact-title-label",
-          "#contact-title",
+          "#contact-title-row",
           "#contact-text",
           "#contact-container img",
-          "#contact-form-title",
+          "#contact-form-title-row",
           "#contact-form-subtitle",
           "#contact-form-label",
           "#contact-info",

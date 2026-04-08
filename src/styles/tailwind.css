@@ -28,10 +28,6 @@
     @apply font-almarai text-p-mobile leading-7 text-gray-600;
   }
 
-  span {
-    @apply text-h4-mobile;
-  }
-
   @media (min-width: 768px) {
     .display {
       @apply text-display-desktop font-bold text-gray-800;
@@ -57,10 +53,6 @@
     a {
       @apply text-p-desktop leading-7 text-gray-600;
     }
-
-    span {
-      @apply text-h4-desktop;
-    }
   }
 
   /* Base style for toggle switch */
@@ -85,10 +77,10 @@
 
   /* Extra hover effect for fun */
   .toggle-switch:hover {
-    @apply bg-blue-500;
+    @apply bg-blue-300;
   }
 
   body.dark .toggle-switch:hover {
-    @apply bg-blue-500;
+    @apply bg-blue-300;
   }
 }

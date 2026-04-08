@@ -66,17 +66,16 @@ import Cases from "../components/Cases.astro";
           <div id="status" class="hero-status md:mb-8 mb-6 flex items-center gap-3 justify-start text-sm">
             <span class="relative flex md:h-3.5 md:w-3.5 h-2.5 w-2.5" aria-hidden="true">
               <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-              <span class="relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400"></span>
+              <span class="relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
             </span>
 
-            <p class="text-gray-50" aria-label="Indicates that I'm currently open for internship opportunities">
-              <strong class="font-semibold text-[16px]">Status:</strong>
-              <span class="text-[16px]" data-i18n="hero.status">Open for internship</span>
+            <p aria-label="Indicates that I'm currently open for internship opportunities" data-i18n="hero.status" class="text-gray-50">
+              Open for internship
             </p>
           </div>
 
           <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
-          <h2 class="hero-role text-gray-700 pb-6" data-i18n="hero.role">Multimedia Designer & Concept Developer</h2>
+          <h2 class="hero-role text-gray-700 pb-6 font-bold" data-i18n="hero.role">Multimedia Designer & Concept Developer</h2>
           <p class="hero-lead text-gray-600 font-light pb-8 max-w-3xl" data-i18n="hero.lead">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
@@ -104,7 +103,7 @@ import Cases from "../components/Cases.astro";
       </div>
     </div>
 
-    <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-2 w-full justify-center z-[20]">
+    <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-1 w-full justify-center z-[20]">
       <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-pale-400 scroll-link">
         <div class="flex flex-col items-center transition duration-300 ease-in-out">
           <p class="uppercase tracking-[0.22em] text-xs text-gray-500" data-i18n="hero.scroll">Scroll to projects</p>
@@ -127,22 +126,29 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
       <!-- eyebrow label -->
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="projects.label">
+      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-2" data-i18n="projects.label">
         Selected work
       </p>
 
-      <!-- title -->
-      <h3 id="project-title" class="col-span-12 uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro md:mb-7 mb-5" data-i18n="projects.title">
-        Projects
-      </h3>
+      <!-- kanji + title -->
+      <div class="flex items-center gap-4 mb-5 md:mb-7">
+        <span id="project-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true"> 作品 </span>
 
-      <!-- description -->
-      <p id="project-text" class="col-span-12 text-gray-600 mb-12 leading-relaxed" data-i18n="projects.text">
-        Below are some of the projects I've worked on during my studies and internships.
-        <br class="hidden md:block" />
-        Click on any of the cards to read more about the project, the process and the outcome.
-      </p>
+        <h3
+          id="project-title"
+          class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro text-h3-mobile md:text-h3-desktop"
+          data-i18n="projects.title"
+        >
+          Selected cases
+        </h3>
+      </div>
     </div>
+
+    <!-- description -->
+    <p id="project-text" class="col-span-12 text-gray-600 mb-12 leading-relaxed" data-i18n="projects.text">
+      Below is a selection of projects that I've worked on during my studies and internships. Click on any of the cards to read more about the
+      project, the process and the outcome.
+    </p>
     <div class="col-span-12">
       {
         sortedCards.length > 0 ? (
@@ -162,21 +168,25 @@ import Cases from "../components/Cases.astro";
       Case update
     </p>
 
-    <h3 id="revamped-title" class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-5 mb-4 font-hiro" data-i18n="revamped.title">
-      Revamped projects
-    </h3>
+    <div class="flex items-center gap-4 mb-4 md:mb-5">
+      <span id="revamped-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true">改善</span>
 
-    <p id="revamped-text" class="text-gray-600 mb-6 leading-relaxed max-w-4xl text-sm md:text-base" data-i18n="revamped.text">
+      <h3 id="revamped-title" class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro" data-i18n="revamped.title">Revamped projects</h3>
+    </div>
+
+    <p id="revamped-text" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="revamped.text">
       A selection of older school projects that I later redesigned and rebuilt. These first two cases are from my first semester on Multimedia Design,
       and each of them includes links to both the original version and the updated result.
     </p>
 
     <div class="space-y-4">
-      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <h4 class="revamped-card-title font-semibold text-lg mb-2">Computer Site (DA)</h4>
 
         <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
-          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+          <div
+            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
+          >
             <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
             <p id="revamped-cs-before-desc" class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.before.desc">
               The original hand-in from the course.
@@ -194,7 +204,9 @@ import Cases from "../components/Cases.astro";
 
           <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
 
-          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+          <div
+            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
+          >
             <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
             <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.after.desc">
               Redesigned with updated styling and layout choices.
@@ -212,11 +224,13 @@ import Cases from "../components/Cases.astro";
         </div>
       </article>
 
-      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
+      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <h4 class="revamped-card-title font-semibold text-lg mb-2">The Great Mushroom Kingdom Wiki</h4>
 
         <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
-          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+          <div
+            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
+          >
             <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
             <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.before.desc">
               The original version made for the assignment.
@@ -234,7 +248,9 @@ import Cases from "../components/Cases.astro";
 
           <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
 
-          <div class="revamped-box rounded-xl border border-gray-500 p-3 bg-white/80 shadow-sm min-h-[108px] flex flex-col gap-3">
+          <div
+            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
+          >
             <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
             <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.after.desc">
               Redesigned with a tidier setup and a stronger visual direction.
@@ -279,11 +295,15 @@ import Cases from "../components/Cases.astro";
           Profile
         </p>
 
-        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro" data-i18n="about.preview.title">About me</h3>
+        <div class="flex items-center gap-4 mb-5 md:mb-7">
+          <span id="about-preview-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true">自己</span>
+
+          <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro" data-i18n="about.preview.title">About me</h3>
+        </div>
 
         <p
           id="about-preview-text-paragraph"
-          class="mb-6 text-gray-600 max-w-xl leading-relaxed md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 shadow-sm"
+          class="mb-6 text-gray-600 max-w-xl leading-relaxed md:mx-0 p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
           data-i18n="about.preview.text"
         >
           I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital
@@ -308,7 +328,11 @@ import Cases from "../components/Cases.astro";
       <div id="testimonial-heading">
         <p class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="testimonials.label">Recommendation</p>
 
-        <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] md:mb-7 mb-5 font-hiro" data-i18n="testimonials.title">Featured testimonial</h3>
+        <div class="flex items-center gap-4 mb-5 md:mb-7">
+          <span id="testimonial-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true">推薦</span>
+
+          <h3 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-hiro" data-i18n="testimonials.title">Featured testimonial</h3>
+        </div>
 
         <p id="testimonial-context" class="text-gray-600 max-w-xl md:mx-0 md:mb-0 mb-2" data-i18n="testimonials.context">
           A short quote from someone I've worked with.
@@ -316,7 +340,7 @@ import Cases from "../components/Cases.astro";
       </div>
 
       <!-- Right: Testimonial card -->
-      <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 shadow-sm">
+      <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8">
         <blockquote class="text-gray-600 italic" data-i18n="testimonials.quote">
           <p>
             "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
@@ -335,344 +359,379 @@ import Cases from "../components/Cases.astro";
       </figure>
     </div>
   </section>
+</MainLayout>
 
-  <script>
-    import { inView } from "motion";
+<script>
+  import { inView } from "motion";
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
 
-      if (!reduceMotion) {
-        const registerInView = (selector: string, animationClass: string, delayMs = 0) => {
-          const element = document.querySelector(selector);
-          if (!element) return;
+    if (!reduceMotion) {
+      const registerInView = (selector: string, animationClass: string, delayMs = 0) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
 
-          inView(element, () => {
-            (element as HTMLElement).classList.add("animate__animated", animationClass);
-            (element as HTMLElement).style.animationDelay = `${delayMs}ms`;
-            (element as HTMLElement).style.animationDuration = "1.6s";
-          });
-        };
+        let stop = () => {};
+        stop = inView(element, () => {
+          const animationToUse = animationClass;
+          const normalizedDelay = isMobileViewport ? Math.min(delayMs, 220) : delayMs;
 
-        [
-          ["#hero-content h1", "animate__fadeInUp"],
-          ["#testimonial-heading h3", "animate__fadeInUp"],
-          ["#testimonial-heading p", "animate__fadeInUp"],
-          ["#testimonial-context", "animate__fadeInUp"],
-          ["#testimonial-card", "animate__fadeInUp"],
-          ["#scroll-down", "animate__fadeInUp"],
-          ["#project-title", "animate__fadeInUp"],
-          ["#project-text", "animate__fadeInUp"],
-          ["#project-label", "animate__fadeInUp"],
-          ["#hero-image", "animate__fadeInUp"],
-          ["#hero-content h2", "animate__fadeInUp"],
-          ["#hero-content .hero-lead", "animate__fadeInUp"],
-          ["#hero-cta", "animate__fadeInUp"],
-          ["#status", "animate__fadeInUp"],
-          ["#about-preview-text h3", "animate__fadeInUp"],
-          ["#about-preview-label", "animate__fadeInUp"],
-          ["#about-preview-text-paragraph", "animate__fadeInUp"],
-          [".btn_container", "animate__fadeInUp"],
-          ["#about-preview img", "animate__fadeInUp"],
-          ["#revamped-label", "animate__fadeInUp"],
-          ["#revamped-title", "animate__fadeInUp"],
-          ["#revamped-text", "animate__fadeInUp"],
-        ].forEach(([selector, animationClass], index) => {
-          registerInView(selector, animationClass, index * 60);
+          (element as HTMLElement).classList.add("animate__animated", animationToUse);
+          (element as HTMLElement).style.animationDelay = `${normalizedDelay}ms`;
+          (element as HTMLElement).style.animationDuration = isMobileViewport ? "1s" : "1.6s";
+          (element as HTMLElement).style.animationFillMode = "both";
+
+          stop();
         });
+      };
 
-        document.querySelectorAll("#revamped-section article").forEach((article, index) => {
-          inView(article, () => {
-            (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
-            (article as HTMLElement).style.animationDelay = `${index * 60}ms`;
-            (article as HTMLElement).style.animationDuration = "1.4s";
-          });
+      [
+        ["#hero-content h1", "animate__fadeInUp"],
+        ["#testimonial-heading h3", "animate__fadeInUp"],
+        ["#testimonial-heading p", "animate__fadeInUp"],
+        ["#testimonial-context", "animate__fadeInUp"],
+        ["#testimonial-card", "animate__fadeInUp"],
+        ["#scroll-down", "animate__fadeInUp"],
+        ["#project-title", "animate__fadeInUp"],
+        ["#project-kanji", "animate__fadeInUp"],
+        ["#project-text", "animate__fadeInUp"],
+        ["#project-label", "animate__fadeInUp"],
+        ["#hero-image", "animate__fadeInUp"],
+        ["#hero-content h2", "animate__fadeInUp"],
+        ["#hero-content .hero-lead", "animate__fadeInUp"],
+        ["#hero-cta", "animate__fadeInUp"],
+        ["#status", "animate__fadeInUp"],
+        ["#about-preview-text h3", "animate__fadeInUp"],
+        ["#about-preview-kanji", "animate__fadeInUp"],
+        ["#about-preview-label", "animate__fadeInUp"],
+        ["#about-preview-text-paragraph", "animate__fadeInUp"],
+        [".btn_container", "animate__fadeInUp"],
+        ["#about-preview img", "animate__fadeInUp"],
+        ["#revamped-label", "animate__fadeInUp"],
+        ["#revamped-kanji", "animate__fadeInUp"],
+        ["#revamped-title", "animate__fadeInUp"],
+        ["#revamped-text", "animate__fadeInUp"],
+        ["#testimonial-kanji", "animate__fadeInUp"],
+      ].forEach(([selector, animationClass], index) => {
+        registerInView(selector, animationClass, index * 60);
+      });
+
+      document.querySelectorAll("#revamped-section article").forEach((article, index) => {
+        let stop = () => {};
+        stop = inView(article, () => {
+          (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
+          (article as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          (article as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
+          (article as HTMLElement).style.animationFillMode = "both";
+
+          stop();
         });
-      }
-    });
-  </script>
-
-  <style>
-    /* Animations */
-    @keyframes ping {
-      75%,
-      100% {
-        transform: scale(2);
-        opacity: 0;
-      }
+      });
     }
+  });
+</script>
 
-    .animate-ping {
-      animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate__animated {
-      --animate-duration: 1.6s;
-    }
-
-    html.has-js body:not(.reduce-motion) #hero-content h1,
-    html.has-js body:not(.reduce-motion) #testimonial-heading h3,
-    html.has-js body:not(.reduce-motion) #testimonial-heading p,
-    html.has-js body:not(.reduce-motion) #testimonial-context,
-    html.has-js body:not(.reduce-motion) #testimonial-card,
-    html.has-js body:not(.reduce-motion) #scroll-down,
-    html.has-js body:not(.reduce-motion) #project-title,
-    html.has-js body:not(.reduce-motion) #project-text,
-    html.has-js body:not(.reduce-motion) #project-label,
-    html.has-js body:not(.reduce-motion) #hero-image,
-    html.has-js body:not(.reduce-motion) #hero-content h2,
-    html.has-js body:not(.reduce-motion) #hero-content .hero-lead,
-    html.has-js body:not(.reduce-motion) #hero-cta,
-    html.has-js body:not(.reduce-motion) #status,
-    html.has-js body:not(.reduce-motion) #about-preview-text h3,
-    html.has-js body:not(.reduce-motion) #about-preview-label,
-    html.has-js body:not(.reduce-motion) #about-preview-text-paragraph,
-    html.has-js body:not(.reduce-motion) .btn_container,
-    html.has-js body:not(.reduce-motion) #about-preview img,
-    html.has-js body:not(.reduce-motion) #revamped-label,
-    html.has-js body:not(.reduce-motion) #revamped-title,
-    html.has-js body:not(.reduce-motion) #revamped-text,
-    html.has-js body:not(.reduce-motion) #revamped-section article {
+<style>
+  /* Animations */
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2);
       opacity: 0;
-      will-change: transform, opacity;
     }
+  }
 
-    #project-title,
-    #revamped-title,
-    #about-preview-text h3,
-    #testimonial-heading h3 {
-      line-height: 1.08;
-      text-wrap: balance;
+  @keyframes scrollFloat {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-
-    #project-text,
-    #revamped-text,
-    #testimonial-context {
-      max-width: 62ch;
+    50% {
+      transform: translateY(8px);
     }
+  }
 
-    .revamped-card {
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        border-color 0.28s ease;
-    }
+  .animate-ping {
+    animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
 
-    .revamped-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(71, 123, 147, 0.65);
-      box-shadow: 0 12px 28px -18px rgba(55, 85, 103, 0.8);
-    }
+  #scroll-down .scroll-link > div {
+    animation: scrollFloat 2.4s ease-in-out infinite;
+  }
 
-    .revamped-card-title {
-      font-size: clamp(1.08rem, 1.45vw, 1.28rem);
-      letter-spacing: 0.01em;
-    }
+  .animate__animated {
+    --animate-duration: 1.6s;
+  }
 
-    .revamped-phase {
-      width: fit-content;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      border: 1px solid rgba(55, 85, 103, 0.3);
-      border-radius: 9999px;
-      padding: 0.22rem 0.58rem;
-      background: rgba(222, 235, 239, 0.68);
-    }
+  html.has-js body:not(.reduce-motion) #hero-content h1,
+  html.has-js body:not(.reduce-motion) #testimonial-heading h3,
+  html.has-js body:not(.reduce-motion) #testimonial-heading p,
+  html.has-js body:not(.reduce-motion) #testimonial-context,
+  html.has-js body:not(.reduce-motion) #testimonial-card,
+  html.has-js body:not(.reduce-motion) #scroll-down,
+  html.has-js body:not(.reduce-motion) #project-title,
+  html.has-js body:not(.reduce-motion) #project-kanji,
+  html.has-js body:not(.reduce-motion) #project-text,
+  html.has-js body:not(.reduce-motion) #project-label,
+  html.has-js body:not(.reduce-motion) #hero-image,
+  html.has-js body:not(.reduce-motion) #hero-content h2,
+  html.has-js body:not(.reduce-motion) #hero-content .hero-lead,
+  html.has-js body:not(.reduce-motion) #hero-cta,
+  html.has-js body:not(.reduce-motion) #status,
+  html.has-js body:not(.reduce-motion) #about-preview-text h3,
+  html.has-js body:not(.reduce-motion) #about-preview-kanji,
+  html.has-js body:not(.reduce-motion) #about-preview-label,
+  html.has-js body:not(.reduce-motion) #about-preview-text-paragraph,
+  html.has-js body:not(.reduce-motion) .btn_container,
+  html.has-js body:not(.reduce-motion) #about-preview img,
+  html.has-js body:not(.reduce-motion) #revamped-label,
+  html.has-js body:not(.reduce-motion) #revamped-kanji,
+  html.has-js body:not(.reduce-motion) #revamped-title,
+  html.has-js body:not(.reduce-motion) #revamped-text,
+  html.has-js body:not(.reduce-motion) #testimonial-kanji,
+  html.has-js body:not(.reduce-motion) #revamped-section article {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
 
-    .revamped-desc {
-      line-height: 1.55;
-      font-size: 0.96rem;
-    }
+  #project-title,
+  #revamped-title,
+  #about-preview-text h3,
+  #testimonial-heading h3 {
+    line-height: 1.08;
+    text-wrap: balance;
+  }
 
-    .revamped-arrow {
-      font-size: 1.2rem;
-      color: var(--brand-primary-strong);
-      opacity: 0.75;
-    }
+  #project-text,
+  #revamped-text,
+  #testimonial-context {
+    max-width: 72ch;
+  }
 
-    /* Hero-section */
+  .revamped-card {
+    transition:
+      transform 0.28s ease,
+      border-color 0.28s ease;
+  }
 
-    .hero-status {
-      width: fit-content;
-      padding: 0.5rem 0.85rem;
-      border-radius: 9999px;
-      border: 1px solid #686868;
-      background: linear-gradient(90deg, #4f6a5a, #7f9b8a);
-    }
+  .revamped-card-title {
+    font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+    letter-spacing: 0.01em;
+  }
 
-    .hero-role {
-      font-size: clamp(1.4rem, 2.2vw, 2.25rem);
-      line-height: 1.25;
-      font-style: italic;
-    }
+  .revamped-phase {
+    width: fit-content;
+    font-size: 0.69rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(73, 75, 79, 0.35);
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    line-height: 1;
+    text-transform: uppercase;
+  }
 
-    .hero-lead {
-      font-size: clamp(1rem, 1.25vw, 1.35rem);
-      line-height: 1.8;
-    }
+  .revamped-desc {
+    line-height: 1.55;
+    font-size: 0.96rem;
+  }
 
+  .revamped-arrow {
+    font-size: 1.2rem;
+    color: var(--brand-primary-strong);
+    opacity: 0.75;
+  }
+
+  /* Hero-section */
+
+  .hero-status {
+    width: fit-content;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(73, 75, 79, 0.35);
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  #status p {
+    font-size: 0.79rem;
+  }
+
+  .hero-role {
+    font-size: clamp(1.4rem, 2.2vw, 2.25rem);
+    line-height: 1.25;
+    font-style: italic;
+  }
+
+  .hero-lead {
+    font-size: clamp(1rem, 1.25vw, 1.35rem);
+    line-height: 1.8;
+  }
+
+  .hero-image-wrap {
+    border: 1px solid rgb(244 248 250 / 28%);
+    border-radius: 1.75rem;
+    background: linear-gradient(165deg, rgb(244 248 250 / 6%), rgb(244 248 250 / 0%));
+    padding: 0.8rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.15rem;
+    object-position: center 28%;
+    border: 1px solid rgb(244 248 250 / 16%);
+  }
+
+  .hero-image-accent {
+    position: absolute;
+    z-index: -1;
+    width: 70%;
+    height: 40%;
+    right: -16px;
+    bottom: -18px;
+    border-radius: 1.2rem;
+    background: linear-gradient(145deg, rgb(71 123 147 / 30%), rgb(71 123 147 / 1%));
+    border: 1px solid rgb(98 151 174 / 32%);
+    filter: blur(0.2px);
+  }
+
+  @media (min-width: 768px) {
     .hero-image-wrap {
-      border: 1px solid rgb(244 248 250 / 28%);
-      border-radius: 1.75rem;
-      background: linear-gradient(165deg, rgb(244 248 250 / 6%), rgb(244 248 250 / 0%));
-      padding: 0.8rem;
+      margin-left: 0.8rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-image-wrap {
+      margin: 0 auto;
     }
 
     .hero-image {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: 1.15rem;
-      object-position: center 28%;
-      border: 1px solid rgb(244 248 250 / 16%);
+      aspect-ratio: 5 / 4;
     }
 
     .hero-image-accent {
-      position: absolute;
-      z-index: -1;
-      width: 70%;
-      height: 40%;
-      right: -16px;
-      bottom: -18px;
-      border-radius: 1.2rem;
-      background: linear-gradient(145deg, rgb(71 123 147 / 30%), rgb(71 123 147 / 1%));
-      border: 1px solid rgb(98 151 174 / 32%);
-      filter: blur(0.2px);
+      right: -10px;
+      bottom: -10px;
     }
+  }
 
-    @media (min-width: 768px) {
-      .hero-image-wrap {
-        margin-left: 0.8rem;
-      }
-    }
+  /* Dark-mode */
+  body.dark .hero-title,
+  body.dark .hero-role,
+  body.dark .hero-lead,
+  body.dark #portfolio-intro h3,
+  body.dark #portfolio-intro p,
+  body.dark #testimonials h3,
+  body.dark #testimonials p,
+  body.dark #testimonials blockquote,
+  body.dark #testimonials blockquote em,
+  body.dark #how-i-work p,
+  body.dark #how-i-work h4,
+  body.dark #project-section h3,
+  body.dark #project-section p,
+  body.dark #revamped-section h3,
+  body.dark #revamped-section h4,
+  body.dark #revamped-section p,
+  body.dark #about-preview-text h3,
+  body.dark #about-preview-text-paragraph,
+  body.dark #about-preview-label {
+    color: var(--text-on-dark-soft);
+  }
 
-    @media (max-width: 767px) {
-      .hero-image-wrap {
-        margin: 0 auto;
-      }
+  body.dark #testimonials hr,
+  body.dark #how-i-work hr,
+  body.dark #more-about-me hr {
+    border-color: var(--dark-border);
+  }
 
-      .hero-image {
-        aspect-ratio: 5 / 4;
-      }
+  body.dark #process-cards div,
+  body.dark #testimonials-cards blockquote,
+  body.dark #intro-grid > div,
+  body.dark #about-preview-text-paragraph,
+  body.dark #testimonial-card,
+  body.dark #revamped-section article {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
 
-      .hero-image-accent {
-        right: -10px;
-        bottom: -10px;
-      }
-    }
+  body.dark #revamped-section article > div > div {
+    border-color: var(--dark-border);
+  }
 
-    /* Dark-mode */
-    body.dark .hero-title,
-    body.dark .hero-role,
-    body.dark .hero-lead,
-    body.dark #portfolio-intro h3,
-    body.dark #portfolio-intro p,
-    body.dark #testimonials h3,
-    body.dark #testimonials p,
-    body.dark #testimonials blockquote,
-    body.dark #testimonials blockquote em,
-    body.dark #how-i-work p,
-    body.dark #how-i-work h4,
-    body.dark #project-section h3,
-    body.dark #project-section p,
-    body.dark #revamped-section h3,
-    body.dark #revamped-section h4,
-    body.dark #revamped-section p,
-    body.dark #about-preview-text h3,
-    body.dark #about-preview-text-paragraph,
-    body.dark #about-preview-label {
-      color: var(--text-on-dark-soft);
-    }
+  body.dark #revamped-section .revamped-box {
+    background: rgba(255, 255, 255, 0.04);
+  }
 
-    body.dark #testimonials hr,
-    body.dark #how-i-work hr,
-    body.dark #more-about-me hr {
-      border-color: var(--dark-border);
-    }
+  body.dark .revamped-card:hover {
+    border-color: rgba(192, 215, 225, 0.7);
+  }
 
-    body.dark #process-cards div,
-    body.dark #testimonials-cards blockquote,
-    body.dark #intro-grid > div,
-    body.dark #about-preview-text-paragraph,
-    body.dark #testimonial-card,
-    body.dark #revamped-section article {
-      border-color: var(--dark-border);
-      background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-    }
+  body.dark .revamped-phase {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    color: var(--text-on-dark);
+  }
 
-    body.dark #revamped-section article > div > div {
-      border-color: var(--dark-border);
-    }
+  body.dark .revamped-arrow {
+    color: var(--brand-primary-soft);
+    opacity: 0.85;
+  }
 
-    body.dark #revamped-section .revamped-box {
-      background: rgba(255, 255, 255, 0.04);
-    }
+  #revamped-section .revamped-box > a button {
+    white-space: nowrap;
+  }
 
-    body.dark .revamped-card:hover {
-      border-color: rgba(192, 215, 225, 0.7);
-      box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.85);
-    }
+  body.dark #about-preview img {
+    border-color: var(--dark-border);
+  }
 
-    body.dark .revamped-phase {
-      border-color: rgba(192, 215, 225, 0.44);
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-on-dark-soft);
-    }
+  /* Miscellaneous */
+  #hero-subtitle-text,
+  #hero-text-content {
+    display: inline-block;
+  }
 
-    body.dark .revamped-arrow {
-      color: var(--brand-primary-soft);
-      opacity: 0.85;
-    }
+  body.dark .hero-status {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    color: var(--text-on-dark);
+  }
 
-    #revamped-section .revamped-box > a button {
-      white-space: nowrap;
-    }
+  body.dark .hero-image-wrap {
+    border-color: color-mix(in srgb, var(--dark-border) 64%, var(--brand-primary-soft) 36%);
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--dark-surface) 78%, var(--brand-primary-strong) 22%),
+      color-mix(in srgb, var(--dark-surface-strong) 88%, var(--brand-primary-strong) 12%)
+    );
+  }
 
-    body.dark #about-preview img {
-      border-color: var(--dark-border);
-    }
+  .scroll-link:hover .scroll-icon {
+    color: var(--brand-primary);
+    transform: scale(1.1);
+  }
 
-    /* Miscellaneous */
-    #hero-subtitle-text,
-    #hero-text-content {
-      display: inline-block;
-    }
+  #scroll-down {
+    color: var(--dark-bg);
+  }
 
-    body.dark .hero-status {
-      border-color: color-mix(in srgb, var(--dark-border) 58%, var(--brand-primary-soft) 42%);
-      background: color-mix(in srgb, var(--dark-surface) 76%, var(--brand-primary-strong) 24%);
-    }
+  body.dark #scroll-down .scroll-icon,
+  body.dark #scroll-down p {
+    color: var(--text-on-dark);
+  }
 
-    body.dark .hero-image-wrap {
-      border-color: color-mix(in srgb, var(--dark-border) 64%, var(--brand-primary-soft) 36%);
-      background: linear-gradient(
-        165deg,
-        color-mix(in srgb, var(--dark-surface) 78%, var(--brand-primary-strong) 22%),
-        color-mix(in srgb, var(--dark-surface-strong) 88%, var(--brand-primary-strong) 12%)
-      );
-    }
-
-    .scroll-link:hover .scroll-icon {
-      color: var(--brand-primary);
-      transform: scale(1.1);
-    }
-
-    #scroll-down {
-      color: var(--dark-bg);
-    }
-
-    body.dark #scroll-down .scroll-icon,
-    body.dark #scroll-down p {
-      color: var(--text-on-dark);
-    }
-
-    body.dark #process-cards div svg {
-      color: var(--text-on-dark);
-      background: transparent;
-    }
-
-    span {
-      font-size: 14px;
-    }
-  </style>
-</MainLayout>
+  body.dark #process-cards div svg {
+    color: var(--text-on-dark);
+    background: transparent;
+  }
+</style>
