@@ -13,6 +13,17 @@ interface ProjectCard {
 
 const { projects: propProjects } = Astro.props;
 
+const getDegreeLabel = (period?: string) => {
+  if (!period) return "";
+
+  const parts = period
+    .split("·")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return parts[parts.length - 1] || "";
+};
+
 const fetchCards = async (): Promise<ProjectCard[]> => {
   const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
     method: "GET",
@@ -45,7 +56,10 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
             <div aria-label={`View project: ${project.name}`}>
               <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
 
-              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
+                  {getDegreeLabel(project.year)}
+                </span>
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
                   <p
@@ -68,7 +82,10 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
             <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
               <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
 
-              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
+                  {getDegreeLabel(project.year)}
+                </span>
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
                   <p
@@ -112,9 +129,26 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
       return currentSemester || currentYear;
     };
 
+    const getCurrentDegree = (el: HTMLElement) => {
+      const year = el.dataset.year || "";
+      const yearDa = el.dataset.yearDa || "";
+      const currentYear = lang === "da" ? yearDa || year : year;
+      const parts = currentYear
+        .split("·")
+        .map((part) => part.trim())
+        .filter(Boolean);
+
+      return parts[parts.length - 1] || "";
+    };
+
     document.querySelectorAll(".card-period").forEach((periodEl) => {
       const element = periodEl as HTMLElement;
       element.textContent = getCurrentPeriod(element);
+    });
+
+    document.querySelectorAll(".card-degree-badge").forEach((degreeEl) => {
+      const element = degreeEl as HTMLElement;
+      element.textContent = getCurrentDegree(element);
     });
   };
 
@@ -165,6 +199,27 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
 </script>
 
 <style>
+  .card-degree-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    max-width: calc(100% - 2rem);
+    border-radius: 9999px;
+    background: rgba(193, 219, 204, 0.18);
+    border: 1px solid rgba(193, 219, 204, 0.28);
+    color: #edf7f0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    padding: 0.55rem 0.8rem;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
   .tool-chip {
     display: inline-flex;
     align-items: center;
@@ -198,6 +253,12 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
   body.dark #project-cards > li h2,
   body.dark #project-cards > li p,
   body.dark #project-cards > li span {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .card-degree-badge {
+    background: rgba(193, 219, 204, 0.16);
+    border-color: rgba(193, 219, 204, 0.24);
     color: var(--text-on-dark);
   }
 

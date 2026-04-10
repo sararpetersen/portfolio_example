@@ -74,7 +74,7 @@ const timelineItems: TimelineItem[] = [
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
-      <div class="items-center md:pb-0 pb-8">
+      <div id="personal-background-tabs" class="items-center md:pb-0 pb-8">
         <!-- Tabs -->
         <div class="flex gap-2 mb-6 border-b border-gray-300" role="tablist" aria-label="Personal background tabs">
           <button
@@ -146,10 +146,11 @@ const timelineItems: TimelineItem[] = [
           tabindex="0"
         >
           <p data-i18n="about.inspiration.text">
-            As someone who's late-diagnosed with autism, I know what it's like navigating a world that isn't always accessible to everyone. This
-            personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the potential of inclusive
-            design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation, or semantic HTML, I
-            find purpose in solving accessibility challenges and seeing how small design decisions can have a meaningful impact on people's lives.
+            As someone who's late-diagnosed with autism and recently diagnosed with ADD, I know what it's like navigating a world that isn't always
+            accessible to everyone. This personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the
+            potential of inclusive design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation,
+            or semantic HTML, I find purpose in solving accessibility challenges and seeing how small design decisions can have a meaningful impact on
+            people's lives.
           </p>
         </div>
 
@@ -426,9 +427,7 @@ const timelineItems: TimelineItem[] = [
         "#about-me-title-label",
         "#about-title-row",
         ".heading-text",
-        "#personal-background #background",
-        "#personal-background #inspiration",
-        "#personal-background #goals",
+        "#personal-background-tabs",
         "#personal-background img",
         "#interests-title-row",
         ".strength-and-weaknesses h3",
