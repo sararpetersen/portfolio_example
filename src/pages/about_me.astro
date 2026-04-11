@@ -4,6 +4,8 @@ import "../styles/global.css";
 import Button from "../components/Button.astro";
 
 interface TimelineItem {
+  i18nKey: number;
+  category: "school" | "work";
   year: string;
   title: string;
   desc: string;
@@ -12,36 +14,66 @@ interface TimelineItem {
 
 const timelineItems: TimelineItem[] = [
   {
+    i18nKey: 0,
+    category: "school",
     year: "August 2019 – June 2021",
-    title: "HF (Higher Preparatory Examination) | Egedal Gymnasium & HF",
+    title: "HF | Egedal Gymnasium & HF",
     desc: "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
   },
   {
-    year: "August 2022 – May 2023",
-    title: "Japanese (Level 0-B) | Frederiksberg VUC & STX",
-    desc: "Completed a singular course in Japanese language, focusing on basic grammar, vocabulary and cultural understanding.",
+    i18nKey: 6,
+    category: "work",
+    year: "June 2021 – December 2022",
+    title: "Assistant in Webshop | LLOYD Concept Store",
+    desc: "Handled and packed webshop orders, supported daily operations and product handling, and contributed to a structured and efficient order flow.",
   },
   {
+    i18nKey: 2,
+    category: "school",
     year: "August 2023 – June 2025",
-    title: "Multimedia Design | Copenhagen School of Design and Technology (KEA)",
-    desc: "Studied UX/UI, digital design and frontend development, and worked hands-on with design tools, prototyping and web projects.",
+    title: "Multimedia Design | KEA",
+    desc: "Worked with UX/UI, digital design and coding, and gained hands-on experience with design tools, prototyping and web projects.",
   },
   {
+    i18nKey: 3,
+    category: "work",
     year: "January 2025 – April 2025",
-    title: "Junior Creative/intern | Kadaver ApS",
-    desc: "Worked with website redesigns, information structure and client documentation while gaining real experience in a creative agency.",
+    title: "Junior Creative / Intern | Kadaver ApS",
+    desc: "Worked on website redesigns, developed sitemaps and information architecture, and created maintenance documentation for clients.",
   },
   {
+    i18nKey: 4,
+    category: "school",
     year: "Present",
-    title: "Digital Concept Development | Academy of Technologies and Business (Zealand)",
-    desc: "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on storytelling, strategy and experience design.",
+    title: "Digital Concept Development | Zealand",
+    desc: "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
   },
   {
+    i18nKey: 5,
+    category: "work",
     year: "Present",
-    title: "Student Buddy | Academy of Technologies and Business (Zealand)",
-    desc: "Helping international students feel welcome, supporting them in their studies and everyday life, and being someone they can easily reach out to.",
+    title: "Student Buddy | Zealand",
+    desc: "Supporting international students through onboarding, social and academic integration, and acting as a go-to contact for everyday questions.",
   },
 ];
+
+const getTimelineSortValue = (yearRange: string) => {
+  if (yearRange.toLowerCase().includes("present")) return 9999;
+
+  const years = yearRange.match(/\d{4}/g);
+  if (!years || years.length === 0) return 0;
+
+  // Use the last year in a range so sorting reflects the most recent end point.
+  return Number(years[years.length - 1]);
+};
+
+const schoolTimelineItems = timelineItems
+  .filter((item) => item.category === "school")
+  .sort((a, b) => getTimelineSortValue(b.year) - getTimelineSortValue(a.year));
+
+const workTimelineItems = timelineItems
+  .filter((item) => item.category === "work")
+  .sort((a, b) => getTimelineSortValue(b.year) - getTimelineSortValue(a.year));
 ---
 
 <MainLayout
@@ -50,6 +82,7 @@ const timelineItems: TimelineItem[] = [
   ogtitle="SRP portfolio - the portfolio of Sara Ringkow Petersen"
   ogdescription="Learn more about Sara"
 >
+  <!-- Top Section -->
   <section
     id="about-me"
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
@@ -71,6 +104,7 @@ const timelineItems: TimelineItem[] = [
       </p>
     </div>
   </section>
+
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
@@ -176,6 +210,7 @@ const timelineItems: TimelineItem[] = [
     </div>
   </section>
 
+  <!-- Tabbed Interface Script -->
   <script>
     const tabButtons = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
     const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
@@ -240,37 +275,68 @@ const timelineItems: TimelineItem[] = [
     <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="timeline.label">
       Timeline
     </p>
-    <div id="timeline-title-row" class="flex items-center gap-4 pb-10">
+    <div id="timeline-title-row" class="flex items-center gap-4 pb-8">
       <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">歩み</span>
       <h3 class="font-hiro uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="timeline.title">The highlights of my journey</h3>
     </div>
-    <div id="timeline-line" class="relative">
-      <!-- Timeline items -->
-      {
-        timelineItems.map((item, index) => (
-          <div class={`mb-8 pb-8 border-b border-gray-300 flex gap-6 ${index === 9 ? "last:border-b-0" : ""}`}>
-            <div class="flex flex-col items-center">
-              <div id="timeline-circle" class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white ring-2 ring-gray-300 sticky top-8" />
-            </div>
-            <div class="flex-1 pt-1">
-              <p class="text-xs font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${index}.year`}>
-                {item.year}
-              </p>
-              <h4 class="text-h4-mobile font-bold mb-2" data-i18n={`timeline.${index}.title`}>
-                {item.title}
-              </h4>
-              <p class="text-gray-600 text-sm" data-i18n={`timeline.${index}.desc`}>
-                {item.desc}
-              </p>
-              {item.note && (
-                <p class="italic text-gray-400 text-xs mt-2" data-i18n={`timeline.${index}.note`}>
-                  {item.note}
+    <div id="timeline-line" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+      <div class="timeline-column flex flex-col">
+        <div class="timeline-column-heading mb-6">
+          <h4 class="timeline-column-badge" data-i18n="timeline.education">Education</h4>
+        </div>
+        <ol class="timeline-list timeline-list-balanced flex-1">
+          {
+            schoolTimelineItems.map((item) => (
+              <li class="timeline-item relative pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
+                <span class="timeline-dot" aria-hidden="true" />
+                <p class="text-[11px] font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${item.i18nKey}.year`}>
+                  {item.year}
                 </p>
-              )}
-            </div>
-          </div>
-        ))
-      }
+                <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
+                  {item.title}
+                </h5>
+                <p class="text-gray-600 text-sm" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                  {item.desc}
+                </p>
+                {item.note && (
+                  <p class="italic text-gray-400 text-xs mt-2" data-i18n={`timeline.${item.i18nKey}.note`}>
+                    {item.note}
+                  </p>
+                )}
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      <div class="timeline-column flex flex-col">
+        <div class="timeline-column-heading mb-6">
+          <h4 class="timeline-column-badge" data-i18n="timeline.work">Work experience</h4>
+        </div>
+        <ol class="timeline-list timeline-list-balanced flex-1">
+          {
+            workTimelineItems.map((item) => (
+              <li class="timeline-item relative pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
+                <span class="timeline-dot" aria-hidden="true" />
+                <p class="text-[11px] font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${item.i18nKey}.year`}>
+                  {item.year}
+                </p>
+                <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
+                  {item.title}
+                </h5>
+                <p class="text-gray-600 text-sm" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                  {item.desc}
+                </p>
+                {item.note && (
+                  <p class="italic text-gray-400 text-xs mt-2" data-i18n={`timeline.${item.i18nKey}.note`}>
+                    {item.note}
+                  </p>
+                )}
+              </li>
+            ))
+          }
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -400,10 +466,11 @@ const timelineItems: TimelineItem[] = [
     </a>
   </section>
 </MainLayout>
+
+<!-- Script for inView animations -->
 <script>
   import { inView } from "motion";
 
-  //inView animations
   document.addEventListener("DOMContentLoaded", () => {
     const reduceMotion = document.body.classList.contains("reduce-motion");
 
@@ -441,13 +508,22 @@ const timelineItems: TimelineItem[] = [
         registerInView(selector);
       });
 
-      const boxes = document.querySelectorAll("#timeline-line > div");
+      const timelineItems = document.querySelectorAll(".timeline-item");
+      const timelineBadges = document.querySelectorAll(".timeline-column-badge");
 
-      boxes.forEach((boxes, index) => {
-        inView(boxes, () => {
-          boxes.classList.add("animate__animated", "animate__fadeInUp");
-          (boxes as HTMLElement).style.animationDelay = `${index * 60}ms`;
-          (boxes as HTMLElement).style.animationDuration = "1.4s";
+      timelineBadges.forEach((timelineBadge, index) => {
+        inView(timelineBadge, () => {
+          timelineBadge.classList.add("animate__animated", "animate__fadeInUp");
+          (timelineBadge as HTMLElement).style.animationDelay = `${index * 70}ms`;
+          (timelineBadge as HTMLElement).style.animationDuration = "1.2s";
+        });
+      });
+
+      timelineItems.forEach((timelineItem, index) => {
+        inView(timelineItem, () => {
+          timelineItem.classList.add("animate__animated", "animate__fadeInUp");
+          (timelineItem as HTMLElement).style.animationDelay = `${index * 60}ms`;
+          (timelineItem as HTMLElement).style.animationDuration = "1.2s";
         });
       });
 
@@ -487,6 +563,7 @@ const timelineItems: TimelineItem[] = [
   });
 </script>
 
+<!-- CSS -->
 <style>
   body.dark .heading-title,
   body.dark .heading-text,
@@ -510,6 +587,92 @@ const timelineItems: TimelineItem[] = [
   body.dark #strengths-weaknesses-container > div {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark .timeline-item {
+    border-color: var(--dark-border);
+  }
+
+  body.dark .timeline-item p,
+  body.dark .timeline-item h5 {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .timeline-item [data-i18n*=".year"] {
+    color: var(--brand-primary-soft);
+  }
+
+  .timeline-column-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .timeline-column-badge {
+    width: fit-content;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(73, 75, 79, 0.35);
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .timeline-list {
+    --timeline-gutter: 1.35rem;
+    position: relative;
+    padding-left: var(--timeline-gutter);
+  }
+
+  .timeline-list-balanced {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d1d5db;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: calc(var(--timeline-gutter) * -1);
+    transform: translateX(-50%);
+    top: 0.38rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: var(--brand-primary);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #d1d5db;
+  }
+
+  body.dark .timeline-dot {
+    border-color: var(--dark-gradient-start);
+    box-shadow: 0 0 0 2px var(--dark-border);
+  }
+
+  body.dark .timeline-list::before {
+    background: var(--dark-border);
+  }
+
+  body.dark .timeline-column-badge {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    color: var(--text-on-dark);
   }
 
   body.dark #lines hr {
