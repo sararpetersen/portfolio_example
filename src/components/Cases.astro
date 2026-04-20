@@ -40,6 +40,7 @@ const fetchCards = async (): Promise<ProjectCard[]> => {
 };
 
 const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
+const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
 ---
 
 <!-- Carousel -->
@@ -51,15 +52,13 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
           class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-500 hover:border-gray-400"
           data-id={project.id ?? ""}
           data-name={project.name ? project.name.toLowerCase() : ""}
+          data-inactive={NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? "true" : "false"}
         >
-          {project.slug === "no-project" ? (
-            <div aria-label={`View project: ${project.name}`}>
-              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
+          {NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? (
+            <div aria-label={`View project: ${project.name}`} class="block h-full w-full">
+              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
 
               <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-                  {getDegreeLabel(project.year)}
-                </span>
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
                   <p
@@ -80,7 +79,7 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
             </div>
           ) : (
             <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
-              <img src={project.image} alt={project.name} class="w-full h-full object-cover z-0" loading="lazy" />
+              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
 
               <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
@@ -160,6 +159,9 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
 
     // Keyboard accessibility
     cards.forEach((card) => {
+      const isInactive = card.dataset.inactive === "true";
+      if (isInactive) return;
+
       card.setAttribute("tabindex", "0");
       card.addEventListener("keydown", (e: KeyboardEvent) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -233,6 +235,19 @@ const projects = (propProjects ?? (await fetchCards())) as ProjectCard[];
     line-height: 1;
     padding: 0.4rem 0.7rem;
     text-transform: uppercase;
+  }
+
+  #project-cards > li[data-inactive="true"] {
+    cursor: default;
+  }
+
+  #project-cards > li[data-inactive="true"]:hover {
+    transform: none;
+    border-color: rgb(107 114 128);
+  }
+
+  #project-cards > li[data-inactive="true"] .group-hover\:opacity-100 {
+    opacity: 0;
   }
 
   body.dark #project-cards > li {
