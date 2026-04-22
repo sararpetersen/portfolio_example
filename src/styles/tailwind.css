@@ -4,7 +4,7 @@
 
 @layer base {
   .display {
-    @apply font-hiro text-display-mobile font-bold text-gray-800;
+    @apply font-nikumaru text-display-mobile font-bold text-gray-800;
   }
 
   h1 {

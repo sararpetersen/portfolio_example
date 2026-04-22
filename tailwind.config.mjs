@@ -84,7 +84,7 @@ export default {
     },
 
     fontFamily: {
-      hiro: ["Zen Old Mincho", "serif"],
+      nikumaru: ["Nikumaru", "sans-serif"],
       inter: ["Inter", "sans-serif"],
       almarai: ["Almarai", "sans-serif"],
     },
