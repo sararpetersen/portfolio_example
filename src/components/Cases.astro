@@ -49,7 +49,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     {
       projects.map((project: ProjectCard) => (
         <li
-          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border-l-4 border border-gray-500 hover:border-gray-400"
+          class="h-[300px] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border border-l-4 border-gray-500 hover:border-gray-400"
           data-id={project.id ?? ""}
           data-name={project.name ? project.name.toLowerCase() : ""}
           data-inactive={NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? "true" : "false"}
@@ -58,7 +58,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
             <div aria-label={`View project: ${project.name}`} class="block h-full w-full">
               <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
 
-              <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
                   <p
@@ -78,10 +78,10 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
               </div>
             </div>
           ) : (
-            <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`}>
+            <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`} class="block h-full w-full">
               <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
 
-              <div class="absolute inset-0 overflow-hidden rounded-2xl bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
                   {getDegreeLabel(project.year)}
                 </span>

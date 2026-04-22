@@ -168,12 +168,12 @@ body.dark.site-shell {
 
 body.dark.site-shell::before {
   background:
-    radial-gradient(circle at center, rgba(187, 74, 52, 0.12) 0 31%, transparent 32%),
+    radial-gradient(circle at center, rgba(230, 57, 70, 0.12) 0 31%, transparent 32%),
     radial-gradient(circle at center, rgba(98, 151, 174, 0.1) 0 58%, transparent 59%);
 }
 
 body.dark.site-shell::after {
   background-image:
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    radial-gradient(circle at center, rgba(187, 74, 52, 0.08) 1px, transparent 1px);
+    radial-gradient(circle at center, rgba(230, 57, 70, 0.08) 1px, transparent 1px);
 }
