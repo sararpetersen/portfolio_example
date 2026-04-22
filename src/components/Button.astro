@@ -27,6 +27,7 @@ const { variant = "primary", size = "medium" } = Astro.props as Props;
 
 <button class={buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[size]}><slot /></button>
 
+<!-- Button styling -->
 <style>
   .main-button,
   .secondary-button {
