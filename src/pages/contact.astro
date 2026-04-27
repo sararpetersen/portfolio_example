@@ -50,6 +50,31 @@ import MainLayout from "../layouts/MainLayout.astro";
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can use the form below or reach
             me directly via the contact methods listed here.
           </p>
+          <div
+            id="contact-preferred"
+            class="flex items-start gap-3 max-w-md md:max-w-xl mb-9 px-4 py-3 rounded-xl border border-blue-300 bg-blue-100 text-blue-900"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 mt-[1px] shrink-0 text-blue-700 hidden md:block"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+              ></path>
+            </svg>
+            <p class="text-[13px] leading-relaxed md:text-left text-center">
+              <span data-i18n="contact.preferred.value" class="text-blue-600">
+                Email is usually the fastest way to reach me, as I'm not very comfortable with talking on the phone.</span
+              >
+            </p>
+          </div>
           <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
             <ul class="md:space-y-6 space-y-4">
               <li class="some1 flex items-start gap-4">
@@ -167,7 +192,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           id="contact-form"
           name="contact"
           method="POST"
-          action="/contact?submitted=true"
+          action="/contact/?submitted=true"
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="space-y-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8"
@@ -281,6 +306,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           "#contact-title-label",
           "#contact-title-row",
           "#contact-text",
+          "#contact-preferred",
           "#contact-container img",
           "#contact-form-title-row",
           "#contact-form-subtitle",
@@ -322,11 +348,24 @@ import MainLayout from "../layouts/MainLayout.astro";
     :global(body.dark #contact-info strong),
     :global(body.dark #contact-info a),
     :global(body.dark #contact-text),
-    :global(body.dark #contact-preferred strong),
     :global(body.dark #contact-preferred span),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
       color: var(--text-on-dark-soft);
+    }
+
+    :global(body.dark #contact-preferred) {
+      background-color: color-mix(in srgb, var(--dark-surface) 80%, #1e3a5f 20%);
+      border-color: color-mix(in srgb, var(--dark-border) 60%, #3b6ea5 40%);
+      color: color-mix(in srgb, var(--text-on-dark-soft) 90%, #a8c8e8 10%);
+    }
+
+    :global(body.dark #contact-preferred strong) {
+      color: var(--text-on-dark);
+    }
+
+    :global(body.dark #contact-preferred svg) {
+      color: color-mix(in srgb, var(--brand-primary-soft) 80%, #a8c8e8 20%);
     }
 
     :global(body.dark #contact-info a:hover) {
