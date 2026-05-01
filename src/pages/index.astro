@@ -1,4 +1,7 @@
 ---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
 const fetchCards = async () => {
   try {
     const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
@@ -24,6 +27,10 @@ const fetchCards = async () => {
 
 const cards = await fetchCards();
 const sortedCards = cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+const latestBlogPosts: CollectionEntry<"blog">[] = (await getCollection("blog"))
+  .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
+  .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3);
 
 function breakTitle(title: string, maxLength: number = 25): string[] {
   if (title.length > maxLength) {
@@ -270,6 +277,53 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <!-- Latest Blog Section -->
+  <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
+    <p id="blog-preview-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="blog.preview.label">
+      From the blog
+    </p>
+
+    <div class="flex items-center gap-4 mb-5">
+      <span id="blog-preview-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true">記録</span>
+      <h3 id="blog-preview-title" class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="blog.preview.title">
+        Latest posts
+      </h3>
+    </div>
+
+    <p id="blog-preview-text" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="blog.preview.text">
+      A running log of things I'm working on, thinking about, or just find worth writing down.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      {
+        latestBlogPosts.map((post) => (
+          <article class="blog-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
+            <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+            <h4 class="text-[18px] font-semibold mb-2 leading-snug">{post.data.title}</h4>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
+            <a
+              href={`/blog/${post.slug}`}
+              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+              data-i18n="blog.read"
+            >
+              Read post →
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="pt-6">
+      <a
+        id="blog-preview-all"
+        href="/blog"
+        class="underline py-1 md:text-p-desktop text-[16px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+        aria-label="Go to all blog posts"
+        data-i18n="blog.preview.all">See all blog posts</a
+      >
+    </div>
+  </section>
+
   <!-- Intro Section: -->
   <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
     <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -414,6 +468,15 @@ import Cases from "../components/Cases.astro";
         ["#revamped-kanji", "animate__fadeInUp"],
         ["#revamped-title", "animate__fadeInUp"],
         ["#revamped-text", "animate__fadeInUp"],
+        ["#now-label", "animate__fadeInUp"],
+        ["#now-kanji", "animate__fadeInUp"],
+        ["#now-title", "animate__fadeInUp"],
+        ["#now-text", "animate__fadeInUp"],
+        ["#blog-preview-label", "animate__fadeInUp"],
+        ["#blog-preview-kanji", "animate__fadeInUp"],
+        ["#blog-preview-title", "animate__fadeInUp"],
+        ["#blog-preview-text", "animate__fadeInUp"],
+        ["#blog-preview-all", "animate__fadeInUp"],
         ["#testimonial-kanji", "animate__fadeInUp"],
       ].forEach(([selector, animationClass], index) => {
         registerInView(selector, animationClass, index * 60);
@@ -426,6 +489,18 @@ import Cases from "../components/Cases.astro";
           (article as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           (article as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
           (article as HTMLElement).style.animationFillMode = "both";
+
+          stop();
+        });
+      });
+
+      document.querySelectorAll("#now-section .now-item, #blog-preview .blog-preview-item").forEach((item, index) => {
+        let stop = () => {};
+        stop = inView(item, () => {
+          (item as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
+          (item as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          (item as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.3s";
+          (item as HTMLElement).style.animationFillMode = "both";
 
           stop();
         });
@@ -492,8 +567,19 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #revamped-kanji,
   html.has-js body:not(.reduce-motion) #revamped-title,
   html.has-js body:not(.reduce-motion) #revamped-text,
+  html.has-js body:not(.reduce-motion) #now-label,
+  html.has-js body:not(.reduce-motion) #now-kanji,
+  html.has-js body:not(.reduce-motion) #now-title,
+  html.has-js body:not(.reduce-motion) #now-text,
+  html.has-js body:not(.reduce-motion) #blog-preview-label,
+  html.has-js body:not(.reduce-motion) #blog-preview-kanji,
+  html.has-js body:not(.reduce-motion) #blog-preview-title,
+  html.has-js body:not(.reduce-motion) #blog-preview-text,
+  html.has-js body:not(.reduce-motion) #blog-preview-all,
   html.has-js body:not(.reduce-motion) #testimonial-kanji,
-  html.has-js body:not(.reduce-motion) #revamped-section article {
+  html.has-js body:not(.reduce-motion) #revamped-section article,
+  html.has-js body:not(.reduce-motion) #now-section .now-item,
+  html.has-js body:not(.reduce-motion) #blog-preview .blog-preview-item {
     opacity: 0;
     will-change: transform, opacity;
   }
@@ -546,6 +632,21 @@ import Cases from "../components/Cases.astro";
     font-size: 1.2rem;
     color: var(--brand-primary-strong);
     opacity: 0.75;
+  }
+
+  .now-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(73, 75, 79, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.42rem 0.72rem;
+    text-transform: uppercase;
   }
 
   /* Hero-section */
@@ -644,6 +745,13 @@ import Cases from "../components/Cases.astro";
   body.dark #revamped-section h3,
   body.dark #revamped-section h4,
   body.dark #revamped-section p,
+  body.dark #now-section h3,
+  body.dark #now-section h4,
+  body.dark #now-section p,
+  body.dark #blog-preview h3,
+  body.dark #blog-preview h4,
+  body.dark #blog-preview p,
+  body.dark #blog-preview a,
   body.dark #about-preview-text h3,
   body.dark #about-preview-text-paragraph,
   body.dark #about-preview-label {
@@ -661,7 +769,9 @@ import Cases from "../components/Cases.astro";
   body.dark #intro-grid > div,
   body.dark #about-preview-text-paragraph,
   body.dark #testimonial-card,
-  body.dark #revamped-section article {
+  body.dark #revamped-section article,
+  body.dark #now-section .now-item,
+  body.dark #blog-preview .blog-preview-item {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
@@ -687,6 +797,12 @@ import Cases from "../components/Cases.astro";
   body.dark .revamped-arrow {
     color: var(--brand-primary-soft);
     opacity: 0.85;
+  }
+
+  body.dark .now-chip {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    color: var(--text-on-dark);
   }
 
   #revamped-section .revamped-box > a button {

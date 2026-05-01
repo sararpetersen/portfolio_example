@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
+  .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
+  .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<MainLayout
+  title="SRP portfolio | Blog"
+  description="Blog posts about process, projects, and design/development reflections"
+  ogtitle="SRP portfolio | Blog"
+  ogdescription="Blog posts about process, projects, and design/development reflections"
+>
+  <section class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
+    <p id="blog-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3 md:pt-28 pt-24" data-i18n="blog.label">
+      Journal
+    </p>
+
+    <div id="blog-title-row" class="flex items-center gap-4 mb-6">
+      <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">記事</span>
+      <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h3-mobile md:text-h3-desktop" data-i18n="blog.title">
+        Blog posts
+      </h1>
+    </div>
+
+    <p id="blog-intro" class="text-gray-600 mb-4 leading-relaxed max-w-3xl" data-i18n="blog.intro">
+      Thoughts from current projects, process notes, and practical experiments in UX, design, and frontend development.
+    </p>
+    <p id="blog-lang-note" class="text-[11px] uppercase tracking-[0.1em] text-gray-400 mb-8" data-i18n="blog.lang.note">Posts are written in English</p>
+
+    {
+      posts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {posts.map((post) => (
+            <article class="blog-card rounded-2xl border-l-4 border border-gray-500 p-5 bg-gradient-to-br from-gray-50 to-gray-100">
+              <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+              <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
+              <a
+                href={`/blog/${post.slug}`}
+                class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+                data-i18n="blog.read"
+              >
+                Read post →
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700" data-i18n="blog.empty">
+          No blog posts are published yet.
+        </p>
+      )
+    }
+  </section>
+</MainLayout>
+
+<style>
+  body.dark .blog-card {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border);
+  }
+
+  body.dark .blog-card h2,
+  body.dark .blog-card p {
+    color: var(--text-on-dark-soft);
+  }
+</style>
+
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.classList.contains("reduce-motion")) return;
+
+    let animationIndex = 0;
+    const registerInView = (selector: string) => {
+      const el = document.querySelector(selector) as HTMLElement | null;
+      if (!el) return;
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = `${animationIndex * 60}ms`;
+        el.style.animationDuration = "1.4s";
+      });
+      animationIndex++;
+    };
+
+    ["#blog-label", "#blog-title-row", "#blog-intro", "#blog-lang-note"].forEach(registerInView);
+
+    document.querySelectorAll(".blog-card").forEach((card, index) => {
+      inView(card, () => {
+        card.classList.add("animate__animated", "animate__fadeInUp");
+        (card as HTMLElement).style.animationDelay = `${index * 80}ms`;
+        (card as HTMLElement).style.animationDuration = "1.3s";
+      });
+    });
+  });
+</script>

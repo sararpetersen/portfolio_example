@@ -1,0 +1,134 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).filter((entry: CollectionEntry<"blog">) => !entry.data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+const { Content } = await post.render();
+
+const tagTranslations: Record<string, string> = {
+  internship: "praktik",
+  learning: "læring",
+  career: "karriere",
+  blog: "blog",
+  portfolio: "portfolio",
+  process: "proces",
+};
+const tagsEn = post.data.tags.join(" · ");
+const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join(" · ");
+---
+
+<MainLayout title={`SRP portfolio | ${post.data.title}`} description={post.data.excerpt} ogtitle={post.data.title} ogdescription={post.data.excerpt}>
+  <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
+    <a
+      id="post-back"
+      href="/blog"
+      class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+      aria-label="Back to blog overview"
+      data-i18n="blog.back">← Back to blog</a
+    >
+
+    <header class="md:pt-28 pt-24 mb-8">
+      <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+      <h1 id="post-title" class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em] text-h3-mobile md:text-h3-desktop mb-4 text-gray-800">
+        {post.data.title}
+      </h1>
+      <p id="post-excerpt" class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
+    </header>
+
+    <p id="post-lang-note" class="text-[11px] uppercase tracking-[0.1em] text-gray-400 mb-6" data-i18n="blog.lang.note">Posts are written in English</p>
+
+    {
+      post.data.tags.length > 0 && (
+        <p id="post-tags" class="mb-8 text-[11px] font-semibold uppercase tracking-[0.09em] text-gray-600" data-tags-en={tagsEn} data-tags-da={tagsDa}>
+          {tagsEn}
+        </p>
+      )
+    }
+
+    <div id="post-content" class="blog-content prose prose-slate max-w-none">
+      <Content />
+    </div>
+
+    <div id="post-back-bottom" class="pt-10">
+      <a
+        href="/blog"
+        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+        aria-label="Back to blog overview"
+        data-i18n="blog.back">← Back to blog</a
+      >
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .blog-content :global(p) {
+    line-height: 1.8;
+    color: rgb(75 85 99);
+    margin-bottom: 1rem;
+  }
+
+  .blog-content :global(h2),
+  .blog-content :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  body.dark .blog-content :global(p),
+  body.dark .blog-content :global(li),
+  body.dark .blog-content :global(blockquote),
+  body.dark .blog-content :global(strong) {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .blog-content :global(h1),
+  body.dark .blog-content :global(h2),
+  body.dark .blog-content :global(h3) {
+    color: var(--text-on-dark);
+  }
+</style>
+
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.classList.contains("reduce-motion")) return;
+
+    let animationIndex = 0;
+    const registerInView = (selector: string) => {
+      const el = document.querySelector(selector) as HTMLElement | null;
+      if (!el) return;
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = `${animationIndex * 60}ms`;
+        el.style.animationDuration = "1.4s";
+      });
+      animationIndex++;
+    };
+
+    ["#post-back", "#post-date", "#post-title", "#post-excerpt", "#post-lang-note", "#post-tags", "#post-content", "#post-back-bottom"].forEach(registerInView);
+
+    const applyTagLang = (lang: string) => {
+      const el = document.querySelector("#post-tags") as HTMLElement | null;
+      if (!el) return;
+      el.textContent = lang === "da" ? (el.dataset.tagsDa || el.dataset.tagsEn || "") : (el.dataset.tagsEn || "");
+    };
+
+    const getLang = () => localStorage.getItem("lang") || "en";
+    applyTagLang(getLang());
+
+    window.addEventListener("langchange", (e: Event) => {
+      const lang = (e as CustomEvent).detail?.lang || getLang();
+      applyTagLang(lang);
+    });
+  });
+</script>

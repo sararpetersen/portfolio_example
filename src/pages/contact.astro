@@ -69,11 +69,14 @@ import MainLayout from "../layouts/MainLayout.astro";
                 d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               ></path>
             </svg>
-            <p class="text-[13px] leading-relaxed md:text-left text-center">
-              <span data-i18n="contact.preferred.value" class="text-blue-600">
-                Email is usually the fastest way to reach me, as I'm not very comfortable with talking on the phone.</span
-              >
-            </p>
+            <div class="w-full">
+              <p class="text-[13px] font-semibold leading-relaxed md:text-left text-center text-blue-800 mb-1" data-i18n="contact.preferred.summary">
+                Preferred contact method: Email or LinkedIn
+              </p>
+              <p class="text-[12px] leading-relaxed md:text-left text-center text-blue-700" data-i18n="contact.preferred.value">
+                Written communication works best for me, so email is usually the fastest and clearest channel.
+              </p>
+            </div>
           </div>
           <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
             <ul class="md:space-y-6 space-y-4">
@@ -230,6 +233,22 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
 
+          <!-- Preferred Reply Method -->
+          <div>
+            <label for="form-reply" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.reply">
+              Preferred reply method
+            </label>
+            <select
+              id="form-reply"
+              name="reply_method"
+              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+            >
+              <option value="email" data-i18n="contact.form.reply.email">Email</option>
+              <option value="phone" data-i18n="contact.form.reply.phone">Phone</option>
+              <option value="linkedin" data-i18n="contact.form.reply.linkedin">Either</option>
+            </select>
+          </div>
+
           <!-- Message Field -->
           <div>
             <label for="form-message" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.message"> Message </label>
@@ -348,7 +367,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     :global(body.dark #contact-info strong),
     :global(body.dark #contact-info a),
     :global(body.dark #contact-text),
-    :global(body.dark #contact-preferred span),
+    :global(body.dark #contact-preferred p),
+    :global(body.dark #contact-preferred summary),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
       color: var(--text-on-dark-soft);
@@ -400,7 +420,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     }
 
     :global(body.dark #contact-form input),
-    :global(body.dark #contact-form textarea) {
+    :global(body.dark #contact-form textarea),
+    :global(body.dark #contact-form select) {
       background-color: color-mix(in srgb, var(--dark-surface) 86%, #fff 14%);
       color: var(--text-on-dark);
       border-color: color-mix(in srgb, var(--dark-border) 72%, #dbe8ee 28%);
@@ -412,7 +433,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     }
 
     :global(body.dark #contact-form input:focus),
-    :global(body.dark #contact-form textarea:focus) {
+    :global(body.dark #contact-form textarea:focus),
+    :global(body.dark #contact-form select:focus) {
       border-color: color-mix(in srgb, var(--brand-primary-soft) 70%, #fff 30%);
       background-color: color-mix(in srgb, var(--dark-surface-strong) 74%, #fff 26%);
       box-shadow: 0 0 0 3px rgba(149, 188, 203, 0.24);
