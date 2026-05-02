@@ -270,6 +270,13 @@ const workTimelineItems = timelineItems
     document.querySelector<HTMLButtonElement>(".tab-btn[data-tab='background']")?.click();
   </script>
 
+  <!-- Divider -->
+  <div id="about-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="timeline.label">
@@ -392,6 +399,13 @@ const workTimelineItems = timelineItems
     </div>
   </section>
 
+  <!-- Divider -->
+  <div id="about-divider-2" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div>
@@ -496,6 +510,8 @@ const workTimelineItems = timelineItems
         ".heading-text",
         "#personal-background-tabs",
         "#personal-background img",
+        "#about-divider-1",
+        "#about-divider-2",
         "#interests-title-row",
         ".strength-and-weaknesses h3",
         "#resources-title-row",
@@ -680,6 +696,24 @@ const workTimelineItems = timelineItems
   }
 
   body.dark .portrait {
+    border-color: var(--dark-border);
+  }
+
+  body.dark #about-divider-1 {
+    color: var(--dark-border);
+  }
+
+  body.dark #about-divider-2 {
+    color: var(--dark-border);
+  }
+
+  body.dark #about-divider-1 .divider-center {
+    background-color: var(--dark-surface-strong);
+    border-color: var(--dark-border);
+  }
+
+  body.dark #about-divider-2 .divider-center {
+    background-color: var(--dark-surface-strong);
     border-color: var(--dark-border);
   }
 

@@ -169,6 +169,13 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <!-- Divider -->
+  <div id="divider-1" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
   <!-- Revamped Projects Section -->
   <section id="revamped-section" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14">
     <p id="revamped-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="revamped.label">
@@ -303,6 +310,7 @@ import Cases from "../components/Cases.astro";
             <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
             <a
               href={`/blog/${post.slug}`}
+              aria-label={`Read post: ${post.data.title}`}
               class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
               data-i18n="blog.read"
             >
@@ -314,15 +322,18 @@ import Cases from "../components/Cases.astro";
     </div>
 
     <div class="pt-6">
-      <a
-        id="blog-preview-all"
-        href="/blog"
-        class="underline py-1 md:text-p-desktop text-[16px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-        aria-label="Go to all blog posts"
-        data-i18n="blog.preview.all">See all blog posts</a
-      >
+      <a id="blog-preview-all" href="/blog" aria-label="Go to all blog posts">
+        <Button variant="primary" size="small"><span data-i18n="blog.preview.all">See all blog posts</span></Button>
+      </a>
     </div>
   </section>
+
+  <!-- Divider -->
+  <div id="divider-2" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
 
   <!-- Intro Section: -->
   <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
@@ -478,6 +489,8 @@ import Cases from "../components/Cases.astro";
         ["#blog-preview-text", "animate__fadeInUp"],
         ["#blog-preview-all", "animate__fadeInUp"],
         ["#testimonial-kanji", "animate__fadeInUp"],
+        ["#divider-1", "animate__fadeInUp"],
+        ["#divider-2", "animate__fadeInUp"],
       ].forEach(([selector, animationClass], index) => {
         registerInView(selector, animationClass, index * 60);
       });
@@ -577,6 +590,8 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #blog-preview-text,
   html.has-js body:not(.reduce-motion) #blog-preview-all,
   html.has-js body:not(.reduce-motion) #testimonial-kanji,
+  html.has-js body:not(.reduce-motion) #divider-1,
+  html.has-js body:not(.reduce-motion) #divider-2,
   html.has-js body:not(.reduce-motion) #revamped-section article,
   html.has-js body:not(.reduce-motion) #now-section .now-item,
   html.has-js body:not(.reduce-motion) #blog-preview .blog-preview-item {
@@ -810,6 +825,17 @@ import Cases from "../components/Cases.astro";
   }
 
   body.dark #about-preview img {
+    border-color: var(--dark-border);
+  }
+
+  body.dark #divider-1,
+  body.dark #divider-2 {
+    color: var(--dark-border);
+  }
+
+  body.dark #divider-1 .divider-center,
+  body.dark #divider-2 .divider-center {
+    background-color: var(--dark-surface-strong);
     border-color: var(--dark-border);
   }
 

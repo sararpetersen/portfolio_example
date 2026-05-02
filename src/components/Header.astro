@@ -55,7 +55,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       aria-label="Switch to English"
       aria-pressed="true">EN</button
     >
-    <span class="text-gray-500 text-xs" aria-hidden="true">/</span>
+    <span class="text-gray-400 text-xs" aria-hidden="true">/</span>
     <button
       id="lang-toggle-da"
       data-lang="da"
@@ -350,8 +350,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   }
 
   .lang-btn {
-    color: var(--dark-border);
-    transition: color 0.2s ease;
+    color: #a6acb5;
   }
   .lang-btn.active-lang {
     color: var(--text-on-dark);

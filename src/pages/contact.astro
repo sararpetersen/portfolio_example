@@ -70,10 +70,11 @@ import MainLayout from "../layouts/MainLayout.astro";
               ></path>
             </svg>
             <div class="w-full">
-              <p class="text-[13px] font-semibold leading-relaxed md:text-left text-center text-blue-800 mb-1" data-i18n="contact.preferred.summary">
-                Preferred contact method: Email or LinkedIn
-              </p>
-              <p class="text-[12px] leading-relaxed md:text-left text-center text-blue-700" data-i18n="contact.preferred.value">
+              <strong class="text-[13px] font-semibold leading-relaxed md:text-left text-center text-blue-800 block mb-2">
+                <span class="contact-preferred-label text-blue-800" data-i18n="contact.preferred.title">Preferred contact method:</span>
+                <span class="contact-preferred-method font-normal text-blue-700" data-i18n="contact.preferred.summary">Email or LinkedIn</span>
+              </strong>
+              <p class="text-[12px] leading-relaxed md:text-left text-center text-blue-600" data-i18n="contact.preferred.value">
                 Written communication works best for me, so email is usually the fastest and clearest channel.
               </p>
             </div>
@@ -162,6 +163,13 @@ import MainLayout from "../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
+
+  <!-- Divider -->
+  <div id="contact-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
 
   <!-- Contact Form Section -->
   <section id="contact-form-section" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
@@ -266,7 +274,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div class="pt-4 flex justify-center md:justify-start">
             <button
               type="submit"
-              class="inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              class="text-[14px] inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
               data-i18n="contact.form.submit"
             >
               Send Message
@@ -327,6 +335,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           "#contact-text",
           "#contact-preferred",
           "#contact-container img",
+          "#contact-divider-1",
           "#contact-form-title-row",
           "#contact-form-subtitle",
           "#contact-form-label",
@@ -368,7 +377,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     :global(body.dark #contact-info a),
     :global(body.dark #contact-text),
     :global(body.dark #contact-preferred p),
-    :global(body.dark #contact-preferred summary),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
       color: var(--text-on-dark-soft);
@@ -382,6 +390,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     :global(body.dark #contact-preferred strong) {
       color: var(--text-on-dark);
+    }
+
+    :global(body.dark #contact-preferred .contact-preferred-label) {
+      color: var(--text-on-dark);
+    }
+
+    :global(body.dark #contact-preferred .contact-preferred-method) {
+      color: var(--text-on-dark-soft);
     }
 
     :global(body.dark #contact-preferred svg) {
@@ -413,6 +429,15 @@ import MainLayout from "../layouts/MainLayout.astro";
     :global(body.dark #contact-form-media > div) {
       border-color: var(--dark-border);
       background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    }
+
+    :global(body.dark #contact-divider-1) {
+      color: var(--dark-border);
+    }
+
+    :global(body.dark #contact-divider-1 .divider-center) {
+      background-color: var(--dark-surface-strong);
+      border-color: var(--dark-border);
     }
 
     :global(body.dark #contact-form-media p) {

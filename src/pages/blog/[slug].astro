@@ -22,8 +22,8 @@ const tagTranslations: Record<string, string> = {
   portfolio: "portfolio",
   process: "proces",
 };
-const tagsEn = post.data.tags.join(" · ");
-const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join(" · ");
+const tagsEn = post.data.tags;
+const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 ---
 
 <MainLayout title={`SRP portfolio | ${post.data.title}`} description={post.data.excerpt} ogtitle={post.data.title} ogdescription={post.data.excerpt}>
@@ -31,12 +31,12 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join("
     <a
       id="post-back"
       href="/blog"
-      class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+      class="py-1 md:text-p-desktop text-[15px] text-gray-600 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
       aria-label="Back to blog overview"
       data-i18n="blog.back">← Back to blog</a
     >
 
-    <header class="md:pt-28 pt-24 mb-8">
+    <header class="md:pt-28 pt-24 mb-8 md:text-left text-center">
       <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
       <h1 id="post-title" class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em] text-h3-mobile md:text-h3-desktop mb-4 text-gray-800">
         {post.data.title}
@@ -44,13 +44,24 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join("
       <p id="post-excerpt" class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
     </header>
 
-    <p id="post-lang-note" class="text-[11px] uppercase tracking-[0.1em] text-gray-400 mb-6" data-i18n="blog.lang.note">Posts are written in English</p>
+    <div id="post-separator" class="mb-6 flex items-center gap-3 text-gray-300" aria-hidden="true">
+      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+      <span class="post-separator-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    </div>
 
     {
       post.data.tags.length > 0 && (
-        <p id="post-tags" class="mb-8 text-[11px] font-semibold uppercase tracking-[0.09em] text-gray-600" data-tags-en={tagsEn} data-tags-da={tagsDa}>
-          {tagsEn}
-        </p>
+        <div
+          id="post-tags"
+          class="mb-8 flex flex-wrap gap-2 justify-center md:justify-start"
+          data-tags-en={JSON.stringify(tagsEn)}
+          data-tags-da={JSON.stringify(tagsDa)}
+        >
+          {tagsEn.map((tag: string) => (
+            <span class="post-tag-chip rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em]">{tag}</span>
+          ))}
+        </div>
       )
     }
 
@@ -61,7 +72,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join("
     <div id="post-back-bottom" class="pt-10">
       <a
         href="/blog"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+        class="py-1 md:text-p-desktop text-[15px] text-gray-600 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
         aria-label="Back to blog overview"
         data-i18n="blog.back">← Back to blog</a
       >
@@ -95,6 +106,42 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join("
   body.dark .blog-content :global(h3) {
     color: var(--text-on-dark);
   }
+
+  body.dark #post-back,
+  body.dark #post-back-bottom a {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark #post-date,
+  body.dark #post-tags .post-tag-chip {
+    color: var(--text-on-dark-soft);
+  }
+
+  :global(#post-tags .post-tag-chip) {
+    border-color: rgb(98 151 174 / 0.38);
+    color: rgb(55 85 103);
+    background-color: rgb(222 235 239 / 0.72);
+  }
+
+  body.dark #post-title,
+  body.dark #post-excerpt {
+    color: var(--text-on-dark);
+  }
+
+  body.dark #post-separator {
+    color: var(--dark-border);
+  }
+
+  body.dark #post-separator .post-separator-center {
+    background-color: var(--dark-surface-strong);
+    border-color: var(--dark-border);
+  }
+
+  :global(body.dark #post-tags .post-tag-chip) {
+    border-color: rgb(98 151 174 / 0.48);
+    color: rgb(222 235 239 / 0.95);
+    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
+  }
 </style>
 
 <script>
@@ -115,12 +162,30 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t).join("
       animationIndex++;
     };
 
-    ["#post-back", "#post-date", "#post-title", "#post-excerpt", "#post-lang-note", "#post-tags", "#post-content", "#post-back-bottom"].forEach(registerInView);
+    ["#post-back", "#post-date", "#post-title", "#post-excerpt", "#post-separator", "#post-tags", "#post-content", "#post-back-bottom"].forEach(
+      registerInView,
+    );
 
     const applyTagLang = (lang: string) => {
       const el = document.querySelector("#post-tags") as HTMLElement | null;
       if (!el) return;
-      el.textContent = lang === "da" ? (el.dataset.tagsDa || el.dataset.tagsEn || "") : (el.dataset.tagsEn || "");
+
+      const tagsRaw = lang === "da" ? el.dataset.tagsDa || el.dataset.tagsEn || "[]" : el.dataset.tagsEn || "[]";
+      let tags: string[] = [];
+
+      try {
+        tags = JSON.parse(tagsRaw);
+      } catch {
+        tags = [];
+      }
+
+      el.innerHTML = "";
+      tags.forEach((tag) => {
+        const chip = document.createElement("span");
+        chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em]";
+        chip.textContent = tag;
+        el.appendChild(chip);
+      });
     };
 
     const getLang = () => localStorage.getItem("lang") || "en";

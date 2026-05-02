@@ -5,7 +5,6 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
-import Alpine from "alpinejs";
 const { title } = Astro.props;
 const siteUrl = "https://srp-portfolio.netlify.app";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
@@ -184,9 +183,9 @@ const schemamarkup = {
             "contact.title": "Let's talk!",
             "contact.text":
               "If you're interested in working together, don't hesitate to get in touch with me.<br class=\"hidden md:block\" />Use the form at the bottom of the page, or reach me directly via the contact methods listed below here.",
-            "contact.preferred.summary": "Preferred contact method: Email or LinkedIn",
-            "contact.preferred.more": "Why this works best",
-            "contact.preferred.value": "Written communication works best for me, so email or LinkedIn are usually the fastest channels to reach me.",
+            "contact.preferred.title": "Preferred contact method:",
+            "contact.preferred.summary": "Email or LinkedIn",
+            "contact.preferred.value": "Written communication works best for me, so these are usually the fastest and clearest ways to reach me.",
             "contact.info.email": "Email:",
             "contact.info.phone": "Phone:",
             "contact.info.linkedin": "LinkedIn:",
@@ -205,7 +204,7 @@ const schemamarkup = {
             "btn.back": "Back to homepage",
             "blog.label": "Journal",
             "blog.title": "Blog posts",
-            "blog.intro": "Thoughts from current projects, process notes, and practical experiments in UX, design, and frontend development.",
+            "blog.intro": "A collection of notes, reflections, and things worth writing down along the way.",
             "blog.read": "Read post →",
             "blog.empty": "No blog posts are published yet.",
             "blog.back": "← Back to blog",
@@ -213,7 +212,7 @@ const schemamarkup = {
             "blog.preview.title": "Latest posts",
             "blog.preview.text": "A running log of things I'm working on, thinking about, or just find worth writing down.",
             "blog.preview.all": "See all blog posts",
-            "blog.lang.note": "Posts are written in English",
+            "blog.lang.note1": "→ All posts are written in English ←",
           },
           da: {
             "nav.home": "Hjem",
@@ -351,10 +350,10 @@ const schemamarkup = {
             "contact.title": "Lad os snakke!",
             "contact.text":
               "Hvis du er interesseret i at arbejde sammen, er du meget velkommen til at tage kontakt til mig. Brug formularen nederst på siden, eller skriv til mig direkte via kontaktoplysningerne herunder.",
-            "contact.preferred.summary": "Foretrukken kontaktmetode: Email eller LinkedIn",
-            "contact.preferred.more": "Hvorfor det fungerer bedst",
+            "contact.preferred.title": "Foretrukken kontaktmetode:",
+            "contact.preferred.summary": "Email eller LinkedIn",
             "contact.preferred.value":
-              "Skriftlig kommunikation fungerer bedst for mig, så email eller LinkedIn er som regel de hurtigste kanaler til at få fat i mig på.",
+              "Skriftlig kommunikation fungerer bedst for mig, så det er som regel de hurtigste og tydeligste måder at få fat i mig på.",
             "contact.info.email": "Email:",
             "contact.info.phone": "Telefon:",
             "contact.info.linkedin": "LinkedIn:",
@@ -373,7 +372,7 @@ const schemamarkup = {
             "btn.back": "Tilbage til forsiden",
             "blog.label": "Dagbog",
             "blog.title": "Blogindlæg",
-            "blog.intro": "Tanker fra igangværende projekter, procesdagbog og praktiske eksperimenter inden for UX, design og frontend-udvikling.",
+            "blog.intro": "En samling af noter, refleksioner og ting der er værd at skrive ned undervejs.",
             "blog.read": "Læs indlæg →",
             "blog.empty": "Der er endnu ikke publiceret nogen blogindlæg.",
             "blog.back": "← Tilbage til blog",
@@ -381,7 +380,7 @@ const schemamarkup = {
             "blog.preview.title": "Seneste indlæg",
             "blog.preview.text": "En løbende log over ting jeg arbejder på, tænker over eller bare synes er værd at skrive ned.",
             "blog.preview.all": "Se alle blogindlæg",
-            "blog.lang.note": "Indlæg er skrevet på engelsk",
+            "blog.lang.note1": "→ Alle indlæg er skrevet på engelsk ←",
           },
         };
 
@@ -461,9 +460,4 @@ const schemamarkup = {
   import { animate } from "motion";
   /*Entrance Animation*/
   animate("body", { opacity: [0, 1] }, { duration: 1 });
-</script>
-
-<script is:inline>
-  window.Alpine = Alpine;
-  Alpine.start();
 </script>

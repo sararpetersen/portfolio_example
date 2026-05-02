@@ -142,6 +142,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
             fill="currentColor"
             class="text-gray-50 flex-shrink-0 hidden md:block"
             viewBox="0 0 16 16"
+            aria-hidden="true"
           >
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
             <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
@@ -172,6 +173,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
             fill="currentColor"
             class="text-orange-800 flex-shrink-0 hidden md:block"
             viewBox="0 0 16 16"
+            aria-hidden="true"
           >
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
             <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
@@ -231,6 +233,13 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       </div>
     </div>
   </section>
+
+  <!-- Divider -->
+  <div id="project-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
 
   <!-- Related Projects Section -->
   <section
@@ -324,6 +333,15 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     border-color: var(--dark-border);
   }
 
+  body.dark #project-divider-1 {
+    color: var(--dark-border);
+  }
+
+  body.dark #project-divider-1 .divider-center {
+    background-color: var(--dark-surface-strong);
+    border-color: var(--dark-border);
+  }
+
   body.dark section:last-child .col-span-12 > div > a > div {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -406,6 +424,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       { selector: "#db-notice", animation: "fadeInUp" },
       { selector: "#related-projects-title-row", animation: "fadeInUp" },
       { selector: "#related-projects-label", animation: "fadeInUp" },
+      { selector: "#project-divider-1", animation: "fadeInUp" },
     ];
 
     elementsToAnimate.forEach(({ selector, animation }, index) => {
