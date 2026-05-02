@@ -216,7 +216,7 @@ import Cases from "../components/Cases.astro";
             </a>
           </div>
 
-          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-800 text-base" aria-hidden="true">→</div>
 
           <div
             class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
@@ -260,7 +260,7 @@ import Cases from "../components/Cases.astro";
             </a>
           </div>
 
-          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-500 text-base" aria-hidden="true">→</div>
+          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-800 text-base" aria-hidden="true">→</div>
 
           <div
             class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
@@ -321,8 +321,8 @@ import Cases from "../components/Cases.astro";
       }
     </div>
 
-    <div class="pt-6">
-      <a id="blog-preview-all" href="/blog" aria-label="Go to all blog posts">
+    <div id="blog-preview-all" class="pt-6">
+      <a href="/blog" aria-label="Go to all blog posts">
         <Button variant="primary" size="small"><span data-i18n="blog.preview.all">See all blog posts</span></Button>
       </a>
     </div>
@@ -645,7 +645,6 @@ import Cases from "../components/Cases.astro";
 
   .revamped-arrow {
     font-size: 1.2rem;
-    color: var(--brand-primary-strong);
     opacity: 0.75;
   }
 
@@ -810,7 +809,7 @@ import Cases from "../components/Cases.astro";
   }
 
   body.dark .revamped-arrow {
-    color: var(--brand-primary-soft);
+    color: #f6f6f6;
     opacity: 0.85;
   }
 
