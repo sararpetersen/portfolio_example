@@ -60,8 +60,10 @@ const schemamarkup = {
             "nav.contact": "Contact",
             "nav.blog": "Blog",
             "settings.darkmode": "Dark-mode",
+            "settings.colormode": "Calm mode",
+            "settings.textsize": "Larger text",
             "settings.animations": "Remove animations",
-            "hero.status": "Open for internship",
+            "hero.status": "Interning at Folkæt · July 2026",
             "hero.role": "Multimedia Designer & Concept Developer",
             "hero.lead": "Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.",
             "hero.cta": "See projects",
@@ -220,8 +222,10 @@ const schemamarkup = {
             "nav.contact": "Kontakt",
             "nav.blog": "Blog",
             "settings.darkmode": "M\u00f8rk tilstand",
+            "settings.colormode": "Rolig tilstand",
+            "settings.textsize": "St\u00f8rre tekst",
             "settings.animations": "Fjern animationer",
-            "hero.status": "\u00c5ben for praktik",
+            "hero.status": "Praktik hos Folkæt · juli 2026",
             "hero.role": "Multimediedesigner & konceptudvikler",
             "hero.lead":
               "Passioneret for at skabe tilg\u00e6ngelige, brugercentrerede digitale oplevelser, der kombinerer design, udvikling og strategi.",
@@ -421,11 +425,7 @@ const schemamarkup = {
     </script>
   </head>
   <body class="site-shell bg-pale-100">
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-gray-800 focus:text-gray-50 focus:px-4 focus:py-2 focus:rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-pale-400"
-      >Skip to main content</a
-    >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <Header />
       <ScrollToTop />
@@ -442,6 +442,32 @@ const schemamarkup = {
 </html>
 
 <style>
+  .skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background: #1f2937;
+    color: #f9fafb;
+    text-decoration: none;
+    transform: translateY(-180%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 2px solid #c0d7e1;
+    outline-offset: 2px;
+  }
+
+  /* When hinting, slide down to just below the accessibility bar (36px = h-9) */
+  body.show-skip-link-hint .skip-link {
+    transform: translateY(calc(36px + 0.5rem));
+  }
+
   body.dark {
     background: var(--dark-bg);
     color: var(--text-on-dark);
@@ -460,4 +486,14 @@ const schemamarkup = {
   import { animate } from "motion";
   /*Entrance Animation*/
   animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+  // Briefly reveal the skip link for first-time visitors to improve discoverability.
+  const skipHintSeenKey = "skipLinkHintSeen";
+  if (localStorage.getItem(skipHintSeenKey) !== "true") {
+    document.body.classList.add("show-skip-link-hint");
+    setTimeout(() => {
+      document.body.classList.remove("show-skip-link-hint");
+      localStorage.setItem(skipHintSeenKey, "true");
+    }, 2800);
+  }
 </script>

@@ -177,3 +177,81 @@ body.dark.site-shell::after {
     radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(230, 57, 70, 0.08) 1px, transparent 1px);
 }
+
+body.calm-mode.site-shell {
+  --washi-highlight: rgba(251, 249, 247, 0.82);
+  --ink-indigo: rgba(51, 72, 87, 0.08);
+  --seal-vermilion: #c56b71;
+  --seal-vermilion-soft: rgba(197, 107, 113, 0.1);
+  --brand-primary: #5f7e8b;
+  --brand-primary-tint: #e6eff2;
+  --brand-primary-soft: #afc2cb;
+  --brand-primary-strong: #4a6370;
+}
+
+body.calm-mode.site-shell::before,
+body.calm-mode.site-shell::after {
+  opacity: 0.72;
+}
+
+body.dark.calm-mode.site-shell {
+  --brand-primary: #7f9eab;
+  --brand-primary-soft: #b7c9d0;
+  --brand-primary-strong: #98b2bc;
+}
+
+/* ── Calm Mode: site-wide hard-coded accent overrides ─────── */
+
+/* Kanji decorators (text-red-500) */
+body.calm-mode .text-red-500 {
+  color: #b87c78;
+}
+
+/* Timeline year labels and other blue text */
+body.calm-mode .text-blue-500 {
+  color: #7a94a8;
+}
+
+/* Logo calm-mode (also handled in Header.astro for scoped classes) */
+
+/* Blog post tag chips (light mode) */
+body.calm-mode #post-tags .post-tag-chip {
+  border-color: rgb(98 151 174 / 0.22);
+  color: rgb(71 95 106);
+  background-color: rgb(222 235 239 / 0.48);
+}
+
+/* Blog index card left accent border */
+body.calm-mode .blog-card {
+  border-left-color: #9aacb5;
+}
+
+/* Contact page: preferred contact info box */
+body.calm-mode .border-blue-300 {
+  border-color: #b3c8d6;
+}
+body.calm-mode .bg-blue-100 {
+  background-color: #e8f2f7;
+}
+body.calm-mode .text-blue-900 {
+  color: #374e5d;
+}
+body.calm-mode .text-blue-800 {
+  color: #3d5566;
+}
+body.calm-mode .text-blue-700 {
+  color: #4a637a;
+}
+body.calm-mode .text-blue-600 {
+  color: #557080;
+}
+
+/* Contact submit button border */
+body.calm-mode .border-blue-900 {
+  border-color: #374e5d;
+}
+
+/* Content images: visible desaturation */
+body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
+  filter: saturate(0.45);
+}

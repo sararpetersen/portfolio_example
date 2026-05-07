@@ -37,6 +37,22 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       </button>
     </div>
 
+    <!-- Color Intensity Toggle -->
+    <div class="flex items-center gap-2">
+      <span id="colorModeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.colormode">Calm mode</span>
+      <button id="colorModeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle calm mode">
+        <span class="toggle-circle"></span>
+      </button>
+    </div>
+
+    <!-- Large Text Toggle -->
+    <div class="flex items-center gap-2">
+      <span id="textSizeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.textsize">Larger text</span>
+      <button id="textSizeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle larger text">
+        <span class="toggle-circle"></span>
+      </button>
+    </div>
+
     <!-- Reduce Motion Toggle -->
     <div class="flex items-center gap-2">
       <span id="motionToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.animations">Remove animations</span>
@@ -317,9 +333,16 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     scroll-behavior: auto !important;
   }
 
+  :global(html) {
+    transition: font-size 0.3s ease;
+  }
+
+  :global(html.text-large) {
+    font-size: 112.5%;
+  }
+
   body {
     transition:
-      font-size 0.3s ease,
       background-color 0.3s ease,
       color 0.3s ease;
   }
@@ -337,6 +360,12 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
   body.dark .logo-dark {
     display: block;
+  }
+
+  /* Calm mode: desaturate the red circle on the logo */
+  body.calm-mode .logo-light,
+  body.calm-mode .logo-dark {
+    filter: saturate(0.45) brightness(1.04);
   }
 
   #accessibilityOptions span {
@@ -362,14 +391,25 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 </style>
 
 <script>
-  // Utility function to initialize toggle
-  function initToggle(toggleId: string, className: string, storageKey: string): void {
-    const toggleButton = document.getElementById(toggleId);
-    const savedState = localStorage.getItem(storageKey) === "true";
+  type ToggleTarget = "body" | "html";
 
-    // Apply saved state
-    if (savedState) {
-      document.body.classList.add(className);
+  interface ToggleOptions {
+    target?: ToggleTarget;
+    mediaQuery?: string;
+  }
+
+  // Utility function to initialize toggle
+  function initToggle(toggleId: string, className: string, storageKey: string, options: ToggleOptions = {}): void {
+    const target = options.target ?? "body";
+    const targetElement = target === "html" ? document.documentElement : document.body;
+    const toggleButton = document.getElementById(toggleId);
+    const savedSetting = localStorage.getItem(storageKey);
+    const fallbackState = options.mediaQuery ? window.matchMedia(options.mediaQuery).matches : false;
+    const initialState = savedSetting === null ? fallbackState : savedSetting === "true";
+
+    // Apply initial state (saved setting first, then OS preference fallback)
+    if (initialState) {
+      targetElement.classList.add(className);
       toggleButton?.setAttribute("aria-pressed", "true");
     } else {
       toggleButton?.setAttribute("aria-pressed", "false");
@@ -381,14 +421,22 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       const newState = !isPressed;
 
       toggleButton.setAttribute("aria-pressed", String(newState));
-      document.body.classList.toggle(className, newState);
+      targetElement.classList.toggle(className, newState);
       localStorage.setItem(storageKey, String(newState));
     });
   }
 
   // Initialize each toggle
-  initToggle("motionToggle", "reduce-motion", "motionReductionEnabled");
-  initToggle("darkModeToggle", "dark", "darkModeEnabled");
+  initToggle("motionToggle", "reduce-motion", "motionReductionEnabled", {
+    mediaQuery: "(prefers-reduced-motion: reduce)",
+  });
+  initToggle("darkModeToggle", "dark", "darkModeEnabled", {
+    mediaQuery: "(prefers-color-scheme: dark)",
+  });
+  initToggle("colorModeToggle", "calm-mode", "calmModeEnabled");
+  initToggle("textSizeToggle", "text-large", "largeTextEnabled", {
+    target: "html",
+  });
 
   // Language toggle
   const langButtons = document.querySelectorAll<HTMLButtonElement>(".lang-btn");

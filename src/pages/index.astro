@@ -72,13 +72,11 @@ import Cases from "../components/Cases.astro";
         <div class="col-span-12 lg:col-span-7 hero-panel">
           <div id="status" class="hero-status md:mb-8 mb-6 flex items-center gap-3 justify-start text-sm">
             <span class="relative flex md:h-3.5 md:w-3.5 h-2.5 w-2.5" aria-hidden="true">
-              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-              <span class="relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
+              <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+              <span class="status-dot relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
             </span>
 
-            <p aria-label="Indicates that I'm currently open for internship opportunities" data-i18n="hero.status" class="text-gray-50">
-              Open for internship
-            </p>
+            <p aria-label="Interning at Folkæt from July 2026" data-i18n="hero.status" class="text-gray-50">Interning at Folkæt · July 2026</p>
           </div>
 
           <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
@@ -676,6 +674,16 @@ import Cases from "../components/Cases.astro";
     color: #f8fafc;
     line-height: 1;
     text-transform: uppercase;
+  }
+
+  body.calm-mode .status-ping {
+    background-color: #88b99f;
+    opacity: 0.58;
+  }
+
+  body.calm-mode .status-dot {
+    background-color: #88b99f;
+    border-color: #67977d;
   }
 
   #status p {
