@@ -28,14 +28,6 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 
 <MainLayout title={`SRP portfolio | ${post.data.title}`} description={post.data.excerpt} ogtitle={post.data.title} ogdescription={post.data.excerpt}>
   <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
-    <a
-      id="post-back"
-      href="/blog"
-      class="py-1 md:text-p-desktop text-[15px] text-gray-600 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-      aria-label="Back to blog overview"
-      data-i18n="blog.back">← Back to blog</a
-    >
-
     <header class="md:pt-28 pt-24 mb-8 md:text-left text-center">
       <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
       <h1 id="post-title" class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em] text-h3-mobile md:text-h3-desktop mb-4 text-gray-800">
@@ -72,7 +64,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     <div id="post-back-bottom" class="pt-10">
       <a
         href="/blog"
-        class="py-1 md:text-p-desktop text-[15px] text-gray-600 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+        class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
         aria-label="Back to blog overview"
         data-i18n="blog.back">← Back to blog</a
       >

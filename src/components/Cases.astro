@@ -55,7 +55,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
           data-inactive={NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? "true" : "false"}
         >
           {NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? (
-            <div aria-label={`View project: ${project.name}`} class="block h-full w-full">
+            <div class="block h-full w-full">
               <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
 
               <div class="absolute inset-0 bg-gray-800 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">

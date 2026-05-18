@@ -50,34 +50,19 @@ import MainLayout from "../layouts/MainLayout.astro";
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can use the form below or reach
             me directly via the contact methods listed here.
           </p>
-          <div
-            id="contact-preferred"
-            class="flex items-start gap-3 max-w-md md:max-w-xl mb-9 px-4 py-3 rounded-xl border border-blue-300 bg-blue-100 text-blue-900"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5 mt-[1px] shrink-0 text-blue-700 hidden md:block"
-              aria-hidden="true"
+          <div id="contact-preferred" class="max-w-md md:max-w-xl mb-6 px-4 py-4 rounded-xl border border-blue-300 bg-blue-100 text-blue-900">
+            <p class="text-[14px] font-semibold leading-tight md:text-left text-center text-blue-800 mb-1">
+              <span class="contact-preferred-label" data-i18n="contact.preferred.title">Best way to reach me</span>
+              <span class="contact-preferred-method text-[13px] font-regular text-blue-700 inline" data-i18n="contact.preferred.summary"
+                >Email and LinkedIn</span
+              >
+            </p>
+            <p
+              class="contact-preferred-value text-[12px] leading-snug italic font-light md:text-left text-center text-blue-600"
+              data-i18n="contact.preferred.value"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-              ></path>
-            </svg>
-            <div class="w-full">
-              <strong class="text-[13px] font-semibold leading-relaxed md:text-left text-center text-blue-800 block mb-2">
-                <span class="contact-preferred-label text-blue-800" data-i18n="contact.preferred.title">Preferred contact method:</span>
-                <span class="contact-preferred-method font-normal text-blue-700" data-i18n="contact.preferred.summary">Email or LinkedIn</span>
-              </strong>
-              <p class="text-[12px] leading-relaxed md:text-left text-center text-blue-600" data-i18n="contact.preferred.value">
-                Written communication works best for me, so email is usually the fastest and clearest channel.
-              </p>
-            </div>
+              These are usually the quickest and clearest options. Phone is available for brief follow-ups if needed.
+            </p>
           </div>
           <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
             <ul class="md:space-y-6 space-y-4">
@@ -98,7 +83,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   ></path>
                 </svg>
                 <div>
-                  <strong class="text-gray-950 block mb-2" data-i18n="contact.info.email">Email:</strong>
+                  <strong class="text-gray-800 block mb-2" data-i18n="contact.info.email">Email:</strong>
                   <a
                     href="mailto:sara.ringkow@gmail.com"
                     aria-label="Send email to 'sara.ringkow@gmail.com'"
@@ -239,22 +224,6 @@ import MainLayout from "../layouts/MainLayout.astro";
               class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
               placeholder="your.email@example.com"
             />
-          </div>
-
-          <!-- Preferred Reply Method -->
-          <div>
-            <label for="form-reply" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.reply">
-              Preferred reply method
-            </label>
-            <select
-              id="form-reply"
-              name="reply_method"
-              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
-            >
-              <option value="email" data-i18n="contact.form.reply.email">Email</option>
-              <option value="phone" data-i18n="contact.form.reply.phone">Phone</option>
-              <option value="linkedin" data-i18n="contact.form.reply.linkedin">Either</option>
-            </select>
           </div>
 
           <!-- Message Field -->

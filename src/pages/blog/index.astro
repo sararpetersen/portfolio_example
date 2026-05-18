@@ -10,9 +10,9 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
 
 <MainLayout
   title="SRP portfolio | Blog"
-  description="Blog posts about process, projects, and design/development reflections"
+  description="A running log of things I'm working on, thinking about, or just find worth writing down."
   ogtitle="SRP portfolio | Blog"
-  ogdescription="Blog posts about process, projects, and design/development reflections"
+  ogdescription="A running log of things I'm working on, thinking about, or just find worth writing down."
 >
   <section class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
     <p
@@ -31,7 +31,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
     </div>
 
     <p id="blog-intro" class="text-gray-600 mb-4 leading-relaxed max-w-3xl text-center md:text-left" data-i18n="blog.intro">
-      Thoughts from current projects, process notes, and practical experiments in UX, design, and frontend development.
+      A running log of things I'm working on, thinking about, or just find worth writing down.
     </p>
     <div id="blog-lang-note" class="mb-8 flex justify-center md:justify-start items-center gap-2 text-[11px] tracking-[0.04em] text-gray-500/80">
       <span data-i18n="blog.lang.note1">→ All posts are written in English ←</span>
@@ -48,7 +48,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
               <a
                 href={`/blog/${post.slug}`}
                 aria-label={`Read post: ${post.data.title}`}
-                class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+                class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
                 data-i18n="blog.read"
               >
                 Read post →
@@ -95,14 +95,6 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   body.dark .blog-card h2,
   body.dark .blog-card p {
     color: var(--text-on-dark-soft);
-  }
-
-  body.dark .blog-card a {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark .blog-card a:hover {
-    color: var(--text-on-dark);
   }
 </style>
 

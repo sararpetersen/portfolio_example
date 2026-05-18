@@ -1,6 +1,6 @@
 ---
 title: Accessibility updates on the portfolio
-excerpt: A quick overview of the new accessibility settings and why I added them.
+excerpt: The new accessibility settings and why I added them.
 publishDate: 2026-05-07
 draft: false
 tags:

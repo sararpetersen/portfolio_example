@@ -174,114 +174,6 @@ import Cases from "../components/Cases.astro";
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
-  <!-- Revamped Projects Section -->
-  <section id="revamped-section" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14">
-    <p id="revamped-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="revamped.label">
-      Case update
-    </p>
-
-    <div class="flex items-center gap-4 mb-4 md:mb-5">
-      <span id="revamped-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true">改善</span>
-
-      <h3 id="revamped-title" class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="revamped.title">Revamped projects</h3>
-    </div>
-
-    <p id="revamped-text" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="revamped.text">
-      A selection of older school projects that I later redesigned and rebuilt. These first two cases are from my first semester on Multimedia Design,
-      and each of them includes links to both the original version and the updated result.
-    </p>
-
-    <div class="space-y-4">
-      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
-        <h4 class="revamped-card-title font-semibold text-lg mb-2">Computer Site (DA)</h4>
-
-        <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
-          <div
-            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
-          >
-            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
-            <p id="revamped-cs-before-desc" class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.before.desc">
-              The original hand-in from the course.
-            </p>
-            <a
-              href="https://sararingkow.dk/kea/02_web/01_website/website/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open old 'Computer Site' project in a new tab (DA)"
-              class="mt-auto w-fit"
-            >
-              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.old">Old project</span></Button>
-            </a>
-          </div>
-
-          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-800 text-base" aria-hidden="true">→</div>
-
-          <div
-            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
-          >
-            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
-            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.cs.after.desc">
-              Redesigned with updated styling and layout choices.
-            </p>
-            <a
-              href="https://computer-site.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open revamped 'Computer Site' project in a new tab (DA)"
-              class="mt-auto w-fit"
-            >
-              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.revamped">Revamped</span></Button>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <article class="revamped-card rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
-        <h4 class="revamped-card-title font-semibold text-lg mb-2">The Great Mushroom Kingdom Wiki</h4>
-
-        <div class="grid md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
-          <div
-            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
-          >
-            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.before">Before</p>
-            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.before.desc">
-              The original version made for the assignment.
-            </p>
-            <a
-              href="http://sararingkow.dk/kea/03_ux/01_kodet_site/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open old 'The Great Mushroom Kingdom Wiki' project in a new tab"
-              class="mt-auto w-fit"
-            >
-              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.old">Old project</span></Button>
-            </a>
-          </div>
-
-          <div class="revamped-arrow hidden md:flex items-center justify-center text-gray-800 text-base" aria-hidden="true">→</div>
-
-          <div
-            class="revamped-box rounded-xl border border-gray-500 p-3 bg-gradient-to-br from-gray-50 to-gray-100 min-h-[108px] flex flex-col gap-3"
-          >
-            <p class="revamped-phase uppercase tracking-[0.14em] text-[10px] text-gray-500" data-i18n="revamped.after">After</p>
-            <p class="revamped-desc text-gray-600 leading-relaxed" data-i18n="revamped.wiki.after.desc">
-              Redesigned with a tidier setup and a stronger visual direction.
-            </p>
-            <a
-              href="https://mario-wiki.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open revamped 'The Great Mushroom Kingdom Wiki' project in a new tab"
-              class="mt-auto w-fit"
-            >
-              <Button variant="secondary" size="small"><span data-i18n="revamped.btn.revamped">Revamped</span></Button>
-            </a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <!-- Latest Blog Section -->
   <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <p id="blog-preview-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="blog.preview.label">
@@ -309,7 +201,7 @@ import Cases from "../components/Cases.astro";
             <a
               href={`/blog/${post.slug}`}
               aria-label={`Read post: ${post.data.title}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+              class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
               data-i18n="blog.read"
             >
               Read post →
@@ -416,7 +308,7 @@ import Cases from "../components/Cases.astro";
         <figcaption class="mt-6 flex items-center gap-4">
           <div>
             <p class="font-semibold">Jacob Klintrup</p>
-            <p class="text-gray-600 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
+            <p class="text-gray-500 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
           </div>
         </figcaption>
       </figure>
