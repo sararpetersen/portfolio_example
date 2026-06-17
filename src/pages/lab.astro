@@ -15,7 +15,7 @@ import Button from "../components/Button.astro";
     <div class="col-span-12 md:pt-12 pt-16 md:pb-16 pb-10">
       <div id="lab-title-row" class="flex items-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">実験</span>
-        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="lab.title">Experiments</h1>
+        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop" data-i18n="lab.title">Experiments</h1>
       </div>
       <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed" data-i18n="lab.intro">
         This is where I put the looser stuff&mdash; projects built with AI assistance, quick prototypes, and things that exist mostly because I wanted
@@ -41,7 +41,7 @@ import Button from "../components/Button.astro";
     <h2 id="lab-items-title" class="font-inter italic text-gray-700 text-2xl mb-3" data-i18n="lab.items.title">Projects from the lab</h2>
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 mb-7">
-      <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+      <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
       <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
@@ -54,7 +54,7 @@ import Button from "../components/Button.astro";
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025-2026</p>
           <div class="flex items-center gap-2">
-            <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+            <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
             <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
         </div>
@@ -71,7 +71,7 @@ import Button from "../components/Button.astro";
       <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
@@ -86,7 +86,7 @@ import Button from "../components/Button.astro";
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">A daily life tracker app made for neurodivergent users.</p>
