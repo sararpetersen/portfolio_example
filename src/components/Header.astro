@@ -150,6 +150,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             data-i18n="nav.blog">Blog</a
           >
         </li>
+        <li class="some1">
+          <a
+            href="/lab"
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/lab") && "text-blue-700 font-semibold"]}
+            aria-current={isActive("/lab") ? "page" : undefined}
+            aria-label="Go to lab-page"
+            data-i18n="nav.lab">Lab</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -239,6 +248,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           aria-current={isActive("/blog") ? "page" : undefined}
           aria-label="Go to blog-page"
           data-i18n="nav.blog">Blog</a
+        >
+      </li>
+      <li class="some1">
+        <a
+          href="/lab"
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/lab") && "text-blue-700 font-semibold"]}
+          aria-current={isActive("/lab") ? "page" : undefined}
+          aria-label="Go to lab-page"
+          data-i18n="nav.lab">Lab</a
         >
       </li>
     </ul>

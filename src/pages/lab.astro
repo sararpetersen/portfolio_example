@@ -1,0 +1,194 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+  title="SRP portfolio | Lab"
+  description="Sara's lab — vibe coding experiments and side projects built with AI assistance."
+  ogtitle="SRP portfolio - Lab"
+  ogdescription="A space for experiments, vibe coding, and things built with AI assistance."
+>
+  <!-- Lab Intro -->
+  <section
+    id="lab"
+    class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative"
+  >
+    <div class="col-span-12 md:pt-12 pt-16 md:pb-16 pb-10">
+      <p id="lab-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="lab.label">
+        Lab
+      </p>
+      <div id="lab-title-row" class="flex items-center gap-4 mb-9">
+        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">実験</span>
+        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="lab.title">Experiments</h1>
+      </div>
+      <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed" data-i18n="lab.intro">
+        This is where I put the looser stuff — projects built with AI assistance, quick prototypes, and things that exist mostly because I wanted to
+        see if I could. Less polished than the main cases, more honest about the process.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is vibe coding -->
+  <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-8">
+    <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
+      <h2 id="lab-vibe-title" class="font-inter font-bold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
+        What is vibe coding?
+      </h2>
+      <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
+        Vibe coding is building with AI assistance — you describe what you want, the AI generates the code, and you shape and guide it. It's less
+        about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think
+        about prototyping and iteration.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lab Items -->
+  <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-8 md:pt-16 pt-10 md:pb-desktop-bottom pb-mobil-bottom">
+    <h2 id="lab-items-title" class="font-inter font-bold italic text-gray-700 text-2xl mb-8" data-i18n="lab.items.title">
+      Projects from the lab
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Vibeloop -->
+      <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025–2026</p>
+          <span class="lab-tag">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Vibeloop</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+          A project built with AI assistance from the ground up. Starting with a prompt, iterating fast, and seeing how far the idea could go
+          before it needed traditional development.
+        </p>
+        <a href="/vibeloop" aria-label="View the Vibeloop project">
+          <Button variant="primary" size="small">View project →</Button>
+        </a>
+      </article>
+
+      <!-- More coming -->
+      <div
+        id="lab-item-more"
+        class="border border-dashed border-gray-300 rounded-2xl p-8 flex flex-col items-start justify-center"
+      >
+        <p class="text-[11px] uppercase tracking-[0.2em] text-gray-400 mb-3" data-i18n="lab.more.label">More coming</p>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="lab.more.text">
+          I'm building more things in the lab. Check back or follow along on the blog.
+        </p>
+        <a
+          href="/blog"
+          class="mt-4 text-sm text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+          data-i18n="lab.more.link"
+        >
+          Read about it on the blog →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back -->
+  <section class="lab-back-btn mx-auto py-20 text-center">
+    <a href="/" class="btn_container" aria-label="Back to homepage">
+      <Button variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
+    </a>
+  </section>
+</MainLayout>
+
+<!-- Animations -->
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.classList.contains("reduce-motion")) return;
+
+    let i = 0;
+    const register = (selector: string) => {
+      const el = document.querySelector(selector) as HTMLElement | null;
+      if (!el) return;
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = `${i * 60}ms`;
+        el.style.animationDuration = "1.5s";
+        el.style.animationFillMode = "both";
+      });
+      i++;
+    };
+
+    ["#lab-label", "#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title"].forEach(register);
+
+    document.querySelectorAll("#lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
+        (el as HTMLElement).style.animationDuration = "1.3s";
+        (el as HTMLElement).style.animationFillMode = "both";
+      });
+    });
+  });
+</script>
+
+<style>
+  html.has-js body:not(.reduce-motion) #lab-label,
+  html.has-js body:not(.reduce-motion) #lab-title-row,
+  html.has-js body:not(.reduce-motion) #lab-intro,
+  html.has-js body:not(.reduce-motion) #lab-about,
+  html.has-js body:not(.reduce-motion) #lab-items-title,
+  html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
+  html.has-js body:not(.reduce-motion) #lab-item-more {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .lab-tag {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(71, 123, 147, 0.4);
+    background: rgba(71, 123, 147, 0.1);
+    color: var(--brand-primary-strong);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.42rem 0.72rem;
+    text-transform: uppercase;
+  }
+
+  /* Dark mode */
+  body.dark #lab-label,
+  body.dark #lab h1,
+  body.dark #lab-intro,
+  body.dark #lab-vibe-title,
+  body.dark #lab-vibe-text,
+  body.dark #lab-items-title,
+  body.dark #lab-item-vibeloop h3,
+  body.dark #lab-item-vibeloop p {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark #lab-about,
+  body.dark #lab-item-vibeloop {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark #lab-item-more {
+    border-color: var(--dark-border);
+  }
+
+  body.dark #lab-item-more p,
+  body.dark #lab-item-more a {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .lab-tag {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(71, 123, 147, 0.2);
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark .lab-back-btn a {
+    color: var(--text-on-dark);
+  }
+</style>

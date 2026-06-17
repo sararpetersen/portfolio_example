@@ -88,7 +88,7 @@ const workTimelineItems = timelineItems
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-20">
+    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-12 pb-10">
       <p id="about-me-title-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="about.label">
         Profile
       </p>
@@ -98,19 +98,85 @@ const workTimelineItems = timelineItems
           About me
         </h1>
       </div>
-      <p class="heading-text text-gray-600 md:pb-0 pb-16 max-w-3xl" data-i18n="about.intro">
-        Read a little bit about me, my background, and who I am. You'll also find the templates that I've used for my resume and applications at the
-        very bottom of the page.
+      <p class="heading-text text-gray-600 max-w-3xl" data-i18n="about.intro">
+        Read a little bit about me, my background, and who I am. My resume and application templates are right below.
       </p>
     </div>
   </section>
 
+  <!-- Resources Section (moved up — easy to find for recruiters) -->
+  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pb-12 pb-10">
+    <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="resources.label">
+      Resources
+    </p>
+    <h2 id="resources-title" class="font-inter font-bold italic text-h3-mobile md:text-h3-desktop text-gray-700 mb-6" data-i18n="resources.title">
+      Resources
+    </h2>
+    <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+        <h3 class="text-h4-mobile pb-2" data-i18n="resource.resume.en.title">Resume (EN)</h3>
+        <a
+          class="mt-2 btn_container md:w-[30%]"
+          href="/pdfs/CV_sararpetersen_(EN).pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See resume (EN)"
+        >
+          <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">See resume</span></Button>
+        </a>
+      </div>
+      <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+        <h3 class="text-h4-mobile pb-2" data-i18n="resource.cv.da.title">CV (DA)</h3>
+        <a
+          class="mt-2 btn_container md:w-[30%]"
+          href="/pdfs/CV_sararpetersen_(DA).pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See resume (DA)"
+        >
+          <Button variant="secondary" size="small"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
+        </a>
+      </div>
+      <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+        <h3 class="text-h4-mobile pb-2" data-i18n="resource.app.en.title">Application-template (EN)</h3>
+        <a
+          class="mt-2 btn_container md:w-[50%]"
+          href="/pdfs/application_template_sararpetersen_(EN).pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See application-template (EN)"
+        >
+          <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">See application-template</span></Button>
+        </a>
+      </div>
+      <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
+        <h3 class="text-h4-mobile pb-2" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h3>
+        <a
+          class="mt-2 btn_container md:w-[50%]"
+          href="/pdfs/application_template_sararpetersen_(DA).pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See application-template (DA)"
+        >
+          <Button variant="secondary" size="small"><span data-i18n="resource.app.da.btn">Se ansøgningsskabelon</span></Button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div id="about-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-8 pt-6 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
   <!-- Personal Background -->
-  <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0">
+  <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0 md:pt-desktop-top pt-mobil-top">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
       <div id="personal-background-tabs" class="items-center md:pb-0 pb-8">
         <!-- Tabs -->
-        <div class="flex gap-2 mb-6 border-b border-gray-300" role="tablist" aria-label="Personal background tabs">
+        <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-300" role="tablist" aria-label="Personal background tabs">
           <button
             id="tab-background"
             type="button"
@@ -149,6 +215,19 @@ const workTimelineItems = timelineItems
             data-i18n="about.tab.goals"
           >
             Goals
+          </button>
+          <button
+            id="tab-interests"
+            type="button"
+            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
+            data-tab="interests"
+            role="tab"
+            aria-controls="interests"
+            aria-selected="false"
+            tabindex="-1"
+            data-i18n="about.tab.interests"
+          >
+            Interests
           </button>
         </div>
 
@@ -195,6 +274,16 @@ const workTimelineItems = timelineItems
             purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my future
             career and make a real difference in how people interact with digital products.
           </p>
+        </div>
+
+        <div id="interests" class="tab-content hidden text-gray-600" role="tabpanel" aria-labelledby="tab-interests" aria-hidden="true" tabindex="0">
+          <ul class="space-y-3 leading-relaxed">
+            <li><strong data-i18n="interest.reading.title">Reading</strong> — <span data-i18n="interest.reading.text">There's nothing better than getting lost in a good book.</span></li>
+            <li><strong data-i18n="interest.gaming.title">Gaming</strong> — <span data-i18n="interest.gaming.text">Video games let me step into different realities and tackle challenges in ways that feel completely immersive.</span></li>
+            <li><strong data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</strong> — <span data-i18n="interest.nintendo.text">There's just something about those worlds that keeps drawing me back.</span></li>
+            <li><strong data-i18n="interest.japanese.title">Japanese culture</strong> — <span data-i18n="interest.japanese.text">I love the balance between simplicity, detail, and thoughtful storytelling.</span></li>
+            <li><strong data-i18n="interest.lego.title">Building with LEGO</strong> — <span data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</span></li>
+          </ul>
         </div>
       </div>
       <div class="flex items-center justify-start md:justify-end">
@@ -271,7 +360,7 @@ const workTimelineItems = timelineItems
   </script>
 
   <!-- Divider -->
-  <div id="about-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="about-divider-2" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -279,13 +368,12 @@ const workTimelineItems = timelineItems
 
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="timeline.label">
+    <p id="timeline-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="timeline.label">
       Timeline
     </p>
-    <div id="timeline-title-row" class="flex items-center gap-4 pb-8">
-      <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">歩み</span>
-      <h3 class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="timeline.title">The highlights of my journey</h3>
-    </div>
+    <h2 id="timeline-title" class="font-inter font-bold italic text-h3-mobile md:text-h3-desktop text-gray-700 pb-8" data-i18n="timeline.title">
+      The highlights of my journey
+    </h2>
     <div id="timeline-line" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
       <div class="timeline-column flex flex-col">
         <div class="timeline-column-heading mb-6">
@@ -347,131 +435,6 @@ const workTimelineItems = timelineItems
     </div>
   </section>
 
-  <!-- Interests and Hobbies -->
-  <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <div class="flex flex-col mb-6">
-      <p id="interests-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="interests.label">
-        Interests
-      </p>
-      <div id="interests-title-row" class="flex items-center gap-4 mb-5">
-        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">興味</span>
-        <h3 class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="interests.title">Interests and hobbies</h3>
-      </div>
-    </div>
-    <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
-      <!-- Interest Item 1 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.reading.title">Reading</h4>
-        <p class="text-gray-600" data-i18n="interest.reading.text">
-          There's nothing like getting lost in a good book&mdash; it's my go-to way to unwind and explore new worlds.
-        </p>
-      </div>
-      <!-- Interest Item 2 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.gaming.title">Gaming</h4>
-        <p class="text-gray-600" data-i18n="interest.gaming.text">
-          Video games let me step into different realities and tackle challenges in ways that feel completely immersive.
-        </p>
-      </div>
-      <!-- Interest Item 3 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 md:col-span-2">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</h4>
-        <p class="text-gray-600" data-i18n="interest.nintendo.text">
-          I love both Nintendo and the Super Mario series&mdash; even though I'll admit I'm not very good at most of the games, only a few. There's
-          just something magical about those worlds that keeps drawing me back.
-        </p>
-      </div>
-      <!-- Interest Item 4 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.japanese.title">Japanese culture</h4>
-        <p class="text-gray-600" data-i18n="interest.japanese.text">
-          I love and am inspired by Japanese aesthetics, culture, and language&mdash; especially the balance between simplicity, detail, and
-          thoughtful storytelling.
-        </p>
-      </div>
-      <!-- Interest Item 5 -->
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.lego.title">Building with LEGO</h4>
-        <p class="text-gray-600" data-i18n="interest.lego.text">
-          There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Divider -->
-  <div id="about-divider-2" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-  </div>
-
-  <!-- Resources Section -->
-  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <div>
-      <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="resources.label">
-        Resources
-      </p>
-      <div id="resources-title-row" class="flex items-center gap-4 pb-8">
-        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">資料</span>
-        <h3 class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="resources.title">Resources</h3>
-      </div>
-      <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2" data-i18n="resource.resume.en.title">Resume (EN)</h4>
-          <a
-            class="mt-2 btn_container md:w-[30%]"
-            href="/pdfs/CV_sararpetersen_(EN).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="See resume (EN)"
-          >
-            <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">See resume</span></Button>
-          </a>
-        </div>
-        <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2" data-i18n="resource.cv.da.title">CV (DA)</h4>
-          <a
-            class="mt-2 btn_container md:w-[30%]"
-            href="/pdfs/CV_sararpetersen_(DA).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="See resume (DA)"
-          >
-            <Button variant="secondary" size="small"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
-          </a>
-        </div>
-        <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2" data-i18n="resource.app.en.title">Application-template (EN)</h4>
-          <a
-            class="mt-2 btn_container md:w-[50%]"
-            href="/pdfs/application_template_sararpetersen_(EN).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="See application-template (EN)"
-          >
-            <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">See application-template</span></Button>
-          </a>
-        </div>
-        <!-- Resource Item -->
-        <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-          <h4 class="text-h4-mobile pb-2" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
-          <a
-            class="mt-2 btn_container md:w-[50%]"
-            href="/pdfs/application_template_sararpetersen_(DA).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="See application-template (DA)"
-          >
-            <Button variant="secondary" size="small"><span data-i18n="resource.app.da.btn">Se ansøgningsskabelon</span></Button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto py-20 text-center">
@@ -508,17 +471,14 @@ const workTimelineItems = timelineItems
         "#about-me-title-label",
         "#about-title-row",
         ".heading-text",
+        "#resources-label",
+        "#resources-title",
+        "#about-divider-1",
         "#personal-background-tabs",
         "#personal-background img",
-        "#about-divider-1",
         "#about-divider-2",
-        "#interests-title-row",
-        ".strength-and-weaknesses h3",
-        "#resources-title-row",
-        "#timeline-title-row",
         "#timeline-label",
-        "#interests-label",
-        "#resources-label",
+        "#timeline-title",
         ".button-container",
       ].forEach((selector) => {
         registerInView(selector);
@@ -598,11 +558,15 @@ const workTimelineItems = timelineItems
     border-color: var(--brand-primary-soft);
   }
 
-  body.dark #interests-and-hobbies > div,
-  body.dark #resources-section > div,
-  body.dark #strengths-weaknesses-container > div {
+  body.dark #resources-section > div {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark #resources-title,
+  body.dark #resources-label,
+  body.dark #resources-section h3 {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .timeline-item {
@@ -699,19 +663,12 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark #about-divider-1 {
-    color: var(--dark-border);
-  }
-
+  body.dark #about-divider-1,
   body.dark #about-divider-2 {
     color: var(--dark-border);
   }
 
-  body.dark #about-divider-1 .divider-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
-  }
-
+  body.dark #about-divider-1 .divider-center,
   body.dark #about-divider-2 .divider-center {
     background-color: var(--dark-surface-strong);
     border-color: var(--dark-border);
