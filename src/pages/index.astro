@@ -257,20 +257,44 @@ import Cases from "../components/Cases.astro";
         </div>
       </div>
 
-      <!-- Vibeloop project card (desktop only) -->
-      <div class="hidden md:flex items-start justify-start pt-2">
+      <!-- Lab project stack (desktop only) -->
+      <div id="lab-preview-card" class="hidden md:flex flex-col gap-3 items-start justify-start pt-2 w-full max-w-[420px]">
         <a
           href="/vibeloop"
-          aria-label="See the vibeloop project"
-          id="lab-preview-card"
-          class="group block w-full max-w-[420px] bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8 transition duration-300"
+          aria-label="See the Vibeloop case study"
+          class="group block w-full bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-xl px-5 py-4 transition duration-300"
         >
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 mb-3">Vibe coding · 2025–2026</p>
-          <h4 class="font-bold text-[18px] leading-snug mb-3 text-gray-800">Vibeloop</h4>
-          <p class="text-sm text-gray-600 leading-relaxed mb-5">
-            A project built with AI assistance, exploring what's possible when the tools do the heavy lifting and you focus on the idea.
-          </p>
-          <span class="text-sm text-blue-400 group-hover:underline transition">View project →</span>
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-semibold text-[15px] text-gray-800">Vibeloop</h4>
+            <span class="lab-preview-wip-badge">WIP</span>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">AI-assisted project — coded version in progress</p>
+        </a>
+        <a
+          href="https://autisme-guiden.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit AutismeGuiden (opens in new tab)"
+          class="group block w-full bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-xl px-5 py-4 transition duration-300"
+        >
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-semibold text-[15px] text-gray-800">AutismeGuiden</h4>
+            <span class="text-[10px] uppercase tracking-[0.12em] text-blue-400 font-semibold group-hover:underline">Live →</span>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Danish autism guide, WCAG 2.2 accessible</p>
+        </a>
+        <a
+          href="https://app-steady.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Steady app (opens in new tab)"
+          class="group block w-full bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-xl px-5 py-4 transition duration-300"
+        >
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-semibold text-[15px] text-gray-800">Steady</h4>
+            <span class="text-[10px] uppercase tracking-[0.12em] text-blue-400 font-semibold group-hover:underline">Live →</span>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Daily life tracker for neurodivergents</p>
         </a>
       </div>
     </div>
@@ -501,6 +525,22 @@ import Cases from "../components/Cases.astro";
     text-transform: uppercase;
   }
 
+  /* Lab preview WIP badge */
+  .lab-preview-wip-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(217, 119, 6, 0.4);
+    background: rgba(217, 119, 6, 0.1);
+    color: #92400e;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.3rem 0.6rem;
+    text-transform: uppercase;
+  }
+
   /* Lab chip */
   .lab-chip {
     display: inline-flex;
@@ -634,7 +674,7 @@ import Cases from "../components/Cases.astro";
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
-  body.dark #lab-preview-card {
+  body.dark #lab-preview-card a {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
@@ -642,6 +682,12 @@ import Cases from "../components/Cases.astro";
   body.dark #lab-preview-card h4,
   body.dark #lab-preview-card p {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark .lab-preview-wip-badge {
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(217, 119, 6, 0.2);
+    color: #fbbf24;
   }
 
   body.dark .lab-chip {
