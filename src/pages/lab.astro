@@ -177,35 +177,30 @@ import Button from "../components/Button.astro";
     color: #92400e;
   }
 
-  /* Dark mode */
-  body.dark #lab-label,
+  /* Dark mode — text */
   body.dark #lab h1,
+  body.dark #lab-label,
   body.dark #lab-intro,
   body.dark #lab-vibe-title,
   body.dark #lab-vibe-text,
   body.dark #lab-items-title,
-  body.dark #lab-item-vibeloop h3,
-  body.dark #lab-item-vibeloop p {
+  body.dark #lab-items article h3,
+  body.dark #lab-items article p {
     color: var(--text-on-dark-soft);
   }
 
-  body.dark #lab-about,
-  body.dark #lab-item-vibeloop,
-  body.dark #lab-item-autismeguiden,
-  body.dark #lab-item-steady {
+  /* Dark mode — card backgrounds */
+  body.dark #lab-about > div {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
-  body.dark #lab-item-vibeloop h3,
-  body.dark #lab-item-vibeloop p,
-  body.dark #lab-item-autismeguiden h3,
-  body.dark #lab-item-autismeguiden p,
-  body.dark #lab-item-steady h3,
-  body.dark #lab-item-steady p {
-    color: var(--text-on-dark-soft);
+  body.dark #lab-items article {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
+  /* Dark mode — badges */
   body.dark .lab-tag {
     border-color: rgba(192, 215, 225, 0.35);
     background: rgba(71, 123, 147, 0.2);
