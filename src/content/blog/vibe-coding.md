@@ -1,6 +1,6 @@
 ---
-title: On vibe coding — what it is and what I think about it
-excerpt: I've been building things with AI assistance for a while now. Here's what I've actually noticed.
+title: Vibe coding - what it is and what I think
+excerpt: What I've noticed from building with AI assistance.
 publishDate: 2026-06-10
 draft: false
 tags:
@@ -10,7 +10,7 @@ tags:
   - lab
 ---
 
-There's a term going around right now — "vibe coding." It means building software with AI assistance, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director.
+There's a term going around right now— "vibe coding." It means building software with the assistance ofAI, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director.
 
 I've been doing this for a while, and I have thoughts.
 
