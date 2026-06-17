@@ -28,7 +28,7 @@ import Button from "../components/Button.astro";
   <!-- What is vibe coding -->
   <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-8">
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
-      <h2 id="lab-vibe-title" class="font-inter font-bold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">What is vibe coding?</h2>
+      <h2 id="lab-vibe-title" class="font-inter italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">What is vibe coding?</h2>
       <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
         Vibe coding is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide it. It's less
         about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think about
@@ -39,7 +39,15 @@ import Button from "../components/Button.astro";
 
   <!-- Lab Items -->
   <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-8 md:pt-16 pt-10 md:pb-desktop-bottom pb-mobil-bottom">
-    <h2 id="lab-items-title" class="font-inter font-bold italic text-gray-700 text-2xl mb-8" data-i18n="lab.items.title">Projects from the lab</h2>
+    <h2 id="lab-items-title" class="font-inter italic text-gray-700 text-2xl mb-3" data-i18n="lab.items.title">Projects from the lab</h2>
+
+    <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 mb-7">
+      <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+      <span>= built with AI assistance</span>
+      <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
+      <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
+      <span>= in progress</span>
+    </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Vibeloop (WIP) -->
@@ -202,6 +210,10 @@ import Button from "../components/Button.astro";
     border-color: rgba(251, 191, 36, 0.35);
     background: rgba(217, 119, 6, 0.2);
     color: #fbbf24;
+  }
+
+  body.dark .lab-legend {
+    color: var(--dark-border);
   }
 
   body.dark .lab-back-btn a {

@@ -16,11 +16,11 @@
   }
 
   h3 {
-    @apply font-inter text-h3-mobile font-bold italic text-gray-800;
+    @apply font-inter text-h3-mobile font-semibold text-gray-800;
   }
 
   h4 {
-    @apply font-inter text-h4-mobile font-bold italic text-gray-800;
+    @apply font-inter text-h4-mobile text-gray-800;
   }
 
   p,
@@ -38,15 +38,15 @@
     }
 
     h2 {
-      @apply text-h2-desktop font-bold italic text-gray-800;
+      @apply text-h2-desktop italic text-gray-800;
     }
 
     h3 {
-      @apply text-h3-desktop font-bold italic text-gray-800;
+      @apply text-h3-desktop font-semibold text-gray-800;
     }
 
     h4 {
-      @apply text-h4-desktop font-bold italic text-gray-800;
+      @apply text-h4-desktop text-gray-800;
     }
 
     p,
