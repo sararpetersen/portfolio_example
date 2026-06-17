@@ -658,7 +658,6 @@ import Cases from "../components/Cases.astro";
   body.dark #blog-preview h3,
   body.dark #blog-preview h4,
   body.dark #blog-preview p,
-  body.dark #blog-preview a,
   body.dark #lab-preview h3,
   body.dark #lab-preview h4,
   body.dark #lab-preview p,
@@ -672,6 +671,14 @@ import Cases from "../components/Cases.astro";
   body.dark #blog-preview .blog-preview-item {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark #blog-preview .blog-preview-item a {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark #blog-preview .blog-preview-item a:hover {
+    color: var(--brand-primary-soft);
   }
 
   body.dark #lab-preview-card a {

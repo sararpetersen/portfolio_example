@@ -93,8 +93,13 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   }
 
   body.dark .blog-card h2,
-  body.dark .blog-card p {
+  body.dark .blog-card p,
+  body.dark .blog-card a {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark .blog-card a:hover {
+    color: var(--brand-primary-soft);
   }
 </style>
 
