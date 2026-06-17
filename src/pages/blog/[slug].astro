@@ -104,6 +104,15 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     color: var(--text-on-dark-soft);
   }
 
+  body.dark .blog-content :global(a) {
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark .blog-content :global(a:hover) {
+    color: var(--brand-primary-soft);
+    text-decoration: underline;
+  }
+
   body.dark .blog-content :global(h1),
   body.dark .blog-content :global(h2),
   body.dark .blog-content :global(h3) {
