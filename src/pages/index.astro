@@ -130,11 +130,6 @@ import Cases from "../components/Cases.astro";
   <!-- Projects Section -->
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
-      <!-- eyebrow label -->
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-2" data-i18n="projects.label">
-        Selected work
-      </p>
-
       <!-- kanji + title -->
       <div class="flex items-center gap-4 mb-5 md:mb-7">
         <span id="project-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true"> 作品 </span>
@@ -235,7 +230,6 @@ import Cases from "../components/Cases.astro";
 
       <!-- Text -->
       <div id="about-preview-text" class="md:order-2 order-1">
-        <p id="about-preview-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="about.preview.label">Profile</p>
         <h3 id="about-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-5" data-i18n="about.preview.title">About me</h3>
         <p
           id="about-preview-text-paragraph"
@@ -323,7 +317,6 @@ import Cases from "../components/Cases.astro";
         ["#blog-preview-text", "animate__fadeInUp"],
         ["#blog-preview-all", "animate__fadeInUp"],
         ["#divider-2", "animate__fadeInUp"],
-        ["#about-preview-label", "animate__fadeInUp"],
         ["#about-preview-title", "animate__fadeInUp"],
         ["#about-preview-text-paragraph", "animate__fadeInUp"],
         [".btn_container", "animate__fadeInUp"],
@@ -410,7 +403,6 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #blog-preview-text,
   html.has-js body:not(.reduce-motion) #blog-preview-all,
   html.has-js body:not(.reduce-motion) #divider-2,
-  html.has-js body:not(.reduce-motion) #about-preview-label,
   html.has-js body:not(.reduce-motion) #about-preview-title,
   html.has-js body:not(.reduce-motion) #about-preview-text-paragraph,
   html.has-js body:not(.reduce-motion) .btn_container,

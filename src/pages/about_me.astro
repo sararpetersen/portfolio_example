@@ -89,9 +89,6 @@ const workTimelineItems = timelineItems
   >
     <!-- Intro Section -->
     <div class="relative col-span-12 md:pt-12 pt-16 md:pb-12 pb-10">
-      <p id="about-me-title-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="about.label">
-        Profile
-      </p>
       <div id="about-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">自己</span>
         <h1 class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru md:text-left text-center" data-i18n="about.title">
@@ -346,34 +343,31 @@ const workTimelineItems = timelineItems
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div class="flex flex-col mb-6">
-      <p id="interests-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="interests.label">
-        Interests
-      </p>
       <div id="interests-title-row" class="flex items-center gap-4 mb-5">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">興味</span>
         <h3 class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em]" data-i18n="interests.title">Interests and hobbies</h3>
       </div>
     </div>
-    <div id="interests-and-hobbies" class="grid md:grid-cols-2 grid-cols-1 gap-6">
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.reading.title">Reading</h4>
-        <p class="text-gray-600" data-i18n="interest.reading.text">There's nothing better than getting lost in a good book — it's my go-to way to unwind and explore new worlds.</p>
+    <div id="interests-and-hobbies" class="grid md:grid-cols-3 grid-cols-1 gap-x-10 gap-y-8">
+      <div class="interest-item border-t-2 border-gray-200 pt-5">
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.reading.title">Reading</h4>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.reading.text">There's nothing better than getting lost in a good book — it's my go-to way to unwind and explore new worlds.</p>
       </div>
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.gaming.title">Gaming</h4>
-        <p class="text-gray-600" data-i18n="interest.gaming.text">Video games let me step into different realities and tackle challenges in ways that feel completely immersive.</p>
+      <div class="interest-item border-t-2 border-gray-200 pt-5">
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.gaming.title">Gaming</h4>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.gaming.text">Video games let me step into different realities and tackle challenges in ways that feel completely immersive.</p>
       </div>
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 md:col-span-2">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</h4>
-        <p class="text-gray-600" data-i18n="interest.nintendo.text">I love both Nintendo and the Super Mario series — even though I'll admit I'm not very good at most of the games, only a few. There's just something magical about those worlds that keeps drawing me back.</p>
+      <div class="interest-item border-t-2 border-gray-200 pt-5">
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</h4>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.nintendo.text">There's just something about those worlds that keeps drawing me back.</p>
       </div>
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.japanese.title">Japanese culture</h4>
-        <p class="text-gray-600" data-i18n="interest.japanese.text">I love and am inspired by Japanese aesthetics, culture, and language — especially the balance between simplicity, detail, and thoughtful storytelling.</p>
+      <div class="interest-item border-t-2 border-gray-200 pt-5">
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.japanese.title">Japanese culture</h4>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.japanese.text">I love the balance between simplicity, detail, and thoughtful storytelling.</p>
       </div>
-      <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
-        <h4 class="text-h4-mobile pb-2" data-i18n="interest.lego.title">Building with LEGO</h4>
-        <p class="text-gray-600" data-i18n="interest.lego.text">There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.</p>
+      <div class="interest-item border-t-2 border-gray-200 pt-5">
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.lego.title">Building with LEGO</h4>
+        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
       </div>
     </div>
   </section>
@@ -387,7 +381,6 @@ const workTimelineItems = timelineItems
 
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <p id="resources-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-3" data-i18n="resources.label">Resources</p>
     <h2 id="resources-title" class="font-inter italic text-h3-mobile md:text-h3-desktop text-gray-700 mb-6" data-i18n="resources.title">Resources</h2>
     <div id="resources-section" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="flex flex-col p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500">
@@ -452,13 +445,11 @@ const workTimelineItems = timelineItems
         "#about-me-title-label",
         "#about-title-row",
         ".heading-text",
-        "#resources-label",
         "#resources-title",
         "#about-divider-1",
         "#personal-background-tabs",
         "#personal-background img",
         "#about-divider-2",
-        "#timeline-label",
         "#timeline-title",
         ".button-container",
       ].forEach((selector) => {
@@ -539,14 +530,22 @@ const workTimelineItems = timelineItems
     border-color: var(--brand-primary-soft);
   }
 
+  body.dark .interest-item {
+    border-color: var(--dark-border);
+  }
+
+  body.dark .interest-item h4,
+  body.dark .interest-item p {
+    color: var(--text-on-dark-soft);
+  }
+
   body.dark #resources-section > div {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark #resources-title,
-  body.dark #resources-label,
-  body.dark #resources-section h3 {
+  body.dark #resources-section h4 {
     color: var(--text-on-dark-soft);
   }
 

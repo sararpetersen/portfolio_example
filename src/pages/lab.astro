@@ -13,7 +13,6 @@ import Button from "../components/Button.astro";
   <!-- Lab Intro -->
   <section id="lab" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative">
     <div class="col-span-12 md:pt-12 pt-16 md:pb-16 pb-10">
-      <p id="lab-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="lab.label">Lab</p>
       <div id="lab-title-row" class="flex items-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">実験</span>
         <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="lab.title">Experiments</h1>
@@ -128,7 +127,7 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    ["#lab-label", "#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title"].forEach(register);
+    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title"].forEach(register);
 
     document.querySelectorAll("#lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
