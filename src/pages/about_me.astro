@@ -88,15 +88,19 @@ const workTimelineItems = timelineItems
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
     <!-- Intro Section -->
-    <div class="relative col-span-12 md:pt-12 pt-16 md:pb-12 pb-10">
+    <div class="relative col-span-12 md:pt-12 pt-16">
       <div id="about-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">自己</span>
-        <h1 class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop md:text-left text-center" data-i18n="about.title">
+        <h1
+          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop md:text-left text-center"
+          data-i18n="about.title"
+        >
           About me
         </h1>
       </div>
       <p class="heading-text text-gray-600 max-w-3xl" data-i18n="about.intro">
-        Read a little bit about me, my background, and who I am.<br /> My resume and application templates can be found at the very bottom of the page.
+        Read a little bit about me, my background, and who I am.<br class="md:hidden block" /> My resume and application templates can be found at the very
+        bottom of the page.
       </p>
     </div>
   </section>
@@ -193,7 +197,7 @@ const workTimelineItems = timelineItems
           </p>
         </div>
       </div>
-      <div class="flex items-center justify-start md:justify-end">
+      <div class="flex items-center justify-center md:justify-end">
         <img
           src="/images/pfp2.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
@@ -275,11 +279,11 @@ const workTimelineItems = timelineItems
 
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <h2 id="timeline-title" class="font-inter italic text-h3-mobile md:text-h3-desktop text-gray-700 pb-8" data-i18n="timeline.title">
+    <h2 id="timeline-title" class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 pb-8" data-i18n="timeline.title">
       The highlights of my journey
     </h2>
     <div id="timeline-line" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-      <div class="timeline-column flex flex-col">
+      <div class="timeline-column flex flex-col md:mb-0 mb-10">
         <div class="timeline-column-heading mb-6">
           <h4 class="timeline-column-badge" data-i18n="timeline.education">Education</h4>
         </div>
@@ -342,7 +346,11 @@ const workTimelineItems = timelineItems
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <div class="flex flex-col mb-6">
-      <h2 id="interests-title" class="font-inter italic text-h3-mobile md:text-h3-desktop text-gray-700 mb-6" data-i18n="interests.title">
+      <h2
+        id="interests-title"
+        class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
+        data-i18n="interests.title"
+      >
         Interests and hobbies
       </h2>
     </div>
@@ -393,7 +401,9 @@ const workTimelineItems = timelineItems
 
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <h2 id="resources-title" class="font-inter italic text-h3-mobile md:text-h3-desktop text-gray-700 mb-6" data-i18n="resources.title">Resources</h2>
+    <h2 id="resources-title" class="font-inter font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 mb-6" data-i18n="resources.title">
+      Resources
+    </h2>
     <div id="resources-section" class="divide-y divide-gray-200">
       <div class="resource-row flex items-center justify-between py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h4>
@@ -403,13 +413,13 @@ const workTimelineItems = timelineItems
           rel="noopener noreferrer"
           aria-label="See application-template (EN)"
         >
-          <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">See template</span></Button>
+          <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">View template</span></Button>
         </a>
       </div>
       <div class="resource-row flex items-center justify-between py-4">
         <h4 class="text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h4>
         <a href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (EN)">
-          <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">See resume</span></Button>
+          <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">View resume</span></Button>
         </a>
       </div>
       <div class="resource-row flex items-center justify-between py-4">

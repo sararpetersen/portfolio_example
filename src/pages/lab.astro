@@ -15,30 +15,37 @@ import Button from "../components/Button.astro";
     <div class="col-span-12 md:pt-12 pt-16 md:pb-16 pb-10">
       <div id="lab-title-row" class="flex items-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">実験</span>
-        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop" data-i18n="lab.title">Experiments</h1>
+        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop" data-i18n="lab.title">
+          Experiments
+        </h1>
       </div>
       <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed" data-i18n="lab.intro">
-        This is where I put the looser stuff&mdash; projects built with AI assistance, quick prototypes, and things that exist mostly because I wanted
-        to see if I could. Less polished than the main cases, more honest about the process.
+        This is where I put the looser stuff&mdash; projects built with help from AI, unfinished prototypes, and things that exist mostly because I
+        wanted to see if they could work. Less polished than the main cases, but more honest about the process.
       </p>
     </div>
   </section>
 
   <!-- What is vibe coding -->
-  <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-8">
+  <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-6">
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
-      <h2 id="lab-vibe-title" class="font-inter italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">What is vibe coding?</h2>
+      <h2 id="lab-vibe-title" class="font-inter font-semibold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
+        What is<em>'vibe coding'</em>?
+      </h2>
+
       <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
-        Vibe coding is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide it. It's less
-        about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think about
-        prototyping and iteration.
+        <em>'Vibe coding'</em> is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide it.
+        It's less about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think
+        about prototyping and iteration.
       </p>
     </div>
   </section>
 
   <!-- Lab Items -->
-  <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-8 md:pt-16 pt-10 md:pb-desktop-bottom pb-mobil-bottom">
-    <h2 id="lab-items-title" class="font-inter italic text-gray-700 text-2xl mb-3" data-i18n="lab.items.title">Projects from the lab</h2>
+  <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+    <h2 id="lab-items-title" class="font-inter font-semibold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-6" data-i18n="lab.items.title">
+      Projects from the lab
+    </h2>
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 mb-7">
       <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
@@ -58,7 +65,7 @@ import Button from "../components/Button.astro";
             <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Vibeloop</h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">VibeLoop</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
           An app concept for supporting social connection and local engagement.
         </p>

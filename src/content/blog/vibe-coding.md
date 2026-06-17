@@ -32,6 +32,6 @@ Good judgment. Knowing what to build in the first place. Being able to catch whe
 
 ## The Lab
 
-I've started keeping a section on this site called the Lab. It's where I put the things built this way. Vibeloop was the first one. There'll be more.
+I've started keeping a section on this site called the Lab. It's where I put the things built this way. VibeLoop was the first one. There'll be more.
 
 If you're curious: [see the lab →](/lab)

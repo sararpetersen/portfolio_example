@@ -76,12 +76,12 @@ import Cases from "../components/Cases.astro";
               <span class="status-dot relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
             </span>
 
-            <p aria-label="Interning at Folkæt from July 2026" data-i18n="hero.status" class="text-gray-50">Interning at Folkæt · July 2026</p>
+            <p aria-label="Interning at Folkæt" data-i18n="hero.status" class="text-gray-50">Interning at Folkæt</p>
           </div>
 
           <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
           <h2 class="hero-role text-gray-700 pb-6 font-regular" data-i18n="hero.role">Multimedia Designer & Concept Developer</h2>
-          <p class="hero-lead text-gray-600 font-light pb-8 max-w-3xl" data-i18n="hero.lead">
+          <p class="hero-lead text-gray-600 font-light pb-8 max-w-xl" data-i18n="hero.lead">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
 
@@ -132,13 +132,7 @@ import Cases from "../components/Cases.astro";
     <div class="container col-span-12">
       <!-- kanji + title -->
       <div class="flex items-center gap-4 mb-5 md:mb-7">
-        <span id="project-kanji" class="text-sm text-red-500 tracking-widest" aria-hidden="true"> 作品 </span>
-
-        <h3
-          id="project-title"
-          class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h3-mobile md:text-h3-desktop"
-          data-i18n="projects.title"
-        >
+        <h3 id="project-title" class="font-inter font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
           Selected cases
         </h3>
       </div>
@@ -171,7 +165,11 @@ import Cases from "../components/Cases.astro";
 
   <!-- Latest Blog Section -->
   <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
-    <h3 id="blog-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="blog.preview.title">
+    <h3
+      id="blog-preview-title"
+      class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
+      data-i18n="blog.preview.title"
+    >
       Latest posts
     </h3>
 
@@ -230,7 +228,13 @@ import Cases from "../components/Cases.astro";
 
       <!-- Text -->
       <div id="about-preview-text" class="md:order-2 order-1">
-        <h3 id="about-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-5" data-i18n="about.preview.title">About me</h3>
+        <h3
+          id="about-preview-title"
+          class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-5"
+          data-i18n="about.preview.title"
+        >
+          About me
+        </h3>
         <p
           id="about-preview-text-paragraph"
           class="mb-6 text-gray-600 max-w-xl leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
@@ -250,7 +254,11 @@ import Cases from "../components/Cases.astro";
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
-    <h3 id="testimonial-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-4" data-i18n="testimonials.title">
+    <h3
+      id="testimonial-title"
+      class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-4"
+      data-i18n="testimonials.title"
+    >
       Featured testimonial
     </h3>
     <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 max-w-3xl">
@@ -265,7 +273,7 @@ import Cases from "../components/Cases.astro";
 
       <figcaption class="mt-6 flex items-center gap-4">
         <div>
-          <p class="font-semibold">Jacob Klintrup</p>
+          <p class="font-semibold text-gray-700">Jacob Klintrup</p>
           <p class="text-gray-500 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
         </div>
       </figcaption>
