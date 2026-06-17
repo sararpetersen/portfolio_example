@@ -220,24 +220,11 @@ import Cases from "../components/Cases.astro";
 
   <!-- Lab Preview Section -->
   <section id="lab-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
-    <div id="lab-preview-header" class="flex items-center gap-3 mb-4">
-      <span class="lab-chip" aria-hidden="true" data-i18n="lab.label" title="A space for experiments and vibe coding — less polished than the main cases">Lab</span>
-      <span id="lab-preview-sublabel" class="text-[11px] uppercase tracking-[0.2em] text-gray-500" data-i18n="lab.preview.sublabel">Vibe coding & experiments</span>
-    </div>
-
-    <h3
-      id="lab-preview-title"
-      class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
-      data-i18n="lab.preview.title"
-    >
+    <h3 id="lab-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="lab.preview.title">
       Things I'm building
     </h3>
 
-    <p
-      id="lab-preview-text-paragraph"
-      class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base"
-      data-i18n="lab.preview.text"
-    >
+    <p id="lab-preview-text-paragraph" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="lab.preview.text">
       Alongside the main project work, I've been building things with AI assistance — starting from a prompt and seeing how far I can take it.
     </p>
 
@@ -248,8 +235,14 @@ import Cases from "../components/Cases.astro";
           <span class="lab-preview-wip-badge" title="Work in progress — the coded version is still being developed">WIP</span>
         </div>
         <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">Vibeloop</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4">Social connection &amp; local engagement app — coded version in progress.</p>
-        <a href="/vibeloop" aria-label="View the Vibeloop case study" class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300">View case →</a>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.vibeloop.preview">Social connection &amp; local engagement app — coded version in progress.</p>
+        <a
+          href="/vibeloop"
+          aria-label="View the Vibeloop case study"
+          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+          data-i18n="lab.vibeloop.link"
+          >View case →</a
+        >
       </article>
 
       <article class="lab-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -257,8 +250,16 @@ import Cases from "../components/Cases.astro";
           <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">2026</p>
         </div>
         <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">AutismeGuiden</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4">Danish autism guide, WCAG 2.2 accessible.</p>
-        <a href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit AutismeGuiden (opens in new tab)" class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300">Visit site →</a>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.autismeguiden.preview">Danish autism guide, WCAG 2.2 accessible.</p>
+        <a
+          href="https://autisme-guiden.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit AutismeGuiden (opens in new tab)"
+          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+          data-i18n="lab.autismeguiden.link"
+          >Visit site →</a
+        >
       </article>
 
       <article class="lab-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -266,8 +267,16 @@ import Cases from "../components/Cases.astro";
           <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">2026</p>
         </div>
         <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">Steady</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4">Daily life tracker for neurodivergents.</p>
-        <a href="https://app-steady.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Steady app (opens in new tab)" class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300">Visit app →</a>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.steady.preview">Daily life tracker for neurodivergents.</p>
+        <a
+          href="https://app-steady.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Steady app (opens in new tab)"
+          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+          data-i18n="lab.steady.link"
+          >Visit app →</a
+        >
       </article>
     </div>
 
@@ -280,9 +289,6 @@ import Cases from "../components/Cases.astro";
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
-    <p id="testimonial-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-2" data-i18n="testimonials.label">
-      Recommendation
-    </p>
     <h3 id="testimonial-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-4" data-i18n="testimonials.title">
       Featured testimonial
     </h3>

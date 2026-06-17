@@ -43,10 +43,10 @@ import Button from "../components/Button.astro";
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 mb-7">
       <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
-      <span>= built with AI assistance</span>
+      <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
-      <span>= work in progress</span>
+      <span data-i18n="lab.legend.wip">= in progress</span>
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -60,12 +60,11 @@ import Button from "../components/Button.astro";
           </div>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Vibeloop</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6">
-          An app concept for supporting social connection and local engagement, designed to help people find and join activities happening around
-          them.
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
+          An app concept for supporting social connection and local engagement — designed to help people find and join activities happening around them.
         </p>
         <a href="/vibeloop" aria-label="View the Vibeloop case study">
-          <Button variant="secondary" size="small">View prototype →</Button>
+          <Button variant="secondary" size="small"><span data-i18n="lab.vibeloop.link">View case →</span></Button>
         </a>
       </article>
 
@@ -76,11 +75,11 @@ import Button from "../components/Button.astro";
           <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6">
-          A Danish information guide about autism, made for autistic people, family, teachers, and professionals.
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
+          A Danish information guide about autism — for autistic people, family, teachers, and professionals. Built to WCAG 2.2 with accessibility at the core.
         </p>
         <a href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit AutismeGuiden (opens in new tab)">
-          <Button variant="primary" size="small">Visit site →</Button>
+          <Button variant="primary" size="small"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button>
         </a>
       </article>
 
@@ -91,11 +90,11 @@ import Button from "../components/Button.astro";
           <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">
           A daily life tracker app designed for neurodivergent users, with local-first data storage and a low-friction interface.
         </p>
         <a href="https://app-steady.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Steady app (opens in new tab)">
-          <Button variant="primary" size="small">Visit app →</Button>
+          <Button variant="primary" size="small"><span data-i18n="lab.steady.link">Visit app →</span></Button>
         </a>
       </article>
     </div>
