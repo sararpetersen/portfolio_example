@@ -46,7 +46,7 @@ import Button from "../components/Button.astro";
       <span>= built with AI assistance</span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
-      <span>= in progress</span>
+      <span>= work in progress</span>
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -143,6 +143,19 @@ import Button from "../components/Button.astro";
 </script>
 
 <style>
+  /* Orphan handling — lone last card spans 2 cols on 3-col layout, full width on 2-col */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #lab-items .grid > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #lab-items .grid > article:last-child:nth-child(3n + 1) {
+      grid-column: span 2;
+    }
+  }
+
   html.has-js body:not(.reduce-motion) #lab-label,
   html.has-js body:not(.reduce-motion) #lab-title-row,
   html.has-js body:not(.reduce-motion) #lab-intro,
@@ -214,6 +227,20 @@ import Button from "../components/Button.astro";
 
   body.dark .lab-legend {
     color: var(--dark-border);
+  }
+
+  /* Last card spans full row if it would be alone */
+  @media (min-width: 1024px) {
+    #lab-items .grid > article:last-child:nth-child(3n + 1) {
+      grid-column: 1 / -1;
+      max-width: 420px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #lab-items .grid > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
   }
 
   body.dark .lab-back-btn a {
