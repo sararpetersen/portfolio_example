@@ -104,13 +104,25 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     color: var(--text-on-dark-soft);
   }
 
+  .blog-content :global(a) {
+    color: var(--brand-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .blog-content :global(a:hover) {
+    color: var(--brand-primary-strong);
+  }
+
   body.dark .blog-content :global(a) {
     color: var(--brand-primary-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   body.dark .blog-content :global(a:hover) {
-    color: var(--brand-primary-soft);
-    text-decoration: underline;
+    color: #f0f8ff;
   }
 
   body.dark .blog-content :global(h1),
