@@ -218,70 +218,39 @@ import Cases from "../components/Cases.astro";
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
-  <!-- Lab Preview Section -->
-  <section id="lab-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
-    <h3 id="lab-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="lab.preview.title">
-      Things I'm building
-    </h3>
+  <!-- About Preview Section -->
+  <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Image -->
+      <div class="flex md:justify-end justify-center md:order-1 order-2">
+        <img
+          src="/images/pfp3.webp"
+          alt="Picture of Sara"
+          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-[550px] h-[350px]"
+          width="550"
+          height="350"
+          loading="lazy"
+        />
+      </div>
 
-    <p id="lab-preview-text-paragraph" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="lab.preview.text">
-      Alongside my actual projects, I've begun to build concepts with the help of AI, also known as <em>'vibe coding'</em>— starting from a prompt and
-      seeing how far I can take it.
-    </p>
-
-    <div id="lab-preview-card" class="grid md:grid-cols-3 gap-4">
-      <article class="lab-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="flex items-center justify-between mb-2">
-          <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">2025-2026</p>
-          <span class="lab-preview-wip-badge" title="Work in progress — the coded version is still being developed">WIP</span>
-        </div>
-        <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">VibeLoop</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.vibeloop.preview">Social connection and local engagement app.</p>
-        <a
-          href="/vibeloop"
-          aria-label="View the VibeLoop case study and prototype"
-          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-          data-i18n="lab.vibeloop.link">View prototype →</a
+      <!-- Text -->
+      <div id="about-preview-text" class="md:order-2 order-1">
+        <p id="about-preview-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="about.preview.label">Profile</p>
+        <h3 id="about-preview-title" class="font-inter font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-5" data-i18n="about.preview.title">About me</h3>
+        <p
+          id="about-preview-text-paragraph"
+          class="mb-6 text-gray-600 max-w-xl leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
+          data-i18n="about.preview.text"
         >
-      </article>
-
-      <article class="lab-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="flex items-center justify-between mb-2">
-          <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">2026</p>
+          I'm a Multimedia Designer and Concept Developer with a strong focus on accessibility and user-centred design. I enjoy creating digital
+          experiences that combine visual clarity, thoughtful structure, and functionality.
+        </p>
+        <div class="btn_container">
+          <a href="/about_me" aria-label="Learn more about me">
+            <Button variant="primary" size="small"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
+          </a>
         </div>
-        <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">AutismeGuiden</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.autismeguiden.preview">Danish autism guide, WCAG 2.2 accessible.</p>
-        <a
-          href="https://autisme-guiden.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit AutismeGuiden (opens in new tab)"
-          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-          data-i18n="lab.autismeguiden.link">Visit site →</a
-        >
-      </article>
-
-      <article class="lab-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="flex items-center justify-between mb-2">
-          <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">2026</p>
-        </div>
-        <h4 class="text-[18px] font-semibold mb-2 leading-snug text-gray-800">Steady</h4>
-        <p class="text-sm text-gray-600 leading-relaxed mb-4" data-i18n="lab.steady.preview">Daily life tracker for neurodivergents.</p>
-        <a
-          href="https://app-steady.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit Steady app (opens in new tab)"
-          class="py-1 text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-          data-i18n="lab.steady.link">Visit app →</a
-        >
-      </article>
-    </div>
-
-    <div id="lab-preview-cta" class="pt-6">
-      <a href="/lab" aria-label="Visit the lab page">
-        <Button variant="primary" size="small"><span data-i18n="lab.preview.cta">Visit the lab →</span></Button>
-      </a>
+      </div>
     </div>
   </section>
 
@@ -354,11 +323,11 @@ import Cases from "../components/Cases.astro";
         ["#blog-preview-text", "animate__fadeInUp"],
         ["#blog-preview-all", "animate__fadeInUp"],
         ["#divider-2", "animate__fadeInUp"],
-        ["#lab-preview-header", "animate__fadeInUp"],
-        ["#lab-preview-title", "animate__fadeInUp"],
-        ["#lab-preview-text-paragraph", "animate__fadeInUp"],
-        ["#lab-preview-cta", "animate__fadeInUp"],
-        ["#lab-preview-card", "animate__fadeInUp"],
+        ["#about-preview-label", "animate__fadeInUp"],
+        ["#about-preview-title", "animate__fadeInUp"],
+        ["#about-preview-text-paragraph", "animate__fadeInUp"],
+        [".btn_container", "animate__fadeInUp"],
+        ["#about-preview img", "animate__fadeInUp"],
         ["#testimonial-title", "animate__fadeInUp"],
         ["#testimonial-card", "animate__fadeInUp"],
       ].forEach(([selector, animationClass], index) => {
@@ -441,11 +410,11 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #blog-preview-text,
   html.has-js body:not(.reduce-motion) #blog-preview-all,
   html.has-js body:not(.reduce-motion) #divider-2,
-  html.has-js body:not(.reduce-motion) #lab-preview-header,
-  html.has-js body:not(.reduce-motion) #lab-preview-title,
-  html.has-js body:not(.reduce-motion) #lab-preview-text-paragraph,
-  html.has-js body:not(.reduce-motion) #lab-preview-cta,
-  html.has-js body:not(.reduce-motion) #lab-preview-card,
+  html.has-js body:not(.reduce-motion) #about-preview-label,
+  html.has-js body:not(.reduce-motion) #about-preview-title,
+  html.has-js body:not(.reduce-motion) #about-preview-text-paragraph,
+  html.has-js body:not(.reduce-motion) .btn_container,
+  html.has-js body:not(.reduce-motion) #about-preview img,
   html.has-js body:not(.reduce-motion) #testimonial-title,
   html.has-js body:not(.reduce-motion) #testimonial-card,
   html.has-js body:not(.reduce-motion) #blog-preview .blog-preview-item {
@@ -648,16 +617,14 @@ import Cases from "../components/Cases.astro";
   body.dark #blog-preview h3,
   body.dark #blog-preview h4,
   body.dark #blog-preview p,
-  body.dark #lab-preview h3,
-  body.dark #lab-preview h4,
-  body.dark #lab-preview p,
-  body.dark #lab-preview-sublabel,
-  body.dark #lab-preview-text-paragraph {
+  body.dark #about-preview-text h3,
+  body.dark #about-preview-label,
+  body.dark #about-preview-text-paragraph {
     color: var(--text-on-dark-soft);
   }
 
   body.dark #testimonial-card,
-  body.dark #lab-preview-text-paragraph,
+  body.dark #about-preview-text-paragraph,
   body.dark #blog-preview .blog-preview-item {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -691,10 +658,8 @@ import Cases from "../components/Cases.astro";
     color: #fbbf24;
   }
 
-  body.dark .lab-chip {
-    border-color: rgba(192, 215, 225, 0.35);
-    background: rgba(71, 123, 147, 0.2);
-    color: var(--brand-primary-soft);
+  body.dark #about-preview img {
+    border-color: var(--dark-border);
   }
 
   body.dark #divider-1,
