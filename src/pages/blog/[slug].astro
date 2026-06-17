@@ -133,7 +133,12 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 
   body.dark #post-back,
   body.dark #post-back-bottom a {
-    color: var(--text-on-dark-soft);
+    color: #acb0b5;
+  }
+
+  body.dark #post-back-bottom a:hover {
+    color: var(--brand-primary-soft);
+    text-decoration: underline;
   }
 
   body.dark #post-date,
