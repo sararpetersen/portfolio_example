@@ -98,7 +98,7 @@ export default {
 
     fontFamily: {
       nikumaru: ["Nikumaru", "sans-serif"],
-      inter: ["Inter", "sans-serif"],
+      inter: ["Cormorant Garamond", "Georgia", "serif"],
       almarai: ["Almarai", "sans-serif"],
     },
 

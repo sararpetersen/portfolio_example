@@ -11,21 +11,16 @@ import Button from "../components/Button.astro";
   ogdescription="A space for experiments, vibe coding, and things built with AI assistance."
 >
   <!-- Lab Intro -->
-  <section
-    id="lab"
-    class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative"
-  >
+  <section id="lab" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative">
     <div class="col-span-12 md:pt-12 pt-16 md:pb-16 pb-10">
-      <p id="lab-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="lab.label">
-        Lab
-      </p>
+      <p id="lab-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="lab.label">Lab</p>
       <div id="lab-title-row" class="flex items-center gap-4 mb-9">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">実験</span>
         <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru" data-i18n="lab.title">Experiments</h1>
       </div>
       <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed" data-i18n="lab.intro">
-        This is where I put the looser stuff — projects built with AI assistance, quick prototypes, and things that exist mostly because I wanted to
-        see if I could. Less polished than the main cases, more honest about the process.
+        This is where I put the looser stuff&mdash; projects built with AI assistance, quick prototypes, and things that exist mostly because I wanted
+        to see if I could. Less polished than the main cases, more honest about the process.
       </p>
     </div>
   </section>
@@ -33,40 +28,36 @@ import Button from "../components/Button.astro";
   <!-- What is vibe coding -->
   <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-8">
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
-      <h2 id="lab-vibe-title" class="font-inter font-bold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
-        What is vibe coding?
-      </h2>
+      <h2 id="lab-vibe-title" class="font-inter font-bold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">What is vibe coding?</h2>
       <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
-        Vibe coding is building with AI assistance — you describe what you want, the AI generates the code, and you shape and guide it. It's less
-        about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think
-        about prototyping and iteration.
+        Vibe coding is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide it. It's less
+        about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think about
+        prototyping and iteration.
       </p>
     </div>
   </section>
 
   <!-- Lab Items -->
   <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-8 md:pt-16 pt-10 md:pb-desktop-bottom pb-mobil-bottom">
-    <h2 id="lab-items-title" class="font-inter font-bold italic text-gray-700 text-2xl mb-8" data-i18n="lab.items.title">
-      Projects from the lab
-    </h2>
+    <h2 id="lab-items-title" class="font-inter font-bold italic text-gray-700 text-2xl mb-8" data-i18n="lab.items.title">Projects from the lab</h2>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Vibeloop (WIP) -->
       <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025–2026</p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025-2026</p>
           <div class="flex items-center gap-2">
-            <span class="lab-tag">Vibe coded</span>
-            <span class="lab-tag wip-tag">WIP</span>
+            <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
+            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Vibeloop</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-2">
-          An app concept for supporting social connection and local engagement — designed to help people find and join activities happening around them.
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+          An app concept for supporting social connection and local engagement, designed to help people find and join activities happening around
+          them.
         </p>
-        <p class="text-sm text-gray-400 italic leading-relaxed mb-6">The coded version is still a work in progress.</p>
         <a href="/vibeloop" aria-label="View the Vibeloop case study">
-          <Button variant="secondary" size="small">View case →</Button>
+          <Button variant="secondary" size="small">View prototype →</Button>
         </a>
       </article>
 
@@ -74,11 +65,11 @@ import Button from "../components/Button.astro";
       <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
-          <span class="lab-tag">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
-          A Danish information guide about autism — for autistic people, family, teachers, and professionals. Built to WCAG 2.2 with accessibility at the core.
+          A Danish information guide about autism, made for autistic people, family, teachers, and professionals.
         </p>
         <a href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit AutismeGuiden (opens in new tab)">
           <Button variant="primary" size="small">Visit site →</Button>
@@ -89,7 +80,7 @@ import Button from "../components/Button.astro";
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
-          <span class="lab-tag">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
