@@ -256,7 +256,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     {
       (() => {
-        const randomProjects = sortedProjects.sort(() => 0.5 - Math.random()).slice(0, 3);
+        const otherProjects = sortedProjects.filter((p) => p.slug !== project.slug);
+        const randomProjects = otherProjects.sort(() => 0.5 - Math.random()).slice(0, 3);
         return (
           <div class="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-6">
             {randomProjects.map((proj) => (
