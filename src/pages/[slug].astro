@@ -108,11 +108,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     </nav>
 
     <!-- Header -->
-    <header id="project-header" class="col-span-12 md:mb-12 mb-8 md:text-left text-center">
-      <p id="project-label" class="uppercase tracking-[0.16em] md:tracking-[0.25em] text-[11px] text-gray-500 mb-4" data-i18n="project.label">
-        Project
-      </p>
-      <div id="project-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-5">
+    <header id="project-header" class="col-span-12 md:mb-8 mb-6 md:text-left text-center">
+      <div id="project-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">案件</span>
         <h1 id="project-title" class="font-nikumaru md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em]">
           {project.name}
@@ -192,7 +189,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     }
 
     <!-- Content Grid -->
-    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-12">
+    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-6">
       <img
         id="project-image"
         src={project.image}
@@ -217,7 +214,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
               <h3 id="tools-title" class="text-h4-mobile italic text-gray-800 mb-3" data-i18n="project.tools">
                 Tools used:
               </h3>
-              <div class="flex flex-wrap gap-2 mb-12">
+              <div class="flex flex-wrap gap-2 mb-8">
                 {project.tools.map((tool) => (
                   <span class="rounded-full px-4 py-2 font-semibold border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
                 ))}
@@ -246,8 +243,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     id="related-projects"
     class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
   >
-    <div id="related-projects-title" class="col-span-12 mb-4">
-      <div id="related-projects-title-row" class="flex items-center gap-4 mb-5">
+    <div id="related-projects-title" class="col-span-12">
+      <div id="related-projects-title-row" class="flex items-center gap-4 mb-6">
         <h2
           class="font-inter font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 md:text-left text-center"
           data-i18n="project.related.title"
