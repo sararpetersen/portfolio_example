@@ -32,27 +32,6 @@ const latestBlogPosts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
   .slice(0, 3);
 
-function breakTitle(title: string, maxLength: number = 25): string[] {
-  if (title.length > maxLength) {
-    const words = title.split(" ");
-    let line = "";
-    let lines: string[] = [];
-
-    words.forEach((word: string) => {
-      if ((line + " " + word).length <= maxLength) {
-        line += " " + word;
-      } else {
-        lines.push(line.trim());
-        line = word;
-      }
-    });
-
-    lines.push(line.trim());
-    return lines;
-  }
-  return [title];
-}
-
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import Button from "../components/Button.astro";

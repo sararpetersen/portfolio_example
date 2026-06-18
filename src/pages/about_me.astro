@@ -63,7 +63,6 @@ const getTimelineSortValue = (yearRange: string) => {
   const years = yearRange.match(/\d{4}/g);
   if (!years || years.length === 0) return 0;
 
-  // Use the last year in a range so sorting reflects the most recent end point.
   return Number(years[years.length - 1]);
 };
 
@@ -87,8 +86,7 @@ const workTimelineItems = timelineItems
     id="about-me"
     class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
   >
-    <!-- Intro Section -->
-    <div class="relative col-span-12 md:pt-12 pt-16 mb-8">
+    <div class="relative col-span-12 md:pt-12 pt-16 mb-12">
       <div id="about-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
         <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">自己</span>
         <h1
@@ -99,8 +97,8 @@ const workTimelineItems = timelineItems
         </h1>
       </div>
       <p class="heading-text text-gray-600 max-w-3xl" data-i18n="about.intro">
-        Read a little bit about me, my background, and who I am.<br class="md:hidden block" /> My resume and application templates can be found at the very
-        bottom of the page.
+        Expand a section in the menu below to read about my background, what inspires me, and where I'm heading.<br /> Scroll further down the page to explore
+        my journey, interests, and downloadable resources.
       </p>
     </div>
   </section>
@@ -108,93 +106,105 @@ const workTimelineItems = timelineItems
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto md:px-0">
     <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
-      <div id="personal-background-tabs" class="items-center md:pb-0 pb-8">
-        <!-- Tabs -->
-        <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-300" role="tablist" aria-label="Personal background tabs">
+      <div id="personal-background-content" class="md:pb-0 pb-8">
+        <div class="personal-bg-item border-t-2 border-gray-200">
           <button
-            id="tab-background"
             type="button"
-            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
-            data-tab="background"
-            role="tab"
-            aria-controls="background"
-            aria-selected="true"
-            tabindex="0"
-            data-i18n="about.tab.background"
+            id="acc-trigger-background"
+            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
+            aria-expanded="false"
+            aria-controls="acc-background"
           >
-            Background
+            <h4 class="text-gray-800" data-i18n="about.tab.background">Background</h4>
+            <svg
+              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
           </button>
+          <div id="acc-background" class="accordion-panel" role="region" aria-labelledby="acc-trigger-background">
+            <div>
+              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.background.text">
+                I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em
+                  >"creativity"</em
+                > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to
+                become interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing. This
+                internal conflict between my artistic interests and my growing curiosity about tech kept me searching for a path that could harmonise these
+                two passions. It wasn't until I discovered Multimedia Design that I finally found the answer I'd been looking for.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="personal-bg-item border-t-2 border-gray-200">
           <button
-            id="tab-inspiration"
             type="button"
-            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
-            data-tab="inspiration"
-            role="tab"
-            aria-controls="inspiration"
-            aria-selected="false"
-            tabindex="-1"
-            data-i18n="about.tab.inspiration"
+            id="acc-trigger-inspiration"
+            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
+            aria-expanded="false"
+            aria-controls="acc-inspiration"
           >
-            Inspiration
+            <h4 class="text-gray-800" data-i18n="about.tab.inspiration">Inspiration</h4>
+            <svg
+              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
           </button>
+          <div id="acc-inspiration" class="accordion-panel" role="region" aria-labelledby="acc-trigger-inspiration">
+            <div>
+              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.inspiration.text">
+                As someone who's late-diagnosed with autism and recently diagnosed with ADD, I know what it's like navigating a world that isn't
+                always accessible to everyone. This personal experience has shaped my perspective on creating meaningful digital experiences. I'm
+                inspired by the potential of inclusive design to create spaces where everyone can thrive. Whether it's through thoughtful color
+                choices, clear navigation, or semantic HTML, I find purpose in solving accessibility challenges and seeing how small design decisions
+                can have a meaningful impact on people's lives.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="personal-bg-item border-t-2 border-gray-200">
           <button
-            id="tab-goals"
             type="button"
-            class="tab-btn px-4 py-2 text-gray-800 border-b-2 border-transparent hover:text-blue-500 transition duration-300"
-            data-tab="goals"
-            role="tab"
-            aria-controls="goals"
-            aria-selected="false"
-            tabindex="-1"
-            data-i18n="about.tab.goals"
+            id="acc-trigger-goals"
+            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
+            aria-expanded="false"
+            aria-controls="acc-goals"
           >
-            Goals
+            <h4 class="text-gray-800" data-i18n="about.tab.goals">Goals</h4>
+            <svg
+              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
           </button>
-        </div>
-
-        <!-- Tab Content -->
-        <div
-          id="background"
-          class="tab-content active text-gray-600"
-          role="tabpanel"
-          aria-labelledby="tab-background"
-          aria-hidden="false"
-          tabindex="0"
-        >
-          <p data-i18n="about.background.text">
-            I've always loved being creative. From a young age, I've enjoyed drawing, painting, crafting&mdash; just everything that spelt <em
-              >"creativity"</em
-            > in general. I knew deep down that when I grew up, I someday wanted to make that a career. As I became older, however, I also started to become
-            interested in technology. And now wanting a career that combined both that and creativity, I struggled to find the right thing. This internal
-            conflict between my artistic interests and my growing curiosity about tech kept me searching for a path that could harmonise these two passions.
-            It wasn't until I discovered Multimedia Design that I finally found the answer I'd been looking for.
-          </p>
-        </div>
-
-        <div
-          id="inspiration"
-          class="tab-content hidden text-gray-600"
-          role="tabpanel"
-          aria-labelledby="tab-inspiration"
-          aria-hidden="true"
-          tabindex="0"
-        >
-          <p data-i18n="about.inspiration.text">
-            As someone who's late-diagnosed with autism and recently diagnosed with ADD, I know what it's like navigating a world that isn't always
-            accessible to everyone. This personal experience has shaped my perspective on creating meaningful digital experiences. I'm inspired by the
-            potential of inclusive design to create spaces where everyone can thrive. Whether it's through thoughtful color choices, clear navigation,
-            or semantic HTML, I find purpose in solving accessibility challenges and seeing how small design decisions can have a meaningful impact on
-            people's lives.
-          </p>
-        </div>
-
-        <div id="goals" class="tab-content hidden text-gray-600" role="tabpanel" aria-labelledby="tab-goals" aria-hidden="true" tabindex="0">
-          <p data-i18n="about.goals.text">
-            My goal is to create digital experiences that are accessible and inclusive for everyone. I believe that good design isn't just about
-            aesthetics&mdash; it's about removing barriers and ensuring all users are included. Through my work, I strive to merge creativity with
-            purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my future
-            career and make a real difference in how people interact with digital products.
-          </p>
+          <div id="acc-goals" class="accordion-panel" role="region" aria-labelledby="acc-trigger-goals">
+            <div>
+              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.goals.text">
+                My goal is to create digital experiences that are accessible and inclusive for everyone. I believe that good design isn't just about
+                aesthetics&mdash; it's about removing barriers and ensuring all users are included. Through my work, I strive to merge creativity with
+                purpose, always keeping accessibility and user experience at the forefront. I want to apply my passion for inclusive design in my
+                future career and make a real difference in how people interact with digital products.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex items-center justify-center md:justify-end">
@@ -210,68 +220,8 @@ const workTimelineItems = timelineItems
     </div>
   </section>
 
-  <!-- Tabbed Interface Script -->
-  <script>
-    const tabButtons = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
-    const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
-
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const tabName = button.getAttribute("data-tab");
-        if (!tabName) return;
-
-        tabButtons.forEach((btn) => {
-          btn.classList.remove("active", "border-b-blue-500", "font-semibold");
-          btn.classList.add("border-b-transparent", "text-gray-600");
-          btn.setAttribute("aria-selected", "false");
-          btn.setAttribute("tabindex", "-1");
-          btn.removeAttribute("aria-current");
-        });
-
-        tabContents.forEach((content) => {
-          content.classList.add("hidden");
-          content.classList.remove("active");
-          content.setAttribute("aria-hidden", "true");
-        });
-
-        button.classList.add("active", "border-b-blue-500", "font-semibold");
-        button.classList.remove("border-b-transparent", "text-gray-600");
-        button.setAttribute("aria-selected", "true");
-        button.setAttribute("tabindex", "0");
-        button.setAttribute("aria-current", "page");
-
-        const content = document.getElementById(tabName);
-        if (!content) return;
-        content.classList.remove("hidden");
-        content.classList.add("active");
-        content.setAttribute("aria-hidden", "false");
-      });
-
-      button.addEventListener("keydown", (event) => {
-        const key = event.key;
-        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(key)) return;
-
-        event.preventDefault();
-        const tabs = Array.from(tabButtons);
-        const currentIndex = tabs.indexOf(button);
-
-        let nextIndex = currentIndex;
-        if (key === "ArrowRight") nextIndex = (currentIndex + 1) % tabs.length;
-        if (key === "ArrowLeft") nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-        if (key === "Home") nextIndex = 0;
-        if (key === "End") nextIndex = tabs.length - 1;
-
-        tabs[nextIndex].focus();
-        tabs[nextIndex].click();
-      });
-    });
-
-    // Set the initial active tab
-    document.querySelector<HTMLButtonElement>(".tab-btn[data-tab='background']")?.click();
-  </script>
-
   <!-- Divider -->
-  <div id="about-divider-2" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="about-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -282,23 +232,20 @@ const workTimelineItems = timelineItems
     <h2 id="timeline-title" class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 pb-6" data-i18n="timeline.title">
       The highlights of my journey
     </h2>
-    <div id="timeline-line" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-      <div class="timeline-column flex flex-col mb-8">
-        <div class="timeline-column-heading mb-6">
-          <h4 class="timeline-column-badge" data-i18n="timeline.education">Education</h4>
-        </div>
-        <ol class="timeline-list timeline-list-balanced flex-1">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+      <div>
+        <h4 class="timeline-column-label font-inter italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.education">Education</h4>
+        <div class="flex flex-col">
           {
             schoolTimelineItems.map((item) => (
-              <li class="timeline-item relative pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
-                <span class="timeline-dot" aria-hidden="true" />
-                <p class="text-[11px] font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${item.i18nKey}.year`}>
+              <div class="timeline-item border-t-2 border-gray-200 pt-5 pb-5 last:pb-0">
+                <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
                   {item.year}
                 </p>
                 <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
                   {item.title}
                 </h5>
-                <p class="text-gray-600 text-sm" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
                   {item.desc}
                 </p>
                 {item.note && (
@@ -306,28 +253,25 @@ const workTimelineItems = timelineItems
                     {item.note}
                   </p>
                 )}
-              </li>
+              </div>
             ))
           }
-        </ol>
+        </div>
       </div>
 
-      <div class="timeline-column flex flex-col">
-        <div class="timeline-column-heading mb-6">
-          <h4 class="timeline-column-badge" data-i18n="timeline.work">Work experience</h4>
-        </div>
-        <ol class="timeline-list timeline-list-balanced flex-1">
+      <div>
+        <h4 class="timeline-column-label font-inter italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.work">Work experience</h4>
+        <div class="flex flex-col">
           {
             workTimelineItems.map((item) => (
-              <li class="timeline-item relative pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
-                <span class="timeline-dot" aria-hidden="true" />
-                <p class="text-[11px] font-semibold text-blue-500 mb-1 uppercase" data-i18n={`timeline.${item.i18nKey}.year`}>
+              <div class="timeline-item border-t-2 border-gray-200 pt-5 pb-5 last:pb-0">
+                <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
                   {item.year}
                 </p>
                 <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
                   {item.title}
                 </h5>
-                <p class="text-gray-600 text-sm" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
                   {item.desc}
                 </p>
                 {item.note && (
@@ -335,10 +279,10 @@ const workTimelineItems = timelineItems
                     {item.note}
                   </p>
                 )}
-              </li>
+              </div>
             ))
           }
-        </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -384,9 +328,9 @@ const workTimelineItems = timelineItems
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.themepark.title">Rollercoasters &amp; theme parks</h4>
+        <h4 class="text-gray-800 mb-2" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h4>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.themepark.text">
-          Few things beat a full day at a theme park — the bigger the coaster, the better.
+          Few things beat a full day at a theme park — the rides, the shows, all of it.
         </p>
       </div>
     </div>
@@ -450,94 +394,118 @@ const workTimelineItems = timelineItems
   </section>
 </MainLayout>
 
+<!-- Accordion script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll<HTMLButtonElement>(".accordion-trigger").forEach((trigger) => {
+      const panelId = trigger.getAttribute("aria-controls");
+      if (!panelId) return;
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+
+      trigger.addEventListener("click", () => {
+        const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+        trigger.setAttribute("aria-expanded", String(!isExpanded));
+        panel.classList.toggle("open", !isExpanded);
+      });
+    });
+  });
+</script>
+
 <!-- Script for inView animations -->
 <script>
   import { inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const reduceMotion = document.body.classList.contains("reduce-motion");
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
 
     if (!reduceMotion) {
       let animationIndex = 0;
+
       const registerInView = (selector: string, animationClass: string = "animate__fadeInUp") => {
         const element = document.querySelector(selector) as HTMLElement | null;
         if (!element) return;
 
-        const delayMs = animationIndex * 60;
-        inView(element, () => {
+        const delayMs = isMobileViewport ? Math.min(animationIndex * 60, 220) : animationIndex * 60;
+        let stop = () => {};
+        stop = inView(element, () => {
           element.classList.add("animate__animated", animationClass);
           element.style.animationDelay = `${delayMs}ms`;
           element.style.animationDuration = "1.6s";
+          element.style.animationFillMode = "both";
+          stop();
         });
 
         animationIndex++;
       };
 
       [
-        "#about-me-title-label",
         "#about-title-row",
         ".heading-text",
+        "#personal-background img",
+        "#about-divider-1",
+        "#timeline-title",
         "#interests-title",
         "#resources-title",
-        "#about-divider-1",
-        "#personal-background-tabs",
-        "#personal-background img",
         "#about-divider-2",
-        "#timeline-title",
         ".button-container",
       ].forEach((selector) => {
         registerInView(selector);
       });
 
-      const timelineItems = document.querySelectorAll(".timeline-item");
-      const timelineBadges = document.querySelectorAll(".timeline-column-badge");
-
-      timelineBadges.forEach((timelineBadge, index) => {
-        inView(timelineBadge, () => {
-          timelineBadge.classList.add("animate__animated", "animate__fadeInUp");
-          (timelineBadge as HTMLElement).style.animationDelay = `${index * 70}ms`;
-          (timelineBadge as HTMLElement).style.animationDuration = "1.2s";
+      document.querySelectorAll<HTMLElement>(".personal-bg-item").forEach((item, index) => {
+        let stop = () => {};
+        stop = inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          item.style.animationDuration = "1.4s";
+          item.style.animationFillMode = "both";
+          stop();
         });
       });
 
-      timelineItems.forEach((timelineItem, index) => {
-        inView(timelineItem, () => {
-          timelineItem.classList.add("animate__animated", "animate__fadeInUp");
-          (timelineItem as HTMLElement).style.animationDelay = `${index * 60}ms`;
-          (timelineItem as HTMLElement).style.animationDuration = "1.2s";
+      document.querySelectorAll<HTMLElement>(".timeline-column-label").forEach((label, index) => {
+        let stop = () => {};
+        stop = inView(label, () => {
+          label.classList.add("animate__animated", "animate__fadeInUp");
+          label.style.animationDelay = `${isMobileViewport ? Math.min(index * 70, 220) : index * 70}ms`;
+          label.style.animationDuration = "1.2s";
+          label.style.animationFillMode = "both";
+          stop();
         });
       });
 
-      const sections = document.querySelectorAll("#interests-and-hobbies > div");
-
-      sections.forEach((sections, index) => {
-        inView(sections, () => {
-          sections.classList.add("animate__animated", "animate__fadeInUp");
-          (sections as HTMLElement).style.animationDelay = `${index * 60}ms`;
-          (sections as HTMLElement).style.animationDuration = "1.4s";
+      document.querySelectorAll<HTMLElement>(".timeline-item").forEach((item, index) => {
+        let stop = () => {};
+        stop = inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          item.style.animationDuration = "1.2s";
+          item.style.animationFillMode = "both";
+          stop();
         });
       });
 
-      const section = document.querySelectorAll("#resources-section > div");
-
-      section.forEach((section, index) => {
-        inView(section, () => {
-          section.classList.add("animate__animated", "animate__fadeInUp");
-          (section as HTMLElement).style.animationDelay = `${index * 60}ms`;
-          (section as HTMLElement).style.animationDuration = "1.4s";
+      document.querySelectorAll<HTMLElement>("#interests-and-hobbies > div").forEach((item, index) => {
+        let stop = () => {};
+        stop = inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          item.style.animationDuration = "1.4s";
+          item.style.animationFillMode = "both";
+          stop();
         });
       });
 
-      document.querySelectorAll("#").forEach((divider) => {
-        inView(divider, () => {
-          divider.classList.add("animate__animated", "animate__bounceInDown");
-          divider.addEventListener(
-            "animationend",
-            () => {
-              divider.classList.remove("animate__animated", "animate__bounceInDown");
-            },
-            { once: true },
-          );
+      document.querySelectorAll<HTMLElement>("#resources-section > div").forEach((item, index) => {
+        let stop = () => {};
+        stop = inView(item, () => {
+          item.classList.add("animate__animated", "animate__fadeInUp");
+          item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
+          item.style.animationDuration = "1.4s";
+          item.style.animationFillMode = "both";
+          stop();
         });
       });
     }
@@ -546,21 +514,81 @@ const workTimelineItems = timelineItems
 
 <!-- CSS -->
 <style>
+  /* Accordion */
+  .accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+    overflow: hidden;
+  }
+
+  .accordion-panel.open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-panel > div {
+    overflow: hidden;
+  }
+
+  .accordion-chevron {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  body.dark .accordion-trigger h4 {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .accordion-chevron {
+    color: var(--dark-border-strong);
+  }
+
+  /* Pre-animation: hide elements until JS fires */
+  html.has-js body:not(.reduce-motion) #about-title-row,
+  html.has-js body:not(.reduce-motion) .heading-text,
+  html.has-js body:not(.reduce-motion) #personal-background img,
+  html.has-js body:not(.reduce-motion) #about-divider-1,
+  html.has-js body:not(.reduce-motion) #about-divider-2,
+  html.has-js body:not(.reduce-motion) #timeline-title,
+  html.has-js body:not(.reduce-motion) .timeline-column-label,
+  html.has-js body:not(.reduce-motion) .timeline-item,
+  html.has-js body:not(.reduce-motion) .personal-bg-item,
+  html.has-js body:not(.reduce-motion) #interests-title,
+  html.has-js body:not(.reduce-motion) #interests-and-hobbies > div,
+  html.has-js body:not(.reduce-motion) #resources-title,
+  html.has-js body:not(.reduce-motion) #resources-section > div,
+  html.has-js body:not(.reduce-motion) .button-container {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  /* Dark mode */
   body.dark .heading-title,
   body.dark .heading-text,
   body.dark h3,
   body.dark h4,
   body.dark p,
   body.dark li,
-  body.dark a,
-  body.dark .tab-btn {
+  body.dark a {
     color: var(--text-on-dark);
   }
 
-  body.dark .tab-btn:hover,
-  body.dark .tab-btn.active {
-    color: var(--brand-primary-soft);
-    border-color: var(--brand-primary-soft);
+  body.dark .personal-bg-item {
+    border-color: var(--dark-border);
+  }
+
+  body.dark .personal-bg-item h4,
+  body.dark .personal-bg-item p {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .interest-item {
@@ -590,94 +618,21 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .timeline-item p,
-  body.dark .timeline-item h5 {
+  body.dark .timeline-item h5,
+  body.dark .timeline-item p {
     color: var(--text-on-dark);
   }
 
   body.dark .timeline-item [data-i18n*=".year"] {
-    color: var(--brand-primary-soft);
+    color: var(--dark-border-strong);
   }
 
-  .timeline-column-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  body.dark .timeline-column-label {
+    color: var(--text-on-dark-soft);
   }
 
-  .timeline-column-badge {
-    width: fit-content;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    border: 1px solid rgba(73, 75, 79, 0.35);
-    border-radius: 9999px;
-    padding: 0.4rem 0.7rem;
-    background: rgba(15, 23, 42, 0.45);
-    color: #f8fafc;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .timeline-list {
-    --timeline-gutter: 1.35rem;
-    position: relative;
-    padding-left: var(--timeline-gutter);
-  }
-
-  .timeline-list-balanced {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .timeline-list::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #d1d5db;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: calc(var(--timeline-gutter) * -1);
-    transform: translateX(-50%);
-    top: 0.38rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 9999px;
-    background: var(--brand-primary);
-    border: 2px solid white;
-    box-shadow: 0 0 0 2px #d1d5db;
-  }
-
-  body.dark .timeline-dot {
-    border-color: var(--dark-gradient-start);
-    box-shadow: 0 0 0 2px var(--dark-border);
-  }
-
-  body.dark .timeline-list::before {
-    background: var(--dark-border);
-  }
-
-  body.dark .timeline-column-badge {
-    border-color: rgba(192, 215, 225, 0.35);
-    background: rgba(15, 23, 42, 0.45);
-    color: var(--text-on-dark);
-  }
-
-  body.dark #lines hr {
-    border-color: var(--dark-border);
-  }
-
-  body.dark .portrait {
-    border-color: var(--dark-border);
+  body.dark #timeline-title {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark #about-divider-1,
@@ -691,9 +646,7 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  .tab-btn.active,
-  .tab-btn:hover {
-    border-color: var(--brand-primary);
-    color: var(--brand-primary);
+  body.dark .portrait {
+    border-color: var(--dark-border);
   }
 </style>

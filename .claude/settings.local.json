@@ -7,7 +7,8 @@
       "Bash(git push *)",
       "Bash(gh pr create --title 'Trim portfolio to 9 cases & fix related projects bug' --body ' *)",
       "Bash(brew list *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(npm run *)"
     ]
   }
 }
