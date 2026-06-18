@@ -142,6 +142,15 @@ import Button from "../components/Button.astro";
         (el as HTMLElement).style.animationFillMode = "both";
       });
     });
+
+    document.querySelectorAll(".lab-legend > span").forEach((el, idx) => {
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
+        (el as HTMLElement).style.animationDuration = "1.3s";
+        (el as HTMLElement).style.animationFillMode = "both";
+      });
+    });
   });
 </script>
 
