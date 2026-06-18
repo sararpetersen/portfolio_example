@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__4e0e6868-9761-40a4-b25c-1475dfe52629__execute_sql",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'Trim portfolio to 9 cases & fix related projects bug' --body ' *)",
+      "Bash(brew list *)",
+      "Bash(gh auth *)"
+    ]
+  }
+}
