@@ -88,17 +88,16 @@ const workTimelineItems = timelineItems
   >
     <div class="relative col-span-12 md:pt-12 pt-16 mb-12">
       <div id="about-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
-        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">自己</span>
         <h1
-          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-h2-mobile md:text-h2-desktop md:text-left text-center"
+          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop md:text-left text-center"
           data-i18n="about.title"
         >
           About me
         </h1>
       </div>
       <p class="heading-text text-gray-600 max-w-3xl" data-i18n="about.intro">
-        Expand a section in the menu below to read about my background, what inspires me, and where I'm heading.<br /> Scroll further down the page to explore
-        my journey, interests, and downloadable resources.
+        Expand a section in the menu below to read about my background, what inspires me, and where I'm heading.<br class="hidden md:block" /> Scroll further
+        down the page to explore my journey, interests, and downloadable resources.
       </p>
     </div>
   </section>
@@ -344,42 +343,44 @@ const workTimelineItems = timelineItems
   </div>
 
   <!-- Resources Section -->
-  <section id="resources" class="resources-section max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="resources" class="resources-section max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2 id="resources-title" class="font-inter font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 mb-6" data-i18n="resources.title">
       Resources
     </h2>
     <div id="resources-section" class="divide-y divide-gray-200">
-      <div class="resource-row flex items-center justify-between py-4">
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h4>
         <a
           href="/pdfs/application_template_sararpetersen_(EN).pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="See application-template (EN)"
+          class="self-start py-2"
         >
           <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">View template</span></Button>
         </a>
       </div>
-      <div class="resource-row flex items-center justify-between py-4">
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h4>
-        <a href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (EN)">
+        <a href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (EN)" class="self-start py-2">
           <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">View resume</span></Button>
         </a>
       </div>
-      <div class="resource-row flex items-center justify-between py-4">
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
         <a
           href="/pdfs/application_template_sararpetersen_(DA).pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="See application-template (DA)"
+          class="self-start py-2"
         >
           <Button variant="secondary" size="small"><span data-i18n="resource.app.da.btn">Se skabelon</span></Button>
         </a>
       </div>
-      <div class="resource-row flex items-center justify-between py-4">
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h4>
-        <a href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (DA)">
+        <a href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (DA)" class="self-start py-2">
           <Button variant="secondary" size="small"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
         </a>
       </div>

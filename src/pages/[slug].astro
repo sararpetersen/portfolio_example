@@ -72,35 +72,50 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <nav
       id="navigation"
       aria-label="Page navigation"
-      class="col-span-12 md:text-left text-center md:text-p-desktop flex flex-wrap justify-between items-center gap-4 mb-8 md:pt-0 pt-4"
+      class="col-span-12 grid grid-cols-3 items-center gap-2 mb-8 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
     >
-      <a
-        href="/"
-        class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
-        aria-label="Go to homepage"
-        data-i18n="project.back">↑ Back to homepage</a
-      >
-
-      <div class="flex gap-4 ml-auto">
+      <div>
         {
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-pale-300 text-gray-800"
+              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
-              ← {prevProject.name}
+              ←{" "}
+              <>
+                <span class="hidden md:inline">{prevProject.name}</span>
+                <span class="md:hidden">Prev</span>
+              </>
             </a>
           )
         }
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/"
+          class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+          aria-label="Go to homepage"
+          data-i18n="project.back"
+        >
+          ↑ <span class="hidden md:inline">Back to homepage</span><span class="md:hidden">Home</span>
+        </a>
+      </div>
+
+      <div class="text-right">
         {
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="py-1 md:text-p-desktop text-[15px] hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2  focus:ring-pale-300 text-gray-800"
+              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
-              {nextProject.name} →
+              <>
+                <span class="hidden md:inline">{nextProject.name}</span>
+                <span class="md:hidden">Next</span>
+              </>{" "}
+              →
             </a>
           )
         }
@@ -110,7 +125,6 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-8 mb-6 md:text-left text-center">
       <div id="project-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
-        <span class="text-sm text-red-500 tracking-widest" aria-hidden="true">案件</span>
         <h1 id="project-title" class="font-nikumaru md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em]">
           {project.name}
         </h1>
@@ -189,7 +203,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     }
 
     <!-- Content Grid -->
-    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-6">
+    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-8">
       <img
         id="project-image"
         src={project.image}

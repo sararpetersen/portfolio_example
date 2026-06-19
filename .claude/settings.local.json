@@ -8,7 +8,22 @@
       "Bash(gh pr create --title 'Trim portfolio to 9 cases & fix related projects bug' --body ' *)",
       "Bash(brew list *)",
       "Bash(gh auth *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4322/)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 32905)",
+      "Bash(curl -s http://localhost:3000/lab)",
+      "Bash(curl -s http://localhost:3000/about_me)",
+      "Bash(curl -s http://localhost:3000/singleusesucks)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:4321/lab)",
+      "Bash(curl -s http://localhost:4321/about_me)",
+      "Bash(curl -s http://localhost:4321/blog)",
+      "Bash(curl -s http://localhost:4321/singleusesucks)",
+      "Bash(curl -s http://localhost:4321/contact)",
+      "Bash(curl -s http://localhost:4321/kadaver)"
     ]
   }
 }
