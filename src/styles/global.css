@@ -45,8 +45,6 @@ html {
 
 body.site-shell {
   background-color: var(--washi-bg);
-  background-image: radial-gradient(circle at 1px 1px, rgba(55, 85, 103, 0.05) 1px, transparent 0);
-  background-size: 26px 26px;
 }
 
 body.site-shell::before,
@@ -156,9 +154,7 @@ body.dark.site-shell {
   --brand-primary-soft: #c0d7e1;
   --brand-primary-strong: #95bccb;
   background-color: var(--dark-bg);
-  background-image:
-    linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98)),
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98));
 }
 
 body.dark.site-shell::before {
