@@ -24,7 +24,9 @@
       "Bash(curl -s http://localhost:4321/singleusesucks)",
       "Bash(curl -s http://localhost:4321/contact)",
       "Bash(curl -s http://localhost:4321/kadaver)",
-      "Bash(curl -s http://localhost:4321/)"
+      "Bash(curl -s http://localhost:4321/)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget"
     ]
   }
 }
