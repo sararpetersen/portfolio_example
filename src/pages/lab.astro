@@ -14,7 +14,7 @@ import Button from "../components/Button.astro";
   <section id="lab" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative">
     <div class="col-span-12 md:pt-12 pt-16 mb-8">
       <div id="lab-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
-<h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="lab.title">
+        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="lab.title">
           Experiments
         </h1>
       </div>
@@ -28,7 +28,7 @@ import Button from "../components/Button.astro";
   <!-- What is vibe coding -->
   <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-6">
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
-      <h2 id="lab-vibe-title" class="font-inter font-semibold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
+      <h2 id="lab-vibe-title" class="font-garamond font-semibold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
         What is<em>'vibe coding'</em>?
       </h2>
 
@@ -40,9 +40,20 @@ import Button from "../components/Button.astro";
     </div>
   </section>
 
+  <!-- Divider -->
+  <div class="max-w-6xl mx-auto md:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
   <!-- Lab Items -->
   <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <h2 id="lab-items-title" class="font-inter font-semibold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3" data-i18n="lab.items.title">
+    <h2
+      id="lab-items-title"
+      class="font-garamond font-semibold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3"
+      data-i18n="lab.items.title"
+    >
       Projects from the lab
     </h2>
 

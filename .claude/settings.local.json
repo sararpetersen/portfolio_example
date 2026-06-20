@@ -23,7 +23,8 @@
       "Bash(curl -s http://localhost:4321/blog)",
       "Bash(curl -s http://localhost:4321/singleusesucks)",
       "Bash(curl -s http://localhost:4321/contact)",
-      "Bash(curl -s http://localhost:4321/kadaver)"
+      "Bash(curl -s http://localhost:4321/kadaver)",
+      "Bash(curl -s http://localhost:4321/)"
     ]
   }
 }

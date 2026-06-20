@@ -82,11 +82,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   </div>
 </div>
 
-<header
-  id="header"
-  class="fixed top-9 left-0 right-0 w-full shadow-drop25 p-4 md:px-16 bg-pale-50 z-30"
-  x-data="{ showmenu: false, showDropdown: false }"
->
+<header id="header" class="fixed top-9 left-0 right-0 w-full p-4 md:px-16 bg-gray-50 z-30" x-data="{ showmenu: false, showDropdown: false }">
   <div class="flex items-center justify-between">
     <!-- Logo Section -->
     <div class="flex-shrink-0 flex justify-center">
@@ -310,6 +306,20 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     background-color: var(--brand-primary-soft);
   }
 
+  /* Light mode shadow → border on scroll */
+  #header {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid transparent;
+    transition:
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  #header.header-scrolled {
+    box-shadow: none;
+    border-bottom: 1px solid #dcd6d0;
+  }
+
   /* Dark Mode */
   body.dark #header {
     background: var(--dark-bg);
@@ -470,6 +480,18 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
   document.getElementById("lang-toggle-da")?.classList.toggle("active-lang", currentLang === "da");
   document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", currentLang === "da" ? "true" : "false");
+
+  // Header scroll: shadow at top → border when scrolled (light mode only)
+  const header = document.getElementById("header");
+  const updateHeaderStyle = () => {
+    if (window.scrollY > 10) {
+      header?.classList.add("header-scrolled");
+    } else {
+      header?.classList.remove("header-scrolled");
+    }
+  };
+  window.addEventListener("scroll", updateHeaderStyle, { passive: true });
+  updateHeaderStyle();
 
   // Accessibility-toggle
   const toggleButton = document.getElementById("accessibilityToggle");

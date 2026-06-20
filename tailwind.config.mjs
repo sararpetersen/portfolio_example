@@ -82,7 +82,7 @@ export default {
         950: "#052e14",
       },
       gray: {
-        50: "#f7f3ef", // soft background tint (optional)
+        50: "#f5f5f5", // neutral light gray background
         100: "#f0ebe6",
         200: "#dcd6d0",
         300: "#bfb7b0",
@@ -98,7 +98,7 @@ export default {
 
     fontFamily: {
       nikumaru: ["Nikumaru", "sans-serif"],
-      inter: ["Cormorant Garamond", "Georgia", "serif"],
+      garamond: ["Cormorant Garamond", "Georgia", "serif"],
       almarai: ["Almarai", "sans-serif"],
     },
 

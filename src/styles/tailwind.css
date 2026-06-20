@@ -8,19 +8,19 @@
   }
 
   h1 {
-    @apply font-inter text-h1-mobile font-bold italic text-gray-800;
+    @apply font-garamond text-h1-mobile font-bold italic text-gray-800;
   }
 
   h2 {
-    @apply font-inter text-h2-mobile italic text-gray-800;
+    @apply font-garamond text-h2-mobile italic text-gray-800;
   }
 
   h3 {
-    @apply font-inter text-h3-mobile font-semibold text-gray-800;
+    @apply font-garamond text-h3-mobile font-semibold text-gray-800;
   }
 
   h4 {
-    @apply font-inter text-h4-mobile text-gray-800;
+    @apply font-garamond text-h4-mobile text-gray-800;
   }
 
   p,

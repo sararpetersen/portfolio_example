@@ -111,7 +111,7 @@ import Cases from "../components/Cases.astro";
     <div class="container col-span-12">
       <!-- kanji + title -->
       <div class="flex items-center mb-3">
-        <h3 id="project-title" class="font-inter font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
+        <h3 id="project-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
           Selected cases
         </h3>
       </div>
@@ -146,7 +146,7 @@ import Cases from "../components/Cases.astro";
   <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <h3
       id="blog-preview-title"
-      class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
+      class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
       data-i18n="blog.preview.title"
     >
       Latest posts
@@ -209,7 +209,7 @@ import Cases from "../components/Cases.astro";
       <div id="about-preview-text" class="md:order-2 order-1">
         <h3
           id="about-preview-title"
-          class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
+          class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
           data-i18n="about.preview.title"
         >
           About me
@@ -235,7 +235,7 @@ import Cases from "../components/Cases.astro";
   <section id="testimonials" class="max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
     <h3
       id="testimonial-title"
-      class="font-inter italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
+      class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
       data-i18n="testimonials.title"
     >
       Featured testimonial
@@ -539,6 +539,8 @@ import Cases from "../components/Cases.astro";
     border-radius: 1.75rem;
     background: linear-gradient(165deg, rgb(244 248 250 / 6%), rgb(244 248 250 / 0%));
     padding: 0.8rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 
   .hero-image {
@@ -547,19 +549,6 @@ import Cases from "../components/Cases.astro";
     border-radius: 1.15rem;
     object-position: center 28%;
     border: 1px solid rgb(244 248 250 / 16%);
-  }
-
-  .hero-image-accent {
-    position: absolute;
-    z-index: -1;
-    width: 70%;
-    height: 40%;
-    right: -16px;
-    bottom: -18px;
-    border-radius: 1.2rem;
-    background: linear-gradient(145deg, rgb(71 123 147 / 30%), rgb(71 123 147 / 1%));
-    border: 1px solid rgb(98 151 174 / 32%);
-    filter: blur(0.2px);
   }
 
   @media (min-width: 768px) {
