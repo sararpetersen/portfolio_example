@@ -66,7 +66,7 @@ const prevProject = currentIndex > 0 ? sortedProjects[currentIndex - 1] : null;
 const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[currentIndex + 1] : null;
 ---
 
-<MainLayout title={project.name} description={project.description} ogtitle={project.name} ogdescription={project.description}>
+<MainLayout title={project.name} description={project.description} ogtitle={`${project.name} — SRP Portfolio`} ogdescription={project.description}>
   <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-24 mt-12 md:px-0 px-6">
     <!-- Navigation -->
     <nav
