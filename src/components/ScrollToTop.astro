@@ -5,9 +5,10 @@
 <!-- Scroll-to-Top Button -->
 <button
   id="scrollToTop"
-  class="fixed md:bottom-8 md:right-8 bottom-5 right-5 w-14 h-14 rounded-full text-gray-50 focus:outline-none focus:ring-2 focus:ring-red-200 hover:-translate-y-1 transition-all duration-300 ease-out opacity-0 invisible pointer-events-none z-[999] shadow-lg"
+  class="fixed md:bottom-8 md:right-8 bottom-5 right-5 w-14 h-14 rounded-full text-gray-50 focus:outline-none focus:ring-2 focus:ring-white hover:-translate-y-1 transition-all duration-300 ease-out opacity-0 invisible pointer-events-none z-[999] shadow-lg"
   aria-label="Scroll to top"
   title="Back to top"
+  data-tooltip="Back to top"
 >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7 mx-auto">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -49,22 +50,22 @@
     place-items: center;
     isolation: isolate;
     background: #bb4a34;
-    border: 1px solid #bb4a34;
+    border: 1px solid #8b3929;
     color: #f7f3ef;
   }
 
   #scrollToTop:hover {
     background: #a8412d;
-    border-color: #a8412d;
+    border-color: #8b3929;
   }
 
   body.calm-mode #scrollToTop {
     background: #8e7b79;
-    border-color: #8e7b79;
+    border-color: #504544;
   }
 
   body.calm-mode #scrollToTop:hover {
     background: #7d6c6a;
-    border-color: #7d6c6a;
+    border-color: #524745;
   }
 </style>

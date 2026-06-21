@@ -57,12 +57,13 @@
 
   /* Base style for toggle switch */
   .toggle-switch {
-    @apply relative inline-flex h-5 w-10 items-center rounded-full bg-gray-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-pale-400;
+    @apply relative inline-flex h-5 w-10 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-pale-400;
+    background-color: #9ca3af;
   }
 
   /* When pressed (active) */
   .toggle-switch[aria-pressed="true"] {
-    @apply bg-blue-500;
+    background-color: #6b7280;
   }
 
   /* The white circle inside the switch */
@@ -77,10 +78,10 @@
 
   /* Extra hover effect for fun */
   .toggle-switch:hover {
-    @apply bg-blue-300;
+    background-color: #475569;
   }
 
   body.dark .toggle-switch:hover {
-    @apply bg-blue-300;
+    background-color: #6b7280;
   }
 }

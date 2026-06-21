@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
+import AccessibilityPanel from "../components/AccessibilityPanel.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
@@ -48,7 +49,7 @@ const schemamarkup = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
 
@@ -420,18 +421,20 @@ const schemamarkup = {
     </script>
   </head>
   <body class="site-shell bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <Header />
-      <ScrollToTop />
     </header>
 
-    <main class="site-main scroll-vertical overflow-x-hidden">
+    <main id="main-content" tabindex="-1" class="site-main scroll-vertical overflow-x-hidden">
       <slot />
     </main>
 
-    <footer>
+    <ScrollToTop />
+    <div>
       <Footer />
-    </footer>
+    </div>
+    <AccessibilityPanel />
   </body>
 </html>
 
@@ -469,10 +472,13 @@ const schemamarkup = {
   }
 
   body.dark .toggle-switch {
-    background-color: var(--dark-border);
+    background-color: #4b5563;
+  }
+  body.dark .toggle-switch[aria-pressed="true"] {
+    background-color: #94a3b8;
   }
   body.dark .toggle-circle {
-    background-color: var(--toggle-circle-dark);
+    background-color: #f0f0f0;
   }
 </style>
 

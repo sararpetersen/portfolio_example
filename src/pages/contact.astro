@@ -82,7 +82,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="mailto:sara.ringkow@gmail.com"
                     aria-label="Send email to 'sara.ringkow@gmail.com'"
-                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300 rounded">sara.ringkow@gmail.com</a
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">sara.ringkow@gmail.com</a
                   >
                 </div>
               </li>
@@ -107,7 +107,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="tel:+4542428807"
                     aria-label="Call +45 42 42 88 07"
-                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300">+45 42 42 88 07</a
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-blue-300">+45 42 42 88 07</a
                   >
                 </div>
               </li>
@@ -132,7 +132,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   <a
                     href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"
                     aria-label="Go to 'linkedin.com/in/sara-ringkow-petersen' (external link)"
-                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-pale-300">linkedin.com/in/sara-ringkow-petersen</a
+                    class="transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-blue-300">linkedin.com/in/sara-ringkow-petersen</a
                   >
                 </div>
               </li>
@@ -180,48 +180,61 @@ import MainLayout from "../layouts/MainLayout.astro";
           class="space-y-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden">
-            <label>Do not fill this out if you're human: <input name="bot-field" /></label>
+          <p class="text-xs text-gray-500" data-i18n="contact.form.required.note">Fields marked with <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">an asterisk</span> are required.</p>
+          <p class="hidden" aria-hidden="true">
+            <label>Do not fill this out if you're human: <input name="bot-field" tabindex="-1" /></label>
           </p>
 
           <!-- Name Field -->
           <div>
-            <label for="form-name" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.name"> Name </label>
+            <label for="form-name" class="block text-sm font-semibold text-gray-800 mb-2">
+              <span data-i18n="contact.form.name">Name</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+              <span class="sr-only">(required)</span>
+            </label>
             <input
               type="text"
               id="form-name"
               name="name"
               autocomplete="name"
               required
-              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+              aria-required="true"
+              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition duration-300"
               placeholder="Your name"
             />
           </div>
 
           <!-- Email Field -->
           <div>
-            <label for="form-email" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.email"> Email </label>
+            <label for="form-email" class="block text-sm font-semibold text-gray-800 mb-2">
+              <span data-i18n="contact.form.email">Email</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+              <span class="sr-only">(required)</span>
+            </label>
             <input
               type="email"
               id="form-email"
               name="email"
               autocomplete="email"
               required
-              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+              aria-required="true"
+              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition duration-300"
               placeholder="your.email@example.com"
             />
           </div>
 
           <!-- Message Field -->
           <div>
-            <label for="form-message" class="block text-sm font-semibold text-gray-800 mb-2" data-i18n="contact.form.message"> Message </label>
+            <label for="form-message" class="block text-sm font-semibold text-gray-800 mb-2">
+              <span data-i18n="contact.form.message">Message</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+              <span class="sr-only">(required)</span>
+            </label>
             <textarea
               id="form-message"
               name="message"
               autocomplete="off"
               required
+              aria-required="true"
               rows={6}
-              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300 resize-none"
+              class="w-full px-4 py-2 border border-gray-400 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition duration-300 resize-none"
               placeholder="Your message..."></textarea>
           </div>
 
@@ -229,7 +242,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div class="pt-4 flex justify-center md:justify-start">
             <button
               type="submit"
-              class="text-[14px] inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              class="text-[14px] inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300"
               data-i18n="contact.form.submit"
             >
               Send Message

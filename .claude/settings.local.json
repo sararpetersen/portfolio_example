@@ -26,7 +26,12 @@
       "Bash(curl -s http://localhost:4321/kadaver)",
       "Bash(curl -s http://localhost:4321/)",
       "mcp__visualize__read_me",
-      "mcp__visualize__show_widget"
+      "mcp__visualize__show_widget",
+      "Bash(ls \"/Users/sararingkow/Downloads/\" | grep -i access)",
+      "Bash(find \"/Users/sararingkow/\" -name \"*.zip\" 2>/dev/null | head -10)",
+      "Bash(ls /tmp/ | grep -i access 2>/dev/null; ls ~/Desktop/ | grep -i access 2>/dev/null)",
+      "Bash(unzip -o \"/Users/sararingkow/Downloads/accessibility_design.zip\" -d \"/Users/sararingkow/Desktop/accessibility_design_temp\")",
+      "Bash(echo \"old panel refs: $\\(curl -s http://localhost:4321/)"
     ]
   }
 }

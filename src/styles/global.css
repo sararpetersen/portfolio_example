@@ -25,11 +25,11 @@
   --brand-primary-soft: #c0d7e1;
   --brand-primary-strong: #375567;
   --dark-bg: #121212;
-  --dark-surface: #1f1f1f;
+  --dark-surface: #1a1a1a;
   --dark-surface-strong: #0a0a0a;
   --dark-border: #7b7b7b;
   --dark-gradient-start: #2e2e2e;
-  --dark-gradient-end: #1f1f1f;
+  --dark-gradient-end: #1a1a1a;
   --dark-surface-hover: #535353;
   --dark-border-strong: #a3a3a3;
   --text-on-dark: #f6f6f6;
@@ -245,4 +245,53 @@ body.calm-mode .border-blue-900 {
 /* Content images: visible desaturation */
 body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
   filter: saturate(0.45);
+}
+
+/* ── CSS Tooltips ─────────────────────────────────────────── */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 7px);
+  top: auto;
+  white-space: nowrap;
+  background: rgba(26, 26, 26, 0.92);
+  color: #f0f0f0;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 4px 8px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 9999;
+}
+[data-tooltip].tooltip-below::after {
+  top: calc(100% + 7px);
+  bottom: auto;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+}
+body.dark [data-tooltip]::after {
+  background: rgba(235, 235, 235, 0.95);
+  color: #1a1a1a;
+}
+
+/* ── Readable font (Atkinson Hyperlegible) ────────────────── */
+html.readable-font body,
+html.readable-font p,
+html.readable-font li,
+html.readable-font label,
+html.readable-font input,
+html.readable-font textarea,
+html.readable-font button,
+html.readable-font .font-inter {
+  font-family: "Atkinson Hyperlegible", sans-serif !important;
 }

@@ -5,61 +5,73 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) => (path === "/" ? currentPath === "/" : currentPath.startsWith(path));
 ---
 
-<!-- Accessibility settings bar -->
-<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-800 text-gray-50 flex items-center h-9 p-4 z-50">
-  <!-- Gear Icon -->
-  <button
-    id="accessibilityToggle"
-    class="svg-gear focus:outline-none focus:ring-2 focus:ring-pale-400 transition duration-300 ease-in-out"
-    aria-label="Accessibility-settings"
-    aria-controls="accessibilityOptions"
-    aria-expanded="false"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 transition duration-300 ease-in-out">
-      <path
-        fill-rule="evenodd"
-        d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349a7.493 7.493 0 0 0 .986-.57c.166-.115.334-.126.45-.083l1.019.382a1.875 1.875 0 0 0 2.282-.818l.922-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.598 7.598 0 0 0 0-1.139c-.015-.2.059-.352.153-.43l.841-.692a1.875 1.875 0 0 0 .432-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.019.382c-.115.043-.283.031-.45-.082a7.493 7.493 0 0 0-.986-.57c-.182-.088-.277-.228-.297-.35L14.927 4A1.875 1.875 0 0 0 13.078 2.25H11.078zM12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z"
-      ></path>
-    </svg>
-  </button>
+<!-- Accessibility bar -->
+<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-600 text-gray-50 flex items-center h-9 px-4 z-50">
+  <!-- Quick-access setting buttons -->
+  <div class="flex items-center gap-1.5" role="group" aria-label="Quick accessibility settings">
+    <!-- Text size -->
+    <button id="textSizeToggle" aria-pressed="false" aria-label="Toggle larger text" class="bar-quick-btn tooltip-below" data-tooltip="Text size">
+      <span style="font-size:12px;font-weight:700;line-height:1;letter-spacing:0">A</span>
+    </button>
 
-  <!-- Accessibility Options -->
-  <div
-    id="accessibilityOptions"
-    class="ml-4 flex gap-6 items-center transition-all duration-300 ease-in-out origin-left scale-x-0 opacity-0"
-    aria-hidden="true"
-  >
-    <!-- Dark Mode Toggle -->
-    <div class="flex items-center gap-2">
-      <span id="darkModeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.darkmode">Dark-mode</span>
-      <button id="darkModeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle dark-mode">
-        <span class="toggle-circle"></span>
-      </button>
-    </div>
+    <!-- Dark mode -->
+    <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode" class="bar-quick-btn tooltip-below" data-tooltip="Dark mode">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
 
-    <!-- Color Intensity Toggle -->
-    <div class="flex items-center gap-2">
-      <span id="colorModeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.colormode">Calm mode</span>
-      <button id="colorModeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle calm mode">
-        <span class="toggle-circle"></span>
-      </button>
-    </div>
+    <!-- Calm mode -->
+    <button
+      id="colorModeToggle"
+      aria-pressed="false"
+      aria-label="Toggle calm colours"
+      class="bar-quick-btn tooltip-below"
+      data-tooltip="Calm colours"
+    >
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 3v18M3 12h18" opacity="0.4"></path>
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"></path>
+      </svg>
+    </button>
 
-    <!-- Large Text Toggle -->
-    <div class="flex items-center gap-2">
-      <span id="textSizeToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.textsize">Larger text</span>
-      <button id="textSizeToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle larger text">
-        <span class="toggle-circle"></span>
-      </button>
-    </div>
-
-    <!-- Reduce Motion Toggle -->
-    <div class="flex items-center gap-2">
-      <span id="motionToggleLabel" class="md:block hidden text-gray-50" data-i18n="settings.animations">Remove animations</span>
-      <button id="motionToggle" aria-pressed="false" class="toggle-switch" aria-label="Toggle 'remove animations'">
-        <span class="toggle-circle"></span>
-      </button>
-    </div>
+    <!-- Reduce motion -->
+    <button id="motionToggle" aria-pressed="false" aria-label="Toggle reduce motion" class="bar-quick-btn tooltip-below" data-tooltip="Reduce motion">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+    </button>
   </div>
 
   <!-- Language Toggle -->
@@ -67,7 +79,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     <button
       id="lang-toggle-en"
       data-lang="en"
-      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-pale-400"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
       aria-label="Switch to English"
       aria-pressed="true">EN</button
     >
@@ -75,7 +87,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     <button
       id="lang-toggle-da"
       data-lang="da"
-      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-pale-400"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
       aria-label="Skift til dansk"
       aria-pressed="false">DA</button
     >
@@ -113,7 +125,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/") ? "page" : undefined}
             aria-label="Go to homepage"
             data-i18n="nav.home">Home</a
@@ -122,7 +134,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/about_me"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/about_me") ? "page" : undefined}
             aria-label="Go to about-page"
             data-i18n="nav.about">About</a
@@ -131,7 +143,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/contact"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/contact") ? "page" : undefined}
             aria-label="Go to contact-page"
             data-i18n="nav.contact">Contact</a
@@ -140,7 +152,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/blog"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/blog") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/blog") ? "page" : undefined}
             aria-label="Go to blog-page"
             data-i18n="nav.blog">Blog</a
@@ -149,7 +161,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/lab"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/lab") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/lab") ? "page" : undefined}
             aria-label="Go to lab-page"
             data-i18n="nav.lab">Lab</a
@@ -166,6 +178,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       x-bind:aria-expanded="showmenu ? 'true' : 'false'"
       class="lg:hidden"
       x-on:click="showmenu = !showmenu"
+      data-tooltip="Menu"
     >
       <!-- Hamburger -->
       <svg
@@ -176,7 +189,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-pale-400"
+        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
       </svg>
@@ -190,7 +203,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-pale-400"
+        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -208,12 +221,13 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     x-cloak
     x-on:click="showmenu = false"
     x-on:click.outside="showmenu = false"
+    x-on:keydown.escape.window="showmenu = false"
   >
     <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
       <li class="some1">
         <a
           href="/#hero"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/") ? "page" : undefined}
           aria-label="Go to homepage"
           data-i18n="nav.home">Home</a
@@ -222,7 +236,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/about_me"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/about_me") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/about_me") ? "page" : undefined}
           aria-label="Go to about-page"
           data-i18n="nav.about">About</a
@@ -231,7 +245,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/contact"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/contact") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/contact") ? "page" : undefined}
           aria-label="Go to contact-page"
           data-i18n="nav.contact">Contact</a
@@ -240,7 +254,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/blog"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/blog") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/blog") ? "page" : undefined}
           aria-label="Go to blog-page"
           data-i18n="nav.blog">Blog</a
@@ -249,7 +263,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/lab"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-pale-400", isActive("/lab") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/lab") ? "page" : undefined}
           aria-label="Go to lab-page"
           data-i18n="nav.lab">Lab</a
@@ -328,8 +342,41 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     border-bottom: 1px solid #333;
   }
 
+  .bar-quick-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: transparent;
+    color: #dde1e8;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+    flex-shrink: 0;
+  }
+  .bar-quick-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+  }
+  .bar-quick-btn[aria-pressed="true"] {
+    background: rgba(71, 123, 147, 0.35);
+    border-color: #477b93;
+    color: #c0d7e1;
+  }
+  .bar-quick-btn:focus-visible {
+    outline: 2px solid #477b93;
+    outline-offset: 2px;
+  }
+
   body.dark #accessibility-bar {
-    background-color: var(--dark-surface-strong);
+    background-color: #252525;
+    border-bottom: 1px solid #333333;
     color: var(--text-on-dark);
   }
 
@@ -348,10 +395,13 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
   /* Button styles for dark mode */
   body.dark .toggle-switch {
-    background-color: var(--dark-border);
+    background-color: #4b5563;
+  }
+  body.dark .toggle-switch[aria-pressed="true"] {
+    background-color: #95bccb;
   }
   body.dark .toggle-circle {
-    background-color: var(--toggle-circle-dark);
+    background-color: #f0f0f0;
   }
 
   /* Reduce Motion Mode */
@@ -400,7 +450,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     font-size: 17.6px;
   }
 
-  #accessibilityToggle:hover svg,
   #burgermenu:hover svg,
   body.dark #burgermenu svg:hover {
     color: var(--brand-primary-soft);
@@ -492,34 +541,4 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   };
   window.addEventListener("scroll", updateHeaderStyle, { passive: true });
   updateHeaderStyle();
-
-  // Accessibility-toggle
-  const toggleButton = document.getElementById("accessibilityToggle");
-  const options = document.getElementById("accessibilityOptions");
-
-  // Function to show or hide the options based on state
-  function setToggleState(isOpen: boolean): void {
-    if (isOpen) {
-      options?.classList.remove("scale-x-0", "opacity-0");
-      options?.classList.add("scale-x-100", "opacity-100");
-      toggleButton?.setAttribute("aria-expanded", "true");
-      options?.setAttribute("aria-hidden", "false");
-    } else {
-      options?.classList.remove("scale-x-100", "opacity-100");
-      options?.classList.add("scale-x-0", "opacity-0");
-      toggleButton?.setAttribute("aria-expanded", "false");
-      options?.setAttribute("aria-hidden", "true");
-    }
-  }
-
-  // Load saved state from localStorage
-  let isOpen = localStorage.getItem("accessibilityOpen") === "true";
-  setToggleState(isOpen);
-
-  // On click: toggle state, update localStorage and UI
-  toggleButton?.addEventListener("click", () => {
-    isOpen = !isOpen;
-    localStorage.setItem("accessibilityOpen", String(isOpen));
-    setToggleState(isOpen);
-  });
 </script>

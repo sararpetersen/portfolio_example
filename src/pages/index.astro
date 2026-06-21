@@ -59,7 +59,7 @@ import Cases from "../components/Cases.astro";
           </div>
 
           <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
-          <h2 class="hero-role text-gray-700 pb-6 font-regular" data-i18n="hero.role">Multimedia Designer & Concept Developer</h2>
+          <p class="hero-role text-gray-700 pb-6 font-regular" data-i18n="hero.role">Multimedia Designer & Concept Developer</p>
           <p class="hero-lead text-gray-600 font-light pb-8 max-w-2xl" data-i18n="hero.lead">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
@@ -88,7 +88,7 @@ import Cases from "../components/Cases.astro";
     </div>
 
     <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-1 w-full justify-center z-[20]">
-      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-pale-400 scroll-link">
+      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
         <div class="flex flex-col items-center transition duration-300 ease-in-out">
           <p class="uppercase tracking-[0.22em] text-xs text-gray-500" data-i18n="hero.scroll">Scroll to projects</p>
           <svg
@@ -111,9 +111,9 @@ import Cases from "../components/Cases.astro";
     <div class="container col-span-12">
       <!-- kanji + title -->
       <div class="flex items-center mb-3">
-        <h3 id="project-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
+        <h2 id="project-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
           Selected cases
-        </h3>
+        </h2>
       </div>
     </div>
 
@@ -144,13 +144,13 @@ import Cases from "../components/Cases.astro";
 
   <!-- Latest Blog Section -->
   <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
-    <h3
+    <h2
       id="blog-preview-title"
       class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
       data-i18n="blog.preview.title"
     >
       Latest posts
-    </h3>
+    </h2>
 
     <p id="blog-preview-text" class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base" data-i18n="blog.preview.text">
       A running log of things I'm working on, thinking about, or just find worth writing down.
@@ -161,12 +161,12 @@ import Cases from "../components/Cases.astro";
         latestBlogPosts.map((post) => (
           <article class="blog-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
             <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-            <h4 class="text-[18px] font-semibold mb-2 leading-snug">{post.data.title}</h4>
+            <h3 class="text-[18px] font-semibold mb-2 leading-snug">{post.data.title}</h3>
             <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
             <a
               href={`/blog/${post.slug}`}
               aria-label={`Read post: ${post.data.title}`}
-              class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-pale-300"
+              class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
               data-i18n="blog.read"
             >
               Read post →
@@ -207,13 +207,13 @@ import Cases from "../components/Cases.astro";
 
       <!-- Text -->
       <div id="about-preview-text" class="md:order-2 order-1">
-        <h3
+        <h2
           id="about-preview-title"
           class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
           data-i18n="about.preview.title"
         >
           About me
-        </h3>
+        </h2>
         <p
           id="about-preview-text-paragraph"
           class="mb-6 text-gray-600 max-w-xl leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
@@ -233,13 +233,13 @@ import Cases from "../components/Cases.astro";
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
-    <h3
+    <h2
       id="testimonial-title"
       class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
       data-i18n="testimonials.title"
     >
       Featured testimonial
-    </h3>
+    </h2>
     <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 max-w-3xl">
       <blockquote class="text-gray-600 italic" data-i18n="testimonials.quote">
         <p>
@@ -290,7 +290,7 @@ import Cases from "../components/Cases.astro";
       [
         ["#status", "animate__fadeInUp"],
         ["#hero-content h1", "animate__fadeInUp"],
-        ["#hero-content h2", "animate__fadeInUp"],
+        ["#hero-content .hero-role", "animate__fadeInUp"],
         ["#hero-content .hero-lead", "animate__fadeInUp"],
         ["#hero-cta", "animate__fadeInUp"],
         ["#hero-image", "animate__fadeInUp"],
@@ -376,7 +376,7 @@ import Cases from "../components/Cases.astro";
 
   html.has-js body:not(.reduce-motion) #status,
   html.has-js body:not(.reduce-motion) #hero-content h1,
-  html.has-js body:not(.reduce-motion) #hero-content h2,
+  html.has-js body:not(.reduce-motion) #hero-content .hero-role,
   html.has-js body:not(.reduce-motion) #hero-content .hero-lead,
   html.has-js body:not(.reduce-motion) #hero-cta,
   html.has-js body:not(.reduce-motion) #hero-image,
@@ -580,12 +580,12 @@ import Cases from "../components/Cases.astro";
   body.dark #testimonials p,
   body.dark #testimonials blockquote,
   body.dark #testimonials blockquote em,
-  body.dark #project-section h3,
+  body.dark #project-section h2,
   body.dark #project-section p,
+  body.dark #blog-preview h2,
   body.dark #blog-preview h3,
-  body.dark #blog-preview h4,
   body.dark #blog-preview p,
-  body.dark #about-preview-text h3,
+  body.dark #about-preview-text h2,
   body.dark #about-preview-label,
   body.dark #about-preview-text-paragraph {
     color: var(--text-on-dark-soft);

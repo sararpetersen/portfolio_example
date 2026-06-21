@@ -3,9 +3,9 @@ const buttonStyling = "inline-flex items-center justify-center px-6 py-[10px] bo
 
 const variantClasses = {
   primary:
-    "main-button text-gray-50 bg-blue-900 border-blue-900 hover:bg-blue-700 hover:border-blue-700 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-pale-400 ease-in-out",
+    "main-button text-gray-50 bg-blue-900 border-blue-900 hover:bg-blue-700 hover:border-blue-700 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
   secondary:
-    "secondary-button text-gray-900 bg-transparent border-blue-900 hover:bg-blue-900 hover:text-gray-50 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-pale-400 ease-in-out",
+    "secondary-button text-gray-900 bg-transparent border-blue-900 hover:bg-blue-900 hover:text-gray-50 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 ease-in-out",
 } as const;
 
 const sizeClasses = {
@@ -68,14 +68,14 @@ const { variant = "primary", size = "medium" } = Astro.props as Props;
 
   body.dark .main-button {
     background-color: var(--brand-primary-soft);
-    color: #1f1f1f;
+    color: #1a1a1a;
     border: var(--brand-primary-soft) 2px solid;
     font-weight: 700;
   }
 
   body.dark .main-button:hover {
     background-color: var(--brand-primary-strong);
-    color: #1f1f1f;
+    color: #1a1a1a;
     border: var(--brand-primary-strong) 2px solid;
   }
 
@@ -88,7 +88,7 @@ const { variant = "primary", size = "medium" } = Astro.props as Props;
 
   body.dark .secondary-button:hover {
     background-color: var(--brand-primary-soft);
-    color: #1f1f1f;
+    color: #1a1a1a;
     border: var(--brand-primary-soft) 2px solid;
   }
 </style>
