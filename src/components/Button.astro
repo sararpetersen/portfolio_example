@@ -20,14 +20,28 @@ type Size = keyof typeof sizeClasses;
 interface Props {
   variant?: Variant;
   size?: Size;
+  href?: string;
+  target?: string;
+  rel?: string;
+  "aria-label"?: string;
 }
 
-const { variant = "primary", size = "medium" } = Astro.props as Props;
+const { variant = "primary", size = "medium", href, target, rel, "aria-label": ariaLabel } = Astro.props as Props;
+const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[size];
 ---
 
-<button class={buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[size]}><slot /></button>
+{
+  href ? (
+    <a href={href} class={cls} target={target} rel={rel} aria-label={ariaLabel}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" class={cls} aria-label={ariaLabel}>
+      <slot />
+    </button>
+  )
+}
 
-<!-- Button styling -->
 <style>
   .main-button,
   .secondary-button {

@@ -3,7 +3,7 @@ import "../styles/global.css";
 ---
 
 <!-- Torii icon -->
-<div id="torii-icon" class="flex justify-center items-center pb-6 opacity-25 pointer-events-none">
+<div id="torii-icon" class="flex justify-center items-center pb-6 pointer-events-none">
   <img src="/images/torii.svg" alt="" aria-hidden="true" class="w-[400px] h-auto" width="1956" height="582" loading="lazy" />
 </div>
 
@@ -123,6 +123,7 @@ import "../styles/global.css";
           stroke-width="1.5"
           stroke="currentColor"
           class="w-4 h-4 mr-2 text-gray-50"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -144,6 +145,7 @@ import "../styles/global.css";
           stroke-width="1.5"
           stroke="currentColor"
           class="w-4 h-4 mr-2 text-gray-50"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -179,17 +181,69 @@ import "../styles/global.css";
     background: var(--dark-bg);
   }
 
-  body.dark #torii-icon {
-    opacity: 0.15;
-    filter: invert(1) grayscale(1) brightness(0.8);
-  }
-
-  body.calm-mode #torii-icon {
-    opacity: 0.15;
-    filter: grayscale(0.6) brightness(1.05);
-  }
-
   body.calm-mode #footer-logo img {
     filter: saturate(0.45) brightness(1.04);
   }
+
+  /* Torii entrance animation */
+  #torii-icon img {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 1.2s ease,
+      transform 1.2s ease;
+  }
+
+  #torii-icon.torii-visible img {
+    opacity: 0.22;
+    transform: translateY(0);
+  }
+
+  body.dark #torii-icon.torii-visible img {
+    filter: invert(1) grayscale(1) brightness(0.8);
+    opacity: 0.15;
+  }
+
+  body.calm-mode #torii-icon.torii-visible img {
+    filter: grayscale(0.6) brightness(1.05);
+    opacity: 0.15;
+  }
+
+  body.reduce-motion #torii-icon img {
+    transition: none;
+  }
+  body.reduce-motion #torii-icon.torii-visible img {
+    opacity: 0.22;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #torii-icon img {
+      transition: none;
+    }
+    #torii-icon.torii-visible img {
+      opacity: 0.22;
+      transform: none;
+    }
+  }
 </style>
+
+<script>
+  const toriEl = document.getElementById("torii-icon");
+  if (toriEl && !document.body.classList.contains("reduce-motion")) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            toriEl.classList.add("torii-visible");
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(toriEl);
+  } else if (toriEl) {
+    toriEl.classList.add("torii-visible");
+  }
+</script>

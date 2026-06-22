@@ -57,12 +57,16 @@ import Button from "../components/Button.astro";
       Projects from the lab
     </h2>
 
-    <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 mb-6">
-      <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-      <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
+    <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-400 mb-6">
+      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+        <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
+      </span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
-      <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
-      <span data-i18n="lab.legend.wip">= in progress</span>
+      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+        <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
+        <span data-i18n="lab.legend.wip">= in progress</span>
+      </span>
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -79,9 +83,7 @@ import Button from "../components/Button.astro";
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
           An app concept for supporting social connection and local engagement.
         </p>
-        <a href="/vibeloop" aria-label="View the Vibeloop case study">
-          <Button variant="secondary" size="small"><span data-i18n="lab.vibeloop.link">View case →</span></Button>
-        </a>
+        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"><span data-i18n="lab.vibeloop.link">View case →</span></Button>
       </article>
 
       <!-- AutismeGuiden -->
@@ -94,9 +96,7 @@ import Button from "../components/Button.astro";
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
           Autism information guide - for autistic people, family, teachers, and professionals (DK).
         </p>
-        <a href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit AutismeGuiden (opens in new tab)">
-          <Button variant="primary" size="small"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button>
-        </a>
+        <Button href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" variant="primary" size="small" aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button>
       </article>
 
       <!-- Steady -->
@@ -106,19 +106,17 @@ import Button from "../components/Button.astro";
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">A daily life tracker app made for neurodivergent users.</p>
-        <a href="https://app-steady.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Steady app (opens in new tab)">
-          <Button variant="primary" size="small"><span data-i18n="lab.steady.link">Visit app →</span></Button>
-        </a>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">
+          A daily life tracker for neurodivergent users. Visit the site to explore and try out the app.
+        </p>
+        <Button href="https://web-steady.netlify.app/" target="_blank" rel="noopener noreferrer" variant="primary" size="small" aria-label="Visit Steady website (opens in new tab)"><span data-i18n="lab.steady.link">Visit site →</span></Button>
       </article>
     </div>
   </section>
 
   <!-- Back -->
   <section class="lab-back-btn mx-auto py-20 text-center">
-    <a href="/" class="btn_container" aria-label="Back to homepage">
-      <Button variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
-    </a>
+    <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
 </MainLayout>
 

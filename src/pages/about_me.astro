@@ -362,48 +362,34 @@ const workTimelineItems = timelineItems
     <div id="resources-section" class="divide-y divide-gray-200">
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h4>
-        <a
-          href="/pdfs/application_template_sararpetersen_(EN).pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="See application-template (EN)"
-          class="self-start py-2"
-        >
-          <Button variant="secondary" size="small"><span data-i18n="resource.app.en.btn">View template</span></Button>
-        </a>
+        <span class="self-start">
+          <Button href="/pdfs/application_template_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See application-template (EN, opens in new tab)"><span data-i18n="resource.app.en.btn">View template</span></Button>
+        </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h4>
-        <a href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (EN)" class="self-start py-2">
-          <Button variant="secondary" size="small"><span data-i18n="resource.resume.en.btn">View resume</span></Button>
-        </a>
+        <span class="self-start">
+          <Button href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See resume (EN, opens in new tab)"><span data-i18n="resource.resume.en.btn">View resume</span></Button>
+        </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
-        <a
-          href="/pdfs/application_template_sararpetersen_(DA).pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="See application-template (DA)"
-          class="self-start py-2"
-        >
-          <Button variant="secondary" size="small"><span data-i18n="resource.app.da.btn">Se skabelon</span></Button>
-        </a>
+        <span class="self-start">
+          <Button href="/pdfs/application_template_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See application-template (DA, opens in new tab)"><span data-i18n="resource.app.da.btn">Se skabelon</span></Button>
+        </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h4>
-        <a href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" aria-label="See resume (DA)" class="self-start py-2">
-          <Button variant="secondary" size="small"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
-        </a>
+        <span class="self-start">
+          <Button href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See CV (DA, opens in new tab)"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
+        </span>
       </div>
     </div>
   </section>
 
   <!-- Navigation Back to Portfolio -->
   <section class="button-container mx-auto py-20 text-center">
-    <a href="/" class="mt-8 btn_container" aria-label="Back to homepage">
-      <Button variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
-    </a>
+    <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
 </MainLayout>
 

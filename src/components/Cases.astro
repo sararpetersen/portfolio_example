@@ -157,20 +157,8 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     const cards = Array.from(document.querySelectorAll("#project-cards > li")) as HTMLElement[];
     const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
 
-    // Keyboard accessibility
-    cards.forEach((card) => {
-      const isInactive = card.dataset.inactive === "true";
-      if (isInactive) return;
-
-      card.setAttribute("tabindex", "0");
-      card.addEventListener("keydown", (e: KeyboardEvent) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          const link = card.querySelector("a");
-          if (link) link.click();
-        }
-      });
-    });
+    // Active cards contain a native <a> which handles keyboard access natively —
+    // no tabindex or keydown handler needed on the <li>.
 
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

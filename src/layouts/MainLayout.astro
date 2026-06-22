@@ -6,7 +6,6 @@ import AccessibilityPanel from "../components/AccessibilityPanel.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
-const { title } = Astro.props;
 const siteUrl = "https://srp-portfolio.netlify.app";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/images/hero_image.webp", siteUrl).toString();
@@ -34,7 +33,7 @@ const schemamarkup = {
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
     <meta name="description" content={Astro.props.description} />
-    <meta property="og:locale" content="da_DK" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={Astro.props.ogtitle} />
     <meta property="og:description" content={Astro.props.ogdescription} />
@@ -46,6 +45,7 @@ const schemamarkup = {
     <meta name="twitter:description" content={Astro.props.ogdescription} />
     <meta name="twitter:image" content={socialImageUrl} />
     <link rel="canonical" href={canonicalUrl} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemamarkup)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,7 +77,7 @@ const schemamarkup = {
             "projects.text":
               "Below is a selection of projects that I've worked on during my studies and internships. Click on any of the cards to read more about the project, the process and the outcome.",
             "projects.empty": "Projects are temporarily unavailable. Please check back in a moment.",
-            "project.back": "↑ Back to homepage",
+            "project.back": "↑ Homepage",
             "project.label": "Project",
             "project.figma.notice": "This project is presented as an interactive prototype created in Figma",
             "project.db.notice":
@@ -176,6 +176,7 @@ const schemamarkup = {
             "contact.form.name": "Name",
             "contact.form.email": "Email",
             "contact.form.message": "Message",
+            "contact.form.required.note": "Fields marked with * are required.",
             "contact.form.submit": "Send message",
             "btn.back": "Back to homepage",
             "blog.label": "Journal",
@@ -199,19 +200,12 @@ const schemamarkup = {
             "lab.more.label": "More coming",
             "lab.more.text": "I'm building more things in the lab. Check back or follow along on the blog.",
             "lab.more.link": "Read about it on the blog →",
-            "lab.preview.sublabel": "Vibe coding & experiments",
-            "lab.preview.title": "Things I'm building",
-            "lab.preview.text": "A collection of side-hustles and quick builds made with the help of AI.",
-            "lab.preview.cta": "Visit the lab →",
             "lab.vibeloop.desc": "An app concept for supporting social connection and local engagement.",
             "lab.vibeloop.link": "View case →",
-            "lab.vibeloop.preview": "Social connection and local engagement app.",
             "lab.autismeguiden.desc": "Autism information guide - for autistic people, family, teachers, and professionals (DK).",
             "lab.autismeguiden.link": "Visit site →",
-            "lab.autismeguiden.preview": "Autism information guide (DK)",
-            "lab.steady.desc": "A daily life tracker app designed for neurodivergent users.",
-            "lab.steady.link": "Visit app →",
-            "lab.steady.preview": "A daily life tracker for neurodivergents.",
+            "lab.steady.desc": "A daily life tracker for neurodivergent users - visit the site to explore and try the app.",
+            "lab.steady.link": "Visit site →",
             "lab.badge.vibecoded": "Vibe coded",
             "lab.legend.vibecoded": "= built with the help of AI",
             "lab.legend.wip": "= work in progress",
@@ -238,7 +232,7 @@ const schemamarkup = {
             "projects.text":
               "Nedenfor finder du et udvalg af projekter, som jeg har arbejdet p\u00e5 under mine studier og praktikophold. Klik p\u00e5 ét af kortene for at l\u00e6se mere om projektet, processen og resultatet.",
             "projects.empty": "Projekterne er midlertidigt utilg\u00e6ngelige. Pr\u00f8v igen om et \u00f8jeblik.",
-            "project.back": "↑ Tilbage til forsiden",
+            "project.back": "↑ Forside",
             "project.label": "Projekt",
             "project.figma.notice": "Dette projekt pr\u00e6senteres som en interaktiv prototype lavet i Figma",
             "project.db.notice":
@@ -342,6 +336,7 @@ const schemamarkup = {
             "contact.form.name": "Navn",
             "contact.form.email": "Email",
             "contact.form.message": "Besked",
+            "contact.form.required.note": "Felter markeret med * er påkrævede.",
             "contact.form.submit": "Send besked",
             "btn.back": "Tilbage til forsiden",
             "blog.label": "Dagbog",
@@ -365,18 +360,12 @@ const schemamarkup = {
             "lab.more.label": "Mere er på vej",
             "lab.more.text": "Jeg bygger mere i laboratoriet. Kig forbi igen eller følg med på bloggen.",
             "lab.more.link": "Læs om det på bloggen →",
-            "lab.preview.title": "Ting jeg bygger",
-            "lab.preview.text": "En samling af side-hustles og hurtige builds lavet med hjælp af AI.",
-            "lab.preview.cta": "Besøg laboratoriet →",
             "lab.vibeloop.desc": "Et app-koncept til at styrke social forbindelse og lokalt engagement.",
             "lab.vibeloop.link": "Se case →",
-            "lab.vibeloop.preview": "Social forbindelse og lokalt engagement.",
             "lab.autismeguiden.desc": "Informationsguide om autisme - til autistiske personer, pårørende, lærere og fagfolk (DK).",
             "lab.autismeguiden.link": "Besøg siden →",
-            "lab.autismeguiden.preview": "Autisme informationsguide (DK)",
-            "lab.steady.desc": "En app til dagligdagsstrukturering designet til neurodivergente brugere.",
-            "lab.steady.link": "Besøg appen →",
-            "lab.steady.preview": "En dagligdagstracker til neurodivergente.",
+            "lab.steady.desc": "En dagligdagstracker til neurodivergente brugere - besøg siden for at udforske og afprøve appen.",
+            "lab.steady.link": "Besøg siden →",
             "lab.badge.vibecoded": "Vibe-kodet",
             "lab.legend.vibecoded": "= bygget ved hjælp af AI",
             "lab.legend.wip": "= under udvikling",

@@ -68,8 +68,8 @@
   <div class="a11y-panel-body">
     <!-- THEME -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.theme">THEME</p>
-      <div class="a11y-choice-group" role="group">
+      <p id="a11y-label-theme" class="a11y-section-label" data-i18n="a11y.theme">THEME</p>
+      <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-theme">
         <button id="a11y-light" class="a11y-choice" aria-pressed="true">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -110,8 +110,8 @@
 
     <!-- TEXT SIZE -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.textsize">TEXT SIZE</p>
-      <div class="a11y-choice-group" role="group">
+      <p id="a11y-label-textsize" class="a11y-section-label" data-i18n="a11y.textsize">TEXT SIZE</p>
+      <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-textsize">
         <button id="a11y-text-normal" class="a11y-choice" aria-pressed="true">
           <span class="a11y-size-preview" style="font-size:13px;font-weight:500">A</span>
           <span data-i18n="a11y.normal">Normal</span>

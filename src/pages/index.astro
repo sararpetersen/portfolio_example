@@ -55,19 +55,19 @@ import Cases from "../components/Cases.astro";
               <span class="status-dot relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
             </span>
 
-            <p aria-label="Interning at Folkæt" data-i18n="hero.status" class="text-gray-50">Interning at Folkæt</p>
+            <p data-i18n="hero.status" class="text-gray-50">Interning at Folkæt</p>
           </div>
 
           <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
-          <p class="hero-role text-gray-700 pb-6 font-regular" data-i18n="hero.role">Multimedia Designer & Concept Developer</p>
+          <p class="hero-role text-gray-700 pb-6 font-garamond" data-i18n="hero.role">Multimedia Designer & Concept Developer</p>
           <p class="hero-lead text-gray-600 font-light pb-8 max-w-2xl" data-i18n="hero.lead">
             Passionate about creating accessible, user-centered digital experiences that blend design, development, and strategy.
           </p>
 
           <div id="hero-cta" class="btn-container flex flex-wrap items-center gap-4">
-            <a href="#project-section" aria-label="Go to projects section" class="md:hidden block">
-              <Button variant="primary" size="medium"><span data-i18n="hero.cta">See projects</span></Button>
-            </a>
+            <span class="md:hidden block">
+              <Button href="#project-section" variant="primary" size="medium" aria-label="Go to projects section"><span data-i18n="hero.cta">See projects</span></Button>
+            </span>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ import Cases from "../components/Cases.astro";
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
             <img
               src="/images/hero_image.webp"
-              alt="Hero image for Sara's portfolio"
+              alt="Sara Ringkow Petersen"
               class="hero-image object-cover"
               width="500"
               height="500"
@@ -98,6 +98,7 @@ import Cases from "../components/Cases.astro";
             stroke-width="1.5"
             stroke="currentColor"
             class="w-8 h-8 sm:w-10 sm:h-10 transition duration-300 ease-in-out scroll-icon"
+            aria-hidden="true"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
@@ -177,9 +178,7 @@ import Cases from "../components/Cases.astro";
     </div>
 
     <div id="blog-preview-all" class="pt-6">
-      <a href="/blog" aria-label="Go to all blog posts">
-        <Button variant="primary" size="small"><span data-i18n="blog.preview.all">See all blog posts</span></Button>
-      </a>
+      <Button href="/blog" variant="primary" size="small" aria-label="Go to all blog posts"><span data-i18n="blog.preview.all">See all blog posts</span></Button>
     </div>
   </section>
 
@@ -223,9 +222,7 @@ import Cases from "../components/Cases.astro";
           experiences that combine visual clarity, thoughtful structure, and functionality.
         </p>
         <div class="btn_container">
-          <a href="/about_me" aria-label="Learn more about me">
-            <Button variant="primary" size="small"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
-          </a>
+          <Button href="/about_me" variant="primary" size="small" aria-label="Learn more about me"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
         </div>
       </div>
     </div>

@@ -284,6 +284,28 @@ body.dark [data-tooltip]::after {
   color: #1a1a1a;
 }
 
+/* ── Large text mode ──────────────────────────────────────── */
+html.text-large {
+  font-size: 112.5%;
+}
+
+/* Prevent the biggest decorative headings from growing disproportionately.
+   These are single-line display titles — scaling them 12.5% on an already
+   huge rem value can cause wrapping where the configured line-height
+   (which is intentionally tighter than the font-size) creates overlap. */
+html.text-large h1 {
+  line-height: 1.1;
+}
+html.text-large h2 {
+  line-height: 1.2;
+}
+html.text-large h3 {
+  line-height: 1.3;
+}
+html.text-large .display {
+  line-height: 1.05;
+}
+
 /* ── Readable font (Atkinson Hyperlegible) ────────────────── */
 html.readable-font body,
 html.readable-font p,

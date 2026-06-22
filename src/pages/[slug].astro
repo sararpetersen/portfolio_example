@@ -72,7 +72,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     <nav
       id="navigation"
       aria-label="Page navigation"
-      class="col-span-12 grid grid-cols-3 items-center gap-2 mb-8 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
+      class="col-span-12 grid grid-cols-3 items-center gap-2 mb-10 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
     >
       <div>
         {
@@ -99,7 +99,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           aria-label="Go to homepage"
           data-i18n="project.back"
         >
-          ↑ <span class="hidden md:inline">Back to homepage</span><span class="md:hidden">Home</span>
+          ↑ <span class="hidden md:inline">Homepage</span><span class="md:hidden">Home</span>
         </a>
       </div>
 
@@ -237,9 +237,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           )
         }
         <div id="project-link" class="btn-container">
-          <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.name}`}>
-            <Button variant="secondary" size="small"><span data-i18n="project.view">View project</span></Button>
-          </a>
+          <Button href={project.url} target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label={`View project: ${project.name} (opens in new tab)`}><span data-i18n="project.view">View project</span></Button>
         </div>
       </div>
     </div>
