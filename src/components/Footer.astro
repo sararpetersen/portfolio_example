@@ -33,17 +33,19 @@ import "../styles/global.css";
         <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800" data-i18n="modal.terms.privacy">
           Privacy policy
         </h3>
-        <p class="text-gray-600 leading-relaxed mb-2">
+        <p class="text-gray-600 leading-relaxed mb-2" data-i18n="modal.terms.privacy.p1">
           When you submit the contact form, your name, email, and message are processed by <a
             href="https://www.netlify.com/privacy/"
+            class="terms-link text-blue-500 hover:underline"
             target="_blank"
             rel="noopener noreferrer">Netlify Forms</a
-          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code>localStorage</code> only&mdash; no personal
-          data leaves your device. No cookies, no tracking, no third-party marketing.
+          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class="text-[14px]">localStorage</code> only&mdash;
+          no personal data leaves your device. No cookies, no tracking, no third-party marketing.
         </p>
-        <p class="text-gray-600 leading-relaxed mb-3">
-          <strong>Your rights (GDPR):</strong> You may request access to, correction of, or deletion of your data at any time - email: <a
-            href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
+        <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.privacy.p2">
+          <strong>Your rights <em>(GDPR)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a
+            href="mailto:sara.ringkow@gmail.com"
+            class="terms-link text-blue-500 hover:underline">sara.ringkow@gmail.com</a
           >.
         </p>
       </section>
@@ -54,19 +56,19 @@ import "../styles/global.css";
         <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800 mt-3" data-i18n="modal.terms.booking">
           Booking & freelance terms
         </h3>
-        <p class="text-gray-600 leading-relaxed mb-2">
+        <p class="text-gray-600 leading-relaxed mb-2" data-i18n="modal.terms.booking.p1">
           I take on projects case by case. A written quote is provided before work starts&mdash; no surprises. Two rounds of revisions are included.
           Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless
           confidentiality is agreed.
         </p>
-        <p class="text-gray-600 leading-relaxed mb-3">Cancellations must be in writing. Work completed up to that point may be invoiced.</p>
+        <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.booking.p2">Cancellations must be in writing. Work completed up to that point may be invoiced.</p>
       </section>
 
       <hr class="terms-modal-divider" />
 
       <section class="terms-modal-section">
         <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800 mt-3" data-i18n="modal.terms.use">Terms of use</h3>
-        <p class="text-gray-600 leading-relaxed mb-3">
+        <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.use.p1">
           All content on this portfolio belongs to Sara Ringkow Petersen <em>(me)</em>. Do not reproduce or republish without written permission.
           External links are provided for reference only. These terms are governed by Danish law.
         </p>
@@ -177,10 +179,30 @@ import "../styles/global.css";
             fill="currentColor"
             class="text-gray-50 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
             viewBox="0 0 16 16"
+            aria-hidden="true"
           >
             <path
               d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
             ></path>
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/srp_portfolio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Go to my Instagram-profile (external link)"
+          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            fill="currentColor"
+            class="text-gray-50 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </a>
       </div>
@@ -245,6 +267,7 @@ import "../styles/global.css";
       id="terms-modal-trigger"
       class="text-gray-400 text-xs border border-gray-600 rounded-full px-3 py-1 hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
       aria-haspopup="dialog"
+      data-i18n="modal.terms.title"
     >
       Terms &amp; Privacy
     </button>
@@ -361,12 +384,12 @@ import "../styles/global.css";
     flex-direction: column;
     gap: 0.625rem;
   }
-  .terms-modal-section a {
+  :global(.terms-modal-section a) {
     color: #477b93;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  .terms-modal-section a:hover {
+  :global(.terms-modal-section a:hover) {
     color: #334857;
   }
   .terms-modal-section code {
@@ -383,28 +406,54 @@ import "../styles/global.css";
   .terms-modal-fulllink {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
-    font-weight: 500;
-    color: #477b93;
+    padding: 24px;
+    border: 2px solid #2f3f4c;
+    border-radius: 5px;
+    background: #2f3f4c;
+    color: #f9fafb;
+    font-weight: 600;
+    font-size: 14px;
     text-decoration: none;
-    padding: 0.4rem 0.875rem;
-    border: 1px solid #95bccb;
-    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
     transition:
-      background 0.15s ease,
-      color 0.15s ease,
-      border-color 0.15s ease;
+      background 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
     width: fit-content;
   }
   .terms-modal-fulllink:hover {
-    background: #477b93;
-    color: white;
-    border-color: #477b93;
+    background: #375567;
+    color: #f9fafb;
+    border-color: #375567;
   }
   .terms-modal-fulllink:focus-visible {
-    outline: 2px solid #477b93;
-    outline-offset: 2px;
+    outline: none;
+    box-shadow: 0 0 0 2px #93c5fd;
+  }
+  .terms-modal-fulllink::before {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 0.3rem;
+    height: 2px;
     border-radius: 9999px;
+    background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.72), transparent);
+    opacity: 0.55;
+    transform: scaleX(0.45);
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  .terms-modal-fulllink:hover::before,
+  .terms-modal-fulllink:focus-visible::before {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   /* Dark mode modal */
@@ -412,6 +461,14 @@ import "../styles/global.css";
   body.dark #terms-modal-header {
     background: var(--dark-bg, #1a1a1a);
   }
+
+  :global(body.dark .terms-modal-section a) {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  :global(body.dark .terms-modal-section a:hover) {
+    color: var(--brand-primary-strong, #95bccb);
+  }
+
   body.dark #terms-modal-title {
     color: var(--text-on-dark, #f0f0f0);
   }
@@ -423,20 +480,30 @@ import "../styles/global.css";
     color: var(--text-on-dark-soft, #c0c0c0);
   }
   body.dark .terms-modal-section h3 {
-    color: #6297ae;
+    color: #c0d7e1;
   }
   body.dark #terms-modal-close {
     border-color: var(--dark-border, #333);
     color: var(--text-on-dark-soft, #c0c0c0);
   }
   body.dark #terms-modal-close:hover {
-    background: #477b93;
-    border-color: #477b93;
-    color: white;
+    background: #c0d7e1;
+    border-color: #c0d7e1;
+    color: #1a1a1a;
   }
   body.dark .terms-modal-section code {
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
+  }
+  body.dark .terms-modal-fulllink {
+    color: #f6f6f6;
+    border-color: #f6f6f6;
+    background: transparent;
+  }
+  body.dark .terms-modal-fulllink:hover {
+    background: var(--brand-primary-soft);
+    color: #1a1a1a;
+    border-color: var(--brand-primary-soft);
   }
 
   footer a:hover {
@@ -454,6 +521,21 @@ import "../styles/global.css";
   body.dark footer {
     border-top: 1px solid #333;
     background: var(--dark-bg);
+  }
+  body.dark #footer-bottom {
+    border-color: var(--dark-border, #333);
+  }
+  body.dark #footer-bottom p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark #terms-modal-trigger {
+    color: var(--text-on-dark-soft, #c0c0c0);
+    border-color: #4a4a4a;
+  }
+  body.dark #terms-modal-trigger:hover {
+    color: var(--text-on-dark, #f0f0f0);
+    border-color: var(--brand-primary-soft);
+    background: rgba(71, 123, 147, 0.15);
   }
 
   body.calm-mode #footer-logo img {

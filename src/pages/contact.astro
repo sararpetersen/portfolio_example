@@ -476,5 +476,15 @@ import MainLayout from "../layouts/MainLayout.astro";
       border-color: color-mix(in srgb, var(--brand-primary-soft) 88%, #d9edf5 12%);
       color: #102029;
     }
+
+    :global(body.dark p[data-i18n="contact.form.gdpr"]) {
+      color: var(--text-on-dark-soft, #c0c0c0);
+    }
+    :global(body.dark p[data-i18n="contact.form.gdpr"] a) {
+      color: var(--brand-primary-soft, #c0d7e1);
+    }
+    :global(body.dark p[data-i18n="contact.form.gdpr"] a:hover) {
+      color: var(--brand-primary-strong, #95bccb);
+    }
   </style>
 </MainLayout>

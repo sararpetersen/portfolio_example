@@ -70,6 +70,62 @@ import Button from "../components/Button.astro";
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Computer Site -->
+      <article id="lab-item-computersite" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2023-2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Computer Site</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.computersite.desc">A site talking about computers and their history.</p>
+        <Button
+          href="https://computer-site.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Computer Site (opens in new tab)"><span data-i18n="lab.computersite.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- The Great Mushroom Kingdom Wiki -->
+      <article id="lab-item-mariowiki" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2023-2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">The Great Mushroom Kingdom Wiki</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.mariowiki.desc">A fan wiki exploring the Super Mario universe.</p>
+        <Button
+          href="https://mario-wiki.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit The Great Mushroom Kingdom Wiki (opens in new tab)"><span data-i18n="lab.mariowiki.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- AutismeGuiden -->
+      <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025-2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
+          Autism information guide – for autistic people, family, teachers, and professionals (DK).
+        </p>
+        <Button
+          href="https://autisme-guiden.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button
+        >
+      </article>
+
       <!-- Vibeloop (WIP) -->
       <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
@@ -79,24 +135,15 @@ import Button from "../components/Button.astro";
             <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">VibeLoop</h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
+          VibeLoop <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
+        </h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
           An app concept for supporting social connection and local engagement.
         </p>
-        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"><span data-i18n="lab.vibeloop.link">View case →</span></Button>
-      </article>
-
-      <!-- AutismeGuiden -->
-      <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
-          Autism information guide - for autistic people, family, teachers, and professionals (DK).
-        </p>
-        <Button href="https://autisme-guiden.netlify.app/" target="_blank" rel="noopener noreferrer" variant="primary" size="small" aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button>
+        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
+          ><span data-i18n="lab.vibeloop.link">View case →</span></Button
+        >
       </article>
 
       <!-- Steady -->
@@ -109,7 +156,14 @@ import Button from "../components/Button.astro";
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">
           A daily life tracker for neurodivergent users. Visit the site to explore and try out the app.
         </p>
-        <Button href="https://web-steady.netlify.app/" target="_blank" rel="noopener noreferrer" variant="primary" size="small" aria-label="Visit Steady website (opens in new tab)"><span data-i18n="lab.steady.link">Visit site →</span></Button>
+        <Button
+          href="https://web-steady.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Steady website (opens in new tab)"><span data-i18n="lab.steady.link">Visit site →</span></Button
+        >
       </article>
     </div>
   </section>
@@ -170,7 +224,9 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
-  html.has-js body:not(.reduce-motion) #lab-item-steady {
+  html.has-js body:not(.reduce-motion) #lab-item-steady,
+  html.has-js body:not(.reduce-motion) #lab-item-computersite,
+  html.has-js body:not(.reduce-motion) #lab-item-mariowiki {
     opacity: 0;
     will-change: transform, opacity;
   }

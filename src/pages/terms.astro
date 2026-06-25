@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
+import Button from "../components/Button.astro";
 
 const lastUpdated = "June 25, 2026";
 ---
@@ -11,38 +12,44 @@ const lastUpdated = "June 25, 2026";
   ogtitle="Terms & Privacy — SRP Portfolio"
   ogdescription="Privacy policy, freelance booking terms, and terms of use."
 >
-  <section class="max-w-3xl mx-auto px-6 md:px-0 md:pt-desktop-top pt-mobil-top md:mt-24 mt-12 md:pb-desktop-bottom pb-mobil-bottom">
+  <section class="max-w-3xl mx-auto px-6 md:px-0 md:pt-desktop-top pt-mobil-top">
     <!-- Page header -->
-    <div class="md:pt-12 pt-16 mb-10">
-      <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop mb-3">Terms & Privacy</h1>
-      <p class="text-gray-500 text-sm font-inter">Last updated: {lastUpdated}</p>
+    <div id="terms-page-header" class="md:pt-28 pt-24 mb-3 text-center md:text-left">
+      <h1
+        id="terms-page-title"
+        class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop mb-3"
+        data-i18n="modal.terms.title"
+      >
+        Terms & Privacy
+      </h1>
+      <p id="terms-last-updated" class="text-gray-500 text-sm font-inter" data-i18n="terms.updated">Last updated: {lastUpdated}</p>
     </div>
 
     <!-- Quick navigation -->
-    <nav aria-label="Terms navigation" class="terms-toc mb-12">
-      <a href="#privacy">Privacy policy</a>
+    <nav id="terms-page-toc" aria-label="Terms navigation" class="terms-toc mb-6 justify-center md:justify-start">
+      <a href="#privacy" data-i18n="modal.terms.privacy">Privacy policy</a>
       <span aria-hidden="true">·</span>
-      <a href="#booking">Booking & freelance terms</a>
+      <a href="#booking" data-i18n="modal.terms.booking">Booking & freelance terms</a>
       <span aria-hidden="true">·</span>
-      <a href="#use">Terms of use</a>
+      <a href="#use" data-i18n="modal.terms.use">Terms of use</a>
     </nav>
 
     <!-- Divider -->
-    <div class="flex items-center gap-3 text-gray-300 mb-8" aria-hidden="true">
+    <div id="terms-divider-1" class="flex items-center gap-3 text-gray-300 md:pt-12 pt-16" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
       <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
     <!-- 1. Privacy Policy -->
-    <section id="privacy" class="terms-section mb-10">
-      <h2 class="terms-heading">Privacy policy</h2>
-      <p class="terms-sub mb-6">What data is collected and why</p>
+    <section id="privacy" class="terms-section md:pt-desktop-top pt-mobil-top">
+      <h2 class="terms-heading" data-i18n="modal.terms.privacy">Privacy policy</h2>
+      <p class="terms-sub mb-6" data-i18n="terms.privacy.sub">What data is collected and why</p>
 
       <div class="terms-body flex flex-col gap-gap">
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Data collected</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.collected">Data collected</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.collected1">
             When you submit the contact form on this site, the following information is collected: full name, email address, and the message you
             write. This data is processed and stored by <a
               href="https://www.netlify.com/privacy/"
@@ -51,7 +58,7 @@ const lastUpdated = "June 25, 2026";
               rel="noopener noreferrer">Netlify Forms</a
             > on my behalf. No other personal data is collected.
           </p>
-          <p class="text-gray-600 leading-relaxed mt-3">
+          <p class="text-gray-600 leading-relaxed mt-3" data-i18n="terms.privacy.p.collected2">
             Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code
               >localStorage</code
             >. This data never leaves your device and contains no personal information.
@@ -59,23 +66,23 @@ const lastUpdated = "June 25, 2026";
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Why I collect it</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.why">Why I collect it</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.why">
             Contact form data is used solely to respond to your enquiry. It's <strong><em>not</em></strong> used for marketing, analytics, or any other
             purpose.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Cookies & tracking</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.cookies">Cookies & tracking</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.cookies">
             This site doesn't use cookies for tracking or analytics. No third-party advertising or profiling tools are active.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Your rights <em>(GDPR)</em></h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.rights">Your rights <em>(GDPR)</em></h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.rights">
             You have the right to access, correct, or request deletion of any personal data I hold about you. To exercise these rights, contact me at <a
               href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
             >. I'll respond within 30 days.
@@ -83,8 +90,8 @@ const lastUpdated = "June 25, 2026";
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Data controller</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.controller">Data controller</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.controller">
             Sara Ringkow Petersen – <a href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a>
           </p>
         </div>
@@ -92,29 +99,29 @@ const lastUpdated = "June 25, 2026";
     </section>
 
     <!-- Divider -->
-    <div class="flex items-center gap-3 text-gray-300 mb-8" aria-hidden="true">
+    <div id="terms-divider-2" class="flex items-center gap-3 text-gray-300 md:pt-20 pt-14" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
       <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
     <!-- 2. Booking & Freelance Terms -->
-    <section id="booking" class="terms-section mb-10">
-      <h2 class="terms-heading">Booking & freelance terms</h2>
-      <p class="terms-sub mb-6">How we work together</p>
+    <section id="booking" class="terms-section md:pt-desktop-top pt-mobil-top">
+      <h2 class="terms-heading" data-i18n="modal.terms.booking">Booking & freelance terms</h2>
+      <p class="terms-sub mb-6" data-i18n="terms.booking.sub">How we work together</p>
 
       <div class="terms-body flex flex-col gap-gap">
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Availability</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.availability">Availability</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.availability">
             I'm currently studying and take on freelance projects on a case-by-case basis, depending on scope and availability. Please reach out early
             to discuss timing.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Getting in touch</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.contact">Getting in touch</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.contact">
             Send an enquiry via the <a href="/contact" class="focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
               >contact form</a
             > or directly to <a
@@ -125,16 +132,16 @@ const lastUpdated = "June 25, 2026";
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Proposals and agreements</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.proposals">Proposals and agreements</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.proposals">
             A written quote or scope agreement is provided before any work begins. No work starts without mutual written confirmation of scope,
             timeline, and price.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Payment</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.payment">Payment</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.payment">
             Onboarding-sessions are at <strong><em>100 DKK (approx. 13,38€)</em></strong> for 30 minutes. For projects, the cost will be agreed on, depending
             on scope. For larger engagements, a deposit of up to 50% may be required before work commences. If the project expands by more than 10% mid-way
             through, I reserve the right to pause work and invoice for an additional deposit. The final payment is due within <strong
@@ -144,31 +151,31 @@ const lastUpdated = "June 25, 2026";
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Revisions</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.revisions">Revisions</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.revisions">
             Two rounds of revisions are included in every project unless otherwise agreed in writing. Additional revision rounds may incur extra cost.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Intellectual property</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.ip">Intellectual property</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.ip">
             Upon receipt of full and final payment, you receive a licence to use the agreed deliverables for the agreed purpose. I retain the right to
             display the work in my portfolio and case studies unless confidentiality is explicitly agreed in writing.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Scope changes</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.scope">Scope changes</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.scope">
             Any changes to the agreed scope must be approved in writing and may affect delivery timeline and price. I will provide an updated estimate
             before proceeding.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Cancellation</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.cancellation">Cancellation</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.cancellation">
             Either party may cancel the project at any time with written notice. In the event of client cancellation, the upfront deposit is
             non-refundable, and any additional work completed up to the point of cancellation will be invoiced at the agreed rate.
           </p>
@@ -177,76 +184,128 @@ const lastUpdated = "June 25, 2026";
     </section>
 
     <!-- Divider -->
-    <div class="flex items-center gap-3 text-gray-300 mb-8" aria-hidden="true">
+    <div id="terms-divider-3" class="flex items-center gap-3 text-gray-300 md:pt-20 pt-14" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
       <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
     <!-- 3. Terms of Use -->
-    <section id="use" class="terms-section mb-10">
-      <h2 class="terms-heading">Terms of use</h2>
-      <p class="terms-sub mb-6">Using this portfolio</p>
+    <section id="use" class="terms-section md:pt-desktop-top pt-mobil-top">
+      <h2 class="terms-heading" data-i18n="modal.terms.use">Terms of use</h2>
+      <p class="terms-sub mb-6" data-i18n="terms.use.sub">Using this portfolio</p>
 
       <div class="terms-body flex flex-col gap-gap">
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Content ownership</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.ownership">Content ownership</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.ownership">
             All content on this portfolio&mdash; including text, images, design, and code &mdash;is the property of Sara Ringkow Petersen <em>(me)</em
             > unless otherwise stated. You may not reproduce, republish, or redistribute any content without prior written permission.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Case studies & project work</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.casestudies">Case studies & project work</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.casestudies">
             Work shown in case studies was produced as part of academic projects, internships, or freelance engagements. Where work was produced
             collaboratively, I have credited my contributions accurately.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">External links</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.links">External links</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.links">
             This site links to external platforms <em>(GitHub, LinkedIn, project demos, etc.)</em>. These links are provided for reference only. I'm
             not responsible for the content or availability of external sites.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">No warranty</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.warranty">No warranty</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.warranty">
             This portfolio is provided as-is. I make no guarantee of continuous availability or accuracy of all content at all times.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Applicable law</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.law">Applicable law</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.law">
             These terms are governed by Danish law. Any disputes are subject to the jurisdiction of the Danish courts.
           </p>
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700">Contact</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.use.h3.contact">Contact</h3>
+          <p class="text-gray-600 leading-relaxed" data-i18n="terms.use.p.contact">
             Questions about these terms? Reach me at <a href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Back link -->
-    <div class="pt-4 pb-8">
-      <a
-        href="/"
-        class="text-sm text-gray-500 hover:text-blue-500 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-      >
-        ← Back to homepage
-      </a>
-    </div>
+    <!-- Back button -->
+    <section id="terms-back" class="button-container mx-auto py-20 text-center">
+      <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
+    </section>
   </section>
 </MainLayout>
+
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.classList.contains("reduce-motion")) return;
+
+    let i = 0;
+    const register = (selector: string) => {
+      const el = document.querySelector(selector) as HTMLElement | null;
+      if (!el) return;
+      inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = `${i * 70}ms`;
+        el.style.animationDuration = "1.4s";
+        el.style.animationFillMode = "both";
+      });
+      i++;
+    };
+
+    ["#terms-page-title", "#terms-last-updated", "#terms-page-toc", "#terms-divider-1"].forEach(register);
+
+    document.querySelectorAll<HTMLElement>(".terms-heading, .terms-sub").forEach((el, idx) => {
+      let stop = inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = `${idx * 50}ms`;
+        el.style.animationDuration = "1.3s";
+        el.style.animationFillMode = "both";
+        stop();
+      });
+    });
+
+    document.querySelectorAll<HTMLElement>("#privacy, #booking, #use").forEach((section) => {
+      section.querySelectorAll<HTMLElement>(".terms-body > div").forEach((el, idx) => {
+        let stop = inView(el, () => {
+          el.classList.add("animate__animated", "animate__fadeInUp");
+          el.style.animationDelay = `${idx * 55}ms`;
+          el.style.animationDuration = "1.3s";
+          el.style.animationFillMode = "both";
+          stop();
+        });
+      });
+    });
+
+    ["#terms-divider-2", "#terms-divider-3", "#terms-back"].forEach((sel) => {
+      const el = document.querySelector(sel) as HTMLElement | null;
+      if (!el) return;
+      let stop = inView(el, () => {
+        el.classList.add("animate__animated", "animate__fadeInUp");
+        el.style.animationDelay = "0ms";
+        el.style.animationDuration = "1.3s";
+        el.style.animationFillMode = "both";
+        stop();
+      });
+    });
+  });
+</script>
 
 <style>
   .terms-toc {
@@ -275,9 +334,10 @@ const lastUpdated = "June 25, 2026";
   .terms-heading {
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-style: italic;
     color: #1a1a1a;
+    text-align: center;
   }
   .terms-sub {
     font-size: 0.72rem;
@@ -285,6 +345,34 @@ const lastUpdated = "June 25, 2026";
     letter-spacing: 0.08em;
     color: #477b93;
     font-weight: 600;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .terms-heading {
+      font-size: 2.5rem;
+      text-align: left;
+    }
+    .terms-sub {
+      text-align: left;
+    }
+
+    .terms-body code {
+      font-size: 14px;
+    }
+  }
+
+  html.has-js body:not(.reduce-motion) #terms-page-title,
+  html.has-js body:not(.reduce-motion) #terms-last-updated,
+  html.has-js body:not(.reduce-motion) #terms-page-toc,
+  html.has-js body:not(.reduce-motion) #terms-divider-1,
+  html.has-js body:not(.reduce-motion) #terms-divider-2,
+  html.has-js body:not(.reduce-motion) #terms-divider-3,
+  html.has-js body:not(.reduce-motion) .terms-heading,
+  html.has-js body:not(.reduce-motion) .terms-sub,
+  html.has-js body:not(.reduce-motion) .terms-body > div,
+  html.has-js body:not(.reduce-motion) #terms-back {
+    opacity: 0;
+    will-change: transform, opacity;
   }
 
   .terms-body {
@@ -293,17 +381,17 @@ const lastUpdated = "June 25, 2026";
     display: flex;
     flex-direction: column;
   }
-  .terms-body a {
+  :global(.terms-body a) {
     color: #477b93;
     text-decoration: underline;
     text-underline-offset: 2px;
     font-size: 1rem;
   }
-  .terms-body a:hover {
+  :global(.terms-body a:hover) {
     color: #334857;
   }
-  .terms-body code {
-    font-size: 0.8rem;
+  :global(.terms-body code) {
+    font-size: 14px;
     background: #f0ebe6;
     padding: 1px 5px;
     border-radius: 4px;
@@ -311,8 +399,29 @@ const lastUpdated = "June 25, 2026";
   }
 
   /* Dark mode */
+  body.dark #terms-page-header h1 {
+    color: var(--text-on-dark);
+  }
+  body.dark #terms-page-header p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .terms-toc {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .terms-toc a {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  body.dark .terms-toc a:hover {
+    color: var(--brand-primary-strong, #95bccb);
+  }
+  body.dark .terms-toc span {
+    color: var(--dark-border, #444);
+  }
   body.dark .terms-heading {
     color: var(--text-on-dark);
+  }
+  body.dark .terms-sub {
+    color: var(--brand-primary-soft, #c0d7e1);
   }
   body.dark .terms-body p {
     color: var(--text-on-dark-soft, #c0c0c0);
@@ -323,11 +432,14 @@ const lastUpdated = "June 25, 2026";
   body.dark .terms-body {
     border-color: var(--dark-border, #333);
   }
-  body.dark .terms-body code {
+  :global(body.dark .terms-body a) {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  :global(body.dark .terms-body a:hover) {
+    color: var(--brand-primary-strong, #95bccb);
+  }
+  :global(body.dark .terms-body code) {
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
-  }
-  body.dark .divider-center {
-    background: var(--dark-bg);
   }
 </style>
