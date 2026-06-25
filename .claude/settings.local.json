@@ -31,7 +31,23 @@
       "Bash(find \"/Users/sararingkow/\" -name \"*.zip\" 2>/dev/null | head -10)",
       "Bash(ls /tmp/ | grep -i access 2>/dev/null; ls ~/Desktop/ | grep -i access 2>/dev/null)",
       "Bash(unzip -o \"/Users/sararingkow/Downloads/accessibility_design.zip\" -d \"/Users/sararingkow/Desktop/accessibility_design_temp\")",
-      "Bash(echo \"old panel refs: $\\(curl -s http://localhost:4321/)"
+      "Bash(echo \"old panel refs: $\\(curl -s http://localhost:4321/)",
+      "Bash(curl -s http://localhost:4321/terms)",
+      "Bash(grep -v '^--$')",
+      "Bash(sed -i '' 's/<p>\\\\\\([^c]\\\\\\)/<p class=\"text-sm text-gray-600 leading-relaxed\">\\\\1/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/pages/terms.astro')",
+      "Bash(sed -i '' 's/^          <p>$/          <p class=\"text-sm text-gray-600 leading-relaxed\">/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/pages/terms.astro')",
+      "Bash(sed -i '' 's/^        <p>$/        <p class=\"text-sm text-gray-600 leading-relaxed\">/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/pages/terms.astro')",
+      "Bash(sed -i '' 's/^          <p>$/          <p class=\"text-[0.8rem] text-gray-600 leading-relaxed mb-1\">/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/components/Footer.astro')",
+      "Bash(sed -i '' 's/^          <p class=\"text-sm text-gray-600 leading-relaxed\">$/          <p class=\"text-[0.8rem] text-gray-600 leading-relaxed mb-1\">/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/components/Footer.astro')",
+      "Bash(sed -i '' 's/^        <p>$/        <p class=\"text-[0.8rem] text-gray-600 leading-relaxed mb-1\">/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/components/Footer.astro')",
+      "Bash(sed -i '' 's/<p>Cancellations/<p class=\"text-[0.8rem] text-gray-600 leading-relaxed mb-1\">Cancellations/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/components/Footer.astro')",
+      "Bash(sed -i '' 's/<p>All content/<p class=\"text-[0.8rem] text-gray-600 leading-relaxed mb-1\">All content/g' '/Users/sararingkow/Desktop/School/KEA/MMD E24 \\(DiDe\\)/12a_praktik1/Opgaver/Til portfolioen/VS Code/portfolio_2024/portfolio_example/src/components/Footer.astro')",
+      "Bash(kill 3237 49720 82568)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs kill)",
+      "Bash(curl -s http://localhost:4323/terms)",
+      "Bash(curl -s http://localhost:4323/)"
     ]
   }
 }

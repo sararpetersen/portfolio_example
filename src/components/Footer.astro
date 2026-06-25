@@ -7,11 +7,81 @@ import "../styles/global.css";
   <img src="/images/torii.svg" alt="" aria-hidden="true" class="w-[400px] h-auto" width="1956" height="582" loading="lazy" />
 </div>
 
+<!-- Terms modal -->
+<div id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" aria-hidden="true">
+  <div id="terms-modal-panel">
+    <div id="terms-modal-header">
+      <h2 id="terms-modal-title">Terms & Privacy</h2>
+      <button id="terms-modal-close" aria-label="Close terms">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg
+        >
+      </button>
+    </div>
+    <div id="terms-modal-body">
+      <section class="terms-modal-section">
+        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Privacy policy</h3>
+        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+          When you submit the contact form, your name, email, and message are processed by <a
+            href="https://www.netlify.com/privacy/"
+            target="_blank"
+            rel="noopener noreferrer">Netlify Forms</a
+          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code>localStorage</code> only — no personal data
+          leaves your device. No cookies, no tracking, no third-party marketing.
+        </p>
+        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+          <strong>Your rights (GDPR):</strong> You may request access to, correction of, or deletion of your data at any time — email <a
+            href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
+          >.
+        </p>
+      </section>
+
+      <hr class="terms-modal-divider" />
+
+      <section class="terms-modal-section">
+        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Booking & freelance terms</h3>
+        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+          I take on projects case by case. A written quote is provided before work starts — no surprises. Two rounds of revisions are included. Upon
+          full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is
+          agreed.
+        </p>
+        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+          Cancellations must be in writing. Work completed up to that point may be invoiced.
+        </p>
+      </section>
+
+      <hr class="terms-modal-divider" />
+
+      <section class="terms-modal-section">
+        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Terms of use</h3>
+        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+          All content on this portfolio belongs to Sara Ringkow Petersen. Do not reproduce or republish without written permission. External links are
+          provided for reference only. These terms are governed by Danish law.
+        </p>
+      </section>
+
+      <a href="/terms" class="terms-modal-fulllink">Read full terms →</a>
+    </div>
+  </div>
+  <div id="terms-modal-overlay"></div>
+</div>
+
 <!-- Footer -->
 <footer class="bg-gray-800 py-6 md:px-4 px-6">
   <div class="container mx-auto flex flex-col items-start md:flex-row md:justify-between">
     <!-- Logo -->
-    <div id="footer-logo" class="flex justify-start md:justify-center items-center relative font-bold transition-opacity duration-300 ease-in-out mb-8 md:mb-0">
+    <div
+      id="footer-logo"
+      class="flex justify-start md:justify-center items-center relative font-bold transition-opacity duration-300 ease-in-out mb-8 md:mb-0"
+    >
       <a href="/" class="group w-20 h-20">
         <img
           src="/logo_white.svg"
@@ -114,7 +184,7 @@ import "../styles/global.css";
     </div>
 
     <!-- Contact Information -->
-    <div id="footer-contact" class="flex flex-col items-start md:mt-0 mt-8 mb-8 md:mb-0">
+    <div id="footer-contact" class="flex flex-col items-start md:mt-0 mt-8 mb-8 md:mb-0 last:mb-0">
       <div class="some1 flex items-center py-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -161,9 +231,219 @@ import "../styles/global.css";
       </div>
     </div>
   </div>
+
+  <!-- Bottom strip: copyright + terms -->
+  <div
+    id="footer-bottom"
+    class="container mx-auto mt-6 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-2"
+  >
+    <p class="text-gray-500 text-xs">© 2026 · SRP Portfolio – Sara Ringkow Petersen</p>
+    <button
+      id="terms-modal-trigger"
+      class="text-gray-400 text-xs border border-gray-600 rounded-full px-3 py-1 hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-haspopup="dialog"
+    >
+      Terms &amp; Privacy
+    </button>
+  </div>
 </footer>
 
 <style>
+  /* Terms modal */
+  #terms-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+  }
+  #terms-modal.open {
+    display: block;
+  }
+
+  #terms-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  #terms-modal-panel {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 75vh;
+    background: #f7f3ef;
+    border-radius: 1.25rem 1.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  @media (min-width: 768px) {
+    #terms-modal-panel {
+      top: 50%;
+      bottom: auto;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      width: 640px;
+      max-width: calc(100vw - 2rem);
+      max-height: 80vh;
+      border-radius: 1.25rem;
+      animation: fadeIn 0.25s ease;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  #terms-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid #dcd6d0;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    background: #f7f3ef;
+  }
+  #terms-modal-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: var(--font-sans, system-ui, sans-serif);
+  }
+  #terms-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: 1.5px solid #bfb7b0;
+    background: transparent;
+    color: #4b4b4b;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+  #terms-modal-close:hover {
+    background: #2f3f4c;
+    border-color: #2f3f4c;
+    color: #f7f3ef;
+  }
+  #terms-modal-close:focus-visible {
+    outline: 2px solid #477b93;
+    outline-offset: 2px;
+  }
+
+  #terms-modal-body {
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .terms-modal-section a {
+    color: #477b93;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .terms-modal-section a:hover {
+    color: #334857;
+  }
+  .terms-modal-section code {
+    font-size: 0.75rem;
+    background: #f0ebe6;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+  .terms-modal-divider {
+    border: none;
+    border-top: 1px solid #dcd6d0;
+    margin: 0.125rem 0;
+  }
+  .terms-modal-fulllink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.375rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #477b93;
+    text-decoration: none;
+    padding: 0.4rem 0.875rem;
+    border: 1px solid #95bccb;
+    border-radius: 9999px;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+    width: fit-content;
+  }
+  .terms-modal-fulllink:hover {
+    background: #477b93;
+    color: white;
+    border-color: #477b93;
+  }
+  .terms-modal-fulllink:focus-visible {
+    outline: 2px solid #477b93;
+    outline-offset: 2px;
+    border-radius: 9999px;
+  }
+
+  /* Dark mode modal */
+  body.dark #terms-modal-panel,
+  body.dark #terms-modal-header {
+    background: var(--dark-bg, #1a1a1a);
+  }
+  body.dark #terms-modal-title {
+    color: var(--text-on-dark, #f0f0f0);
+  }
+  body.dark #terms-modal-header,
+  body.dark .terms-modal-divider {
+    border-color: var(--dark-border, #333);
+  }
+  body.dark .terms-modal-section p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .terms-modal-section h3 {
+    color: #6297ae;
+  }
+  body.dark #terms-modal-close {
+    border-color: var(--dark-border, #333);
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark #terms-modal-close:hover {
+    background: #477b93;
+    border-color: #477b93;
+    color: white;
+  }
+  body.dark .terms-modal-section code {
+    background: var(--dark-surface, #2a2a2a);
+    color: var(--text-on-dark-soft);
+  }
+
   footer a:hover {
     color: var(--brand-primary-soft);
   }
@@ -229,6 +509,33 @@ import "../styles/global.css";
 </style>
 
 <script>
+  // Terms modal
+  const termsModal = document.getElementById("terms-modal") as HTMLElement;
+  const termsOverlay = document.getElementById("terms-modal-overlay") as HTMLElement;
+  const termsTrigger = document.getElementById("terms-modal-trigger") as HTMLButtonElement;
+  const termsClose = document.getElementById("terms-modal-close") as HTMLButtonElement;
+
+  function openTerms(): void {
+    termsModal.classList.add("open");
+    termsModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    termsClose.focus();
+  }
+  function closeTerms(): void {
+    termsModal.classList.remove("open");
+    termsModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    termsTrigger.focus();
+  }
+
+  termsTrigger?.addEventListener("click", openTerms);
+  termsClose?.addEventListener("click", closeTerms);
+  termsOverlay?.addEventListener("click", closeTerms);
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape" && termsModal.classList.contains("open")) closeTerms();
+  });
+
+  // Torii icon
   const toriEl = document.getElementById("torii-icon");
   if (toriEl && !document.body.classList.contains("reduce-motion")) {
     const observer = new IntersectionObserver(
@@ -240,7 +547,7 @@ import "../styles/global.css";
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(toriEl);
   } else if (toriEl) {

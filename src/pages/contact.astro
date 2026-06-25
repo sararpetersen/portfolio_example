@@ -240,8 +240,13 @@ import MainLayout from "../layouts/MainLayout.astro";
                 placeholder="Your message..."></textarea>
             </div>
 
+            <!-- GDPR note -->
+            <p class="text-xs text-gray-500 leading-relaxed" data-i18n="contact.form.gdpr">
+              By submitting this form you agree to our <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Terms & Privacy Policy</a>.
+            </p>
+
             <!-- Submit Button -->
-            <div class="pt-4 flex justify-center md:justify-start">
+            <div class="flex justify-center md:justify-start">
               <button
                 type="submit"
                 class="text-[14px] inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300"
