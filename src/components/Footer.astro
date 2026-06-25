@@ -7,11 +7,13 @@ import "../styles/global.css";
   <img src="/images/torii.svg" alt="" aria-hidden="true" class="w-[400px] h-auto" width="1956" height="582" loading="lazy" />
 </div>
 
-<!-- Terms modal -->
+<!-- Terms modal (backdrop is the container itself) -->
 <div id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" aria-hidden="true">
   <div id="terms-modal-panel">
     <div id="terms-modal-header">
-      <h2 id="terms-modal-title">Terms & Privacy</h2>
+      <h2 id="terms-modal-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop" data-i18n="modal.terms.title">
+        Terms & Privacy
+      </h2>
       <button id="terms-modal-close" aria-label="Close terms">
         <svg
           width="16"
@@ -28,17 +30,19 @@ import "../styles/global.css";
     </div>
     <div id="terms-modal-body">
       <section class="terms-modal-section">
-        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Privacy policy</h3>
-        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
+        <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800" data-i18n="modal.terms.privacy">
+          Privacy policy
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-2">
           When you submit the contact form, your name, email, and message are processed by <a
             href="https://www.netlify.com/privacy/"
             target="_blank"
             rel="noopener noreferrer">Netlify Forms</a
-          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code>localStorage</code> only — no personal data
-          leaves your device. No cookies, no tracking, no third-party marketing.
+          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code>localStorage</code> only&mdash; no personal
+          data leaves your device. No cookies, no tracking, no third-party marketing.
         </p>
-        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
-          <strong>Your rights (GDPR):</strong> You may request access to, correction of, or deletion of your data at any time — email <a
+        <p class="text-gray-600 leading-relaxed mb-3">
+          <strong>Your rights (GDPR):</strong> You may request access to, correction of, or deletion of your data at any time - email: <a
             href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
           >.
         </p>
@@ -47,31 +51,30 @@ import "../styles/global.css";
       <hr class="terms-modal-divider" />
 
       <section class="terms-modal-section">
-        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Booking & freelance terms</h3>
-        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
-          I take on projects case by case. A written quote is provided before work starts — no surprises. Two rounds of revisions are included. Upon
-          full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is
-          agreed.
+        <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800 mt-3" data-i18n="modal.terms.booking">
+          Booking & freelance terms
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-2">
+          I take on projects case by case. A written quote is provided before work starts&mdash; no surprises. Two rounds of revisions are included.
+          Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless
+          confidentiality is agreed.
         </p>
-        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
-          Cancellations must be in writing. Work completed up to that point may be invoiced.
-        </p>
+        <p class="text-gray-600 leading-relaxed mb-3">Cancellations must be in writing. Work completed up to that point may be invoiced.</p>
       </section>
 
       <hr class="terms-modal-divider" />
 
       <section class="terms-modal-section">
-        <h3 class="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-blue-500 mb-1.5">Terms of use</h3>
-        <p class="text-[0.8rem] text-gray-600 leading-relaxed mb-1">
-          All content on this portfolio belongs to Sara Ringkow Petersen. Do not reproduce or republish without written permission. External links are
-          provided for reference only. These terms are governed by Danish law.
+        <h3 class="text-h4-mobile font-garamond font-bold tracking-[0.1em] uppercase text-gray-800 mt-3" data-i18n="modal.terms.use">Terms of use</h3>
+        <p class="text-gray-600 leading-relaxed mb-3">
+          All content on this portfolio belongs to Sara Ringkow Petersen <em>(me)</em>. Do not reproduce or republish without written permission.
+          External links are provided for reference only. These terms are governed by Danish law.
         </p>
       </section>
 
-      <a href="/terms" class="terms-modal-fulllink">Read full terms →</a>
+      <a href="/terms" class="terms-modal-fulllink" data-i18n="modal.terms.link">Read full terms →</a>
     </div>
   </div>
-  <div id="terms-modal-overlay"></div>
 </div>
 
 <!-- Footer -->
@@ -249,27 +252,24 @@ import "../styles/global.css";
 </footer>
 
 <style>
-  /* Terms modal */
+  /* Terms modal — container IS the backdrop */
   #terms-modal {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 200;
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
   }
   #terms-modal.open {
     display: block;
   }
 
-  #terms-modal-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
   #terms-modal-panel {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 0;
+    cursor: default;
     left: 0;
     right: 0;
     max-height: 75vh;
@@ -279,7 +279,6 @@ import "../styles/global.css";
     flex-direction: column;
     overflow: hidden;
     animation: slideUp 0.3s ease;
-    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
   }
   @media (min-width: 768px) {
     #terms-modal-panel {
@@ -325,11 +324,10 @@ import "../styles/global.css";
     background: #f7f3ef;
   }
   #terms-modal-title {
-    font-size: 0.875rem;
     font-weight: 600;
     color: #1a1a1a;
-    font-family: var(--font-sans, system-ui, sans-serif);
   }
+
   #terms-modal-close {
     display: flex;
     align-items: center;
@@ -372,7 +370,6 @@ import "../styles/global.css";
     color: #334857;
   }
   .terms-modal-section code {
-    font-size: 0.75rem;
     background: #f0ebe6;
     padding: 1px 4px;
     border-radius: 3px;
@@ -387,8 +384,6 @@ import "../styles/global.css";
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    margin-top: 0.375rem;
-    font-size: 0.8rem;
     font-weight: 500;
     color: #477b93;
     text-decoration: none;
@@ -511,7 +506,7 @@ import "../styles/global.css";
 <script>
   // Terms modal
   const termsModal = document.getElementById("terms-modal") as HTMLElement;
-  const termsOverlay = document.getElementById("terms-modal-overlay") as HTMLElement;
+  const termsPanel = document.getElementById("terms-modal-panel") as HTMLElement;
   const termsTrigger = document.getElementById("terms-modal-trigger") as HTMLButtonElement;
   const termsClose = document.getElementById("terms-modal-close") as HTMLButtonElement;
 
@@ -530,7 +525,10 @@ import "../styles/global.css";
 
   termsTrigger?.addEventListener("click", openTerms);
   termsClose?.addEventListener("click", closeTerms);
-  termsOverlay?.addEventListener("click", closeTerms);
+  // Close when clicking the backdrop (the modal container), but not the panel itself
+  termsModal?.addEventListener("click", (e: MouseEvent) => {
+    if (!termsPanel?.contains(e.target as Node)) closeTerms();
+  });
   document.addEventListener("keydown", (e: KeyboardEvent) => {
     if (e.key === "Escape" && termsModal.classList.contains("open")) closeTerms();
   });

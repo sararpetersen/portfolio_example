@@ -184,7 +184,9 @@ import MainLayout from "../layouts/MainLayout.astro";
             <label>Do not fill this out if you're human: <input name="bot-field" tabindex="-1" /></label>
           </p>
 
-          <p class="text-xs text-gray-500 mb-5" data-i18n="contact.form.required.note">Fields marked with <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">an asterisk</span> are required.</p>
+          <p class="text-xs text-gray-500 mb-5">
+            Fields marked with <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">an asterisk</span> are required.
+          </p>
 
           <div class="space-y-6">
             <!-- Name Field -->
@@ -242,7 +244,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
             <!-- GDPR note -->
             <p class="text-xs text-gray-500 leading-relaxed" data-i18n="contact.form.gdpr">
-              By submitting this form you agree to our <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Terms & Privacy Policy</a>.
+              By submitting this form you agree to my <a
+                href="/terms"
+                class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs"
+                >Terms & Privacy Policy</a
+              >.
             </p>
 
             <!-- Submit Button -->
