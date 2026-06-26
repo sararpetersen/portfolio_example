@@ -184,7 +184,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <label>Do not fill this out if you're human: <input name="bot-field" tabindex="-1" /></label>
           </p>
 
-          <p class="text-xs text-gray-500 mb-5">
+          <p class="text-xs text-gray-500 mb-5" data-i18n="contact.form.required.note">
             Fields marked with <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">an asterisk</span> are required.
           </p>
 
@@ -253,13 +253,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
             <!-- Submit Button -->
             <div class="flex justify-center md:justify-start">
-              <button
-                type="submit"
-                class="text-[14px] inline-flex w-auto items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                data-i18n="contact.form.submit"
-              >
-                Send Message
-              </button>
+              <Button variant="secondary" size="small" type="submit"><span data-i18n="contact.form.submit">Send Message</span></Button>
             </div>
 
             <!-- Status Messages -->
@@ -463,21 +457,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       box-shadow: 0 0 0 3px rgba(149, 188, 203, 0.24);
     }
 
-    :global(body.dark #contact-form button[type="submit"]) {
-      background-color: transparent;
-      border-color: color-mix(in srgb, var(--brand-primary-soft) 72%, #eaf4f8 28%);
-      color: color-mix(in srgb, var(--brand-primary-soft) 84%, #f4fbff 16%);
-      font-weight: 700;
-    }
-
-    :global(body.dark #contact-form button[type="submit"]:hover),
-    :global(body.dark #contact-form button[type="submit"]:focus-visible) {
-      background-color: color-mix(in srgb, var(--brand-primary-soft) 88%, #d9edf5 12%);
-      border-color: color-mix(in srgb, var(--brand-primary-soft) 88%, #d9edf5 12%);
-      color: #102029;
-    }
-
-    :global(body.dark p[data-i18n="contact.form.gdpr"]) {
+:global(body.dark p[data-i18n="contact.form.gdpr"]) {
       color: var(--text-on-dark-soft, #c0c0c0);
     }
     :global(body.dark p[data-i18n="contact.form.gdpr"] a) {

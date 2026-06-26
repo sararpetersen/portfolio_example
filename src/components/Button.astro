@@ -23,10 +23,11 @@ interface Props {
   href?: string;
   target?: string;
   rel?: string;
+  type?: "button" | "submit" | "reset";
   "aria-label"?: string;
 }
 
-const { variant = "primary", size = "medium", href, target, rel, "aria-label": ariaLabel } = Astro.props as Props;
+const { variant = "primary", size = "medium", href, target, rel, type = "button", "aria-label": ariaLabel } = Astro.props as Props;
 const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[size];
 ---
 
@@ -36,7 +37,7 @@ const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[si
       <slot />
     </a>
   ) : (
-    <button type="button" class={cls} aria-label={ariaLabel}>
+    <button type={type} class={cls} aria-label={ariaLabel}>
       <slot />
     </button>
   )
