@@ -47,7 +47,8 @@
       "Bash(awk '{print $2}')",
       "Bash(xargs kill)",
       "Bash(curl -s http://localhost:4323/terms)",
-      "Bash(curl -s http://localhost:4323/)"
+      "Bash(curl -s http://localhost:4323/)",
+      "Bash(pkill -f \"astro dev\")"
     ]
   }
 }

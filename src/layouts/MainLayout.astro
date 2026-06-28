@@ -6,7 +6,7 @@ import AccessibilityPanel from "../components/AccessibilityPanel.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 import "../styles/global.css";
-const siteUrl = "https://srp-portfolio.netlify.app";
+const siteUrl = "https://sararingkow.dk/";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/images/hero_image.webp", siteUrl).toString();
 
@@ -14,10 +14,31 @@ const schemamarkup = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Sara Ringkow Petersen",
-  url: "https://srp-portfolio.netlify.app/",
-  jobTitle: "Multimedia-designer & Concept Developer",
-  description: "A multimedia-designer and an aspiring concept developer passionate about accessible, user-friendly digital solutions.",
-  sameAs: ["https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"],
+  url: "https://sararingkow.dk/",
+  email: "sara.ringkow@gmail.com",
+  jobTitle: "Multimedia Designer & Concept Developer",
+  description:
+    "Multimedia Designer and Concept Developer based in Denmark, specialising in accessible, user-centred digital experiences that combine UX/UI design, web design, and inclusive design principles.",
+  knowsAbout: [
+    "UX Design",
+    "UI Design",
+    "Accessibility",
+    "Inclusive Design",
+    "Web Design",
+    "Digital Prototyping",
+    "Astro",
+    "Tailwind CSS",
+    "JavaScript",
+    "TypeScript",
+    "Figma",
+    "Concept Development",
+  ],
+  alumniOf: [
+    { "@type": "EducationalOrganization", name: "Copenhagen School of Design and Technology (KEA)", description: "Multimedia Design" },
+    { "@type": "EducationalOrganization", name: "Academy of Technologies and Business (Zealand)", description: "Digital Concept Development" },
+  ],
+  address: { "@type": "PostalAddress", addressCountry: "DK" },
+  sameAs: ["https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/", "https://github.com/sararpetersen", "https://sararingkow.dk/"],
 };
 ---
 
@@ -33,6 +54,12 @@ const schemamarkup = {
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
     <meta name="description" content={Astro.props.description} />
+    <meta name="author" content="Sara Ringkow Petersen" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Multimedia Designer, Concept Developer, UX Design, UI Design, Accessibility, Inclusive Design, Front-end Development, Denmark, Portfolio, Figma, Astro, Tailwind"
+    />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={Astro.props.ogtitle} />
@@ -62,7 +89,7 @@ const schemamarkup = {
             "nav.about": "About",
             "nav.contact": "Contact",
             "nav.blog": "Blog",
-            "nav.lab": "Lab",
+            "nav.lab": "The Lab",
             "footer.copyright": "© 2026 SRP Portfolio - Sara Ringkow Petersen. All rights reserved.",
             "settings.darkmode": "Dark-mode",
             "settings.colormode": "Calm mode",
@@ -129,7 +156,7 @@ const schemamarkup = {
             "timeline.4.desc":
               "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
             "timeline.5.year": "May 2026 - October 2026",
-            "timeline.5.title": "Software Developer & Multimedia Design Intern | Folkæt",
+            "timeline.5.title": "Software Developer Intern | Folkæt",
             "timeline.5.desc":
               "Working on the further development of interactive quizzes and improving user-flows, and contributes to digital solutions with a focus on user-experience and engagement.",
             "timeline.6.year": "January 2026 - June 2026",
@@ -298,13 +325,34 @@ const schemamarkup = {
             "lab.mariowiki.desc": "A fan wiki exploring the Super Mario universe – revamped version of an old project from Multimedia Design.",
             "lab.mariowiki.link": "Visit site →",
             "about.tab.interests": "Interests",
+            "a11y.title": "Accessibility Settings",
+            "a11y.fab.label": "Accessibility",
+            "a11y.theme": "THEME",
+            "a11y.light": "Light",
+            "a11y.dark": "Dark",
+            "a11y.font": "Font",
+            "a11y.font.default": "Default",
+            "a11y.textsize": "TEXT SIZE",
+            "a11y.normal": "Normal",
+            "a11y.large": "Large",
+            "a11y.colors": "COLOURS",
+            "a11y.calm": "Calm colours",
+            "a11y.calm.desc": "Less saturated palette",
+            "a11y.motion": "MOTION",
+            "a11y.reduce-motion": "Reduced motion",
+            "a11y.reduce-motion.desc": "Disable animations",
+            "a11y.focus": "FOCUS MODE",
+            "a11y.focus.name": "Reduce visual clutter",
+            "a11y.focus.desc": "Hides decorative elements",
+            "a11y.reset": "Reset settings",
+            "a11y.note": "Your preferences are saved on your device.",
           },
           da: {
             "nav.home": "Hjem",
             "nav.about": "Om",
             "nav.contact": "Kontakt",
             "nav.blog": "Blog",
-            "nav.lab": "Laboratorium",
+            "nav.lab": "Laboratoriet",
             "footer.copyright": "© 2026 SRP Portfolio - Sara Ringkow Petersen. Alle rettigheder forbeholdes.",
             "settings.darkmode": "M\u00f8rk tilstand",
             "settings.colormode": "Rolig tilstand",
@@ -375,7 +423,7 @@ const schemamarkup = {
             "timeline.6.desc":
               "Hjælper internationale studerende med onboarding, social og faglig integration og fungerer som kontaktperson for spørgsmål og daglig støtte.",
             "timeline.5.year": "Maj 2026 - Oktober 2026",
-            "timeline.5.title": "Software-udvikler & Multimediedesign Praktikant | Folkæt",
+            "timeline.5.title": "Software-udvikler Praktikant | Folkæt",
             "timeline.5.desc":
               "Arbejder med videreudvikling af interaktive quizzer, forbedrer brugerflows og bidrager til digitale løsninger med fokus på brugeroplevelse og engagement.",
             "interests.label": "Interesser",
@@ -546,6 +594,27 @@ const schemamarkup = {
             "lab.mariowiki.desc": "Et fan-wiki om Super Mario universet – en opdateret udgave af et gammelt projekt fra Multimediedesign.",
             "lab.mariowiki.link": "Besøg siden →",
             "about.tab.interests": "Interesser",
+            "a11y.title": "Tilgængelighedsindstillinger",
+            "a11y.fab.label": "Tilgængelighed",
+            "a11y.theme": "TEMA",
+            "a11y.light": "Lyst",
+            "a11y.dark": "Mørkt",
+            "a11y.textsize": "SKRIFTSTØRRELSE",
+            "a11y.normal": "Normal",
+            "a11y.large": "Stor",
+            "a11y.colors": "FARVER",
+            "a11y.calm": "Dæmpede farver",
+            "a11y.calm.desc": "Mindre mættet farvepalette",
+            "a11y.motion": "BEVÆGELSE",
+            "a11y.reduce-motion": "Reduceret bevægelse",
+            "a11y.reduce-motion.desc": "Slå animationer fra",
+            "a11y.font": "LÆSESKRIFT",
+            "a11y.font.default": "Standard",
+            "a11y.focus": "FOKUSTILSTAND",
+            "a11y.focus.name": "Reducer visuel støj",
+            "a11y.focus.desc": "Skjuler dekorative elementer",
+            "a11y.reset": "Nulstil indstillinger",
+            "a11y.note": "Dine præferencer gemmes lokalt på din enhed.",
           },
         };
 

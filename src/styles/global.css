@@ -317,3 +317,49 @@ html.readable-font button,
 html.readable-font .font-inter {
   font-family: "Atkinson Hyperlegible", sans-serif !important;
 }
+
+/* ── OpenDyslexic font ────────────────────────────────────── */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/opendyslexic@0.91.12/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html.opendyslexic-font body,
+html.opendyslexic-font p,
+html.opendyslexic-font li,
+html.opendyslexic-font label,
+html.opendyslexic-font input,
+html.opendyslexic-font textarea,
+html.opendyslexic-font button,
+html.opendyslexic-font .font-inter,
+html.opendyslexic-font .font-almarai {
+  font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+/* ── Focus mode (hides decorative elements) ───────────────── */
+body.focus-mode.site-shell::before,
+body.focus-mode.site-shell::after {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+body.focus-mode #torii-icon {
+  display: none !important;
+}
+body.focus-mode .hero-image-accent {
+  display: none !important;
+}
+
+/* ── Verdana font option ──────────────────────────────────── */
+html.verdana-font body,
+html.verdana-font p,
+html.verdana-font li,
+html.verdana-font label,
+html.verdana-font input,
+html.verdana-font textarea,
+html.verdana-font button,
+html.verdana-font .font-inter,
+html.verdana-font .font-almarai {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}

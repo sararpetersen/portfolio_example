@@ -72,6 +72,24 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
       </svg>
     </button>
+
+    <!-- Focus mode -->
+    <button id="focusModeToggle" aria-pressed="false" aria-label="Toggle focus mode" class="bar-quick-btn tooltip-below" data-tooltip="Focus mode">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+      </svg>
+    </button>
   </div>
 
   <!-- Language Toggle -->
@@ -164,7 +182,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/lab") ? "page" : undefined}
             aria-label="Go to lab-page"
-            data-i18n="nav.lab">Lab</a
+            data-i18n="nav.lab">The Lab</a
           >
         </li>
       </ul>
@@ -266,7 +284,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/lab") ? "page" : undefined}
           aria-label="Go to lab-page"
-          data-i18n="nav.lab">Lab</a
+          data-i18n="nav.lab">The Lab</a
         >
       </li>
     </ul>
@@ -511,6 +529,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     mediaQuery: "(prefers-color-scheme: dark)",
   });
   initToggle("colorModeToggle", "calm-mode", "calmModeEnabled");
+  initToggle("focusModeToggle", "focus-mode", "focusModeEnabled");
   initToggle("textSizeToggle", "text-large", "largeTextEnabled", {
     target: "html",
   });

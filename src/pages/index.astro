@@ -41,7 +41,7 @@ import Cases from "../components/Cases.astro";
 <MainLayout
   title="SRP portfolio | Homepage"
   description="Multimedia designer and concept developer based in Denmark. Browse selected cases, experiments, and design work by Sara Ringkow Petersen."
-  ogtitle="Frontpage — SRP Portfolio"
+  ogtitle="Frontpage – SRP Portfolio"
   ogdescription="Portfolio of Sara Ringkow Petersen — multimedia designer and concept developer with a focus on accessibility and user-centred design."
 >
   <!-- Hero Section -->
@@ -66,7 +66,9 @@ import Cases from "../components/Cases.astro";
 
           <div id="hero-cta" class="btn-container flex flex-wrap items-center gap-4">
             <span class="md:hidden block">
-              <Button href="#project-section" variant="primary" size="medium" aria-label="Go to projects section"><span data-i18n="hero.cta">See projects</span></Button>
+              <Button href="#project-section" variant="primary" size="medium" aria-label="Go to projects section"
+                ><span data-i18n="hero.cta">See projects</span></Button
+              >
             </span>
           </div>
         </div>
@@ -74,14 +76,7 @@ import Cases from "../components/Cases.astro";
         <div class="col-span-12 lg:col-span-5">
           <div id="hero-image" class="hero-image-wrap relative shadow-drop25">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
-            <img
-              src="/images/hero_image.webp"
-              alt="Sara Ringkow Petersen"
-              class="hero-image object-cover"
-              width="500"
-              height="500"
-              loading="eager"
-            />
+            <img src="/images/hero_image.webp" alt="Sara Ringkow Petersen" class="hero-image object-cover" width="500" height="500" loading="eager" />
           </div>
         </div>
       </div>
@@ -178,7 +173,9 @@ import Cases from "../components/Cases.astro";
     </div>
 
     <div id="blog-preview-all" class="pt-6">
-      <Button href="/blog" variant="primary" size="small" aria-label="Go to all blog posts"><span data-i18n="blog.preview.all">See all blog posts</span></Button>
+      <Button href="/blog" variant="primary" size="small" aria-label="Go to all blog posts"
+        ><span data-i18n="blog.preview.all">See all blog posts</span></Button
+      >
     </div>
   </section>
 
@@ -222,7 +219,9 @@ import Cases from "../components/Cases.astro";
           experiences that combine visual clarity, thoughtful structure, and functionality.
         </p>
         <div class="btn_container">
-          <Button href="/about_me" variant="primary" size="small" aria-label="Learn more about me"><span data-i18n="about.preview.cta">Learn more about me</span></Button>
+          <Button href="/about_me" variant="primary" size="small" aria-label="Learn more about me"
+            ><span data-i18n="about.preview.cta">Learn more about me</span></Button
+          >
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ const timelineItems: TimelineItem[] = [
     i18nKey: 6,
     category: "work",
     year: "May 2026 - October 2026",
-    title: "Software Developer & Multimedia Design Intern | Folkæt",
+    title: "Software Developer Intern | Folkæt",
     desc: "Working on the further development of interactive quizzes and improving user-flows, and contributes to digital solutions with a focus on user-experience and engagement.",
   },
 ];
@@ -78,24 +78,21 @@ const workTimelineItems = timelineItems
 <MainLayout
   title="SRP portfolio | About me"
   description="Learn about Sara Ringkow Petersen — multimedia designer, concept developer, and advocate for accessible, inclusive digital design."
-  ogtitle="About — SRP Portfolio"
+  ogtitle="About me – SRP Portfolio"
   ogdescription="Multimedia designer and concept developer with a passion for accessibility and inclusive digital experiences. Get to know Sara."
 >
   <!-- Top Section -->
-  <section
-    id="about-me"
-    class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl md:text-left text-center"
-  >
+  <section id="about-me" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 mx-auto relative container max-w-6xl">
     <div class="relative col-span-12 md:pt-12 pt-16 mb-12">
-      <div id="about-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
+      <div id="about-title-row" class="mb-3">
         <h1
-          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop md:text-left text-center"
+          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop"
           data-i18n="about.title"
         >
           About me
         </h1>
       </div>
-      <p class="heading-text text-gray-600 max-w-3xl" data-i18n="about.intro">
+      <p class="heading-text text-gray-600 max-w-3xl text-left" data-i18n="about.intro">
         Expand a section in the menu below to read about my background, what inspires me, and where I'm heading.<br class="hidden md:block" /> Scroll further
         down the page to explore my journey, interests, and downloadable resources.
       </p>
@@ -337,7 +334,8 @@ const workTimelineItems = timelineItems
       <div class="interest-item border-t-2 border-gray-200 pt-5">
         <h4 class="text-gray-800 mb-2" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h4>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.themepark.text">
-          Few things beat a full day at a theme park — the rides, the shows, all of it.
+          Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
+          them.
         </p>
       </div>
     </div>
@@ -363,25 +361,53 @@ const workTimelineItems = timelineItems
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h4>
         <span class="self-start">
-          <Button href="/pdfs/application_template_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See application-template (EN, opens in new tab)"><span data-i18n="resource.app.en.btn">View template</span></Button>
+          <Button
+            href="/pdfs/application_template_sararpetersen_(EN).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label="See application-template (EN, opens in new tab)"><span data-i18n="resource.app.en.btn">View template</span></Button
+          >
         </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h4>
         <span class="self-start">
-          <Button href="/pdfs/CV_sararpetersen_(EN).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See resume (EN, opens in new tab)"><span data-i18n="resource.resume.en.btn">View resume</span></Button>
+          <Button
+            href="/pdfs/CV_sararpetersen_(EN).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label="See resume (EN, opens in new tab)"><span data-i18n="resource.resume.en.btn">View resume</span></Button
+          >
         </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
         <span class="self-start">
-          <Button href="/pdfs/application_template_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See application-template (DA, opens in new tab)"><span data-i18n="resource.app.da.btn">Se skabelon</span></Button>
+          <Button
+            href="/pdfs/application_template_sararpetersen_(DA).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label="See application-template (DA, opens in new tab)"><span data-i18n="resource.app.da.btn">Se skabelon</span></Button
+          >
         </span>
       </div>
       <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
         <h4 class="text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h4>
         <span class="self-start">
-          <Button href="/pdfs/CV_sararpetersen_(DA).pdf" target="_blank" rel="noopener noreferrer" variant="secondary" size="small" aria-label="See CV (DA, opens in new tab)"><span data-i18n="resource.cv.da.btn">Se CV</span></Button>
+          <Button
+            href="/pdfs/CV_sararpetersen_(DA).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label="See CV (DA, opens in new tab)"><span data-i18n="resource.cv.da.btn">Se CV</span></Button
+          >
         </span>
       </div>
     </div>

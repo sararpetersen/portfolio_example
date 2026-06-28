@@ -26,9 +26,14 @@ const tagsEn = post.data.tags;
 const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 ---
 
-<MainLayout title={`SRP portfolio | ${post.data.title}`} description={post.data.excerpt} ogtitle={`${post.data.title} — SRP Portfolio`} ogdescription={post.data.excerpt}>
+<MainLayout
+  title={`SRP portfolio | ${post.data.title}`}
+  description={post.data.excerpt}
+  ogtitle={`${post.data.title} — SRP Portfolio`}
+  ogdescription={post.data.excerpt}
+>
   <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
-    <header class="md:pt-28 pt-24 mb-6 md:text-left text-center">
+    <header class="md:pt-28 pt-24 mb-6">
       <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
       <h1 id="post-title" class="font-nikumaru uppercase tracking-[0.14em] md:tracking-[0.18em] text-h3-mobile md:text-h3-desktop mb-3 text-gray-800">
         {post.data.title}
@@ -44,12 +49,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 
     {
       post.data.tags.length > 0 && (
-        <div
-          id="post-tags"
-          class="mb-8 flex flex-wrap gap-2 justify-center md:justify-start"
-          data-tags-en={JSON.stringify(tagsEn)}
-          data-tags-da={JSON.stringify(tagsDa)}
-        >
+        <div id="post-tags" class="mb-8 flex flex-wrap gap-2" data-tags-en={JSON.stringify(tagsEn)} data-tags-da={JSON.stringify(tagsDa)}>
           {tagsEn.map((tag: string) => (
             <span class="post-tag-chip rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em]">{tag}</span>
           ))}

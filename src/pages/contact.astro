@@ -6,7 +6,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout
   title="SRP portfolio | Contact"
   description="Get in touch with Sara Ringkow Petersen. Available via email, LinkedIn, or the contact form."
-  ogtitle="Contact — SRP Portfolio"
+  ogtitle="Contact – SRP Portfolio"
   ogdescription="Want to work together or just say hi? Reach Sara via email, LinkedIn, or the contact form."
 >
   <!--  Contact Section -->
@@ -16,29 +16,30 @@ import MainLayout from "../layouts/MainLayout.astro";
       <!-- Image and Contact Info Box -->
       <div id="contact-container" class="md:col-span-10 col-span-12 flex flex-col md:flex-row items-center">
         <!-- Image with Enhanced Styling -->
-        <div class="relative mb-12 md:mb-0 md:mr-16">
+        <div class="relative md:mb-12 mb-0 md:mr-16">
           <img
             src="/images/pfp.webp"
             alt="School-portrait of Sara (taken during the internship preparations)"
-            class="w-56 h-56 md:w-[350px] md:h-[350px] object-cover rounded-full ring-1 ring-gray-500 border-gray-500 border-l-4"
+            class="hidden md:block lg:block w-56 h-56 md:w-[350px] md:h-[350px] object-cover rounded-full border-l-4 border border-gray-500"
             width="350"
             height="350"
             loading="lazy"
+            aria-hidden="true"
           />
         </div>
 
         <!-- Contact Information Box -->
         <div>
-          <div id="contact-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
+          <div id="contact-title-row" class="mb-3">
             <h1
               id="contact-title"
-              class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop md:text-left text-center"
+              class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop"
               data-i18n="contact.title"
             >
               Let's talk!
             </h1>
           </div>
-          <p id="contact-text" class="md:text-left text-center text-gray-800 mb-8 leading-relaxed max-w-xl" data-i18n="contact.text">
+          <p id="contact-text" class="text-left text-gray-800 mb-8 leading-relaxed max-w-xl" data-i18n="contact.text">
             If you're interested in working together, don't hesitate to get in touch. <br class="hidden md:block" /> You can use the form below or reach
             me directly via the contact methods listed here.
           </p>
@@ -46,16 +47,13 @@ import MainLayout from "../layouts/MainLayout.astro";
             id="contact-preferred"
             class="max-w-md md:max-w-xl mb-8 px-4 py-4 rounded-xl border border-blue-300 border-r-4 bg-blue-100 text-blue-900"
           >
-            <p class="text-[14px] font-semibold leading-tight md:text-left text-center text-blue-800 mb-1">
+            <p class="text-[14px] font-semibold leading-tight text-left text-blue-800 mb-1">
               <span class="contact-preferred-label" data-i18n="contact.preferred.title">Ways to reach me</span>
               <span class="contact-preferred-method text-[13px] font-regular text-blue-700 inline" data-i18n="contact.preferred.summary"
                 >Email and LinkedIn</span
               >
             </p>
-            <p
-              class="contact-preferred-value text-[12px] leading-snug italic font-light md:text-left text-center text-blue-600"
-              data-i18n="contact.preferred.value"
-            >
+            <p class="contact-preferred-value text-[12px] leading-snug italic font-light text-left text-blue-600" data-i18n="contact.preferred.value">
               These are usually the quickest options. Phone is available for brief follow-ups if needed.
             </p>
           </div>
@@ -142,11 +140,11 @@ import MainLayout from "../layouts/MainLayout.astro";
           <p
             id="contact-services-label"
             data-i18n="contact.services.label"
-            class="text-[14px] font-garamond italic font-light text-gray-600 uppercase tracking-widest mt-6 mb-2 md:text-left text-center"
+            class="text-[14px] font-garamond italic font-light text-gray-600 uppercase tracking-widest mt-6 mb-2"
           >
             What I offer
           </p>
-          <ul id="contact-services" class="flex flex-wrap md:justify-start justify-center gap-2" aria-label="Services offered">
+          <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered">
             <li
               data-i18n="contact.services.uiux"
               class="px-3 py-1 text-xs font-semibold bg-green-100 border border-green-500 border-r-4 rounded-full text-green-800"
@@ -186,11 +184,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <!-- Contact Form Section -->
   <section id="contact-form-section" class="container max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <div id="contact-form-intro" class="mb-8 max-w-3xl md:text-left text-center">
-      <div id="contact-form-title-row" class="flex items-center md:justify-start justify-center gap-4 mb-3">
+    <div id="contact-form-intro" class="mb-8 max-w-3xl">
+      <div id="contact-form-title-row" class="mb-3">
         <h2
           id="contact-form-title"
-          class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 md:text-left text-center"
+          class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800"
           data-i18n="contact.form.title"
         >
           Send me a message

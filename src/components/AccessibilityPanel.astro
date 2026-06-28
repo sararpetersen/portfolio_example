@@ -2,23 +2,14 @@
 
 ---
 
-<!-- Floating accessibility button -->
-<button id="a11y-fab" aria-label="Open accessibility settings" aria-expanded="false" aria-controls="a11y-panel" data-tooltip="Accessibility settings">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
+<!-- Floating accessibility button (pill shape) -->
+<button id="a11y-fab" aria-label="Open accessibility settings" aria-expanded="false" aria-controls="a11y-panel">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="text-current" width="20" height="20" fill="currentColor"
+    ><path
+      d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM225.5 233.9C213.3 228.7 199.2 234.3 194 246.5C188.8 258.7 194.4 272.8 206.6 278L218.5 283.1C235.8 290.5 253.7 296 272.1 299.4L272.1 349.5C272.1 353.8 271.4 358.1 270 362.1L241.3 448.2C237.1 460.8 243.9 474.4 256.5 478.6C269.1 482.8 282.7 476 286.9 463.4L311.3 390.2C312.6 386.4 316.1 383.8 320.1 383.8C324.1 383.8 327.7 386.4 328.9 390.2L353.3 463.4C357.5 476 371.1 482.8 383.7 478.6C396.3 474.4 403 461 398.8 448.4L370.1 362.3C368.7 358.2 368 354 368 349.7L368 299.6C386.4 296.1 404.3 290.7 421.6 283.3L433.5 278.2C445.7 273 451.3 258.9 446.1 246.7C440.9 234.5 426.8 228.9 414.6 234.1L402.7 239C376.6 250.2 348.5 256 320 256C291.5 256 263.5 250.2 237.3 239L225.4 233.9zM320 224C342.1 224 360 206.1 360 184C360 161.9 342.1 144 320 144C297.9 144 280 161.9 280 184C280 206.1 297.9 224 320 224z"
+    ></path></svg
   >
-    <circle cx="12" cy="12" r="10"></circle>
-    <path d="M12 16v-4M12 8h.01"></path>
-  </svg>
+  <span id="a11y-fab-label" data-i18n="a11y.fab.label">Accessibility</span>
 </button>
 
 <!-- Backdrop overlay -->
@@ -44,7 +35,7 @@
         <circle cx="12" cy="12" r="10"></circle>
         <path d="M12 16v-4M12 8h.01"></path>
       </svg>
-      <h2 id="a11y-panel-title" data-i18n="a11y.title">Accessibility</h2>
+      <h2 id="a11y-panel-title" data-i18n="a11y.title">Accessibility Settings</h2>
     </div>
     <button id="a11y-close" aria-label="Close accessibility settings">
       <svg
@@ -153,14 +144,52 @@
 
     <!-- READING FONT -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.font">READING FONT</p>
+      <p id="a11y-label-font" class="a11y-section-label" data-i18n="a11y.font">READING FONT</p>
+      <div class="a11y-font-list" role="group" aria-labelledby="a11y-label-font">
+        <button id="a11y-font-default" class="a11y-font-option" aria-pressed="true">
+          <span class="a11y-font-preview" style="font-family:inherit">Aa</span>
+          <span class="a11y-font-label" data-i18n="a11y.font.default">Default</span>
+        </button>
+        <button id="a11y-font-atkinson" class="a11y-font-option" aria-pressed="false">
+          <span class="a11y-font-preview" style="font-family:'Atkinson Hyperlegible',sans-serif">Aa</span>
+          <span class="a11y-font-label" data-i18n="a11y.font.atkinson">Atkinson Hyperlegible</span>
+        </button>
+        <button id="a11y-font-verdana" class="a11y-font-option" aria-pressed="false">
+          <span class="a11y-font-preview" style="font-family:Verdana,sans-serif">Aa</span>
+          <span class="a11y-font-label" data-i18n="a11y.font.verdana">Verdana</span>
+        </button>
+        <button id="a11y-font-opendyslexic" class="a11y-font-option" aria-pressed="false">
+          <span class="a11y-font-preview" style="font-family:'OpenDyslexic',sans-serif">Aa</span>
+          <span class="a11y-font-label" data-i18n="a11y.font.opendyslexic">OpenDyslexic</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FOCUS MODE -->
+    <div class="a11y-section">
+      <p class="a11y-section-label" data-i18n="a11y.focus">FOCUS MODE</p>
       <div class="a11y-toggle-row">
         <div class="a11y-toggle-info">
-          <span class="a11y-toggle-name">Atkinson Hyperlegible</span>
-          <span class="a11y-toggle-desc" data-i18n="a11y.font.desc">Optimised for readability</span>
+          <span class="a11y-toggle-name" data-i18n="a11y.focus.name">Reduce visual clutter</span>
+          <span class="a11y-toggle-desc" data-i18n="a11y.focus.desc">Hides decorative elements</span>
         </div>
-        <button id="a11y-readable" role="switch" aria-checked="false" class="a11y-switch">
+        <button id="a11y-focus" role="switch" aria-checked="false" class="a11y-switch">
           <span class="a11y-switch-thumb"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- LANGUAGE -->
+    <div class="a11y-section">
+      <p id="a11y-label-lang" class="a11y-section-label" data-i18n="a11y.lang">LANGUAGE</p>
+      <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-lang">
+        <button id="a11y-lang-en" class="a11y-choice" aria-pressed="true">
+          <span style="font-size:13px;font-weight:700">EN</span>
+          <span data-i18n="a11y.lang.en">English</span>
+        </button>
+        <button id="a11y-lang-da" class="a11y-choice" aria-pressed="false">
+          <span style="font-size:13px;font-weight:700">DA</span>
+          <span data-i18n="a11y.lang.da">Dansk</span>
         </button>
       </div>
     </div>
@@ -179,15 +208,15 @@
     bottom: 1.25rem;
     left: 1.25rem;
     z-index: 60;
-    width: 3.5rem;
-    height: 3.5rem;
+    height: 2.75rem;
+    padding: 0 1rem 0 0.75rem;
     border-radius: 9999px;
     background: #4b4b4b;
     color: #f0f0f0;
-    border: #333333 1px solid;
+    border: 1px solid #333333;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
     cursor: pointer;
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
     transition:
@@ -198,6 +227,12 @@
     background: #252525;
     border-color: #333333;
     transform: translateY(-2px);
+  }
+  #a11y-fab-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
   }
   #a11y-fab:focus-visible {
     outline: 2px solid #477b93;
@@ -314,6 +349,52 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+  }
+
+  /* Stacked list for font selection */
+  .a11y-font-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .a11y-font-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.875rem;
+    background: #f7f3ef;
+    border: 1px solid #dcd6d0;
+    border-left: 3px solid #dcd6d0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    width: 100%;
+  }
+  .a11y-font-option:hover {
+    border-left-color: #95bccb;
+    background: #f2f8f9;
+  }
+  .a11y-font-option[aria-pressed="true"] {
+    border-left-color: #477b93;
+    background: #f2f8f9;
+  }
+  .a11y-font-option:focus-visible {
+    outline: 2px solid #477b93;
+    outline-offset: 2px;
+  }
+  .a11y-font-preview {
+    font-size: 1.1rem;
+    min-width: 2rem;
+    text-align: center;
+    color: #2e2e2e;
+    line-height: 1;
+  }
+  .a11y-font-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #2e2e2e;
   }
 
   .a11y-choice {
@@ -485,6 +566,19 @@
     border-color: var(--brand-primary-soft, #c0d7e1);
     color: #1a1a1a;
   }
+  body.dark .a11y-font-option {
+    background: var(--dark-surface, #2a2a2a);
+    border-color: var(--dark-border, #333);
+  }
+  body.dark .a11y-font-option:hover,
+  body.dark .a11y-font-option[aria-pressed="true"] {
+    background: var(--dark-surface-hover, #333);
+    border-left-color: #477b93;
+  }
+  body.dark .a11y-font-label,
+  body.dark .a11y-font-preview {
+    color: var(--text-on-dark-soft, #d0d0d0);
+  }
 
   body.dark .a11y-section-label {
     color: var(--brand-primary-soft, #c0d7e1);
@@ -576,7 +670,10 @@
     const isLarge = document.documentElement.classList.contains("text-large");
     const isCalm = document.body.classList.contains("calm-mode");
     const isMotion = document.body.classList.contains("reduce-motion");
-    const isFont = document.documentElement.classList.contains("readable-font");
+    const isAtkinson = document.documentElement.classList.contains("readable-font");
+    const isVerdana = document.documentElement.classList.contains("verdana-font");
+    const isOpendyslexic = document.documentElement.classList.contains("opendyslexic-font");
+    const isFocus = document.body.classList.contains("focus-mode");
 
     document.getElementById("a11y-light")?.setAttribute("aria-pressed", String(!isDark));
     document.getElementById("a11y-dark")?.setAttribute("aria-pressed", String(isDark));
@@ -584,8 +681,32 @@
     document.getElementById("a11y-text-large")?.setAttribute("aria-pressed", String(isLarge));
     document.getElementById("a11y-calm")?.setAttribute("aria-checked", String(isCalm));
     document.getElementById("a11y-motion")?.setAttribute("aria-checked", String(isMotion));
-    document.getElementById("a11y-readable")?.setAttribute("aria-checked", String(isFont));
+    document.getElementById("a11y-focus")?.setAttribute("aria-checked", String(isFocus));
+    document.getElementById("a11y-font-default")?.setAttribute("aria-pressed", String(!isAtkinson && !isVerdana && !isOpendyslexic));
+    document.getElementById("a11y-font-atkinson")?.setAttribute("aria-pressed", String(isAtkinson));
+    document.getElementById("a11y-font-verdana")?.setAttribute("aria-pressed", String(isVerdana));
+    document.getElementById("a11y-font-opendyslexic")?.setAttribute("aria-pressed", String(isOpendyslexic));
+
+    // Keep header bar quick buttons in sync
+    document.getElementById("darkModeToggle")?.setAttribute("aria-pressed", String(isDark));
+    document.getElementById("textSizeToggle")?.setAttribute("aria-pressed", String(isLarge));
+    document.getElementById("colorModeToggle")?.setAttribute("aria-pressed", String(isCalm));
+    document.getElementById("motionToggle")?.setAttribute("aria-pressed", String(isMotion));
+    document.getElementById("focusModeToggle")?.setAttribute("aria-pressed", String(isFocus));
+
+    // Language buttons
+    const activeLang = localStorage.getItem("lang") || "en";
+    document.getElementById("a11y-lang-en")?.setAttribute("aria-pressed", String(activeLang === "en"));
+    document.getElementById("a11y-lang-da")?.setAttribute("aria-pressed", String(activeLang === "da"));
+    // Sync header bar language buttons too
+    document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", String(activeLang === "en"));
+    document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", String(activeLang === "da"));
   }
+
+  // Auto-sync whenever body or html class changes (e.g. from header bar quick buttons)
+  const classObserver = new MutationObserver(syncUI);
+  classObserver.observe(document.body, { attributeFilter: ["class"] });
+  classObserver.observe(document.documentElement, { attributeFilter: ["class"] });
 
   // Theme
   document.getElementById("a11y-light")?.addEventListener("click", () => {
@@ -623,17 +744,58 @@
     });
   }
 
+  // Language switching
+  document.getElementById("a11y-lang-en")?.addEventListener("click", () => {
+    (window as any).__i18n?.setLang("en");
+    syncUI();
+  });
+  document.getElementById("a11y-lang-da")?.addEventListener("click", () => {
+    (window as any).__i18n?.setLang("da");
+    syncUI();
+  });
+
   makeToggle("a11y-calm", "calm-mode", "calmModeEnabled");
   makeToggle("a11y-motion", "reduce-motion", "motionReductionEnabled");
-  makeToggle("a11y-readable", "readable-font", "readableFontEnabled", "html");
+  makeToggle("a11y-focus", "focus-mode", "focusModeEnabled");
+
+  // Reading font — mutually exclusive 3-choice
+  function setFont(font: "default" | "atkinson" | "verdana" | "opendyslexic"): void {
+    const h = document.documentElement;
+    h.classList.remove("readable-font", "verdana-font", "opendyslexic-font");
+    localStorage.removeItem("readableFontEnabled");
+    localStorage.removeItem("verdanaFontEnabled");
+    localStorage.removeItem("opendyslexicFontEnabled");
+    if (font === "atkinson") {
+      h.classList.add("readable-font");
+      localStorage.setItem("readableFontEnabled", "true");
+    } else if (font === "verdana") {
+      h.classList.add("verdana-font");
+      localStorage.setItem("verdanaFontEnabled", "true");
+    } else if (font === "opendyslexic") {
+      h.classList.add("opendyslexic-font");
+      localStorage.setItem("opendyslexicFontEnabled", "true");
+    }
+    syncUI();
+  }
+  document.getElementById("a11y-font-default")?.addEventListener("click", () => setFont("default"));
+  document.getElementById("a11y-font-atkinson")?.addEventListener("click", () => setFont("atkinson"));
+  document.getElementById("a11y-font-verdana")?.addEventListener("click", () => setFont("verdana"));
+  document.getElementById("a11y-font-opendyslexic")?.addEventListener("click", () => setFont("opendyslexic"));
 
   // Reset
   document.getElementById("a11y-reset")?.addEventListener("click", () => {
-    document.body.classList.remove("dark", "calm-mode", "reduce-motion");
-    document.documentElement.classList.remove("text-large", "readable-font");
-    ["darkModeEnabled", "calmModeEnabled", "motionReductionEnabled", "largeTextEnabled", "readableFontEnabled"].forEach((k) =>
-      localStorage.removeItem(k),
-    );
+    document.body.classList.remove("dark", "calm-mode", "reduce-motion", "focus-mode");
+    document.documentElement.classList.remove("text-large", "readable-font", "verdana-font", "opendyslexic-font");
+    [
+      "darkModeEnabled",
+      "calmModeEnabled",
+      "motionReductionEnabled",
+      "largeTextEnabled",
+      "readableFontEnabled",
+      "verdanaFontEnabled",
+      "opendyslexicFontEnabled",
+      "focusModeEnabled",
+    ].forEach((k) => localStorage.removeItem(k));
     syncUI();
   });
 
@@ -654,7 +816,14 @@
       "a11y.reduce-motion": "Reduced motion",
       "a11y.reduce-motion.desc": "Disable animations",
       "a11y.font": "READING FONT",
-      "a11y.font.desc": "Optimised for readability",
+      "a11y.font.default": "Default",
+      "a11y.focus": "FOCUS MODE",
+      "a11y.focus.name": "Reduce visual clutter",
+      "a11y.focus.desc": "Hides decorative elements",
+      "a11y.lang": "LANGUAGE",
+      "a11y.lang.en": "English",
+      "a11y.lang.da": "Danish",
+      "a11y.fab.label": "Accessibility",
       "a11y.reset": "Reset settings",
       "a11y.note": "Your preferences are saved on your device.",
     },
@@ -673,7 +842,14 @@
       "a11y.reduce-motion": "Reduceret bevægelse",
       "a11y.reduce-motion.desc": "Slå animationer fra",
       "a11y.font": "LÆSESKRIFT",
-      "a11y.font.desc": "Optimeret til læsbarhed",
+      "a11y.font.default": "Standard",
+      "a11y.focus": "FOKUSTILSTAND",
+      "a11y.focus.name": "Reducer visuel støj",
+      "a11y.focus.desc": "Skjuler dekorative elementer",
+      "a11y.lang": "SPROG",
+      "a11y.lang.en": "Engelsk",
+      "a11y.lang.da": "Dansk",
+      "a11y.fab.label": "Tilgængelighed",
       "a11y.reset": "Nulstil indstillinger",
       "a11y.note": "Dine præferencer gemmes lokalt på din enhed.",
     },
@@ -689,6 +865,10 @@
     const closeLabel = lang === "da" ? "Luk tilgængeligheds-indstillinger" : "Close accessibility settings";
     fab.setAttribute("aria-label", openLabel);
     closeBtn.setAttribute("aria-label", closeLabel);
+    const fabLabel = document.getElementById("a11y-fab-label");
+    if (fabLabel) fabLabel.textContent = lang === "da" ? "Tilgængelighed" : "Accessibility";
+    document.getElementById("a11y-lang-en")?.setAttribute("aria-pressed", String(lang === "en"));
+    document.getElementById("a11y-lang-da")?.setAttribute("aria-pressed", String(lang === "da"));
   }
 
   const initLang = localStorage.getItem("lang") || "en";
@@ -699,9 +879,16 @@
     applyPanelI18n(lang);
   });
 
-  // Also init the readable-font class from localStorage on load
+  // Init font and focus classes from localStorage on load
   if (localStorage.getItem("readableFontEnabled") === "true") {
     document.documentElement.classList.add("readable-font");
+  } else if (localStorage.getItem("verdanaFontEnabled") === "true") {
+    document.documentElement.classList.add("verdana-font");
+  } else if (localStorage.getItem("opendyslexicFontEnabled") === "true") {
+    document.documentElement.classList.add("opendyslexic-font");
+  }
+  if (localStorage.getItem("focusModeEnabled") === "true") {
+    document.body.classList.add("focus-mode");
   }
 
   syncUI();

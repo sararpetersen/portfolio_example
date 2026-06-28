@@ -9,12 +9,12 @@ const lastUpdated = "June 25, 2026";
 <MainLayout
   title="SRP Portfolio | Terms & Privacy"
   description="Privacy policy, freelance booking terms, and terms of use for Sara Ringkow Petersen's portfolio."
-  ogtitle="Terms & Privacy — SRP Portfolio"
+  ogtitle="Terms & Privacy – SRP Portfolio"
   ogdescription="Privacy policy, freelance booking terms, and terms of use."
 >
   <section class="max-w-3xl mx-auto px-6 md:px-0 md:pt-desktop-top pt-mobil-top">
     <!-- Page header -->
-    <div id="terms-page-header" class="md:pt-28 pt-24 mb-3 text-center md:text-left">
+    <div id="terms-page-header" class="md:pt-28 pt-24">
       <h1
         id="terms-page-title"
         class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop mb-3"
@@ -22,11 +22,11 @@ const lastUpdated = "June 25, 2026";
       >
         Terms & Privacy
       </h1>
-      <p id="terms-last-updated" class="text-gray-500 text-sm font-inter" data-i18n="terms.updated">Last updated: {lastUpdated}</p>
+      <p id="terms-last-updated" class="text-gray-500 text-sm font-inter mb-6" data-i18n="terms.updated">Last updated: {lastUpdated}</p>
     </div>
 
     <!-- Quick navigation -->
-    <nav id="terms-page-toc" aria-label="Terms navigation" class="terms-toc mb-6 justify-center md:justify-start">
+    <nav id="terms-page-toc" aria-label="Terms navigation" class="terms-toc">
       <a href="#privacy" data-i18n="modal.terms.privacy">Privacy policy</a>
       <span aria-hidden="true">·</span>
       <a href="#booking" data-i18n="modal.terms.booking">Booking & freelance terms</a>
@@ -312,7 +312,6 @@ const lastUpdated = "June 25, 2026";
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 0.75rem;
-    align-items: center;
     font-size: 0.85rem;
     color: #6b7280;
   }
@@ -337,7 +336,6 @@ const lastUpdated = "June 25, 2026";
     font-size: 1.75rem;
     font-style: italic;
     color: #1a1a1a;
-    text-align: center;
   }
   .terms-sub {
     font-size: 0.72rem;
@@ -345,7 +343,6 @@ const lastUpdated = "June 25, 2026";
     letter-spacing: 0.08em;
     color: #477b93;
     font-weight: 600;
-    text-align: center;
   }
   @media (min-width: 768px) {
     .terms-heading {
