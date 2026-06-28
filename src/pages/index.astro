@@ -343,6 +343,8 @@ import Cases from "../components/Cases.astro";
         ["#project-title", "animate__fadeInUp"],
         ["#project-text", "animate__fadeInUp"],
         ["#divider-1", "animate__fadeInUp"],
+        ["#diff-title", "animate__fadeInUp"],
+        ["#diff-intro", "animate__fadeInUp"],
         ["#blog-preview-title", "animate__fadeInUp"],
         ["#blog-preview-text", "animate__fadeInUp"],
         ["#blog-preview-all", "animate__fadeInUp"],
@@ -450,7 +452,10 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #about-preview img,
   html.has-js body:not(.reduce-motion) #testimonial-title,
   html.has-js body:not(.reduce-motion) #testimonial-card,
-  html.has-js body:not(.reduce-motion) #blog-preview .blog-preview-item {
+  html.has-js body:not(.reduce-motion) #blog-preview .blog-preview-item,
+  html.has-js body:not(.reduce-motion) #diff-title,
+  html.has-js body:not(.reduce-motion) #diff-intro,
+  html.has-js body:not(.reduce-motion) #differentiator .diff-card {
     opacity: 0;
     will-change: transform, opacity;
   }

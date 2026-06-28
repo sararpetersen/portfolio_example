@@ -48,7 +48,8 @@
       "Bash(xargs kill)",
       "Bash(curl -s http://localhost:4323/terms)",
       "Bash(curl -s http://localhost:4323/)",
-      "Bash(pkill -f \"astro dev\")"
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/lab)"
     ]
   }
 }
