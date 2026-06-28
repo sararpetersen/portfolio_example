@@ -138,6 +138,53 @@ import Cases from "../components/Cases.astro";
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
+  <!-- What makes my approach different -->
+  <section id="differentiator" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
+    <div class="mb-8">
+      <h2 id="diff-title" class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="diff.title">
+        What makes my approach different
+      </h2>
+      <p id="diff-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="diff.intro">
+        There are a lot of designers who talk about accessibility. Here's where my approach comes from.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
+      <!-- Card 1 -->
+      <article id="diff-card-1" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card1.label">Lived experience</p>
+        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card1.title">
+          I design from the inside
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card1.text">
+          I'm autistic and have ADD. That's not a footnote — it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article id="diff-card-2" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card2.label">Design + code</p>
+        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card2.title">
+          What I design, I can build
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card2.text">
+          I don't just hand off specs and hope for the best. I design and develop — no gap between the idea and the implementation. That means fewer compromises, faster iteration, and solutions that are actually accessible in the final product, not just on paper.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article id="diff-card-3" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card3.label">Proof, not promises</p>
+        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card3.title">
+          The portfolio you're reading is the work
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card3.text">
+          This site has dark mode, calm mode, focus mode, four reading font options, keyboard navigation, reduced motion, and bilingual support — all built by me. Accessibility isn't a claim I make. It's something I demonstrate.
+        </p>
+      </article>
+    </div>
+  </section>
+
   <!-- Latest Blog Section -->
   <section id="blog-preview" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <h2
@@ -318,6 +365,17 @@ import Cases from "../components/Cases.astro";
           (article as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
           (article as HTMLElement).style.animationFillMode = "both";
 
+          stop();
+        });
+      });
+
+      document.querySelectorAll("#differentiator .diff-card").forEach((card, index) => {
+        let stop = () => {};
+        stop = inView(card, () => {
+          (card as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
+          (card as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 80, 220) : index * 80}ms`;
+          (card as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.3s";
+          (card as HTMLElement).style.animationFillMode = "both";
           stop();
         });
       });
@@ -566,6 +624,20 @@ import Cases from "../components/Cases.astro";
       right: -10px;
       bottom: -10px;
     }
+  }
+
+  /* Differentiator section */
+  body.dark #diff-title,
+  body.dark #diff-intro,
+  body.dark .diff-card h3 {
+    color: var(--text-on-dark);
+  }
+  body.dark .diff-card p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .diff-card {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border);
   }
 
   /* Dark-mode */
