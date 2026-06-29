@@ -611,14 +611,29 @@ import "../styles/global.css";
     termsTrigger.focus();
   }
 
+  const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(e: KeyboardEvent): void {
+    if (e.key !== "Tab") return;
+    const focusable = Array.from(termsPanel.querySelectorAll<HTMLElement>(focusableSelectors));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
   termsTrigger?.addEventListener("click", openTerms);
   termsClose?.addEventListener("click", closeTerms);
-  // Close when clicking the backdrop (the modal container), but not the panel itself
   termsModal?.addEventListener("click", (e: MouseEvent) => {
     if (!termsPanel?.contains(e.target as Node)) closeTerms();
   });
   document.addEventListener("keydown", (e: KeyboardEvent) => {
-    if (e.key === "Escape" && termsModal.classList.contains("open")) closeTerms();
+    if (e.key === "Escape" && termsModal.classList.contains("open")) { closeTerms(); return; }
+    if (termsModal.classList.contains("open")) trapFocus(e);
   });
 
   // Torii icon
