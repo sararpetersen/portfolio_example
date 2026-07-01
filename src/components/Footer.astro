@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Button from "./Button.astro";
 ---
 
 <!-- Torii icon -->
@@ -14,7 +15,7 @@ import "../styles/global.css";
       <h2 id="terms-modal-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop" data-i18n="modal.terms.title">
         Terms & Privacy
       </h2>
-      <button id="terms-modal-close" aria-label="Close terms">
+      <button id="terms-modal-close" aria-label="Close terms" data-tooltip="Close">
         <svg
           width="16"
           height="16"
@@ -39,11 +40,20 @@ import "../styles/global.css";
             class="terms-link text-blue-500 hover:underline"
             target="_blank"
             rel="noopener noreferrer">Netlify Forms</a
-          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class="text-[14px]">localStorage</code> only&mdash;
-          no personal data leaves your device. No cookies, no tracking, no third-party marketing.
+          > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code
+            class="text-[14px] tooltip-term"
+            tabindex="0"
+            data-tooltip="A place in your browser that saves small bits of data on your device">localStorage</code
+          > only&mdash; no personal data leaves your device. No cookies, no tracking, no third-party marketing.
         </p>
         <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.privacy.p2">
-          <strong>Your rights <em>(GDPR)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a
+          <strong
+            >Your rights <em
+              >(<span class="tooltip-term" tabindex="0" data-tooltip="General Data Protection Regulation: an EU law protecting personal data"
+                >GDPR</span
+              >)</em
+            >:</strong
+          > You may request access to, correction of, or deletion of your data at any time - email: <a
             href="mailto:sara.ringkow@gmail.com"
             class="terms-link text-blue-500 hover:underline">sara.ringkow@gmail.com</a
           >.
@@ -78,7 +88,7 @@ import "../styles/global.css";
         </p>
       </section>
 
-      <a href="/terms" class="terms-modal-fulllink" data-i18n="modal.terms.link">Read full terms →</a>
+      <Button href="/terms" variant="primary" size="small" data-i18n="modal.terms.link">Read full terms →</Button>
     </div>
   </div>
 </div>
@@ -110,19 +120,19 @@ import "../styles/global.css";
           <a
             href="/"
             aria-label="Go to homepage"
-            class="py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.home">Home</a
           >
           <a
             href="/about_me"
             aria-label="Go to about-page"
-            class="py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.about">About</a
           >
           <a
             href="/contact"
             aria-label="Go to contact-page"
-            class="py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.contact">Contact</a
           >
         </div>
@@ -130,13 +140,13 @@ import "../styles/global.css";
           <a
             href="/blog"
             aria-label="Go to blog overview"
-            class="py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.blog">Blog</a
           >
           <a
             href="/lab"
             aria-label="Go to lab"
-            class="py-1 text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.lab">The Lab</a
           >
         </div>
@@ -151,7 +161,8 @@ import "../styles/global.css";
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my LinkedIn-profile (external link)"
-          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
+          data-tooltip="LinkedIn"
         >
           <svg
             class="w-[40] h-[40] text-gray-50 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
@@ -174,7 +185,8 @@ import "../styles/global.css";
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my Github-page (external link)"
-          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
+          data-tooltip="GitHub"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +207,8 @@ import "../styles/global.css";
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my Instagram-profile (external link)"
-          class="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
+          data-tooltip="Instagram"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -234,7 +247,7 @@ import "../styles/global.css";
         </svg>
         <a
           href="mailto:sara.ringkow@gmail.com"
-          class="text-gray-50 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="text-gray-50 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Send an email to 'sara.ringkow@gmail.com'">sara.ringkow@gmail.com</a
         >
       </div>
@@ -256,7 +269,7 @@ import "../styles/global.css";
         </svg>
         <a
           href="tel:+4542428807"
-          class="text-gray-50 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+          class="text-gray-50 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           aria-label="Call '+45 42 42 88 07'">+45 42 42 88 07</a
         >
       </div>
@@ -271,7 +284,7 @@ import "../styles/global.css";
     <p class="text-gray-400 text-xs" data-i18n="footer.copyright">© 2026 SRP Portfolio - Sara Ringkow Petersen. All rights reserved.</p>
     <button
       id="terms-modal-trigger"
-      class="text-gray-400 text-xs border border-gray-600 rounded-full px-3 py-1 hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      class="text-gray-400 text-xs border border-gray-600 rounded-full px-3 py-1 hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
       aria-haspopup="dialog"
       data-i18n="modal.terms.title"
     >
@@ -409,57 +422,13 @@ import "../styles/global.css";
     border-top: 1px solid #dcd6d0;
     margin: 0.125rem 0;
   }
-  .terms-modal-fulllink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    padding: 24px;
-    border: 2px solid #2f3f4c;
-    border-radius: 5px;
-    background: #2f3f4c;
-    color: #f9fafb;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: relative;
-    overflow: hidden;
-    transition:
-      background 0.3s ease-in-out,
-      color 0.3s ease-in-out,
-      border-color 0.3s ease-in-out;
+  /* .terms-modal-fulllink now renders via <Button variant="primary">; its
+     shared styles live in Button.astro. This modal only needs to give it
+     some breathing room since it's a flex child of #terms-modal-body. */
+  :global(#terms-modal-body > .main-button) {
     width: fit-content;
-  }
-  .terms-modal-fulllink:hover {
-    background: #375567;
-    color: #f9fafb;
-    border-color: #375567;
-  }
-  .terms-modal-fulllink:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #93c5fd;
-  }
-  .terms-modal-fulllink::before {
-    content: "";
-    position: absolute;
-    left: 12%;
-    right: 12%;
-    bottom: 0.3rem;
-    height: 2px;
-    border-radius: 9999px;
-    background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.72), transparent);
-    opacity: 0.55;
-    transform: scaleX(0.45);
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-  }
-  .terms-modal-fulllink:hover::before,
-  .terms-modal-fulllink:focus-visible::before {
-    opacity: 1;
-    transform: scaleX(1);
+    padding: 24px;
+    margin-top: 0.375rem;
   }
 
   /* Dark mode modal */
@@ -501,17 +470,6 @@ import "../styles/global.css";
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
   }
-  body.dark .terms-modal-fulllink {
-    color: #f6f6f6;
-    border-color: #f6f6f6;
-    background: transparent;
-  }
-  body.dark .terms-modal-fulllink:hover {
-    background: var(--brand-primary-soft);
-    color: #1a1a1a;
-    border-color: var(--brand-primary-soft);
-  }
-
   footer a:hover {
     color: var(--brand-primary-soft);
   }
@@ -620,9 +578,15 @@ import "../styles/global.css";
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
-      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
     } else {
-      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   }
 
@@ -632,7 +596,10 @@ import "../styles/global.css";
     if (!termsPanel?.contains(e.target as Node)) closeTerms();
   });
   document.addEventListener("keydown", (e: KeyboardEvent) => {
-    if (e.key === "Escape" && termsModal.classList.contains("open")) { closeTerms(); return; }
+    if (e.key === "Escape" && termsModal.classList.contains("open")) {
+      closeTerms();
+      return;
+    }
     if (termsModal.classList.contains("open")) trapFocus(e);
   });
 

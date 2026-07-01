@@ -14,6 +14,18 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <span style="font-size:12px;font-weight:700;line-height:1;letter-spacing:0">A</span>
     </button>
 
+    <!-- Reading font (cycles Default -> Atkinson -> Verdana -> OpenDyslexic) -->
+    <button
+      id="fontCycleToggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Reading font: Default. Click to cycle to the next option."
+      class="bar-quick-btn tooltip-below tooltip-align-left"
+      data-tooltip="Font: Default"
+    >
+      <span style="font-size:11px;font-weight:700;line-height:1;letter-spacing:0">Aa</span>
+    </button>
+
     <!-- Dark mode -->
     <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode" class="bar-quick-btn tooltip-below" data-tooltip="Dark mode">
       <svg
@@ -97,17 +109,19 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     <button
       id="lang-toggle-en"
       data-lang="en"
-      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 tooltip-below"
       aria-label="Switch to English"
-      aria-pressed="true">EN</button
+      aria-pressed="true"
+      data-tooltip="English">EN</button
     >
-    <span class="text-gray-400 text-xs" aria-hidden="true">/</span>
+    <span class="text-gray-300 text-xs" aria-hidden="true">/</span>
     <button
       id="lang-toggle-da"
       data-lang="da"
-      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+      class="lang-btn px-1.5 py-0.5 text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 tooltip-below"
       aria-label="Skift til dansk"
-      aria-pressed="false">DA</button
+      aria-pressed="false"
+      data-tooltip="Danish">DA</button
     >
   </div>
 </div>
@@ -143,7 +157,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/") ? "page" : undefined}
             aria-label="Go to homepage"
             data-i18n="nav.home">Home</a
@@ -152,7 +166,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/about_me"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/about_me") ? "page" : undefined}
             aria-label="Go to about-page"
             data-i18n="nav.about">About</a
@@ -161,16 +175,19 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/contact"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/contact") ? "page" : undefined}
             aria-label="Go to contact-page"
             data-i18n="nav.contact">Contact</a
           >
         </li>
+
+        <li id="vertical-border" aria-hidden="true" class="h-4 border-l border-gray-200"></li>
+
         <li class="some1">
           <a
             href="/blog"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/blog") ? "page" : undefined}
             aria-label="Go to blog-page"
             data-i18n="nav.blog">Blog</a
@@ -179,7 +196,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/lab"
-            class:list={["py-1 focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
+            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
             aria-current={isActive("/lab") ? "page" : undefined}
             aria-label="Go to lab-page"
             data-i18n="nav.lab">The Lab</a
@@ -194,7 +211,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       aria-label="Show mobile-menu"
       aria-controls="mobilmenu"
       x-bind:aria-expanded="showmenu ? 'true' : 'false'"
-      class="lg:hidden"
+      class="lg:hidden tooltip-below"
       x-on:click="showmenu = !showmenu"
       data-tooltip="Menu"
     >
@@ -207,7 +224,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="size-8 transition duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
       </svg>
@@ -221,7 +238,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-8 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="size-8 transition duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -245,7 +262,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/#hero"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/") ? "page" : undefined}
           aria-label="Go to homepage"
           data-i18n="nav.home">Home</a
@@ -254,7 +271,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/about_me"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/about_me") ? "page" : undefined}
           aria-label="Go to about-page"
           data-i18n="nav.about">About</a
@@ -263,7 +280,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/contact"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/contact") ? "page" : undefined}
           aria-label="Go to contact-page"
           data-i18n="nav.contact">Contact</a
@@ -272,7 +289,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/blog"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/blog") ? "page" : undefined}
           aria-label="Go to blog-page"
           data-i18n="nav.blog">Blog</a
@@ -281,7 +298,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/lab"
-          class:list={["py-1 transition focus:outline-none focus:ring-2 focus:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
+          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
           aria-current={isActive("/lab") ? "page" : undefined}
           aria-label="Go to lab-page"
           data-i18n="nav.lab">The Lab</a
@@ -474,7 +491,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   }
 
   .lang-btn {
-    color: #a6acb5;
+    color: #d1d5db;
   }
   .lang-btn.active-lang {
     color: var(--text-on-dark);
@@ -533,6 +550,65 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   initToggle("textSizeToggle", "text-large", "largeTextEnabled", {
     target: "html",
   });
+
+  // Reading font cycle (Default -> Atkinson -> Verdana -> OpenDyslexic -> Default)
+  type FontOption = "default" | "atkinson" | "verdana" | "opendyslexic";
+  const fontCycleOrder: FontOption[] = ["default", "atkinson", "verdana", "opendyslexic"];
+  const fontClassMap: Record<Exclude<FontOption, "default">, string> = {
+    atkinson: "readable-font",
+    verdana: "verdana-font",
+    opendyslexic: "opendyslexic-font",
+  };
+  const fontStorageKeyMap: Record<Exclude<FontOption, "default">, string> = {
+    atkinson: "readableFontEnabled",
+    verdana: "verdanaFontEnabled",
+    opendyslexic: "opendyslexicFontEnabled",
+  };
+  const fontDisplayLabels: Record<FontOption, string> = {
+    default: "Default",
+    atkinson: "Atkinson Hyperlegible",
+    verdana: "Verdana",
+    opendyslexic: "OpenDyslexic",
+  };
+
+  function getCurrentFont(): FontOption {
+    const html = document.documentElement;
+    if (html.classList.contains("readable-font")) return "atkinson";
+    if (html.classList.contains("verdana-font")) return "verdana";
+    if (html.classList.contains("opendyslexic-font")) return "opendyslexic";
+    return "default";
+  }
+
+  function updateFontButtonUI(font: FontOption): void {
+    const btn = document.getElementById("fontCycleToggle");
+    if (!btn) return;
+    btn.setAttribute("data-tooltip", `Font: ${fontDisplayLabels[font]}`);
+    btn.setAttribute("aria-label", `Reading font: ${fontDisplayLabels[font]}. Click to cycle to the next option.`);
+    btn.setAttribute("aria-pressed", String(font !== "default"));
+  }
+
+  function applyFont(font: FontOption): void {
+    const html = document.documentElement;
+    html.classList.remove("readable-font", "verdana-font", "opendyslexic-font");
+    localStorage.removeItem("readableFontEnabled");
+    localStorage.removeItem("verdanaFontEnabled");
+    localStorage.removeItem("opendyslexicFontEnabled");
+    if (font !== "default") {
+      html.classList.add(fontClassMap[font]);
+      localStorage.setItem(fontStorageKeyMap[font], "true");
+    }
+    updateFontButtonUI(font);
+  }
+
+  document.getElementById("fontCycleToggle")?.addEventListener("click", () => {
+    const next = fontCycleOrder[(fontCycleOrder.indexOf(getCurrentFont()) + 1) % fontCycleOrder.length];
+    applyFont(next);
+  });
+
+  // Keep the bar button's label in sync if the font is changed elsewhere (e.g. the accessibility panel)
+  new MutationObserver(() => updateFontButtonUI(getCurrentFont())).observe(document.documentElement, { attributeFilter: ["class"] });
+
+  updateFontButtonUI(getCurrentFont());
 
   // Language toggle
   const langButtons = document.querySelectorAll<HTMLButtonElement>(".lang-btn");

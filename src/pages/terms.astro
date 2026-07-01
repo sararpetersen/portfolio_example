@@ -53,14 +53,16 @@ const lastUpdated = "June 25, 2026";
             When you submit the contact form on this site, the following information is collected: full name, email address, and the message you
             write. This data is processed and stored by <a
               href="https://www.netlify.com/privacy/"
-              class="focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+              class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
               target="_blank"
               rel="noopener noreferrer">Netlify Forms</a
             > on my behalf. No other personal data is collected.
           </p>
           <p class="text-gray-600 leading-relaxed mt-3" data-i18n="terms.privacy.p.collected2">
             Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code
-              >localStorage</code
+              class="tooltip-term"
+              tabindex="0"
+              data-tooltip="A place in your browser that saves small bits of data on your device">localStorage</code
             >. This data never leaves your device and contains no personal information.
           </p>
         </div>
@@ -81,7 +83,13 @@ const lastUpdated = "June 25, 2026";
         </div>
 
         <div>
-          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.rights">Your rights <em>(GDPR)</em></h3>
+          <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.privacy.h3.rights">
+            Your rights <em
+              >(<span class="tooltip-term" tabindex="0" data-tooltip="General Data Protection Regulation: an EU law protecting personal data"
+                >GDPR</span
+              >)</em
+            >
+          </h3>
           <p class="text-gray-600 leading-relaxed" data-i18n="terms.privacy.p.rights">
             You have the right to access, correct, or request deletion of any personal data I hold about you. To exercise these rights, contact me at <a
               href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
@@ -122,10 +130,10 @@ const lastUpdated = "June 25, 2026";
         <div>
           <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.contact">Getting in touch</h3>
           <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.contact">
-            Send an enquiry via the <a href="/contact" class="focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+            Send an enquiry via the <a href="/contact" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
               >contact form</a
             > or directly to <a
-              class="focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out"
+              class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
               href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
             >. I aim to respond within 2-3 business days.
           </p>

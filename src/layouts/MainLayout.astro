@@ -96,7 +96,7 @@ const schemamarkup = {
             "hero.status": "Interning at Folkæt",
             "hero.role": "Multimedia Designer & Concept Developer",
             "hero.lead":
-              "I design and build accessible websites, interfaces, and concepts, focusing on structure, clarity, and the people who use them.",
+              "I design and build accessible websites, interfaces, and concepts – with a focus on structure, clarity, and the people who use them.",
             "hero.cta": "See projects",
             "hero.scroll": "Scroll to projects",
             "projects.title": "Selected cases",
@@ -200,10 +200,10 @@ const schemamarkup = {
             "contact.form.required.note":
               'Fields marked with <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">an asterisk</span> are required.',
             "contact.form.gdpr":
-              'By submitting an inquiry through this form, you agree to my <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs">Terms &amp; Privacy Policy</a>.',
+              'By submitting an inquiry through this form, you agree to my <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Terms &amp; Privacy Policy</a>.',
             "contact.form.submit": "Send message",
             "btn.back": "Back to homepage",
-            "diff.title": "What makes my approach different",
+            "diff.title": "What makes my approach different?",
             "diff.intro": "A lot of designers mention accessibility. Here's what actually shapes how I work.",
             "diff.card1.label": "Lived experience",
             "diff.card1.title": "I design from the inside",
@@ -220,9 +220,9 @@ const schemamarkup = {
             "modal.terms.title": "Terms & Privacy",
             "modal.terms.privacy": "Privacy policy",
             "modal.terms.privacy.p1":
-              "When you submit your inquiry through the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link text-blue-500 hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px]'>localStorage</code> only&mdash; no personal data leaves your device. No cookies, no tracking, no third-party marketing.",
+              "When you submit your inquiry through the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link text-blue-500 hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px] tooltip-term' tabindex='0' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code> only&mdash; no personal data leaves your device. No cookies, no tracking, no third-party marketing.",
             "modal.terms.privacy.p2":
-              "<strong>Your rights <em>(GDPR)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link text-blue-500 hover:underline'>sara.ringkow@gmail.com</a>.",
+              "<strong>Your rights <em>(<span class='tooltip-term' tabindex='0' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link text-blue-500 hover:underline'>sara.ringkow@gmail.com</a>.",
             "modal.terms.booking": "Booking and freelance terms",
             "modal.terms.booking.p1":
               "I take on projects case by case. A written quote will be sent out before work starts&mdash; no surprises. Two rounds of revisions are included. Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is agreed.",
@@ -235,16 +235,17 @@ const schemamarkup = {
             "terms.privacy.sub": "What data is collected and why",
             "terms.privacy.h3.collected": "Data collected",
             "terms.privacy.p.collected1":
-              "When you submit your enquiry through the contact form on this site, the following information is collected: full name, email address, and the message you write. This data is processed and stored by <a href='https://www.netlify.com/privacy/' class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> on my behalf. No other personal data is collected.",
+              "When you submit your enquiry through the contact form on this site, the following information is collected: full name, email address, and the message you write. This data is processed and stored by <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> on my behalf. No other personal data is collected.",
             "terms.privacy.p.collected2":
-              "Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code>localStorage</code>. This data never leaves your device and contains no personal information.",
+              "Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code class='tooltip-term' tabindex='0' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code>. This data never leaves your device and contains no personal information.",
             "terms.privacy.h3.why": "Why I collect it",
             "terms.privacy.p.why":
               "Contact form data is used solely to respond to your enquiry. It's <strong><em>not</em></strong> used for marketing, analytics, or any other purpose.",
             "terms.privacy.h3.cookies": "Cookies and tracking",
             "terms.privacy.p.cookies":
               "This site doesn't use cookies for tracking or analytics. No third-party advertising or profiling tools are active.",
-            "terms.privacy.h3.rights": "Your rights <em>(GDPR)</em>",
+            "terms.privacy.h3.rights":
+              "Your rights <em>(<span class='tooltip-term' tabindex='0' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>",
             "terms.privacy.p.rights":
               "You have the right to access, correct, or request deletion of any personal data I hold about you. To exercise these rights, contact me at <a href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I'll respond within 30 days.",
             "terms.privacy.h3.controller": "Data controller",
@@ -255,7 +256,7 @@ const schemamarkup = {
               "I'm currently studying and take on freelance projects on the sideline, depending on scope and availability. Please reach out early to discuss timing.",
             "terms.booking.h3.contact": "Getting in touch",
             "terms.booking.p.contact":
-              "Send an enquiry via the <a href='/contact' class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out'>contact form</a> or directly to <a class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I aim to respond within 2-3 business days.",
+              "Send an enquiry via the <a href='/contact' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out'>contact form</a> or directly to <a class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I aim to respond within 2-3 business days.",
             "terms.booking.h3.proposals": "Proposals and agreements",
             "terms.booking.p.proposals":
               "A written quote or scope agreement is sent out before any work begins. No work starts without mutual written confirmation of scope, timeline, and price.",
@@ -322,8 +323,7 @@ const schemamarkup = {
             "lab.computersite.link": "Visit site →",
             "lab.mariowiki.desc": "A fan wiki exploring the Super Mario universe – revamped version of an old project from Multimedia Design.",
             "lab.mariowiki.link": "Visit site →",
-            "a11y.title": "Accessibility Settings",
-            "a11y.fab.label": "Accessibility",
+            "a11y.title": "Accessibility",
             "a11y.theme": "THEME",
             "a11y.light": "Light",
             "a11y.dark": "Dark",
@@ -359,7 +359,7 @@ const schemamarkup = {
             "hero.status": "Praktik hos Folkæt",
             "hero.role": "Multimediedesigner & konceptudvikler",
             "hero.lead":
-              "Jeg designer og bygger tilg\u00e6ngelige websites, interfaces og koncepter, med fokus p\u00e5 struktur, klarhed og de mennesker, der bruger dem.",
+              "Jeg designer og bygger tilg\u00e6ngelige websites, interfaces og koncepter – med et fokus p\u00e5 struktur, klarhed og de mennesker, der bruger dem.",
             "hero.cta": "Se projekter",
             "hero.scroll": "Gå til projekter",
             "projects.title": "Udvalgte cases",
@@ -467,7 +467,7 @@ const schemamarkup = {
             "contact.form.required.note":
               'Felter markeret med <span aria-hidden="true" class="text-red-500">*</span><span class="sr-only">en stjerne</span> er påkrævede.',
             "contact.form.gdpr":
-              'Ved at indsende en forespørgsel via denne formular, accepterer du mine <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs">Vilkår &amp; Privatlivspolitik</a>.',
+              'Ved at indsende en forespørgsel via denne formular, accepterer du mine <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Vilkår &amp; Privatlivspolitik</a>.',
             "contact.form.submit": "Send besked",
             "btn.back": "Tilbage til forsiden",
             "diff.title": "Hvad adskiller min tilgang?",
@@ -487,9 +487,9 @@ const schemamarkup = {
             "modal.terms.title": "Vilkår & Privatliv",
             "modal.terms.privacy": "Privatlivspolitik",
             "modal.terms.privacy.p1":
-              "Når du indsender din henvendelse gennem kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link text-blue-500 hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px]'>localStorage</code>&mdash; ingen persondata forlader din enhed. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
+              "Når du indsender din henvendelse gennem kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link text-blue-500 hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px] tooltip-term' tabindex='0' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>&mdash; ingen persondata forlader din enhed. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
             "modal.terms.privacy.p2":
-              "<strong>Dine rettigheder <em>(GDPR)</em>:</strong> Du kan til enhver tid anmode om adgang til, rettelse af eller sletning af dine data – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link text-blue-500 hover:underline'>sara.ringkow@gmail.com</a>.",
+              "<strong>Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>:</strong> Du kan til enhver tid anmode om adgang til, rettelse af eller sletning af dine data – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link text-blue-500 hover:underline'>sara.ringkow@gmail.com</a>.",
             "modal.terms.booking": "Booking- og freelancebetingelser",
             "modal.terms.booking.p1":
               "Jeg påtager mig projekter fra case til case. Et skriftligt tilbud bliver sendt ud, inden arbejdet påbegyndes&mdash; ingen overraskelser. To runder af revisioner er inkluderet. Ved fuld betaling modtager du licens til at anvende de aftalte leverancer; jeg forbeholder mig retten til at vise arbejdet i min portefølje, medmindre fortrolighed er aftalt.",
@@ -502,16 +502,17 @@ const schemamarkup = {
             "terms.privacy.sub": "Hvad der indsamles og hvorfor",
             "terms.privacy.h3.collected": "Indsamlet data",
             "terms.privacy.p.collected1":
-              "Når du indsender din henvendelse gennem kontaktformularen på dette site, indsamles følgende oplysninger: fulde navn, emailadresse og den besked du skriver. Disse data behandles og opbevares af <a href='https://www.netlify.com/privacy/' class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> på mine vegne. Ingen andre personoplysninger indsamles.",
+              "Når du indsender din henvendelse gennem kontaktformularen på dette site, indsamles følgende oplysninger: fulde navn, emailadresse og den besked du skriver. Disse data behandles og opbevares af <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> på mine vegne. Ingen andre personoplysninger indsamles.",
             "terms.privacy.p.collected2":
-              "Tilgængelighedspræferencer du sætter <em>(f.eks. mørk tilstand, tekststørrelse eller reduceret bevægelse)</em> gemmes i din browsers <code>localStorage</code>. Disse data forlader aldrig din enhed og indeholder ingen personlige oplysninger.",
+              "Tilgængelighedspræferencer du sætter <em>(f.eks. mørk tilstand, tekststørrelse eller reduceret bevægelse)</em> gemmes i din browsers <code class='tooltip-term' tabindex='0' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>. Disse data forlader aldrig din enhed og indeholder ingen personlige oplysninger.",
             "terms.privacy.h3.why": "Hvorfor jeg indsamler det",
             "terms.privacy.p.why":
               "Kontaktformulardata bruges udelukkende til at besvare din henvendelse. Det bruges <strong><em>ikke</em></strong> til markedsføring, analyse eller andre formål.",
             "terms.privacy.h3.cookies": "Cookies og sporing",
             "terms.privacy.p.cookies":
               "Dette site bruger ikke cookies til sporing eller analyse. Ingen tredjeparts reklame- eller profilværktøjer er aktive.",
-            "terms.privacy.h3.rights": "Dine rettigheder <em>(GDPR)</em>",
+            "terms.privacy.h3.rights":
+              "Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>",
             "terms.privacy.p.rights":
               "Du har ret til at få adgang til, rette eller anmode om sletning af personoplysninger, jeg måtte have om dig. For at udøve disse rettigheder, kontakt mig på <a href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. Jeg svarer inden for 30 dage.",
             "terms.privacy.h3.controller": "Dataansvarlig",
@@ -522,7 +523,7 @@ const schemamarkup = {
               "Jeg studerer i øjeblikket og påtager mig freelanceprojekter ved siden af, afhængigt af omfang og tilgængelighed. Kontakt mig gerne i god tid for at diskutere timing.",
             "terms.booking.h3.contact": "Kom i kontakt",
             "terms.booking.p.contact":
-              "Send en forespørgsel via <a href='/contact' class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out'>kontaktformularen</a> eller direkte til <a class='focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. Jeg regner med at svare inden for 2-3 hverdage.",
+              "Send en forespørgsel via <a href='/contact' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out'>kontaktformularen</a> eller direkte til <a class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. Jeg regner med at svare inden for 2-3 hverdage.",
             "terms.booking.h3.proposals": "Tilbud og aftaler",
             "terms.booking.p.proposals":
               "Et skriftligt tilbud eller omfangsaftale bliver sendt ud, inden arbejdet begynder. Intet arbejde påbegyndes uden gensidig skriftlig bekræftelse af omfang, tidsplan og pris.",
@@ -589,8 +590,7 @@ const schemamarkup = {
             "lab.computersite.link": "Besøg siden →",
             "lab.mariowiki.desc": "Et fan-wiki om Super Mario universet – en opdateret udgave af et gammelt projekt fra Multimediedesign.",
             "lab.mariowiki.link": "Besøg siden →",
-            "a11y.title": "Tilgængelighedsindstillinger",
-            "a11y.fab.label": "Tilgængelighed",
+            "a11y.title": "Tilgængelighed",
             "a11y.theme": "TEMA",
             "a11y.light": "Lyst",
             "a11y.dark": "Mørkt",
@@ -657,9 +657,7 @@ const schemamarkup = {
   </head>
   <body class="site-shell bg-gray-50">
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header>
-      <Header />
-    </header>
+    <Header />
 
     <main id="main-content" tabindex="-1" class="site-main scroll-vertical overflow-x-hidden">
       <slot />

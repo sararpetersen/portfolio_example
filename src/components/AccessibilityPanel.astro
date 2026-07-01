@@ -2,14 +2,20 @@
 
 ---
 
-<!-- Floating accessibility button (pill shape) -->
-<button id="a11y-fab" aria-label="Open accessibility settings" aria-expanded="false" aria-controls="a11y-panel">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="text-current" width="20" height="20" fill="currentColor"
+<!-- Floating accessibility button -->
+<button
+  id="a11y-fab"
+  aria-label="Open accessibility panel"
+  aria-expanded="false"
+  aria-controls="a11y-panel"
+  data-tooltip="Accessibility Settings"
+  class="tooltip-align-left"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="text-current" width="30" height="30" fill="currentColor"
     ><path
       d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM225.5 233.9C213.3 228.7 199.2 234.3 194 246.5C188.8 258.7 194.4 272.8 206.6 278L218.5 283.1C235.8 290.5 253.7 296 272.1 299.4L272.1 349.5C272.1 353.8 271.4 358.1 270 362.1L241.3 448.2C237.1 460.8 243.9 474.4 256.5 478.6C269.1 482.8 282.7 476 286.9 463.4L311.3 390.2C312.6 386.4 316.1 383.8 320.1 383.8C324.1 383.8 327.7 386.4 328.9 390.2L353.3 463.4C357.5 476 371.1 482.8 383.7 478.6C396.3 474.4 403 461 398.8 448.4L370.1 362.3C368.7 358.2 368 354 368 349.7L368 299.6C386.4 296.1 404.3 290.7 421.6 283.3L433.5 278.2C445.7 273 451.3 258.9 446.1 246.7C440.9 234.5 426.8 228.9 414.6 234.1L402.7 239C376.6 250.2 348.5 256 320 256C291.5 256 263.5 250.2 237.3 239L225.4 233.9zM320 224C342.1 224 360 206.1 360 184C360 161.9 342.1 144 320 144C297.9 144 280 161.9 280 184C280 206.1 297.9 224 320 224z"
     ></path></svg
   >
-  <span id="a11y-fab-label" data-i18n="a11y.fab.label">Accessibility</span>
 </button>
 
 <!-- Backdrop overlay -->
@@ -37,7 +43,7 @@
       </svg>
       <h2 id="a11y-panel-title" data-i18n="a11y.title">Accessibility Settings</h2>
     </div>
-    <button id="a11y-close" aria-label="Close accessibility settings">
+    <button id="a11y-close" aria-label="Close accessibility settings" data-tooltip="Close">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -59,7 +65,7 @@
   <div class="a11y-panel-body">
     <!-- THEME -->
     <div class="a11y-section">
-      <p id="a11y-label-theme" class="a11y-section-label" data-i18n="a11y.theme">THEME</p>
+      <h3 id="a11y-label-theme" class="a11y-section-label" data-i18n="a11y.theme">THEME</h3>
       <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-theme">
         <button id="a11y-light" class="a11y-choice" aria-pressed="true">
           <svg
@@ -101,7 +107,7 @@
 
     <!-- TEXT SIZE -->
     <div class="a11y-section">
-      <p id="a11y-label-textsize" class="a11y-section-label" data-i18n="a11y.textsize">TEXT SIZE</p>
+      <h3 id="a11y-label-textsize" class="a11y-section-label" data-i18n="a11y.textsize">TEXT SIZE</h3>
       <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-textsize">
         <button id="a11y-text-normal" class="a11y-choice" aria-pressed="true">
           <span class="a11y-size-preview" style="font-size:13px;font-weight:500">A</span>
@@ -116,13 +122,13 @@
 
     <!-- COLOURS -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.colors">COLOURS</p>
+      <h3 class="a11y-section-label" data-i18n="a11y.colors">COLOURS</h3>
       <div class="a11y-toggle-row">
         <div class="a11y-toggle-info">
-          <span class="a11y-toggle-name" data-i18n="a11y.calm">Calm colours</span>
+          <span id="a11y-calm-name" class="a11y-toggle-name" data-i18n="a11y.calm">Calm colours</span>
           <span class="a11y-toggle-desc" data-i18n="a11y.calm.desc">Less saturated palette</span>
         </div>
-        <button id="a11y-calm" role="switch" aria-checked="false" class="a11y-switch">
+        <button id="a11y-calm" role="switch" aria-checked="false" aria-labelledby="a11y-calm-name" class="a11y-switch">
           <span class="a11y-switch-thumb"></span>
         </button>
       </div>
@@ -130,13 +136,13 @@
 
     <!-- MOTION -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.motion">MOTION</p>
+      <h3 class="a11y-section-label" data-i18n="a11y.motion">MOTION</h3>
       <div class="a11y-toggle-row">
         <div class="a11y-toggle-info">
-          <span class="a11y-toggle-name" data-i18n="a11y.reduce-motion">Reduced motion</span>
+          <span id="a11y-motion-name" class="a11y-toggle-name" data-i18n="a11y.reduce-motion">Reduced motion</span>
           <span class="a11y-toggle-desc" data-i18n="a11y.reduce-motion.desc">Disable animations</span>
         </div>
-        <button id="a11y-motion" role="switch" aria-checked="false" class="a11y-switch">
+        <button id="a11y-motion" role="switch" aria-checked="false" aria-labelledby="a11y-motion-name" class="a11y-switch">
           <span class="a11y-switch-thumb"></span>
         </button>
       </div>
@@ -144,7 +150,7 @@
 
     <!-- READING FONT -->
     <div class="a11y-section">
-      <p id="a11y-label-font" class="a11y-section-label" data-i18n="a11y.font">READING FONT</p>
+      <h3 id="a11y-label-font" class="a11y-section-label" data-i18n="a11y.font">READING FONT</h3>
       <div class="a11y-font-list" role="group" aria-labelledby="a11y-label-font">
         <button id="a11y-font-default" class="a11y-font-option" aria-pressed="true">
           <span class="a11y-font-preview" style="font-family:inherit">Aa</span>
@@ -167,13 +173,13 @@
 
     <!-- FOCUS MODE -->
     <div class="a11y-section">
-      <p class="a11y-section-label" data-i18n="a11y.focus">FOCUS MODE</p>
+      <h3 class="a11y-section-label" data-i18n="a11y.focus">FOCUS MODE</h3>
       <div class="a11y-toggle-row">
         <div class="a11y-toggle-info">
-          <span class="a11y-toggle-name" data-i18n="a11y.focus.name">Reduce visual clutter</span>
+          <span id="a11y-focus-name" class="a11y-toggle-name" data-i18n="a11y.focus.name">Reduce visual clutter</span>
           <span class="a11y-toggle-desc" data-i18n="a11y.focus.desc">Hides decorative elements</span>
         </div>
-        <button id="a11y-focus" role="switch" aria-checked="false" class="a11y-switch">
+        <button id="a11y-focus" role="switch" aria-checked="false" aria-labelledby="a11y-focus-name" class="a11y-switch">
           <span class="a11y-switch-thumb"></span>
         </button>
       </div>
@@ -181,7 +187,7 @@
 
     <!-- LANGUAGE -->
     <div class="a11y-section">
-      <p id="a11y-label-lang" class="a11y-section-label" data-i18n="a11y.lang">LANGUAGE</p>
+      <h3 id="a11y-label-lang" class="a11y-section-label" data-i18n="a11y.lang">LANGUAGE</h3>
       <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-lang">
         <button id="a11y-lang-en" class="a11y-choice" aria-pressed="true">
           <span style="font-size:13px;font-weight:700">EN</span>
@@ -208,32 +214,26 @@
     bottom: 1.25rem;
     left: 1.25rem;
     z-index: 60;
-    height: 2.75rem;
-    padding: 0 1rem 0 0.75rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 0;
     border-radius: 9999px;
-    background: #4b4b4b;
+    background: #6b6b6b;
     color: #f0f0f0;
     border: 1px solid #333333;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     cursor: pointer;
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease;
+    transition: transform 0.2s ease;
   }
   #a11y-fab:hover {
-    background: #252525;
+    background: #4b4b4b;
     border-color: #333333;
     transform: translateY(-2px);
   }
-  #a11y-fab-label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
+
   #a11y-fab:focus-visible {
     outline: 2px solid #477b93;
     outline-offset: 3px;
@@ -338,11 +338,13 @@
   }
 
   .a11y-section-label {
+    font-family: "Almarai", sans-serif;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #477b93;
+    margin: 0;
   }
 
   .a11y-choice-group {
@@ -374,10 +376,12 @@
   }
   .a11y-font-option:hover {
     border-left-color: #95bccb;
+    border-color: #95bccb;
     background: #f2f8f9;
   }
   .a11y-font-option[aria-pressed="true"] {
     border-left-color: #477b93;
+    border-color: #477b93;
     background: #f2f8f9;
   }
   .a11y-font-option:focus-visible {
@@ -526,13 +530,14 @@
   /* Dark mode overrides */
 
   body.dark #a11y-fab {
-    background: #252525;
+    background: #3a3a3a;
     border-color: #333333;
     color: var(--text-on-dark, #f0f0f0);
   }
 
   body.dark #a11y-fab:hover {
     background: #4b4b4b;
+    border-color: #333333;
     color: var(--text-on-dark, #f0f0f0);
   }
 
@@ -811,6 +816,7 @@
       "a11y.large": "Large",
       "a11y.colors": "COLOURS",
       "a11y.calm": "Calm colours",
+      "a11y.close": "Close",
       "a11y.calm.desc": "Less saturated palette",
       "a11y.motion": "MOTION",
       "a11y.reduce-motion": "Reduced motion",
@@ -823,7 +829,7 @@
       "a11y.lang": "LANGUAGE",
       "a11y.lang.en": "English",
       "a11y.lang.da": "Danish",
-      "a11y.fab.label": "Accessibility",
+      "a11y.fab.label": "Accessibility Settings",
       "a11y.reset": "Reset settings",
       "a11y.note": "Your preferences are saved on your device.",
     },
@@ -837,6 +843,7 @@
       "a11y.large": "Stor",
       "a11y.colors": "FARVER",
       "a11y.calm": "Dæmpede farver",
+      "a11y.close": "Luk",
       "a11y.calm.desc": "Mindre mættet farvepalette",
       "a11y.motion": "BEVÆGELSE",
       "a11y.reduce-motion": "Reduceret bevægelse",
@@ -849,7 +856,7 @@
       "a11y.lang": "SPROG",
       "a11y.lang.en": "Engelsk",
       "a11y.lang.da": "Dansk",
-      "a11y.fab.label": "Tilgængelighed",
+      "a11y.fab.label": "Tilgængelighedsindstillinger",
       "a11y.reset": "Nulstil indstillinger",
       "a11y.note": "Dine præferencer gemmes lokalt på din enhed.",
     },
@@ -861,12 +868,12 @@
       const key = el.getAttribute("data-i18n");
       if (key && t[key]) el.textContent = t[key];
     });
-    const openLabel = lang === "da" ? "Åbn tilgængeligheds-indstillinger" : "Open accessibility settings";
-    const closeLabel = lang === "da" ? "Luk tilgængeligheds-indstillinger" : "Close accessibility settings";
+    const openLabel = lang === "da" ? "Åbn tilgængeligheds-panel" : "Open accessibility panel";
+    const closeLabel = lang === "da" ? "Luk tilgængelighedsindstillinger" : "Close accessibility settings";
     fab.setAttribute("aria-label", openLabel);
+    fab.setAttribute("data-tooltip", lang === "da" ? "Tilgængelighedsindstillinger" : "Accessibility Settings");
     closeBtn.setAttribute("aria-label", closeLabel);
-    const fabLabel = document.getElementById("a11y-fab-label");
-    if (fabLabel) fabLabel.textContent = lang === "da" ? "Tilgængelighed" : "Accessibility";
+    if (t["a11y.close"]) closeBtn.setAttribute("data-tooltip", t["a11y.close"]);
     document.getElementById("a11y-lang-en")?.setAttribute("aria-pressed", String(lang === "en"));
     document.getElementById("a11y-lang-da")?.setAttribute("aria-pressed", String(lang === "da"));
   }

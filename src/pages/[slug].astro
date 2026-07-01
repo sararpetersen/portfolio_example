@@ -85,7 +85,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ←{" "}
@@ -101,7 +101,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <div class="text-center">
         <a
           href="/"
-          class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
           aria-label="Go to homepage"
           data-i18n="project.back"
         >
@@ -114,7 +114,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               <>
@@ -166,7 +166,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           </svg>
           <div class="min-w-0 flex-1">
             <p
-              class="text-gray-50 md:text-[14.5px] text-[10px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
+              class="text-gray-50 md:text-[14.5px] text-[12px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
               data-i18n="project.figma.notice"
             >
               This project is presented as an interactive prototype created in Figma
@@ -197,7 +197,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           </svg>
           <div class="min-w-0 flex-1">
             <p
-              class="text-orange-950 md:text-[14.5px] text-[10px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
+              class="text-orange-950 md:text-[14.5px] text-[12px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
               data-i18n="project.db.notice"
             >
               The images on the gallery page are no longer visible due to the original database being inactive. This does not reflect the original
@@ -288,7 +288,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
             {randomProjects.map((proj) => (
               <a
                 href={`/${proj.slug}`}
-                class="group block rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out hover:-translate-y-1"
+                class="group block rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition-all duration-300 ease-in-out hover:-translate-y-1"
               >
                 <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 transition-all duration-300 ease-in-out group-hover:from-gray-100 group-hover:to-gray-200 group-hover:border-gray-400 group-focus-visible:-translate-y-1">
                   <img src={proj.image} alt={proj.name} class="w-full h-48 object-cover" loading="lazy" />

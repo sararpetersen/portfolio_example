@@ -51,7 +51,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
       post.data.tags.length > 0 && (
         <div id="post-tags" class="mb-8 flex flex-wrap gap-2" data-tags-en={JSON.stringify(tagsEn)} data-tags-da={JSON.stringify(tagsDa)}>
           {tagsEn.map((tag: string) => (
-            <span class="post-tag-chip rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em]">{tag}</span>
+            <span class="post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]">{tag}</span>
           ))}
         </div>
       )
@@ -64,7 +64,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     <div id="post-back-bottom" class="pt-10">
       <a
         href="/blog"
-        class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
         aria-label="Back to blog overview"
         data-i18n="blog.back">← Back to blog</a
       >
@@ -211,7 +211,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
       el.innerHTML = "";
       tags.forEach((tag) => {
         const chip = document.createElement("span");
-        chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em]";
+        chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]";
         chip.textContent = tag;
         el.appendChild(chip);
       });

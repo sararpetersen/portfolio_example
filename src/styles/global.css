@@ -191,6 +191,23 @@ body.dark.calm-mode.site-shell {
   --brand-primary-strong: #98b2bc;
 }
 
+/* Tailwind's ring-blue-300 (#93c5fd) only has ~1.7:1 contrast against this
+   site's light backgrounds (#f5f5f5/#f9fafb) — well under the 3:1 WCAG
+   minimum for focus indicators. Reuse the same accent already used for the
+   fab/terms-button custom focus rings instead, for both contrast and
+   consistency. */
+[class*="ring-blue-300"]:focus-visible {
+  --tw-ring-color: #477b93;
+  box-shadow: 0 0 0 3px #477b93 !important;
+}
+
+/* In dark mode #477b93 is too close to the button hover colours
+   (--brand-primary-strong), so switch to a distinct coral instead. */
+body.dark [class*="ring-blue-300"]:focus-visible {
+  --tw-ring-color: #ff6f61;
+  box-shadow: 0 0 0 3px #ff6f61 !important;
+}
+
 /* ── Calm Mode: site-wide hard-coded accent overrides ─────── */
 
 /* Kanji decorators (text-red-500) */
@@ -261,6 +278,7 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
   white-space: nowrap;
   background: rgba(26, 26, 26, 0.92);
   color: #f0f0f0;
+  font-family: "Almarai", sans-serif;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -275,6 +293,13 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
   top: calc(100% + 7px);
   bottom: auto;
 }
+/* For buttons near the left edge of the viewport, where a long centered
+   tooltip would otherwise run off-screen — grow rightward from the button
+   instead of centering on it. */
+[data-tooltip].tooltip-align-left::after {
+  left: 0;
+  transform: none;
+}
 [data-tooltip]:hover::after,
 [data-tooltip]:focus-visible::after {
   opacity: 1;
@@ -282,6 +307,22 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
 body.dark [data-tooltip]::after {
   background: rgba(235, 235, 235, 0.95);
   color: #1a1a1a;
+}
+
+/* Inline jargon terms (e.g. "GDPR", "localStorage") get a longer, wrapping
+   tooltip instead of the single-line labels used on icon buttons, plus a
+   dotted underline so keyboard/mouse users can tell they're interactive. */
+[data-tooltip].tooltip-term {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+}
+[data-tooltip].tooltip-term::after {
+  white-space: normal;
+  width: max-content;
+  max-width: 220px;
+  text-align: left;
+  line-height: 1.4;
 }
 
 /* ── Large text mode ──────────────────────────────────────── */
@@ -314,6 +355,15 @@ html.readable-font label,
 html.readable-font input,
 html.readable-font textarea,
 html.readable-font button,
+html.readable-font a,
+html.readable-font span,
+html.readable-font h1,
+html.readable-font h2,
+html.readable-font h3,
+html.readable-font h4,
+html.readable-font h5,
+html.readable-font h6,
+html.readable-font code,
 html.readable-font .font-inter {
   font-family: "Atkinson Hyperlegible", sans-serif !important;
 }
@@ -321,7 +371,7 @@ html.readable-font .font-inter {
 /* ── OpenDyslexic font ────────────────────────────────────── */
 @font-face {
   font-family: 'OpenDyslexic';
-  src: url('https://cdn.jsdelivr.net/npm/opendyslexic@0.91.12/OpenDyslexic-Regular.otf') format('opentype');
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/files/opendyslexic-latin-400-normal.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -333,6 +383,15 @@ html.opendyslexic-font label,
 html.opendyslexic-font input,
 html.opendyslexic-font textarea,
 html.opendyslexic-font button,
+html.opendyslexic-font a,
+html.opendyslexic-font span,
+html.opendyslexic-font h1,
+html.opendyslexic-font h2,
+html.opendyslexic-font h3,
+html.opendyslexic-font h4,
+html.opendyslexic-font h5,
+html.opendyslexic-font h6,
+html.opendyslexic-font code,
 html.opendyslexic-font .font-inter,
 html.opendyslexic-font .font-almarai {
   font-family: 'OpenDyslexic', sans-serif !important;
@@ -359,6 +418,15 @@ html.verdana-font label,
 html.verdana-font input,
 html.verdana-font textarea,
 html.verdana-font button,
+html.verdana-font a,
+html.verdana-font span,
+html.verdana-font h1,
+html.verdana-font h2,
+html.verdana-font h3,
+html.verdana-font h4,
+html.verdana-font h5,
+html.verdana-font h6,
+html.verdana-font code,
 html.verdana-font .font-inter,
 html.verdana-font .font-almarai {
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;

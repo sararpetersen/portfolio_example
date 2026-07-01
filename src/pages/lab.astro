@@ -57,7 +57,7 @@ import Button from "../components/Button.astro";
       Projects from the lab
     </h2>
 
-    <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-400 mb-6">
+    <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
         <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
@@ -73,7 +73,7 @@ import Button from "../components/Button.astro";
       <!-- Computer Site -->
       <article id="lab-item-computersite" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2023-2026</p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023-2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Computer Site</h3>
@@ -91,7 +91,7 @@ import Button from "../components/Button.astro";
       <!-- The Great Mushroom Kingdom Wiki -->
       <article id="lab-item-mariowiki" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2023-2026</p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023-2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">The Great Mushroom Kingdom Wiki</h3>
@@ -109,7 +109,7 @@ import Button from "../components/Button.astro";
       <!-- AutismeGuiden -->
       <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025-2026</p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025-2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
@@ -129,8 +129,8 @@ import Button from "../components/Button.astro";
       <!-- Vibeloop (WIP) -->
       <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2025-2026</p>
-          <div class="flex items-center gap-2">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025-2026</p>
+          <div class="flex items-center gap-2 flex-wrap justify-end">
             <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
             <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
@@ -149,7 +149,7 @@ import Button from "../components/Button.astro";
       <!-- Steady -->
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500">2026</p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
@@ -234,11 +234,13 @@ import Button from "../components/Button.astro";
   .lab-tag {
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
     border-radius: 9999px;
     border: 1px solid rgba(71, 123, 147, 0.4);
     background: rgba(71, 123, 147, 0.1);
     color: var(--brand-primary-strong);
-    font-size: 0.67rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     line-height: 1;
@@ -305,7 +307,4 @@ import Button from "../components/Button.astro";
     }
   }
 
-  body.dark .lab-back-btn a {
-    color: var(--text-on-dark);
-  }
 </style>

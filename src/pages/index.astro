@@ -82,8 +82,8 @@ import Cases from "../components/Cases.astro";
       </div>
     </div>
 
-    <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-1 w-full justify-center z-[20]">
-      <a href="#project-section" aria-label="Go further down the page" class="focus:outline-none focus:ring-2 focus:ring-blue-300 scroll-link">
+    <div id="scroll-down" class="hidden md:flex absolute inset-x-0 -bottom-1 w-full justify-center z-[20]" aria-hidden="true">
+      <a href="#project-section" tabindex="-1" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 scroll-link">
         <div class="flex flex-col items-center transition duration-300 ease-in-out">
           <p class="uppercase tracking-[0.22em] text-xs text-gray-500" data-i18n="hero.scroll">Scroll to projects</p>
           <svg
@@ -212,7 +212,7 @@ import Cases from "../components/Cases.astro";
             <a
               href={`/blog/${post.slug}`}
               aria-label={`Read post: ${post.data.title}`}
-              class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               data-i18n="blog.read"
             >
               Read post →
