@@ -87,7 +87,7 @@ export default {
         200: "#dcd6d0",
         300: "#bfb7b0",
         400: "#8f8882",
-        500: "#6B7280", // mist (secondary text)
+        500: "#5b6270", // mist (secondary text) — darkened from #6B7280 to meet 4.5:1 contrast on light backgrounds
         600: "#4b4b4b",
         700: "#2e2e2e",
         800: "#1A1A1A", // main text (ink)

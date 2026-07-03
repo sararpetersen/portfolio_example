@@ -11,44 +11,142 @@ import Button from "../components/Button.astro";
   ogdescription="A space for looser work – AI-assisted builds, unfinished prototypes, and experiments in progress."
 >
   <!-- Lab Intro -->
-  <section id="lab" class="grid grid-cols-12 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 md:px-0 px-8 relative">
-    <div class="col-span-12 md:pt-12 pt-16 mb-8">
-      <div id="lab-title-row" class="mb-3">
-        <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="lab.title">
-          Experiments
-        </h1>
+  <section id="lab" class="grid grid-cols-12 gap-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-8 relative">
+    <div class="col-span-12 lg:col-span-7">
+      <div class="lg:pt-12 pt-16 mb-8">
+        <div id="lab-title-row" class="mb-3">
+          <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="lab.title">
+            Experiments
+          </h1>
+        </div>
+        <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
+          This is where I put the looser stuff&mdash; projects built with help from AI, unfinished prototypes, and things that exist mostly because I
+          wanted to see if they could work. Less polished than the main cases, but more honest about the process.
+        </p>
       </div>
-      <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
-        This is where I put the looser stuff&mdash; projects built with help from AI, unfinished prototypes, and things that exist mostly because I
-        wanted to see if they could work. Less polished than the main cases, but more honest about the process.
-      </p>
+
+      <!-- What is vibe coding -->
+      <div id="lab-about">
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8">
+          <h2 id="lab-vibe-title" class="font-garamond font-semibold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
+            What is<em>'vibe coding'</em>?
+          </h2>
+
+          <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
+            <em>'Vibe coding'</em> is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide
+            it. It's less about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how
+            you think about prototyping and iteration.
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- What is vibe coding -->
-  <section id="lab-about" class="max-w-6xl mx-auto md:px-0 px-6">
-    <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
-      <h2 id="lab-vibe-title" class="font-garamond font-semibold italic text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
-        What is<em>'vibe coding'</em>?
-      </h2>
-
-      <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
-        <em>'Vibe coding'</em> is building with AI assistance&mdash; you describe what you want, the AI generates the code, and you shape and guide it.
-        It's less about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think
-        about prototyping and iteration.
-      </p>
+    <div class="col-span-12 lg:col-span-5 mb-8 lg:mb-0 lg:pt-12 pt-0 hidden lg:block">
+      <img
+        id="lab-image"
+        src="/images/lab_image.webp"
+        alt="A moody lab desk scene with a whiteboard reading 'The Lab' next to notebooks, test tubes, and a terminal running an experiment"
+        class="h-full w-full rounded-2xl object-cover border-r-4 border border-gray-500"
+        loading="lazy"
+      />
     </div>
   </section>
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto md:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
+  <!-- Revamped School Projects -->
+  <section id="lab-revamped" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+    <h2
+      id="lab-revamped-title"
+      class="font-garamond font-semibold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3"
+      data-i18n="lab.revamped.title"
+    >
+      Old school projects, revamped
+    </h2>
+
+    <p id="lab-revamped-intro" class="text-sm text-gray-600 leading-relaxed max-w-3xl mb-6" data-i18n="lab.revamped.intro">
+      Past projects from Multimedia Design, rebuilt from scratch with the tools and perspective I have now.
+    </p>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Digital Resume / PPP -->
+      <article id="lab-item-srpprofile" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024/2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800" data-i18n="lab.srpprofile.title">
+          Digital resume <em>(PPP)</em>
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.srpprofile.desc">
+          A personal professional profile – developed and used during our internship preparations.
+        </p>
+        <Button
+          href="https://srp-profile.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Digital Resume / PPP (opens in new tab)"><span data-i18n="lab.srpprofile.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- The Great Mushroom Kingdom Wiki -->
+      <article id="lab-item-mariowiki" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023/2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">The Great Mushroom Kingdom Wiki</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.mariowiki.desc">
+          A fan wiki exploring the Super Mario universe – my second ever project.
+        </p>
+        <Button
+          href="https://mario-wiki.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit The Great Mushroom Kingdom Wiki (opens in new tab)"><span data-i18n="lab.mariowiki.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- Computer Site -->
+      <article id="lab-item-computersite" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023/2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Computer Site</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.computersite.desc">
+          A site talking about computers and their history – my project from our entrance exam.
+        </p>
+        <Button
+          href="https://computer-site.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Computer Site (opens in new tab)"><span data-i18n="lab.computersite.link">Visit site →</span></Button
+        >
+      </article>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
   <!-- Lab Items -->
-  <section id="lab-items" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="lab-items" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2
       id="lab-items-title"
       class="font-garamond font-semibold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3"
@@ -69,83 +167,8 @@ import Button from "../components/Button.astro";
       </span>
     </p>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Computer Site -->
-      <article id="lab-item-computersite" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023-2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Computer Site</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.computersite.desc">A site talking about computers and their history.</p>
-        <Button
-          href="https://computer-site.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="secondary"
-          size="small"
-          aria-label="Visit Computer Site (opens in new tab)"><span data-i18n="lab.computersite.link">Visit site →</span></Button
-        >
-      </article>
-
-      <!-- The Great Mushroom Kingdom Wiki -->
-      <article id="lab-item-mariowiki" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2023-2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">The Great Mushroom Kingdom Wiki</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.mariowiki.desc">A fan wiki exploring the Super Mario universe.</p>
-        <Button
-          href="https://mario-wiki.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="secondary"
-          size="small"
-          aria-label="Visit The Great Mushroom Kingdom Wiki (opens in new tab)"><span data-i18n="lab.mariowiki.link">Visit site →</span></Button
-        >
-      </article>
-
-      <!-- AutismeGuiden -->
-      <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025-2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
-          Autism information guide – for autistic people, family, teachers, and professionals (DK).
-        </p>
-        <Button
-          href="https://autisme-guiden.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="secondary"
-          size="small"
-          aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button
-        >
-      </article>
-
-      <!-- Vibeloop (WIP) -->
-      <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025-2026</p>
-          <div class="flex items-center gap-2 flex-wrap justify-end">
-            <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
-          </div>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
-          VibeLoop <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
-        </h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
-          An app concept for supporting social connection and local engagement.
-        </p>
-        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
-          ><span data-i18n="lab.vibeloop.link">View case →</span></Button
-        >
-      </article>
-
+    <!-- Projects -->
+    <div class="grid lg:grid-cols-3 gap-6">
       <!-- Steady -->
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
@@ -165,6 +188,46 @@ import Button from "../components/Button.astro";
           aria-label="Visit Steady website (opens in new tab)"><span data-i18n="lab.steady.link">Visit site →</span></Button
         >
       </article>
+
+      <!-- Vibeloop (WIP) -->
+      <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
+          <div class="flex items-center gap-2 flex-wrap justify-end">
+            <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
+          </div>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
+          VibeLoop <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
+          An app concept for supporting social connection and local engagement.
+        </p>
+        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
+          ><span data-i18n="lab.vibeloop.link">View case →</span></Button
+        >
+      </article>
+
+      <!-- AutismeGuiden -->
+      <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
+          Autism and neurodiversity information guide – for autistic people, family, teachers, and professionals (DK).
+        </p>
+        <Button
+          href="https://autisme-guiden.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button
+        >
+      </article>
     </div>
   </section>
 
@@ -179,7 +242,11 @@ import Button from "../components/Button.astro";
   import { inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (document.body.classList.contains("reduce-motion")) return;
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.body.classList.add("reduce-motion");
+      return;
+    }
 
     let i = 0;
     const register = (selector: string) => {
@@ -194,9 +261,9 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title"].forEach(register);
+    ["#lab-title-row", "#lab-intro", "#lab-image", "#lab-about", "#lab-revamped-title", "#lab-revamped-intro", "#lab-items-title"].forEach(register);
 
-    document.querySelectorAll("#lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
+    document.querySelectorAll("#lab-revamped > div > article, #lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
         el.classList.add("animate__animated", "animate__fadeInUp");
         (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
@@ -220,11 +287,15 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-label,
   html.has-js body:not(.reduce-motion) #lab-title-row,
   html.has-js body:not(.reduce-motion) #lab-intro,
+  html.has-js body:not(.reduce-motion) #lab-image,
   html.has-js body:not(.reduce-motion) #lab-about,
+  html.has-js body:not(.reduce-motion) #lab-revamped-title,
+  html.has-js body:not(.reduce-motion) #lab-revamped-intro,
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
   html.has-js body:not(.reduce-motion) #lab-item-steady,
+  html.has-js body:not(.reduce-motion) #lab-item-srpprofile,
   html.has-js body:not(.reduce-motion) #lab-item-computersite,
   html.has-js body:not(.reduce-motion) #lab-item-mariowiki {
     opacity: 0;
@@ -260,10 +331,18 @@ import Button from "../components/Button.astro";
   body.dark #lab-intro,
   body.dark #lab-vibe-title,
   body.dark #lab-vibe-text,
+  body.dark #lab-revamped-title,
+  body.dark #lab-revamped-intro,
   body.dark #lab-items-title,
+  body.dark #lab-revamped article h3,
+  body.dark #lab-revamped article p,
   body.dark #lab-items article h3,
   body.dark #lab-items article p {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark #lab-image {
+    border-color: var(--dark-border);
   }
 
   /* Dark mode — card backgrounds */
@@ -272,6 +351,7 @@ import Button from "../components/Button.astro";
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
+  body.dark #lab-revamped article,
   body.dark #lab-items article {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -306,5 +386,4 @@ import Button from "../components/Button.astro";
       grid-column: 1 / -1;
     }
   }
-
 </style>

@@ -138,18 +138,18 @@ import Cases from "../components/Cases.astro";
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
-  <!-- What makes my approach different -->
+  <!-- What makes my approach different? -->
   <section id="differentiator" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="mb-8">
       <h2 id="diff-title" class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="diff.title">
-        What makes my approach different
+        What makes my approach different?
       </h2>
       <p id="diff-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="diff.intro">
         A lot of designers mention accessibility. Here's what actually shapes how I work.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
       <!-- Card 1 -->
       <article id="diff-card-1" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
         <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card1.label">Lived experience</p>
@@ -157,8 +157,9 @@ import Cases from "../components/Cases.astro";
           I design from the inside
         </h3>
         <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card1.text">
-          I'm autistic and have ADD. That's not a footnote — it's the reason accessibility is central to how I work, not just something I layer on at
-          the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.
+          I'm autistic and have ADD. That's <strong>not a footnote</strong>&mdash; it's the reason accessibility is central to how I work, not just
+          something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every
+          decision I make.
         </p>
       </article>
 
@@ -169,8 +170,8 @@ import Cases from "../components/Cases.astro";
           What I design, I can build
         </h3>
         <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card2.text">
-          I don't just hand off specs and hope for the best. I design and develop — no gap between the idea and the implementation. That means fewer
-          compromises, faster iteration, and solutions that are actually accessible in the final product, not just on paper.
+          I don't just hand off specs and hope for the best. I design and develop, with <strong>no gap between the idea and the implementation</strong
+          >. That means fewer compromises, faster iteration, and solutions that are actually accessible in the final product, not just on paper.
         </p>
       </article>
 
@@ -178,7 +179,7 @@ import Cases from "../components/Cases.astro";
       <article id="diff-card-3" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
         <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card3.label">Proof, not promises</p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card3.title">
-          The portfolio you're reading is the work
+          The portfolio you're looking at is the work
         </h3>
         <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card3.text">
           This site has dark mode, calm mode, focus mode, four reading font options, keyboard navigation, reduced motion, and bilingual support — all
@@ -202,7 +203,7 @@ import Cases from "../components/Cases.astro";
       A running log of things I'm working on, thinking about, or just find worth writing down.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="grid lg:grid-cols-3 gap-4">
       {
         latestBlogPosts.map((post) => (
           <article class="blog-preview-item rounded-2xl border-l-4 border border-gray-500 p-4 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -238,21 +239,21 @@ import Cases from "../components/Cases.astro";
 
   <!-- About Preview Section -->
   <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Image -->
-      <div class="flex md:justify-end justify-center md:order-1 order-2">
+      <div class="hidden lg:flex lg:justify-end lg:order-1 order-2">
         <img
           src="/images/pfp3.webp"
           alt="Picture of Sara"
-          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-full max-w-[550px] h-[350px]"
-          width="550"
-          height="350"
+          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-full max-w-[420px] aspect-[826/952]"
+          width="826"
+          height="952"
           loading="lazy"
         />
       </div>
 
       <!-- Text -->
-      <div id="about-preview-text" class="md:order-2 order-1">
+      <div id="about-preview-text" class="lg:order-2 order-1">
         <h2
           id="about-preview-title"
           class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
@@ -265,7 +266,8 @@ import Cases from "../components/Cases.astro";
           class="mb-6 text-gray-600 max-w-xl leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
           data-i18n="about.preview.text"
         >
-          I'm a Multimedia Designer and Concept Developer. I work with web design, UX/UI, and concept development, with a focus on making things accessible, structured, and easy to use.
+          I'm a Multimedia Designer and Concept Developer. I work with web design, UX/UI, and concept development, with a focus on making things
+          accessible, structured, and easy to use.
         </p>
         <div class="btn_container">
           <Button href="/about_me" variant="primary" size="small" aria-label="Learn more about me"
@@ -312,6 +314,8 @@ import Cases from "../components/Cases.astro";
   document.addEventListener("DOMContentLoaded", () => {
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
+
+    if (reduceMotion) document.body.classList.add("reduce-motion");
 
     if (!reduceMotion) {
       const registerInView = (selector: string, animationClass: string, delayMs = 0) => {
@@ -463,7 +467,6 @@ import Cases from "../components/Cases.astro";
   }
 
   #project-title,
-  #lab-preview-title,
   #blog-preview-title {
     line-height: 1.08;
     text-wrap: balance;
@@ -471,88 +474,6 @@ import Cases from "../components/Cases.astro";
 
   #project-text {
     max-width: 72ch;
-  }
-
-  .revamped-card {
-    transition:
-      transform 0.28s ease,
-      border-color 0.28s ease;
-  }
-
-  .revamped-card-title {
-    font-size: clamp(1.08rem, 1.45vw, 1.28rem);
-    letter-spacing: 0.01em;
-  }
-
-  .revamped-phase {
-    width: fit-content;
-    font-size: 0.69rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    border: 1px solid rgba(73, 75, 79, 0.35);
-    border-radius: 9999px;
-    padding: 0.4rem 0.7rem;
-    background: rgba(15, 23, 42, 0.45);
-    color: #f8fafc;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .revamped-desc {
-    line-height: 1.55;
-    font-size: 0.96rem;
-  }
-
-  .revamped-arrow {
-    font-size: 1.2rem;
-    opacity: 0.75;
-  }
-
-  .now-chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    border: 1px solid rgba(73, 75, 79, 0.35);
-    background: rgba(15, 23, 42, 0.45);
-    color: #f8fafc;
-    font-size: 0.67rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    padding: 0.42rem 0.72rem;
-    text-transform: uppercase;
-  }
-
-  /* Lab preview WIP badge */
-  .lab-preview-wip-badge {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    border: 1px solid rgba(217, 119, 6, 0.4);
-    background: rgba(217, 119, 6, 0.1);
-    color: #92400e;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    padding: 0.3rem 0.6rem;
-    text-transform: uppercase;
-  }
-
-  /* Lab chip */
-  .lab-chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    border: 1px solid rgba(71, 123, 147, 0.4);
-    background: rgba(71, 123, 147, 0.1);
-    color: var(--brand-primary-strong);
-    font-size: 0.67rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    padding: 0.42rem 0.72rem;
-    text-transform: uppercase;
   }
 
   /* Hero-section */
@@ -564,7 +485,7 @@ import Cases from "../components/Cases.astro";
     border: 1px solid rgba(73, 75, 79, 0.35);
     border-radius: 9999px;
     padding: 0.4rem 0.7rem;
-    background: rgba(15, 23, 42, 0.45);
+    background: rgba(15, 23, 42, 0.82);
     color: #f8fafc;
     line-height: 1;
     text-transform: uppercase;
@@ -612,13 +533,13 @@ import Cases from "../components/Cases.astro";
     border: 1px solid rgb(244 248 250 / 16%);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .hero-image-wrap {
       margin-left: 0.8rem;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     .hero-image-wrap {
       margin: 0 auto;
     }
@@ -679,26 +600,6 @@ import Cases from "../components/Cases.astro";
 
   body.dark #blog-preview .blog-preview-item a:hover {
     color: var(--brand-primary-soft);
-  }
-
-  body.dark .lab-preview-item {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-  }
-
-  body.dark .lab-preview-item h4,
-  body.dark .lab-preview-item p {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark .lab-preview-item a:hover {
-    color: var(--brand-primary-soft);
-  }
-
-  body.dark .lab-preview-wip-badge {
-    border-color: rgba(251, 191, 36, 0.35);
-    background: rgba(217, 119, 6, 0.2);
-    color: #fbbf24;
   }
 
   body.dark #about-preview img {

@@ -12,7 +12,7 @@ const lastUpdated = "June 25, 2026";
   ogtitle="Terms & Privacy – SRP Portfolio"
   ogdescription="Privacy policy, freelance booking terms, and terms of use."
 >
-  <section class="max-w-3xl mx-auto px-6 md:px-0 md:pt-desktop-top pt-mobil-top">
+  <section class="max-w-3xl mx-auto px-6 lg:px-0 md:pt-desktop-top pt-mobil-top">
     <!-- Page header -->
     <div id="terms-page-header" class="md:pt-28 pt-24">
       <h1
@@ -130,8 +130,9 @@ const lastUpdated = "June 25, 2026";
         <div>
           <h3 class="text-h4-mobile font-bold text-gray-700" data-i18n="terms.booking.h3.contact">Getting in touch</h3>
           <p class="text-gray-600 leading-relaxed" data-i18n="terms.booking.p.contact">
-            Send an enquiry via the <a href="/contact" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
-              >contact form</a
+            Send an enquiry via the <a
+              href="/#contact-form"
+              class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out">contact form</a
             > or directly to <a
               class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
               href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a
@@ -262,7 +263,11 @@ const lastUpdated = "June 25, 2026";
   import { inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (document.body.classList.contains("reduce-motion")) return;
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.body.classList.add("reduce-motion");
+      return;
+    }
 
     let i = 0;
     const register = (selector: string) => {
@@ -324,7 +329,7 @@ const lastUpdated = "June 25, 2026";
     color: #6b7280;
   }
   .terms-toc a {
-    color: #477b93;
+    color: #3e657c;
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s ease;
@@ -349,7 +354,7 @@ const lastUpdated = "June 25, 2026";
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #477b93;
+    color: #3e657c;
     font-weight: 600;
   }
   @media (min-width: 768px) {
@@ -387,7 +392,7 @@ const lastUpdated = "June 25, 2026";
     flex-direction: column;
   }
   :global(.terms-body a) {
-    color: #477b93;
+    color: #3e657c;
     text-decoration: underline;
     text-underline-offset: 2px;
     font-size: 1rem;

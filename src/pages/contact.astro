@@ -14,7 +14,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     <!-- Contact Information Section -->
     <div id="contact-form-container" class="flex flex-col md:flex-row gap-gap md:pt-28 pt-24">
       <!-- Image and Contact Info Box -->
-      <div id="contact-container" class="md:col-span-10 col-span-12 flex flex-col md:flex-row items-center">
+      <div id="contact-container" class="w-full flex flex-col md:flex-row items-center">
         <!-- Image with Enhanced Styling -->
         <div class="relative md:mb-12 mb-0 md:mr-16 shrink-0">
           <img
@@ -198,7 +198,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       </p>
     </div>
 
-    <div class="grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-gap items-center">
+    <div class="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-gap items-center">
       <div>
         <form
           id="contact-form"
@@ -292,7 +292,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         </form>
       </div>
 
-      <aside id="contact-form-media" class="hidden md:block">
+      <aside id="contact-form-media" class="hidden lg:block">
         <div class="rounded-3xl border border-gray-500 border-r-4 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
           <img
             src="/images/contact_image.webp"
@@ -315,7 +315,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     import { inView } from "motion";
 
     document.addEventListener("DOMContentLoaded", () => {
-      const reduceMotion = document.body.classList.contains("reduce-motion");
+      const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) document.body.classList.add("reduce-motion");
 
       if (!reduceMotion) {
         let animationIndex = 0;

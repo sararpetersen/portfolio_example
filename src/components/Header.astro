@@ -6,7 +6,12 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 ---
 
 <!-- Accessibility bar -->
-<div id="accessibility-bar" class="fixed top-0 left-0 w-full bg-gray-600 text-gray-50 flex items-center h-9 px-4 z-50">
+<div
+  id="accessibility-bar"
+  class="fixed top-0 left-0 w-full bg-gray-600 text-gray-50 flex items-center h-9 px-4 z-50"
+  role="region"
+  aria-label="Accessibility and language settings"
+>
   <!-- Quick-access setting buttons -->
   <div class="flex items-center gap-1.5" role="group" aria-label="Quick accessibility settings">
     <!-- Text size -->
@@ -133,7 +138,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <a href="/" aria-label="Go to homepage" class="group inline-block">
         <img
           src="/logo.svg"
-          alt="Logo for my website, with two of my initials (black)"
+          alt="Logo for my website, with three of my initials (standard)"
           class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-light"
           width="64"
           height="64"
@@ -141,7 +146,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         />
         <img
           src="/logo_white.svg"
-          alt=""
+          alt="Logo for my website, with three of my initials (white)"
           aria-hidden="true"
           class="h-16 transition duration-300 ease-out group-hover:-translate-y-[2px] group-hover:scale-[1.02] logo-dark"
           width="64"
@@ -157,7 +162,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/"
-            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
+            class:list={[
+              "py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+              isActive("/") && "text-blue-700 font-semibold",
+            ]}
             aria-current={isActive("/") ? "page" : undefined}
             aria-label="Go to homepage"
             data-i18n="nav.home">Home</a
@@ -166,7 +174,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/about_me"
-            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
+            class:list={[
+              "py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+              isActive("/about_me") && "text-blue-700 font-semibold",
+            ]}
             aria-current={isActive("/about_me") ? "page" : undefined}
             aria-label="Go to about-page"
             data-i18n="nav.about">About</a
@@ -175,7 +186,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/contact"
-            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
+            class:list={[
+              "py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+              isActive("/contact") && "text-blue-700 font-semibold",
+            ]}
             aria-current={isActive("/contact") ? "page" : undefined}
             aria-label="Go to contact-page"
             data-i18n="nav.contact">Contact</a
@@ -187,7 +201,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/blog"
-            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
+            class:list={[
+              "py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+              isActive("/blog") && "text-blue-700 font-semibold",
+            ]}
             aria-current={isActive("/blog") ? "page" : undefined}
             aria-label="Go to blog-page"
             data-i18n="nav.blog">Blog</a
@@ -196,7 +213,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
         <li class="some1">
           <a
             href="/lab"
-            class:list={["py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
+            class:list={[
+              "py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+              isActive("/lab") && "text-blue-700 font-semibold",
+            ]}
             aria-current={isActive("/lab") ? "page" : undefined}
             aria-label="Go to lab-page"
             data-i18n="nav.lab">The Lab</a
@@ -262,7 +282,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/#hero"
-          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/") && "text-blue-700 font-semibold"]}
+          class:list={[
+            "py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+            isActive("/") && "text-blue-700 font-semibold",
+          ]}
           aria-current={isActive("/") ? "page" : undefined}
           aria-label="Go to homepage"
           data-i18n="nav.home">Home</a
@@ -271,7 +294,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/about_me"
-          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/about_me") && "text-blue-700 font-semibold"]}
+          class:list={[
+            "py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+            isActive("/about_me") && "text-blue-700 font-semibold",
+          ]}
           aria-current={isActive("/about_me") ? "page" : undefined}
           aria-label="Go to about-page"
           data-i18n="nav.about">About</a
@@ -280,7 +306,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/contact"
-          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/contact") && "text-blue-700 font-semibold"]}
+          class:list={[
+            "py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+            isActive("/contact") && "text-blue-700 font-semibold",
+          ]}
           aria-current={isActive("/contact") ? "page" : undefined}
           aria-label="Go to contact-page"
           data-i18n="nav.contact">Contact</a
@@ -289,7 +318,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/blog"
-          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/blog") && "text-blue-700 font-semibold"]}
+          class:list={[
+            "py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+            isActive("/blog") && "text-blue-700 font-semibold",
+          ]}
           aria-current={isActive("/blog") ? "page" : undefined}
           aria-label="Go to blog-page"
           data-i18n="nav.blog">Blog</a
@@ -298,7 +330,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       <li class="some1">
         <a
           href="/lab"
-          class:list={["py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300", isActive("/lab") && "text-blue-700 font-semibold"]}
+          class:list={[
+            "py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300",
+            isActive("/lab") && "text-blue-700 font-semibold",
+          ]}
           aria-current={isActive("/lab") ? "page" : undefined}
           aria-label="Go to lab-page"
           data-i18n="nav.lab">The Lab</a
@@ -387,7 +422,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     border-radius: 9999px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     background: transparent;
-    color: #dde1e8;
+    color: #ffffff;
     cursor: pointer;
     transition:
       background 0.15s ease,
@@ -491,7 +526,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   }
 
   .lang-btn {
-    color: #d1d5db;
+    color: #f0f1f3;
   }
   .lang-btn.active-lang {
     color: var(--text-on-dark);

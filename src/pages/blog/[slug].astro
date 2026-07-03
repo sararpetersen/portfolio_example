@@ -105,7 +105,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
   }
 
   .blog-content :global(a) {
-    color: var(--brand-primary);
+    color: var(--brand-primary-strong);
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s ease;
@@ -177,7 +177,11 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
   import { inView } from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
-    if (document.body.classList.contains("reduce-motion")) return;
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.body.classList.add("reduce-motion");
+      return;
+    }
 
     let animationIndex = 0;
     const registerInView = (selector: string) => {

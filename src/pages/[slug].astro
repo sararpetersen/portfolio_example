@@ -73,19 +73,19 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   ogtitle={`${project.name} – SRP Portfolio`}
   ogdescription={project.description}
 >
-  <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-24 mt-12 md:px-0 px-6">
+  <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-[5.5rem] mt-12 lg:px-0 px-6">
     <!-- Navigation -->
     <nav
       id="navigation"
       aria-label="Page navigation"
-      class="col-span-12 grid grid-cols-3 items-center gap-2 mb-10 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
+      class="col-span-12 grid grid-cols-3 items-center gap-2 md:mb-12 mb-10 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
     >
       <div>
         {
           prevProject && prevProject.slug !== "no-project" && (
             <a
               href={`/${prevProject.slug}`}
-              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              class="inline-block text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to previous project: ${prevProject.name}`}
             >
               ←{" "}
@@ -101,7 +101,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <div class="text-center">
         <a
           href="/"
-          class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+          class="inline-block text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
           aria-label="Go to homepage"
           data-i18n="project.back"
         >
@@ -114,7 +114,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
           nextProject && nextProject.slug !== "no-project" && (
             <a
               href={`/${nextProject.slug}`}
-              class="text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              class="inline-block text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to next project: ${nextProject.name}`}
             >
               <>
@@ -149,7 +149,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     {
       (project.slug === "vibeloop" || project.slug === "ungeforum" || project.slug === "pinterest-ai" || project.slug === "pace-duolingo") && (
         <div
-          class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-red-500 border border-l-4 border-red-700 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-[35rem] w-full mb-8"
+          class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-red-600 border border-l-4 border-red-700 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-[35rem] w-full mb-8"
           id="figma-notice"
         >
           <svg
@@ -214,50 +214,52 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         id="project-image"
         src={project.image}
         alt={project.name}
-        class="w-full rounded-xl object-cover border-l-4 border border-gray-500"
+        class="w-full aspect-[4/3] rounded-xl object-cover border-l-4 border border-gray-500"
         loading="lazy"
       />
 
-      <div class="space-y-6">
+      <div class="flex flex-col">
         <p
           id="project-description"
-          class="text-gray-600"
+          class="text-gray-600 flex-1"
           data-description={project.description || ""}
           data-description-da={project.description_da || ""}
         >
           {project.description}
         </p>
 
-        {
-          project.tools && (
-            <div id="tools-list">
-              <h2 id="tools-title" class="text-h4-mobile italic text-gray-800 mb-3" data-i18n="project.tools">
-                Tools used:
-              </h2>
-              <div class="flex flex-wrap gap-2 mb-8">
-                {project.tools.map((tool) => (
-                  <span class="rounded-full px-4 py-2 font-semibold border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
-                ))}
+        <div class="flex flex-col gap-6 mt-6">
+          {
+            project.tools && (
+              <div id="tools-list">
+                <h2 id="tools-title" class="md:text-h4-desktop text-h4-mobile italic text-gray-800 mb-3" data-i18n="project.tools">
+                  Tools used:
+                </h2>
+                <div class="flex flex-wrap gap-2 md:mb-0 mb-3">
+                  {project.tools.map((tool) => (
+                    <span class="rounded-full px-4 py-2 font-semibold border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          )
-        }
-        <div id="project-link" class="btn-container">
-          <Button
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-            size="small"
-            aria-label={`View project: ${project.name} (opens in new tab)`}><span data-i18n="project.view">View project</span></Button
-          >
+            )
+          }
+          <div id="project-link" class="btn-container">
+            <Button
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              size="small"
+              aria-label={`View project: ${project.name} (opens in new tab)`}><span data-i18n="project.view">View project</span></Button
+            >
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Divider -->
-  <div id="project-divider-1" class="max-w-6xl mx-auto md:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="project-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -266,7 +268,7 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   <!-- Related Projects Section -->
   <section
     id="related-projects"
-    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom md:px-0 px-6"
+    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom lg:px-0 px-6"
   >
     <div id="related-projects-title" class="col-span-12">
       <div id="related-projects-title-row" class="flex items-center gap-4 mb-6">
@@ -284,14 +286,14 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         const otherProjects = sortedProjects.filter((p) => p.slug !== project.slug);
         const randomProjects = otherProjects.sort(() => 0.5 - Math.random()).slice(0, 3);
         return (
-          <div class="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-6">
+          <div class="col-span-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {randomProjects.map((proj) => (
               <a
                 href={`/${proj.slug}`}
                 class="group block rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition-all duration-300 ease-in-out hover:-translate-y-1"
               >
                 <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 transition-all duration-300 ease-in-out group-hover:from-gray-100 group-hover:to-gray-200 group-hover:border-gray-400 group-focus-visible:-translate-y-1">
-                  <img src={proj.image} alt={proj.name} class="w-full h-48 object-cover" loading="lazy" />
+                  <img src={proj.image} alt={proj.name} class="w-full aspect-[4/3] sm:aspect-square md:aspect-[4/3] object-cover" loading="lazy" />
                   <div class="related-project-info p-4 border-t border-gray-500 transition-colors duration-300 group-hover:border-gray-400">
                     <h3 class="related-project-title text-h4-mobile font-bold mb-2">{proj.name}</h3>
                     <p
@@ -313,6 +315,22 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 </MainLayout>
 
 <style>
+  html.has-js body:not(.reduce-motion) #project-title-row,
+  html.has-js body:not(.reduce-motion) #project-subtitle,
+  html.has-js body:not(.reduce-motion) #project-description,
+  html.has-js body:not(.reduce-motion) #project-image,
+  html.has-js body:not(.reduce-motion) #project-link,
+  html.has-js body:not(.reduce-motion) #figma-notice,
+  html.has-js body:not(.reduce-motion) #db-notice,
+  html.has-js body:not(.reduce-motion) #related-projects-title-row,
+  html.has-js body:not(.reduce-motion) #project-divider-1,
+  html.has-js body:not(.reduce-motion) #tools-list,
+  html.has-js body:not(.reduce-motion) #navigation a,
+  html.has-js body:not(.reduce-motion) .related-project-card {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
   body.dark #project-header h1,
   body.dark #project-header h2,
   body.dark #project-description,
@@ -425,7 +443,11 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
   const getLang = () => localStorage.getItem("lang") || "en";
 
   const initAnimations = () => {
-    if (document.body.classList.contains("reduce-motion")) return;
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.body.classList.add("reduce-motion");
+      return;
+    }
 
     const elementsToAnimate = [
       { selector: "#project-label", animation: "fadeInUp" },
@@ -449,6 +471,13 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
         el.classList.add("animate__animated", `animate__${animation}`);
         (el as HTMLElement).style.animationDelay = `${index * 0.1}s`;
       });
+    });
+
+    // Animate navigation links
+    document.querySelectorAll("#navigation a").forEach((link, index) => {
+      const linkEl = link as HTMLElement;
+      linkEl.classList.add("animate__animated", "animate__fadeInUp");
+      linkEl.style.animationDelay = `${index * 0.1}s`;
     });
 
     // Animate tools list

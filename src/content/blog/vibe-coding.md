@@ -1,5 +1,5 @@
 ---
-title: Vibe coding — what it is and what I think
+title: Vibe coding – what it is and what I think
 excerpt: What I've noticed from building with AI assistance.
 publishDate: 2026-06-17
 draft: false

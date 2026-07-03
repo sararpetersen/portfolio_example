@@ -101,8 +101,9 @@ const workTimelineItems = timelineItems
 
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto lg:px-0">
-    <div class="grid md:grid-cols-2 grid-cols-1 md:items-start items-center justify-center col-span-12">
+    <div class="grid lg:grid-cols-2 grid-cols-1 lg:items-start items-center justify-center col-span-12">
       <div id="personal-background-content" class="md:pb-0 pb-8">
+        <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
         <div class="personal-bg-item border-t-2 border-gray-200">
           <button
             type="button"
@@ -111,7 +112,7 @@ const workTimelineItems = timelineItems
             aria-expanded="false"
             aria-controls="acc-background"
           >
-            <h4 class="text-gray-800" data-i18n="about.tab.background">Background</h4>
+            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.background">Background</h3>
             <svg
               class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
               xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +144,7 @@ const workTimelineItems = timelineItems
             aria-expanded="false"
             aria-controls="acc-inspiration"
           >
-            <h4 class="text-gray-800" data-i18n="about.tab.inspiration">Inspiration</h4>
+            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.inspiration">Inspiration</h3>
             <svg
               class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
               xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@ const workTimelineItems = timelineItems
             aria-expanded="false"
             aria-controls="acc-goals"
           >
-            <h4 class="text-gray-800" data-i18n="about.tab.goals">Goals</h4>
+            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.goals">Goals</h3>
             <svg
               class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
               xmlns="http://www.w3.org/2000/svg"
@@ -200,11 +201,11 @@ const workTimelineItems = timelineItems
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center md:justify-end">
+      <div class="flex items-center justify-center lg:justify-end">
         <img
           src="/images/pfp2.webp"
           alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="portrait md:w-[400px] w-[250px] md:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-500"
+          class="portrait lg:w-[400px] w-[250px] lg:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-500"
           width="400"
           height="450"
           loading="lazy"
@@ -231,9 +232,9 @@ const workTimelineItems = timelineItems
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
       <div>
-        <h4 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.education">
+        <h3 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.education">
           Education
-        </h4>
+        </h3>
         <div class="flex flex-col">
           {
             schoolTimelineItems.map((item) => (
@@ -241,9 +242,9 @@ const workTimelineItems = timelineItems
                 <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
                   {item.year}
                 </p>
-                <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
+                <h4 class="font-bold text-[15px] leading-snug mb-1 font-almarai" data-i18n={`timeline.${item.i18nKey}.title`}>
                   {item.title}
-                </h5>
+                </h4>
                 <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
                   {item.desc}
                 </p>
@@ -259,9 +260,9 @@ const workTimelineItems = timelineItems
       </div>
 
       <div>
-        <h4 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.work">
+        <h3 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.work">
           Work experience
-        </h4>
+        </h3>
         <div class="flex flex-col">
           {
             workTimelineItems.map((item) => (
@@ -269,9 +270,9 @@ const workTimelineItems = timelineItems
                 <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
                   {item.year}
                 </p>
-                <h5 class="font-bold text-[15px] leading-snug mb-1" data-i18n={`timeline.${item.i18nKey}.title`}>
+                <h4 class="font-bold text-[15px] leading-snug mb-1 font-almarai" data-i18n={`timeline.${item.i18nKey}.title`}>
                   {item.title}
-                </h5>
+                </h4>
                 <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
                   {item.desc}
                 </p>
@@ -299,37 +300,37 @@ const workTimelineItems = timelineItems
         Interests and hobbies
       </h2>
     </div>
-    <div id="interests-and-hobbies" class="grid md:grid-cols-3 grid-cols-1 gap-x-10 gap-y-8">
+    <div id="interests-and-hobbies" class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-8">
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.reading.title">Reading</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.reading.title">Reading</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.reading.text">
           There's nothing better than getting lost in a good book — it's my go-to way to unwind and explore new worlds.
         </p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.gaming.title">Gaming</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.gaming.title">Gaming</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.gaming.text">
           Video games let me step into different realities and tackle challenges in ways that feel completely immersive.
         </p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.nintendo.title">Nintendo &amp; Super Mario</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.nintendo.text">
           There's just something about those worlds that keeps drawing me back.
         </p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.japanese.title">Japanese culture</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.japanese.title">Japanese culture</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.japanese.text">
           I love the balance between simplicity, detail, and thoughtful storytelling.
         </p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.lego.title">Building with LEGO</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.lego.title">Building with LEGO</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
       </div>
       <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h4 class="text-gray-800 mb-2" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h4>
+        <h3 class="text-h4-mobile text-gray-800 mb-2" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h3>
         <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.themepark.text">
           Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
           them.
@@ -355,8 +356,8 @@ const workTimelineItems = timelineItems
       Resources
     </h2>
     <div id="resources-section" class="divide-y divide-gray-200">
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
-        <h4 class="text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h4>
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
+        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.app.en.title">Application-template (EN)</h3>
         <span class="self-start">
           <Button
             href="/pdfs/application_template_sararpetersen_(EN).pdf"
@@ -368,8 +369,8 @@ const workTimelineItems = timelineItems
           >
         </span>
       </div>
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
-        <h4 class="text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h4>
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
+        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h3>
         <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(EN).pdf"
@@ -381,8 +382,8 @@ const workTimelineItems = timelineItems
           >
         </span>
       </div>
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
-        <h4 class="text-gray-800" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h4>
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
+        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.app.da.title">Ansøgningsskabelon (DA)</h3>
         <span class="self-start">
           <Button
             href="/pdfs/application_template_sararpetersen_(DA).pdf"
@@ -394,8 +395,8 @@ const workTimelineItems = timelineItems
           >
         </span>
       </div>
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 py-4">
-        <h4 class="text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h4>
+      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
+        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h3>
         <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(DA).pdf"
@@ -441,6 +442,8 @@ const workTimelineItems = timelineItems
   document.addEventListener("DOMContentLoaded", () => {
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
+
+    if (reduceMotion) document.body.classList.add("reduce-motion");
 
     if (!reduceMotion) {
       let animationIndex = 0;
@@ -566,7 +569,7 @@ const workTimelineItems = timelineItems
     cursor: pointer;
   }
 
-  body.dark .accordion-trigger h4 {
+  body.dark .accordion-trigger h3 {
     color: var(--text-on-dark-soft);
   }
 
@@ -597,7 +600,6 @@ const workTimelineItems = timelineItems
   body.dark .heading-title,
   body.dark .heading-text,
   body.dark h3,
-  body.dark h4,
   body.dark p,
   body.dark li,
   body.dark a {
@@ -608,7 +610,7 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .personal-bg-item h4,
+  body.dark .personal-bg-item h3,
   body.dark .personal-bg-item p {
     color: var(--text-on-dark-soft);
   }
@@ -617,7 +619,7 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .interest-item h4,
+  body.dark .interest-item h3,
   body.dark .interest-item p {
     color: var(--text-on-dark-soft);
   }
@@ -632,7 +634,7 @@ const workTimelineItems = timelineItems
   }
 
   body.dark #resources-title,
-  body.dark .resource-row h4 {
+  body.dark .resource-row h3 {
     color: var(--text-on-dark-soft);
   }
 
@@ -640,7 +642,7 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .timeline-item h5,
+  body.dark .timeline-item h4,
   body.dark .timeline-item p {
     color: var(--text-on-dark);
   }
