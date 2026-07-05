@@ -527,13 +527,22 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
   .lang-btn {
     color: #f0f1f3;
+    background-color: transparent;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
   }
   .lang-btn.active-lang {
     color: var(--text-on-dark);
     font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.18);
   }
   .lang-btn:hover {
     color: var(--brand-primary-soft);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .lang-btn.active-lang:hover {
+    background-color: rgba(255, 255, 255, 0.24);
   }
 </style>
 

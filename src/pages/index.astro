@@ -239,13 +239,13 @@ import Cases from "../components/Cases.astro";
 
   <!-- About Preview Section -->
   <section id="about-preview" class="max-w-7xl mx-auto relative px-6 md:pt-desktop-top pt-mobil-top">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="lg:flex lg:justify-center lg:items-center gap-12">
       <!-- Image -->
-      <div class="hidden lg:flex lg:justify-end lg:order-1 order-2">
+      <div class="hidden lg:flex lg:order-1 lg:shrink-0 order-2">
         <img
           src="/images/pfp3.webp"
           alt="Picture of Sara"
-          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-full max-w-[420px] aspect-[826/952]"
+          class="border-r-4 border border-gray-500 rounded-2xl object-cover w-full max-w-[360px] aspect-[9/10]"
           width="826"
           height="952"
           loading="lazy"
@@ -253,7 +253,7 @@ import Cases from "../components/Cases.astro";
       </div>
 
       <!-- Text -->
-      <div id="about-preview-text" class="lg:order-2 order-1">
+      <div id="about-preview-text" class="lg:order-2 lg:max-w-lg order-1">
         <h2
           id="about-preview-title"
           class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
@@ -263,7 +263,7 @@ import Cases from "../components/Cases.astro";
         </h2>
         <p
           id="about-preview-text-paragraph"
-          class="mb-6 text-gray-600 max-w-xl leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
+          class="mb-6 text-gray-600 leading-relaxed p-7 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500"
           data-i18n="about.preview.text"
         >
           I'm a Multimedia Designer and Concept Developer. I work with web design, UX/UI, and concept development, with a focus on making things
