@@ -145,6 +145,11 @@ import Button from "../components/Button.astro";
       Projects from the lab
     </h2>
 
+    <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-3xl mb-6" data-i18n="lab.items.intro">
+      You might notice a theme: many of these experiments are built for neurodivergent people and/or people with disabilities. Accessibility and
+      inclusive design run through all my work, and the lab is where I explore how to create calm digital tools without performance pressure.
+    </p>
+
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
         <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
@@ -158,14 +163,36 @@ import Button from "../components/Button.astro";
     </p>
 
     <!-- Projects -->
-    <div class="grid lg:grid-cols-3 gap-6">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Ephemeris -->
+      <article id="lab-item-ephemeris" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Ephemeris</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.ephemeris.desc">
+          A field journal for your inner dragons – track energy and mood, and discover your patterns.
+        </p>
+        <Button
+          href="https://web-ephemeris.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Ephemeris (opens in new tab)"><span data-i18n="lab.ephemeris.link">Visit site →</span></Button
+        >
+      </article>
+
       <!-- Steady -->
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Steady</h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
+          Steady <em data-i18n="lab.steady.em">(website/app)</em>
+        </h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">
           A daily life tracker for neurodivergent users. Visit the site to explore and try out the app.
         </p>
@@ -205,9 +232,9 @@ import Button from "../components/Button.astro";
           <p class="text-[11px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden</h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden <em>(DK)</em></h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
-          Autism and neurodiversity information guide – for autistic people, family, teachers, and professionals (DK).
+          Autism and neurodiversity information guide – for autistic people, family, teachers, and professionals.
         </p>
         <Button
           href="https://autisme-guiden.netlify.app/"
@@ -251,7 +278,7 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-revamped-title", "#lab-revamped-intro", "#lab-items-title"].forEach(register);
+    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-revamped-title", "#lab-revamped-intro", "#lab-items-title", "#lab-items-intro"].forEach(register);
 
     document.querySelectorAll("#lab-revamped > div > article, #lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
@@ -281,6 +308,7 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-revamped-title,
   html.has-js body:not(.reduce-motion) #lab-revamped-intro,
   html.has-js body:not(.reduce-motion) #lab-items-title,
+  html.has-js body:not(.reduce-motion) #lab-items-intro,
   html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
   html.has-js body:not(.reduce-motion) #lab-item-steady,
@@ -328,6 +356,7 @@ import Button from "../components/Button.astro";
   body.dark #lab-revamped-title,
   body.dark #lab-revamped-intro,
   body.dark #lab-items-title,
+  body.dark #lab-items-intro,
   body.dark #lab-revamped article h3,
   body.dark #lab-revamped article p,
   body.dark #lab-items article h3,
@@ -364,10 +393,10 @@ import Button from "../components/Button.astro";
     color: var(--dark-border);
   }
 
-  /* Lone last card: spans 2 cols on desktop, full width on tablet */
+  /* Lone last card: spans the full row when the 2-col grid has an odd count */
   @media (min-width: 1024px) {
-    #lab-items .grid > article:last-child:nth-child(3n + 1) {
-      grid-column: span 2;
+    #lab-items .grid > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
     }
   }
 
