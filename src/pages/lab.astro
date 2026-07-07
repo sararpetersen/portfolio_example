@@ -243,10 +243,10 @@ import Button from "../components/Button.astro";
       const el = document.querySelector(selector) as HTMLElement | null;
       if (!el) return;
       inView(el, () => {
-        el.classList.add("animate__animated", "animate__fadeInUp");
         el.style.animationDelay = `${i * 60}ms`;
         el.style.animationDuration = "1.5s";
         el.style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
       });
       i++;
     };
@@ -255,19 +255,19 @@ import Button from "../components/Button.astro";
 
     document.querySelectorAll("#lab-revamped > div > article, #lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
-        el.classList.add("animate__animated", "animate__fadeInUp");
         (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
         (el as HTMLElement).style.animationDuration = "1.3s";
         (el as HTMLElement).style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
       });
     });
 
     document.querySelectorAll(".lab-legend > span").forEach((el, idx) => {
       inView(el, () => {
-        el.classList.add("animate__animated", "animate__fadeInUp");
         (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
         (el as HTMLElement).style.animationDuration = "1.3s";
         (el as HTMLElement).style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
       });
     });
   });
@@ -286,8 +286,13 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-item-steady,
   html.has-js body:not(.reduce-motion) #lab-item-srpprofile,
   html.has-js body:not(.reduce-motion) #lab-item-computersite,
-  html.has-js body:not(.reduce-motion) #lab-item-mariowiki {
+  html.has-js body:not(.reduce-motion) #lab-item-mariowiki,
+  html.has-js body:not(.reduce-motion) #lab-revamped > div > article,
+  html.has-js body:not(.reduce-motion) #lab-items > div > article,
+  html.has-js body:not(.reduce-motion) #lab-items > div > div,
+  html.has-js body:not(.reduce-motion) .lab-legend > span {
     opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
   }
 

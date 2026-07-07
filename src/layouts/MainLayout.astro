@@ -60,7 +60,23 @@ const schemamarkup = {
     </script>
 
     <script is:inline>
-      document.documentElement.classList.add("has-js");
+      (() => {
+        const root = document.documentElement;
+        root.classList.add("has-js");
+
+        try {
+          if (localStorage.getItem("largeTextEnabled") === "true") root.classList.add("text-large");
+          if (localStorage.getItem("readableFontEnabled") === "true") {
+            root.classList.add("readable-font");
+          } else if (localStorage.getItem("verdanaFontEnabled") === "true") {
+            root.classList.add("verdana-font");
+          } else if (localStorage.getItem("opendyslexicFontEnabled") === "true") {
+            root.classList.add("opendyslexic-font");
+          }
+        } catch {
+          // Keep first paint resilient if storage is unavailable.
+        }
+      })();
     </script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -87,6 +103,7 @@ const schemamarkup = {
     <meta name="twitter:description" content={Astro.props.ogdescription} />
     <meta name="twitter:image" content={socialImageUrl} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="preload" href="/fonts/nikumaru/07NikumaruFont.woff2" as="font" type="font/woff2" crossorigin />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemamarkup)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -675,6 +692,24 @@ const schemamarkup = {
     </script>
   </head>
   <body class="site-shell bg-gray-50">
+    <script is:inline>
+      (() => {
+        try {
+          const body = document.body;
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const darkSetting = localStorage.getItem("darkModeEnabled");
+          const motionSetting = localStorage.getItem("motionReductionEnabled");
+
+          body.classList.toggle("dark", darkSetting === null ? prefersDark : darkSetting === "true");
+          body.classList.toggle("reduce-motion", motionSetting === null ? prefersReducedMotion : motionSetting === "true");
+          body.classList.toggle("calm-mode", localStorage.getItem("calmModeEnabled") === "true");
+          body.classList.toggle("focus-mode", localStorage.getItem("focusModeEnabled") === "true");
+        } catch {
+          // Preference classes are progressive enhancement.
+        }
+      })();
+    </script>
     <nav aria-label="Skip links">
       <a href="#main-content" class="skip-link transition duration-300 ease-in-out font-semibold">Skip to main content</a>
     </nav>
@@ -765,10 +800,6 @@ const schemamarkup = {
 </style>
 
 <script>
-  import { animate } from "motion";
-  /*Entrance Animation*/
-  animate("body", { opacity: [0, 1] }, { duration: 1 });
-
   // Briefly reveal the skip link for first-time visitors to improve discoverability.
   const skipHintSeenKey = "skipLinkHintSeen";
   if (localStorage.getItem(skipHintSeenKey) !== "true") {

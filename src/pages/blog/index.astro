@@ -109,9 +109,10 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
       const el = document.querySelector(selector) as HTMLElement | null;
       if (!el) return;
       inView(el, () => {
-        el.classList.add("animate__animated", "animate__fadeInUp");
         el.style.animationDelay = `${animationIndex * 60}ms`;
         el.style.animationDuration = "1.4s";
+        el.style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
       });
       animationIndex++;
     };
@@ -120,10 +121,22 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
 
     document.querySelectorAll(".blog-card").forEach((card, index) => {
       inView(card, () => {
-        card.classList.add("animate__animated", "animate__fadeInUp");
         (card as HTMLElement).style.animationDelay = `${index * 80}ms`;
         (card as HTMLElement).style.animationDuration = "1.3s";
+        (card as HTMLElement).style.animationFillMode = "both";
+        card.classList.add("animate__animated", "animate__fadeInUp");
       });
     });
   });
 </script>
+
+<style>
+  html.has-js body:not(.reduce-motion) #blog-title-row,
+  html.has-js body:not(.reduce-motion) #blog-intro,
+  html.has-js body:not(.reduce-motion) #blog-lang-note,
+  html.has-js body:not(.reduce-motion) .blog-card {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: transform, opacity;
+  }
+</style>

@@ -167,10 +167,10 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     cards.forEach((card, index) => {
       let stop = () => {};
       stop = inView(card, () => {
-        card.classList.add("animate__animated", "animate__fadeInUp");
         card.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
         card.style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
         card.style.animationFillMode = "both";
+        card.classList.add("animate__animated", "animate__fadeInUp");
 
         stop();
       });
@@ -229,6 +229,12 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
 
   #project-cards > li[data-inactive="true"] {
     cursor: default;
+  }
+
+  html.has-js body:not(.reduce-motion) #project-cards > li {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: transform, opacity;
   }
 
   #project-cards > li[data-inactive="true"]:hover {

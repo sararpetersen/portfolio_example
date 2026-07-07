@@ -455,10 +455,10 @@ const workTimelineItems = timelineItems
         const delayMs = isMobileViewport ? Math.min(animationIndex * 60, 220) : animationIndex * 60;
         let stop = () => {};
         stop = inView(element, () => {
-          element.classList.add("animate__animated", animationClass);
           element.style.animationDelay = `${delayMs}ms`;
           element.style.animationDuration = "1.6s";
           element.style.animationFillMode = "both";
+          element.classList.add("animate__animated", animationClass);
           stop();
         });
 
@@ -482,10 +482,10 @@ const workTimelineItems = timelineItems
       document.querySelectorAll<HTMLElement>(".personal-bg-item").forEach((item, index) => {
         let stop = () => {};
         stop = inView(item, () => {
-          item.classList.add("animate__animated", "animate__fadeInUp");
           item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           item.style.animationDuration = "1.4s";
           item.style.animationFillMode = "both";
+          item.classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -493,10 +493,10 @@ const workTimelineItems = timelineItems
       document.querySelectorAll<HTMLElement>(".timeline-column-label").forEach((label, index) => {
         let stop = () => {};
         stop = inView(label, () => {
-          label.classList.add("animate__animated", "animate__fadeInUp");
           label.style.animationDelay = `${isMobileViewport ? Math.min(index * 70, 220) : index * 70}ms`;
           label.style.animationDuration = "1.2s";
           label.style.animationFillMode = "both";
+          label.classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -504,10 +504,10 @@ const workTimelineItems = timelineItems
       document.querySelectorAll<HTMLElement>(".timeline-item").forEach((item, index) => {
         let stop = () => {};
         stop = inView(item, () => {
-          item.classList.add("animate__animated", "animate__fadeInUp");
           item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           item.style.animationDuration = "1.2s";
           item.style.animationFillMode = "both";
+          item.classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -515,10 +515,10 @@ const workTimelineItems = timelineItems
       document.querySelectorAll<HTMLElement>("#interests-and-hobbies > div").forEach((item, index) => {
         let stop = () => {};
         stop = inView(item, () => {
-          item.classList.add("animate__animated", "animate__fadeInUp");
           item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           item.style.animationDuration = "1.4s";
           item.style.animationFillMode = "both";
+          item.classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -526,10 +526,10 @@ const workTimelineItems = timelineItems
       document.querySelectorAll<HTMLElement>("#resources-section > div").forEach((item, index) => {
         let stop = () => {};
         stop = inView(item, () => {
-          item.classList.add("animate__animated", "animate__fadeInUp");
           item.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           item.style.animationDuration = "1.4s";
           item.style.animationFillMode = "both";
+          item.classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -593,6 +593,7 @@ const workTimelineItems = timelineItems
   html.has-js body:not(.reduce-motion) #resources-section > div,
   html.has-js body:not(.reduce-motion) .button-container {
     opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
   }
 

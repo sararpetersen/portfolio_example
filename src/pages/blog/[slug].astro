@@ -188,9 +188,10 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
       const el = document.querySelector(selector) as HTMLElement | null;
       if (!el) return;
       inView(el, () => {
-        el.classList.add("animate__animated", "animate__fadeInUp");
         el.style.animationDelay = `${animationIndex * 60}ms`;
         el.style.animationDuration = "1.4s";
+        el.style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
       });
       animationIndex++;
     };
@@ -230,3 +231,18 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     });
   });
 </script>
+
+<style>
+  html.has-js body:not(.reduce-motion) #post-back,
+  html.has-js body:not(.reduce-motion) #post-date,
+  html.has-js body:not(.reduce-motion) #post-title,
+  html.has-js body:not(.reduce-motion) #post-excerpt,
+  html.has-js body:not(.reduce-motion) #post-separator,
+  html.has-js body:not(.reduce-motion) #post-tags,
+  html.has-js body:not(.reduce-motion) #post-content,
+  html.has-js body:not(.reduce-motion) #post-back-bottom {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: transform, opacity;
+  }
+</style>

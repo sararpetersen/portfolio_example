@@ -324,9 +324,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 
           const delayMs = animationIndex * 60;
           inView(element, () => {
-            element.classList.add("animate__animated", animationClass);
             element.style.animationDelay = `${delayMs}ms`;
             element.style.animationDuration = "1.6s";
+            element.style.animationFillMode = "both";
+            element.classList.add("animate__animated", animationClass);
           });
 
           animationIndex++;
@@ -354,9 +355,10 @@ import MainLayout from "../layouts/MainLayout.astro";
         document.querySelectorAll("#contact-services li").forEach((el) => {
           const delayMs = animationIndex * 60;
           inView(el as HTMLElement, () => {
-            (el as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
             (el as HTMLElement).style.animationDelay = `${delayMs}ms`;
             (el as HTMLElement).style.animationDuration = "1.6s";
+            (el as HTMLElement).style.animationFillMode = "both";
+            (el as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
           });
           animationIndex++;
         });
@@ -394,6 +396,26 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     :global(.animate__animated) {
       animation-duration: 1.6s !important;
+    }
+
+    :global(html.has-js body:not(.reduce-motion) #contact-title-label),
+    :global(html.has-js body:not(.reduce-motion) #contact-title-row),
+    :global(html.has-js body:not(.reduce-motion) #contact-text),
+    :global(html.has-js body:not(.reduce-motion) #contact-preferred),
+    :global(html.has-js body:not(.reduce-motion) #contact-container img),
+    :global(html.has-js body:not(.reduce-motion) #contact-divider-1),
+    :global(html.has-js body:not(.reduce-motion) #contact-form-title-row),
+    :global(html.has-js body:not(.reduce-motion) #contact-form-subtitle),
+    :global(html.has-js body:not(.reduce-motion) #contact-form-label),
+    :global(html.has-js body:not(.reduce-motion) #contact-info),
+    :global(html.has-js body:not(.reduce-motion) #contact-services-label),
+    :global(html.has-js body:not(.reduce-motion) .button-container),
+    :global(html.has-js body:not(.reduce-motion) #contact-form),
+    :global(html.has-js body:not(.reduce-motion) #contact-form-media),
+    :global(html.has-js body:not(.reduce-motion) #contact-services li) {
+      opacity: 0;
+      transform: translate3d(0, 1.25rem, 0);
+      will-change: transform, opacity;
     }
 
     :global(body.dark #contact-title) {

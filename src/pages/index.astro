@@ -58,9 +58,9 @@ import Cases from "../components/Cases.astro";
             <p data-i18n="hero.status" class="text-gray-50">Interning at Folkæt</p>
           </div>
 
-          <h1 class="hero-title display pb-6">Sara Ringkow Petersen</h1>
+          <h1 class="hero-title display text-gray-800 pb-6">Sara Ringkow Petersen</h1>
           <p class="hero-role text-gray-700 pb-6 font-garamond" data-i18n="hero.role">Multimedia Designer & Concept Developer</p>
-          <p class="hero-lead text-gray-600 font-light pb-8 max-w-xl" data-i18n="hero.lead">
+          <p class="hero-lead text-gray-500 font-light pb-8 max-w-xl" data-i18n="hero.lead">
             I design and build accessible websites, interfaces, and concepts — focusing on structure, clarity, and the people who use them.
           </p>
 
@@ -327,10 +327,10 @@ import Cases from "../components/Cases.astro";
           const animationToUse = animationClass;
           const normalizedDelay = isMobileViewport ? Math.min(delayMs, 220) : delayMs;
 
-          (element as HTMLElement).classList.add("animate__animated", animationToUse);
           (element as HTMLElement).style.animationDelay = `${normalizedDelay}ms`;
           (element as HTMLElement).style.animationDuration = isMobileViewport ? "1s" : "1.6s";
           (element as HTMLElement).style.animationFillMode = "both";
+          (element as HTMLElement).classList.add("animate__animated", animationToUse);
 
           stop();
         });
@@ -368,10 +368,10 @@ import Cases from "../components/Cases.astro";
       document.querySelectorAll("#revamped-section article").forEach((article, index) => {
         let stop = () => {};
         stop = inView(article, () => {
-          (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
           (article as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           (article as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
           (article as HTMLElement).style.animationFillMode = "both";
+          (article as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
 
           stop();
         });
@@ -380,10 +380,10 @@ import Cases from "../components/Cases.astro";
       document.querySelectorAll("#differentiator .diff-card").forEach((card, index) => {
         let stop = () => {};
         stop = inView(card, () => {
-          (card as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
           (card as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 80, 220) : index * 80}ms`;
           (card as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.3s";
           (card as HTMLElement).style.animationFillMode = "both";
+          (card as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
           stop();
         });
       });
@@ -391,10 +391,10 @@ import Cases from "../components/Cases.astro";
       document.querySelectorAll("#now-section .now-item, #blog-preview .blog-preview-item").forEach((item, index) => {
         let stop = () => {};
         stop = inView(item, () => {
-          (item as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
           (item as HTMLElement).style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
           (item as HTMLElement).style.animationDuration = isMobileViewport ? "0.95s" : "1.3s";
           (item as HTMLElement).style.animationFillMode = "both";
+          (item as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
 
           stop();
         });
@@ -463,6 +463,7 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #diff-intro,
   html.has-js body:not(.reduce-motion) #differentiator .diff-card {
     opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
   }
 
