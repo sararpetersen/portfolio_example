@@ -1,0 +1,263 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+  title="SRP portfolio | The Archive"
+  description="Older projects by Sara Ringkow Petersen – early school work and past builds that aren't showcased on the frontpage."
+  ogtitle="The Archive – SRP Portfolio"
+  ogdescription="A collection of older projects – early school work and past builds, kept for the record."
+>
+  <!-- Archive Intro -->
+  <section id="archive" class="grid grid-cols-12 gap-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-8 relative">
+    <div class="col-span-12">
+      <div class="lg:pt-12 pt-16">
+        <div id="archive-title-row" class="mb-3">
+          <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="archive.title">
+            The Archive
+          </h1>
+        </div>
+        <p id="archive-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="archive.intro">
+          A collection of older projects that aren't showcased on the frontpage&mdash; early school work, small builds, and things I've since
+          outgrown. They stay here for the record: this is where I started.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+    <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
+  </div>
+
+  <!-- Archive Items -->
+  <section id="archive-items" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top mb-3">
+    <!-- Screen-reader-only heading: keeps the h1 → h3 hierarchy intact for assistive tech -->
+    <h2 class="sr-only" data-i18n="archive.items.title">Older projects</h2>
+
+    <!-- Projects -->
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Karrusel Festival -->
+      <article id="archive-item-karrusel" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Karrusel Festival</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.karrusel.desc">
+          A promotional site for Karrusel Festival – three days of house, disco, and techno in the woods. Second project from 2nd semester of
+          Multimedia Design.
+        </p>
+        <Button
+          href="https://t8-karrusel.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Karrusel Festival site (opens in new tab)"><span data-i18n="archive.karrusel.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- I Tråd med Verden -->
+      <article id="archive-item-itmv" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">I Tråd med Verden</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.itmv.desc">
+          A website for the social enterprise I Tråd med Verden, which empowers vulnerable women through textile upcycling. Third project from 2nd
+          semester of Multimedia Design.
+        </p>
+        <Button
+          href="https://itmv-t9.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit I Tråd med Verden site (opens in new tab)"><span data-i18n="archive.itmv.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- Københavnerbilleder -->
+      <article id="archive-item-kbhbilleder" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Københavnerbilleder</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.kbhbilleder.desc">
+          A promotional site for the photography book Københavnerbilleder by Sten Simons. Mini-project before the main project on 3rd semester of
+          Multimedia Design.
+        </p>
+        <Button
+          href="https://kbh-billeder.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Københavnerbilleder site (opens in new tab)"><span data-i18n="archive.kbhbilleder.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- HÖJSKOLENDK -->
+      <article id="archive-item-hojskolendk" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">HÖJSKOLENDK</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.hojskolendk.desc">
+          A website for HÖJSKOLENDK, offering semester-abroad programmes for young adults. Fourth project from 3rd semester, right before the exam
+          project.
+        </p>
+        <Button
+          href="https://hojskolendk002.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit HÖJSKOLENDK site (opens in new tab)"><span data-i18n="archive.hojskolendk.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!--
+        Pattern for a project that is no longer online (Offline tag, no button):
+
+        <article id="archive-item-NAME" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">20XX</p>
+            <span class="archive-tag offline-tag" title="This project is no longer online" data-i18n="archive.badge.offline">Offline</span>
+          </div>
+          <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Project name</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="archive.NAME.desc">Short description.</p>
+        </article>
+      -->
+    </div>
+  </section>
+
+  <!-- Back -->
+  <section class="archive-back-btn mx-auto py-20 text-center">
+    <Button href="/lab" variant="primary" size="small" aria-label="Back to the lab"><span data-i18n="archive.back">Back to The Lab</span></Button>
+  </section>
+</MainLayout>
+
+<!-- Animations -->
+<script>
+  import { inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.body.classList.add("reduce-motion");
+      return;
+    }
+
+    let i = 0;
+    const register = (selector: string) => {
+      const el = document.querySelector(selector) as HTMLElement | null;
+      if (!el) return;
+      inView(el, () => {
+        el.style.animationDelay = `${i * 60}ms`;
+        el.style.animationDuration = "1.5s";
+        el.style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
+      });
+      i++;
+    };
+
+    ["#archive-title-row", "#archive-intro", "#archive-items-title"].forEach(register);
+
+    document.querySelectorAll("#archive-items > div > article").forEach((el, idx) => {
+      inView(el, () => {
+        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
+        (el as HTMLElement).style.animationDuration = "1.3s";
+        (el as HTMLElement).style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
+      });
+    });
+
+    document.querySelectorAll(".archive-legend > span").forEach((el, idx) => {
+      inView(el, () => {
+        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
+        (el as HTMLElement).style.animationDuration = "1.3s";
+        (el as HTMLElement).style.animationFillMode = "both";
+        el.classList.add("animate__animated", "animate__fadeInUp");
+      });
+    });
+  });
+</script>
+
+<style>
+  html.has-js body:not(.reduce-motion) #archive-title-row,
+  html.has-js body:not(.reduce-motion) #archive-intro,
+  html.has-js body:not(.reduce-motion) #archive-items-title,
+  html.has-js body:not(.reduce-motion) #archive-items > div > article,
+  html.has-js body:not(.reduce-motion) .archive-legend > span {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: transform, opacity;
+  }
+
+  .archive-tag {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    border-radius: 9999px;
+    border: 1px solid rgba(71, 123, 147, 0.4);
+    background: rgba(71, 123, 147, 0.1);
+    color: var(--brand-primary-strong);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.42rem 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .offline-tag {
+    border-color: rgba(107, 114, 128, 0.4);
+    background: rgba(107, 114, 128, 0.1);
+    color: #4b5563;
+  }
+
+  /* Dark mode — text */
+  body.dark #archive h1,
+  body.dark #archive-intro,
+  body.dark #archive-items-title,
+  body.dark #archive-items article h3,
+  body.dark #archive-items article p {
+    color: var(--text-on-dark-soft);
+  }
+
+  /* Dark mode — card backgrounds */
+  body.dark #archive-items article {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  /* Dark mode — badges */
+  body.dark .offline-tag {
+    border-color: rgba(156, 163, 175, 0.35);
+    background: rgba(107, 114, 128, 0.2);
+    color: #d1d5db;
+  }
+
+  body.dark .archive-legend {
+    color: var(--dark-border);
+  }
+
+  /* Lone last card: spans the full row when the 2-col grid has an odd count */
+  @media (min-width: 1024px) {
+    #archive-items .grid > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #archive-items .grid > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

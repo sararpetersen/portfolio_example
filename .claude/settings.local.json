@@ -50,7 +50,8 @@
       "Bash(curl -s http://localhost:4323/)",
       "Bash(pkill -f \"astro dev\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/lab)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?select=id,slug,name,year\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574\")"
     ]
   }
 }

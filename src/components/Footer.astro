@@ -44,7 +44,7 @@ import Button from "./Button.astro";
             class="text-[14px] tooltip-term"
             tabindex="0"
             data-tooltip="A place in your browser that saves small bits of data on your device">localStorage</code
-          > only&mdash; no personal data leaves your device. No cookies, no tracking, no third-party marketing.
+          > only&mdash; <strong>no personal data leaves your device</strong>. No cookies, no tracking, no third-party marketing.
         </p>
         <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.privacy.p2">
           <strong
@@ -67,8 +67,8 @@ import Button from "./Button.astro";
           Booking & freelance terms
         </h3>
         <p class="text-gray-600 leading-relaxed mb-2" data-i18n="modal.terms.booking.p1">
-          I take on projects case by case. A written quote is provided before work starts&mdash; no surprises. Two rounds of revisions are included.
-          Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless
+          I take on projects case by case. <strong>A written quote is provided before work starts</strong>&mdash; no surprises. Two rounds of revisions are
+          included. Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless
           confidentiality is agreed.
         </p>
         <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.booking.p2">
@@ -83,7 +83,7 @@ import Button from "./Button.astro";
           Terms of use
         </h3>
         <p class="text-gray-600 leading-relaxed mb-3" data-i18n="modal.terms.use.p1">
-          All content on this portfolio belongs to Sara Ringkow Petersen <em>(me)</em>. Do not reproduce or republish without written permission.
+          All content on this portfolio belongs to Sara Ringkow Petersen <em>(me)</em>. <strong>Do not reproduce or republish without written permission.</strong>
           External links are provided for reference only. These terms are governed by Danish law.
         </p>
       </section>
@@ -135,19 +135,25 @@ import Button from "./Button.astro";
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.contact">Contact</a
           >
-        </div>
-        <div class="flex flex-col items-start">
           <a
             href="/blog"
             aria-label="Go to blog overview"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.blog">Blog</a
           >
+        </div>
+        <div class="flex flex-col items-start">
           <a
             href="/lab"
             aria-label="Go to lab"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.lab">The Lab</a
+          >
+          <a
+            href="/archive"
+            aria-label="Go to the archive"
+            class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
+            data-i18n="nav.archive">The Archive</a
           >
         </div>
       </div>
@@ -281,7 +287,7 @@ import Button from "./Button.astro";
     id="footer-bottom"
     class="container mx-auto mt-6 pt-4 border-t border-gray-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-2"
   >
-    <p class="text-gray-300 text-xs" data-i18n="footer.copyright">© 2026 SRP Portfolio - Sara Ringkow Petersen. All rights reserved.</p>
+    <p class="text-gray-300 text-xs" data-i18n="footer.copyright">© 2026 · SRP Portfolio - Sara Ringkow Petersen. All rights reserved.</p>
     <button
       id="terms-modal-trigger"
       class="text-gray-300 text-xs border border-gray-600 rounded-full px-3 py-1 hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"

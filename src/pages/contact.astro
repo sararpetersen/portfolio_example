@@ -220,7 +220,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <!-- Name Field -->
             <div>
               <label for="form-name" class="block text-sm font-semibold text-gray-800 mb-2">
-                <span data-i18n="contact.form.name">Name</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+                <span data-i18n="contact.form.name">Name</span><span aria-hidden="true" class="text-red-500">*</span>
                 <span class="sr-only">(required)</span>
               </label>
               <input
@@ -238,7 +238,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <!-- Email Field -->
             <div>
               <label for="form-email" class="block text-sm font-semibold text-gray-800 mb-2">
-                <span data-i18n="contact.form.email">Email</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+                <span data-i18n="contact.form.email">Email</span><span aria-hidden="true" class="text-red-500">*</span>
                 <span class="sr-only">(required)</span>
               </label>
               <input
@@ -256,7 +256,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <!-- Message Field -->
             <div>
               <label for="form-message" class="block text-sm font-semibold text-gray-800 mb-2">
-                <span data-i18n="contact.form.message">Message</span><span aria-hidden="true" class="text-red-500 ml-1">*</span>
+                <span data-i18n="contact.form.message">Message</span><span aria-hidden="true" class="text-red-500">*</span>
                 <span class="sr-only">(required)</span>
               </label>
               <textarea
@@ -270,14 +270,20 @@ import MainLayout from "../layouts/MainLayout.astro";
                 placeholder="Your message..."></textarea>
             </div>
 
-            <!-- GDPR note -->
-            <p class="text-xs text-gray-500 leading-relaxed" data-i18n="contact.form.gdpr">
-              By submitting this form you agree to my <a
-                href="/terms"
-                class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs"
-                >Terms & Privacy Policy</a
-              >.
-            </p>
+            <!-- Fine print: GDPR + what happens next -->
+            <div class="space-y-2">
+              <p class="text-xs text-gray-500 leading-relaxed" data-i18n="contact.form.gdpr">
+                By submitting this form you agree to my <a
+                  href="/terms"
+                  class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs"
+                  >Terms & Privacy Policy</a
+                >.
+              </p>
+              <p class="text-xs text-gray-400 leading-relaxed max-w-md italic" data-i18n="contact.form.next">
+                (After you hit send, your message goes straight to my inbox and a confirmation appears right here on the page – I usually reply within
+                a couple of days)
+              </p>
+            </div>
 
             <!-- Submit Button -->
             <div class="flex justify-center md:justify-start">
@@ -561,7 +567,8 @@ import MainLayout from "../layouts/MainLayout.astro";
       box-shadow: 0 0 0 3px rgba(149, 188, 203, 0.24);
     }
 
-    :global(body.dark p[data-i18n="contact.form.gdpr"]) {
+    :global(body.dark p[data-i18n="contact.form.gdpr"]),
+    :global(body.dark p[data-i18n="contact.form.next"]) {
       color: var(--text-on-dark-soft, #c0c0c0);
     }
     :global(body.dark p[data-i18n="contact.form.gdpr"] a) {
