@@ -231,6 +231,13 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     cursor: default;
   }
 
+  /* Lone last card on desktop: center it in the middle column instead of leaving it bottom-left */
+  @media (min-width: 1024px) {
+    #project-cards > li:last-child:nth-child(3n + 1) {
+      grid-column: 2;
+    }
+  }
+
   html.has-js body:not(.reduce-motion) #project-cards > li {
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);

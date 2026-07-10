@@ -26,7 +26,14 @@ const fetchCards = async () => {
 };
 
 const cards = await fetchCards();
-const sortedCards = cards.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+// Cases removed from the frontpage grid — their pages stay live and they remain
+// reachable from The Archive (singleusesucks, vinens_essens) and The Lab (vibeloop).
+const ARCHIVED_CASE_SLUGS = new Set(["singleusesucks", "vinens_essens", "vibeloop"]);
+
+const sortedCards = cards
+  .filter((card) => !ARCHIVED_CASE_SLUGS.has(card.slug))
+  .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 const latestBlogPosts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
   .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
@@ -40,9 +47,9 @@ import Cases from "../components/Cases.astro";
 
 <MainLayout
   title="SRP portfolio | Homepage"
-  description="Multimedia designer and concept developer based in Denmark. Browse selected cases, experiments, and design work by Sara Ringkow Petersen."
+  description="Portfolio of Sara Ringkow Petersen, a multimedia designer and concept developer with a focus on accessibility and user-centred design."
   ogtitle="Frontpage – SRP Portfolio"
-  ogdescription="Portfolio of Sara Ringkow Petersen — multimedia designer and concept developer with a focus on accessibility and user-centred design."
+  ogdescription="Multimedia designer and concept developer based in Denmark. Browse selected cases, experiments, and design work by Sara Ringkow Petersen."
 >
   <!-- Hero Section -->
   <section id="hero" class="hero-section relative w-full md:px-16 px-4 overflow-hidden">

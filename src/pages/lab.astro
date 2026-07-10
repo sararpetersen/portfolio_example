@@ -43,7 +43,7 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="lab-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -126,10 +126,27 @@ import Button from "../components/Button.astro";
         >
       </article>
     </div>
+
+    <!-- Archive pointer -->
+    <div class="archive-pointer-container md:mt-10 mt-8 w-[30rem] max-w-full px-6 py-4 border border-blue-300 border-l-4 bg-blue-100 rounded-2xl">
+      <p id="lab-archive-link" class="flex flex-wrap items-baseline gap-x-[0.2em] text-sm text-blue-600">
+        <span data-i18n="lab.archive.intro">Looking for original projects, as old as these?</span>
+        <span class="some1">
+          <a
+            href="/archive"
+            class="inline-flex items-baseline text-[1em] text-current transition duration-300 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+            aria-label="Go to the archive"
+            data-i18n="lab.archive.link"
+          >
+            Then visit the archive →
+          </a>
+        </span>
+      </p>
+    </div>
   </section>
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="lab-divider-2" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -145,9 +162,9 @@ import Button from "../components/Button.astro";
       Projects from the lab
     </h2>
 
-    <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-3xl mb-6" data-i18n="lab.items.intro">
-      You might notice a theme: many of these experiments are built for neurodivergent people and/or people with disabilities. Accessibility and
-      inclusive design run through all my work, and the lab is where I explore how to create calm digital tools without performance pressure.
+    <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-2xl mb-6" data-i18n="lab.items.intro">
+      A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Each project explores how digital
+      experiences can feel calmer, clearer, and free from performance pressure.
     </p>
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
@@ -163,17 +180,36 @@ import Button from "../components/Button.astro";
     </p>
 
     <!-- Projects -->
-    <div class="grid lg:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Bivi (featured) -->
+      <article
+        id="lab-item-bivi"
+        class="lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
+          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        </div>
+        <div class="max-w-3xl">
+          <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.bivi.title">Bivi - Your Little Medication Sidekick</h3>
+          <Button
+            href="https://web-bivi.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label="Visit Bivi website (opens in new tab)"><span data-i18n="lab.bivi.link">Visit site →</span></Button
+          >
+        </div>
+      </article>
+
       <!-- Ephemeris -->
       <article id="lab-item-ephemeris" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Ephemeris</h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.ephemeris.desc">
-          A field journal for your inner dragons – track energy and mood, and discover your patterns.
-        </p>
+        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.ephemeris.title">Ephemeris - Dragon Mood Journal</h3>
         <Button
           href="https://web-ephemeris.netlify.app/"
           target="_blank"
@@ -190,12 +226,9 @@ import Button from "../components/Button.astro";
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
-          Steady <em data-i18n="lab.steady.em">(website/app)</em>
+        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.steady.title">
+          Steady - Daily Life Tracker App for Neurodivergents
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.steady.desc">
-          A daily life tracker for neurodivergent users. Visit the site to explore and try out the app.
-        </p>
         <Button
           href="https://web-steady.netlify.app/"
           target="_blank"
@@ -215,12 +248,10 @@ import Button from "../components/Button.astro";
             <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
           </div>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
-          VibeLoop <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
+        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
+          <span data-i18n="lab.vibeloop.title">VibeLoop - Mood Based Social App</span>
+          <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.vibeloop.desc">
-          An app concept for supporting social connection and local engagement.
-        </p>
         <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
           ><span data-i18n="lab.vibeloop.link">View case →</span></Button
         >
@@ -232,10 +263,9 @@ import Button from "../components/Button.astro";
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
           <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">AutismeGuiden <em>(DK)</em></h3>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="lab.autismeguiden.desc">
-          Autism and neurodiversity information guide – for autistic people, family, teachers, and professionals.
-        </p>
+        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.autismeguiden.title">
+          AutismeGuiden - Your Guide to Autism and Neurodivergence
+        </h3>
         <Button
           href="https://autisme-guiden.netlify.app/"
           target="_blank"
@@ -247,19 +277,6 @@ import Button from "../components/Button.astro";
       </article>
     </div>
   </section>
-
-  <!-- Archive pointer -->
-  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 text-center">
-    <a
-      id="lab-archive-link"
-      href="/archive"
-      class="inline-block text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-      aria-label="Go to the archive"
-      data-i18n="lab.archive.link"
-    >
-      Looking for even older work? Visit the Archive →
-    </a>
-  </div>
 
   <!-- Back -->
   <section class="lab-back-btn mx-auto py-20 text-center">
@@ -291,7 +308,18 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-revamped-title", "#lab-revamped-intro", "#lab-items-title", "#lab-items-intro"].forEach(register);
+    [
+      "#lab-title-row",
+      "#lab-intro",
+      "#lab-about",
+      "#lab-revamped-title",
+      "#lab-revamped-intro",
+      "#lab-items-title",
+      "#lab-items-intro",
+      "#lab-divider-1",
+      "#lab-divider-2",
+      "#lab-archive-link",
+    ].forEach(register);
 
     document.querySelectorAll("#lab-revamped > div > article, #lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
@@ -323,6 +351,7 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-items-intro,
   html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
+  html.has-js body:not(.reduce-motion) #lab-item-bivi,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
   html.has-js body:not(.reduce-motion) #lab-item-steady,
   html.has-js body:not(.reduce-motion) #lab-item-srpprofile,
@@ -406,24 +435,17 @@ import Button from "../components/Button.astro";
     color: var(--dark-border);
   }
 
+  body.dark .archive-pointer-container {
+    background-color: color-mix(in srgb, var(--dark-surface) 80%, #1e3a5f 20%);
+    border-color: color-mix(in srgb, var(--dark-border) 60%, #3b6ea5 40%);
+    color: color-mix(in srgb, var(--text-on-dark-soft) 90%, #a8c8e8 10%);
+  }
+
   body.dark #lab-archive-link {
-    color: var(--text-on-dark-soft);
+    color: color-mix(in srgb, var(--text-on-dark-soft) 90%, #a8c8e8 10%);
   }
 
-  body.dark #lab-archive-link:hover {
+  body.dark #lab-archive-link a:hover {
     color: var(--brand-primary-soft);
-  }
-
-  /* Lone last card: spans the full row when the 2-col grid has an odd count */
-  @media (min-width: 1024px) {
-    #lab-items .grid > article:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    #lab-items .grid > article:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-    }
   }
 </style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sararingkow.dk/sitemap-index.xml

@@ -28,7 +28,7 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Divider -->
-  <div class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="archive-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -40,16 +40,17 @@ import Button from "../components/Button.astro";
     <h2 class="sr-only" data-i18n="archive.items.title">Older projects</h2>
 
     <!-- Projects -->
-    <div class="grid lg:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Karrusel Festival -->
       <article id="archive-item-karrusel" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Karrusel Festival</h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
+          Karrusel Festival <em data-i18n="archive.karrusel.inactive">(inactive databases)</em>
+        </h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.karrusel.desc">
-          A promotional site for Karrusel Festival – three days of house, disco, and techno in the woods. Second project from 2nd semester of
-          Multimedia Design.
+          A promotional site for the ravefestival Karrusel Festival, held on Refshaleøen – my second project from 2nd semester of Multimedia Design.
         </p>
         <Button
           href="https://t8-karrusel.netlify.app/"
@@ -81,6 +82,27 @@ import Button from "../components/Button.astro";
         >
       </article>
 
+      <!-- Volander Art -->
+      <article id="archive-item-volander" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
+          Volander Art <em data-i18n="archive.volander.inactive">(inactive databases)</em>
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.volander.desc">
+          A colourful portfolio and webshop for artist Susse Volander – our 2nd semester exam project in Multimedia Design.
+        </p>
+        <Button
+          href="https://volander-art.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Volander Art site (opens in new tab)"><span data-i18n="archive.volander.link">Visit site →</span></Button
+        >
+      </article>
+
       <!-- Københavnerbilleder -->
       <article id="archive-item-kbhbilleder" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
@@ -101,6 +123,26 @@ import Button from "../components/Button.astro";
         >
       </article>
 
+      <!-- #SingleUseSucks -->
+      <article id="archive-item-singleusesucks" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">#SingleUseSucks</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.singleusesucks.desc">
+          A campaign site built on Plastic Change's slogan #SingleUseSucks, communicating the problems of single-use plastic. Second case project from
+          3rd semester of Multimedia Design.
+        </p>
+        <Button
+          href="https://singleusesucks-plasticchange.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit #SingleUseSucks site (opens in new tab)"><span data-i18n="archive.singleusesucks.link">Visit site →</span></Button
+        >
+      </article>
+
       <!-- HÖJSKOLENDK -->
       <article id="archive-item-hojskolendk" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
@@ -118,6 +160,26 @@ import Button from "../components/Button.astro";
           variant="secondary"
           size="small"
           aria-label="Visit HÖJSKOLENDK site (opens in new tab)"><span data-i18n="archive.hojskolendk.link">Visit site →</span></Button
+        >
+      </article>
+
+      <!-- Vinens Essens -->
+      <article id="archive-item-vinensessens" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024/2025</p>
+        </div>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Vinens Essens</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.vinensessens.desc">
+          A subscription-based wine concept we invented for the 3rd semester exam project – monthly wine boxes from the fictional company Vinens
+          Essens.
+        </p>
+        <Button
+          href="https://vinens-essens.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          size="small"
+          aria-label="Visit Vinens Essens site (opens in new tab)"><span data-i18n="archive.vinensessens.link">Visit site →</span></Button
         >
       </article>
 
@@ -166,7 +228,7 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    ["#archive-title-row", "#archive-intro", "#archive-items-title"].forEach(register);
+    ["#archive-title-row", "#archive-intro", "#archive-items-title", "#archive-divider-1"].forEach(register);
 
     document.querySelectorAll("#archive-items > div > article").forEach((el, idx) => {
       inView(el, () => {
@@ -248,10 +310,13 @@ import Button from "../components/Button.astro";
     color: var(--dark-border);
   }
 
-  /* Lone last card: spans the full row when the 2-col grid has an odd count */
+  /* Incomplete last row in the 3-col grid: stretch the final card so no cell sits empty */
   @media (min-width: 1024px) {
-    #archive-items .grid > article:last-child:nth-child(odd) {
+    #archive-items .grid > article:last-child:nth-child(3n + 1) {
       grid-column: 1 / -1;
+    }
+    #archive-items .grid > article:last-child:nth-child(3n + 2) {
+      grid-column: span 2;
     }
   }
 
