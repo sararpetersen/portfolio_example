@@ -1,8 +1,9 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const root = new URL("../", import.meta.url);
-const blogDir = path.join(root.pathname, "src/content/blog");
+const root = fileURLToPath(new URL("../", import.meta.url));
+const blogDir = path.join(root, "src/content/blog");
 const files = fs.readdirSync(blogDir).filter((file) => file.endsWith(".md") || file.endsWith(".mdx"));
 
 const ids = new Map();

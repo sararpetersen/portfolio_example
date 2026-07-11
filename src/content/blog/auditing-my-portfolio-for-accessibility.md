@@ -9,7 +9,7 @@ tags:
   - process
 ---
 
-I build accessibility features into this portfolio pretty regularly— the palette toggle, the font switcher, the skip link. It's easy to let that turn into a feeling that the site is _"done"_ from an accessibility standpoint. So I sat down with a set of accessibility _'Do/Don't'_-posters— one each for low vision, screen readers, motor disabilities, anxiety, autism, and a general website accessibility checklist —and went through this site against them, page by page. Not a vibe check. An actual pass.
+I build accessibility features into this portfolio pretty regularly. The palette toggle, the font switcher, the skip link. It's easy to let that turn into a feeling that the site is _"done"_ from an accessibility standpoint. So I sat down with a set of accessibility _'Do/Don't'_-posters that I came across on LinkedIn— one each for low vision, screen readers, motor disabilities, anxiety, autism, and a general website accessibility checklist —and went through this site against them, page by page. Not a vibe check. An actual pass.
 
 And I found 3 real bugs. Here they are, because _"I audited my site and it was fine"_ isn't a useful post, and it also wasn't true.
 
