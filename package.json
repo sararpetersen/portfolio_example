@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run check-blog-ids && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check-blog-ids": "node ./scripts/check-blog-ids.js"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
