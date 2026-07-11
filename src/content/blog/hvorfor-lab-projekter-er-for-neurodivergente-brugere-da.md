@@ -7,6 +7,7 @@ tags:
   - accessibility
   - lab
   - ux
+  - danish
 ---
 
 Hvis man bruger tid på [lab-siden](/lab) på denne side, vil man hurtigt opdage et mønster, jeg ikke bevidst satte mig for at skabe: Steady er en dagligdagstracker til neurodivergente brugere. AutismeGuiden er en informationsguide til autistiske mennesker og dem omkring dem. Ephemeris er en feltdagbog til at tracke energi, fokus og overbelastning. Ingen af dem var skoleopgaver eller kundebriefs. De er de projekter, jeg valgte at bygge, når valget udelukkende var mit eget.
