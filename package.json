@@ -28,11 +28,10 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.5.0",
-    "postcss": "8.4.49",
+    "postcss": "^8.5.16",
     "tailwindcss": "4.1.10"
   },
   "engines": {
-    "node": "20.11.1",
-    "npm": "10.2.4"
+    "node": ">=22.12.0"
   }
 }
