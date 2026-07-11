@@ -46,8 +46,8 @@ body.dark .related-project-card {
 
 The variables (`--dark-bg`, `--dark-border`, `--text-on-dark`, `--text-on-dark-soft`) are the accessibility part itself: dark mode isn't inverted colors, it's a _second palette_ that has to pass contrast checks on its own. Having the palette in one place means when I check contrast ratios, I check four variables.. and not 400 class names. Two things I learned checking mine:
 
-- **Pure white on pure black is too harsh.** My body text on dark is a soft off-white (`--text-on-dark-soft`), which reduces the halation effect that makes light-on-dark text hard to read for some people, including many dyslexic readers
-- **Every new component needs a dark pass.** The most recent bug on this site was a fine-print paragraph that I added to the contact form that stayed dark gray on the dark background, because the dark-mode rule was scoped to the paragraph next to it. If your dark styles are per-component, _"did I style dark mode?"_ belongs on the checklist for every single addition
+- **Pure white on pure black is too harsh:** My body text on dark is a soft off-white (`--text-on-dark-soft`), which reduces the halation effect that makes light-on-dark text hard to read for some people, including many dyslexic readers
+- **Every new component needs a dark pass:** The most recent bug on this site was a fine-print paragraph that I added to the contact form that stayed dark gray on the dark background, because the dark-mode rule was scoped to the paragraph next to it. If your dark styles are per-component, _"did I style dark mode?"_ belongs on the checklist for every single addition
 
 ### Decision 3: a toggle that says what it is
 

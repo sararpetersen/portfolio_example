@@ -66,7 +66,7 @@ Astro sites are multi-page, so every navigation is a real page load. If you appl
 
 Two accessibility details on the button: it uses `aria-pressed` so screen readers announce the state, and its `aria-label` describes what the next click does _("Reading font: Default. Click to cycle to the next option.")_. A toggle that doesn't announce its state is only half a toggle.
 
-### Why these three fonts
+### Why these 3 fonts
 
 Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers and looks close enough to a _"normal"_ font that it doesn't feel like a special mode. Verdana is the pragmatic choice— familiar, wide, and installed everywhere. OpenDyslexic is the most distinctive one of the 3 fonts; research on its effectiveness is genuinely mixed, but some readers strongly prefer it, and preference matters. Offering a choice is the feature, not any single font.
 

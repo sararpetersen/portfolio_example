@@ -1,3 +1,8 @@
+import typography from "@tailwindcss/typography";
+import forms from "@tailwindcss/forms";
+import aspectRatio from "@tailwindcss/aspect-ratio";
+import containerQueries from "@tailwindcss/container-queries";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -157,10 +162,5 @@ export default {
     },
   },
 
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/container-queries"),
-  ],
+  plugins: [typography, forms, aspectRatio, containerQueries],
 };

@@ -57,7 +57,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
       )
     }
 
-    <div id="post-content" class="blog-content prose prose-slate max-w-none">
+    <div id="post-content" class="blog-content max-w-none">
       <Content />
     </div>
 
@@ -95,6 +95,36 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     margin-top: 0.5rem;
     margin-bottom: 1.25rem;
     padding-left: 1.5rem;
+    list-style-position: outside;
+  }
+
+  .blog-content :global(ul) {
+    list-style-type: disc;
+  }
+
+  .blog-content :global(ol) {
+    list-style-type: decimal;
+  }
+
+  .blog-content :global(li) {
+    margin-top: 0.65rem;
+  }
+
+  .blog-content :global(ul ul),
+  .blog-content :global(ul ol),
+  .blog-content :global(ol ul),
+  .blog-content :global(ol ol) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+  }
+
+  .blog-content :global(ul ul) {
+    list-style-type: circle;
+  }
+
+  .blog-content :global(ol ol) {
+    list-style-type: lower-alpha;
   }
 
   body.dark .blog-content :global(p),
@@ -115,6 +145,77 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
     color: var(--brand-primary-strong);
   }
 
+  .blog-content :global(blockquote) {
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-blue-200);
+    color: var(--color-gray-700);
+    font-style: italic;
+    margin: 1.75rem 0;
+  }
+
+  .blog-content :global(code) {
+    background-color: rgba(148, 163, 184, 0.12);
+    color: var(--color-gray-800);
+    padding: 0.08rem 0.18rem;
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    line-height: inherit;
+  }
+
+  .blog-content :global(h1 code),
+  .blog-content :global(h2 code),
+  .blog-content :global(h3 code),
+  .blog-content :global(h4 code),
+  .blog-content :global(h5 code),
+  .blog-content :global(h6 code) {
+    font-size: 0.75em;
+    padding: 0.04rem 0.12rem;
+    border-radius: 0.2rem;
+    vertical-align: middle;
+  }
+
+  .blog-content :global(pre) {
+    background-color: rgba(15, 23, 42, 0.98);
+    color: #f8fafc;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+  }
+
+  .blog-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0;
+  }
+
+  .blog-content :global(th),
+  .blog-content :global(td) {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  .blog-content :global(th) {
+    font-weight: 600;
+    background-color: rgba(226, 232, 240, 0.7);
+  }
+
+  .blog-content :global(strong) {
+    font-weight: 700;
+  }
+
+  .blog-content :global(em) {
+    font-style: italic;
+  }
+
+  .blog-content :global(hr) {
+    border: none;
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    margin: 2rem 0;
+  }
+
   body.dark .blog-content :global(a) {
     color: var(--brand-primary-soft);
     text-decoration: underline;
@@ -127,7 +228,10 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
 
   body.dark .blog-content :global(h1),
   body.dark .blog-content :global(h2),
-  body.dark .blog-content :global(h3) {
+  body.dark .blog-content :global(h3),
+  body.dark .blog-content :global(h4),
+  body.dark .blog-content :global(h5),
+  body.dark .blog-content :global(h6) {
     color: var(--text-on-dark);
   }
 

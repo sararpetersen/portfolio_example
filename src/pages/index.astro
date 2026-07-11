@@ -33,7 +33,8 @@ const ARCHIVED_CASE_SLUGS = new Set(["singleusesucks", "vinens_essens", "vibeloo
 
 const sortedCards = cards
   .filter((card) => !ARCHIVED_CASE_SLUGS.has(card.slug))
-  .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+  .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+  .slice(0, 6);
 const latestBlogPosts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
   .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
