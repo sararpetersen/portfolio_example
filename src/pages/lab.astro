@@ -128,7 +128,10 @@ import Button from "../components/Button.astro";
     </div>
 
     <!-- Archive pointer -->
-    <div class="archive-pointer-container md:mt-10 mt-8 w-[30rem] max-w-full px-6 py-4 border border-blue-300 border-l-4 bg-blue-100 rounded-2xl">
+    <div
+      id="lab-archive-pointer"
+      class="archive-pointer-container md:mt-10 mt-8 w-[30rem] max-w-full px-6 py-4 border border-blue-300 border-l-4 bg-blue-100 rounded-2xl"
+    >
       <p id="lab-archive-link" class="flex flex-wrap items-baseline gap-x-[0.2em] text-sm text-blue-600">
         <span data-i18n="lab.archive.intro">Looking for original projects, as old as these?</span>
         <span class="some1">
@@ -318,7 +321,7 @@ import Button from "../components/Button.astro";
       "#lab-items-intro",
       "#lab-divider-1",
       "#lab-divider-2",
-      "#lab-archive-link",
+      "#lab-archive-pointer",
     ].forEach(register);
 
     document.querySelectorAll("#lab-revamped > div > article, #lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
@@ -350,6 +353,9 @@ import Button from "../components/Button.astro";
   html.has-js body:not(.reduce-motion) #lab-revamped-intro,
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-items-intro,
+  html.has-js body:not(.reduce-motion) #lab-archive-pointer,
+  html.has-js body:not(.reduce-motion) #lab-divider-1,
+  html.has-js body:not(.reduce-motion) #lab-divider-2,
   html.has-js body:not(.reduce-motion) #lab-item-vibeloop,
   html.has-js body:not(.reduce-motion) #lab-item-bivi,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
