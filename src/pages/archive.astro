@@ -45,10 +45,11 @@ import Button from "../components/Button.astro";
       <article id="archive-item-karrusel" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+          <span class="archive-tag inactive-db-tag" title="This project's original database is no longer active" data-i18n="archive.badge.inactive-db"
+            >Inactive database</span
+          >
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
-          Karrusel Festival <em data-i18n="archive.karrusel.inactive">(inactive databases)</em>
-        </h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Karrusel Festival</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.karrusel.desc">
           A promotional site for the ravefestival Karrusel Festival, held on Refshaleøen – my second project from 2nd semester of Multimedia Design.
         </p>
@@ -86,10 +87,11 @@ import Button from "../components/Button.astro";
       <article id="archive-item-volander" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2024</p>
+          <span class="archive-tag inactive-db-tag" title="This project's original database is no longer active" data-i18n="archive.badge.inactive-db"
+            >Inactive database</span
+          >
         </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">
-          Volander Art <em data-i18n="archive.volander.inactive">(inactive databases)</em>
-        </h3>
+        <h3 class="font-bold text-[20px] leading-snug mb-3 text-gray-800">Volander Art</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="archive.volander.desc">
           A colourful portfolio and webshop for artist Susse Volander – our 2nd semester exam project in Multimedia Design.
         </p>
@@ -284,6 +286,13 @@ import Button from "../components/Button.astro";
     color: #4b5563;
   }
 
+  /* Matches the orange used by the #db-notice banner on case study pages */
+  .inactive-db-tag {
+    border-color: rgba(234, 88, 12, 0.4);
+    background: rgba(234, 88, 12, 0.1);
+    color: #9a3412;
+  }
+
   /* Dark mode — text */
   body.dark #archive h1,
   body.dark #archive-intro,
@@ -304,6 +313,12 @@ import Button from "../components/Button.astro";
     border-color: rgba(156, 163, 175, 0.35);
     background: rgba(107, 114, 128, 0.2);
     color: #d1d5db;
+  }
+
+  body.dark .inactive-db-tag {
+    border-color: rgba(251, 146, 60, 0.35);
+    background: rgba(234, 88, 12, 0.2);
+    color: #fdba74;
   }
 
   body.dark .archive-legend {

@@ -37,7 +37,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
               <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
               <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.id}`}
                 aria-label={`Read post: ${post.data.title}`}
                 class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
                 data-i18n="blog.read"

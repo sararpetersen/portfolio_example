@@ -2,7 +2,7 @@
 title: What I found auditing my own portfolio for accessibility
 excerpt: I checked this site against a set of accessibility design-principle posters.
 publishDate: 2026-08-07
-draft: true
+draft: false
 tags:
   - accessibility
   - portfolio
@@ -53,4 +53,4 @@ The anxiety-focused poster asks designs to explain what happens after a user com
 
 ### What I'd take away from this
 
-None of these 3 bugs were things I would have caught by just looking at the site, because none of them are visual bugs. A heading hierarchy break, a mislabeled landmark, a shadowed prop— they're all invisible unless you either use assistive tech yourself or actually read the accessibility tree and the code with that specific lens on. _"It looks fine"_ and _"it's accessible"_ are different claims, and this portfolio— the one built by someone who cares about this stuff and writes about it —had all 3 anyway. That's less a confession and more the actual point: audits catch things that intentions don't.
+None of these 3 bugs were things I would have caught by just looking at the site, because none of them are visual bugs. A heading hierarchy break, a mislabeled landmark, a shadowed prop.. they're all invisible unless you either use assistive tech yourself or actually read the accessibility tree and the code with that specific lens on. _"It looks fine"_ and _"it's accessible"_ are different claims, and this portfolio— the one built by someone who cares about this stuff and writes about it —had all 3 anyway. That's less a confession and more the actual point: audits catch things that intentions don't.

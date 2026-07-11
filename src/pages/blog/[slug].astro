@@ -1,18 +1,18 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).filter((entry: CollectionEntry<"blog">) => !entry.data.draft);
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const tagTranslations: Record<string, string> = {
   internship: "praktik",
@@ -135,7 +135,7 @@ const tagsDa = post.data.tags.map((t: string) => tagTranslations[t] || t);
   }
 
   .blog-content :global(a) {
-    color: var(--brand-primary-strong);
+    color: var(--brand-primary);
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s ease;

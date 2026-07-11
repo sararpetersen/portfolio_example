@@ -10,7 +10,7 @@ tags:
   - accessibility
 ---
 
-I wrote about _[what vibe coding is and what I think about it](/blog/vibe-coding)_ a while back, mostly in general terms. This time I want to walk through one actual feature, from start to finish, including the part where the AI got it wrong and I had to catch it. General reflections are easy to agree with. A real example is more useful.
+I wrote about [what vibe coding is and what I think about it](/blog/vibe-coding) a while back, mostly in general terms. This time I want to walk through one actual feature, from start to finish, including the part where the AI got it wrong and I had to catch it. General reflections are easy to agree with. A real example is more useful.
 
 ### The feature: a reassurance line on the contact form
 
@@ -36,7 +36,7 @@ This is exactly the failure mode I described in the first post: it's not that th
 
 ### What actually caught it
 
-Not a smarter prompt. A dark-mode check, on purpose, as its own separate verification step— which is the same lesson from _[auditing my own portfolio for accessibility](/blog/auditing-my-portfolio-for-accessibility)_: most of the things that go wrong on this site are invisible in whichever mode you happened to be looking at when you built the feature. The fix was one line— widen the selector to cover both paragraphs —but finding it required deliberately switching modes and looking, not reading the diff and just assuming it was fine because it compiled and matched the design.
+Not a smarter prompt. A dark-mode check, on purpose, as its own separate verification step— which is the same lesson from [auditing my own portfolio for accessibility](/blog/auditing-my-portfolio-for-accessibility): most of the things that go wrong on this site are invisible in whichever mode you happened to be looking at when you built the feature. The fix was one line— widen the selector to cover both paragraphs —but finding it required deliberately switching modes and looking, not reading the diff and just assuming it was fine because it compiled and matched the design.
 
 ### The actual takeaway
 
