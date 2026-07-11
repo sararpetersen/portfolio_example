@@ -1,7 +1,7 @@
 ---
 title: What I found auditing my own portfolio for accessibility
 excerpt: I checked this site against a set of accessibility design-principle posters.
-publishDate: 2026-08-07
+publishDate: 2026-07-11
 draft: false
 tags:
   - accessibility
