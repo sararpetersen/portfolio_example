@@ -59,6 +59,29 @@ const schemamarkup = {
       gtag("config", "G-7RVC68SPR6");
     </script>
 
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1687802475627425");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
+
     <script is:inline>
       (() => {
         const root = document.documentElement;
@@ -661,6 +684,16 @@ const schemamarkup = {
     </script>
   </head>
   <body class="site-shell bg-gray-50">
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        class="absolute"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1687802475627425&amp;ev=PageView&amp;noscript=1"
+        alt=""
+      />
+    </noscript>
     <script is:inline>
       (() => {
         try {
