@@ -1,6 +1,6 @@
 ---
 title: What changed on this portfolio recently?
-excerpt: Astro and Tailwind migrations, blog styling, and content cleanup.
+excerpt: Astro and Tailwind migrations, blog styling, etc.
 publishDate: 2026-07-11
 draft: false
 tags:
