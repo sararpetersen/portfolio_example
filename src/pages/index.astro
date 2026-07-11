@@ -79,7 +79,15 @@ import Cases from "../components/Cases.astro";
         <div class="col-span-12 lg:col-span-5">
           <div id="hero-image" class="hero-image-wrap relative shadow-drop25">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
-            <img src="/images/hero_image.webp" alt="Sara Ringkow Petersen" class="hero-image object-cover" width="500" height="500" loading="eager" />
+            <img
+              src="/images/hero_image.webp"
+              alt="Sara Ringkow Petersen"
+              class="hero-image object-cover"
+              width="600"
+              height="800"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
         </div>
       </div>

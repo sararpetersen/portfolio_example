@@ -56,7 +56,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
         >
           {NON_ACTIVE_PROJECT_SLUGS.has(project.slug || "") ? (
             <div class="block h-full w-full">
-              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
+              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" width="800" height="600" />
 
               <div class="absolute inset-0 bg-[rgba(15,23,42,0.75)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -79,7 +79,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
             </div>
           ) : (
             <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`} class="block h-full w-full">
-              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" />
+              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" width="800" height="600" />
 
               <div class="absolute inset-0 bg-[rgba(15,23,42,0.75)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>

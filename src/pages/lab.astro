@@ -43,7 +43,7 @@ import Button from "../components/Button.astro";
   </section>
 
   <!-- Divider -->
-  <div id="lab-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-16 pt-12 flex items-center gap-3 text-gray-300" aria-hidden="true">
+  <div id="lab-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
@@ -147,6 +147,7 @@ import Button from "../components/Button.astro";
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
           <span data-i18n="lab.vibeloop.title">VibeLoop - Mood Based Social App</span>
+          {" "}
           <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
         </h3>
         <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
@@ -205,14 +206,7 @@ import Button from "../components/Button.astro";
       i++;
     };
 
-    [
-      "#lab-title-row",
-      "#lab-intro",
-      "#lab-about",
-      "#lab-items-title",
-      "#lab-items-intro",
-      "#lab-divider-1",
-    ].forEach(register);
+    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title", "#lab-items-intro", "#lab-divider-1"].forEach(register);
 
     document.querySelectorAll("#lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
       inView(el, () => {
