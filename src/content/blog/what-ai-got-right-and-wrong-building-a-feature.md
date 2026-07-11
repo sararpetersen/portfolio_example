@@ -1,5 +1,5 @@
 ---
-title: What AI got right and wrong when I built one feature with it
+title: What AI got right and wrong
 excerpt: A follow-up to my first vibe coding post.
 publishDate: 2026-07-11
 draft: false
