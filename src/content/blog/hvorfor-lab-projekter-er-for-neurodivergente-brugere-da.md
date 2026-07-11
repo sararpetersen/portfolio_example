@@ -1,7 +1,7 @@
 ---
 title: Hvorfor mange af mine projekter er bygget til neurodivergente brugere
 excerpt: Et mønster i det, jeg bygger, når ingen andre har sat opgaven.
-publishDate: 2026-08-17
+publishDate: 2026-07-17
 draft: true
 tags:
   - accessibility

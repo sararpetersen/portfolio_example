@@ -1,7 +1,7 @@
 ---
 title: Making a skip-to-content link people can actually find
 excerpt: A "Skip to main content" link is required by WCAG.
-publishDate: 2026-07-31
+publishDate: 2026-07-14
 draft: true
 tags:
   - accessibility

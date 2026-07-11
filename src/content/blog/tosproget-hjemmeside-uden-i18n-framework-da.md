@@ -1,7 +1,7 @@
 ---
 title: Sådan byggede jeg en tosproget hjemmeside uden et i18n-framework
 excerpt: Hvordan denne portfolio skifter mellem engelsk og dansk.
-publishDate: 2026-07-14
+publishDate: 2026-07-20
 draft: true
 tags:
   - astro
