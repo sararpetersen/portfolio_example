@@ -9,10 +9,10 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
 ---
 
 <MainLayout
-  title="SRP portfolio | Blog"
-  description="Notes, reflections, and updates from Sara Ringkow Petersen — a running log of things worth writing down."
-  ogtitle="Blog — SRP Portfolio"
-  ogdescription="Notes, reflections, and updates on design, development, and things worth writing down."
+  title="Accessible Web Design & UX Blog | Sara Ringkow Petersen"
+  description="Practical articles about accessible web design, inclusive UX/UI, neurodivergent users and implementing design decisions in code."
+  ogtitle="Accessible Web Design & UX Blog"
+  ogdescription="Practical notes on accessibility, inclusive UX/UI and implementing design decisions in code."
 >
   <section class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
     <div id="blog-title-row" class="md:pt-28 pt-24 mb-3">
@@ -21,8 +21,9 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
       </h1>
     </div>
 
-    <p id="blog-intro" class="text-gray-600 mb-3 leading-relaxed max-w-3xl text-left" data-i18n="blog.intro">
-      A running log of things I'm working on, thinking about, or just find worth writing down.
+    <p id="blog-intro" class="text-gray-600 mb-3 text-[0.95rem] md:text-base leading-relaxed max-w-3xl text-left" data-i18n="blog.intro">
+      Practical articles about accessible web design, inclusive UX/UI and implementing design decisions in code, including lessons from designing for
+      neurodivergent users.
     </p>
     <div id="blog-lang-note" class="mb-8 text-[11px] tracking-[0.04em] text-gray-500">
       <span data-i18n="blog.lang.note1">→ All posts are written in English, a select few in Danish ←</span>
@@ -95,9 +96,9 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
 </style>
 
 <script>
-  import { inView } from "motion";
+  import { inView, onReady } from "../../scripts/inViewAhead";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  onReady(() => {
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
       document.body.classList.add("reduce-motion");

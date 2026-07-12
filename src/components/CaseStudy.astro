@@ -1,0 +1,235 @@
+---
+import type { CaseStudy } from "../data/caseStudies";
+import Button from "./Button.astro";
+
+const { caseStudy } = Astro.props as { caseStudy: CaseStudy };
+
+const statusLabels = {
+  documented: { en: "Observed in the product", da: "Observeret i produktet" },
+  reflection: { en: "Design reflection", da: "Designrefleksion" },
+  pending: { en: "Documentation needed", da: "Kræver dokumentation" },
+};
+---
+
+<main class="case-study max-w-6xl mx-auto px-6 lg:px-0 mt-20 md:pt-desktop-top pt-mobil-top pb-mobil-bottom md:pb-desktop-bottom">
+  <nav aria-label="Breadcrumb" class="mb-10 text-sm text-gray-500">
+    <a
+      href="/lab"
+      class="case-back-link hover:text-blue-500 underline hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+    >
+      <span class="case-en">← Back to The Lab</span><span class="case-da">← Tilbage til Laboratoriet</span>
+    </a>
+  </nav>
+
+  <header class="case-hero border-l-4 border border-gray-500 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-7 md:p-12">
+    <p class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-3">{caseStudy.year} · UX/UI case study</p>
+    <div class="flex items-center gap-4 mb-1">
+      {caseStudy.logo && <img src={caseStudy.logo} alt="" width="48" height="48" class="shrink-0" />}
+      <h1 class="font-nikumaru not-italic uppercase tracking-[0.14em] text-h2-desktop text-gray-800">{caseStudy.name}</h1>
+    </div>
+    <p class="font-garamond italic text-h4-mobile text-gray-700 mb-6">
+      <span class="case-en">{caseStudy.tagline.en}</span><span class="case-da">{caseStudy.tagline.da}</span>
+    </p>
+    <p class="text-gray-600 max-w-3xl leading-relaxed">
+      <span class="case-en">{caseStudy.summary.en}</span><span class="case-da">{caseStudy.summary.da}</span>
+    </p>
+
+    <dl class="grid md:grid-cols-2 gap-5 mt-9 pt-7 border-t border-gray-300">
+      <div>
+        <dt class="text-xs uppercase tracking-widest font-bold text-gray-500 mb-1">
+          <span class="case-en">Role</span><span class="case-da">Rolle</span>
+        </dt>
+        <dd class="text-gray-700"><span class="case-en">{caseStudy.role.en}</span><span class="case-da">{caseStudy.role.da}</span></dd>
+      </div>
+      <div>
+        <dt class="text-xs uppercase tracking-widest font-bold text-gray-500 mb-1">
+          <span class="case-en">Audience</span><span class="case-da">Målgruppe</span>
+        </dt>
+        <dd class="text-gray-700"><span class="case-en">{caseStudy.audience.en}</span><span class="case-da">{caseStudy.audience.da}</span></dd>
+      </div>
+    </dl>
+  </header>
+
+  <aside
+    aria-labelledby="case-navigation-title"
+    class="case-nav my-10 rounded-2xl border border-gray-400 bg-gradient-to-br from-gray-50 to-gray-100 p-6"
+  >
+    <h2 id="case-navigation-title" class="font-garamond not-italic font-bold text-h4-mobile md:text-h4-desktop text-gray-800 mb-3">
+      <span class="case-en">In this case</span><span class="case-da">I denne case</span>
+    </h2>
+    <ol class="grid md:grid-cols-2 gap-x-8 gap-y-2 list-decimal list-inside">
+      {
+        caseStudy.sections.map((section) => (
+          <li>
+            <a
+              href={`#${section.id}`}
+              class="case-nav-link text-blue-600 underline hover:text-blue-500 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+            >
+              <>
+                <span class="case-en">{section.title.en}</span>
+                <span class="case-da">{section.title.da}</span>
+              </>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </aside>
+
+  <div class="space-y-8">
+    {
+      caseStudy.sections.map((section) => (
+        <section id={section.id} class="case-section scroll-mt-28 grid md:grid-cols-12 gap-5 border-b border-gray-300 pb-10">
+          <div class="md:col-span-4">
+            <p class="text-xs uppercase tracking-[0.18em] text-blue-500 font-bold mb-3">
+              <>
+                <span class="case-en">{section.eyebrow.en}</span>
+                <span class="case-da">{section.eyebrow.da}</span>
+              </>
+            </p>
+            {section.status && (
+              <span class={`case-status case-status--${section.status}`}>
+                <span class="case-en">{statusLabels[section.status].en}</span>
+                <span class="case-da">{statusLabels[section.status].da}</span>
+              </span>
+            )}
+          </div>
+          <div class="md:col-span-8">
+            <h2 class="font-garamond italic font-semibold text-h4-mobile md:text-h4-desktop text-gray-800 mb-1">
+              <>
+                <span class="case-en">{section.title.en}</span>
+                <span class="case-da">{section.title.da}</span>
+              </>
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              <>
+                <span class="case-en">{section.body.en}</span>
+                <span class="case-da">{section.body.da}</span>
+              </>
+            </p>
+            {section.points && (
+              <ul class="mt-6 space-y-2 text-gray-600 list-disc pl-5">
+                {section.points.map((point) => (
+                  <li>
+                    <span class="case-en" set:html={point.en} />
+                    <span class="case-da" set:html={point.da} />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+
+  <section
+    aria-labelledby="case-links-title"
+    class="mt-12 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 p-7 md:p-10"
+  >
+    <h2 id="case-links-title" class="font-garamond italic font-semibold text-h4-mobile md:text-h4-desktop text-gray-800 mb-1">
+      <span class="case-en">Explore Steady</span><span class="case-da">Udforsk Steady</span>
+    </h2>
+    <p class="text-gray-600 mb-6">
+      <span class="case-en">Compare the public promise with the product experience.</span><span class="case-da"
+        >Sammenlign det offentlige løfte med produktoplevelsen.</span
+      >
+    </p>
+    <div class="flex flex-wrap gap-4">
+      {
+        caseStudy.links.map((link) => (
+          <Button
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="small"
+            aria-label={`${link.label.en} (opens in new tab)`}
+          >
+            <>
+              <span class="case-en">{link.label.en} →</span>
+              <span class="case-da">{link.label.da} →</span>
+            </>
+          </Button>
+        ))
+      }
+    </div>
+  </section>
+</main>
+
+<style>
+  .case-da {
+    display: none;
+  }
+  :global(html[lang="da"]) .case-en {
+    display: none;
+  }
+  :global(html[lang="da"]) .case-da {
+    display: inline;
+  }
+  .case-status {
+    display: inline-flex;
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .case-status--documented {
+    background: #dbeee3;
+    color: #24543a;
+  }
+  .case-status--reflection {
+    background: #e7e8f7;
+    color: #373a70;
+  }
+  .case-status--pending {
+    background: #fff0cc;
+    color: #714d00;
+  }
+  :global(body.dark) .case-study h1,
+  :global(body.dark) .case-study h2,
+  :global(body.dark) .case-study dt,
+  :global(body.dark) .case-study dd,
+  :global(body.dark) .case-study p,
+  :global(body.dark) .case-study li {
+    color: var(--text-on-dark);
+  }
+  :global(body.dark) .case-hero,
+  :global(body.dark) .case-study section[aria-labelledby="case-links-title"] {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border);
+  }
+  :global(body.dark) .case-study .case-nav {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border);
+  }
+  :global(body.dark) .case-study .case-section {
+    border-color: var(--dark-border);
+  }
+  :global(body.dark) .case-status--documented {
+    background: #1c3826;
+    color: #9fe0b8;
+  }
+  :global(body.dark) .case-status--reflection {
+    background: #262845;
+    color: #c3c6f2;
+  }
+  :global(body.dark) .case-status--pending {
+    background: #4a3800;
+    color: #ffd980;
+  }
+  :global(body.dark) .case-study .case-nav-link {
+    color: var(--brand-primary-soft);
+  }
+  :global(body.dark) .case-study .case-nav-link:hover {
+    color: var(--brand-primary-strong);
+  }
+  :global(body.dark) .case-study .case-back-link {
+    color: var(--text-on-dark-soft);
+  }
+  :global(body.dark) .case-study .case-back-link:hover {
+    color: var(--brand-primary-soft);
+  }
+</style>

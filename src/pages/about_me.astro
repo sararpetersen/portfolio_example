@@ -76,10 +76,10 @@ const workTimelineItems = timelineItems
 ---
 
 <MainLayout
-  title="SRP portfolio | About me"
-  description="Learn about Sara Ringkow Petersen — multimedia designer, concept developer, and advocate for accessible, inclusive digital design."
-  ogtitle="About me – SRP Portfolio"
-  ogdescription="Multimedia designer and concept developer with a focus on accessibility and inclusive digital experiences. Get to know Sara."
+  title="About Sara | SRP Portfolio"
+  description="Meet Sara Ringkow Petersen, a Danish concept developer, multimedia- and UX/UI designer specialising in digital accessibility and neurodivergent user needs."
+  ogtitle="About Sara Ringkow Petersen – SRP Portfolio"
+  ogdescription="Concept developer, multimedia- and UX/UI designer specialising in digital accessibility, informed by lived experience of neurodivergence."
 >
   <!-- Top Section -->
   <section id="about-me" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-6 mx-auto relative container max-w-6xl">
@@ -393,9 +393,9 @@ const workTimelineItems = timelineItems
 
 <!-- Script for inView animations -->
 <script>
-  import { inView } from "motion";
+  import { inView, onReady } from "../scripts/inViewAhead";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  onReady(() => {
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
 

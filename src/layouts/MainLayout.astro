@@ -4,11 +4,16 @@ import Footer from "../components/Footer.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 import AccessibilityPanel from "../components/AccessibilityPanel.astro";
 import "../styles/tailwind.css";
-import "animate.css";
 import "../styles/global.css";
 const siteUrl = "https://sararingkow.dk/";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/images/hero_image.webp", siteUrl).toString();
+const pageTitle = Astro.props.title ?? "Sara Ringkow Petersen | UX/UI & Digital Accessibility";
+const pageDescription =
+  Astro.props.description ?? "UX/UI design, digital accessibility and inclusive web design by Sara Ringkow Petersen in Denmark.";
+const pageType = Astro.props.pageType ?? "website";
+const socialImageAlt = Astro.props.socialImageAlt ?? "Sara Ringkow Petersen — multimedia designer specialising in UX/UI and digital accessibility";
+const additionalSchema = Astro.props.schema;
 
 const schemamarkup = {
   "@context": "https://schema.org",
@@ -16,9 +21,11 @@ const schemamarkup = {
   name: "Sara Ringkow Petersen",
   url: "https://sararingkow.dk/",
   email: "sara.ringkow@gmail.com",
-  jobTitle: "Multimedia Designer & Concept Developer",
+  phone: "+45 42 42 88 07",
+  image: "https://sararingkow.dk/images/pfp2.webp",
+  jobTitle: "Concept Developer & Multimedia- and UX/UI Designer",
   description:
-    "Multimedia Designer and Concept Developer based in Denmark, specialising in accessible, user-centred digital experiences that combine UX/UI design, web design, and inclusive design principles.",
+    "Multimedia Designer and Concept Developer based in Denmark, specialising in UX/UI design, web design, digital accessibility, and inclusive design.",
   knowsAbout: [
     "UX Design",
     "UI Design",
@@ -85,7 +92,6 @@ const schemamarkup = {
     <script is:inline>
       (() => {
         const root = document.documentElement;
-        root.classList.add("has-js");
 
         try {
           if (localStorage.getItem("largeTextEnabled") === "true") root.classList.add("text-large");
@@ -104,37 +110,44 @@ const schemamarkup = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
-    <title>{Astro.props.title}</title>
-    <meta name="description" content={Astro.props.description} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="author" content="Sara Ringkow Petersen" />
     <meta name="robots" content="index, follow" />
-    <meta
-      name="keywords"
-      content="Multimedia Designer, Concept Developer, UX Design, UI Design, Accessibility, Inclusive Design, Front-end Development, Denmark, Portfolio, Figma, Astro, Tailwind"
-    />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={Astro.props.ogtitle} />
-    <meta property="og:description" content={Astro.props.ogdescription} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:title" content={Astro.props.ogtitle ?? pageTitle} />
+    <meta property="og:description" content={Astro.props.ogdescription ?? pageDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content={socialImageAlt} />
     <meta property="og:site_name" content="SRP Portfolio" />
     <meta name="facebook-domain-verification" content="okjextzfsj20oepxg1f382yewajyj4" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={Astro.props.ogtitle} />
-    <meta name="twitter:description" content={Astro.props.ogdescription} />
+    <meta name="twitter:title" content={Astro.props.ogtitle ?? pageTitle} />
+    <meta name="twitter:description" content={Astro.props.ogdescription ?? pageDescription} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="preload" href="/fonts/nikumaru/07NikumaruFont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/almarai/almarai-300.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/almarai/almarai-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/almarai/almarai-700.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/almarai/almarai-800.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-600.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-700.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-400-italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-600-italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond/cormorant-garamond-700-italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemamarkup)} />
+    {additionalSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(additionalSchema)} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=optional"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=optional" rel="stylesheet" />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=optional"
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=optional"
         rel="stylesheet"
       />
     </noscript>
@@ -150,11 +163,11 @@ const schemamarkup = {
             "nav.blog": "Blog",
             "footer.copyright": "© 2026 · SRP Portfolio - Sara Ringkow Petersen. All rights reserved.",
             "hero.status": "Interning at Folkæt",
-            "hero.role": "Multimedia Designer & Concept Developer",
+            "hero.title": "UX/UI designer focused on accessibility",
+            "hero.role": "Sara Ringkow Petersen · Multimedia Designer & Concept Developer",
             "hero.lead":
-              "I design and build accessible websites, interfaces, and concepts – with a focus on structure, clarity, and the people who use them.",
+              "I turn complex ideas into clear, inclusive websites and interfaces by combining thoughtful structure, visual design, and hands-on implementation.",
             "hero.cta": "See projects",
-            "hero.scroll": "Scroll to projects",
             "projects.title": "Selected cases",
             "projects.text":
               "Below is a selection of projects that I've worked on during my studies and internships. Click on any of the cards to read more about the project, the process and the outcome.",
@@ -221,17 +234,16 @@ const schemamarkup = {
             "resources.title": "Resources",
             "resource.resume.en.title": "Resume (EN)",
             "resource.resume.en.btn": "View resume",
+            "resource.cv.da.title": "CV (DA)",
+            "resource.cv.da.btn": "View CV",
             "contact.title": "Get in touch",
             "contact.text":
-              "If you'd like to work together or just have a question, you're welcome to reach out. Use the form below or contact me directly via the listed methods below.",
+              "If you'd like to work together or just have a question, you're welcome to reach out. Use the form below or contact me directly.",
             "contact.services.label": "What I offer",
             "contact.services.uiux": "UX/UI design",
             "contact.services.web": "Web design and development",
             "contact.services.concept": "Development of concepts",
             "contact.services.brand": "Brand and visual Identity",
-            "contact.preferred.title": "Ways to reach me:",
-            "contact.preferred.summary": "Email and LinkedIn",
-            "contact.preferred.value": "These are usually the quickest options. Phone is available for follow-ups if needed.",
             "contact.info.email": "Email",
             "contact.info.phone": "Phone",
             "contact.info.linkedin": "LinkedIn",
@@ -359,7 +371,8 @@ const schemamarkup = {
             "lab.badge.vibeloopwip": "(under development)",
             "lab.autismeguiden.link": "Visit site (DK) →",
             "lab.autismeguiden.title": "AutismeGuiden - Your guide to Autism and Neurodiversity",
-            "lab.steady.link": "Visit site/app →",
+            "lab.steady.link": "Read case →",
+            "lab.steady.title": "Steady - Everyday Tracker for Neurodivergent People",
             "lab.ephemeris.link": "Visit site/app →",
             "lab.ephemeris.title": "Ephemeris - A Field Journal for Your Inner Dragons",
             "lab.badge.vibecoded": "Vibe coded",
@@ -386,6 +399,12 @@ const schemamarkup = {
             "a11y.focus": "FOCUS MODE",
             "a11y.focus.name": "Reduce visual clutter",
             "a11y.focus.desc": "Hides decorative elements",
+            "a11y.cvd": "COLOUR VISION SIMULATION",
+            "a11y.cvd.off": "Off",
+            "a11y.cvd.protanopia": "Protanopia",
+            "a11y.cvd.deuteranopia": "Deuteranopia",
+            "a11y.cvd.tritanopia": "Tritanopia",
+            "a11y.cvd.desc": "Preview how the site may look with different types of colour vision.",
             "a11y.reset": "Reset settings",
             "a11y.note": "Your preferences are saved on your device.",
             "a11y.lang": "LANGUAGE",
@@ -399,11 +418,11 @@ const schemamarkup = {
             "nav.blog": "Blog",
             "footer.copyright": "© 2026 · SRP Portfolio - Sara Ringkow Petersen. Alle rettigheder forbeholdes.",
             "hero.status": "Praktik hos Folkæt",
-            "hero.role": "Multimediedesigner & konceptudvikler",
+            "hero.title": "UX/UI-designer med fokus på tilgængelighed",
+            "hero.role": "Sara Ringkow Petersen · Multimediedesigner & konceptudvikler",
             "hero.lead":
-              "Jeg designer og bygger tilg\u00e6ngelige websites, interfaces og koncepter – med et fokus p\u00e5 struktur, klarhed og de mennesker, der bruger dem.",
+              "Jeg omsætter komplekse idéer til klare, inkluderende websites og interfaces ved at kombinere gennemtænkt struktur, visuelt design og praktisk implementering.",
             "hero.cta": "Se projekter",
-            "hero.scroll": "Gå til projekter",
             "projects.title": "Udvalgte cases",
             "projects.text":
               "Nedenfor finder du et udvalg af projekter, som jeg har arbejdet p\u00e5 under mine studier og praktikophold. Klik p\u00e5 ét af kortene for at l\u00e6se mere om projektet, processen og resultatet.",
@@ -469,6 +488,7 @@ const schemamarkup = {
               "Noget der er blevet en rigtig passion. Jeg elsker at følge med i forlystelsesparker, attraktioner og historierne bag dem.",
             "resources.title": "Ressourcer",
             "resource.resume.en.title": "Resume (EN)",
+            "resource.resume.en.btn": "Se resumé",
             "resource.cv.da.title": "CV (DA)",
             "resource.cv.da.btn": "Se CV",
             "contact.title": "Kontakt mig",
@@ -479,9 +499,6 @@ const schemamarkup = {
             "contact.services.web": "Webdesign og -udvikling",
             "contact.services.concept": "Udvikling af koncepter",
             "contact.services.brand": "Brand og visuel identitet",
-            "contact.preferred.title": "Måder at nå mig på:",
-            "contact.preferred.summary": "Email og LinkedIn",
-            "contact.preferred.value": "Det er som regel de hurtigste muligheder. Telefon kan bruges til opfølgninger, hvis nødvendigt.",
             "contact.info.email": "Email",
             "contact.info.phone": "Telefon",
             "contact.info.linkedin": "LinkedIn",
@@ -610,7 +627,7 @@ const schemamarkup = {
             "lab.autismeguiden.title": "Autismeguiden - Din Guide til Autisme og Neurodiversitet",
             "lab.autismeguiden.link": "Besøg siden (DK) →",
             "lab.steady.title": "Steady - Dagligdagstracker til Neurodivergente",
-            "lab.steady.link": "Besøg siden/appen →",
+            "lab.steady.link": "Læs case →",
             "lab.ephemeris.title": "Ephemeris - Feltjournal for Dine Indre Drager",
             "lab.ephemeris.link": "Besøg siden/appen →",
             "lab.badge.vibecoded": "Vibe-kodet",
@@ -637,6 +654,12 @@ const schemamarkup = {
             "a11y.focus": "FOKUSTILSTAND",
             "a11y.focus.name": "Reducer visuel støj",
             "a11y.focus.desc": "Skjuler dekorative elementer",
+            "a11y.cvd": "SIMULERING AF FARVESYN",
+            "a11y.cvd.off": "Fra",
+            "a11y.cvd.protanopia": "Protanopi",
+            "a11y.cvd.deuteranopia": "Deuteranopi",
+            "a11y.cvd.tritanopia": "Tritanopi",
+            "a11y.cvd.desc": "Se hvordan siden kan fremstå med forskellige typer farvesyn.",
             "a11y.reset": "Nulstil indstillinger",
             "a11y.note": "Dine præferencer gemmes lokalt på din enhed.",
             "a11y.lang": "SPROG",
@@ -658,8 +681,6 @@ const schemamarkup = {
           if (enBtn && daBtn) {
             enBtn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
             daBtn.setAttribute("aria-pressed", lang === "da" ? "true" : "false");
-            enBtn.classList.toggle("active-lang", lang === "en");
-            daBtn.classList.toggle("active-lang", lang === "da");
           }
         }
 
@@ -675,10 +696,6 @@ const schemamarkup = {
           },
         };
       })();
-
-      document.addEventListener("DOMContentLoaded", function () {
-        window.__i18n.apply(window.__i18n.getLang());
-      });
     </script>
   </head>
   <body class="site-shell bg-gray-50">
@@ -688,7 +705,7 @@ const schemamarkup = {
         width="1"
         class="absolute"
         style="display:none"
-        src="https://www.facebook.com/tr?id=1687802475627425&amp;ev=PageView&amp;noscript=1"
+        src="https://www.facebook.com/tr?id=1687802475627425&ev=PageView&noscript=1"
         alt=""
       />
     </noscript>
@@ -741,12 +758,52 @@ const schemamarkup = {
       <Footer />
     </div>
     <AccessibilityPanel />
+    <script is:inline>
+      (() => {
+        const lang = window.__i18n.getLang();
+        // English is already server-rendered. Only replace content when Danish
+        // is selected, and do it synchronously before the first paint.
+        if (lang !== "en") {
+          window.__i18n.apply(lang);
+        } else {
+          document.documentElement.lang = "en";
+        }
+      })();
+    </script>
     {
       import.meta.env.DEV && (
-        <script is:inline>
-          {`(() => {
+        <script
+          is:inline
+          set:html={`(() => {
             if (!("PerformanceObserver" in window)) return;
             window.__layoutShifts = [];
+            window.__flickerTrace = [];
+            const record = (type, extra = {}) => {
+              window.__flickerTrace.push({
+                type,
+                time: Math.round(performance.now()),
+                scrollY: Math.round(window.scrollY),
+                viewportTop: Math.round(window.visualViewport?.offsetTop || 0),
+                viewportHeight: Math.round(window.visualViewport?.height || window.innerHeight),
+                activeElement: document.activeElement?.id || document.activeElement?.tagName || null,
+                ...extra,
+              });
+              if (window.__flickerTrace.length > 500) window.__flickerTrace.shift();
+            };
+            window.addEventListener("scroll", () => record("scroll"), { passive: true });
+            window.visualViewport?.addEventListener("resize", () => record("viewport-resize"), { passive: true });
+            window.visualViewport?.addEventListener("scroll", () => record("viewport-scroll"), { passive: true });
+            document.addEventListener("focusin", (event) => record("focus", { target: event.target?.id || event.target?.tagName || null }));
+            document.fonts?.addEventListener("loading", () => record("fonts-loading"));
+            document.fonts?.addEventListener("loadingdone", (event) => record("fonts-loaded", {
+              faces: Array.from(event.fontfaces || []).map((face) => ({
+                family: face.family,
+                weight: face.weight,
+                style: face.style,
+                status: face.status,
+              })),
+            }));
+            record("start", { fonts: document.fonts?.status || "unknown" });
             new PerformanceObserver((list) => {
               for (const entry of list.getEntries()) {
                 if (entry.hadRecentInput || entry.value === 0) continue;
@@ -762,11 +819,12 @@ const schemamarkup = {
                   })),
                 };
                 window.__layoutShifts.push(shift);
+                record("layout-shift", { value: entry.value, sources: shift.sources.map((source) => source.element) });
                 console.warn("[layout shift]", shift);
               }
             }).observe({ type: "layout-shift", buffered: true });
           })();`}
-        </script>
+        />
       )
     }
   </body>

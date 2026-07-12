@@ -5,10 +5,10 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
 ---
 
 <MainLayout
-  title="SRP portfolio | Contact"
-  description="Get in touch with Sara Ringkow Petersen. Available via email, LinkedIn, or the contact form."
-  ogtitle="Contact – SRP Portfolio"
-  ogdescription="Want to work together or just say hi? Reach Sara via email, LinkedIn, or the contact form."
+  title="Contact Sara | SRP Portfolio"
+  description="Contact Sara Ringkow Petersen about UX/UI design, digital accessibility and inclusive web design in Denmark."
+  ogtitle="Work with Sara – SRP Portfolio"
+  ogdescription="Get in touch about UX/UI design, digital accessibility and inclusive web design."
 >
   <!--  Contact Section -->
   <section id="contact" class="container max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
@@ -42,20 +42,6 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           <p id="contact-text" class="text-left text-gray-800 mb-8 leading-relaxed max-w-xl" data-i18n="contact.text">
             If you'd like to work together or just have a question, you're welcome to reach out. Use the form below or contact me directly.
           </p>
-          <div
-            id="contact-preferred"
-            class="max-w-md md:max-w-xl mb-8 px-4 py-4 rounded-xl border border-blue-300 border-r-4 bg-blue-100 text-blue-900"
-          >
-            <p class="text-[14px] font-semibold leading-tight text-left text-blue-800 mb-1">
-              <span class="contact-preferred-label" data-i18n="contact.preferred.title">Ways to reach me</span>
-              <span class="contact-preferred-method text-[13px] font-regular text-blue-700 inline" data-i18n="contact.preferred.summary"
-                >Email and LinkedIn</span
-              >
-            </p>
-            <p class="contact-preferred-value text-[12px] leading-snug italic font-light text-left text-blue-600" data-i18n="contact.preferred.value">
-              These are usually the quickest options. Phone is available for follow-ups if needed.
-            </p>
-          </div>
           <div id="contact-info" class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-r-4 border border-gray-500">
             <ul class="md:space-y-6 space-y-4">
               <li class="some1 flex items-start gap-4">
@@ -314,9 +300,9 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
   </section>
 
   <script>
-    import { inView } from "motion";
+    import { inView, onReady } from "../scripts/inViewAhead";
 
-    document.addEventListener("DOMContentLoaded", () => {
+    onReady(() => {
       const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) document.body.classList.add("reduce-motion");
 
@@ -341,7 +327,6 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           "#contact-title-label",
           "#contact-title-row",
           "#contact-text",
-          "#contact-preferred",
           "#contact-container img",
           "#contact-divider-1",
           "#contact-form-title-row",
@@ -410,7 +395,6 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
     :global(html.has-js body:not(.reduce-motion) #contact-title-label),
     :global(html.has-js body:not(.reduce-motion) #contact-title-row),
     :global(html.has-js body:not(.reduce-motion) #contact-text),
-    :global(html.has-js body:not(.reduce-motion) #contact-preferred),
     :global(html.has-js body:not(.reduce-motion) #contact-container img),
     :global(html.has-js body:not(.reduce-motion) #contact-divider-1),
     :global(html.has-js body:not(.reduce-motion) #contact-form-title-row),
@@ -439,32 +423,9 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
     :global(body.dark #contact-info strong),
     :global(body.dark #contact-info a),
     :global(body.dark #contact-text),
-    :global(body.dark #contact-preferred p),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
       color: var(--text-on-dark-soft);
-    }
-
-    :global(body.dark #contact-preferred) {
-      background-color: color-mix(in srgb, var(--dark-surface) 80%, #1e3a5f 20%);
-      border-color: color-mix(in srgb, var(--dark-border) 60%, #3b6ea5 40%);
-      color: color-mix(in srgb, var(--text-on-dark-soft) 90%, #a8c8e8 10%);
-    }
-
-    :global(body.dark #contact-preferred strong) {
-      color: var(--text-on-dark);
-    }
-
-    :global(body.dark #contact-preferred .contact-preferred-label) {
-      color: var(--text-on-dark);
-    }
-
-    :global(body.dark #contact-preferred .contact-preferred-method) {
-      color: var(--text-on-dark-soft);
-    }
-
-    :global(body.dark #contact-preferred svg) {
-      color: color-mix(in srgb, var(--brand-primary-soft) 80%, #a8c8e8 20%);
     }
 
     :global(body.dark #contact-info a:hover) {

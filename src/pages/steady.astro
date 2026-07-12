@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CaseStudy from "../components/CaseStudy.astro";
+import { getCaseStudy } from "../data/caseStudies";
+
+const caseStudy = getCaseStudy("steady");
+if (!caseStudy) throw new Error("Steady case study data is missing");
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: "Case Study: Steady",
+  author: { "@type": "Person", name: "Sara Ringkow Petersen" },
+  dateCreated: "2026",
+  description: caseStudy.summary.en,
+  url: "https://sararingkow.dk/steady",
+};
+---
+
+<MainLayout
+  title="Case Study: Steady | SRP Portfolio"
+  description="A UX/UI case study about designing a calmer, adaptable daily structure tool for neurodivergent people."
+  ogtitle="Case Study: Steady – SRP Portfolio"
+  ogdescription="Explore Steady's challenge, accessibility decisions, product structure and next validation steps."
+  schema={schema}
+>
+  <CaseStudy caseStudy={caseStudy} />
+</MainLayout>

@@ -5,7 +5,81 @@
     url("/fonts/nikumaru/07NikumaruFont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  /* Preloaded in MainLayout; optional prevents a late fallback-to-custom swap
+     from changing glyph widths after the page has already painted. */
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("/fonts/almarai/almarai-300.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Almarai";
+  src: url("/fonts/almarai/almarai-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Almarai";
+  src: url("/fonts/almarai/almarai-700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Almarai";
+  src: url("/fonts/almarai/almarai-800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-400-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-600-italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/cormorant-garamond-700-italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: optional;
 }
 
 *,
@@ -45,6 +119,7 @@ html {
 
 body.site-shell {
   background-color: var(--washi-bg);
+  isolation: isolate;
 }
 
 body.site-shell::before,
@@ -53,6 +128,9 @@ body.site-shell::after {
   position: fixed;
   pointer-events: none;
   z-index: -1;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 body.site-shell::before {
@@ -93,6 +171,17 @@ body.site-shell::after {
 
 .site-main > section {
   position: relative;
+}
+
+/* Content is available immediately. Scroll-triggered entrances caused visible
+   flashing and made scrolling feel blocked; interactive micro-animations
+   elsewhere on the site remain enabled. */
+.site-main .animate__animated {
+  animation: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  clip-path: none !important;
 }
 
 .some1 a {

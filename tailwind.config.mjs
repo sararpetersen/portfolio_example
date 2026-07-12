@@ -108,8 +108,8 @@ export default {
     },
 
     fontSize: {
-      "display-desktop": ["5.3rem", { lineHeight: "5.5rem" }],
-      "display-mobile": ["3.5rem", { lineHeight: "3.5rem" }],
+      "display-desktop": ["3rem", { lineHeight: "1rem" }],
+      "display-mobile": ["2rem", { lineHeight: "1rem" }],
       "h1-desktop": ["4.6rem", { lineHeight: "3.75rem" }],
       "h1-mobile": ["3.5rem", { lineHeight: "3.75rem" }],
       "h2-desktop": ["3rem", { lineHeight: "3.75rem" }],

@@ -413,18 +413,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     background-color: var(--brand-primary-soft);
   }
 
-  /* Light mode shadow → border on scroll */
+  /* Keep the header layer visually stable while scrolling. */
   #header {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid transparent;
-    transition:
-      box-shadow 0.3s ease,
-      border-color 0.3s ease;
-  }
-
-  #header.header-scrolled {
-    box-shadow: none;
-    border-bottom: 1px solid #dcd6d0;
   }
 
   /* Dark Mode */
@@ -566,21 +558,13 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   .lang-btn {
     color: #f0f1f3;
     background-color: transparent;
-    transition:
-      background-color 0.15s ease,
-      color 0.15s ease;
+    border: 1px solid transparent;
   }
-  .lang-btn.active-lang {
-    color: var(--text-on-dark);
-    font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.18);
-  }
-  .lang-btn:hover {
-    color: var(--brand-primary-soft);
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .lang-btn.active-lang:hover {
-    background-color: rgba(255, 255, 255, 0.24);
+
+  .lang-btn[aria-pressed="true"] {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: var(--brand-primary-soft);
   }
 </style>
 
@@ -702,20 +686,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   });
   // Sync lang button state on load
   const currentLang = localStorage.getItem("lang") || "en";
-  document.getElementById("lang-toggle-en")?.classList.toggle("active-lang", currentLang === "en");
   document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
-  document.getElementById("lang-toggle-da")?.classList.toggle("active-lang", currentLang === "da");
   document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", currentLang === "da" ? "true" : "false");
 
-  // Header scroll: shadow at top → border when scrolled (light mode only)
-  const header = document.getElementById("header");
-  const updateHeaderStyle = () => {
-    if (window.scrollY > 10) {
-      header?.classList.add("header-scrolled");
-    } else {
-      header?.classList.remove("header-scrolled");
-    }
-  };
-  window.addEventListener("scroll", updateHeaderStyle, { passive: true });
-  updateHeaderStyle();
 </script>

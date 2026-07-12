@@ -5,7 +5,7 @@
 <!-- Scroll-to-Top Button -->
 <button
   id="scrollToTop"
-  class="fixed md:bottom-8 md:right-8 bottom-5 right-5 w-14 h-14 rounded-full text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 hover:-translate-y-1 transition-all duration-300 ease-out opacity-0 invisible pointer-events-none z-[999] shadow-lg"
+  class="fixed md:bottom-8 md:right-8 bottom-5 right-5 w-14 h-14 rounded-full text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 z-[999] shadow-lg"
   aria-label="Scroll to top"
   title="Back to top"
   data-tooltip="Back to top"
@@ -21,25 +21,9 @@
   if (scrollToTopButton) {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const updateScrollToTopUi = () => {
-      const y = window.scrollY;
-
-      if (y > 320) {
-        scrollToTopButton.classList.remove("opacity-0", "invisible", "pointer-events-none");
-        scrollToTopButton.classList.add("opacity-100", "visible", "pointer-events-auto");
-      } else {
-        scrollToTopButton.classList.remove("opacity-100", "visible", "pointer-events-auto");
-        scrollToTopButton.classList.add("opacity-0", "invisible", "pointer-events-none");
-      }
-    };
-
     scrollToTopButton.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
     });
-
-    updateScrollToTopUi();
-    window.addEventListener("scroll", updateScrollToTopUi, { passive: true });
-    window.addEventListener("resize", updateScrollToTopUi);
   }
 </script>
 
@@ -57,6 +41,7 @@
   #scrollToTop:hover {
     background: #a8412d;
     border-color: #8b3929;
+    cursor: pointer;
   }
 
   body.calm-mode #scrollToTop {
@@ -67,5 +52,18 @@
   body.calm-mode #scrollToTop:hover {
     background: #7d6c6a;
     border-color: #524745;
+    cursor: pointer;
+  }
+
+  body.cvd-protanopia #scrollToTop {
+    filter: url(#cvd-protanopia-filter);
+  }
+
+  body.cvd-deuteranopia #scrollToTop {
+    filter: url(#cvd-deuteranopia-filter);
+  }
+
+  body.cvd-tritanopia #scrollToTop {
+    filter: url(#cvd-tritanopia-filter);
   }
 </style>

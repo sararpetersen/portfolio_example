@@ -3,8 +3,8 @@
   --font-garamond: "Cormorant Garamond", Georgia, serif;
   --font-almarai: "Almarai", sans-serif;
 
-  --text-display-desktop: 5.3rem;
-  --text-display-mobile: 3.5rem;
+  --text-display-desktop: 3rem;
+  --text-display-mobile: 2rem;
   --text-h1-desktop: 4.6rem;
   --text-h1-mobile: 3.5rem;
   --text-h2-desktop: 3rem;
@@ -18,8 +18,8 @@
   --text-a-desktop: 1.1rem;
   --text-a-mobile: 1rem;
 
-  --leading-display-desktop: 5.5rem;
-  --leading-display-mobile: 3.5rem;
+  --leading-display-desktop: 1rem;
+  --leading-display-mobile: 1rem;
   --leading-h1-desktop: 3.75rem;
   --leading-h1-mobile: 3.75rem;
   --leading-h2-desktop: 3.75rem;

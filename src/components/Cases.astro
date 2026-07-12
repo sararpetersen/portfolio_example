@@ -111,7 +111,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
 </div>
 
 <script>
-  import { inView } from "motion";
+  import { inView } from "../scripts/inViewAhead";
 
   const getLang = () => localStorage.getItem("lang") || "en";
 
@@ -177,11 +177,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     });
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initCases, { once: true });
-  } else {
-    initCases();
-  }
+  initCases();
 
   document.addEventListener("astro:page-load", () => {
     applyCardTranslations(getLang());

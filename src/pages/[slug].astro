@@ -67,10 +67,10 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 ---
 
 <MainLayout
-  title={`${project.name} | SRP Portfolio`}
-  description={project.description}
-  ogtitle={`${project.name} – SRP Portfolio`}
-  ogdescription={project.description}
+  title={`${project.name} | Inclusive Design Case Study`}
+  description={`${project.name} case study by Sara Ringkow Petersen. ${project.description}`}
+  ogtitle={`${project.name} – Inclusive Design Case Study`}
+  ogdescription={`Explore the challenge, design process and outcome behind ${project.name}. ${project.description}`}
 >
   <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-[5.5rem] mt-12 lg:px-0 px-6">
     <!-- Navigation -->
@@ -137,6 +137,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
       <h2
         id="project-subtitle"
         class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-600 leading-7"
+        data-semester={project.semester || ""}
+        data-semester-da={project.semester_da || ""}
         data-year={project.year || ""}
         data-year-da={project.year_da || ""}
       >
@@ -295,10 +297,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
                     <h3 class="related-project-title text-h4-mobile font-bold mb-2">{proj.name}</h3>
                     <p
                       class="related-project-year text-sm text-gray-600 transition-colors duration-300"
+                      data-semester={proj.semester || ""}
+                      data-semester-da={proj.semester_da || ""}
                       data-year={proj.year || ""}
                       data-year-da={proj.year_da || ""}
                     >
-                      {proj.year}
+                      {proj.semester || proj.year}
                     </p>
                   </div>
                 </div>
@@ -312,27 +316,6 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 </MainLayout>
 
 <style>
-  html.has-js body:not(.reduce-motion) #project-label,
-  html.has-js body:not(.reduce-motion) #project-title-row,
-  html.has-js body:not(.reduce-motion) #project-subtitle,
-  html.has-js body:not(.reduce-motion) #project-description,
-  html.has-js body:not(.reduce-motion) #project-image,
-  html.has-js body:not(.reduce-motion) #project-link,
-  html.has-js body:not(.reduce-motion) #gallery,
-  html.has-js body:not(.reduce-motion) #figma-notice,
-  html.has-js body:not(.reduce-motion) #ai-notice,
-  html.has-js body:not(.reduce-motion) #db-notice,
-  html.has-js body:not(.reduce-motion) #related-projects-title-row,
-  html.has-js body:not(.reduce-motion) #related-projects-label,
-  html.has-js body:not(.reduce-motion) #project-divider-1,
-  html.has-js body:not(.reduce-motion) #tools-list,
-  html.has-js body:not(.reduce-motion) #navigation a,
-  html.has-js body:not(.reduce-motion) .related-project-card {
-    opacity: 0;
-    transform: translate3d(0, 1.25rem, 0);
-    will-change: transform, opacity;
-  }
-
   body.dark #project-header h1,
   body.dark #project-header h2,
   body.dark #project-description,
@@ -409,6 +392,8 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 </style>
 
 <script>
+  import { onReady } from "../scripts/inViewAhead";
+
   const applyDatabaseTranslations = (lang: string) => {
     const descriptionEl = document.querySelector("#project-description") as HTMLElement | null;
     const subtitleEl = document.querySelector("#project-subtitle") as HTMLElement | null;
@@ -444,74 +429,12 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
   const getLang = () => localStorage.getItem("lang") || "en";
 
-  const initAnimations = () => {
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      document.body.classList.add("reduce-motion");
-      return;
-    }
-
-    const elementsToAnimate = [
-      { selector: "#project-label", animation: "fadeInUp" },
-      { selector: "#project-title-row", animation: "fadeInUp" },
-      { selector: "#project-subtitle", animation: "fadeInUp" },
-      { selector: "#project-description", animation: "fadeInUp" },
-      { selector: "#project-image", animation: "fadeInUp" },
-      { selector: "#project-link", animation: "fadeInUp" },
-      { selector: "#gallery", animation: "fadeInUp" },
-      { selector: "#figma-notice", animation: "fadeInUp" },
-      { selector: "#ai-notice", animation: "fadeInUp" },
-      { selector: "#db-notice", animation: "fadeInUp" },
-      { selector: "#related-projects-title-row", animation: "fadeInUp" },
-      { selector: "#related-projects-label", animation: "fadeInUp" },
-      { selector: "#project-divider-1", animation: "fadeInUp" },
-    ];
-
-    elementsToAnimate.forEach(({ selector, animation }, index) => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach((el) => {
-        (el as HTMLElement).style.animationDelay = `${index * 0.1}s`;
-        (el as HTMLElement).style.animationFillMode = "both";
-        el.classList.add("animate__animated", `animate__${animation}`);
-      });
-    });
-
-    // Animate navigation links
-    document.querySelectorAll("#navigation a").forEach((link, index) => {
-      const linkEl = link as HTMLElement;
-      linkEl.style.animationDelay = `${index * 0.1}s`;
-      linkEl.style.animationFillMode = "both";
-      linkEl.classList.add("animate__animated", "animate__fadeInUp");
-    });
-
-    // Animate tools list
-    document.querySelectorAll("#tools-list").forEach((tool, i) => {
-      (tool as HTMLElement).style.animationDelay = `${i * 0.2}s`;
-      (tool as HTMLElement).style.animationFillMode = "both";
-      tool.classList.add("animate__animated", "animate__fadeInUp");
-    });
-
-    // Animate related project cards
-    const cards = document.querySelectorAll(".related-project-card");
-    cards.forEach((card, index) => {
-      const cardEl = card as HTMLElement;
-      cardEl.style.animationDelay = `${(index + 10) * 0.15}s`;
-      cardEl.style.animationFillMode = "both";
-      cardEl.classList.add("animate__animated", "animate__fadeInUp");
-    });
-  };
-
   const syncDatabaseTranslations = () => {
     applyDatabaseTranslations(getLang());
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
+  onReady(() => {
     syncDatabaseTranslations();
-    try {
-      initAnimations();
-    } catch {
-      // Keep page functional even if animations fail.
-    }
   });
 
   document.addEventListener("astro:page-load", () => {
@@ -524,11 +447,4 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
     applyDatabaseTranslations(lang);
   });
 
-  document.querySelectorAll("#lang-toggle-en, #lang-toggle-da").forEach((button) => {
-    button.addEventListener("click", () => {
-      requestAnimationFrame(() => {
-        syncDatabaseTranslations();
-      });
-    });
-  });
 </script>
