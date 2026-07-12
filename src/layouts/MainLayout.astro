@@ -129,14 +129,12 @@ const schemamarkup = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=optional"
       rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=optional"
         rel="stylesheet"
       />
     </noscript>
@@ -743,6 +741,34 @@ const schemamarkup = {
       <Footer />
     </div>
     <AccessibilityPanel />
+    {
+      import.meta.env.DEV && (
+        <script is:inline>
+          {`(() => {
+            if (!("PerformanceObserver" in window)) return;
+            window.__layoutShifts = [];
+            new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (entry.hadRecentInput || entry.value === 0) continue;
+                const shift = {
+                  value: entry.value,
+                  scrollY: window.scrollY,
+                  sources: (entry.sources || []).map(({ node, previousRect, currentRect }) => ({
+                    element: node instanceof Element
+                      ? node.id ? "#" + node.id : node.className ? node.tagName.toLowerCase() + "." + String(node.className).trim().replace(/\\s+/g, ".") : node.tagName.toLowerCase()
+                      : "unknown",
+                    previousRect,
+                    currentRect,
+                  })),
+                };
+                window.__layoutShifts.push(shift);
+                console.warn("[layout shift]", shift);
+              }
+            }).observe({ type: "layout-shift", buffered: true });
+          })();`}
+        </script>
+      )
+    }
   </body>
 </html>
 

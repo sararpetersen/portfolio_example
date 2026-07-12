@@ -233,7 +233,7 @@ import Cases from "../components/Cases.astro";
 <script>
   import { inView } from "motion";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  const initEntranceAnimations = () => {
     const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
 
@@ -302,7 +302,13 @@ import Cases from "../components/Cases.astro";
         });
       });
     }
-  });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initEntranceAnimations, { once: true });
+  } else {
+    initEntranceAnimations();
+  }
 </script>
 
 <!-- CSS -->

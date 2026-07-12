@@ -151,7 +151,7 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
     });
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
+  const initCases = () => {
     applyCardTranslations(getLang());
 
     const cards = Array.from(document.querySelectorAll("#project-cards > li")) as HTMLElement[];
@@ -175,7 +175,13 @@ const NON_ACTIVE_PROJECT_SLUGS = new Set(["no-project", "404_noproject"]);
         stop();
       });
     });
-  });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCases, { once: true });
+  } else {
+    initCases();
+  }
 
   document.addEventListener("astro:page-load", () => {
     applyCardTranslations(getLang());
