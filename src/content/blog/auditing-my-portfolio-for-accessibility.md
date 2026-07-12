@@ -43,7 +43,7 @@ This one had nothing to do with the posters directly. I actually found it while 
 >
 ```
 
-Two `description` props, back to back. In Astro (like React), the second one silently wins. But the first one wasn't a mistake I'd have caught by looking at the rendered page, because the visible content was never wrong. Only the `<meta name="description">` tag was, and only if you actually opened dev tools or clicked a shared link and looked at the preview text. Every single case study on this site had been showing its own _name_ as the search-result description instead of the actual project summary, since whenever that duplicate line was introduced. Deleting one line fixed nine pages at once.
+Two `description` props, back to back. In Astro (like React), the second one silently wins. But the first one wasn't a mistake I'd have caught by looking at the rendered page, because the visible content was never wrong. Only the `<meta name="description">` tag was, and only if you actually opened dev tools or clicked a shared link and looked at the preview text. Every single case study on this site had been showing its own _name_ as the search-result description instead of the actual project summary, since whenever that duplicate line was introduced. Deleting one line fixed 9 pages at once.
 
 ### Two things that were judgment calls, not bugs
 

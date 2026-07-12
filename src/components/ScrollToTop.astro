@@ -16,6 +16,7 @@
 </button>
 
 <script>
+  // Scroll to top
   const scrollToTopButton = document.getElementById("scrollToTop");
 
   if (scrollToTopButton) {
@@ -36,12 +37,14 @@
     background: #bb4a34;
     border: 1px solid #8b3929;
     color: #f7f3ef;
+    transition: transform 0.2s ease;
   }
 
   #scrollToTop:hover {
     background: #a8412d;
     border-color: #8b3929;
     cursor: pointer;
+    transform: translateY(-2px);
   }
 
   body.calm-mode #scrollToTop {

@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import { fetchPortfolioCases, type PortfolioCase } from "../data/portfolioCases";
+import { ARCHIVED_CASE_SLUGS, fetchPortfolioCases, NON_ACTIVE_CASE_SLUGS, type PortfolioCase } from "../data/portfolioCases";
 import "../styles/global.css";
 
 export async function getStaticPaths() {
@@ -14,15 +14,15 @@ export async function getStaticPaths() {
 
 const { project, allProjects } = Astro.props as { project: PortfolioCase; allProjects: PortfolioCase[] };
 
-// ✅ Sort by ID (or change to .year or .created_at if needed)
 const sortedProjects = [...allProjects].sort((a, b) => a.id - b.id);
+const navigationProjects = sortedProjects.filter(
+  (item) => !ARCHIVED_CASE_SLUGS.has(item.slug) && !NON_ACTIVE_CASE_SLUGS.has(item.slug),
+);
 
-// 🔁 Find current project in sorted array
-const currentIndex = sortedProjects.findIndex((p) => p.slug === project.slug);
+const currentIndex = navigationProjects.findIndex((item) => item.slug === project.slug);
 
-// ⬅️ ➡️ Get previous and next projects
-const prevProject = currentIndex > 0 ? sortedProjects[currentIndex - 1] : null;
-const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[currentIndex + 1] : null;
+const prevProject = currentIndex > 0 ? navigationProjects[currentIndex - 1] : null;
+const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.length - 1 ? navigationProjects[currentIndex + 1] : null;
 ---
 
 <MainLayout
@@ -241,7 +241,9 @@ const nextProject = currentIndex < sortedProjects.length - 1 ? sortedProjects[cu
 
     {
       (() => {
-        const otherProjects = sortedProjects.filter((p) => p.slug !== project.slug);
+        const otherProjects = sortedProjects.filter(
+          (p) => p.slug !== project.slug && !ARCHIVED_CASE_SLUGS.has(p.slug) && !NON_ACTIVE_CASE_SLUGS.has(p.slug),
+        );
         const randomProjects = otherProjects.sort(() => 0.5 - Math.random()).slice(0, 3);
         return (
           <div class="col-span-12 grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -3,14 +3,27 @@ import { ARCHIVED_CASE_SLUGS, fetchPortfolioCases } from "../data/portfolioCases
 
 const cards = await fetchPortfolioCases();
 
+const getEducationOrder = (year = "") => {
+  const education = year.toLowerCase();
+
+  if (education.includes("multimedia design")) return 0;
+  if (education.includes("digital concept development")) return 1;
+  return 2;
+};
+
 // Cases hidden from the frontpage grid. Their pages still build and stay reachable by
 // direct URL and the sitemap; vibeloop also stays linked from its card on The Lab.
 // singleusesucks and vinens_essens currently have no other page linking to them —
 // worth reconsidering now that The Archive (which used to hold them) has been removed.
 const sortedCards = cards
   .filter((card) => !ARCHIVED_CASE_SLUGS.has(card.slug))
-  // IDs are chronological in portfolio_cases; the table has no created_at column.
-  .sort((a, b) => Number(b.id) - Number(a.id))
+  .sort((a, b) => {
+    const educationDifference = getEducationOrder(a.year) - getEducationOrder(b.year);
+    if (educationDifference !== 0) return educationDifference;
+
+    // IDs are chronological in portfolio_cases; the table has no created_at column.
+    return Number(b.id) - Number(a.id);
+  })
   .slice(0, 6);
 
 import MainLayout from "../layouts/MainLayout.astro";
