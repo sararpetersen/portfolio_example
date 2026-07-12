@@ -9,7 +9,7 @@ tags:
   - process
 ---
 
-This update was jut supposed to be about entrance animations..
+This update was just supposed to be about entrance animations..
 
 Sections on the portfolio were pulling the page up or down while I scrolled, almost as if the site wanted me to wait for each animation before continuing. I tried changing the speed, delay, viewport threshold, and direction. None of it fixed the actual problem. A slower broken animation is still a broken animation.
 
@@ -29,11 +29,11 @@ While checking the site, I also kept finding descriptions that called me a _'web
 
 The homepage now leads with:
 
-> UX/UI designer focused on accessibility
+> "UX/UI designer focused on accessibility"
 
 And the supporting text explains what that means without repeating it:
 
-> I turn complex ideas into clear, inclusive websites and interfaces by combining thoughtful structure, visual design, and hands-on implementation.
+> "I turn complex ideas into clear, inclusive websites and interfaces by combining thoughtful structure, visual design, and hands-on implementation."
 
 That distinction now runs through the visible copy, metadata, contact page, and Danish translations. It feels more specific to the work I actually do, without implying that I'm offering something I'm not.
 
