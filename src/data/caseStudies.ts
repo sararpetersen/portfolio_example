@@ -75,8 +75,8 @@ export const caseStudies: CaseStudy[] = [
         eyebrow: { en: "02 · Design principles", da: "02 · Designprincipper" },
         title: { en: "Calm, control and a low barrier to entry", da: "Ro, kontrol og en lav adgangstærskel" },
         body: {
-          en: "The product is organised around three principles that are visible in the current experience.",
-          da: "Produktet er bygget op omkring tre principper, som kan ses i den nuværende oplevelse.",
+          en: "The product is organised around 3 principles that are visible in the current experience.",
+          da: "Produktet er bygget op omkring 3 principper, som kan ses i den nuværende oplevelse.",
         },
         points: [
           {
@@ -97,10 +97,10 @@ export const caseStudies: CaseStudy[] = [
       {
         id: "solution",
         eyebrow: { en: "03 · Solution", da: "03 · Løsning" },
-        title: { en: "Six small tools in one consistent system", da: "Seks små værktøjer i ét sammenhængende system" },
+        title: { en: "6 small tools in one consistent system", da: "6 små værktøjer i ét sammenhængende system" },
         body: {
-          en: "Tasks, routines, habits, mood check-ins, a focus timer and a daily note cover different needs without forcing every user into the same workflow. A seven-step onboarding flow introduces the experience gradually.",
-          da: "Opgaver, rutiner, vaner, humørtjek, en fokustimer og en daglig note dækker forskellige behov uden at tvinge alle ind i samme arbejdsgang. Et onboarding-flow på syv trin introducerer oplevelsen gradvist.",
+          en: "Tasks, routines, habits, mood check-ins, a focus timer and a daily note cover different needs without forcing every user into the same workflow. A 7-step onboarding flow introduces the experience gradually.",
+          da: "Opgaver, rutiner, vaner, humørtjek, en fokustimer og en daglig note dækker forskellige behov uden at tvinge alle ind i samme arbejdsgang. Et onboarding-flow på 7 trin introducerer oplevelsen gradvist.",
         },
         status: "documented",
       },
@@ -123,7 +123,7 @@ export const caseStudies: CaseStudy[] = [
       {
         id: "evaluation",
         eyebrow: { en: "05 · Evaluation", da: "05 · Evaluering" },
-        title: { en: "The promise and the first screen do not fully align", da: "Løftet og den første skærm stemmer ikke helt overens" },
+        title: { en: "The promise and the first screen don't fully align", da: "Løftet og den første skærm stemmer ikke helt overens" },
         body: {
           en: "The onboarding site repeatedly says that no account is required, while the app opens on a sign-up and login screen. Guest access is available, but appears after the account options. This may create unnecessary uncertainty about privacy and access requirements and should be tested in the next iteration.",
           da: "Onboarding-sitet gentager, at en konto ikke er nødvendig, mens appen åbner på en skærm med oprettelse og login. Gæsteadgang findes, men kommer efter kontomulighederne. Det kan skabe unødig usikkerhed om privatliv og adgangskrav og bør testes i næste iteration.",
