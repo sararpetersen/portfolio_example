@@ -58,7 +58,7 @@ import Cases from "../components/Cases.astro";
               <span class="status-dot relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
             </span>
 
-            <p data-i18n="hero.status" class="text-gray-50">Interning at Folkæt</p>
+            <p data-i18n="hero.status">Interning at Folkæt</p>
           </div>
 
           <h1 class="hero-title display text-gray-800 leading-[1.1] pb-6">Sara Ringkow Petersen</h1>
@@ -301,7 +301,6 @@ import Cases from "../components/Cases.astro";
           stop();
         });
       });
-
     }
   });
 </script>
@@ -372,16 +371,22 @@ import Cases from "../components/Cases.astro";
 
   /* Hero-section */
 
+  /* Styled to match the pill treatment used elsewhere on the site for hover/tag badges
+     (.card-degree-badge in Cases.astro, .lab-tag in lab.astro) — same glass-pill shape.
+     Deliberately neutral gray rather than brand blue: that blue is already the active-nav
+     and CTA-button colour right above/below this element in the hero, so reusing it here
+     would compete with the CTA instead of reading as a quiet status label. Gray ties it
+     into the existing hero-title/role/lead gray hierarchy instead. */
   .hero-status {
     width: fit-content;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    border: 1px solid rgba(73, 75, 79, 0.35);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(75, 85, 99, 0.45);
     border-radius: 9999px;
-    padding: 0.4rem 0.7rem;
-    background: rgba(15, 23, 42, 0.82);
-    color: #f8fafc;
-    line-height: 1;
+    padding: 0.55rem 0.8rem;
+    background: rgba(75, 85, 99, 0.14);
+    color: #4b5563;
+    line-height: 1.2;
     text-transform: uppercase;
   }
 
@@ -396,7 +401,8 @@ import Cases from "../components/Cases.astro";
   }
 
   #status p {
-    font-size: 0.79rem;
+    font-size: 0.75rem;
+    color: inherit;
   }
 
   .hero-role {
@@ -496,8 +502,8 @@ import Cases from "../components/Cases.astro";
   }
 
   body.dark .hero-status {
-    border-color: rgba(192, 215, 225, 0.35);
-    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(163, 163, 163, 0.4);
+    background: rgba(163, 163, 163, 0.18);
     color: var(--text-on-dark);
   }
 

@@ -43,7 +43,7 @@
       </svg>
       <h2 id="a11y-panel-title" data-i18n="a11y.title">Accessibility Settings</h2>
     </div>
-    <button id="a11y-close" aria-label="Close accessibility settings" data-tooltip="Close">
+    <button id="a11y-close" class="tooltip-below" aria-label="Close accessibility settings" data-tooltip="Close">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -169,6 +169,28 @@
           <span class="a11y-font-label" data-i18n="a11y.font.opendyslexic">OpenDyslexic</span>
         </button>
       </div>
+    </div>
+
+    <!-- COLOUR VISION SIMULATION -->
+    <div class="a11y-section">
+      <h3 id="a11y-label-cvd" class="a11y-section-label" data-i18n="a11y.cvd">COLOUR VISION SIMULATION</h3>
+      <div class="a11y-choice-group" role="group" aria-labelledby="a11y-label-cvd">
+        <button id="a11y-cvd-off" class="a11y-choice" aria-pressed="true">
+          <span data-i18n="a11y.cvd.off">Off</span>
+        </button>
+        <button id="a11y-cvd-protanopia" class="a11y-choice" aria-pressed="false">
+          <span data-i18n="a11y.cvd.protanopia">Protanopia</span>
+        </button>
+        <button id="a11y-cvd-deuteranopia" class="a11y-choice" aria-pressed="false">
+          <span data-i18n="a11y.cvd.deuteranopia">Deuteranopia</span>
+        </button>
+        <button id="a11y-cvd-tritanopia" class="a11y-choice" aria-pressed="false">
+          <span data-i18n="a11y.cvd.tritanopia">Tritanopia</span>
+        </button>
+      </div>
+      <p class="a11y-toggle-desc leading-tight" data-i18n="a11y.cvd.desc">
+        Preview the page as someone with red-green or blue-yellow colour blindness would see it.
+      </p>
     </div>
 
     <!-- FOCUS MODE -->
@@ -322,12 +344,17 @@
     outline: 2px solid #477b93;
     outline-offset: 2px;
   }
+  #a11y-close::after {
+    right: 0;
+    left: auto;
+    transform: none;
+  }
 
   .a11y-panel-body {
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.6rem;
     flex: 1;
   }
 
@@ -681,6 +708,9 @@
     const isVerdana = document.documentElement.classList.contains("verdana-font");
     const isOpendyslexic = document.documentElement.classList.contains("opendyslexic-font");
     const isFocus = document.body.classList.contains("focus-mode");
+    const isProtanopia = document.body.classList.contains("cvd-protanopia");
+    const isDeuteranopia = document.body.classList.contains("cvd-deuteranopia");
+    const isTritanopia = document.body.classList.contains("cvd-tritanopia");
 
     document.getElementById("a11y-light")?.setAttribute("aria-pressed", String(!isDark));
     document.getElementById("a11y-dark")?.setAttribute("aria-pressed", String(isDark));
@@ -693,6 +723,10 @@
     document.getElementById("a11y-font-atkinson")?.setAttribute("aria-pressed", String(isAtkinson));
     document.getElementById("a11y-font-verdana")?.setAttribute("aria-pressed", String(isVerdana));
     document.getElementById("a11y-font-opendyslexic")?.setAttribute("aria-pressed", String(isOpendyslexic));
+    document.getElementById("a11y-cvd-off")?.setAttribute("aria-pressed", String(!isProtanopia && !isDeuteranopia && !isTritanopia));
+    document.getElementById("a11y-cvd-protanopia")?.setAttribute("aria-pressed", String(isProtanopia));
+    document.getElementById("a11y-cvd-deuteranopia")?.setAttribute("aria-pressed", String(isDeuteranopia));
+    document.getElementById("a11y-cvd-tritanopia")?.setAttribute("aria-pressed", String(isTritanopia));
 
     // Keep header bar quick buttons in sync
     document.getElementById("darkModeToggle")?.setAttribute("aria-pressed", String(isDark));
@@ -700,6 +734,22 @@
     document.getElementById("colorModeToggle")?.setAttribute("aria-pressed", String(isCalm));
     document.getElementById("motionToggle")?.setAttribute("aria-pressed", String(isMotion));
     document.getElementById("focusModeToggle")?.setAttribute("aria-pressed", String(isFocus));
+
+    const cvdBtn = document.getElementById("cvdCycleToggle");
+    if (cvdBtn) {
+      const lang = localStorage.getItem("lang") || "en";
+      const mode = isProtanopia ? "protanopia" : isDeuteranopia ? "deuteranopia" : isTritanopia ? "tritanopia" : "off";
+      const cvdLabels = panelStrings[lang] || panelStrings.en;
+      const modeLabel = cvdLabels[`a11y.cvd.${mode}`];
+      cvdBtn.setAttribute("aria-pressed", String(mode !== "off"));
+      cvdBtn.setAttribute(
+        "aria-label",
+        lang === "da"
+          ? `Simulering af farvesyn: ${modeLabel}. Klik for at skifte til næste valgmulighed.`
+          : `Colour vision simulation: ${modeLabel}. Click to cycle to the next option.`,
+      );
+      cvdBtn.setAttribute("data-tooltip", `${lang === "da" ? "Farvesyn" : "Colour vision"}: ${modeLabel}`);
+    }
 
     // Language buttons
     const activeLang = localStorage.getItem("lang") || "en";
@@ -789,9 +839,34 @@
   document.getElementById("a11y-font-verdana")?.addEventListener("click", () => setFont("verdana"));
   document.getElementById("a11y-font-opendyslexic")?.addEventListener("click", () => setFont("opendyslexic"));
 
+  // Colour vision simulation — mutually exclusive 4-choice, same pattern as reading font
+  function setCvd(mode: "off" | "protanopia" | "deuteranopia" | "tritanopia"): void {
+    const b = document.body;
+    b.classList.remove("cvd-protanopia", "cvd-deuteranopia", "cvd-tritanopia");
+    if (mode === "off") {
+      localStorage.removeItem("cvdSimulation");
+    } else {
+      b.classList.add("cvd-" + mode);
+      localStorage.setItem("cvdSimulation", mode);
+    }
+    syncUI();
+  }
+  document.getElementById("a11y-cvd-off")?.addEventListener("click", () => setCvd("off"));
+  document.getElementById("a11y-cvd-protanopia")?.addEventListener("click", () => setCvd("protanopia"));
+  document.getElementById("a11y-cvd-deuteranopia")?.addEventListener("click", () => setCvd("deuteranopia"));
+  document.getElementById("a11y-cvd-tritanopia")?.addEventListener("click", () => setCvd("tritanopia"));
+
+  // Header bar quick-access cycle button: Off -> Protanopia -> Deuteranopia -> Tritanopia -> Off
+  document.getElementById("cvdCycleToggle")?.addEventListener("click", () => {
+    const cvdOrder: Array<"off" | "protanopia" | "deuteranopia" | "tritanopia"> = ["off", "protanopia", "deuteranopia", "tritanopia"];
+    const current = (localStorage.getItem("cvdSimulation") as (typeof cvdOrder)[number] | null) || "off";
+    const next = cvdOrder[(cvdOrder.indexOf(current) + 1) % cvdOrder.length];
+    setCvd(next);
+  });
+
   // Reset
   document.getElementById("a11y-reset")?.addEventListener("click", () => {
-    document.body.classList.remove("dark", "calm-mode", "reduce-motion", "focus-mode");
+    document.body.classList.remove("dark", "calm-mode", "reduce-motion", "focus-mode", "cvd-protanopia", "cvd-deuteranopia", "cvd-tritanopia");
     document.documentElement.classList.remove("text-large", "readable-font", "verdana-font", "opendyslexic-font");
     [
       "darkModeEnabled",
@@ -802,6 +877,7 @@
       "verdanaFontEnabled",
       "opendyslexicFontEnabled",
       "focusModeEnabled",
+      "cvdSimulation",
     ].forEach((k) => localStorage.removeItem(k));
     syncUI();
   });
@@ -825,6 +901,12 @@
       "a11y.reduce-motion.desc": "Disable animations",
       "a11y.font": "READING FONT",
       "a11y.font.default": "Default",
+      "a11y.cvd": "COLOUR VISION SIMULATION",
+      "a11y.cvd.off": "Off",
+      "a11y.cvd.protanopia": "Protanopia",
+      "a11y.cvd.deuteranopia": "Deuteranopia",
+      "a11y.cvd.tritanopia": "Tritanopia",
+      "a11y.cvd.desc": "Preview the page as someone with red-green or blue-yellow colour blindness would see it.",
       "a11y.focus": "FOCUS MODE",
       "a11y.focus.name": "Reduce visual clutter",
       "a11y.focus.desc": "Hides decorative elements",
@@ -852,6 +934,12 @@
       "a11y.reduce-motion.desc": "Slå animationer fra",
       "a11y.font": "LÆSESKRIFT",
       "a11y.font.default": "Standard",
+      "a11y.cvd": "SIMULERING AF FARVESYN",
+      "a11y.cvd.off": "Fra",
+      "a11y.cvd.protanopia": "Protanopi",
+      "a11y.cvd.deuteranopia": "Deuteranopi",
+      "a11y.cvd.tritanopia": "Tritanopi",
+      "a11y.cvd.desc": "Se, hvordan siden ser ud for nogen med rød-grøn- eller blå-gul-farveblindhed.",
       "a11y.focus": "FOKUSTILSTAND",
       "a11y.focus.name": "Reducer visuel støj",
       "a11y.focus.desc": "Skjuler dekorative elementer",

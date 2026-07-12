@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 
 <!-- Torii icon -->
 <div id="torii-icon" class="flex justify-center items-center pb-6 pointer-events-none">
-  <img src="/images/torii.svg" alt="" aria-hidden="true" class="w-[400px] h-auto" width="1956" height="582" loading="lazy" />
+  <img src="/images/torii.svg" alt="" aria-hidden="true" class="w-[250px] h-auto" width="1956" height="582" loading="lazy" />
 </div>
 
 <!-- Terms modal (backdrop is the container itself) -->
@@ -487,6 +487,19 @@ import Button from "./Button.astro";
     border-top: 1px solid #333;
     background: var(--dark-bg);
   }
+
+  /* Colour-vision simulation, applied here (not on body) so an ancestor filter doesn't
+     give the fixed-position terms modal a new containing block. The modal itself is a
+     sibling of <footer>, not a descendant, so filtering footer alone is safe. */
+  body.cvd-protanopia footer {
+    filter: url(#cvd-protanopia-filter);
+  }
+  body.cvd-deuteranopia footer {
+    filter: url(#cvd-deuteranopia-filter);
+  }
+  body.cvd-tritanopia footer {
+    filter: url(#cvd-tritanopia-filter);
+  }
   body.dark #footer-bottom {
     border-color: var(--dark-border, #333);
   }
@@ -507,46 +520,33 @@ import Button from "./Button.astro";
     filter: saturate(0.45) brightness(1.04);
   }
 
-  /* Torii entrance animation */
+  /* Torii decal — static, no entrance animation */
   #torii-icon img {
-    opacity: 0;
-    transform: translateY(14px);
-    transition:
-      opacity 1.2s ease,
-      transform 1.2s ease;
+    opacity: 0.12;
   }
 
-  #torii-icon.torii-visible img {
-    opacity: 0.22;
-    transform: translateY(0);
-  }
-
-  body.dark #torii-icon.torii-visible img {
+  body.dark #torii-icon img {
     filter: invert(1) grayscale(1) brightness(0.8);
     opacity: 0.15;
   }
 
-  body.calm-mode #torii-icon.torii-visible img {
+  body.calm-mode #torii-icon img {
     filter: grayscale(0.6) brightness(1.05);
     opacity: 0.15;
   }
 
-  body.reduce-motion #torii-icon img {
-    transition: none;
+  /* Colour-vision simulation. #torii-icon sits before <footer> in the DOM (not inside
+     it), so the footer rule in this file's own style block doesn't reach it — needs its
+     own selector. Not fixed-position and has no descendants of its own, so safe to filter
+     directly. */
+  body.cvd-protanopia #torii-icon img {
+    filter: url(#cvd-protanopia-filter);
   }
-  body.reduce-motion #torii-icon.torii-visible img {
-    opacity: 0.22;
-    transform: none;
+  body.cvd-deuteranopia #torii-icon img {
+    filter: url(#cvd-deuteranopia-filter);
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    #torii-icon img {
-      transition: none;
-    }
-    #torii-icon.torii-visible img {
-      opacity: 0.22;
-      transform: none;
-    }
+  body.cvd-tritanopia #torii-icon img {
+    filter: url(#cvd-tritanopia-filter);
   }
 </style>
 

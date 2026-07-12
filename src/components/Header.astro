@@ -8,7 +8,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 <!-- Accessibility bar -->
 <div
   id="accessibility-bar"
-  class="fixed top-0 left-0 w-full bg-gray-600 text-gray-50 flex items-center h-9 px-4 z-50"
+  class="fixed top-0 left-0 w-full bg-gray-800 text-gray-50 flex items-center h-9 px-4 z-50"
   role="region"
   aria-label="Accessibility and language settings"
 >
@@ -105,6 +105,31 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       >
         <circle cx="12" cy="12" r="3"></circle>
         <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+      </svg>
+    </button>
+
+    <!-- Colour vision simulation (cycles Off -> Protanopia -> Deuteranopia -> Tritanopia) -->
+    <button
+      id="cvdCycleToggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Colour vision simulation: Off. Click to cycle to the next option."
+      class="bar-quick-btn tooltip-below tooltip-align-left"
+      data-tooltip="Colour vision: Off"
+    >
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
       </svg>
     </button>
   </div>
@@ -450,6 +475,21 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 
   body.dark #header #mobilmenu {
     color: var(--text-on-dark);
+  }
+
+  /* Colour-vision simulation, applied here (not on body) so this component's own
+     fixed-position elements aren't given a new containing block by an ancestor filter. */
+  body.cvd-protanopia #accessibility-bar,
+  body.cvd-protanopia #header {
+    filter: url(#cvd-protanopia-filter);
+  }
+  body.cvd-deuteranopia #accessibility-bar,
+  body.cvd-deuteranopia #header {
+    filter: url(#cvd-deuteranopia-filter);
+  }
+  body.cvd-tritanopia #accessibility-bar,
+  body.cvd-tritanopia #header {
+    filter: url(#cvd-tritanopia-filter);
   }
 
   body.dark #header a[aria-current="page"],

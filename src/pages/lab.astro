@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import Button from "../components/Button.astro";
+import ColorSymIcon from "../components/ColorSymIcon.astro";
 ---
 
 <MainLayout
@@ -66,12 +67,16 @@ import Button from "../components/Button.astro";
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+        <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
         <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
       </span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
+        <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed"
+          ><ColorSymIcon letter="O" />WIP</span
+        >
         <span data-i18n="lab.legend.wip">= in progress</span>
       </span>
     </p>
@@ -85,7 +90,9 @@ import Button from "../components/Button.astro";
       >
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
         </div>
         <div class="max-w-3xl">
           <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.bivi.title">Bivi - Your Little Medication Sidekick</h3>
@@ -104,7 +111,9 @@ import Button from "../components/Button.astro";
       <article id="lab-item-ephemeris" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.ephemeris.title">Ephemeris - Dragon Mood Journal</h3>
         <Button
@@ -121,7 +130,9 @@ import Button from "../components/Button.astro";
       <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.steady.title">
           Steady - Daily Life Tracker App for Neurodivergents
@@ -141,8 +152,12 @@ import Button from "../components/Button.astro";
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
           <div class="flex items-center gap-2 flex-wrap justify-end">
-            <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
-            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">WIP</span>
+            <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
+            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed"
+          ><ColorSymIcon letter="O" />WIP</span
+        >
           </div>
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
@@ -159,7 +174,9 @@ import Button from "../components/Button.astro";
       <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
         <div class="flex items-center justify-between mb-4">
           <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance" data-i18n="lab.badge.vibecoded">Vibe coded</span>
+          <span class="lab-tag" title="This project was built with AI assistance"
+          ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
+        >
         </div>
         <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.autismeguiden.title">
           AutismeGuiden - Your Guide to Autism and Neurodivergence
@@ -251,6 +268,7 @@ import Button from "../components/Button.astro";
   .lab-tag {
     display: inline-flex;
     align-items: center;
+    gap: 0.35em;
     flex-shrink: 0;
     white-space: nowrap;
     border-radius: 9999px;

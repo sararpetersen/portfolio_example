@@ -185,6 +185,22 @@ body.calm-mode.site-shell::after {
   opacity: 0.72;
 }
 
+/* Colour-vision simulation for the decorative circles. Safe to filter these directly
+   (unlike body itself): a pseudo-element has no descendants, so it can't become a
+   containing block that breaks anyone else's fixed positioning. */
+body.cvd-protanopia.site-shell::before,
+body.cvd-protanopia.site-shell::after {
+  filter: url(#cvd-protanopia-filter);
+}
+body.cvd-deuteranopia.site-shell::before,
+body.cvd-deuteranopia.site-shell::after {
+  filter: url(#cvd-deuteranopia-filter);
+}
+body.cvd-tritanopia.site-shell::before,
+body.cvd-tritanopia.site-shell::after {
+  filter: url(#cvd-tritanopia-filter);
+}
+
 body.dark.calm-mode.site-shell {
   --brand-primary: #7f9eab;
   --brand-primary-soft: #b7c9d0;

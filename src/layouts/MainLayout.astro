@@ -707,11 +707,28 @@ const schemamarkup = {
           body.classList.toggle("reduce-motion", motionSetting === null ? prefersReducedMotion : motionSetting === "true");
           body.classList.toggle("calm-mode", localStorage.getItem("calmModeEnabled") === "true");
           body.classList.toggle("focus-mode", localStorage.getItem("focusModeEnabled") === "true");
+          const cvdSetting = localStorage.getItem("cvdSimulation");
+          if (cvdSetting && cvdSetting !== "off") body.classList.add("cvd-" + cvdSetting);
         } catch {
           // Preference classes are progressive enhancement.
         }
       })();
     </script>
+    <!-- Colour-vision simulation filters, used by the "Colour vision simulation" panel setting.
+         Kept hidden and out of the accessible tree — these are rendering filters, not content. -->
+    <svg aria-hidden="true" focusable="false" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+      <defs>
+        <filter id="cvd-protanopia-filter" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"></feColorMatrix>
+        </filter>
+        <filter id="cvd-deuteranopia-filter" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"></feColorMatrix>
+        </filter>
+        <filter id="cvd-tritanopia-filter" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"></feColorMatrix>
+        </filter>
+      </defs>
+    </svg>
     <nav aria-label="Skip links">
       <a href="#main-content" class="skip-link transition duration-300 ease-in-out font-semibold">Skip to main content</a>
     </nav>
@@ -788,6 +805,26 @@ const schemamarkup = {
     background: var(--dark-bg);
     color: var(--text-on-dark);
     box-shadow: none;
+  }
+
+  /* Colour-vision simulation: approximates how the page looks under each condition.
+     `filter` on body would make body a new containing block for every fixed-position
+     descendant (header, accessibility bar, the panel itself), breaking their positioning
+     site-wide. So the class still toggles on body (for JS state checks) but the filter is
+     scoped to individual elements instead — none of which have fixed-position descendants
+     of their own, so fixed positioning stays intact. The equivalent rules for the header/
+     accessibility bar and footer live in Header.astro and Footer.astro respectively, since
+     Astro's scoped CSS can't reach into another component's markup from here. The
+     accessibility panel/FAB/overlay are deliberately excluded so the controls stay
+     unfiltered and easy to use while simulating. */
+  body.cvd-protanopia #main-content {
+    filter: url(#cvd-protanopia-filter);
+  }
+  body.cvd-deuteranopia #main-content {
+    filter: url(#cvd-deuteranopia-filter);
+  }
+  body.cvd-tritanopia #main-content {
+    filter: url(#cvd-tritanopia-filter);
   }
 
   body.dark .toggle-switch {

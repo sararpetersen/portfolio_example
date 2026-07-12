@@ -1,6 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import ColorSymIcon from "../components/ColorSymIcon.astro";
 ---
 
 <MainLayout
@@ -146,28 +147,24 @@ import MainLayout from "../layouts/MainLayout.astro";
           </p>
           <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered">
             <li
-              data-i18n="contact.services.uiux"
-              class="px-3 py-1 text-xs font-semibold bg-green-100 border border-green-500 border-r-4 rounded-full text-green-800"
+              class="inline-flex items-center gap-0.5 px-2.5 py-1 text-xs font-semibold bg-green-100 border border-green-500 border-r-4 rounded-full text-green-800"
             >
-              UX/UI design
+              <ColorSymIcon letter="G" class="contact-tag-icon" /><span data-i18n="contact.services.uiux">UX/UI design</span>
             </li>
             <li
-              data-i18n="contact.services.web"
-              class="px-3 py-1 text-xs font-semibold bg-orange-100 border border-orange-400 border-r-4 rounded-full text-orange-800"
+              class="inline-flex items-center gap-0.5 px-2.5 py-1 text-xs font-semibold bg-orange-100 border border-orange-400 border-r-4 rounded-full text-orange-800"
             >
-              Web design and development
+              <ColorSymIcon letter="O" class="contact-tag-icon" /><span data-i18n="contact.services.web">Web design and development</span>
             </li>
             <li
-              data-i18n="contact.services.concept"
-              class="px-3 py-1 text-xs font-semibold bg-vermilion-100 border border-vermilion-500 border-r-4 rounded-full text-vermilion-800"
+              class="inline-flex items-center gap-0.5 px-2.5 py-1 text-xs font-semibold bg-vermilion-100 border border-vermilion-500 border-r-4 rounded-full text-vermilion-800"
             >
-              Development of concepts
+              <ColorSymIcon letter="O" class="contact-tag-icon" /><span data-i18n="contact.services.concept">Development of concepts</span>
             </li>
             <li
-              data-i18n="contact.services.brand"
-              class="px-3 py-1 text-xs font-semibold bg-red-100 border border-red-400 border-r-4 rounded-full text-red-800"
+              class="inline-flex items-center gap-0.5 px-2.5 py-1 text-xs font-semibold bg-red-100 border border-red-400 border-r-4 rounded-full text-red-800"
             >
-              Brand and visual identity
+              <ColorSymIcon letter="R" class="contact-tag-icon" /><span data-i18n="contact.services.brand">Brand and visual identity</span>
             </li>
           </ul>
         </div>
@@ -395,6 +392,11 @@ import MainLayout from "../layouts/MainLayout.astro";
   </script>
 
   <style>
+    :global(.contact-tag-icon) {
+      width: 0.95em;
+      height: 0.95em;
+    }
+
     @media (min-width: 768px) {
       :global(#form-message) {
         resize: both;
