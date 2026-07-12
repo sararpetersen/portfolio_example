@@ -1,35 +1,12 @@
 ---
-const fetchCards = async () => {
-  try {
-    const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases?order=id.asc", {
-      method: "GET",
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
-      },
-    });
+import { ARCHIVED_CASE_SLUGS, fetchPortfolioCases } from "../data/portfolioCases";
 
-    if (!response.ok) {
-      console.warn(`API error: ${response.status} ${response.statusText}`);
-      return [];
-    }
-
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
-  } catch (error) {
-    console.error("Failed to fetch portfolio cases:", error);
-    return [];
-  }
-};
-
-const cards = await fetchCards();
+const cards = await fetchPortfolioCases();
 
 // Cases hidden from the frontpage grid. Their pages still build and stay reachable by
 // direct URL and the sitemap; vibeloop also stays linked from its card on The Lab.
 // singleusesucks and vinens_essens currently have no other page linking to them —
 // worth reconsidering now that The Archive (which used to hold them) has been removed.
-const ARCHIVED_CASE_SLUGS = new Set(["singleusesucks", "vinens_essens", "vibeloop"]);
-
 const sortedCards = cards
   .filter((card) => !ARCHIVED_CASE_SLUGS.has(card.slug))
   // IDs are chronological in portfolio_cases; the table has no created_at column.

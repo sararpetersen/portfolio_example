@@ -1,59 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
+import { fetchPortfolioCases, type PortfolioCase } from "../data/portfolioCases";
 import "../styles/global.css";
 
 export async function getStaticPaths() {
-  try {
-    const response = await fetch("https://bbmabdbbjpfqoapbtstm.supabase.co/rest/v1/portfolio_cases", {
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJibWFiZGJianBmcW9hcGJ0c3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0NjkwNDYsImV4cCI6MjA1ODA0NTA0Nn0.gFnw6GZiMFOCMwy6rAcQFzoK0_qUJCwKNpl-XGzy574",
-      },
-    });
-
-    if (!response.ok) {
-      console.warn(`API error: ${response.status} ${response.statusText}`);
-      return [];
-    }
-
-    const projects = await response.json();
-
-    if (!Array.isArray(projects)) {
-      console.warn("API did not return an array of projects");
-      return [];
-    }
-
-    return projects.map((project) => ({
-      params: { slug: project.slug },
-      props: {
-        project,
-        allProjects: projects,
-      },
-    }));
-  } catch (error) {
-    console.error("Failed to fetch portfolio cases:", error);
-    return [];
-  }
+  const projects = await fetchPortfolioCases();
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project, allProjects: projects },
+  }));
 }
 
-interface Project {
-  id: number;
-  slug: string;
-  name: string;
-  semester?: string;
-  description: string;
-  description_da?: string;
-  year: string;
-  year_da?: string;
-  semester_da?: string;
-  image: string;
-  tools?: string[];
-  url: string;
-  ai_used?: boolean;
-}
-
-const { project, allProjects } = Astro.props as { project: Project; allProjects: Project[] };
+const { project, allProjects } = Astro.props as { project: PortfolioCase; allProjects: PortfolioCase[] };
 
 // ✅ Sort by ID (or change to .year or .created_at if needed)
 const sortedProjects = [...allProjects].sort((a, b) => a.id - b.id);

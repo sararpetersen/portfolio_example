@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run check-blog-ids && astro build",
+    "build": "npm run validate-content && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check-blog-ids": "node ./scripts/check-blog-ids.js"
+    "check-blog-ids": "node ./scripts/check-blog-ids.js",
+    "check-project-data": "node ./scripts/validate-portfolio-data.js",
+    "validate-content": "npm run check-blog-ids && npm run check-project-data"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
