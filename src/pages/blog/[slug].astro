@@ -47,9 +47,9 @@ const articleSchema = {
 ---
 
 <MainLayout
-  title={`${post.data.title} | Sara Ringkow Petersen`}
+  title={`${post.data.title} | SRP Portfolio`}
   description={post.data.excerpt}
-  ogtitle={`${post.data.title} — SRP Portfolio`}
+  ogtitle={`${post.data.title} – SRP Portfolio`}
   ogdescription={post.data.excerpt}
   pageType="article"
   schema={articleSchema}
@@ -57,7 +57,10 @@ const articleSchema = {
   <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
     <header class="md:pt-28 pt-24 mb-6">
       <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-      <h1 id="post-title" class="font-nikumaru uppercase tracking-[0.08em] sm:tracking-[0.11em] md:tracking-[0.14em] text-[1.65rem] leading-tight sm:text-h3-mobile md:text-h3-desktop mb-3 text-gray-800 break-words">
+      <h1
+        id="post-title"
+        class="font-nikumaru uppercase tracking-[0.08em] sm:tracking-[0.11em] md:tracking-[0.14em] text-[1.65rem] leading-tight sm:text-h3-mobile md:text-h3-desktop mb-3 text-gray-800 break-words"
+      >
         {post.data.title}
       </h1>
       <p id="post-excerpt" class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
