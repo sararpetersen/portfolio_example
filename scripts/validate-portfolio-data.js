@@ -1,5 +1,6 @@
 import { access } from "node:fs/promises";
 import { caseStudies } from "../src/data/caseStudies.ts";
+import { labProjects } from "../src/data/labProjects.ts";
 
 const errors = [];
 const seenSlugs = new Set();
@@ -44,9 +45,23 @@ for (const caseStudy of caseStudies) {
   }
 }
 
+const labSlugs = new Set();
+for (const project of labProjects) {
+  if (labSlugs.has(project.slug)) errors.push(`Duplicate Lab project slug: ${project.slug}`);
+  labSlugs.add(project.slug);
+  if (!project.year || !project.titleKey || !project.titleFallback || !project.href || !project.linkKey) {
+    errors.push(`${project.slug}: incomplete Lab project data`);
+  }
+  try {
+    new URL(project.href, "https://sararingkow.dk");
+  } catch {
+    errors.push(`${project.slug}: invalid Lab project link ${project.href}`);
+  }
+}
+
 if (errors.length) {
   console.error("Portfolio data validation failed:\n- " + errors.join("\n- "));
   process.exit(1);
 }
 
-console.log(`Portfolio data is valid (${caseStudies.length} local case stud${caseStudies.length === 1 ? "y" : "ies"}).`);
+console.log(`Portfolio data is valid (${caseStudies.length} local case stud${caseStudies.length === 1 ? "y" : "ies"}, ${labProjects.length} Lab projects).`);

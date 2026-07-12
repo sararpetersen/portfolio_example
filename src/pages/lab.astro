@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import Button from "../components/Button.astro";
 import ColorSymIcon from "../components/ColorSymIcon.astro";
+import LabProjectCards from "../components/LabProjectCards.astro";
+import { labProjects } from "../data/labProjects";
 ---
 
 <MainLayout
@@ -79,7 +81,9 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
       </span>
     </p>
 
-    <!-- Projects -->
+    <!-- Project cards keep their existing layout, but are generated from one data source. -->
+    <LabProjectCards projects={labProjects} />
+    {false && (
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Bivi (featured) -->
       <article
@@ -185,6 +189,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
         >
       </article>
     </div>
+    )}
   </section>
 
   <!-- Back -->

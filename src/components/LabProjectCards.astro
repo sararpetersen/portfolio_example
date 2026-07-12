@@ -1,0 +1,103 @@
+---
+import Button from "./Button.astro";
+import ColorSymIcon from "./ColorSymIcon.astro";
+import type { LabProject } from "../data/labProjects";
+
+const { projects } = Astro.props as { projects: LabProject[] };
+---
+
+<div class="grid md:grid-cols-2 gap-6">
+  {projects.map((project) => {
+    const isExternal = project.href.startsWith("http");
+    const cardClass = project.featured
+      ? "lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
+      : "bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8";
+
+    return (
+      <article id={`lab-item-${project.slug}`} class={cardClass}>
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
+          <div class="flex items-center gap-2 flex-wrap justify-end">
+            <span class="lab-tag" title="This project was built with AI assistance">
+              <ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span>
+            </span>
+            {project.wip && (
+              <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">
+                <ColorSymIcon letter="O" />WIP
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div class={project.featured ? "max-w-3xl" : undefined}>
+          <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
+            <span data-i18n={project.titleKey}>{project.titleFallback}</span>
+            {project.wip && <><span> </span><span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span></>}
+          </h3>
+          <Button
+            href={project.href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            variant="secondary"
+            size="small"
+            aria-label={project.ariaLabel}
+          ><span data-i18n={project.linkKey}>{project.linkFallback}</span></Button>
+        </div>
+      </article>
+    );
+  })}
+</div>
+
+<style>
+  :global(html.has-js body:not(.reduce-motion)) article {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: transform, opacity;
+  }
+
+  .lab-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    flex-shrink: 0;
+    white-space: nowrap;
+    border-radius: 9999px;
+    border: 1px solid rgba(71, 123, 147, 0.4);
+    background: rgba(71, 123, 147, 0.1);
+    color: var(--brand-primary-strong);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.42rem 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .wip-tag {
+    border-color: rgba(217, 119, 6, 0.4);
+    background: rgba(217, 119, 6, 0.1);
+    color: #92400e;
+  }
+
+  :global(body.dark) article {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  :global(body.dark) article h3,
+  :global(body.dark) article p {
+    color: var(--text-on-dark-soft);
+  }
+
+  :global(body.dark) .lab-tag {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: rgba(71, 123, 147, 0.2);
+    color: var(--brand-primary-soft);
+  }
+
+  :global(body.dark) .wip-tag {
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(217, 119, 6, 0.2);
+    color: #fbbf24;
+  }
+</style>
