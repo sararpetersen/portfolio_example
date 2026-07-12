@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check-blog-ids": "node ./scripts/check-blog-ids.js",
-    "check-project-data": "node ./scripts/validate-portfolio-data.js",
+    "check-project-data": "tsx ./scripts/validate-portfolio-data.js",
     "validate-content": "npm run check-blog-ids && npm run check-project-data"
   },
   "dependencies": {
@@ -31,7 +31,8 @@
     "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.16",
-    "tailwindcss": "4.1.10"
+    "tailwindcss": "4.1.10",
+    "tsx": "^4.23.0"
   },
   "engines": {
     "node": ">=22.12.0"
