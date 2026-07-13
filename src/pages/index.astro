@@ -22,7 +22,7 @@ const sortedCards = cards
     if (educationDifference !== 0) return educationDifference;
 
     // IDs are chronological in portfolio_cases; the table has no created_at column.
-    return Number(b.id) - Number(a.id);
+    return Number(a.id) - Number(b.id);
   })
   .slice(0, 6);
 
