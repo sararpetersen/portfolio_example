@@ -198,52 +198,6 @@ import { labProjects } from "../data/labProjects";
   </section>
 </MainLayout>
 
-<!-- Animations -->
-<script>
-  import { inView, onReady } from "../scripts/inViewAhead";
-
-  onReady(() => {
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      document.body.classList.add("reduce-motion");
-      return;
-    }
-
-    let i = 0;
-    const register = (selector: string) => {
-      const el = document.querySelector(selector) as HTMLElement | null;
-      if (!el) return;
-      inView(el, () => {
-        el.style.animationDelay = `${i * 60}ms`;
-        el.style.animationDuration = "1.5s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-      i++;
-    };
-
-    ["#lab-title-row", "#lab-intro", "#lab-about", "#lab-items-title", "#lab-items-intro", "#lab-divider-1"].forEach(register);
-
-    document.querySelectorAll("#lab-items > div > article, #lab-items > div > div").forEach((el, idx) => {
-      inView(el, () => {
-        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
-        (el as HTMLElement).style.animationDuration = "1.3s";
-        (el as HTMLElement).style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-    });
-
-    document.querySelectorAll(".lab-legend > span").forEach((el, idx) => {
-      inView(el, () => {
-        (el as HTMLElement).style.animationDelay = `${idx * 80}ms`;
-        (el as HTMLElement).style.animationDuration = "1.3s";
-        (el as HTMLElement).style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-    });
-  });
-</script>
-
 <style>
   html.has-js body:not(.reduce-motion) #lab-label,
   html.has-js body:not(.reduce-motion) #lab-title-row,

@@ -301,59 +301,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
   </section>
 
   <script>
-    import { inView, onReady } from "../scripts/inViewAhead";
-
-    onReady(() => {
-      const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion) document.body.classList.add("reduce-motion");
-
-      if (!reduceMotion) {
-        let animationIndex = 0;
-        const registerInView = (selector: string, animationClass: string = "animate__fadeInUp") => {
-          const element = document.querySelector(selector) as HTMLElement | null;
-          if (!element) return;
-
-          const delayMs = animationIndex * 60;
-          inView(element, () => {
-            element.style.animationDelay = `${delayMs}ms`;
-            element.style.animationDuration = "1.6s";
-            element.style.animationFillMode = "both";
-            element.classList.add("animate__animated", animationClass);
-          });
-
-          animationIndex++;
-        };
-
-        [
-          "#contact-title-label",
-          "#contact-title-row",
-          "#contact-text",
-          "#contact-container img",
-          "#contact-divider-1",
-          "#contact-form-title-row",
-          "#contact-form-subtitle",
-          "#contact-form-label",
-          "#contact-info",
-          "#contact-services-label",
-          ".button-container",
-          "#contact-form",
-          "#contact-form-media",
-        ].forEach((selector) => {
-          registerInView(selector);
-        });
-
-        document.querySelectorAll("#contact-services li").forEach((el) => {
-          const delayMs = animationIndex * 60;
-          inView(el as HTMLElement, () => {
-            (el as HTMLElement).style.animationDelay = `${delayMs}ms`;
-            (el as HTMLElement).style.animationDuration = "1.6s";
-            (el as HTMLElement).style.animationFillMode = "both";
-            (el as HTMLElement).classList.add("animate__animated", "animate__fadeInUp");
-          });
-          animationIndex++;
-        });
-      }
-
+    (() => {
       const textarea = document.querySelector("#form-message") as HTMLElement | null;
       const contactForm = document.querySelector("#contact-form") as HTMLElement | null;
 
@@ -374,7 +322,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           statusDiv.textContent = "Thank you! Your message has been sent successfully. I'll get back to you soon.";
         }
       }
-    });
+    })();
   </script>
 
   <style>

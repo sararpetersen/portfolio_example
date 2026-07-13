@@ -94,42 +94,6 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   }
 </style>
 
-<script>
-  import { inView, onReady } from "../../scripts/inViewAhead";
-
-  onReady(() => {
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      document.body.classList.add("reduce-motion");
-      return;
-    }
-
-    let animationIndex = 0;
-    const registerInView = (selector: string) => {
-      const el = document.querySelector(selector) as HTMLElement | null;
-      if (!el) return;
-      inView(el, () => {
-        el.style.animationDelay = `${animationIndex * 60}ms`;
-        el.style.animationDuration = "1.4s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-      animationIndex++;
-    };
-
-    ["#blog-title-row", "#blog-intro", "#blog-lang-note"].forEach(registerInView);
-
-    document.querySelectorAll(".blog-card").forEach((card, index) => {
-      inView(card, () => {
-        (card as HTMLElement).style.animationDelay = `${index * 80}ms`;
-        (card as HTMLElement).style.animationDuration = "1.3s";
-        (card as HTMLElement).style.animationFillMode = "both";
-        card.classList.add("animate__animated", "animate__fadeInUp");
-      });
-    });
-  });
-</script>
-
 <style>
   html.has-js body:not(.reduce-motion) #blog-title-row,
   html.has-js body:not(.reduce-motion) #blog-intro,

@@ -87,8 +87,6 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
 </div>
 
 <script>
-  import { inView } from "../scripts/inViewAhead";
-
   const getLang = () => localStorage.getItem("lang") || "en";
 
   const applyCardTranslations = (lang: string) => {
@@ -127,33 +125,7 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
     });
   };
 
-  const initCases = () => {
-    applyCardTranslations(getLang());
-
-    const cards = Array.from(document.querySelectorAll("#project-cards > li")) as HTMLElement[];
-    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
-
-    // Active cards contain a native <a> which handles keyboard access natively —
-    // no tabindex or keydown handler needed on the <li>.
-
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduceMotion) return;
-
-    cards.forEach((card, index) => {
-      let stop = () => {};
-      stop = inView(card, () => {
-        card.style.animationDelay = `${isMobileViewport ? Math.min(index * 60, 220) : index * 60}ms`;
-        card.style.animationDuration = isMobileViewport ? "0.95s" : "1.4s";
-        card.style.animationFillMode = "both";
-        card.classList.add("animate__animated", "animate__fadeInUp");
-
-        stop();
-      });
-    });
-  };
-
-  initCases();
+  applyCardTranslations(getLang());
 
   document.addEventListener("astro:page-load", () => {
     applyCardTranslations(getLang());

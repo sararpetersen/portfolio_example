@@ -303,32 +303,7 @@ const articleSchema = {
 </style>
 
 <script>
-  import { inView, onReady } from "../../scripts/inViewAhead";
-
-  onReady(() => {
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      document.body.classList.add("reduce-motion");
-      return;
-    }
-
-    let animationIndex = 0;
-    const registerInView = (selector: string) => {
-      const el = document.querySelector(selector) as HTMLElement | null;
-      if (!el) return;
-      inView(el, () => {
-        el.style.animationDelay = `${animationIndex * 60}ms`;
-        el.style.animationDuration = "1.4s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-      animationIndex++;
-    };
-
-    ["#post-back", "#post-date", "#post-title", "#post-excerpt", "#post-separator", "#post-tags", "#post-content", "#post-back-bottom"].forEach(
-      registerInView,
-    );
-
+  (() => {
     const applyTagLang = (lang: string) => {
       const el = document.querySelector("#post-tags") as HTMLElement | null;
       if (!el) return;
@@ -358,7 +333,7 @@ const articleSchema = {
       const lang = (e as CustomEvent).detail?.lang || getLang();
       applyTagLang(lang);
     });
-  });
+  })();
 </script>
 
 <style>

@@ -259,67 +259,6 @@ const lastUpdated = "June 25, 2026";
   </section>
 </MainLayout>
 
-<script>
-  import { inView, onReady } from "../scripts/inViewAhead";
-
-  onReady(() => {
-    const reduceMotion = document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      document.body.classList.add("reduce-motion");
-      return;
-    }
-
-    let i = 0;
-    const register = (selector: string) => {
-      const el = document.querySelector(selector) as HTMLElement | null;
-      if (!el) return;
-      inView(el, () => {
-        el.style.animationDelay = `${i * 70}ms`;
-        el.style.animationDuration = "1.4s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-      });
-      i++;
-    };
-
-    ["#terms-page-title", "#terms-last-updated", "#terms-page-toc", "#terms-divider-1"].forEach(register);
-
-    document.querySelectorAll<HTMLElement>(".terms-heading, .terms-sub").forEach((el, idx) => {
-      let stop = inView(el, () => {
-        el.style.animationDelay = `${idx * 50}ms`;
-        el.style.animationDuration = "1.3s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-        stop();
-      });
-    });
-
-    document.querySelectorAll<HTMLElement>("#privacy, #booking, #use").forEach((section) => {
-      section.querySelectorAll<HTMLElement>(".terms-body > div").forEach((el, idx) => {
-        let stop = inView(el, () => {
-          el.style.animationDelay = `${idx * 55}ms`;
-          el.style.animationDuration = "1.3s";
-          el.style.animationFillMode = "both";
-          el.classList.add("animate__animated", "animate__fadeInUp");
-          stop();
-        });
-      });
-    });
-
-    ["#terms-divider-2", "#terms-divider-3", "#terms-back"].forEach((sel) => {
-      const el = document.querySelector(sel) as HTMLElement | null;
-      if (!el) return;
-      let stop = inView(el, () => {
-        el.style.animationDelay = "0ms";
-        el.style.animationDuration = "1.3s";
-        el.style.animationFillMode = "both";
-        el.classList.add("animate__animated", "animate__fadeInUp");
-        stop();
-      });
-    });
-  });
-</script>
-
 <style>
   .terms-toc {
     display: flex;
