@@ -23,33 +23,6 @@ const currentIndex = navigationProjects.findIndex((item) => item.slug === projec
 
 const prevProject = currentIndex > 0 ? navigationProjects[currentIndex - 1] : null;
 const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.length - 1 ? navigationProjects[currentIndex + 1] : null;
-
-const getYearNumber = (period?: string) => {
-  if (!period) return "";
-
-  const parts = period
-    .split("·")
-    .map((part) => part.trim())
-    .filter(Boolean);
-
-  return parts[0] || "";
-};
-
-const getDegreeLabel = (period?: string) => {
-  if (!period) return "";
-
-  const parts = period
-    .split("·")
-    .map((part) => part.trim())
-    .filter(Boolean);
-
-  return parts[parts.length - 1] || "";
-};
-
-const getFullPeriodLabel = (semester?: string, year?: string) => {
-  if (semester && year) return `${getYearNumber(year)} · ${semester} · ${getDegreeLabel(year)}`;
-  return semester || year || "";
-};
 ---
 
 <MainLayout
@@ -128,7 +101,7 @@ const getFullPeriodLabel = (semester?: string, year?: string) => {
         data-year={project.year || ""}
         data-year-da={project.year_da || ""}
       >
-        {getFullPeriodLabel(project.semester, project.year)}
+        {project.year || project.semester}
       </h2>
     </header>
 
@@ -391,24 +364,6 @@ const getFullPeriodLabel = (semester?: string, year?: string) => {
       descriptionEl.textContent = currentDescription;
     }
 
-    const getYearNumber = (period: string) => {
-      const parts = period
-        .split("·")
-        .map((part) => part.trim())
-        .filter(Boolean);
-
-      return parts[0] || "";
-    };
-
-    const getDegreeLabel = (period: string) => {
-      const parts = period
-        .split("·")
-        .map((part) => part.trim())
-        .filter(Boolean);
-
-      return parts[parts.length - 1] || "";
-    };
-
     const getCurrentPeriod = (el: HTMLElement) => {
       const year = el.dataset.year || "";
       const yearDa = el.dataset.yearDa || "";
@@ -430,8 +385,7 @@ const getFullPeriodLabel = (semester?: string, year?: string) => {
       const currentYear = lang === "da" ? yearDa || year : year;
       const currentSemester = lang === "da" ? semesterDa || semester : semester;
 
-      if (currentSemester && currentYear) return `${getYearNumber(currentYear)} · ${currentSemester} · ${getDegreeLabel(currentYear)}`;
-      return currentSemester || currentYear;
+      return currentYear || currentSemester;
     };
 
     if (subtitleEl) {
