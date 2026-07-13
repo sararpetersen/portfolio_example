@@ -15,9 +15,7 @@ export async function getStaticPaths() {
 const { project, allProjects } = Astro.props as { project: PortfolioCase; allProjects: PortfolioCase[] };
 
 const sortedProjects = [...allProjects].sort((a, b) => a.id - b.id);
-const navigationProjects = sortedProjects.filter(
-  (item) => !ARCHIVED_CASE_SLUGS.has(item.slug) && !NON_ACTIVE_CASE_SLUGS.has(item.slug),
-);
+const navigationProjects = sortedProjects.filter((item) => !ARCHIVED_CASE_SLUGS.has(item.slug) && !NON_ACTIVE_CASE_SLUGS.has(item.slug));
 
 const currentIndex = navigationProjects.findIndex((item) => item.slug === project.slug);
 
@@ -26,9 +24,9 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
 ---
 
 <MainLayout
-  title={`${project.name} | Inclusive Design Case Study`}
+  title={`${project.name} | SRP Portfolio`}
   description={`${project.name} case study by Sara Ringkow Petersen. ${project.description}`}
-  ogtitle={`${project.name} – Inclusive Design Case Study`}
+  ogtitle={`${project.name} – SRP Portfolio`}
   ogdescription={`Explore the challenge, design process and outcome behind ${project.name}. ${project.description}`}
 >
   <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-[5.5rem] mt-12 lg:px-0 px-6">
@@ -415,5 +413,4 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
     const lang = customEvent.detail?.lang || getLang();
     applyDatabaseTranslations(lang);
   });
-
 </script>
