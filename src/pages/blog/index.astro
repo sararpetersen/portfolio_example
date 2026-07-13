@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
 
 const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
@@ -14,7 +15,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   ogtitle="Blog – SRP Portfolio"
   ogdescription="Notes, reflections, and things worth writing down along the way – from accessibility and UX/UI to internship life and personal updates."
 >
-  <section class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
+  <section class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div id="blog-title-row" class="md:pt-28 pt-24 mb-3">
       <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="blog.title">
         Blog posts
@@ -53,6 +54,10 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
         </p>
       )
     }
+  </section>
+
+  <section class="mx-auto py-20 text-center">
+    <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
 </MainLayout>
 

@@ -35,9 +35,9 @@ const lastUpdated = "June 25, 2026";
     </nav>
 
     <!-- Divider -->
-    <div id="terms-divider-1" class="flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
+    <div id="terms-divider-1" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
+      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
@@ -106,9 +106,9 @@ const lastUpdated = "June 25, 2026";
     </section>
 
     <!-- Divider -->
-    <div id="terms-divider-2" class="flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
+    <div id="terms-divider-2" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
+      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
@@ -192,9 +192,9 @@ const lastUpdated = "June 25, 2026";
     </section>
 
     <!-- Divider -->
-    <div id="terms-divider-3" class="flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
+    <div id="terms-divider-3" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="block h-2 w-2 rotate-45 border border-current/70 bg-pale-100"></span>
+      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
       <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
     </div>
 
@@ -280,6 +280,10 @@ const lastUpdated = "June 25, 2026";
   }
   .terms-toc span {
     color: #bfb7b0;
+  }
+
+  .terms-divider .divider-center {
+    background-color: var(--color-pale-100, #f5f1ed);
   }
 
   .terms-heading {
@@ -391,5 +395,12 @@ const lastUpdated = "June 25, 2026";
   :global(body.dark .terms-body code) {
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
+  }
+  :global(body.dark) .terms-divider {
+    color: var(--dark-border);
+  }
+  :global(body.dark) .terms-divider .divider-center {
+    background-color: var(--dark-surface-strong);
+    border-color: var(--dark-border);
   }
 </style>

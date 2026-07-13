@@ -48,7 +48,7 @@ import { labProjects } from "../data/labProjects";
   <!-- Divider -->
   <div id="lab-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
+    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
   </div>
 
@@ -242,6 +242,10 @@ import { labProjects } from "../data/labProjects";
     color: #92400e;
   }
 
+  #lab-divider-1 .divider-center {
+    background-color: #ffffff;
+  }
+
   /* Dark mode — text */
   body.dark #lab h1,
   body.dark #lab-label,
@@ -281,5 +285,14 @@ import { labProjects } from "../data/labProjects";
 
   body.dark .lab-legend {
     color: var(--dark-border);
+  }
+
+  :global(body.dark) #lab-divider-1 {
+    color: var(--dark-border);
+  }
+
+  :global(body.dark) #lab-divider-1 .divider-center {
+    background-color: var(--dark-surface-strong);
+    border-color: var(--dark-border);
   }
 </style>
