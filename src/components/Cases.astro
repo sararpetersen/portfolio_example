@@ -5,6 +5,17 @@ type ProjectCard = Partial<PortfolioCase> & Pick<PortfolioCase, "image">;
 
 const { projects: propProjects } = Astro.props;
 
+const getYearNumber = (period?: string) => {
+  if (!period) return "";
+
+  const parts = period
+    .split("·")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return parts[0] || "";
+};
+
 const getDegreeLabel = (period?: string) => {
   if (!period) return "";
 
@@ -14,6 +25,11 @@ const getDegreeLabel = (period?: string) => {
     .filter(Boolean);
 
   return parts[parts.length - 1] || "";
+};
+
+const getPeriodLabel = (semester?: string, year?: string) => {
+  if (semester && year) return `${getYearNumber(year)} · ${semester}`;
+  return semester || year || "";
 };
 
 const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[];
@@ -44,7 +60,7 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
                     data-year={project.year || ""}
                     data-year-da={project.year_da || ""}
                   >
-                    {project.semester || project.year}
+                    {getPeriodLabel(project.semester, project.year)}
                   </p>
 
                   <div class="flex flex-row flex-wrap gap-2 py-2">
@@ -70,7 +86,7 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
                     data-year={project.year || ""}
                     data-year-da={project.year_da || ""}
                   >
-                    {project.semester || project.year}
+                    {getPeriodLabel(project.semester, project.year)}
                   </p>
 
                   <div class="flex flex-row flex-wrap gap-2 py-2">
@@ -90,6 +106,15 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
   const getLang = () => localStorage.getItem("lang") || "en";
 
   const applyCardTranslations = (lang: string) => {
+    const getYearNumber = (period: string) => {
+      const parts = period
+        .split("·")
+        .map((part) => part.trim())
+        .filter(Boolean);
+
+      return parts[0] || "";
+    };
+
     const getCurrentPeriod = (el: HTMLElement) => {
       const year = el.dataset.year || "";
       const yearDa = el.dataset.yearDa || "";
@@ -99,6 +124,7 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
       const currentYear = lang === "da" ? yearDa || year : year;
       const currentSemester = lang === "da" ? semesterDa || semester : semester;
 
+      if (currentSemester && currentYear) return `${getYearNumber(currentYear)} · ${currentSemester}`;
       return currentSemester || currentYear;
     };
 
