@@ -1,5 +1,5 @@
 ---
-title: Making a "skip-to-content"-link people can actually find
+title: Making a skip-link people can actually find
 excerpt: A "skip to main content"-link is required by WCAG.
 publishDate: 2026-07-14
 draft: false
