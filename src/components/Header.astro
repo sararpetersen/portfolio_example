@@ -252,8 +252,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             target="_blank"
             rel="noopener noreferrer"
             class="py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-            aria-label="Go to component library (opens in a new tab)"
-            data-i18n="nav.library">Library</a
+            aria-label="Go to asset library (opens in a new tab)"
+            data-i18n="nav.library">The Library</a
           >
         </li>
       </ul>
@@ -378,8 +378,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           target="_blank"
           rel="noopener noreferrer"
           class="py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-          aria-label="Go to component library (opens in a new tab)"
-          data-i18n="nav.library">Library</a
+          aria-label="Go to asset library (opens in a new tab)"
+          data-i18n="nav.library">The Library</a
         >
       </li>
     </ul>
@@ -708,5 +708,4 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   const currentLang = localStorage.getItem("lang") || "en";
   document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
   document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", currentLang === "da" ? "true" : "false");
-
 </script>
