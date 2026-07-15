@@ -63,7 +63,7 @@ import { labProjects } from "../data/labProjects";
     </h2>
 
     <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-2xl mb-6" data-i18n="lab.items.intro">
-      A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Each project explores how digital
+      A collection of experimental tools and concepts centred on neurodiversity, disability, and accessible design. Each project explores how digital
       experiences can feel calmer, clearer, and free from performance pressure.
     </p>
 
@@ -83,116 +83,9 @@ import { labProjects } from "../data/labProjects";
 
     <!-- Project cards keep their existing layout, but are generated from one data source. -->
     <LabProjectCards projects={labProjects} />
-    {false && (
-    <div class="grid md:grid-cols-2 gap-6">
-      <!-- Bivi (featured) -->
-      <article
-        id="lab-item-bivi"
-        class="lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
-      >
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance"
-            ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
-          >
-        </div>
-        <div class="max-w-3xl">
-          <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.bivi.title">Bivi - Your Little Medication Sidekick</h3>
-          <Button
-            href="https://web-bivi.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-            size="small"
-            aria-label="Visit Bivi website (opens in new tab)"><span data-i18n="lab.bivi.link">Visit site →</span></Button
-          >
-        </div>
-      </article>
-
-      <!-- Ephemeris -->
-      <article id="lab-item-ephemeris" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance"
-            ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
-          >
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.ephemeris.title">Ephemeris - Dragon Mood Journal</h3>
-        <Button
-          href="https://web-ephemeris.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="secondary"
-          size="small"
-          aria-label="Visit Ephemeris (opens in new tab)"><span data-i18n="lab.ephemeris.link">Visit site →</span></Button
-        >
-      </article>
-
-      <!-- Steady -->
-      <article id="lab-item-steady" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance"
-            ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
-          >
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.steady.title">
-          Steady - Daily Life Tracker App for Neurodivergents
-        </h3>
-        <Button
-          href="/steady"
-          variant="secondary"
-          size="small"
-          aria-label="Read the Steady case study"><span data-i18n="lab.steady.link">Read case →</span></Button
-        >
-      </article>
-
-      <!-- Vibeloop (WIP) -->
-      <article id="lab-item-vibeloop" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
-          <div class="flex items-center gap-2 flex-wrap justify-end">
-            <span class="lab-tag" title="This project was built with AI assistance"
-              ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
-            >
-            <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed"><ColorSymIcon letter="O" />WIP</span>
-          </div>
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
-          <span data-i18n="lab.vibeloop.title">VibeLoop - Mood Based Social App</span>
-          {" "}
-          <span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span>
-        </h3>
-        <Button href="/vibeloop" variant="secondary" size="small" aria-label="View the Vibeloop case study"
-          ><span data-i18n="lab.vibeloop.link">View case →</span></Button
-        >
-      </article>
-
-      <!-- AutismeGuiden -->
-      <article id="lab-item-autismeguiden" class="bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8">
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">2025/2026</p>
-          <span class="lab-tag" title="This project was built with AI assistance"
-            ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
-          >
-        </div>
-        <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800" data-i18n="lab.autismeguiden.title">
-          AutismeGuiden - Your Guide to Autism and Neurodivergence
-        </h3>
-        <Button
-          href="https://autisme-guiden.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="secondary"
-          size="small"
-          aria-label="Visit AutismeGuiden (opens in new tab)"><span data-i18n="lab.autismeguiden.link">Visit site →</span></Button
-        >
-      </article>
-    </div>
-    )}
   </section>
 
-  <!-- Back -->
+  <!-- Back to homepage -->
   <section class="lab-back-btn mx-auto py-20 text-center">
     <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
