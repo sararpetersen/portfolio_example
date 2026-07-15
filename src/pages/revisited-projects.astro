@@ -1,0 +1,337 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+
+const projects = [
+  {
+    slug: "computers",
+    number: "01",
+    title: "Computers: from history to everyday life",
+    titleKey: "revisited.computers.title",
+    context: "1st semester entrance exam · Multimedia Design",
+    contextKey: "revisited.computers.context",
+    description: "Project from my entrance exam rebuilt as a clearer, more accessible guide to computer history, operating systems and components.",
+    descriptionKey: "revisited.computers.text",
+    changes: ["Stronger information architecture", "Responsive, accessible navigation", "A more focused visual system"],
+    changeKeys: ["revisited.computers.change1", "revisited.computers.change2", "revisited.computers.change3"],
+    href: "https://computer-site.netlify.app/",
+    palette: "computer",
+  },
+  {
+    slug: "mario",
+    number: "02",
+    title: "The Great Mushroom Kingdom Wiki",
+    titleKey: "revisited.mario.title",
+    context: "1st semester project · Multimedia Design",
+    contextKey: "revisited.mario.context",
+    description: "Super Mario fan-wiki rebuilt with cleaner content hierarchy, softer interactions and a more coherent responsive layout.",
+    descriptionKey: "revisited.mario.text",
+    changes: ["More consistent page structure", "Improved readability and contrast", "Keyboard-friendly interactions"],
+    changeKeys: ["revisited.mario.change1", "revisited.mario.change2", "revisited.mario.change3"],
+    href: "https://mario-wiki.netlify.app/",
+    palette: "mario",
+  },
+  {
+    slug: "profile",
+    number: "03",
+    title: "Personal Professional Profile (PPP)",
+    titleKey: "revisited.profile.title",
+    context: "3rd semester project · Multimedia Design",
+    contextKey: "revisited.profile.context",
+    description: "Made as part of our internship preparations, updated to showcase my further development and accessibility practice.",
+    descriptionKey: "revisited.profile.text",
+    changes: ["Refined personal storytelling", "Expanded accessibility controls", "A clearer path through selected work"],
+    changeKeys: ["revisited.profile.change1", "revisited.profile.change2", "revisited.profile.change3"],
+    href: "https://srp-profile.netlify.app/",
+    palette: "profile",
+  },
+];
+---
+
+<MainLayout
+  title="Revisited Projects | SRP Portfolio"
+  description="A collection of early school and personal web projects revisited with stronger design, code and accessibility by Sara Ringkow Petersen."
+  ogtitle="Revisited Projects – SRP Portfolio"
+  ogdescription="Old school projects, rebuilt with what I know now about design, development and accessibility."
+>
+  <main class="revisited-page max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-gray-500 lg:pt-12 pt-16 mb-8">
+      <a
+        href="/lab"
+        class="back-link hover:text-blue-500 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+        data-i18n="revisited.back">← Back to the lab</a
+      >
+    </nav>
+
+    <header class="mb-14 md:mb-20">
+      <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop mb-3" data-i18n="revisited.title">
+        Revisited Projects
+      </h1>
+      <p class="text-gray-600 leading-relaxed max-w-2xl" data-i18n="revisited.intro">
+        These projects were made on my very first semester of Multimedia Design, during my early design practices. Instead of just hiding away their
+        rough edges, I decided to return to them to improve their structure, accessibility and code – all while still keeping the original idea
+        visible.
+      </p>
+    </header>
+
+    <section aria-labelledby="collection-title">
+      <h2 id="collection-title" class="sr-only">Revisited project collection</h2>
+      <div class="space-y-8 md:space-y-10">
+        {
+          projects.map((project) => (
+            <article class="project-card overflow-hidden rounded-3xl border border-r-4 border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100">
+              <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
+                <div class:list={["project-preview", project.palette]} aria-hidden="true">
+                  <div class="browser-frame">
+                    <div class="browser-bar">
+                      <>
+                        <i />
+                        <i />
+                        <i />
+                        <span>{project.href.replace("https://", "")}</span>
+                      </>
+                    </div>
+                    <div class="preview-content">
+                      <span class="preview-kicker">{project.number} / revisited</span>
+                      <strong>{project.title}</strong>
+                      <>
+                        <span class="preview-line long" />
+                        <span class="preview-line" />
+                      </>
+                      <span class="preview-button">Explore →</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-7 md:p-10 lg:p-12">
+                  <div class="flex items-center gap-5 mb-5">
+                    <span class="project-number">{project.number}</span>
+                    <p class="text-[0.7rem] uppercase tracking-[0.16em] text-gray-500" data-i18n={project.contextKey}>
+                      {project.context}
+                    </p>
+                  </div>
+                  <h3 class="font-garamond font-bold italic text-[20px] leading-snug mb-2 text-gray-800" data-i18n={project.titleKey}>
+                    {project.title}
+                  </h3>
+                  <p class="text-gray-600 leading-relaxed mb-7" data-i18n={project.descriptionKey}>
+                    {project.description}
+                  </p>
+                  <div class="mb-8">
+                    <p class="revisited-label text-xs font-bold uppercase tracking-[0.14em] text-gray-700 mb-2" data-i18n="revisited.changed">
+                      What changed:
+                    </p>
+                    <ul class="change-list space-y-2 text-sm text-gray-600">
+                      {project.changes.map((change, index) => (
+                        <li data-i18n={project.changeKeys[index]}>{change}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Button
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="secondary"
+                    size="small"
+                    aria-label={`Visit ${project.title} (opens in a new tab)`}
+                  >
+                    <span data-i18n="revisited.visit">Visit revamped project →</span>
+                  </Button>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <aside class="closing-note mt-16 md:mt-20 rounded-3xl border-l-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+      <p class="revisited-label font-garamond font-semibold italic text-gray-800 text-xl mb-3" data-i18n="revisited.note.title">
+        Why revisit old work?
+      </p>
+      <p class="text-gray-600 leading-relaxed max-w-3xl" data-i18n="revisited.note.text">
+        Progress is much easier to see when the starting point stays part of the story. These rebuilds are small records of changing taste, stronger
+        technical choices and a more deliberate approach to accessibility.
+      </p>
+    </aside>
+
+    <section class="mx-auto py-20 text-center">
+      <Button href="/" variant="primary" size="small" aria-label="Back to homepage">
+        <span data-i18n="btn.back">Back to homepage</span>
+      </Button>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .project-preview {
+    min-height: 22rem;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+  }
+  .project-preview.computer {
+    background: radial-gradient(circle at 80% 15%, #2563eb55, transparent 28%), #111827;
+    color: #f8fafc;
+  }
+  .project-preview.mario {
+    background: linear-gradient(145deg, #ee1c25 0 52%, #0065b3 52%);
+    color: #1a1a1a;
+  }
+  .project-preview.profile {
+    background: radial-gradient(circle at 20% 15%, #477b9366, transparent 30%), #121212;
+    color: #f6f6f6;
+  }
+  .browser-frame {
+    width: min(100%, 27rem);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    transform: rotate(-1.5deg);
+  }
+  .mario .browser-frame {
+    background: rgba(255, 248, 240, 0.92);
+    border-color: rgba(26, 26, 26, 0.18);
+    box-shadow: 0 24px 55px rgba(124, 38, 27, 0.22);
+    transform: rotate(1.5deg);
+  }
+  .browser-bar {
+    height: 2.3rem;
+    padding: 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-bottom: 1px solid currentColor;
+    border-color: rgba(128, 128, 128, 0.25);
+    font-size: 0.55rem;
+    opacity: 0.75;
+  }
+  .browser-bar i {
+    display: block;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.55;
+  }
+  .browser-bar span {
+    margin-left: 0.45rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .preview-content {
+    min-height: 15rem;
+    padding: 2.1rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .preview-kicker {
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 1.2rem;
+  }
+  .preview-content strong {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+    line-height: 1;
+    max-width: 18rem;
+    margin-bottom: 1.5rem;
+  }
+  .preview-line {
+    display: block;
+    width: 60%;
+    height: 0.35rem;
+    border-radius: 2rem;
+    background: currentColor;
+    opacity: 0.24;
+    margin-bottom: 0.45rem;
+  }
+  .preview-line.long {
+    width: 82%;
+  }
+  .preview-button {
+    margin-top: 1.5rem;
+    border: 1px solid currentColor;
+    border-radius: 0.25rem;
+    padding: 0.48rem 0.7rem;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .project-number {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--brand-primary);
+    background: var(--brand-primary);
+    color: var(--text-on-dark);
+    transform: rotate(45deg);
+    font-size: 0.65rem;
+    font-weight: 800;
+  }
+  .project-number::first-line {
+    transform: rotate(-45deg);
+  }
+  .change-list li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .change-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.52em;
+    width: 0.42rem;
+    height: 0.42rem;
+    border: 1px solid var(--brand-primary);
+    transform: rotate(45deg);
+  }
+
+  body.dark .change-list li::before {
+    border-color: var(--brand-primary-soft);
+  }
+
+  body.dark .project-card,
+  body.dark .closing-note {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+  body.dark .revisited-page h2,
+  body.dark .revisited-page p,
+  body.dark .revisited-page li {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .revisited-page h1,
+  body.dark .revisited-page h3,
+  body.dark .revisited-page .revisited-label {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .project-number {
+    border-color: var(--brand-primary-soft);
+    background: var(--brand-primary-soft);
+    color: #1a1a1a;
+  }
+
+  body.dark .back-link {
+    color: var(--text-on-dark-soft);
+  }
+  body.dark .back-link:hover {
+    color: var(--brand-primary-soft);
+  }
+  @media (max-width: 1023px) {
+    .project-preview {
+      min-height: 18rem;
+    }
+  }
+</style>

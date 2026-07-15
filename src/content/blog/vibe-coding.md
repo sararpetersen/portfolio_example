@@ -10,7 +10,7 @@ tags:
   - lab
 ---
 
-There's a term going around right now— "vibe coding." It means building software with the assistance of AI, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director. I've been doing this for a while, and I have some thoughts.
+There's a term going around right now— _"vibe coding."_ It means building software with the assistance of AI, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director. I've been doing this for a while, and I have some thoughts.
 
 ## What it's actually like
 
@@ -24,7 +24,7 @@ That second part is, I think, the real skill. It's not about prompting. It's abo
 ## What it's changed for me
 
 It's made me faster at prototyping. I no longer avoid building something just because it would take a long time to code from scratch. That's removed a lot of friction between having an idea and seeing whether the idea is actually good.
-It's also made me think differently about what "knowing how to code" means. You still need to understand what's possible, what the code is doing, and whether the output makes sense. But the bar has shifted. Knowing the syntax matters less than knowing the concept.
+It's also made me think differently about what _"knowing how to code"_ means. You still need to understand what's possible, what the code is doing, and whether the output makes sense. But the bar has shifted. Knowing the syntax matters less than knowing the concept.
 
 ## What it doesn't replace
 
@@ -32,6 +32,6 @@ Good judgment. Knowing what to build in the first place. Being able to catch whe
 
 ## The Lab
 
-I've started keeping a section on this site called the Lab. It's where I put the things built this way. VibeLoop was the first one. There'll be more.
+I've started keeping a section on this site called the _"Lab"_. It's where I put the things built this way. VibeLoop was the first one. There'll be more.
 
 If you're curious: [see the lab →](/lab)

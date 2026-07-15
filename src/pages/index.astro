@@ -138,7 +138,9 @@ import Cases from "../components/Cases.astro";
     <div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
       <!-- Card 1 -->
       <article id="diff-card-1" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card1.label">Lived experience</p>
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card1.label">
+          Lived experience
+        </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card1.title">
           I design from the inside
         </h3>
@@ -151,7 +153,9 @@ import Cases from "../components/Cases.astro";
 
       <!-- Card 2 -->
       <article id="diff-card-2" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card2.label">Design + code</p>
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card2.label">
+          Design + code
+        </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card2.title">
           What I design, I can build
         </h3>
@@ -163,7 +167,9 @@ import Cases from "../components/Cases.astro";
 
       <!-- Card 3 -->
       <article id="diff-card-3" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card3.label">Proof, not promises</p>
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card3.label">
+          Proof, not promises
+        </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card3.title">
           The portfolio you're looking at is the work
         </h3>
@@ -196,7 +202,7 @@ import Cases from "../components/Cases.astro";
 
       <figcaption class="mt-6 flex items-center gap-4">
         <div>
-          <p class="font-semibold text-gray-700">Jacob Klintrup</p>
+          <p class="testimonial-name font-semibold text-gray-700">Jacob Klintrup</p>
           <p class="text-gray-500 text-sm tracking-[0.08em] uppercase">Creative Strategic Director, Kadaver ApS</p>
         </div>
       </figcaption>
@@ -340,12 +346,18 @@ import Cases from "../components/Cases.astro";
 
   /* Differentiator section */
   body.dark #diff-title,
-  body.dark #diff-intro,
-  body.dark .diff-card h3 {
+  body.dark .diff-card h3,
+  body.dark .diff-card-label {
     color: var(--text-on-dark);
+  }
+  body.dark #diff-intro {
+    color: var(--text-on-dark-soft);
   }
   body.dark .diff-card p {
     color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  :global(body.dark .diff-card p strong) {
+    color: var(--text-on-dark);
   }
   body.dark .diff-card {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -353,16 +365,20 @@ import Cases from "../components/Cases.astro";
   }
 
   /* Dark-mode */
-  body.dark .hero-title,
-  body.dark .hero-role,
   body.dark .hero-lead,
-  body.dark #testimonial-title,
   body.dark #testimonials p,
   body.dark #testimonials blockquote,
   body.dark #testimonials blockquote em,
-  body.dark #project-section h2,
   body.dark #project-section p {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark .hero-title,
+  body.dark .hero-role,
+  body.dark #testimonial-title,
+  body.dark #project-section h2,
+  body.dark #testimonials .testimonial-name {
+    color: var(--text-on-dark);
   }
 
   body.dark #testimonial-card {

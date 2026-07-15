@@ -369,12 +369,15 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
       background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     }
 
-    :global(body.dark #contact-info strong),
     :global(body.dark #contact-info a),
     :global(body.dark #contact-text),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
       color: var(--text-on-dark-soft);
+    }
+
+    :global(body.dark #contact-info strong) {
+      color: var(--text-on-dark);
     }
 
     :global(body.dark #contact-info a:hover) {
@@ -385,9 +388,13 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
       color: var(--brand-primary);
     }
 
-    :global(body.dark #contact-form-section h2),
-    :global(body.dark #contact-form-section p) {
+    :global(body.dark #contact-form-section h2) {
       color: var(--text-on-dark);
+    }
+
+    :global(body.dark #contact-form-subtitle),
+    :global(body.dark #contact-form p) {
+      color: var(--text-on-dark-soft);
     }
 
     :global(body.dark #contact-form-section label) {
@@ -418,7 +425,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
     }
 
     :global(body.dark #contact-services-label) {
-      color: var(--text-on-dark-soft);
+      color: var(--text-on-dark);
     }
 
     :global(body.dark #contact-services li:nth-child(1)) {

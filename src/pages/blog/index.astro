@@ -88,10 +88,13 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
     border-color: var(--dark-border);
   }
 
-  body.dark .blog-card h2,
   body.dark .blog-card p,
   body.dark .blog-card a {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark .blog-card h2 {
+    color: var(--text-on-dark);
   }
 
   body.dark .blog-card a:hover {

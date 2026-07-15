@@ -412,14 +412,14 @@ import Button from "./Button.astro";
     gap: 0.625rem;
   }
   :global(.terms-modal-section a) {
-    color: #477b93;
+    color: #43748a;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   :global(.terms-modal-section a:hover) {
     color: #334857;
   }
-  .terms-modal-section code {
+  :global(.terms-modal-section code) {
     background: #f0ebe6;
     padding: 1px 4px;
     border-radius: 3px;
@@ -465,6 +465,9 @@ import Button from "./Button.astro";
   body.dark .terms-modal-section h3 {
     color: #c0d7e1;
   }
+  :global(body.dark .terms-modal-section strong) {
+    color: var(--text-on-dark, #f0f0f0);
+  }
   body.dark #terms-modal-close {
     border-color: var(--dark-border, #333);
     color: var(--text-on-dark-soft, #c0c0c0);
@@ -474,7 +477,7 @@ import Button from "./Button.astro";
     border-color: #c0d7e1;
     color: #1a1a1a;
   }
-  body.dark .terms-modal-section code {
+  :global(body.dark .terms-modal-section code) {
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
   }

@@ -17,11 +17,11 @@ const statusLabels = {
       href="/lab"
       class="case-back-link hover:text-blue-500 underline hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
     >
-      <span class="case-en">← Back to The Lab</span><span class="case-da">← Tilbage til Laboratoriet</span>
+      <span class="case-en">← Back to the lab</span><span class="case-da">← Tilbage til laboratoriet</span>
     </a>
   </nav>
 
-  <header class="case-hero border-l-4 border border-gray-500 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-7 md:p-12">
+  <header class="case-hero border-r-4 border border-gray-500 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-7 md:p-12">
     <p class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-3">{caseStudy.year} · UX/UI case study</p>
     <div class="flex items-center gap-4 mb-1">
       {caseStudy.logo && <img src={caseStudy.logo} alt="" width="48" height="48" class="shrink-0" />}
@@ -52,7 +52,7 @@ const statusLabels = {
 
   <aside
     aria-labelledby="case-navigation-title"
-    class="case-nav my-10 rounded-2xl border border-gray-400 bg-gradient-to-br from-gray-50 to-gray-100 p-6"
+    class="case-nav my-10 rounded-2xl border border-r-4 border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 p-6"
   >
     <h2 id="case-navigation-title" class="font-garamond not-italic font-bold text-h4-mobile md:text-h4-desktop text-gray-800 mb-3">
       <span class="case-en">In this case</span><span class="case-da">I denne case</span>
@@ -81,7 +81,7 @@ const statusLabels = {
       caseStudy.sections.map((section) => (
         <section id={section.id} class="case-section scroll-mt-28 grid md:grid-cols-12 gap-5 border-b border-gray-300 pb-10">
           <div class="md:col-span-4">
-            <p class="text-xs uppercase tracking-[0.18em] text-blue-500 font-bold mb-3">
+            <p class="case-step text-xs uppercase tracking-[0.18em] text-blue-500 font-bold mb-3">
               <>
                 <span class="case-en">{section.eyebrow.en}</span>
                 <span class="case-da">{section.eyebrow.da}</span>
@@ -191,11 +191,24 @@ const statusLabels = {
   :global(body.dark) .case-study h1,
   :global(body.dark) .case-study h2,
   :global(body.dark) .case-study dt,
+  :global(body.dark) .case-study span p {
+    color: var(--text-on-dark);
+  }
+
   :global(body.dark) .case-study dd,
   :global(body.dark) .case-study p,
   :global(body.dark) .case-study li {
+    color: var(--text-on-dark-soft);
+  }
+
+  :global(body.dark) .case-study .case-step {
     color: var(--text-on-dark);
   }
+
+  :global(body.dark .case-study li strong) {
+    color: var(--text-on-dark);
+  }
+
   :global(body.dark) .case-hero,
   :global(body.dark) .case-study section[aria-labelledby="case-links-title"] {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));

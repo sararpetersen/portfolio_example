@@ -9,7 +9,7 @@ tags:
   - domain
 ---
 
-I’ve been putting off transferring my portfolio from its old Netlify domain to my own domain through One.com for quite some time now, mainly because I knew it would probably turn into one of those “this should be simple but somehow isn’t” situations— and that proved pretty accurate.
+I’ve been putting off transferring my portfolio from its old Netlify domain to my own domain through One.com for quite some time now, mainly because I knew it would probably turn into one of those _“this should be simple but somehow isn’t”_-situations— and that proved quite accurate.
 
 The process itself involved changing DNS settings, configuring records correctly, and waiting for the domain to connect to Netlify. Getting everything configured properly took a bit more trial and error than I expected, especially ensuring the DNS records were set up correctly on both platforms.
 

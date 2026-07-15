@@ -11,11 +11,11 @@ tags:
 
 I just finished a new round of accessibility updates on this portfolio and wanted to quickly write down what changed and why. The goal was to make the site easier to adjust to different sensory and reading needs, without forcing one visual style on everyone. All the settings can be found in the accessibility bar in the header, so they're available from every page.
 
-### Calm colors mode
+### Calm colours mode
 
-This was the feature I was most curious about building. When enabled, it softens all the accent colors across the entire site— the warm reds, teals, and blues all shift to quieter, lower-saturation versions of themselves. The logo, the decorative kanji labels, the scroll-to-top button, tag chips, the contact box— everything adjusts together.
+This was the feature I was most curious about building. When enabled, it softens all the accent colours across the entire site. The warm reds, teals, and blues all shift to quieter, lower-saturation versions of themselves. The logo, the decorative kanji labels, the scroll-to-top button, tag chips, the contact box— everything adjusts together.
 
-The inspiration came from thinking about how intense colors can feel for some people, especially those who're sensitive to visual stimulation. I wanted a mode that keeps the same layout and structure, but turns the visual intensity down a notch.
+The inspiration came from thinking about how intense colours can feel for some people, especially those who're sensitive to visual stimulation. I wanted a mode that keeps the same layout and structure, but turns the visual intensity down a notch.
 
 ### Larger text toggle
 
@@ -27,10 +27,10 @@ Previously, dark mode and reduced motion only applied after the user had manuall
 
 ### Skip link discoverability
 
-A 'skip-to-content' link has been in the markup for a while, but it was always invisible unless you were using a keyboard. It still works that way— which is correct behavior for accessibility —but now it briefly appears on the very first page load, so it's easier to notice it exists.
+A _"skip-to-content"_-link has been in the markup for a while, but it was always invisible unless you were using a keyboard. It still works that way— which is correct behavior for accessibility —but now it briefly appears on the very first page load, so it's easier to notice it exists.
 
 ### Why this matters to me
 
-Accessibility isn't an abstract concept to me— I notice when a site feels overwhelming or hard to parse. Building these features was partly practical and partly personal. Small choices like softer colors, readable text, and predictable motion can genuinely change whether a site feels usable or not.
+Accessibility isn't an abstract concept to me. I notice when a site feels overwhelming or hard to parse. Building these features was partly practical and partly personal. Small choices like softer colors, readable text, and predictable motion can genuinely change whether a site feels usable or not.
 
 This update isn't finished. But it's a stronger baseline than before.

@@ -423,10 +423,6 @@ const workTimelineItems = timelineItems
     cursor: pointer;
   }
 
-  body.dark .accordion-trigger h3 {
-    color: var(--text-on-dark-soft);
-  }
-
   body.dark .accordion-chevron {
     color: var(--dark-border-strong);
   }
@@ -453,19 +449,20 @@ const workTimelineItems = timelineItems
 
   /* Dark mode */
   body.dark .heading-title,
-  body.dark .heading-text,
   body.dark h3,
-  body.dark p,
   body.dark li,
   body.dark a {
     color: var(--text-on-dark);
+  }
+
+  body.dark .heading-text {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .personal-bg-item {
     border-color: var(--dark-border);
   }
 
-  body.dark .personal-bg-item h3,
   body.dark .personal-bg-item p {
     color: var(--text-on-dark-soft);
   }
@@ -474,7 +471,6 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .interest-item h3,
   body.dark .interest-item p {
     color: var(--text-on-dark-soft);
   }
@@ -488,31 +484,26 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark #resources-title,
-  body.dark .resource-row h3 {
-    color: var(--text-on-dark-soft);
-  }
-
   body.dark .timeline-item {
     border-color: var(--dark-border);
   }
 
-  body.dark .timeline-item h4,
-  body.dark .timeline-item p {
+  body.dark .timeline-item h4 {
     color: var(--text-on-dark);
+  }
+
+  body.dark .timeline-item p {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .timeline-item [data-i18n*=".year"] {
     color: var(--dark-border-strong);
   }
 
-  body.dark .timeline-column-label {
-    color: var(--text-on-dark-soft);
-  }
-
   body.dark #timeline-title,
-  body.dark #interests-title {
-    color: var(--text-on-dark-soft);
+  body.dark #interests-title,
+  body.dark #resources-title {
+    color: var(--text-on-dark);
   }
 
   body.dark #about-divider-1,

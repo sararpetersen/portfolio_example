@@ -154,9 +154,12 @@ const articleSchema = {
 
   body.dark .blog-content :global(p),
   body.dark .blog-content :global(li),
-  body.dark .blog-content :global(blockquote),
-  body.dark .blog-content :global(strong) {
+  body.dark .blog-content :global(blockquote) {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark .blog-content :global(strong) {
+    color: var(--text-on-dark);
   }
 
   .blog-content :global(a) {
@@ -186,6 +189,11 @@ const articleSchema = {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.9em;
     line-height: inherit;
+  }
+
+  body.dark .blog-content :global(code) {
+    background-color: var(--dark-surface, #2a2a2a);
+    color: var(--text-on-dark-soft);
   }
 
   .blog-content :global(h1 code),
@@ -281,9 +289,12 @@ const articleSchema = {
     background-color: rgb(222 235 239 / 0.72);
   }
 
-  body.dark #post-title,
-  body.dark #post-excerpt {
+  body.dark #post-title {
     color: var(--text-on-dark);
+  }
+
+  body.dark #post-excerpt {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark #post-separator {
@@ -327,7 +338,9 @@ const articleSchema = {
     };
 
     const getLang = () => localStorage.getItem("lang") || "en";
-    applyTagLang(getLang());
+    // Tags are server-rendered in English already, so only touch the DOM if the
+    // stored preference actually differs — rebuilding on every load caused a visible flash.
+    if (getLang() === "da") applyTagLang("da");
 
     window.addEventListener("langchange", (e: Event) => {
       const lang = (e as CustomEvent).detail?.lang || getLang();

@@ -277,9 +277,12 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
 <style>
   body.dark #project-header h1,
   body.dark #project-header h2,
-  body.dark #project-description,
   body.dark #tools-title {
     color: var(--text-on-dark);
+  }
+
+  body.dark #project-description {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark a {
@@ -344,9 +347,12 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
     border-color: var(--dark-border);
   }
 
-  body.dark .related-project-title,
-  body.dark .related-project-year {
+  body.dark .related-project-title {
     color: var(--text-on-dark);
+  }
+
+  body.dark .related-project-year {
+    color: var(--text-on-dark-soft);
   }
 </style>
 

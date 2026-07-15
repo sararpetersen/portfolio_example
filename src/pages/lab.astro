@@ -85,6 +85,25 @@ import { labProjects } from "../data/labProjects";
     <LabProjectCards projects={labProjects} />
   </section>
 
+  <!-- Discreet route to revisited school work (intentionally kept out of main navigation). -->
+  <aside class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14">
+    <div
+      class="revisited-callout rounded-2xl border border-l-4 border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+    >
+      <div>
+        <p class="font-garamond font-semibold italic text-gray-800 text-xl mb-2" data-i18n="lab.revisited.title">Earlier work, revisited</p>
+        <p class="text-sm text-gray-600 mt-1" data-i18n="lab.revisited.text">
+          A small collection of old school projects rebuilt with what I know now.
+        </p>
+      </div>
+      <div class="shrink-0">
+        <Button href="/revisited-projects" variant="secondary" size="small" aria-label="Explore revisited projects">
+          <span data-i18n="lab.revisited.link">Explore revisited projects →</span>
+        </Button>
+      </div>
+    </div>
+  </aside>
+
   <!-- Back to homepage -->
   <section class="lab-back-btn mx-auto py-20 text-center">
     <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
@@ -140,16 +159,17 @@ import { labProjects } from "../data/labProjects";
   }
 
   /* Dark mode — text */
-  body.dark #lab h1,
   body.dark #lab-label,
   body.dark #lab-intro,
-  body.dark #lab-vibe-title,
   body.dark #lab-vibe-text,
-  body.dark #lab-items-title,
-  body.dark #lab-items-intro,
-  body.dark #lab-items article h3,
-  body.dark #lab-items article p {
+  body.dark #lab-items-intro {
     color: var(--text-on-dark-soft);
+  }
+
+  body.dark #lab h1,
+  body.dark #lab-vibe-title,
+  body.dark #lab-items-title {
+    color: var(--text-on-dark);
   }
 
   /* Dark mode — card backgrounds */
@@ -161,6 +181,15 @@ import { labProjects } from "../data/labProjects";
   body.dark #lab-items article {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark .revisited-callout {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark .revisited-callout p {
+    color: var(--text-on-dark-soft);
   }
 
   /* Dark mode — badges */

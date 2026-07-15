@@ -84,9 +84,12 @@ const { projects } = Astro.props as { projects: LabProject[] };
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
-  :global(body.dark) article h3,
   :global(body.dark) article p {
     color: var(--text-on-dark-soft);
+  }
+
+  :global(body.dark) article h3 {
+    color: var(--text-on-dark);
   }
 
   :global(body.dark) .lab-tag {
