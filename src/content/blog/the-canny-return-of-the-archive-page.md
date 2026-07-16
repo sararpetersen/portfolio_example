@@ -2,7 +2,7 @@
 title: "Canny, not uncanny: the return of the archive page"
 excerpt: Bringing 3 old school projects back onto the site.
 publishDate: 2026-07-16
-draft: true
+draft: false
 tags:
   - portfolio
   - process
