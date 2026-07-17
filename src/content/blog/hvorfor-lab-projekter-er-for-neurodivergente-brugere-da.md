@@ -1,8 +1,8 @@
 ---
-title: Hvorfor mange af mine projekter er bygget til neurodivergente brugere
-excerpt: Et mønster i det, jeg bygger, når ingen andre har sat opgaven.
+title: Hvorfor lab-projekterne er lavet til neurodivergente
+excerpt: Et mønster i mit arbejde, når ingen andre har sat opgaven.
 publishDate: 2026-07-17
-draft: true
+draft: false
 tags:
   - accessibility
   - lab

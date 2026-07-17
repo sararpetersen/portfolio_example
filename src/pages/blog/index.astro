@@ -7,6 +7,8 @@ import Button from "../../components/Button.astro";
 const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
   .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const initialPostCount = 9;
 ---
 
 <MainLayout
@@ -31,23 +33,44 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
 
     {
       posts.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {posts.map((post) => (
-            <article class="blog-card rounded-2xl border-l-4 border border-gray-500 p-5 bg-gradient-to-br from-gray-50 to-gray-100">
-              <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-              <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
-              <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
-              <a
-                href={`/blog/${post.id}`}
-                aria-label={`Read post: ${post.data.title}`}
-                class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-                data-i18n="blog.read"
+        <>
+          <div id="blog-post-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {posts.map((post, index) => (
+              <article
+                class:list={[
+                  "blog-card rounded-2xl border-l-4 border border-gray-500 p-5 bg-gradient-to-br from-gray-50 to-gray-100",
+                  { "blog-card--extra": index >= initialPostCount },
+                ]}
               >
-                Read post →
-              </a>
-            </article>
-          ))}
-        </div>
+                <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+                <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
+                <a
+                  href={`/blog/${post.id}`}
+                  aria-label={`Read post: ${post.data.title}`}
+                  class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                  data-i18n="blog.read"
+                >
+                  Read post →
+                </a>
+              </article>
+            ))}
+          </div>
+          {posts.length > initialPostCount && (
+            <div id="show-more-container" class="mt-10 text-center">
+              <button
+                id="show-more-posts"
+                type="button"
+                class="blog-show-more-button inline-flex items-center justify-center gap-2 px-3.5 py-2.5 border font-medium rounded-full transition duration-300 text-[12px] text-gray-400 bg-gray-50 border-gray-400 hover:bg-gray-100 hover:border-gray-500 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 cursor-pointer"
+                aria-controls="blog-post-grid"
+                data-i18n="blog.showMore"
+              >
+                Show more posts
+              </button>
+              <p id="show-more-status" class="sr-only" aria-live="polite" />
+            </div>
+          )}
+        </>
       ) : (
         <p class="rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700" data-i18n="blog.empty">
           No blog posts are published yet.
@@ -59,6 +82,18 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   <section class="mx-auto py-20 text-center">
     <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
+
+  <noscript>
+    <style is:global>
+      #show-more-container {
+        display: none !important;
+      }
+
+      .blog-card--extra {
+        display: block !important;
+      }
+    </style>
+  </noscript>
 </MainLayout>
 
 <style>
@@ -100,7 +135,69 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   body.dark .blog-card a:hover {
     color: var(--brand-primary-soft);
   }
+
+  #show-more-container {
+    display: block;
+  }
+
+  .blog-card--extra {
+    display: none;
+  }
+  .blog-show-more-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .blog-show-more-button:disabled {
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+  }
+
+  body.dark .blog-show-more-button {
+    background-color: transparent;
+    border-color: var(--dark-border);
+    color: var(--text-on-dark-soft);
+    box-shadow: none;
+  }
+
+  body.dark .blog-show-more-button:hover:not(:disabled) {
+    background-color: var(--dark-gradient-start);
+    border-color: var(--text-on-dark-soft);
+    color: var(--text-on-dark);
+  }
 </style>
+
+<script>
+  const revealBatchSize = 6;
+  const showMoreButton = document.querySelector<HTMLButtonElement>("#show-more-posts");
+  const showMoreStatus = document.querySelector<HTMLElement>("#show-more-status");
+
+  showMoreButton?.addEventListener("click", () => {
+    const hiddenPosts = [...document.querySelectorAll<HTMLElement>(".blog-card--extra")];
+    const postsToReveal = hiddenPosts.slice(0, revealBatchSize);
+
+    postsToReveal.forEach((post) => {
+      post.classList.remove("blog-card--extra");
+      post.style.opacity = "1";
+      post.style.transform = "none";
+    });
+
+    const remainingPosts = hiddenPosts.length - postsToReveal.length;
+    const isDanish = document.documentElement.lang === "da";
+
+    if (showMoreStatus) {
+      showMoreStatus.textContent = isDanish
+        ? `${postsToReveal.length} flere indlæg vises. ${remainingPosts} tilbage.`
+        : `${postsToReveal.length} more posts shown. ${remainingPosts} remaining.`;
+    }
+
+    if (remainingPosts === 0) {
+      showMoreButton.disabled = true;
+      showMoreButton.textContent = isDanish ? "Alle indlæg vises" : "All posts shown";
+      showMoreButton.classList.add("opacity-70", "cursor-default");
+    }
+  });
+</script>
 
 <style>
   html.has-js body:not(.reduce-motion) #blog-title-row,
