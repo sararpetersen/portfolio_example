@@ -4,10 +4,10 @@ excerpt: Hvordan denne portfolio skifter mellem engelsk og dansk.
 publishDate: 2026-07-20
 draft: true
 tags:
+  - danish
   - astro
   - tutorial
   - process
-  - danish
 ---
 
 Denne portfolio er tosproget— engelsk og dansk, med øjeblikkeligt sprogskift og ingen genindlæsning af siden. Den bruger hverken `astro-i18n`, `i18next` eller nogen form for rute-baseret lokalisering. Det er et helt almindeligt JavaScript-objekt og et `data-i18n`-attribut. Her er, hvordan det virker, og hvor jeg ved, at løsningen en dag ikke længere er nok.

@@ -9,6 +9,25 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
 const initialPostCount = 9;
+
+// Broader groupings over the raw post tags — filtering by ~26 individual tags was too granular,
+// so each button here bundles several related tags into one category.
+const categoryDefinitions: { key: string; en: string; da: string; tags: string[] }[] = [
+  { key: "a11y-ux", en: "Accessibility & UX", da: "Tilgængelighed & UX", tags: ["accessibility", "ux"] },
+  {
+    key: "development",
+    en: "Development",
+    da: "Udvikling",
+    tags: ["react", "components", "astro", "tailwind", "tutorial", "web-development", "domain"],
+  },
+  { key: "process-ai", en: "Process & AI", da: "Proces & AI", tags: ["process", "lab", "vibe coding", "ai"] },
+  { key: "career", en: "Career & Internship", da: "Karriere & praktik", tags: ["internship", "learning", "career", "networking"] },
+  { key: "updates", en: "The Portfolio", da: "Porteføjlen", tags: ["portfolio", "blog", "updates", "update"] },
+  { key: "personal", en: "Personal", da: "Personligt", tags: ["personal", "neurodivergent", "social-media", "routine"] },
+  { key: "danish", en: "In Danish", da: "På Dansk", tags: ["danish"] },
+];
+
+const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) => post.data.tags.some((tag) => cat.tags.includes(tag))));
 ---
 
 <MainLayout
@@ -34,6 +53,30 @@ const initialPostCount = 9;
     {
       posts.length > 0 ? (
         <>
+          {activeCategories.length > 0 && (
+            <div id="blog-filter-bar" class="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filter posts by category">
+              <span id="blog-filter-label" class="text-[11px] uppercase tracking-[0.1em] text-gray-500 mr-1" data-i18n="blog.filter.label">
+                Filter by category:
+              </span>
+              <button type="button" class="blog-filter-chip is-active" data-filter-tag="" aria-pressed="true" data-i18n="blog.filter.all">
+                All
+              </button>
+              {activeCategories.map((cat) => (
+                <button
+                  type="button"
+                  class="blog-filter-chip"
+                  data-filter-tag={cat.key}
+                  data-category-tags={JSON.stringify(cat.tags)}
+                  data-cat-en={cat.en}
+                  data-cat-da={cat.da}
+                  aria-pressed="false"
+                >
+                  {cat.en}
+                </button>
+              ))}
+            </div>
+          )}
+
           <div id="blog-post-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((post, index) => (
               <article
@@ -41,6 +84,7 @@ const initialPostCount = 9;
                   "blog-card rounded-2xl border-l-4 border border-gray-500 p-5 bg-gradient-to-br from-gray-50 to-gray-100",
                   { "blog-card--extra": index >= initialPostCount },
                 ]}
+                data-tags={JSON.stringify(post.data.tags)}
               >
                 <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
                 <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
@@ -56,6 +100,9 @@ const initialPostCount = 9;
               </article>
             ))}
           </div>
+          <p id="blog-filter-empty" class="hidden rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700 mt-5" data-i18n="blog.filter.empty">
+            No posts match this category yet.
+          </p>
           {posts.length > initialPostCount && (
             <div id="show-more-container" class="mt-10 text-center">
               <button
@@ -165,15 +212,112 @@ const initialPostCount = 9;
     border-color: var(--text-on-dark-soft);
     color: var(--text-on-dark);
   }
+
+  /* Same visual language as .post-tag-chip on the post page, but interactive. */
+  .blog-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgb(98 151 174 / 0.38);
+    background-color: rgb(222 235 239 / 0.72);
+    color: rgb(55 85 103);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .blog-filter-chip:hover {
+    border-color: rgb(98 151 174 / 0.6);
+  }
+
+  .blog-filter-chip:focus-visible {
+    outline: 2px solid #477b93;
+    outline-offset: 2px;
+  }
+
+  .blog-filter-chip.is-active {
+    background-color: var(--brand-primary-strong);
+    border-color: var(--brand-primary-strong);
+    color: white;
+  }
+
+  body.dark .blog-filter-chip {
+    border-color: rgb(98 151 174 / 0.48);
+    color: rgb(222 235 239 / 0.95);
+    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
+  }
+
+  /* Same muted treatment calm mode already applies to .post-tag-chip on the post page. */
+  body.calm-mode .blog-filter-chip:not(.is-active) {
+    border-color: rgb(98 151 174 / 0.22);
+    color: rgb(71 95 106);
+    background-color: rgb(222 235 239 / 0.48);
+  }
+
+  /* The light-mode calm-mode rule above is more specific than body.dark .blog-filter-chip,
+     so it was winning even in dark mode and painting light-on-light colors onto a dark
+     background. Needs its own combo instead of relying on cascade order. */
+  body.dark.calm-mode .blog-filter-chip:not(.is-active) {
+    border-color: rgb(152 178 188 / 0.32);
+    color: rgb(200 214 219 / 0.82);
+    background-color: rgb(152 178 188 / 0.12);
+  }
+
+  body.dark .blog-filter-chip.is-active {
+    background-color: var(--brand-primary-strong);
+    border-color: var(--brand-primary-strong);
+    color: #1a1a1a;
+  }
+
+  body.dark #blog-filter-label {
+    color: var(--text-on-dark-soft);
+  }
+
+  .blog-card--filtered-out {
+    display: none;
+  }
+
+  body.dark #blog-filter-empty {
+    background: var(--dark-surface, #2a2a2a);
+    border-color: var(--dark-border, #333);
+    color: var(--text-on-dark-soft);
+  }
 </style>
 
 <script>
   const revealBatchSize = 6;
   const showMoreButton = document.querySelector<HTMLButtonElement>("#show-more-posts");
   const showMoreStatus = document.querySelector<HTMLElement>("#show-more-status");
+  const showMoreContainer = document.querySelector<HTMLElement>("#show-more-container");
+  const cards = [...document.querySelectorAll<HTMLElement>(".blog-card")];
+  const filterButtons = [...document.querySelectorAll<HTMLButtonElement>(".blog-filter-chip")];
+  const filterEmpty = document.querySelector<HTMLElement>("#blog-filter-empty");
+  const getLang = () => localStorage.getItem("lang") || "en";
+
+  // Remember which cards started out beyond the initial page size, so a filter can bypass
+  // pagination (show every match at once) and returning to "All" can restore the original
+  // collapsed view exactly, rather than guessing from whatever state pagination was left in.
+  cards.forEach((card) => {
+    if (card.classList.contains("blog-card--extra")) card.dataset.initialExtra = "true";
+  });
+
+  function resetShowMore(): void {
+    if (!showMoreButton) return;
+    const isDanish = getLang() === "da";
+    showMoreButton.disabled = false;
+    showMoreButton.textContent = isDanish ? "Vis flere indlæg" : "Show more posts";
+    showMoreButton.classList.remove("opacity-70", "cursor-default");
+    if (showMoreStatus) showMoreStatus.textContent = "";
+  }
 
   showMoreButton?.addEventListener("click", () => {
-    const hiddenPosts = [...document.querySelectorAll<HTMLElement>(".blog-card--extra")];
+    const hiddenPosts = cards.filter((card) => card.classList.contains("blog-card--extra"));
     const postsToReveal = hiddenPosts.slice(0, revealBatchSize);
 
     postsToReveal.forEach((post) => {
@@ -183,7 +327,7 @@ const initialPostCount = 9;
     });
 
     const remainingPosts = hiddenPosts.length - postsToReveal.length;
-    const isDanish = document.documentElement.lang === "da";
+    const isDanish = getLang() === "da";
 
     if (showMoreStatus) {
       showMoreStatus.textContent = isDanish
@@ -196,6 +340,60 @@ const initialPostCount = 9;
       showMoreButton.textContent = isDanish ? "Alle indlæg vises" : "All posts shown";
       showMoreButton.classList.add("opacity-70", "cursor-default");
     }
+  });
+
+  function applyFilter(categoryKey: string): void {
+    let visibleCount = 0;
+    const activeBtn = filterButtons.find((btn) => (btn.dataset.filterTag || "") === categoryKey);
+    const categoryTags: string[] = categoryKey === "" ? [] : JSON.parse(activeBtn?.dataset.categoryTags || "[]");
+
+    cards.forEach((card) => {
+      const tags: string[] = JSON.parse(card.dataset.tags || "[]");
+      const matches = categoryKey === "" || tags.some((tag) => categoryTags.includes(tag));
+      card.classList.toggle("blog-card--filtered-out", !matches);
+      if (matches) visibleCount++;
+
+      if (categoryKey === "") {
+        // Restore original pagination — only cards that started as "extra" go back to hidden.
+        card.classList.toggle("blog-card--extra", card.dataset.initialExtra === "true");
+      } else {
+        // Pagination is suspended while a category filter is active — every match shows at once.
+        card.classList.remove("blog-card--extra");
+      }
+    });
+
+    if (showMoreContainer) showMoreContainer.style.display = categoryKey === "" ? "" : "none";
+    if (categoryKey === "") resetShowMore();
+
+    filterButtons.forEach((btn) => {
+      const isActive = (btn.dataset.filterTag || "") === categoryKey;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", String(isActive));
+    });
+
+    filterEmpty?.classList.toggle("hidden", visibleCount > 0);
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+      applyFilter(btn.dataset.filterTag || "");
+    });
+  });
+
+  // Filter chip labels translate the same way #post-tags does on the post page: server-render
+  // in English, then swap text on the stored language preference / langchange event.
+  function applyFilterChipLang(lang: string): void {
+    filterButtons.forEach((btn) => {
+      const en = btn.dataset.catEn;
+      const da = btn.dataset.catDa;
+      if (!en) return; // the "All" button uses data-i18n instead
+      btn.textContent = lang === "da" ? da || en : en;
+    });
+  }
+  if (getLang() === "da") applyFilterChipLang("da");
+  window.addEventListener("langchange", (e: Event) => {
+    applyFilterChipLang((e as CustomEvent).detail?.lang || getLang());
   });
 </script>
 
