@@ -1,0 +1,11 @@
+# Astro fingerprints these filenames per build (new content = new filename),
+# so they're safe to cache forever — a redeploy can never serve a stale one.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static assets aren't fingerprinted, so keep a long cache but let browsers
+# revalidate rather than assume they never change.
+/images/*
+  Cache-Control: public, max-age=604800, must-revalidate
+/fonts/*
+  Cache-Control: public, max-age=604800, must-revalidate
