@@ -82,6 +82,30 @@ const articleSchema = {
       )
     }
 
+    <script is:inline>
+      // Runs synchronously, right where #post-tags is, before the browser paints it — so
+      // Danish visitors never see the English chips flash before the deferred module script
+      // (below) would otherwise swap them post-load.
+      (function () {
+        if ((localStorage.getItem("lang") || "en") !== "da") return;
+        var el = document.getElementById("post-tags");
+        if (!el) return;
+        var tags;
+        try {
+          tags = JSON.parse(el.dataset.tagsDa || el.dataset.tagsEn || "[]");
+        } catch (e) {
+          return;
+        }
+        el.innerHTML = "";
+        tags.forEach(function (tag) {
+          var chip = document.createElement("span");
+          chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]";
+          chip.textContent = tag;
+          el.appendChild(chip);
+        });
+      })();
+    </script>
+
     <div id="post-content" class="blog-content max-w-none">
       <Content />
     </div>
@@ -338,10 +362,9 @@ const articleSchema = {
     };
 
     const getLang = () => localStorage.getItem("lang") || "en";
-    // Tags are server-rendered in English already, so only touch the DOM if the
-    // stored preference actually differs — rebuilding on every load caused a visible flash.
-    if (getLang() === "da") applyTagLang("da");
-
+    // Initial sync for the stored language happens synchronously in the inline script
+    // right after #post-tags (before paint), so it isn't repeated here — this listener
+    // only needs to handle the user actively toggling language after the page has loaded.
     window.addEventListener("langchange", (e: Event) => {
       const lang = (e as CustomEvent).detail?.lang || getLang();
       applyTagLang(lang);

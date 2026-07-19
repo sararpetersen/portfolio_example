@@ -189,12 +189,12 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
         {
           project.tools && (
             <div id="tools-list" class="mt-6">
-              <h2 id="tools-title" class="md:text-h4-desktop text-h4-mobile italic text-gray-800 mb-3" data-i18n="project.tools">
+              <h2 id="tools-title" class="md:text-h4-desktop text-h4-mobile font-semibold not-italic text-gray-800 mb-3" data-i18n="project.tools">
                 Tools used:
               </h2>
               <div class="flex flex-wrap gap-2">
                 {project.tools.map((tool) => (
-                  <span class="rounded-full px-4 py-2 font-semibold border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
+                  <span class="rounded-full px-4 py-2 font-medium border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
                 ))}
               </div>
             </div>
@@ -229,7 +229,7 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
     <div id="related-projects-title" class="col-span-12">
       <div id="related-projects-title-row" class="flex items-center gap-4 mb-6">
         <h2
-          class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 md:text-left text-center"
+          class="font-garamond font-bold italic text-h3-mobile md:text-h3-desktop text-gray-800 md:text-left text-center"
           data-i18n="project.related.title"
         >
           More projects
@@ -253,7 +253,7 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
                 <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 transition-all duration-300 ease-in-out group-hover:from-gray-100 group-hover:to-gray-200 group-hover:border-gray-400 group-focus-visible:-translate-y-1">
                   <img src={proj.image} alt={proj.name} class="w-full aspect-[4/3] sm:aspect-square md:aspect-[4/3] object-cover" loading="lazy" />
                   <div class="related-project-info p-4 border-t border-gray-500 transition-colors duration-300 group-hover:border-gray-400">
-                    <h3 class="related-project-title text-h4-mobile font-bold mb-2">{proj.name}</h3>
+                    <h3 class="related-project-title text-h4-mobile font-semibold italic mb-2">{proj.name}</h3>
                     <p
                       class="related-project-year text-sm text-gray-600 transition-colors duration-300"
                       data-semester={proj.semester || ""}
@@ -261,7 +261,7 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
                       data-year={proj.year || ""}
                       data-year-da={proj.year_da || ""}
                     >
-                      {proj.semester || proj.year}
+                      {proj.year || proj.semester}
                     </p>
                   </div>
                 </div>
@@ -368,18 +368,6 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
       descriptionEl.textContent = currentDescription;
     }
 
-    const getCurrentPeriod = (el: HTMLElement) => {
-      const year = el.dataset.year || "";
-      const yearDa = el.dataset.yearDa || "";
-      const semester = el.dataset.semester || "";
-      const semesterDa = el.dataset.semesterDa || "";
-
-      const currentYear = lang === "da" ? yearDa || year : year;
-      const currentSemester = lang === "da" ? semesterDa || semester : semester;
-
-      return currentSemester || currentYear;
-    };
-
     const getFullCurrentPeriod = (el: HTMLElement) => {
       const year = el.dataset.year || "";
       const yearDa = el.dataset.yearDa || "";
@@ -398,7 +386,7 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
 
     document.querySelectorAll(".related-project-year").forEach((yearEl) => {
       const element = yearEl as HTMLElement;
-      element.textContent = getCurrentPeriod(element);
+      element.textContent = getFullCurrentPeriod(element);
     });
   };
 

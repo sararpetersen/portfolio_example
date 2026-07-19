@@ -77,6 +77,19 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
             </div>
           )}
 
+          <script is:inline>
+            // Runs synchronously, right where #blog-filter-bar is, before the browser paints
+            // it — so Danish visitors never see the English category labels flash before the
+            // deferred module script (below) would otherwise swap them post-load.
+            (function () {
+              if ((localStorage.getItem("lang") || "en") !== "da") return;
+              document.querySelectorAll(".blog-filter-chip").forEach(function (btn) {
+                var da = btn.getAttribute("data-cat-da");
+                if (da) btn.textContent = da;
+              });
+            })();
+          </script>
+
           <div id="blog-post-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((post, index) => (
               <article
@@ -87,7 +100,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
                 data-tags={JSON.stringify(post.data.tags)}
               >
                 <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-                <h2 class="text-lg font-semibold leading-snug mb-2">{post.data.title}</h2>
+                <h2 class="text-lg italic font-bold leading-snug mb-2">{post.data.title}</h2>
                 <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
                 <a
                   href={`/blog/${post.id}`}
@@ -100,7 +113,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
               </article>
             ))}
           </div>
-          <p id="blog-filter-empty" class="hidden rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700 mt-5" data-i18n="blog.filter.empty">
+          <p id="blog-filter-empty" class="hidden rounded-2xl border border-l-4 border-gray-500 bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-gray-700 mt-5" data-i18n="blog.filter.empty">
             No posts match this category yet.
           </p>
           {posts.length > initialPostCount && (
@@ -116,9 +129,65 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
               <p id="show-more-status" class="sr-only" aria-live="polite" />
             </div>
           )}
+
+          <script is:inline>
+            // Runs synchronously, before the browser paints the grid — restores whatever
+            // category filter was active before navigating away (e.g. into a post and back),
+            // so visitors don't see a flash of the unfiltered "All" view first.
+            (function () {
+              var cards = document.querySelectorAll(".blog-card");
+
+              // Capture which cards started out beyond the initial page size before anything
+              // (including the filtering below) can strip that "extra" class from them —
+              // the deferred module script needs this to restore pagination correctly later.
+              cards.forEach(function (card) {
+                if (card.classList.contains("blog-card--extra")) card.dataset.initialExtra = "true";
+              });
+
+              var saved = sessionStorage.getItem("blogFilter");
+              if (!saved) return;
+              var activeBtn = document.querySelector('.blog-filter-chip[data-filter-tag="' + saved + '"]');
+              if (!activeBtn) return;
+
+              var categoryTags = [];
+              try {
+                categoryTags = JSON.parse(activeBtn.getAttribute("data-category-tags") || "[]");
+              } catch (e) {
+                return;
+              }
+
+              var visibleCount = 0;
+              cards.forEach(function (card) {
+                var tags = [];
+                try {
+                  tags = JSON.parse(card.getAttribute("data-tags") || "[]");
+                } catch (e) {
+                  tags = [];
+                }
+                var matches = tags.some(function (tag) {
+                  return categoryTags.indexOf(tag) !== -1;
+                });
+                card.classList.toggle("blog-card--filtered-out", !matches);
+                card.classList.remove("blog-card--extra");
+                if (matches) visibleCount++;
+              });
+
+              document.querySelectorAll(".blog-filter-chip").forEach(function (chip) {
+                var isActive = chip.getAttribute("data-filter-tag") === saved;
+                chip.classList.toggle("is-active", isActive);
+                chip.setAttribute("aria-pressed", String(isActive));
+              });
+
+              var showMoreContainer = document.getElementById("show-more-container");
+              if (showMoreContainer) showMoreContainer.style.display = "none";
+
+              var filterEmpty = document.getElementById("blog-filter-empty");
+              if (filterEmpty) filterEmpty.classList.toggle("hidden", visibleCount > 0);
+            })();
+          </script>
         </>
       ) : (
-        <p class="rounded-2xl border border-gray-400 bg-gray-50 p-6 text-gray-700" data-i18n="blog.empty">
+        <p class="rounded-2xl border border-l-4 border-gray-500 bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-gray-700" data-i18n="blog.empty">
           No blog posts are published yet.
         </p>
       )
@@ -299,12 +368,10 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
   const filterEmpty = document.querySelector<HTMLElement>("#blog-filter-empty");
   const getLang = () => localStorage.getItem("lang") || "en";
 
-  // Remember which cards started out beyond the initial page size, so a filter can bypass
-  // pagination (show every match at once) and returning to "All" can restore the original
+  // Which cards started out beyond the initial page size is captured by the inline script
+  // above (before it potentially strips "blog-card--extra" while restoring a saved filter),
+  // so a filter can bypass pagination and returning to "All" can restore the original
   // collapsed view exactly, rather than guessing from whatever state pagination was left in.
-  cards.forEach((card) => {
-    if (card.classList.contains("blog-card--extra")) card.dataset.initialExtra = "true";
-  });
 
   function resetShowMore(): void {
     if (!showMoreButton) return;
@@ -372,6 +439,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     });
 
     filterEmpty?.classList.toggle("hidden", visibleCount > 0);
+    sessionStorage.setItem("blogFilter", categoryKey);
   }
 
   filterButtons.forEach((btn) => {
@@ -381,8 +449,13 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     });
   });
 
+  // Initial restore of a saved filter (e.g. after navigating into a post and back) happens
+  // synchronously in the inline script above, before paint, so it isn't repeated here.
+
   // Filter chip labels translate the same way #post-tags does on the post page: server-render
-  // in English, then swap text on the stored language preference / langchange event.
+  // in English, then swap text on the stored language preference / langchange event. The
+  // initial sync for the stored language happens synchronously in the inline script right
+  // after #blog-filter-bar (before paint), so it isn't repeated here.
   function applyFilterChipLang(lang: string): void {
     filterButtons.forEach((btn) => {
       const en = btn.dataset.catEn;
@@ -391,7 +464,6 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
       btn.textContent = lang === "da" ? da || en : en;
     });
   }
-  if (getLang() === "da") applyFilterChipLang("da");
   window.addEventListener("langchange", (e: Event) => {
     applyFilterChipLang((e as CustomEvent).detail?.lang || getLang());
   });

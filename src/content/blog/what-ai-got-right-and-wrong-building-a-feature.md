@@ -30,7 +30,7 @@ Here's the part worth writing down. When I mentioned the spacing between the new
 }
 ```
 
-The new paragraph had a different `data-i18n` value, so it wasn't covered by that rule. In light mode this was invisible— both paragraphs use the same gray on a light background regardless. In dark mode, the new note would have rendered as dark gray text on a dark background, nearly unreadable. Nobody would have caught this by looking at the page in the mode it was built in, because it only breaks in the _other_ mode.
+The new paragraph had a different `data-i18n` value, so it wasn't covered by that rule. In light mode this was invisible. Both paragraphs use the same gray on a light background regardless. In dark mode, the new note would have rendered as dark gray text on a dark background, nearly unreadable. Nobody would have caught this by looking at the page in the mode it was built in, because it only breaks in the _other_ mode.
 
 This is exactly the failure mode I described in the first post: it's not that the AI wrote bad code. Both the markup and the styling approach were sound. It's that the AI— and, in the moment, me too —was reasoning about the one component in isolation and not tracing every existing rule that happened to scope itself narrowly to a sibling element. That's a _"hold the whole system in your head"_ problem, and it's still squarely a human judgment task, not a prompting task.
 

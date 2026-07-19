@@ -7,45 +7,52 @@ const { projects } = Astro.props as { projects: LabProject[] };
 ---
 
 <div class="grid md:grid-cols-2 gap-6">
-  {projects.map((project) => {
-    const isExternal = project.href.startsWith("http");
-    const cardClass = project.featured
-      ? "lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
-      : "bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8";
+  {
+    projects.map((project) => {
+      const isExternal = project.href.startsWith("http");
+      const cardClass = project.featured
+        ? "lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
+        : "bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8";
 
-    return (
-      <article id={`lab-item-${project.slug}`} class={cardClass}>
-        <div class="flex items-center justify-between mb-4">
-          <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
-          <div class="flex items-center gap-2 flex-wrap justify-end">
-            <span class="lab-tag" title="This project was built with AI assistance">
-              <ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span>
-            </span>
-            {project.wip && (
-              <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">
-                <ColorSymIcon letter="O" />WIP
+      return (
+        <article id={`lab-item-${project.slug}`} class={cardClass}>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
+            <div class="flex items-center gap-2 flex-wrap justify-end">
+              <span class="lab-tag" title="This project was built with AI assistance">
+                <>
+                  <ColorSymIcon letter="B" />
+                  <span data-i18n="lab.badge.vibecoded">Vibe coded</span>
+                </>
               </span>
-            )}
+              {project.wip && (
+                <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">
+                  <ColorSymIcon letter="O" />
+                  WIP
+                </span>
+              )}
+            </div>
           </div>
-        </div>
 
-        <div class={project.featured ? "max-w-3xl" : undefined}>
-          <h3 class="font-bold text-[20px] leading-snug mb-6 text-gray-800">
-            <span data-i18n={project.titleKey}>{project.titleFallback}</span>
-            {project.wip && <><span> </span><span class="italic" data-i18n="lab.badge.vibeloopwip">(under development)</span></>}
-          </h3>
-          <Button
-            href={project.href}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            variant="secondary"
-            size="small"
-            aria-label={project.ariaLabel}
-          ><span data-i18n={project.linkKey}>{project.linkFallback}</span></Button>
-        </div>
-      </article>
-    );
-  })}
+          <div class={project.featured ? "max-w-3xl" : undefined}>
+            <h3 class="italic font-bold text-h4-mobile md:text-[1.3rem] leading-snug mb-6 text-gray-800">
+              <span data-i18n={project.titleKey}>{project.titleFallback}</span>
+            </h3>
+            <Button
+              href={project.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              variant="secondary"
+              size="small"
+              aria-label={project.ariaLabel}
+            >
+              <span data-i18n={project.linkKey}>{project.linkFallback}</span>
+            </Button>
+          </div>
+        </article>
+      );
+    })
+  }
 </div>
 
 <style>

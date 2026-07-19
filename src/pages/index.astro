@@ -12,7 +12,7 @@ const getEducationOrder = (year = "") => {
 };
 
 // Cases hidden from the frontpage grid. Their pages still build and stay reachable by
-// direct URL and the sitemap; vibeloop also stays linked from its card on The Lab.
+// direct URL and the sitemap; vibeloop also stays linked from its card on the Lab.
 // singleusesucks and vinens_essens currently have no other page linking to them —
 // worth reconsidering now that The Archive (which used to hold them) has been removed.
 const sortedCards = cards
@@ -94,8 +94,12 @@ import Cases from "../components/Cases.astro";
   <section id="project-section" class="grid grid-cols-12 max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="container col-span-12">
       <!-- kanji + title -->
-      <div class="flex items-center mb-3">
-        <h2 id="project-title" class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800" data-i18n="projects.title">
+      <div class="flex items-center">
+        <h2
+          id="project-title"
+          class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
+          data-i18n="projects.title"
+        >
           Selected cases
         </h2>
       </div>
@@ -129,7 +133,7 @@ import Cases from "../components/Cases.astro";
   <!-- What makes my approach different? -->
   <section id="differentiator" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="mb-8">
-      <h2 id="diff-title" class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="diff.title">
+      <h2 id="diff-title" class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3" data-i18n="diff.title">
         What makes my approach different?
       </h2>
       <p id="diff-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="diff.intro">
@@ -183,15 +187,54 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
+  <!-- Lab Teaser -->
+  <section id="lab-teaser" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
+    <div class="mb-8">
+      <h2
+        id="lab-teaser-title"
+        class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
+        data-i18n="labteaser.sectiontitle"
+      >
+        From the Lab
+      </h2>
+      <p id="lab-teaser-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="labteaser.sectionintro">
+        Not every project makes it to a full case study. Here's what I'm currently building on the side.
+      </p>
+    </div>
+    <div
+      class="lab-teaser-card rounded-2xl border-l-4 border border-gray-500 p-6 md:p-8 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6"
+    >
+      <div>
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="labteaser.eyebrow">Currently building</p>
+        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="labteaser.title">
+          VibeLoop
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed max-w-xl" data-i18n="labteaser.text">
+          A social app built to help people connect with their local community, still a work in progress.
+        </p>
+      </div>
+      <div class="shrink-0">
+        <Button href="/lab" variant="secondary" size="small" aria-label="Explore the Lab">
+          <span data-i18n="labteaser.link">Explore the Lab →</span>
+        </Button>
+      </div>
+    </div>
+  </section>
+
   <!-- Testimonials Section -->
   <section id="testimonials" class="max-w-7xl mx-auto md:pb-desktop-bottom pb-mobil-bottom px-6 md:pt-desktop-top pt-mobil-top">
-    <h2
-      id="testimonial-title"
-      class="font-garamond italic font-semibold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
-      data-i18n="testimonials.title"
-    >
-      Featured testimonial
-    </h2>
+    <div class="mb-8">
+      <h2
+        id="testimonial-title"
+        class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
+        data-i18n="testimonials.title"
+      >
+        Featured testimonial
+      </h2>
+      <p id="testimonial-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="testimonials.intro">
+        A few words from people I've worked with directly.
+      </p>
+    </div>
     <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 max-w-3xl">
       <blockquote class="text-gray-600 italic" data-i18n="testimonials.quote">
         <p>
@@ -243,10 +286,14 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #project-text,
   html.has-js body:not(.reduce-motion) #divider-1,
   html.has-js body:not(.reduce-motion) #testimonial-title,
+  html.has-js body:not(.reduce-motion) #testimonial-intro,
   html.has-js body:not(.reduce-motion) #testimonial-card,
   html.has-js body:not(.reduce-motion) #diff-title,
   html.has-js body:not(.reduce-motion) #diff-intro,
-  html.has-js body:not(.reduce-motion) #differentiator .diff-card {
+  html.has-js body:not(.reduce-motion) #differentiator .diff-card,
+  html.has-js body:not(.reduce-motion) #lab-teaser-title,
+  html.has-js body:not(.reduce-motion) #lab-teaser-intro,
+  html.has-js body:not(.reduce-motion) .lab-teaser-card {
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
@@ -364,6 +411,27 @@ import Cases from "../components/Cases.astro";
   body.dark .diff-card {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     border-color: var(--dark-border);
+  }
+
+  /* Lab teaser section */
+  body.dark #lab-teaser-title {
+    color: var(--text-on-dark);
+  }
+  body.dark #lab-teaser-intro {
+    color: var(--text-on-dark-soft);
+  }
+  body.dark .lab-teaser-card {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border);
+  }
+  body.dark .lab-teaser-card p:first-child {
+    color: var(--text-on-dark-soft);
+  }
+  body.dark .lab-teaser-card h3 {
+    color: var(--text-on-dark);
+  }
+  body.dark .lab-teaser-card p.text-sm {
+    color: var(--text-on-dark-soft, #c0c0c0);
   }
 
   /* Dark-mode */

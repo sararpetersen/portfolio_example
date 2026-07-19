@@ -15,7 +15,7 @@ And I found 3 real bugs. Here they are, because _"I audited my site and it was f
 
 ### Bug 1: a broken heading hierarchy on the old Archive page
 
-Screen readers let people jump between headings the way sighted users skim a page visually. That only works if the headings actually nest in order— h1, then h2, then h3, no skipping. At some point while iterating on the _'Archive'_-page's design, before it got taken off the site, I'd removed the visible _"Older projects"_ heading because it didn't fit the layout I wanted, without registering that it was also the page's only h2. What was left was an h1 followed directly by h3s on each project card. A jump a sighted visitor would never notice, and a screen reader user absolutely would.
+Screen readers let people jump between headings the way sighted users skim a page visually. That only works if the headings actually nest in order— h1, then h2, then h3, no skipping. At some point while iterating on the _"Archive"_-page's design, before it got taken off the site, I'd removed the visible _"Older projects"_ heading because it didn't fit the layout I wanted, without registering that it was also the page's only h2. What was left was an h1 followed directly by h3s on each project card. A jump a sighted visitor would never notice, and a screen reader user absolutely would.
 
 The fix didn't require bringing back a heading I didn't want visually. I just added it back as visually hidden instead:
 

@@ -34,4 +34,4 @@ Good judgment. Knowing what to build in the first place. Being able to catch whe
 
 I've started keeping a section on this site called the _"Lab"_. It's where I put the things built this way. VibeLoop was the first one. There'll be more.
 
-If you're curious: [see the lab →](/lab)
+If you're curious: [visit the Lab →](/lab)
