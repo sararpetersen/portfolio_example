@@ -108,11 +108,10 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
               <button
                 id="show-more-posts"
                 type="button"
-                class="blog-show-more-button inline-flex items-center justify-center gap-2 px-3.5 py-2.5 border font-medium rounded-full transition duration-300 text-[12px] text-gray-400 bg-gray-50 border-gray-400 hover:bg-gray-100 hover:border-gray-500 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 cursor-pointer"
+                class="blog-show-more-button text-[14px] text-gray-400 underline hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 cursor-pointer"
                 aria-controls="blog-post-grid"
-                data-i18n="blog.showMore"
               >
-                Show more posts
+                Show more posts ↓
               </button>
               <p id="show-more-status" class="sr-only" aria-live="polite" />
             </div>
@@ -190,27 +189,27 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
   .blog-card--extra {
     display: none;
   }
-  .blog-show-more-button:hover {
-    transform: translateY(-1px);
-  }
-
+  /* Same text-link language as .blog-card a ("Read post →"), not a boxed button. */
   .blog-show-more-button:disabled {
     cursor: default;
-    transform: none;
-    box-shadow: none;
+    color: rgb(156 163 175 / 0.6);
+  }
+
+  .blog-show-more-button:disabled:hover {
+    color: rgb(156 163 175 / 0.6);
+    text-decoration: none;
   }
 
   body.dark .blog-show-more-button {
-    background-color: transparent;
-    border-color: var(--dark-border);
     color: var(--text-on-dark-soft);
-    box-shadow: none;
   }
 
   body.dark .blog-show-more-button:hover:not(:disabled) {
-    background-color: var(--dark-gradient-start);
-    border-color: var(--text-on-dark-soft);
-    color: var(--text-on-dark);
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark .blog-show-more-button:disabled {
+    color: var(--dark-border);
   }
 
   /* Same visual language as .post-tag-chip on the post page, but interactive. */
@@ -311,10 +310,11 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     if (!showMoreButton) return;
     const isDanish = getLang() === "da";
     showMoreButton.disabled = false;
-    showMoreButton.textContent = isDanish ? "Vis flere indlæg" : "Show more posts";
+    showMoreButton.textContent = isDanish ? "Vis flere indlæg ↓" : "Show more posts ↓";
     showMoreButton.classList.remove("opacity-70", "cursor-default");
     if (showMoreStatus) showMoreStatus.textContent = "";
   }
+  resetShowMore();
 
   showMoreButton?.addEventListener("click", () => {
     const hiddenPosts = cards.filter((card) => card.classList.contains("blog-card--extra"));
