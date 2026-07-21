@@ -2,7 +2,7 @@
 title: Inclusive design doesn't mean removing all personality
 excerpt: It can still feel warm, expressive, and recognisable.
 publishDate: 2026-07-21
-draft: true
+draft: false
 tags:
   - process
   - ux
