@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
         <p class="text-gray-600 leading-relaxed mb-2" data-i18n="modal.terms.privacy.p1">
           When you submit the contact form, your name, email, and message are processed by <a
             href="https://www.netlify.com/privacy/"
-            class="terms-link text-blue-500 hover:underline"
+            class="terms-link text-blue-600 hover:underline"
             target="_blank"
             rel="noopener noreferrer">Netlify Forms</a
           > solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code
@@ -55,7 +55,7 @@ const currentYear = new Date().getFullYear();
             >:</strong
           > You may request access to, correction of, or deletion of your data at any time - email: <a
             href="mailto:sara.ringkow@gmail.com"
-            class="terms-link text-blue-500 hover:underline">sara.ringkow@gmail.com</a
+            class="terms-link text-blue-600 hover:underline">sara.ringkow@gmail.com</a
           >.
         </p>
       </section>
@@ -118,19 +118,16 @@ const currentYear = new Date().getFullYear();
         <div class="flex flex-col items-start">
           <a
             href="/"
-            aria-label="Go to homepage"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.home">Home</a
           >
           <a
             href="/about_me"
-            aria-label="Go to about-page"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.about">About</a
           >
           <a
             href="/contact"
-            aria-label="Go to contact-page"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.contact">Contact</a
           >
@@ -138,7 +135,6 @@ const currentYear = new Date().getFullYear();
         <div class="flex flex-col items-start">
           <a
             href="/blog"
-            aria-label="Go to blog overview"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
             data-i18n="nav.blog">Blog</a
           >
@@ -151,9 +147,8 @@ const currentYear = new Date().getFullYear();
             href="https://srp-library.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Go to asset library (opens in a new tab)"
             class="py-1 text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
-            data-i18n="nav.library">The Library</a
+            ><span data-i18n="nav.library">The Library</span><span class="sr-only" data-i18n="nav.library.newtab"> (opens in a new tab)</span></a
           >
         </div>
       </div>
@@ -593,15 +588,23 @@ const currentYear = new Date().getFullYear();
   const termsTrigger = document.getElementById("terms-modal-trigger") as HTMLButtonElement;
   const termsClose = document.getElementById("terms-modal-close") as HTMLButtonElement;
 
+  // Everything outside the modal, so assistive tech can't navigate into content that's
+  // visually covered by the modal backdrop — matches the inert usage in AccessibilityPanel.
+  const backgroundLandmarks = [document.getElementById("header"), document.getElementById("main-content"), document.querySelector("footer")].filter(
+    (el): el is HTMLElement => el !== null,
+  );
+
   function openTerms(): void {
     termsModal.classList.add("open");
     termsModal.setAttribute("aria-hidden", "false");
+    backgroundLandmarks.forEach((el) => el.setAttribute("inert", ""));
     document.body.style.overflow = "hidden";
     termsClose.focus();
   }
   function closeTerms(): void {
     termsModal.classList.remove("open");
     termsModal.setAttribute("aria-hidden", "true");
+    backgroundLandmarks.forEach((el) => el.removeAttribute("inert"));
     document.body.style.overflow = "";
     termsTrigger.focus();
   }

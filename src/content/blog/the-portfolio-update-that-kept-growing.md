@@ -15,7 +15,7 @@ Sections on the portfolio were pulling the page up or down while I scrolled, alm
 
 So I removed the content entrance animations. Hover states and smaller interactions remain, but the content itself is now present and stable from the beginning. It's less dramatic, but it also means the site no longer asks visitors to trade control of their scrolling for decoration.
 
-### The flicker wasn't only the animations
+## The flicker wasn't only the animations
 
 Removing the animations fixed the scrolling problem, but some text still flashed while pages loaded. That led me into font loading, translations, and interface states that were changing after the first render.
 
@@ -23,7 +23,7 @@ The biggest example was Nikumaru, the rounded font used for page headings. Its f
 
 I also removed a few duplicate updates that were rewriting text or control states after the page had appeared. The broader fix was fairly simple: stop changing things after load unless they actually need to change.
 
-### The portfolio needed clearer wording too
+## The portfolio needed clearer wording too
 
 While checking the site, I also kept finding descriptions that called me a _'web developer'_ or _'front-end developer'_. I code and build websites, but neither is the professional title I want the portfolio to communicate.
 
@@ -37,7 +37,7 @@ And the supporting text explains what that means without repeating it:
 
 That distinction now runs through the visible copy, metadata, contact page, and Danish translations. It feels more specific to the work I actually do, without implying that I'm offering something I'm not.
 
-### What I took away from it
+## What I took away from it
 
 What started as one visual bug became a reminder that polish is not always about adding more. Sometimes it's removing the animation that gets in the way, shortening the text that tries to explain too much, or making sure the first thing a page shows is already the correct thing.
 

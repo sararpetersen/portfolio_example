@@ -192,7 +192,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
               isActive("/") && "text-blue-700 font-semibold",
             ]}
             aria-current={isActive("/") ? "page" : undefined}
-            aria-label="Go to homepage"
             data-i18n="nav.home">Home</a
           >
         </li>
@@ -204,7 +203,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
               isActive("/about_me") && "text-blue-700 font-semibold",
             ]}
             aria-current={isActive("/about_me") ? "page" : undefined}
-            aria-label="Go to about-page"
             data-i18n="nav.about">About</a
           >
         </li>
@@ -216,7 +214,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
               isActive("/contact") && "text-blue-700 font-semibold",
             ]}
             aria-current={isActive("/contact") ? "page" : undefined}
-            aria-label="Go to contact-page"
             data-i18n="nav.contact">Contact</a
           >
         </li>
@@ -229,7 +226,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
               isActive("/blog") && "text-blue-700 font-semibold",
             ]}
             aria-current={isActive("/blog") ? "page" : undefined}
-            aria-label="Go to blog-page"
             data-i18n="nav.blog">Blog</a
           >
         </li>
@@ -252,8 +248,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             target="_blank"
             rel="noopener noreferrer"
             class="py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-            aria-label="Go to asset library (opens in a new tab)"
-            data-i18n="nav.library">The Library</a
+            ><span data-i18n="nav.library">The Library</span><span class="sr-only" data-i18n="nav.library.newtab"> (opens in a new tab)</span></a
           >
         </li>
       </ul>
@@ -310,7 +305,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     x-cloak
     x-on:click="showmenu = false"
     x-on:click.outside="showmenu = false"
-    x-on:keydown.escape.window="showmenu = false"
+    x-on:keydown.escape.window="if (showmenu) { showmenu = false; document.getElementById('burgermenu').focus() }"
   >
     <ul class="flex flex-col items-center gap-2 pt-4 pb-4">
       <li class="some1">
@@ -321,7 +316,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             isActive("/") && "text-blue-700 font-semibold",
           ]}
           aria-current={isActive("/") ? "page" : undefined}
-          aria-label="Go to homepage"
           data-i18n="nav.home">Home</a
         >
       </li>
@@ -333,7 +327,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             isActive("/about_me") && "text-blue-700 font-semibold",
           ]}
           aria-current={isActive("/about_me") ? "page" : undefined}
-          aria-label="Go to about-page"
           data-i18n="nav.about">About</a
         >
       </li>
@@ -345,7 +338,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             isActive("/contact") && "text-blue-700 font-semibold",
           ]}
           aria-current={isActive("/contact") ? "page" : undefined}
-          aria-label="Go to contact-page"
           data-i18n="nav.contact">Contact</a
         >
       </li>
@@ -357,7 +349,6 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
             isActive("/blog") && "text-blue-700 font-semibold",
           ]}
           aria-current={isActive("/blog") ? "page" : undefined}
-          aria-label="Go to blog-page"
           data-i18n="nav.blog">Blog</a
         >
       </li>
@@ -378,8 +369,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
           target="_blank"
           rel="noopener noreferrer"
           class="py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-          aria-label="Go to asset library (opens in a new tab)"
-          data-i18n="nav.library">The Library</a
+          ><span data-i18n="nav.library">The Library</span><span class="sr-only" data-i18n="nav.library.newtab"> (opens in a new tab)</span></a
         >
       </li>
     </ul>
@@ -524,12 +514,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     background-color: #f0f0f0;
   }
 
-  /* Reduce Motion Mode */
-  body.reduce-motion * {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
-  }
+  /* Reduce Motion Mode is handled globally in src/styles/global.css — this file's <style>
+     block is scoped per-component, so a rule here could never reach anything outside Header. */
 
   :global(html) {
     transition: font-size 0.3s ease;

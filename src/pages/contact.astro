@@ -193,6 +193,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           action="/contact/?submitted=true"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          novalidate
           class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8"
         >
           <input type="hidden" name="form-name" value="contact" class="bg-[#fafafa]" />
@@ -214,9 +215,11 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 autocomplete="name"
                 required
                 aria-required="true"
+                aria-describedby="form-name-error"
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="Your name"
               />
+              <p id="form-name-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Email Field -->
@@ -232,9 +235,11 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 autocomplete="email"
                 required
                 aria-required="true"
+                aria-describedby="form-email-error"
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="your.email@example.com"
               />
+              <p id="form-email-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Message Field -->
@@ -249,9 +254,11 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 autocomplete="off"
                 required
                 aria-required="true"
+                aria-describedby="form-message-error"
                 rows={6}
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300 resize-none"
                 placeholder="Your message..."></textarea>
+              <p id="form-message-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Fine print: GDPR + what happens next -->
@@ -263,7 +270,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                   >Terms & Privacy Policy</a
                 >.
               </p>
-              <p class="text-xs text-gray-400 leading-relaxed max-w-md italic" data-i18n="contact.form.next">
+              <p class="text-xs text-gray-500 leading-relaxed max-w-md italic" data-i18n="contact.form.next">
                 (After you hit send, your message goes straight to my inbox and a confirmation appears right here on the page – I usually reply within
                 a couple of days)
               </p>
@@ -322,6 +329,75 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           statusDiv.textContent = "Thank you! Your message has been sent successfully. I'll get back to you soon.";
         }
       }
+
+      // The form uses novalidate so error text is our own (bilingual), not the browser's
+      // built-in bubble — which always renders in the browser's language, not the site's.
+      const errorText = {
+        en: { required: "This field is required.", email: "Enter a valid email address." },
+        da: { required: "Dette felt er påkrævet.", email: "Indtast en gyldig emailadresse." },
+      };
+      const getLang = () => (localStorage.getItem("lang") === "da" ? "da" : "en");
+
+      const fields = [
+        { input: document.querySelector<HTMLInputElement>("#form-name"), error: document.getElementById("form-name-error") },
+        { input: document.querySelector<HTMLInputElement>("#form-email"), error: document.getElementById("form-email-error") },
+        { input: document.querySelector<HTMLTextAreaElement>("#form-message"), error: document.getElementById("form-message-error") },
+      ];
+
+      function showError(error: HTMLElement, key: "required" | "email") {
+        error.dataset.errorKey = key;
+        error.textContent = errorText[getLang()][key];
+        error.classList.remove("hidden");
+      }
+      function clearError(error: HTMLElement) {
+        delete error.dataset.errorKey;
+        error.textContent = "";
+        error.classList.add("hidden");
+      }
+
+      function validateField(input: HTMLInputElement | HTMLTextAreaElement, error: HTMLElement | null): boolean {
+        if (!error) return true;
+        if (input.validity.valueMissing) {
+          input.setAttribute("aria-invalid", "true");
+          showError(error, "required");
+          return false;
+        }
+        if (input.validity.typeMismatch) {
+          input.setAttribute("aria-invalid", "true");
+          showError(error, "email");
+          return false;
+        }
+        input.removeAttribute("aria-invalid");
+        clearError(error);
+        return true;
+      }
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e: Event) => {
+          let firstInvalid: HTMLElement | null = null;
+          fields.forEach(({ input, error }) => {
+            if (!input) return;
+            if (!validateField(input, error) && !firstInvalid) firstInvalid = input;
+          });
+          if (firstInvalid) {
+            e.preventDefault();
+            (firstInvalid as HTMLElement).focus();
+          }
+        });
+
+        // Re-validate on blur so an error clears the moment it's fixed, not only on the next submit.
+        fields.forEach(({ input, error }) => {
+          input?.addEventListener("blur", () => validateField(input, error));
+        });
+      }
+
+      // If the language changes while an error is showing, re-render it in the new language.
+      window.addEventListener("langchange", () => {
+        fields.forEach(({ error }) => {
+          const key = error?.dataset.errorKey as "required" | "email" | undefined;
+          if (error && key) error.textContent = errorText[getLang()][key];
+        });
+      });
     })();
   </script>
 

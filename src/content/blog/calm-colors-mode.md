@@ -12,7 +12,7 @@ tags:
 
 Most accessibility toggles on this site solve a specific, well-documented problem. Dark mode, larger text, a dyslexia-friendly font. Calm colours mode is different. It exists because intense, saturated colour can be genuinely uncomfortable for some visitors— people who're sensitive to visual stimulation, including a lot of neurodivergent people. There's no single WCAG success criterion that covers this the way contrast ratios do. It's a design decision, not a checklist item.
 
-### Not a filter — a second palette
+## Not a filter — a second palette
 
 My first instinct was to reach for a CSS filter: `filter: saturate(0.5)` on the whole page. It's one line and it _"works."_ But I didn't do that, for a reason worth explaining.
 
@@ -41,7 +41,7 @@ body.dark.calm-mode.site-shell {
 }
 ```
 
-### The part a filter can't fix: hardcoded Tailwind colors
+## The part a filter can't fix: hardcoded Tailwind colors
 
 Here's the problem a `saturate()` filter genuinely can't solve, and the reason this mode took longer to build than I expected: not every colour on the site is a CSS variable. Plenty are Tailwind utility classes— `text-red-500`, `text-blue-600`, `bg-blue-100` —baked directly into the markup because that's how the rest of the site was built before calm mode existed.
 
@@ -63,7 +63,7 @@ body.calm-mode .bg-blue-100 {
 
 It's not elegant. Every time I add a new component with a hardcoded Tailwind colour, I have to remember to add a calm-mode override for it, as well, the same way I have to remember a dark-mode override. It's a maintenance cost I accepted knowingly, in exchange for not touching a single filter and getting exact, chosen colours everywhere instead of _"whatever saturate(0.5) happens to produce."_
 
-### Images get the filter treatment — deliberately
+## Images get the filter treatment — deliberately
 
 Photos and screenshots are the one place where I _do_ use a CSS filter, because hand-picking colours for every image would just be absurd:
 
@@ -75,7 +75,7 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
 
 The `:not()` exclusions matter as much as the rule itself— the logo and decorative images are excluded on purpose, so brand identity doesn't wash out along with everything else.
 
-### A toggle like any other
+## A toggle like any other
 
 Mechanically, calm mode is the same pattern as every other accessibility toggle on the site: a class on `<body>`, a `localStorage` flag, and an inline script that applies it before first paint so there's no flash of the _"wrong"_ palette:
 

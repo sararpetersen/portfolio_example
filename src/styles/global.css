@@ -116,6 +116,32 @@ html {
   text-size-adjust: 100%;
 }
 
+/* Reduce Motion Mode — global so it reaches every element on every page, not just the
+   component it happens to be declared in. Backed by a prefers-reduced-motion fallback so
+   motion is still cut for visitors whose OS/browser setting requests it, even before the
+   site's own JS toggle has run (or if it never does). */
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body.site-shell {
   background-color: var(--washi-bg);
   isolation: isolate;
@@ -408,9 +434,24 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
 [data-tooltip]:focus-visible::after {
   opacity: 1;
 }
+/* Escape dismisses an open tooltip without requiring the pointer/focus to move (WCAG 1.4.13);
+   see the keydown listener in MainLayout.astro that toggles this class. */
+body.tooltips-dismissed [data-tooltip]::after {
+  opacity: 0 !important;
+}
 body.dark [data-tooltip]::after {
   background: rgba(235, 235, 235, 0.95);
   color: #1a1a1a;
+}
+
+/* At 320px reflow / 200% zoom a single-line tooltip can run off the edge of the viewport —
+   let it wrap instead of clipping. .tooltip-term already wraps at every width. */
+@media (max-width: 380px) {
+  [data-tooltip]:not(.tooltip-term)::after {
+    white-space: normal;
+    max-width: 65vw;
+    text-align: center;
+  }
 }
 
 /* Inline jargon terms (e.g. "GDPR", "localStorage") get a longer, wrapping

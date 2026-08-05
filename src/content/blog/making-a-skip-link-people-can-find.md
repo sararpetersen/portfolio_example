@@ -27,7 +27,7 @@ Every accessible site is supposed to have a _"Skip to main content"_ link— a k
 
 That satisfies the letter of WCAG 2.4.1. It also has a real, practical flaw I didn't notice until I sat down and thought about it properly: if a link is only visible on focus, the only people who ever discover it exists are people who already know to look for it, because they've used a skip link on another site before, or because they're testing for one. Someone using a keyboard for the first time on an unfamiliar site has no reason to press _'Tab'_ and hope something appears. The link was compliant. It wasn't discoverable.
 
-### The fix: show it once, uninvited
+## The fix: show it once, uninvited
 
 I didn't want to make the link permanently visible. That defeats the whole point, and it clutters the page for everyone who doesn't need it. Instead, it briefly reveals itself on a visitor's very first page load, whether or not they've touched a keyboard:
 
@@ -52,11 +52,11 @@ body.show-skip-link-hint .skip-link {
 
 2.8 seconds, once per browser, ever. Long enough to register without becoming an animation people have to sit through on every visit.
 
-### Why `localStorage` and not "just show it on every load"
+## Why `localStorage` and not "just show it on every load"
 
 I went back and forth on this. Showing the hint on every page load would guarantee visibility, but it would also mean every returning visitor— including the ones who navigate entirely with a mouse and will never touch that link —gets a moving element at the top of the page on every single visit. That's not a neutral cost. Uninvited motion is exactly the kind of thing the reduce-motion toggle on this site exists to prevent, and the hint respects that toggle too, since it's just another CSS transition. `localStorage` with a one-time flag gets the discoverability benefit without the recurring nuisance.
 
-### The part that's easy to get wrong
+## The part that's easy to get wrong
 
 The _'href'_ has to point at a real, focusable landing target, not just any random element:
 

@@ -12,7 +12,7 @@ tags:
 
 Denne portfolio er tosproget— engelsk og dansk, med øjeblikkeligt sprogskift og ingen genindlæsning af siden. Den bruger hverken `astro-i18n`, `i18next` eller nogen form for rute-baseret lokalisering. Det er et helt almindeligt JavaScript-objekt og et `data-i18n`-attribut. Her er, hvordan det virker, og hvor jeg ved, at løsningen en dag ikke længere er nok.
 
-### Selve mekanikken
+## Selve mekanikken
 
 Ethvert oversætteligt element får en nøgle:
 
@@ -57,7 +57,7 @@ setLang: function (lang) {
 
 Det er reelt hele motoren. Ingen ruter, intet build-trin, ingen `[lang]`-mappestruktur.
 
-### Hvorfor ikke et rigtigt i18n-framework
+## Hvorfor ikke et rigtigt i18n-framework
 
 Et Astro-framework ville give mig ordentlige URL-baserede sprogversioner (`/da/about` i stedet for én URL, der server begge sprog), pluralis-regler og oversættelsesfiler i stedet for ét voksende JS-objekt. Jeg overvejede det og lod med vilje være, af to grunde specifikt for dette projekt:
 
@@ -65,7 +65,7 @@ Et Astro-framework ville give mig ordentlige URL-baserede sprogversioner (`/da/a
 
 - **Indhold fra databasen ruter alligevel ikke pænt gennem et frameworks sprog-stier:** Mine cases er linket op i Supabase, ikke i Astros _'content collections'_, og de gemmer allerede engelsk og dansk tekst som søskende-kolonner (`description` / `description_da`, `year` / `year_da`). De data skulle have deres egen oversættelseslogik uanset hvad jeg gjorde med den statiske UI-tekst, så et fuldt i18n-framework ville kun have løst den halve opgave og efterladt den anden halvdel lige så tilpasset, som den er nu.
 
-### Hvor løsningen reelt ikke slår til
+## Hvor løsningen reelt ikke slår til
 
 Jeg vil gerne være ærlig om afvejningerne, for de er reelle:
 
@@ -73,7 +73,7 @@ Jeg vil gerne være ærlig om afvejningerne, for de er reelle:
 - **Den skalerer ikke til lange, indholdstunge tekster:** Systemet er bygget til korte, strukturerede UI-strenge: knaptekster, overskrifter, korttekst – selve dette blogindlæg _kan_ ikke bruge det, hvilket netop er grunden til, at de danske indlæg på denne blog er separate filer i stedet for ét tosproget dokument med et toggle
 - **Hver ny tekststreng er dobbelt bogføring:** Tilføj én engelsk streng, og der følger en underforstået forpligtelse til at tilføje dens danske modstykke i et andet objekt, i hånden, uden nogen build-tids-kontrol af, om du glemte det
 
-### Det, der reelt holder det kørende i hverdagen
+## Det, der reelt holder det kørende i hverdagen
 
 Det, der forhindrer løsningen i at føles skrøbelig, er en custom event ved navn `langchange`. Alt på siden, der viser sprogafhængigt indhold fra data— kortdatoer, værktøjs-tags, mm. —lytter efter den i stedet for at hardcode sproglogik ind i hver enkelt komponent:
 

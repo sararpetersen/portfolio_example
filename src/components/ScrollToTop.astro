@@ -20,10 +20,12 @@
   const scrollToTopButton = document.getElementById("scrollToTop");
 
   if (scrollToTopButton) {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
+    // Checked at click time, not load time, so it picks up the site's own "Reduced motion"
+    // toggle even if it's switched on mid-session — not just the OS-level media query.
     scrollToTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      const reducedMotion =
+        document.body.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
     });
   }
 </script>

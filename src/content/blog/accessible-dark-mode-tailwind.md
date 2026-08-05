@@ -11,7 +11,7 @@ tags:
 
 Dark mode looks like a solved problem— Tailwind itself even has its own `dark:` attribute —but doing it _accessibly_ involves three decisions that the utility classes don't make for you: who decides (system or user), how the choice persists, and how the toggle announces itself. Here's how it works on this site.
 
-### Decision 1: system preference first, user choice forever
+## Decision 1: system preference first, user choice forever
 
 The rule that I settled on: on a first visit, follow the operating system's `prefers-color-scheme`. But the moment the visitor touches the toggle, their choice wins permanently, until they change it again.
 
@@ -26,7 +26,7 @@ The `saved !== null` check is an important line. A common mistake is `saved === 
 
 Like every other setting on this site, this runs in an inline script before first paint, so there's no white flash before dark mode kicks in on a page load.
 
-### Decision 2: a class, plus CSS variables for the values
+## Decision 2: a class, plus CSS variables for the values
 
 Tailwind's `dark:` variant works just fine, but with a design this custom I ended up with a `body.dark` class and CSS custom properties for the recurring colors:
 
@@ -49,7 +49,7 @@ The variables (`--dark-bg`, `--dark-border`, `--text-on-dark`, `--text-on-dark-s
 - **Pure white on pure black is too harsh:** My body text on dark is a soft off-white (`--text-on-dark-soft`), which reduces the halation effect that makes light-on-dark text hard to read for some people, including many dyslexic readers
 - **Every new component needs a dark pass:** The most recent bug on this site was a fine-print paragraph that I added to the contact form that stayed dark gray on the dark background, because the dark-mode rule was scoped to the paragraph next to it. If your dark styles are per-component, _"did I style dark mode?"_ belongs on the checklist for every single addition
 
-### Decision 3: a toggle that says what it is
+## Decision 3: a toggle that says what it is
 
 The buttons in the accessibility-bar keeps `aria-pressed` in sync:
 
@@ -59,7 +59,7 @@ document.getElementById("darkModeToggle")?.setAttribute("aria-pressed", String(i
 
 A sighted user sees the moon icon change state; a screen reader user hears _"Toggle dark mode, pressed."_ Without `aria-pressed`, they hear a button with no idea whether it's on. It's one line, and there's no excuse to skip it.
 
-### The shape of the whole thing
+## The shape of the whole thing
 
 System preference as the default, explicit choice in `localStorage` as the override, an inline script to beat first paint, one palette of variables to keep contrast auditable, and `aria-pressed` on the control. None of it is hard. It's just five small decisions that each default to the inaccessible option if you don't make them on purpose.
 

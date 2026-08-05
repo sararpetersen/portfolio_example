@@ -19,14 +19,14 @@ const { projects } = Astro.props as { projects: LabProject[] };
           <div class="flex items-center justify-between mb-4">
             <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
             <div class="flex items-center gap-2 flex-wrap justify-end">
-              <span class="lab-tag" title="This project was built with AI assistance">
+              <span class="lab-tag" tabindex="0" data-tooltip="This project was built with AI assistance">
                 <>
                   <ColorSymIcon letter="B" />
                   <span data-i18n="lab.badge.vibecoded">Vibe coded</span>
                 </>
               </span>
               {project.wip && (
-                <span class="lab-tag wip-tag" title="Work in progress — the coded version is still being developed">
+                <span class="lab-tag wip-tag" tabindex="0" data-tooltip="Work in progress — the coded version is still being developed">
                   <ColorSymIcon letter="O" />
                   WIP
                 </span>
@@ -78,6 +78,11 @@ const { projects } = Astro.props as { projects: LabProject[] };
     line-height: 1;
     padding: 0.42rem 0.72rem;
     text-transform: uppercase;
+  }
+
+  .lab-tag:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #477b93;
   }
 
   .wip-tag {

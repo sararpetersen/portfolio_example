@@ -373,6 +373,7 @@ const schemamarkup = {
             "blog.filter.empty": "No posts match this category yet.",
             "nav.lab": "The Lab",
             "nav.library": "The Library",
+            "nav.library.newtab": " (opens in a new tab)",
             "lab.title": "Experiments",
             "lab.intro":
               "This is where I put the looser stuff— projects built with AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the actual cases, but more honest about the process.",
@@ -672,6 +673,7 @@ const schemamarkup = {
             "blog.filter.empty": "Ingen indlæg matcher denne kategori endnu.",
             "nav.lab": "Laboratoriet",
             "nav.library": "Biblioteket",
+            "nav.library.newtab": " (åbner i en ny fane)",
             "lab.title": "Eksperimenter",
             "lab.intro":
               "Her lægger jeg de lidt løsere ting— projekter bygget med AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end de faktiske cases, men mere ærlig om processen.",
@@ -1027,4 +1029,50 @@ const schemamarkup = {
       localStorage.setItem(skipHintSeenKey, "true");
     }, 2800);
   }
+</script>
+
+<script>
+  // [data-tooltip] renders its text as CSS generated content (::after), which screen readers
+  // don't reliably expose. Pair every tooltip trigger with a visually-hidden description span
+  // and aria-describedby so the same text reaches assistive tech, not just sighted hover/focus.
+  //
+  // Some [data-tooltip] elements (e.g. the .tooltip-term jargon spans inside translated
+  // paragraphs) get their innerHTML rebuilt from scratch when the language toggles, which
+  // silently drops whatever we appended here. Re-running this on langchange re-wires those —
+  // the dataset marker skips elements that weren't rebuilt, so it's safe to call repeatedly.
+  let tooltipDescCounter = 0;
+  function wireTooltipDescriptions(): void {
+    document.querySelectorAll<HTMLElement>("[data-tooltip]").forEach((el) => {
+      if (el.dataset.tooltipDescId) return;
+      const text = el.getAttribute("data-tooltip");
+      if (!text) return;
+
+      const id = `tooltip-desc-${tooltipDescCounter++}`;
+      const desc = document.createElement("span");
+      desc.id = id;
+      desc.className = "sr-only";
+      desc.textContent = text;
+      el.appendChild(desc);
+      el.dataset.tooltipDescId = id;
+
+      const existing = el.getAttribute("aria-describedby");
+      el.setAttribute("aria-describedby", existing ? `${existing} ${id}` : id);
+    });
+  }
+  wireTooltipDescriptions();
+  window.addEventListener("langchange", wireTooltipDescriptions);
+
+  // WCAG 1.4.13: hover/focus-triggered content must be dismissible without moving the
+  // pointer or focus away. Escape hides every open tooltip in place; it reappears on the
+  // next hover/focus change.
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key !== "Escape") return;
+    document.body.classList.add("tooltips-dismissed");
+  });
+  document.addEventListener(
+    "focusin",
+    () => document.body.classList.remove("tooltips-dismissed"),
+    true,
+  );
+  document.addEventListener("mouseover", () => document.body.classList.remove("tooltips-dismissed"), true);
 </script>
