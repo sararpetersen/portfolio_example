@@ -128,6 +128,12 @@ body.reduce-motion *::after {
   scroll-behavior: auto !important;
 }
 
+/* body.reduce-motion * only matches descendants of body, not html itself, which is
+   what actually carries scroll-behavior: smooth for in-page anchor jumps. */
+html:has(body.reduce-motion) {
+  scroll-behavior: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -338,6 +344,16 @@ body.dark [class*="ring-blue-300"]:focus-visible {
   box-shadow: 0 0 0 3px #ff6f61 !important;
 }
 
+/* Every focus indicator on the site is built from box-shadow with outline: none.
+   In Windows High Contrast / forced-colors mode, box-shadow isn't painted and the
+   outline: none is respected, so keyboard focus would otherwise be invisible. */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+}
+
 /* ── Calm Mode: site-wide hard-coded accent overrides ─────── */
 
 /* Kanji decorators (text-red-500) */
@@ -445,8 +461,10 @@ body.dark [data-tooltip]::after {
 }
 
 /* At 320px reflow / 200% zoom a single-line tooltip can run off the edge of the viewport —
-   let it wrap instead of clipping. .tooltip-term already wraps at every width. */
-@media (max-width: 380px) {
+   let it wrap instead of clipping. .tooltip-term already wraps at every width. Threshold is
+   wider than the 320px target itself so a long tooltip doesn't still clip on the viewports
+   just above it. */
+@media (max-width: 500px) {
   [data-tooltip]:not(.tooltip-term)::after {
     white-space: normal;
     max-width: 65vw;

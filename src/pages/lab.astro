@@ -65,14 +65,27 @@ import { labProjects } from "../data/labProjects";
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <span class="lab-tag" tabindex="0" data-tooltip="This project was built with AI assistance"
+        <span
+          class="lab-tag"
+          tabindex="0"
+          role="note"
+          aria-label="Vibe coded"
+          data-i18n-aria="lab.badge.vibecoded"
+          data-tooltip="This project was built with AI assistance"
+          data-i18n-tooltip="lab.badge.vibecoded.tooltip"
           ><ColorSymIcon letter="B" /><span data-i18n="lab.badge.vibecoded">Vibe coded</span></span
         >
         <span data-i18n="lab.legend.vibecoded">= built with AI assistance</span>
       </span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
-        <span class="lab-tag wip-tag" tabindex="0" data-tooltip="Work in progress — the coded version is still being developed"
+        <span
+          class="lab-tag wip-tag"
+          tabindex="0"
+          role="note"
+          aria-label="WIP"
+          data-tooltip="Work in progress — the coded version is still being developed"
+          data-i18n-tooltip="lab.badge.wip.tooltip"
           ><ColorSymIcon letter="O" />WIP</span
         >
         <span data-i18n="lab.legend.wip">= in progress</span>

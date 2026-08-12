@@ -219,7 +219,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="Your name"
               />
-              <p id="form-name-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
+              <p id="form-name-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Email Field -->
@@ -239,7 +239,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="your.email@example.com"
               />
-              <p id="form-email-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
+              <p id="form-email-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Message Field -->
@@ -258,7 +258,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 rows={6}
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300 resize-none"
                 placeholder="Your message..."></textarea>
-              <p id="form-message-error" class="hidden text-red-500 text-xs mt-1.5" role="alert"></p>
+              <p id="form-message-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
             </div>
 
             <!-- Fine print: GDPR + what happens next -->
@@ -469,8 +469,14 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
     }
 
     :global(body.dark #contact-form-subtitle),
-    :global(body.dark #contact-form p) {
+    :global(body.dark #contact-form p:not([role="alert"])) {
       color: var(--text-on-dark-soft);
+    }
+
+    /* text-red-700 (#b3222d) is 2.6:1 on the dark form background — reuse the same
+       coral already used for the dark-mode focus ring, which clears 4.5:1 here. */
+    :global(body.dark #contact-form p[role="alert"]) {
+      color: #ff6f61;
     }
 
     :global(body.dark #contact-form-section label) {
