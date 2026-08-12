@@ -17,7 +17,13 @@ const currentYear = new Date().getFullYear();
       <h2 id="terms-modal-title" class="font-garamond font-bold italic text-h3-mobile md:text-h3-desktop" data-i18n="modal.terms.title">
         Terms & Privacy
       </h2>
-      <button id="terms-modal-close" aria-label="Close terms" data-tooltip="Close">
+      <button
+        id="terms-modal-close"
+        aria-label="Close terms"
+        data-i18n-aria="terms.modal.close.aria"
+        data-tooltip="Close"
+        data-i18n-tooltip="modal.close.tooltip"
+      >
         <svg
           width="16"
           height="16"
@@ -113,7 +119,11 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Navigation Links -->
-    <nav aria-label="Footer navigation" class="some1 flex md:flex-row flex-col items-start mb-8 md:mb-0 gap-12">
+    <nav
+      aria-label="Footer navigation"
+      data-i18n-aria="footer.nav.aria"
+      class="some1 flex md:flex-row flex-col items-start mb-8 md:mb-0 gap-12"
+    >
       <div class="flex flex-col md:flex-row items-start md:gap-8 gap-0">
         <div class="flex flex-col items-start">
           <a
@@ -162,8 +172,10 @@ const currentYear = new Date().getFullYear();
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my LinkedIn-profile (external link)"
+          data-i18n-aria="footer.linkedin.aria"
           class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           data-tooltip="LinkedIn"
+          data-i18n-tooltip="footer.linkedin.tooltip"
         >
           <svg
             class="w-[40] h-[40] text-gray-50 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
@@ -186,8 +198,10 @@ const currentYear = new Date().getFullYear();
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my Instagram-profile (external link)"
+          data-i18n-aria="footer.instagram.aria"
           class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           data-tooltip="Instagram"
+          data-i18n-tooltip="footer.instagram.tooltip"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -208,8 +222,10 @@ const currentYear = new Date().getFullYear();
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my Facebook page (external link)"
+          data-i18n-aria="footer.facebook.aria"
           class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           data-tooltip="Facebook"
+          data-i18n-tooltip="footer.facebook.tooltip"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -230,8 +246,10 @@ const currentYear = new Date().getFullYear();
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Go to my Github-page (external link)"
+          data-i18n-aria="footer.github.aria"
           class="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
           data-tooltip="GitHub"
+          data-i18n-tooltip="footer.github.tooltip"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +289,8 @@ const currentYear = new Date().getFullYear();
         <a
           href="mailto:sara.ringkow@gmail.com"
           class="text-gray-50 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Send an email to 'sara.ringkow@gmail.com'">sara.ringkow@gmail.com</a
+          aria-label="Send an email to 'sara.ringkow@gmail.com'"
+          data-i18n-aria="footer.email.aria">sara.ringkow@gmail.com</a
         >
       </div>
       <div class="some1 flex items-center py-1">
@@ -293,7 +312,8 @@ const currentYear = new Date().getFullYear();
         <a
           href="tel:+4542428807"
           class="text-gray-50 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out"
-          aria-label="Call '+45 42 42 88 07'">+45 42 42 88 07</a
+          aria-label="Call '+45 42 42 88 07'"
+          data-i18n-aria="footer.phone.aria">+45 42 42 88 07</a
         >
       </div>
     </div>

@@ -11,11 +11,20 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   class="fixed top-0 left-0 w-full bg-gray-800 text-gray-50 flex items-center h-9 px-4 z-50"
   role="region"
   aria-label="Accessibility and language settings"
+  data-i18n-aria="a11y.bar.aria"
 >
   <!-- Quick-access setting buttons -->
-  <div class="flex items-center gap-1.5" role="group" aria-label="Quick accessibility settings">
+  <div class="flex items-center gap-1.5" role="group" aria-label="Quick accessibility settings" data-i18n-aria="a11y.quickgroup.aria">
     <!-- Text size -->
-    <button id="textSizeToggle" aria-pressed="false" aria-label="Toggle larger text" class="bar-quick-btn tooltip-below" data-tooltip="Text size">
+    <button
+      id="textSizeToggle"
+      aria-pressed="false"
+      aria-label="Toggle larger text"
+      data-i18n-aria="a11y.textsize.aria"
+      class="bar-quick-btn tooltip-below"
+      data-tooltip="Text size"
+      data-i18n-tooltip="a11y.textsize.tooltip"
+    >
       <span style="font-size:12px;font-weight:700;line-height:1;letter-spacing:0">A</span>
     </button>
 
@@ -32,7 +41,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     </button>
 
     <!-- Dark mode -->
-    <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode" class="bar-quick-btn tooltip-below" data-tooltip="Dark mode">
+    <button
+      id="darkModeToggle"
+      aria-pressed="false"
+      aria-label="Toggle dark mode"
+      data-i18n-aria="a11y.darkmode.aria"
+      class="bar-quick-btn tooltip-below"
+      data-tooltip="Dark mode"
+      data-i18n-tooltip="a11y.darkmode.tooltip"
+    >
       <svg
         width="13"
         height="13"
@@ -53,8 +70,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       id="colorModeToggle"
       aria-pressed="false"
       aria-label="Toggle calm colours"
+      data-i18n-aria="a11y.calmtoggle.aria"
       class="bar-quick-btn tooltip-below"
       data-tooltip="Calm colours"
+      data-i18n-tooltip="a11y.calmtoggle.tooltip"
     >
       <svg
         width="13"
@@ -74,7 +93,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     </button>
 
     <!-- Reduce motion -->
-    <button id="motionToggle" aria-pressed="false" aria-label="Toggle reduce motion" class="bar-quick-btn tooltip-below" data-tooltip="Reduce motion">
+    <button
+      id="motionToggle"
+      aria-pressed="false"
+      aria-label="Toggle reduce motion"
+      data-i18n-aria="a11y.motiontoggle.aria"
+      class="bar-quick-btn tooltip-below"
+      data-tooltip="Reduce motion"
+      data-i18n-tooltip="a11y.motiontoggle.tooltip"
+    >
       <svg
         width="13"
         height="13"
@@ -91,7 +118,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     </button>
 
     <!-- Focus mode -->
-    <button id="focusModeToggle" aria-pressed="false" aria-label="Toggle focus mode" class="bar-quick-btn tooltip-below" data-tooltip="Focus mode">
+    <button
+      id="focusModeToggle"
+      aria-pressed="false"
+      aria-label="Toggle focus mode"
+      data-i18n-aria="a11y.focustoggle.aria"
+      class="bar-quick-btn tooltip-below"
+      data-tooltip="Focus mode"
+      data-i18n-tooltip="a11y.focustoggle.tooltip"
+    >
       <svg
         width="13"
         height="13"
@@ -141,17 +176,21 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       data-lang="en"
       class="lang-btn hover:cursor-pointer px-1.5 py-0.5 text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 tooltip-below"
       aria-label="Switch to English"
+      data-i18n-aria="lang.switch.en.aria"
       aria-pressed="true"
-      data-tooltip="English">EN</button
+      data-tooltip="English"
+      data-i18n-tooltip="lang.switch.en.tooltip">EN</button
     >
     <span class="text-gray-300 text-xs" aria-hidden="true">/</span>
     <button
       id="lang-toggle-da"
       data-lang="da"
       class="lang-btn hover:cursor-pointer px-1.5 py-0.5 text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 tooltip-below"
-      aria-label="Skift til dansk"
+      aria-label="Switch to Danish"
+      data-i18n-aria="lang.switch.da.aria"
       aria-pressed="false"
-      data-tooltip="Danish">DA</button
+      data-tooltip="Danish"
+      data-i18n-tooltip="lang.switch.da.tooltip">DA</button
     >
   </div>
 </div>
@@ -160,7 +199,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   <div class="flex items-center justify-between">
     <!-- Logo Section -->
     <div class="flex-shrink-0 flex justify-center">
-      <a href="/" aria-label="Go to homepage" class="group inline-block">
+      <a href="/" aria-label="Go to homepage" data-i18n-aria="header.logo.aria" class="group inline-block">
         <img
           src="/logo.svg"
           alt="Logo for my website, with three of my initials (standard)"
@@ -182,7 +221,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     </div>
 
     <!-- Desktop Navigation -->
-    <nav aria-label="Main navigation">
+    <nav aria-label="Main navigation" data-i18n-aria="header.nav.main.aria">
       <ul class="hidden lg:flex space-x-6 items-center">
         <li class="some1">
           <a
@@ -258,11 +297,13 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     <button
       id="burgermenu"
       aria-label="Show mobile-menu"
+      data-i18n-aria="header.burger.aria"
       aria-controls="mobilmenu"
       x-bind:aria-expanded="showmenu ? 'true' : 'false'"
       class="lg:hidden tooltip-below"
       x-on:click="showmenu = !showmenu"
       data-tooltip="Menu"
+      data-i18n-tooltip="header.burger.tooltip"
     >
       <!-- Hamburger -->
       <svg
@@ -298,6 +339,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   <nav
     id="mobilmenu"
     aria-label="Mobile navigation"
+    data-i18n-aria="header.nav.mobile.aria"
     x-bind:aria-hidden="showmenu ? 'false' : 'true'"
     class="lg:hidden"
     x-show="showmenu"
@@ -636,11 +678,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     verdana: "verdanaFontEnabled",
     opendyslexic: "opendyslexicFontEnabled",
   };
-  const fontDisplayLabels: Record<FontOption, string> = {
-    default: "Default",
-    atkinson: "Atkinson Hyperlegible",
-    verdana: "Verdana",
-    opendyslexic: "OpenDyslexic",
+  // Font names are proper nouns and stay the same in both languages — only "Default" translates.
+  const fontDisplayLabels: Record<string, Record<FontOption, string>> = {
+    en: { default: "Default", atkinson: "Atkinson Hyperlegible", verdana: "Verdana", opendyslexic: "OpenDyslexic" },
+    da: { default: "Standard", atkinson: "Atkinson Hyperlegible", verdana: "Verdana", opendyslexic: "OpenDyslexic" },
   };
 
   function getCurrentFont(): FontOption {
@@ -654,8 +695,15 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   function updateFontButtonUI(font: FontOption): void {
     const btn = document.getElementById("fontCycleToggle");
     if (!btn) return;
-    btn.setAttribute("data-tooltip", `Font: ${fontDisplayLabels[font]}`);
-    btn.setAttribute("aria-label", `Reading font: ${fontDisplayLabels[font]}. Click to cycle to the next option.`);
+    const lang = localStorage.getItem("lang") || "en";
+    const label = (fontDisplayLabels[lang] || fontDisplayLabels.en)[font];
+    btn.setAttribute("data-tooltip", lang === "da" ? `Læseskrift: ${label}` : `Font: ${label}`);
+    btn.setAttribute(
+      "aria-label",
+      lang === "da"
+        ? `Læseskrift: ${label}. Klik for at skifte til næste valgmulighed.`
+        : `Reading font: ${label}. Click to cycle to the next option.`,
+    );
     btn.setAttribute("aria-pressed", String(font !== "default"));
   }
 
@@ -681,6 +729,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   new MutationObserver(() => updateFontButtonUI(getCurrentFont())).observe(document.documentElement, { attributeFilter: ["class"] });
 
   updateFontButtonUI(getCurrentFont());
+  window.addEventListener("langchange", () => updateFontButtonUI(getCurrentFont()));
 
   // Language toggle
   const langButtons = document.querySelectorAll<HTMLButtonElement>(".lang-btn");

@@ -66,6 +66,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                   <a
                     href="mailto:sara.ringkow@gmail.com"
                     aria-label="Send email to 'sara.ringkow@gmail.com'"
+                    data-i18n-aria="contact.email.aria"
                     class="transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
                     >sara.ringkow@gmail.com</a
                   >
@@ -92,6 +93,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                   <a
                     href="tel:+4542428807"
                     aria-label="Call +45 42 42 88 07"
+                    data-i18n-aria="contact.phone.aria"
                     class="transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">+45 42 42 88 07</a
                   >
                 </div>
@@ -117,6 +119,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                   <a
                     href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/"
                     aria-label="Go to 'linkedin.com/in/sara-ringkow-petersen' (external link)"
+                    data-i18n-aria="contact.linkedin.aria"
                     class="transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
                     >linkedin.com/in/sara-ringkow-petersen</a
                   >
@@ -132,7 +135,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
           >
             What I offer
           </p>
-          <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered">
+          <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered" data-i18n-aria="contact.services.aria">
             <li
               class="inline-flex items-center gap-0.5 px-2.5 py-1 text-xs font-semibold bg-green-100 border border-green-500 border-r-4 rounded-full text-green-800"
             >
@@ -304,7 +307,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
   </section>
 
   <section class="button-container mx-auto py-20 flex justify-center">
-    <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
+    <Button href="/" variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
 
   <script>

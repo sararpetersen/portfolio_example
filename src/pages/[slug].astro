@@ -53,6 +53,7 @@ const dbNotice = DB_NOTICES[project.slug];
     <nav
       id="navigation"
       aria-label="Page navigation"
+      data-i18n-aria="slugpage.nav.aria"
       class="col-span-12 grid grid-cols-3 items-center gap-2 md:mb-12 mb-10 md:pt-0 pt-10 text-[15px] md:text-p-desktop"
     >
       <div>
@@ -62,6 +63,8 @@ const dbNotice = DB_NOTICES[project.slug];
               href={`/${prevProject.slug}`}
               class="inline-block text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to previous project: ${prevProject.name}`}
+              data-project-nav-prefix="prev"
+              data-project-nav-name={prevProject.name}
             >
               ←{" "}
               <>
@@ -78,6 +81,7 @@ const dbNotice = DB_NOTICES[project.slug];
           href="/"
           class="inline-block text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
           aria-label="Go to homepage"
+          data-i18n-aria="header.logo.aria"
           data-i18n="project.back"
         >
           ↑ <span class="hidden md:inline">Homepage</span><span class="md:hidden">Home</span>
@@ -91,6 +95,8 @@ const dbNotice = DB_NOTICES[project.slug];
               href={`/${nextProject.slug}`}
               class="inline-block text-gray-500 py-1 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               aria-label={`Go to next project: ${nextProject.name}`}
+              data-project-nav-prefix="next"
+              data-project-nav-name={nextProject.name}
             >
               <>
                 <span class="hidden md:inline">{nextProject.name}</span>
@@ -405,6 +411,20 @@ const dbNotice = DB_NOTICES[project.slug];
     document.querySelectorAll(".related-project-year").forEach((yearEl) => {
       const element = yearEl as HTMLElement;
       element.textContent = getFullCurrentPeriod(element);
+    });
+
+    // Prev/next case-study nav: aria-label interpolates the project name, so it can't
+    // use a plain data-i18n-aria lookup — rebuild it from the translated prefix instead.
+    const prefixes: Record<string, { en: string; da: string }> = {
+      prev: { en: "Go to previous project", da: "Gå til forrige projekt" },
+      next: { en: "Go to next project", da: "Gå til næste projekt" },
+    };
+    document.querySelectorAll<HTMLElement>("[data-project-nav-prefix]").forEach((el) => {
+      const prefixKey = el.dataset.projectNavPrefix as "prev" | "next" | undefined;
+      const name = el.dataset.projectNavName;
+      if (!prefixKey || !name || !prefixes[prefixKey]) return;
+      const prefix = lang === "da" ? prefixes[prefixKey].da : prefixes[prefixKey].en;
+      el.setAttribute("aria-label", `${prefix}: ${name}`);
     });
   };
 
