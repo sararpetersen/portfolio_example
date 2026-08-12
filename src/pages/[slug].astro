@@ -31,12 +31,12 @@ const DB_NOTICES: Record<string, { key: string; fallback: string }> = {
   kadaver: {
     key: "project.db.notice.showcase",
     fallback:
-      "The case showcase on the live site's frontpage is no longer visible, as the original database has been deactivated. This does not reflect the original functionality of the project.",
+      "The database behind this project's live case showcase has been deactivated for maintenance. The site may still display it for now, but the content is no longer being kept up to date.",
   },
   cpdanmark: {
     key: "project.db.notice.offline",
     fallback:
-      "The live version of this project is no longer accessible, as the original database has been deactivated. This does not reflect the original functionality of the project.",
+      "The database behind this project's live site has been deactivated for maintenance. The site may still appear to work for now, but the content is no longer being kept up to date.",
   },
 };
 const dbNotice = DB_NOTICES[project.slug];
