@@ -21,6 +21,25 @@ const currentIndex = navigationProjects.findIndex((item) => item.slug === projec
 
 const prevProject = currentIndex > 0 ? navigationProjects[currentIndex - 1] : null;
 const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.length - 1 ? navigationProjects[currentIndex + 1] : null;
+
+const DB_NOTICES: Record<string, { key: string; fallback: string }> = {
+  susse_volander: {
+    key: "project.db.notice",
+    fallback:
+      "The images on the gallery page are no longer visible due to the original database being inactive. This does not reflect the original functionality of the project.",
+  },
+  kadaver: {
+    key: "project.db.notice.showcase",
+    fallback:
+      "The case showcase on the live site's frontpage is no longer visible, as the original database has been deactivated. This does not reflect the original functionality of the project.",
+  },
+  cpdanmark: {
+    key: "project.db.notice.offline",
+    fallback:
+      "The live version of this project is no longer accessible, as the original database has been deactivated. This does not reflect the original functionality of the project.",
+  },
+};
+const dbNotice = DB_NOTICES[project.slug];
 ---
 
 <MainLayout
@@ -136,7 +155,7 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
 
     <!-- DB Notice -->
     {
-      project.slug === "susse_volander" && (
+      dbNotice && (
         <div
           class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-orange-200 border border-l-4 border-orange-600 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-fit w-full mb-8"
           id="db-notice"
@@ -156,10 +175,9 @@ const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.lengt
           <div class="min-w-0 flex-1">
             <p
               class="text-orange-950 md:text-[14.5px] text-[12px] leading-[1.4] md:leading-[1.5] text-center md:text-left break-words"
-              data-i18n="project.db.notice"
+              data-i18n={dbNotice.key}
             >
-              The images on the gallery page are no longer visible due to the original database being inactive. This does not reflect the original
-              functionality of the project.
+              {dbNotice.fallback}
             </p>
           </div>
         </div>
