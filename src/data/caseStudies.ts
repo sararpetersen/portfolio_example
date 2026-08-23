@@ -155,8 +155,8 @@ export const caseStudies: CaseStudy[] = [
           da: "'Opgaver' var nyttige; grænserne mellem værktøjerne var ikke tydelige nok",
         },
         body: {
-          en: "'Tasks' were the clearest source of value. One respondent also used 'Mood', while 'Habit Tracker' was difficult to interpret and 'Tasks' and 'Routines' felt too similar. The strongest engagement barrier was not a crash or layout failure, but remembering to return without notifications. Both respondents described the experience as calm; one said they would use a developed version and the other answered maybe.",
-          da: "'Opgaver' var den tydeligste kilde til værdi. Én respondent brugte også 'Humør', mens formålet med 'Vaner' var svært at forstå, og 'Opgaver' og 'Rutiner' føltes for ens. Den største barriere for engagement var ikke et nedbrud eller en layoutfejl, men at huske at vende tilbage uden notifikationer. Begge beskrev oplevelsen som rolig; én ville bruge en videreudviklet version, og den anden svarede måske.",
+          en: "<em>'Tasks'</em> were the clearest source of value. One respondent also used <em>'Mood'</em>, while <em>'Habit Tracker'</em> was difficult to interpret and <em>'Tasks'</em> and <em>'Routines'</em> felt too similar. The strongest engagement barrier was not a crash or layout failure, but remembering to return without notifications. Both respondents described the experience as calm; one said they would use a developed version and the other answered maybe.",
+          da: "<em>'Opgaver'</em> var den tydeligste kilde til værdi. Én respondent brugte også <em>'Humør'</em>, mens formålet med <em>'Vaner'</em> var svært at forstå, og <em>'Opgaver'</em> og <em>'Rutiner'</em> føltes for ens. Den største barriere for engagement var ikke et nedbrud eller en layoutfejl, men at huske at vende tilbage uden notifikationer. Begge beskrev oplevelsen som rolig; én ville bruge en videreudviklet version, og den anden svarede måske.",
         },
         status: "documented",
       },
@@ -165,8 +165,8 @@ export const caseStudies: CaseStudy[] = [
         eyebrow: { en: "07 · Iteration", da: "07 · Iteration" },
         title: { en: "The feedback changed both the wording and the product", da: "Feedbacken ændrede både sproget og produktet" },
         body: {
-          en: "After the test, the descriptions of 'Tasks', 'Routines' and 'Habit Tracker' were rewritten, duplicated behaviour between 'Tasks' and 'Routines' was reduced, and 'Habit Tracker's growth payoff was made visible on its own screen. Steady also gained gentle on-screen reminders for important dates, stronger mobile behaviour, task and routine substeps, recurring schedules and a broader accessibility audit. The requested push notifications are not implemented; the current reminders only appear while the app is open.",
-          da: "Efter testen blev beskrivelserne af 'Opgaver', 'Rutiner' og 'Vaner' omskrevet, overlappende adfærd mellem 'Opgaver' og 'Rutiner' blev reduceret, og 'Vaner's vækstbelønning blev synlig på selve skærmen. Steady fik også nænsomme påmindelser om vigtige datoer i appen, bedre mobiladfærd, deltrin i opgaver og rutiner, gentagelser og en bredere tilgængelighedsaudit. De efterspurgte push-notifikationer er ikke implementeret; de nuværende påmindelser vises kun, mens appen er åben.",
+          en: "After the test, the descriptions of <em>'Tasks'</em>, <em>'Routines'</em> and <em>'Habit Tracker'</em> were updated, the overlap between <em>'Tasks'</em> and <em>'Routines'</em> and <em>'Habit Tracker'</em> were rewritten, duplicated behaviour between <em>'Tasks'</em> and <em>'Routines'</em> was reduced, and <em>'Habit Tracker's</em> growth payoff was made visible on its own screen. Steady also gained gentle on-screen reminders for important dates, stronger mobile behaviour, task and routine substeps, recurring schedules and a broader accessibility audit. The requested push notifications are not implemented; the current reminders only appear while the app is open.",
+          da: "Efter testen blev beskrivelserne af <em>'Opgaver'</em>, <em>'Rutiner'</em> og <em>'Vaner'</em> omskrevet, overlappende adfærd mellem <em>'Opgaver'</em> og <em>'Rutiner'</em> blev reduceret, og <em>'Vaner's'</em> vækstbelønning blev synlig på selve skærmen. Steady fik også nænsomme påmindelser om vigtige datoer i appen, bedre mobiladfærd, deltrin i opgaver og rutiner, gentagelser og en bredere tilgængelighedsaudit. De efterspurgte push-notifikationer er ikke implementeret; de nuværende påmindelser vises kun, mens appen er åben.",
         },
         status: "documented",
       },
@@ -183,12 +183,8 @@ export const caseStudies: CaseStudy[] = [
         },
         points: [
           {
-            en: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Read how the user test began</a>`,
-            da: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Læs hvordan brugertesten begyndte</a>`,
-          },
-          {
-            en: `<a href="/contact" class="underline hover:text-blue-500">Talk to me about inclusive design</a>`,
-            da: `<a href="/contact" class="underline hover:text-blue-500">Tal med mig om inkluderende design</a>`,
+            en: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Read about how the user test began</a>`,
+            da: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Læs om hvordan brugertesten begyndte</a>`,
           },
         ],
         status: "reflection",

@@ -103,20 +103,10 @@ const statusLabels = {
             </h2>
             <p class="text-gray-600 leading-relaxed">
               <>
-                <span class="case-en">{section.body.en}</span>
-                <span class="case-da">{section.body.da}</span>
+                <span class="case-en" set:html={section.body.en} />
+                <span class="case-da" set:html={section.body.da} />
               </>
             </p>
-            {section.points && (
-              <ul class="mt-6 space-y-2 text-gray-600 list-disc pl-5">
-                {section.points.map((point) => (
-                  <li>
-                    <span class="case-en" set:html={point.en} />
-                    <span class="case-da" set:html={point.da} />
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         </section>
       ))
@@ -127,7 +117,7 @@ const statusLabels = {
     aria-labelledby="case-links-title"
     class="mt-12 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 p-7 md:p-10"
   >
-    <h2 id="case-links-title" class="font-garamond italic font-bold text-h4-mobile md:text-h4-desktop text-gray-800 mb-1">
+    <h2 id="case-links-title" class="font-garamond font-semibold italic text-h4-mobile md:text-h4-desktop text-gray-800 mb-1">
       <span class="case-en">Try Steady or start a conversation</span><span class="case-da">Prøv Steady, eller start en samtale</span>
     </h2>
     <p class="text-gray-600 mb-6">
