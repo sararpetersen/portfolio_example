@@ -23,11 +23,6 @@ const prevProject = currentIndex > 0 ? navigationProjects[currentIndex - 1] : nu
 const nextProject = currentIndex >= 0 && currentIndex < navigationProjects.length - 1 ? navigationProjects[currentIndex + 1] : null;
 
 const DB_NOTICES: Record<string, { key: string; fallback: string }> = {
-  susse_volander: {
-    key: "project.db.notice",
-    fallback:
-      "The images on the gallery page are no longer visible due to the original database being inactive. This does not reflect the original functionality of the project.",
-  },
   kadaver: {
     key: "project.db.notice.showcase",
     fallback:
