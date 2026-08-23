@@ -346,11 +346,15 @@ body.dark [class*="ring-blue-300"]:focus-visible {
 
 /* Every focus indicator on the site is built from box-shadow with outline: none.
    In Windows High Contrast / forced-colors mode, box-shadow isn't painted and the
-   outline: none is respected, so keyboard focus would otherwise be invisible. */
+   outline: none is respected, so keyboard focus would otherwise be invisible.
+   !important is needed here: the lab badges set their own scoped `:focus-visible {
+   outline: none }` (LabProjectCards.astro, lab.astro), and as unlayered component CSS
+   it has higher specificity than this bare selector, so it would otherwise still win
+   even inside forced-colors mode. */
 @media (forced-colors: active) {
   :focus-visible {
-    outline: 2px solid CanvasText;
-    outline-offset: 2px;
+    outline: 2px solid CanvasText !important;
+    outline-offset: 2px !important;
   }
 }
 
