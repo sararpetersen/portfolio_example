@@ -59,11 +59,25 @@ import { labProjects } from "../data/labProjects";
     </h2>
 
     <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-2xl mb-6" data-i18n="lab.items.intro">
-      A collection of experimental tools and concepts centred on neurodiversity, disability, and accessible design. Each project explores how digital
-      experiences can feel calmer, clearer, and free from performance pressure.
+      A collection of experimental tools and concepts centred on neurodiversity, disability, and accessible design. Steady is the project I have worked
+      on for the longest, growing through repeated accessibility work, user testing, and product iteration.
     </p>
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
+      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+        <span
+          class="lab-tag long-running-tag"
+          tabindex="0"
+          role="note"
+          aria-label="Longest-running project"
+          data-i18n-aria="lab.badge.longrunning"
+          data-tooltip="The Lab project I have developed over the longest period"
+          data-i18n-tooltip="lab.badge.longrunning.tooltip"
+          ><ColorSymIcon letter="P" /><span data-i18n="lab.badge.longrunning">Longest-running project</span></span
+        >
+        <span data-i18n="lab.legend.longrunning">= developed over the longest period</span>
+      </span>
+      <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
       <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
         <span
           class="lab-tag"
@@ -172,6 +186,12 @@ import { labProjects } from "../data/labProjects";
     color: #92400e;
   }
 
+  .long-running-tag {
+    border-color: rgba(67, 56, 202, 0.38);
+    background: rgba(99, 102, 241, 0.1);
+    color: #4338ca;
+  }
+
   #lab-divider-1 .divider-center {
     background-color: #ffffff;
   }
@@ -221,6 +241,12 @@ import { labProjects } from "../data/labProjects";
     border-color: rgba(251, 191, 36, 0.35);
     background: rgba(217, 119, 6, 0.2);
     color: #fbbf24;
+  }
+
+  body.dark .long-running-tag {
+    border-color: rgba(199, 210, 254, 0.4);
+    background: rgba(99, 102, 241, 0.2);
+    color: #c7d2fe;
   }
 
   body.dark .lab-legend {

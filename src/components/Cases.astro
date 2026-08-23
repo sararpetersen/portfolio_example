@@ -54,7 +54,12 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
               </div>
             </div>
           ) : (
-            <a href={`/${project.slug}`} aria-label={`View project: ${project.name}`} class="block h-full w-full">
+            <a
+              href={`/${project.slug}`}
+              aria-label={`View project: ${project.name}`}
+              data-project-card-name={project.name}
+              class="block h-full w-full"
+            >
               <img src={project.image} alt="" class="block w-full h-full object-cover z-0" loading="lazy" width="800" height="600" />
 
               <div class="absolute inset-0 bg-[rgba(15,23,42,0.75)] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-10">
@@ -122,6 +127,15 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
     document.querySelectorAll(".card-degree-badge").forEach((degreeEl) => {
       const element = degreeEl as HTMLElement;
       element.textContent = getCurrentDegree(element);
+    });
+
+    // Card link aria-label interpolates the project name, so it can't use a plain
+    // data-i18n-aria lookup — rebuild it from a translated prefix instead.
+    const viewProjectPrefix = lang === "da" ? "Se projekt" : "View project";
+    document.querySelectorAll<HTMLElement>("[data-project-card-name]").forEach((el) => {
+      const name = el.dataset.projectCardName;
+      if (!name) return;
+      el.setAttribute("aria-label", `${viewProjectPrefix}: ${name}`);
     });
   };
 

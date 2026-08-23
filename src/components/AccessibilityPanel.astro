@@ -992,6 +992,9 @@
   window.addEventListener("langchange", (e: Event) => {
     const lang = (e as CustomEvent).detail?.lang || "en";
     applyPanelI18n(lang);
+    // cvdCycleToggle's label is built in syncUI(), not applyPanelI18n() — without this it
+    // keeps announcing the old language until the panel is opened or something is toggled.
+    syncUI();
   });
 
   // Init font and focus classes from localStorage on load

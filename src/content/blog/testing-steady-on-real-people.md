@@ -2,6 +2,8 @@
 title: Testing Steady on real people, finally
 excerpt: A project gets outside feedback for the first time.
 publishDate: 2026-07-21T12:00:00+02:00
+updatedDate: 2026-08-23T12:00:00+02:00
+updateNote: This post now includes the test results, what changed in Steady, and a link to the completed case study.
 draft: false
 tags:
   - process
@@ -18,3 +20,9 @@ So the test itself is intentionally low-friction: a Google Form with a link to t
 There's a version of this that would've been easier to write about if it were purely practical, but it isn't only that. Steady wasn't built for a client or a course. It was built mostly for me, out of what I actually needed, and handing that over to strangers to poke at is a different kind of exposed than handing over a school project. Not dramatic about it, just honestly a little nerve-wracking in a way client work never quite is.
 
 I don't have results to share yet, so this isn't that post. It's just the part where I stopped refining alone and let other people in.
+
+## August 2026 update: what happened next?
+
+2 of the 3 volunteers completed the follow-up evaluation after using Steady for about two weeks. Both used it almost every day on mobile and described the experience as calm. _'Tasks'_ were the clearest source of value, while the difference between _'Tasks'_, _'Routines'_ and _'Habit Tracker'_ needed more explanation. Remembering to return without notifications was the most obvious engagement problem.
+
+That feedback led to clearer feature descriptions, less overlap between _'Tasks'_ and _'Routines'_, a more visible _'Habit Tracker'_ explanation, gentle reminders for important dates, mobile fixes and a broader accessibility pass. A later database review also found early account adoption beyond the form responses, although account numbers are not the same as active users. The full method, results, limitations and iterations are now documented in the [Steady inclusive design case study](/steady).

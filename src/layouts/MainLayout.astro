@@ -293,9 +293,9 @@ const schemamarkup = {
             "modal.terms.title": "Terms & Privacy",
             "modal.terms.privacy": "Privacy policy",
             "modal.terms.privacy.p1":
-              "When you submit your inquiry through the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px] tooltip-term' tabindex='0' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code> only&mdash; <strong>no personal data leaves your device</strong>. No cookies, no tracking, no third-party marketing.",
+              "When you submit your inquiry through the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code> only&mdash; <strong>no personal data leaves your device</strong>. No cookies, no tracking, no third-party marketing.",
             "modal.terms.privacy.p2":
-              "<strong>Your rights <em>(<span class='tooltip-term' tabindex='0' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
+              "<strong>Your rights <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>:</strong> You may request access to, correction of, or deletion of your data at any time - email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
             "modal.terms.booking": "Booking and freelance terms",
             "modal.terms.booking.p1":
               "I take on projects case by case. <strong>A written quote will be sent out before work starts</strong>&mdash; no surprises. Two rounds of revisions are included. Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is agreed.",
@@ -310,7 +310,7 @@ const schemamarkup = {
             "terms.privacy.p.collected1":
               "When you submit your enquiry through the contact form on this site, the following information is collected: full name, email address, and the message you write. This data is processed and stored by <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> on my behalf. <strong>No other personal data is collected.</strong>",
             "terms.privacy.p.collected2":
-              "Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code class='tooltip-term' tabindex='0' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code>. This data never leaves your device and contains no personal information.",
+              "Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code class='tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code>. This data never leaves your device and contains no personal information.",
             "terms.privacy.h3.why": "Why I collect it",
             "terms.privacy.p.why":
               "Contact form data is used solely to respond to your enquiry. It's not used for marketing, analytics, or any other purpose.",
@@ -318,7 +318,7 @@ const schemamarkup = {
             "terms.privacy.p.cookies":
               "This site doesn't use cookies for tracking or analytics. No third-party advertising or profiling tools are active.",
             "terms.privacy.h3.rights":
-              "Your rights <em>(<span class='tooltip-term' tabindex='0' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>",
+              "Your rights <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>",
             "terms.privacy.p.rights":
               "You have the right to access, correct, or request deletion of any personal data I hold about you. To exercise these rights, contact me at <a href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I'll respond within 30 days.",
             "terms.privacy.h3.controller": "Data controller",
@@ -371,8 +371,11 @@ const schemamarkup = {
             "blog.showMore": "Show more posts",
             "blog.empty": "No blog posts are published yet.",
             "blog.back": "← Back to blog",
+            "blog.back.aria": "Back to blog overview",
+            "blog.postupdate.aria": "Post update",
             "blog.lang.note1": "→ Most posts are in English, a select few in Danish ←",
             "blog.filter.label": "Filter by category:",
+            "blog.filter.aria": "Filter posts by category",
             "blog.filter.all": "All",
             "blog.filter.empty": "No posts match this category yet.",
             "nav.lab": "The Lab",
@@ -386,7 +389,7 @@ const schemamarkup = {
               "<em>'Vibe coding'</em> is building with the assistance of AI. You describe what you want, the AI generates the code, and you shape and guide it. It's less about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think about prototyping and iteration.",
             "lab.items.title": "Projects from the Lab",
             "lab.items.intro":
-              "A small collection of experimental solutions and concepts centred on neurodivergence, disability, and accessible design. Each project explores how digital experiences can be made calmer, clearer, and free from performance pressure.",
+              "A collection of experimental solutions and concepts centred on neurodivergence, disability, and accessible design. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
             "lab.bivi.link": "Visit site/app →",
             "lab.bivi.title": "Bivi - Your Little Medication Sidekick",
             "lab.vibeloop.link": "View case →",
@@ -399,7 +402,16 @@ const schemamarkup = {
             "lab.ephemeris.title": "Ephemeris - Field Journal for Your Inner Dragons",
             "lab.badge.vibecoded": "Vibe coded",
             "lab.badge.vibecoded.tooltip": "This project was built with AI assistance",
+            "lab.badge.longrunning": "Longest-running project",
+            "lab.badge.longrunning.tooltip": "The Lab project I have developed over the longest period",
+            "lab.bivi.aria": "Visit Bivi website (opens in new tab)",
+            "lab.ephemeris.aria": "Visit Ephemeris (opens in new tab)",
+            "lab.steady.aria": "Read the Steady case study",
+            "lab.vibeloop.aria": "View the Vibeloop case study",
+            "lab.autismeguiden.aria": "Visit AutismeGuiden (opens in new tab)",
+            "lab.steady.longrunning": "My longest-running Lab project— shaped through repeated accessibility work, user testing and product iteration.",
             "lab.badge.wip.tooltip": "Work in progress — the coded version is still being developed",
+            "lab.legend.longrunning": "= developed over the longest period",
             "lab.legend.vibecoded": "= built with the help of AI",
             "lab.legend.wip": "= work in progress",
             "lab.revisited.title": "Earlier work, revisited",
@@ -646,9 +658,9 @@ const schemamarkup = {
             "modal.terms.title": "Vilkår & Privatliv",
             "modal.terms.privacy": "Privatlivspolitik",
             "modal.terms.privacy.p1":
-              "Når du indsender din henvendelse gennem kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px] tooltip-term' tabindex='0' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>&mdash; <strong>ingen persondata forlader din enhed</strong>. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
+              "Når du indsender din henvendelse gennem kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>&mdash; <strong>ingen persondata forlader din enhed</strong>. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
             "modal.terms.privacy.p2":
-              "<strong>Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>:</strong> Du kan til enhver tid anmode om adgang til, rettelse af eller sletning af dine data – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
+              "<strong>Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>:</strong> Du kan til enhver tid anmode om adgang til, rettelse af eller sletning af dine data – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
             "modal.terms.booking": "Booking- og freelancebetingelser",
             "modal.terms.booking.p1":
               "Jeg påtager mig projekter fra case til case. <strong>Et skriftligt tilbud bliver sendt ud, inden arbejdet påbegyndes</strong>&mdash; ingen overraskelser. To runder af revisioner er inkluderet. Ved fuld betaling modtager du licens til at anvende de aftalte leverancer; jeg forbeholder mig retten til at vise arbejdet i min portefølje, medmindre fortrolighed er aftalt.",
@@ -663,7 +675,7 @@ const schemamarkup = {
             "terms.privacy.p.collected1":
               "Når du indsender din henvendelse gennem kontaktformularen på dette site, indsamles følgende oplysninger: fulde navn, emailadresse og den besked du skriver. Disse data behandles og opbevares af <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> på mine vegne. <strong>Ingen andre personoplysninger indsamles.</strong>",
             "terms.privacy.p.collected2":
-              "Tilgængelighedspræferencer du sætter <em>(f.eks. mørk tilstand, tekststørrelse eller reduceret bevægelse)</em> gemmes i din browsers <code class='tooltip-term' tabindex='0' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>. Disse data forlader aldrig din enhed og indeholder ingen personlige oplysninger.",
+              "Tilgængelighedspræferencer du sætter <em>(f.eks. mørk tilstand, tekststørrelse eller reduceret bevægelse)</em> gemmes i din browsers <code class='tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>. Disse data forlader aldrig din enhed og indeholder ingen personlige oplysninger.",
             "terms.privacy.h3.why": "Hvorfor jeg indsamler det",
             "terms.privacy.p.why":
               "Kontaktformulardata bruges udelukkende til at besvare din henvendelse. Det bruges ikke til markedsføring, analyse eller andre formål.",
@@ -671,7 +683,7 @@ const schemamarkup = {
             "terms.privacy.p.cookies":
               "Dette site bruger ikke cookies til sporing eller analyse. Ingen tredjeparts reklame- eller profilværktøjer er aktive.",
             "terms.privacy.h3.rights":
-              "Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>",
+              "Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>",
             "terms.privacy.p.rights":
               "Du har ret til at få adgang til, rette eller anmode om sletning af personoplysninger, jeg måtte have om dig. For at udøve disse rettigheder, kontakt mig på <a href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. Jeg svarer inden for 30 dage.",
             "terms.privacy.h3.controller": "Dataansvarlig",
@@ -724,8 +736,11 @@ const schemamarkup = {
             "blog.showMore": "Vis flere indlæg",
             "blog.empty": "Der er endnu ikke publiceret nogen blogindlæg.",
             "blog.back": "← Tilbage til blog",
+            "blog.back.aria": "Tilbage til blogoversigt",
+            "blog.postupdate.aria": "Opdatering af indlæg",
             "blog.lang.note1": "→ De fleste indlæg er på engelsk, nogle enkelte er på dansk ←",
             "blog.filter.label": "Filtrér efter kategori:",
+            "blog.filter.aria": "Filtrer indlæg efter kategori",
             "blog.filter.all": "Alle",
             "blog.filter.empty": "Ingen indlæg matcher denne kategori endnu.",
             "nav.lab": "Laboratoriet",
@@ -739,7 +754,7 @@ const schemamarkup = {
               "<em>'Vibe coding'</em> handler om at bygge med hjælp af AI. Du beskriver, hvad du vil have, AI'en genererer koden, og du former og guider det. Det handler mindre om at skrive hver eneste linje selv og mere om at vide, hvad du vil have og kunne vurdere, hvad du får. Det ændrer måden, du tænker på prototyping og iteration.",
             "lab.items.title": "Projekter fra Laboratoriet",
             "lab.items.intro":
-              "En lille samling af eksperimentelle løsninger og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Hvert projekt undersøger, hvordan digitale oplevelser kan gøres mere rolige, overskuelige og fri for præstationspres.",
+              "En samling af eksperimentelle løsninger og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
             "lab.bivi.title": "Bivi - Din Lille Medicinmakker",
             "lab.bivi.link": "Besøg siden/appen →",
             "lab.vibeloop.title": "VibeLoop - Humørbaseret Social App",
@@ -752,7 +767,16 @@ const schemamarkup = {
             "lab.ephemeris.link": "Besøg siden/appen →",
             "lab.badge.vibecoded": "Vibe-kodet",
             "lab.badge.vibecoded.tooltip": "Dette projekt er bygget med AI-assistance",
+            "lab.badge.longrunning": "Længstvarende projekt",
+            "lab.badge.longrunning.tooltip": "Det projekt i Laboratoriet, jeg har udviklet over den længste periode",
+            "lab.bivi.aria": "Besøg Bivi-hjemmesiden (åbner i en ny fane)",
+            "lab.ephemeris.aria": "Besøg Ephemeris (åbner i en ny fane)",
+            "lab.steady.aria": "Læs case-studiet om Steady",
+            "lab.vibeloop.aria": "Se case-studiet om VibeLoop",
+            "lab.autismeguiden.aria": "Besøg AutismeGuiden (åbner i en ny fane)",
+            "lab.steady.longrunning": "Mit længstvarende Lab-projekt— formet gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
             "lab.badge.wip.tooltip": "Under udvikling — den kodede version er stadig under udarbejdelse",
+            "lab.legend.longrunning": "= udviklet over den længste periode",
             "lab.legend.vibecoded": "= bygget ved hjælp af AI",
             "lab.legend.wip": "= under udvikling",
             "lab.revisited.title": "Tidligere arbejde, genbesøgt",
@@ -976,6 +1000,10 @@ const schemamarkup = {
       <Footer />
     </div>
     <AccessibilityPanel />
+    <!-- Holds sr-only tooltip descriptions out of the document's reading flow. `hidden`
+         (unlike sr-only) removes it from the paragraph a trigger sits in, while
+         aria-describedby still resolves against a hidden element. -->
+    <div id="tooltip-descriptions" hidden></div>
     <script is:inline>
       (() => {
         const lang = window.__i18n.getLang();
@@ -1154,18 +1182,27 @@ const schemamarkup = {
 
 <script>
   // [data-tooltip] renders its text as CSS generated content (::after), which screen readers
-  // don't reliably expose. Pair every tooltip trigger with a visually-hidden description span
-  // and aria-describedby so the same text reaches assistive tech, not just sighted hover/focus.
+  // don't reliably expose. Pair every tooltip trigger with a description and aria-describedby
+  // so the same text reaches assistive tech, not just sighted hover/focus.
   //
   // Some [data-tooltip] elements (e.g. the .tooltip-term jargon spans inside translated
   // paragraphs) get their innerHTML rebuilt from scratch when the language toggles, which
   // silently drops whatever we appended here. Re-running this on langchange re-wires those.
   // Elements that survive the toggle instead (e.g. the lab badges, whose data-tooltip value
-  // gets rewritten in place by apply()'s data-i18n-tooltip pass) keep their marker and sibling
+  // gets rewritten in place by apply()'s data-i18n-tooltip pass) keep their marker and stored
   // desc, so update the existing text rather than skipping — otherwise a translated tooltip
   // would never reach its aria-describedby description.
+  //
+  // Descriptions live in one shared, `hidden` container at the end of the body rather than
+  // next to their trigger. For a jargon term inside a sentence (e.g. ".tooltip-term"), a
+  // sibling span sits inside that sentence's reading flow, so it got read mid-paragraph as
+  // if it were body copy, then read a second time as the description. `hidden` (unlike
+  // sr-only) removes an element from the reading flow entirely, and aria-describedby still
+  // resolves against a hidden element, so the description stays reachable either way.
   let tooltipDescCounter = 0;
   function wireTooltipDescriptions(): void {
+    const store = document.getElementById("tooltip-descriptions");
+    if (!store) return;
     document.querySelectorAll<HTMLElement>("[data-tooltip]").forEach((el) => {
       const text = el.getAttribute("data-tooltip");
       if (!text) return;
@@ -1180,13 +1217,8 @@ const schemamarkup = {
       const id = `tooltip-desc-${tooltipDescCounter++}`;
       const desc = document.createElement("span");
       desc.id = id;
-      desc.className = "sr-only";
       desc.textContent = text;
-      // Inserted as a sibling, not a child: elements with no aria-label (e.g. the lab
-      // badges and .tooltip-term spans) take their accessible name from their content,
-      // so a description appended *inside* them would double up in both name and
-      // description. A sibling keeps it reachable via aria-describedby without that.
-      el.insertAdjacentElement("afterend", desc);
+      store.appendChild(desc);
       el.dataset.tooltipDescId = id;
 
       const existing = el.getAttribute("aria-describedby");

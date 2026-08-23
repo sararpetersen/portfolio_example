@@ -31,6 +31,7 @@ const articleSchema = {
   headline: post.data.title,
   description: post.data.excerpt,
   datePublished: post.data.publishDate.toISOString(),
+  ...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
   mainEntityOfPage: articleUrl,
   author: {
     "@type": "Person",
@@ -56,7 +57,19 @@ const articleSchema = {
 >
   <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
     <header class="md:pt-28 pt-24 mb-6">
-      <p id="post-date" class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+      <div id="post-date" class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-[0.12em] text-gray-500">
+        <span>Published {post.data.publishDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
+        {
+          post.data.updatedDate && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span class="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-blue-700">
+                Updated {post.data.updatedDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+              </span>
+            </>
+          )
+        }
+      </div>
       <h1
         id="post-title"
         class="font-nikumaru uppercase tracking-[0.08em] sm:tracking-[0.11em] md:tracking-[0.14em] text-[1.65rem] leading-tight sm:text-h3-mobile md:text-h3-desktop mb-3 text-gray-800 break-words"
@@ -64,6 +77,20 @@ const articleSchema = {
         {post.data.title}
       </h1>
       <p id="post-excerpt" class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
+      {
+        post.data.updatedDate && post.data.updateNote && (
+          <aside
+            id="post-update-note"
+            class="mt-5 rounded-2xl border border-l-4 border-blue-300 bg-blue-50/70 px-4 py-3"
+            aria-label="Post update"
+            data-i18n-aria="blog.postupdate.aria"
+          >
+            <p class="text-sm leading-relaxed text-gray-700">
+              <strong class="font-semibold text-gray-800">Update:</strong> {post.data.updateNote}
+            </p>
+          </aside>
+        )
+      }
     </header>
 
     <div id="post-separator" class="mb-6 flex items-center gap-3 text-gray-300" aria-hidden="true">
@@ -115,6 +142,7 @@ const articleSchema = {
         href="/blog"
         class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
         aria-label="Back to blog overview"
+        data-i18n-aria="blog.back.aria"
         data-i18n="blog.back">← Back to blog</a
       >
     </div>
@@ -307,6 +335,22 @@ const articleSchema = {
     color: var(--text-on-dark-soft);
   }
 
+  body.dark #post-date span.rounded-full {
+    border-color: rgb(98 151 174 / 0.48);
+    color: rgb(222 235 239 / 0.95);
+    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
+  }
+
+  body.dark #post-update-note {
+    border-color: var(--brand-primary-soft);
+    background-color: color-mix(in srgb, var(--dark-surface-strong) 82%, var(--brand-primary) 18%);
+  }
+
+  body.dark #post-update-note p,
+  body.dark #post-update-note strong {
+    color: var(--text-on-dark);
+  }
+
   :global(#post-tags .post-tag-chip) {
     border-color: rgb(98 151 174 / 0.38);
     color: rgb(55 85 103);
@@ -377,6 +421,7 @@ const articleSchema = {
   html.has-js body:not(.reduce-motion) #post-date,
   html.has-js body:not(.reduce-motion) #post-title,
   html.has-js body:not(.reduce-motion) #post-excerpt,
+  html.has-js body:not(.reduce-motion) #post-update-note,
   html.has-js body:not(.reduce-motion) #post-separator,
   html.has-js body:not(.reduce-motion) #post-tags,
   html.has-js body:not(.reduce-motion) #post-content,

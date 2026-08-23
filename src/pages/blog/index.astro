@@ -54,7 +54,13 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
       posts.length > 0 ? (
         <>
           {activeCategories.length > 0 && (
-            <div id="blog-filter-bar" class="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filter posts by category">
+            <div
+              id="blog-filter-bar"
+              class="mb-8 flex flex-wrap items-center gap-2"
+              role="group"
+              aria-label="Filter posts by category"
+              data-i18n-aria="blog.filter.aria"
+            >
               <span id="blog-filter-label" class="text-[11px] uppercase tracking-[0.1em] text-gray-500 mr-1" data-i18n="blog.filter.label">
                 Filter by category:
               </span>
@@ -105,6 +111,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
                 <a
                   href={`/blog/${post.id}`}
                   aria-label={`Read post: ${post.data.title}`}
+                  data-blog-read-title={post.data.title}
                   class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
                   data-i18n="blog.read"
                 >
@@ -195,7 +202,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
   </section>
 
   <section class="mx-auto py-20 text-center">
-    <Button href="/" variant="primary" size="small" aria-label="Back to homepage"><span data-i18n="btn.back">Back to homepage</span></Button>
+    <Button href="/" variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
   </section>
 
   <noscript>
@@ -466,6 +473,22 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
   }
   window.addEventListener("langchange", (e: Event) => {
     applyFilterChipLang((e as CustomEvent).detail?.lang || getLang());
+  });
+
+  // "Read post: {title}" interpolates the post title, which content collections don't carry
+  // a Danish variant for — so only the prefix translates, same pattern as the [slug].astro
+  // case-study nav and the project-card labels in Cases.astro.
+  function applyReadPostLang(lang: string): void {
+    const prefix = lang === "da" ? "Læs indlæg" : "Read post";
+    document.querySelectorAll<HTMLElement>("[data-blog-read-title]").forEach((el) => {
+      const title = el.dataset.blogReadTitle;
+      if (!title) return;
+      el.setAttribute("aria-label", `${prefix}: ${title}`);
+    });
+  }
+  applyReadPostLang(getLang());
+  window.addEventListener("langchange", (e: Event) => {
+    applyReadPostLang((e as CustomEvent).detail?.lang || getLang());
   });
 </script>
 

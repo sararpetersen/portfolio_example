@@ -59,3 +59,13 @@ Search volume and competition must be validated in Google Search Console, Google
 - Turn each article into one LinkedIn post and several Pinterest assets, all linking to the article rather than only to the homepage.
 - Add campaign tags to social links, for example `?utm_source=linkedin&utm_medium=social&utm_campaign=accessibility_article`, so social traffic can be separated from organic search in analytics.
 - Evaluate after 8–12 weeks; SEO gains are cumulative and should not be judged from a few days of data.
+
+## Steady case-study campaign
+
+The Steady page is the primary landing page for `inclusive design case study` and a proof point for neurodivergent UX/UI work. Its strongest story is not the feature list alone; it is the full loop from lived need and design principles to mobile testing, product changes and carefully qualified adoption data.
+
+- Publish one LinkedIn post around the clearest lesson: calm design still needs clear boundaries between tools. Link to `/steady?utm_source=linkedin&utm_medium=social&utm_campaign=steady_case_study`.
+- Create 2–3 Pinterest assets around the design principles, the testing findings and the before/after iteration. Link each asset to the case study with equivalent Pinterest campaign tags.
+- Link future articles about neurodivergent UX, cognitive accessibility and user testing back to `/steady`; keep the case-study link to the testing article and contact page.
+- Record a Search Console baseline for `/steady`, then review impressions, click-through rate and contact-page journeys after 8–12 weeks.
+- Revisit the public metrics when the sample grows; do not silently present registered accounts as active users.

@@ -9,19 +9,20 @@ if (!caseStudy) throw new Error("Steady case study data is missing");
 const schema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "Case Study: Steady",
+  name: "Steady: Inclusive Design Case Study",
   author: { "@type": "Person", name: "Sara Ringkow Petersen" },
   dateCreated: "2026",
+  dateModified: "2026-08-23",
   description: caseStudy.summary.en,
   url: "https://sararingkow.dk/steady",
 };
 ---
 
 <MainLayout
-  title="Case Study: Steady | SRP Portfolio"
-  description="A UX/UI case study about designing a calmer, adaptable daily structure tool for neurodivergent people."
-  ogtitle="Case Study: Steady – SRP Portfolio"
-  ogdescription="Explore Steady's challenge, accessibility decisions, product structure and next validation steps."
+  title="Steady Inclusive Design Case Study | SRP Portfolio"
+  description="See how Steady turned neurodivergent UX principles, mobile user testing and adoption data into a calmer daily-planning experience."
+  ogtitle="Steady: An Inclusive Design Case Study"
+  ogdescription="From neurodivergent UX principles to real mobile testing, feedback-led iteration and early adoption evidence."
   schema={schema}
 >
   <CaseStudy caseStudy={caseStudy} />

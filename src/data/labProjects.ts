@@ -7,8 +7,10 @@ export interface LabProject {
   linkFallback: string;
   href: string;
   ariaLabel: string;
+  ariaLabelKey: string;
   featured?: boolean;
   wip?: boolean;
+  longRunning?: boolean;
 }
 
 export const labProjects: LabProject[] = [
@@ -21,6 +23,7 @@ export const labProjects: LabProject[] = [
     linkFallback: "Visit site →",
     href: "https://web-bivi.netlify.app/",
     ariaLabel: "Visit Bivi website (opens in new tab)",
+    ariaLabelKey: "lab.bivi.aria",
     featured: true,
   },
   {
@@ -32,6 +35,7 @@ export const labProjects: LabProject[] = [
     linkFallback: "Visit site →",
     href: "https://web-ephemeris.netlify.app/",
     ariaLabel: "Visit Ephemeris (opens in new tab)",
+    ariaLabelKey: "lab.ephemeris.aria",
   },
   {
     slug: "steady",
@@ -42,6 +46,8 @@ export const labProjects: LabProject[] = [
     linkFallback: "Read case →",
     href: "/steady",
     ariaLabel: "Read the Steady case study",
+    ariaLabelKey: "lab.steady.aria",
+    longRunning: true,
   },
   {
     slug: "vibeloop",
@@ -52,6 +58,7 @@ export const labProjects: LabProject[] = [
     linkFallback: "View case →",
     href: "/vibeloop",
     ariaLabel: "View the Vibeloop case study",
+    ariaLabelKey: "lab.vibeloop.aria",
     wip: true,
   },
   {
@@ -63,5 +70,6 @@ export const labProjects: LabProject[] = [
     linkFallback: "Visit site (DK) →",
     href: "https://autisme-guiden.netlify.app/",
     ariaLabel: "Visit AutismeGuiden (opens in new tab)",
+    ariaLabelKey: "lab.autismeguiden.aria",
   },
 ];

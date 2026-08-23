@@ -22,7 +22,7 @@ export interface CaseStudy {
   role: LocalisedText;
   audience: LocalisedText;
   tools: string[];
-  links: Array<{ label: LocalisedText; url: string }>;
+  links: Array<{ label: LocalisedText; url: string; external?: boolean }>;
   sections: CaseSection[];
 }
 
@@ -33,22 +33,22 @@ export const caseStudies: CaseStudy[] = [
     logo: "/images/steady_logo.svg",
     tagline: {
       en: "A calmer daily companion for neurodivergent minds",
-      da: "En roligere dagligdagsfølgesvend til neurodivergente",
+      da: "En roligere støtte til hverdagen for neurodivergente",
     },
     summary: {
-      en: "Steady brings tasks, routines, habits, mood check-ins, focus time and notes together in one adaptable interface. The concept explores how daily structure can feel supportive without adding pressure.",
-      da: "Steady samler opgaver, rutiner, vaner, humørtjek, fokustid og noter i én tilpasningsbar brugerflade. Konceptet undersøger, hvordan struktur i hverdagen kan støtte uden at skabe mere pres.",
+      en: "Steady is an inclusive design case study about turning neurodivergent UX principles into a working daily-planning product. The current version combines adaptable structure, guest access, account sync and feedback-led iteration without using streaks or pressure-heavy language.",
+      da: "Steady er en inkluderende designcase om at omsætte neurodivergente UX-principper til et fungerende planlægningsprodukt. Den nuværende version kombinerer tilpasningsbar struktur, gæsteadgang, kontosynkronisering og feedbackbaseret iteration uden streaks eller præstationspræget sprog.",
     },
     year: "2026",
     role: {
-      en: "Concept, UX/UI direction and implementation",
-      da: "Koncept, UX/UI-retning og implementering",
+      en: "Concept, research, UX/UI direction, implementation and evaluation",
+      da: "Koncept, research, UX/UI-retning, implementering og evaluering",
     },
     audience: {
-      en: "Neurodivergent people and anyone who benefits from a calmer structure",
-      da: "Neurodivergente og andre, der har gavn af en roligere struktur",
+      en: "Neurodivergent people and anyone who benefits from calmer daily structure",
+      da: "Neurodivergente og andre, der har gavn af en roligere struktur i hverdagen",
     },
-    tools: ["UX/UI", "Accessible design", "AI-assisted development"],
+    tools: ["UX/UI", "React", "TypeScript", "Supabase", "Accessible design", "User testing", "AI-assisted development"],
     links: [
       {
         label: { en: "Explore the onboarding site", da: "Se onboarding-sitet" },
@@ -58,6 +58,11 @@ export const caseStudies: CaseStudy[] = [
         label: { en: "Open the app", da: "Åbn appen" },
         url: "https://app-steady.netlify.app/",
       },
+      {
+        label: { en: "Discuss a project with me", da: "Tal med mig om et projekt" },
+        url: "/contact",
+        external: false,
+      },
     ],
     sections: [
       {
@@ -65,8 +70,8 @@ export const caseStudies: CaseStudy[] = [
         eyebrow: { en: "01 · Challenge", da: "01 · Udfordring" },
         title: { en: "Structure can become another source of pressure", da: "Struktur kan blive endnu en kilde til pres" },
         body: {
-          en: "Many planning products reward consistency, streaks and productivity. For people dealing with executive-function challenges, sensory overload or anxiety, those mechanics can make a support tool feel like another system to fail.",
-          da: "Mange planlægningsprodukter belønner stabilitet, streaks og produktivitet. For mennesker med eksekutive udfordringer, sensorisk overbelastning eller angst kan de mekanismer få et støtteværktøj til at føles som endnu et system, man kan fejle i.",
+          en: "Many planning products reward consistency, streaks and productivity. For people dealing with executive-function challenges, sensory overload or anxiety, those mechanics can make a support tool feel like another system to fail. Steady started with a different question: how can structure remain useful on both manageable and difficult days?",
+          da: "Mange planlægningsprodukter belønner stabilitet, streaks og produktivitet. For mennesker med eksekutive udfordringer, sensorisk overbelastning eller angst kan de mekanismer få et støtteværktøj til at føles som endnu et system, man kan fejle i. Steady begyndte derfor med et andet spørgsmål: Hvordan kan struktur være hjælpsom på både overskuelige og svære dage?",
         },
         status: "reflection",
       },
@@ -75,32 +80,32 @@ export const caseStudies: CaseStudy[] = [
         eyebrow: { en: "02 · Design principles", da: "02 · Designprincipper" },
         title: { en: "Calm, control and a low barrier to entry", da: "Ro, kontrol og en lav adgangstærskel" },
         body: {
-          en: "The product is organised around 3 principles that are visible in the current experience.",
-          da: "Produktet er bygget op omkring 3 principper, som kan ses i den nuværende oplevelse.",
+          en: "3 principles guide the product and the decisions made during later iterations.",
+          da: "3 principper styrer produktet og de beslutninger, der er taget i de senere iterationer.",
         },
         points: [
           {
-            en: "<strong>Calm:</strong> short copy, focused screens and no pressure-heavy language",
-            da: "<strong>Ro:</strong> korte tekster, fokuserede skærme og intet præstationspræget sprog",
+            en: "<strong>Calm:</strong> focused screens, compassionate copy and no streaks to lose",
+            da: "<strong>Ro:</strong> fokuserede skærme, omsorgsfuldt sprog og ingen streaks, der kan mistes",
           },
           {
-            en: "<strong>Control:</strong> users can adjust the interface and choose which tools suit them",
-            da: "<strong>Kontrol:</strong> brugeren kan tilpasse brugerfladen og vælge de værktøjer, der passer",
+            en: "<strong>Control:</strong> people choose the tools and accessibility settings that suit them",
+            da: "<strong>Kontrol:</strong> brugeren vælger de værktøjer og tilgængelighedsindstillinger, der passer",
           },
           {
-            en: "<strong>Low barrier:</strong> the app offers guest access and keeps guest data on the device",
-            da: "<strong>Lav adgangstærskel:</strong> appen tilbyder gæsteadgang og gemmer gæstedata på enheden",
+            en: "<strong>Low barrier:</strong> guest access works without an account and keeps guest data on the device",
+            da: "<strong>Lav adgangstærskel:</strong> gæsteadgang virker uden konto og beholder gæstedata på enheden",
           },
         ],
         status: "documented",
       },
       {
         id: "solution",
-        eyebrow: { en: "03 · Solution", da: "03 · Løsning" },
-        title: { en: "6 small tools in one consistent system", da: "6 små værktøjer i ét sammenhængende system" },
+        eyebrow: { en: "03 · Product system", da: "03 · Produktsystem" },
+        title: { en: "Small tools that share one calm interaction model", da: "Små værktøjer med den samme rolige interaktionsmodel" },
         body: {
-          en: "Tasks, routines, habits, mood check-ins, a focus timer and a daily note cover different needs without forcing every user into the same workflow. A 7-step onboarding flow introduces the experience gradually.",
-          da: "Opgaver, rutiner, vaner, humørtjek, en fokustimer og en daglig note dækker forskellige behov uden at tvinge alle ind i samme arbejdsgang. Et onboarding-flow på 7 trin introducerer oplevelsen gradvist.",
+          en: "The current product has grown beyond its original 6 tools. 'Tasks' support substeps and recurring schedules; 'Routines' cover repeatable parts of the day; 'Habits' use streak-free progress; and 'Mood', 'Reflection' and 'Focus' support check-ins rather than productivity scoring. 'Important Dates', 'gentle insights', a weekly recap, 'Meal Guide' and 'Emergency Stock' provide optional support without crowding the primary navigation.",
+          da: "Det nuværende produkt er vokset ud over de oprindelige seks værktøjer. 'Opgaver' understøtter deltrin og gentagelser; 'Rutiner' dækker tilbagevendende dele af dagen; 'Vaner' viser fremgang uden streaks; og 'Humør', 'Refleksion' og 'Fokus' støtter små tjek-ind frem for produktivitetsscorer. 'Vigtige datoer', 'nænsomme indsigter', en ugentlig opsamling, 'Måltidsguide' og 'Nødlager' giver valgfri støtte uden at overfylde den primære navigation.",
         },
         status: "documented",
       },
@@ -109,36 +114,84 @@ export const caseStudies: CaseStudy[] = [
         eyebrow: { en: "04 · Accessibility", da: "04 · Tilgængelighed" },
         title: { en: "Adaptation is part of the product, not an add-on", da: "Tilpasning er en del af produktet, ikke en tilføjelse" },
         body: {
-          en: "The onboarding site presents accessibility settings as core functionality. Users can change theme, reading font, text size and line spacing, reduce motion and increase contrast.",
-          da: "Onboarding-sitet præsenterer tilgængelighedsindstillinger som kernefunktionalitet. Brugeren kan ændre tema, læseskrift, tekststørrelse og linjeafstand, reducere bevægelse og øge kontrasten.",
+          en: "Accessibility settings are introduced during onboarding and remain available later. The interface supports light and dark themes, normal or large text, optional spacious line spacing, Atkinson Hyperlegible, reduced motion and higher contrast. A later audit also improved keyboard reordering, focus indicators, dialog focus trapping, heading structure, live regions, touch targets and dark-mode contrast. These are implemented safeguards, not a claim of complete WCAG conformance.",
+          da: "Tilgængelighedsindstillinger introduceres under onboarding og kan ændres senere. Brugerfladen understøtter lyst og mørkt tema, normal eller stor tekst, valgfri større linjeafstand, Atkinson Hyperlegible, reduceret bevægelse og højere kontrast. En senere audit forbedrede også tastaturstyret rækkefølge, fokusmarkeringer, fokusfastholdelse i dialoger, overskriftsstruktur, live regions, trykflader og kontrast i mørkt tema. Det er implementerede sikkerhedsnet og ikke en påstand om fuld WCAG-overholdelse.",
+        },
+        status: "documented",
+      },
+      {
+        id: "method",
+        eyebrow: { en: "05 · Test method", da: "05 · Testmetode" },
+        title: { en: "A two-week user test with a deliberately low barrier", da: "En to-ugers brugertest med bevidst lav adgangstærskel" },
+        body: {
+          en: "3 people aged 45 or older volunteered through a short recruitment form and agreed to try the browser-based prototype for about two weeks. Two completed the follow-up evaluation. The test was exploratory rather than representative: it looked for confusion, skipped features and useful moments, but the sample is too small and narrow to support broad claims about neurodivergent users.",
+          da: "3 personer på 45 år eller derover meldte sig gennem en kort rekrutteringsformular og accepterede at afprøve den browserbaserede prototype i cirka to uger. To gennemførte den efterfølgende evaluering. Testen var undersøgende frem for repræsentativ: Den ledte efter forvirring, oversete funktioner og nyttige øjeblikke, men udvalget er for lille og snævert til brede konklusioner om neurodivergente brugere.",
         },
         points: [
-          { en: "Dark mode for lower glare and light sensitivity", da: "Mørkt tema ved genskin og lysfølsomhed" },
-          { en: "Atkinson Hyperlegible as an optional reading font", da: "Atkinson Hyperlegible som valgfri læseskrift" },
-          { en: "Three text sizes and optional spacious line spacing", da: "Tre tekststørrelser og valgfri større linjeafstand" },
-          { en: "Reduced motion and high-contrast modes", da: "Reduceret bevægelse og høj kontrast" },
+          {
+            en: "Both respondents used Steady <strong>almost every day</strong>, primarily on mobile",
+            da: "Begge respondenter brugte Steady <strong>næsten hver dag</strong>, primært på mobil",
+          },
+          {
+            en: "Average ease-of-understanding rating: <strong>4/5</strong>",
+            da: "Gennemsnitlig vurdering af, hvor let Steady var at forstå: <strong>4/5</strong>",
+          },
+          {
+            en: "Average rating for improved daily overview: <strong>3.5/5</strong>",
+            da: "Gennemsnitlig vurdering af bedre overblik i hverdagen: <strong>3,5/5</strong>",
+          },
+          {
+            en: "Neither respondent reported a technical problem",
+            da: "Ingen af respondenterne rapporterede tekniske problemer",
+          },
         ],
         status: "documented",
       },
       {
-        id: "evaluation",
-        eyebrow: { en: "05 · Evaluation", da: "05 · Evaluering" },
-        title: { en: "The promise and the first screen don't fully align", da: "Løftet og den første skærm stemmer ikke helt overens" },
-        body: {
-          en: "The onboarding site repeatedly says that no account is required, while the app opens on a sign-up and login screen. Guest access is available, but appears after the account options. This may create unnecessary uncertainty about privacy and access requirements and should be tested in the next iteration.",
-          da: "Onboarding-sitet gentager, at en konto ikke er nødvendig, mens appen åbner på en skærm med oprettelse og login. Gæsteadgang findes, men kommer efter kontomulighederne. Det kan skabe unødig usikkerhed om privatliv og adgangskrav og bør testes i næste iteration.",
+        id: "findings",
+        eyebrow: { en: "06 · Findings", da: "06 · Resultater" },
+        title: {
+          en: "'Tasks' were useful; the boundaries between tools were not clear enough",
+          da: "'Opgaver' var nyttige; grænserne mellem værktøjerne var ikke tydelige nok",
         },
-        status: "reflection",
+        body: {
+          en: "'Tasks' were the clearest source of value. One respondent also used 'Mood', while 'Habit Tracker' was difficult to interpret and 'Tasks' and 'Routines' felt too similar. The strongest engagement barrier was not a crash or layout failure, but remembering to return without notifications. Both respondents described the experience as calm; one said they would use a developed version and the other answered maybe.",
+          da: "'Opgaver' var den tydeligste kilde til værdi. Én respondent brugte også 'Humør', mens formålet med 'Vaner' var svært at forstå, og 'Opgaver' og 'Rutiner' føltes for ens. Den største barriere for engagement var ikke et nedbrud eller en layoutfejl, men at huske at vende tilbage uden notifikationer. Begge beskrev oplevelsen som rolig; én ville bruge en videreudviklet version, og den anden svarede måske.",
+        },
+        status: "documented",
       },
       {
-        id: "validation",
-        eyebrow: { en: "06 · Validation", da: "06 · Validering" },
-        title: { en: "What still needs to be documented", da: "Det mangler stadig at blive dokumenteret" },
+        id: "iteration",
+        eyebrow: { en: "07 · Iteration", da: "07 · Iteration" },
+        title: { en: "The feedback changed both the wording and the product", da: "Feedbacken ændrede både sproget og produktet" },
         body: {
-          en: "A credible accessibility case must show evidence, not only intentions. The next version of this case should include the research basis, who tested the product, which assistive or adaptive settings were used, what changed after testing and which WCAG checks were completed.",
-          da: "En troværdig tilgængelighedscase skal vise evidens og ikke kun intentioner. Den næste version bør beskrive researchgrundlaget, hvem der testede produktet, hvilke hjælpemidler eller tilpasninger der blev brugt, hvad testen ændrede, og hvilke WCAG-tjek der blev gennemført.",
+          en: "After the test, the descriptions of 'Tasks', 'Routines' and 'Habit Tracker' were rewritten, duplicated behaviour between 'Tasks' and 'Routines' was reduced, and 'Habit Tracker's growth payoff was made visible on its own screen. Steady also gained gentle on-screen reminders for important dates, stronger mobile behaviour, task and routine substeps, recurring schedules and a broader accessibility audit. The requested push notifications are not implemented; the current reminders only appear while the app is open.",
+          da: "Efter testen blev beskrivelserne af 'Opgaver', 'Rutiner' og 'Vaner' omskrevet, overlappende adfærd mellem 'Opgaver' og 'Rutiner' blev reduceret, og 'Vaner's vækstbelønning blev synlig på selve skærmen. Steady fik også nænsomme påmindelser om vigtige datoer i appen, bedre mobiladfærd, deltrin i opgaver og rutiner, gentagelser og en bredere tilgængelighedsaudit. De efterspurgte push-notifikationer er ikke implementeret; de nuværende påmindelser vises kun, mens appen er åben.",
         },
-        status: "pending",
+        status: "documented",
+      },
+      {
+        id: "outcome",
+        eyebrow: { en: "08 · Outcome and limits", da: "08 · Resultat og begrænsninger" },
+        title: {
+          en: "Early adoption exists, but account counts are not the same as active users",
+          da: "Der er tidlig brug, men konti er ikke det samme som aktive brugere",
+        },
+        body: {
+          en: "A database review on 23 August 2026 found 10 registered accounts with a Steady data row. Seven had completed onboarding and six contained data in at least one feature. This is stronger evidence than form responses alone, but it cannot establish 10 active people: the project has no visit analytics, accounts may include tests, and guest use is not represented in Supabase. The next evaluation should recruit a larger and more varied sample, test the account-first entry screen, and measure return visits without collecting more personal data than necessary.",
+          da: "En databasegennemgang den 23. august 2026 fandt 10 registrerede konti med en Steady-datarække. Syv havde gennemført onboarding, og seks indeholdt data i mindst én funktion. Det er stærkere evidens end formularsvar alene, men det dokumenterer ikke 10 aktive personer: Projektet har ingen besøgsanalyse, kontiene kan omfatte tests, og gæstebrug fremgår ikke af Supabase. Den næste evaluering bør rekruttere et større og mere varieret udvalg, teste den konto-fokuserede startskærm og måle tilbagevendende brug uden at indsamle flere persondata end nødvendigt.",
+        },
+        points: [
+          {
+            en: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Read how the user test began</a>`,
+            da: `<a href="/blog/testing-steady-on-real-people" class="underline hover:text-blue-500">Læs hvordan brugertesten begyndte</a>`,
+          },
+          {
+            en: `<a href="/contact" class="underline hover:text-blue-500">Talk to me about inclusive design</a>`,
+            da: `<a href="/contact" class="underline hover:text-blue-500">Tal med mig om inkluderende design</a>`,
+          },
+        ],
+        status: "reflection",
       },
     ],
   },

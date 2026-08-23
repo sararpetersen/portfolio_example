@@ -10,15 +10,30 @@ const { projects } = Astro.props as { projects: LabProject[] };
   {
     projects.map((project) => {
       const isExternal = project.href.startsWith("http");
-      const cardClass = project.featured
+      const baseCardClass = project.featured
         ? "lab-featured-card md:col-span-2 border-r-4 border border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
         : "bg-gradient-to-br from-gray-50 to-gray-100 border-r-4 border border-gray-500 rounded-2xl p-8";
+      const cardClass = `${baseCardClass}${project.longRunning ? " lab-long-running-card" : ""}`;
 
       return (
         <article id={`lab-item-${project.slug}`} class={cardClass}>
           <div class="flex items-center justify-between mb-4">
             <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
             <div class="flex items-center gap-2 flex-wrap justify-end">
+              {project.longRunning && (
+                <span
+                  class="lab-tag long-running-tag"
+                  tabindex="0"
+                  role="note"
+                  aria-label="Longest-running project"
+                  data-i18n-aria="lab.badge.longrunning"
+                  data-tooltip="The Lab project I have developed over the longest period"
+                  data-i18n-tooltip="lab.badge.longrunning.tooltip"
+                >
+                  <ColorSymIcon letter="P" />
+                  <span data-i18n="lab.badge.longrunning">Longest-running project</span>
+                </span>
+              )}
               <span
                 class="lab-tag"
                 tabindex="0"
@@ -50,7 +65,9 @@ const { projects } = Astro.props as { projects: LabProject[] };
           </div>
 
           <div class={project.featured ? "max-w-3xl" : undefined}>
-            <h3 class="italic font-bold text-h4-mobile md:text-[1.3rem] leading-snug mb-6 text-gray-800">
+            <h3
+              class:list={["italic font-bold text-h4-mobile md:text-[1.3rem] leading-snug mb-5 text-gray-800", project.longRunning ? "mb-3" : "mb-6"]}
+            >
               <span data-i18n={project.titleKey}>{project.titleFallback}</span>
             </h3>
             <Button
@@ -60,6 +77,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
               variant="secondary"
               size="small"
               aria-label={project.ariaLabel}
+              data-i18n-aria={project.ariaLabelKey}
             >
               <span data-i18n={project.linkKey}>{project.linkFallback}</span>
             </Button>
@@ -106,6 +124,12 @@ const { projects } = Astro.props as { projects: LabProject[] };
     color: #92400e;
   }
 
+  .long-running-tag {
+    border-color: rgba(67, 56, 202, 0.38);
+    background: rgba(99, 102, 241, 0.1);
+    color: #4338ca;
+  }
+
   :global(body.dark) article {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -129,5 +153,11 @@ const { projects } = Astro.props as { projects: LabProject[] };
     border-color: rgba(251, 191, 36, 0.35);
     background: rgba(217, 119, 6, 0.2);
     color: #fbbf24;
+  }
+
+  :global(body.dark) .long-running-tag {
+    border-color: rgba(199, 210, 254, 0.4);
+    background: rgba(99, 102, 241, 0.2);
+    color: #c7d2fe;
   }
 </style>
