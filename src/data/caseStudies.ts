@@ -151,7 +151,7 @@ export const caseStudies: CaseStudy[] = [
         id: "findings",
         eyebrow: { en: "06 · Findings", da: "06 · Resultater" },
         title: {
-          en: "'Tasks' were useful; the boundaries between tools were not clear enough",
+          en: "<em>'Tasks'</em> were useful; the boundaries between tools were not clear enough",
           da: "'Opgaver' var nyttige; grænserne mellem værktøjerne var ikke tydelige nok",
         },
         body: {
