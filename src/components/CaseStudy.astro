@@ -207,6 +207,15 @@ const statusLabels = {
     color: var(--text-on-dark);
   }
 
+  /* Rich text from set:html does not receive Astro scoped attributes. */
+  :global(body.dark .case-section a) {
+    color: var(--brand-primary-soft);
+  }
+
+  :global(body.dark .case-section a:hover) {
+    color: var(--brand-primary-strong);
+  }
+
   :global(body.dark .case-study li strong) {
     color: var(--text-on-dark);
   }
