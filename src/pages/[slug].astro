@@ -158,7 +158,7 @@ const dbNotice = DB_NOTICES[project.slug];
     {
       dbNotice && (
         <div
-          class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-orange-200 border border-l-4 border-orange-600 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-fit w-full mb-8"
+          class="flex items-start md:items-center justify-center md:justify-start gap-3 col-span-12 bg-orange-200 border border-l-4 border-orange-700 rounded-2xl md:rounded-full md:p-4 px-4 py-3 md:w-fit w-full mb-8"
           id="db-notice"
         >
           <svg
@@ -226,6 +226,8 @@ const dbNotice = DB_NOTICES[project.slug];
             rel="noopener noreferrer"
             variant="secondary"
             size="small"
+            data-aria-en={`View project: ${project.name} (opens in new tab)`}
+            data-aria-da={`Se projekt: ${project.name} (åbner i en ny fane)`}
             aria-label={`View project: ${project.name} (opens in new tab)`}><span data-i18n="project.view">View project</span></Button
           >
         </div>

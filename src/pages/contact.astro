@@ -222,7 +222,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="Your name"
               />
-              <p id="form-name-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
+              <p id="form-name-error" class="sr-only text-red-700 text-xs" role="alert" aria-atomic="true"></p>
             </div>
 
             <!-- Email Field -->
@@ -242,7 +242,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300"
                 placeholder="your.email@example.com"
               />
-              <p id="form-email-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
+              <p id="form-email-error" class="sr-only text-red-700 text-xs" role="alert" aria-atomic="true"></p>
             </div>
 
             <!-- Message Field -->
@@ -261,7 +261,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                 rows={6}
                 class="bg-[#fafafa] w-full px-4 py-2 border border-gray-400 rounded-[5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:border-transparent transition duration-300 resize-none"
                 placeholder="Your message..."></textarea>
-              <p id="form-message-error" class="hidden text-red-700 text-xs mt-1.5" role="alert"></p>
+              <p id="form-message-error" class="sr-only text-red-700 text-xs" role="alert" aria-atomic="true"></p>
             </div>
 
             <!-- Fine print: GDPR + what happens next -->
@@ -350,12 +350,14 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
       function showError(error: HTMLElement, key: "required" | "email") {
         error.dataset.errorKey = key;
         error.textContent = errorText[getLang()][key];
-        error.classList.remove("hidden");
+        error.classList.remove("sr-only");
+        error.classList.add("mt-1.5");
       }
       function clearError(error: HTMLElement) {
         delete error.dataset.errorKey;
         error.textContent = "";
-        error.classList.add("hidden");
+        error.classList.add("sr-only");
+        error.classList.remove("mt-1.5");
       }
 
       function validateField(input: HTMLInputElement | HTMLTextAreaElement, error: HTMLElement | null): boolean {

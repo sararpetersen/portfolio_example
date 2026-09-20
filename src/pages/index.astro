@@ -12,7 +12,7 @@ const getEducationOrder = (year = "") => {
 };
 
 // Cases hidden from the frontpage grid. Their pages still build and stay reachable by
-// direct URL and the sitemap; vibeloop also stays linked from its card on the Lab.
+// direct URL and the sitemap.
 // singleusesucks and vinens_essens currently have no other page linking to them —
 // worth reconsidering now that The Archive (which used to hold them) has been removed.
 const sortedCards = cards
@@ -144,7 +144,7 @@ import Cases from "../components/Cases.astro";
     <div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
       <!-- Card 1 -->
       <article id="diff-card-1" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card1.label">
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 mb-3" data-i18n="diff.card1.label">
           Lived experience
         </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card1.title">
@@ -159,7 +159,7 @@ import Cases from "../components/Cases.astro";
 
       <!-- Card 2 -->
       <article id="diff-card-2" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card2.label">
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 mb-3" data-i18n="diff.card2.label">
           Design + code
         </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card2.title">
@@ -173,7 +173,7 @@ import Cases from "../components/Cases.astro";
 
       <!-- Card 3 -->
       <article id="diff-card-3" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="diff.card3.label">
+        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 mb-3" data-i18n="diff.card3.label">
           Proof, not promises
         </p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card3.title">
@@ -198,19 +198,19 @@ import Cases from "../components/Cases.astro";
         From the Lab
       </h2>
       <p id="lab-teaser-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="labteaser.sectionintro">
-        Not every project makes it to a full case study. Here's what I'm currently building on the side.
+        Personal projects exploring accessibility and everyday needs, with room to test ideas and keep improving them.
       </p>
     </div>
     <div
       class="lab-teaser-card rounded-2xl border-l-4 border border-gray-500 p-6 md:p-8 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6"
     >
       <div>
-        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-500 mb-3" data-i18n="labteaser.eyebrow">Currently building</p>
+        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 mb-3" data-i18n="labteaser.eyebrow">Longest-running project</p>
         <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="labteaser.title">
-          VibeLoop
+          Steady
         </h3>
         <p class="text-gray-600 text-sm leading-relaxed max-w-xl" data-i18n="labteaser.text">
-          A social app built to help people connect with their local community.
+          A calmer daily-planning tool for neurodivergent people, developed through accessibility work, user testing and ongoing iteration.
         </p>
       </div>
       <div class="shrink-0">

@@ -2,6 +2,7 @@
 title: En tosproget hjemmeside uden et i18n-framework
 excerpt: Hvordan denne portfolio skifter mellem dansk og engelsk.
 publishDate: 2026-07-20
+lang: da
 draft: false
 tags:
   - danish

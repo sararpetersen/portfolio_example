@@ -2,6 +2,7 @@
 title: Hvorfor Lab-projekterne er lavet til neurodivergente
 excerpt: Et mønster i mit arbejde, når ingen andre har sat opgaven.
 publishDate: 2026-07-17
+lang: da
 draft: false
 tags:
   - danish

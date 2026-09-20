@@ -106,16 +106,14 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
                 data-tags={JSON.stringify(post.data.tags)}
               >
                 <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-                <h2 class="text-lg italic font-bold leading-snug mb-2">{post.data.title}</h2>
-                <p class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
+                <h2 lang={post.data.lang} class="text-lg italic font-bold leading-snug mb-2">{post.data.title}</h2>
+                <p lang={post.data.lang} class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
                 <a
                   href={`/blog/${post.id}`}
-                  aria-label={`Read post: ${post.data.title}`}
-                  data-blog-read-title={post.data.title}
                   class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-                  data-i18n="blog.read"
                 >
-                  Read post →
+                  <span data-i18n="blog.read">Read post →</span>
+                  <span class="sr-only" lang={post.data.lang}>: {post.data.title}</span>
                 </a>
               </article>
             ))}
@@ -475,21 +473,6 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     applyFilterChipLang((e as CustomEvent).detail?.lang || getLang());
   });
 
-  // "Read post: {title}" interpolates the post title, which content collections don't carry
-  // a Danish variant for — so only the prefix translates, same pattern as the [slug].astro
-  // case-study nav and the project-card labels in Cases.astro.
-  function applyReadPostLang(lang: string): void {
-    const prefix = lang === "da" ? "Læs indlæg" : "Read post";
-    document.querySelectorAll<HTMLElement>("[data-blog-read-title]").forEach((el) => {
-      const title = el.dataset.blogReadTitle;
-      if (!title) return;
-      el.setAttribute("aria-label", `${prefix}: ${title}`);
-    });
-  }
-  applyReadPostLang(getLang());
-  window.addEventListener("langchange", (e: Event) => {
-    applyReadPostLang((e as CustomEvent).detail?.lang || getLang());
-  });
 </script>
 
 <style>

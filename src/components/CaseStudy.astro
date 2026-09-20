@@ -145,6 +145,8 @@ const statusLabels = {
             variant="secondary"
             size="small"
             aria-label={link.external === false ? link.label.en : `${link.label.en} (opens in new tab)`}
+            data-aria-en={link.external === false ? link.label.en : `${link.label.en} (opens in new tab)`}
+            data-aria-da={link.external === false ? link.label.da : `${link.label.da} (åbner i en ny fane)`}
           >
             <>
               <span class="case-en">{link.label.en} →</span>

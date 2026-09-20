@@ -71,12 +71,12 @@ const articleSchema = {
         }
       </div>
       <h1
-        id="post-title"
+        id="post-title" lang={post.data.lang}
         class="font-nikumaru uppercase tracking-[0.08em] sm:tracking-[0.11em] md:tracking-[0.14em] text-[1.65rem] leading-tight sm:text-h3-mobile md:text-h3-desktop mb-3 text-gray-800 break-words"
       >
         {post.data.title}
       </h1>
-      <p id="post-excerpt" class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
+      <p id="post-excerpt" lang={post.data.lang} class="text-[14px] text-gray-600 leading-relaxed max-w-3xl">{post.data.excerpt}</p>
       {
         post.data.updatedDate && post.data.updateNote && (
           <aside
@@ -86,7 +86,7 @@ const articleSchema = {
             data-i18n-aria="blog.postupdate.aria"
           >
             <p class="text-sm leading-relaxed text-gray-700">
-              <strong class="font-semibold text-gray-800">Update:</strong> {post.data.updateNote}
+              <strong class="font-semibold text-gray-800">Update:</strong> <span lang={post.data.lang}>{post.data.updateNote}</span>
             </p>
           </aside>
         )
@@ -133,7 +133,7 @@ const articleSchema = {
       })();
     </script>
 
-    <div id="post-content" class="blog-content max-w-none">
+    <div id="post-content" lang={post.data.lang} class="blog-content max-w-none">
       <Content />
     </div>
 

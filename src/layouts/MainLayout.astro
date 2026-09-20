@@ -188,10 +188,10 @@ const schemamarkup = {
             "project.view": "View project",
             "project.related.title": "More projects",
             "labteaser.sectiontitle": "From the Lab",
-            "labteaser.sectionintro": "Not every project makes it to a full case study. Here's what I'm currently building on the side.",
-            "labteaser.eyebrow": "Currently building",
-            "labteaser.title": "VibeLoop",
-            "labteaser.text": "A social app built to help people connect with their local community.",
+            "labteaser.sectionintro": "Personal projects exploring accessibility and everyday needs, with room to test ideas and keep improving them.",
+            "labteaser.eyebrow": "Longest-running project",
+            "labteaser.title": "Steady",
+            "labteaser.text": "A calmer daily-planning tool for neurodivergent people, developed through accessibility work, user testing and ongoing iteration.",
             "labteaser.link": "Explore the Lab →",
             "testimonials.title": "Testimonials",
             "testimonials.intro": "A few words from someone I've worked with directly.",
@@ -423,6 +423,7 @@ const schemamarkup = {
             "revisited.changed": "What I changed:",
             "revisited.visit": "Visit revamped project →",
             "revisited.computers.title": "Computers: from history to everyday life",
+            "revisited.computers.aria": "Visit Computers: from history to everyday life (opens in a new tab)",
             "revisited.computers.context": "1st semester entrance-exam · Multimedia Design",
             "revisited.computers.text":
               "Project from my entrance exam rebuilt as a clearer, more accessible guide to computer history, operating systems and components.",
@@ -430,6 +431,7 @@ const schemamarkup = {
             "revisited.computers.change2": "Responsive, accessible navigation",
             "revisited.computers.change3": "A more focused visual system",
             "revisited.mario.title": "The Great Mushroom Kingdom Wiki",
+            "revisited.mario.aria": "Visit The Great Mushroom Kingdom Wiki (opens in a new tab)",
             "revisited.mario.context": "1st semester project · Multimedia Design",
             "revisited.mario.text":
               "A Super Mario fan-wiki rebuilt with cleaner content hierarchy, softer interactions and a more coherent responsive layout.",
@@ -437,6 +439,7 @@ const schemamarkup = {
             "revisited.mario.change2": "Improved readability and contrast",
             "revisited.mario.change3": "Keyboard-friendly interactions",
             "revisited.profile.title": "Personal Professional Profile (PPP)",
+            "revisited.profile.aria": "Visit Personal Professional Profile (PPP) (opens in a new tab)",
             "revisited.profile.context": "3rd semester project · Multimedia Design",
             "revisited.profile.text":
               "Made as part of our internship preparations, updated to showcase my further development and accessibility practice.",
@@ -552,10 +555,10 @@ const schemamarkup = {
             "project.view": "Se projekt",
             "project.related.title": "Flere projekter",
             "labteaser.sectiontitle": "Fra Laboratoriet",
-            "labteaser.sectionintro": "Ikke alle projekter bliver til et fuldt casestudie. Her er, hvad jeg er ved at bygge lige nu.",
-            "labteaser.eyebrow": "Under udvikling",
-            "labteaser.title": "VibeLoop",
-            "labteaser.text": "En social app, der skal hjælpe folk med at skabe forbindelse til deres lokalsamfund.",
+            "labteaser.sectionintro": "Personlige projekter med fokus på tilgængelighed og hverdagens behov, hvor der er plads til at afprøve idéer og arbejde videre med dem.",
+            "labteaser.eyebrow": "Projektet jeg har arbejdet længst på",
+            "labteaser.title": "Steady",
+            "labteaser.text": "Et roligere planlægningsværktøj til neurodivergente, udviklet gennem arbejde med tilgængelighed, brugertest og løbende forbedringer.",
             "labteaser.link": "Udforsk Laboratoriet →",
             "testimonials.title": "Anbefalinger",
             "testimonials.intro": "Et par ord fra nogen, jeg har arbejdet direkte sammen med.",
@@ -599,7 +602,7 @@ const schemamarkup = {
             "timeline.6.year": "Maj 2026 - Nu",
             "timeline.6.title": "Softwareudviklerpraktikant | Folkæt",
             "timeline.6.desc":
-              "Arbejder på en side med fokus på tilgængelighed for neurodivergente brugere, samt designopgaver i Figma, og lærer React Router 7 gennem arbejde med mindre opgaver på Folkæt's platform.",
+              "Arbejder på en side med fokus på tilgængelighed for neurodivergente brugere, samt designopgaver i Figma, og lærer React Router 7 gennem arbejde med mindre opgaver på Folkæts platform.",
             "interests.title": "Interesser og hobbyer",
             "interest.japanese.title": "Japansk kultur",
             "interest.japanese.text":
@@ -786,6 +789,7 @@ const schemamarkup = {
             "revisited.changed": "Det har jeg ændret:",
             "revisited.visit": "Besøg det opdaterede projekt →",
             "revisited.computers.title": "Computere: fra historie til hverdag",
+            "revisited.computers.aria": "Besøg Computere: fra historie til hverdag (åbner i en ny fane)",
             "revisited.computers.context": "1. semesters studiestartsprøve · Multimediedesign",
             "revisited.computers.text":
               "Projekt fra min studiestartsprøve, genopbygget som en tydeligere og mere tilgængelig guide til computerhistorie, operativsystemer og komponenter.",
@@ -793,6 +797,7 @@ const schemamarkup = {
             "revisited.computers.change2": "Responsiv og tilgængelig navigation",
             "revisited.computers.change3": "Et mere fokuseret visuelt system",
             "revisited.mario.title": "The Great Mushroom Kingdom Wiki",
+            "revisited.mario.aria": "Besøg The Great Mushroom Kingdom Wiki (åbner i en ny fane)",
             "revisited.mario.context": "1. semesters projekt · Multimediedesign",
             "revisited.mario.text":
               "Super Mario fan-wiki genopbygget med tydeligere indholdshierarki, blødere interaktioner og et mere sammenhængende responsivt layout.",
@@ -800,6 +805,7 @@ const schemamarkup = {
             "revisited.mario.change2": "Forbedret læsbarhed og kontrast",
             "revisited.mario.change3": "Tastaturvenlige interaktioner",
             "revisited.profile.title": "Personlig Professionel Profil (PPP)",
+            "revisited.profile.aria": "Besøg Personlig Professionel Profil (PPP) (åbner i en ny fane)",
             "revisited.profile.context": "3. semesters projekt · Multimediedesign",
             "revisited.profile.text":
               "Lavet som del af vores praktikforberedelser, opdateret til at vise mere af min udvikling og tilgængelighedspraksis.",
@@ -907,6 +913,9 @@ const schemamarkup = {
             if (t[lang] && t[lang][key] !== undefined) {
               el.setAttribute("aria-label", t[lang][key]);
             }
+          });
+          document.querySelectorAll("[data-aria-en][data-aria-da]").forEach(function (el) {
+            el.setAttribute("aria-label", el.getAttribute(lang === "da" ? "data-aria-da" : "data-aria-en"));
           });
           document.querySelectorAll("[data-i18n-tooltip]").forEach(function (el) {
             var key = el.getAttribute("data-i18n-tooltip");

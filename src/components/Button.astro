@@ -1,5 +1,6 @@
 ---
-const buttonStyling = "inline-flex items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase";
+const buttonStyling =
+  "inline-flex items-center justify-center px-6 py-[10px] border-2 font-semibold rounded-[5px] transition duration-300 uppercase cursor-pointer";
 
 const variantClasses = {
   primary:
@@ -93,6 +94,7 @@ const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[si
     background-color: var(--brand-primary-strong);
     color: #1a1a1a;
     border: var(--brand-primary-strong) 2px solid;
+    cursor: pointer;
   }
 
   body.dark .secondary-button {
@@ -106,5 +108,6 @@ const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[si
     background-color: var(--brand-primary-soft);
     color: #1a1a1a;
     border: var(--brand-primary-soft) 2px solid;
+    cursor: pointer;
   }
 </style>
