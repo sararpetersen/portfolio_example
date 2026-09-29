@@ -16,7 +16,7 @@ So I started a separate project: a standalone React component library, published
 
 ## Why pull it out of the portfolio?
 
-Building inside a portfolio means every component is entangled with the page it lives on. The same Tailwind config, the same dark mode class on `body`, the same i18n dictionary. That's convenient until you want to know whether a component actually stands on its own. Pulling it into its own repo forces the question: does this thing work if I strip away every assumption the portfolio was quietly making for it?
+Building inside a portfolio means that every component is entangled with the page it lives on. The same Tailwind config, the same dark mode class on `body`, the same i18n dictionary. That's convenient until you want to know whether a component actually stands on its own. Pulling it into its own repo forces the question: does this thing work if I strip away every assumption the portfolio was quietly making for it?
 
 Mostly, no. Not at first. Which was the whole point.
 
