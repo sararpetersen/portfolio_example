@@ -89,9 +89,10 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
                   ></path>
                 </svg>
                 <div>
-                  <strong class="text-gray-800 block mb-1" data-i18n="contact.info.phone">Phone</strong>
+                  <strong class="text-gray-800 block mb-1" data-i18n="contact.info.phone">Phone*</strong>
                   <a
                     href="tel:+4542428807"
+                    aria-describedby="contact-phone-note"
                     aria-label="Call +45 42 42 88 07"
                     data-i18n-aria="contact.phone.aria"
                     class="transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">+45 42 42 88 07</a
@@ -127,6 +128,13 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
               </li>
             </ul>
           </div>
+          <p
+            id="contact-phone-note"
+            class="contact-phone-note text-xs text-gray-500 leading-relaxed italic mt-3 max-w-xl"
+            data-i18n="contact.phone.note"
+          >
+            *Phone calls can be difficult for me, so Email or LinkedIn are the fastest ways to reach me.
+          </p>
 
           <p
             id="contact-services-label"
@@ -451,6 +459,7 @@ import ColorSymIcon from "../components/ColorSymIcon.astro";
     }
 
     :global(body.dark #contact-info a),
+    :global(body.dark .contact-phone-note),
     :global(body.dark #contact-text),
     :global(body.dark .some1 svg),
     :global(body.dark #contact-title-label) {
