@@ -114,6 +114,8 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Fixed accessibility bar + header are ~133px tall; keeps focused fields and anchor targets clear of them. */
+  scroll-padding-top: 9rem;
 }
 
 /* Reduce Motion Mode — global so it reaches every element on every page, not just the

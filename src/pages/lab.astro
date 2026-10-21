@@ -14,11 +14,11 @@ import { labProjects } from "../data/labProjects";
   ogdescription="Experimental tools and inclusive digital concepts exploring neurodivergence, disability and accessible design."
 >
   <!-- Lab Intro -->
-  <section id="lab" class="grid grid-cols-12 gap-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-8 relative">
+  <section id="lab" class="grid grid-cols-12 gap-x-0 gap-y-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-8 relative">
     <div class="col-span-12">
       <div class="lg:pt-12 pt-16 mb-8">
         <div id="lab-title-row" class="mb-3">
-          <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop" data-i18n="lab.title">
+          <h1 class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop [overflow-wrap:anywhere]" data-i18n="lab.title">
             Experiments
           </h1>
         </div>
@@ -64,7 +64,7 @@ import { labProjects } from "../data/labProjects";
     </p>
 
     <p class="lab-legend flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-gray-600 mb-6">
-      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+      <span class="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1">
         <span
           class="lab-tag long-running-tag"
           tabindex="0"
@@ -78,7 +78,7 @@ import { labProjects } from "../data/labProjects";
         <span data-i18n="lab.legend.longrunning">= developed over the longest period</span>
       </span>
       <span class="text-gray-300 hidden sm:inline" aria-hidden="true">·</span>
-      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+      <span class="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1">
         <span
           class="lab-tag"
           tabindex="0"
@@ -147,8 +147,7 @@ import { labProjects } from "../data/labProjects";
     display: inline-flex;
     align-items: center;
     gap: 0.35em;
-    flex-shrink: 0;
-    white-space: nowrap;
+    max-width: 100%;
     border-radius: 9999px;
     border: 1px solid rgba(71, 123, 147, 0.4);
     background: rgba(71, 123, 147, 0.1);

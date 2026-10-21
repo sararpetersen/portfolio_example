@@ -22,10 +22,10 @@ const statusLabels = {
   </nav>
 
   <header class="case-hero border-r-4 border border-gray-500 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-7 md:p-12">
-    <p class="text-xs uppercase tracking-[0.2em] text-blue-500 font-bold mb-3">{caseStudy.year} · UX/UI case study</p>
+    <p class="text-xs uppercase tracking-[0.2em] text-blue-700 font-bold mb-3">{caseStudy.year} · UX/UI case study</p>
     <div class="flex items-center gap-4 mb-1">
       {caseStudy.logo && <img src={caseStudy.logo} alt="" width="48" height="48" class="shrink-0" />}
-      <h1 class="font-nikumaru not-italic uppercase tracking-[0.14em] text-h2-desktop text-gray-800">{caseStudy.name}</h1>
+      <h1 class="font-nikumaru not-italic uppercase tracking-[0.14em] text-h3-mobile md:text-h2-desktop text-gray-800 [overflow-wrap:anywhere] min-w-0">{caseStudy.name}</h1>
     </div>
     <p class="font-garamond italic text-h4-mobile text-gray-700 mb-6">
       <span class="case-en">{caseStudy.tagline.en}</span><span class="case-da">{caseStudy.tagline.da}</span>
@@ -79,9 +79,9 @@ const statusLabels = {
   <div class="space-y-8">
     {
       caseStudy.sections.map((section) => (
-        <section id={section.id} class="case-section scroll-mt-28 grid md:grid-cols-12 gap-5 border-b border-gray-300 pb-10">
+        <section id={section.id} class="case-section grid md:grid-cols-12 gap-5 border-b border-gray-300 pb-10">
           <div class="md:col-span-4">
-            <p class="case-step text-xs uppercase tracking-[0.18em] text-blue-500 font-bold mb-3">
+            <p class="case-step text-xs uppercase tracking-[0.18em] text-blue-700 font-bold mb-3">
               <>
                 <span class="case-en">{section.eyebrow.en}</span>
                 <span class="case-da">{section.eyebrow.da}</span>
