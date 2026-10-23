@@ -57,22 +57,11 @@ const timelineItems: TimelineItem[] = [
   },
 ];
 
-const getTimelineSortValue = (yearRange: string) => {
-  if (yearRange.toLowerCase().includes("present")) return 9999;
+const isCurrentItem = (yearRange: string) => yearRange.toLowerCase().includes("present");
 
-  const years = yearRange.match(/\d{4}/g);
-  if (!years || years.length === 0) return 0;
-
-  return Number(years[years.length - 1]);
-};
-
-const schoolTimelineItems = timelineItems
-  .filter((item) => item.category === "school")
-  .sort((a, b) => getTimelineSortValue(b.year) - getTimelineSortValue(a.year));
-
-const workTimelineItems = timelineItems
-  .filter((item) => item.category === "work")
-  .sort((a, b) => getTimelineSortValue(b.year) - getTimelineSortValue(a.year));
+// Oldest first, so the spine reads as a journey from top to bottom.
+const chronologicalOrder = [0, 2, 3, 4, 5, 6];
+timelineItems.sort((a, b) => chronologicalOrder.indexOf(a.i18nKey) - chronologicalOrder.indexOf(b.i18nKey));
 ---
 
 <MainLayout
@@ -206,115 +195,76 @@ const workTimelineItems = timelineItems
     </div>
   </section>
 
-  <!-- Divider -->
-  <div id="about-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-  </div>
-
   <!-- Timeline -->
   <section id="timeline" class="container max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2 id="timeline-title" class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 pb-6" data-i18n="timeline.title">
       The highlights of my journey
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-      <div>
-        <h3 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.education">
-          Education
-        </h3>
-        <div class="flex flex-col">
-          {
-            schoolTimelineItems.map((item) => (
-              <div class="timeline-item border-t-2 border-gray-200 pt-5 pb-5 last:pb-0">
-                <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
+    <div class="about-panel">
+      <ol class="tl-spine">
+        {
+          timelineItems.map((item) => (
+            <li class:list={["tl-entry", isCurrentItem(item.year) && "tl-current"]}>
+              <span class:list={["tl-marker", item.category === "work" && "tl-marker-work"]} aria-hidden="true" />
+              <div class="tl-meta">
+                <p class="tl-year" data-i18n={`timeline.${item.i18nKey}.year`}>
                   {item.year}
                 </p>
-                <h4 class="font-bold text-[15px] leading-snug mb-1 font-almarai" data-i18n={`timeline.${item.i18nKey}.title`}>
-                  {item.title}
-                </h4>
-                <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
-                  {item.desc}
-                </p>
-                {item.note && (
-                  <p class="italic text-gray-600 text-xs mt-2" data-i18n={`timeline.${item.i18nKey}.note`}>
-                    {item.note}
-                  </p>
-                )}
+                <span class:list={["tl-chip", item.category === "work" && "tl-chip-work"]} data-i18n={item.category === "work" ? "timeline.work" : "timeline.education"}>
+                  {item.category === "work" ? "Work experience" : "Education"}
+                </span>
               </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <div>
-        <h3 class="timeline-column-label font-garamond italic font-semibold text-base text-gray-800 mb-4" data-i18n="timeline.work">
-          Work experience
-        </h3>
-        <div class="flex flex-col">
-          {
-            workTimelineItems.map((item) => (
-              <div class="timeline-item border-t-2 border-gray-200 pt-5 pb-5 last:pb-0">
-                <p class="text-[11px] font-semibold text-gray-500 mb-1 uppercase tracking-widest" data-i18n={`timeline.${item.i18nKey}.year`}>
-                  {item.year}
-                </p>
-                <h4 class="font-bold text-[15px] leading-snug mb-1 font-almarai" data-i18n={`timeline.${item.i18nKey}.title`}>
-                  {item.title}
-                </h4>
-                <p class="text-gray-500 text-sm leading-relaxed" data-i18n={`timeline.${item.i18nKey}.desc`}>
-                  {item.desc}
-                </p>
-                {item.note && (
-                  <p class="italic text-gray-600 text-xs mt-2" data-i18n={`timeline.${item.i18nKey}.note`}>
-                    {item.note}
-                  </p>
-                )}
-              </div>
-            ))
-          }
-        </div>
-      </div>
+              <h3 class="tl-title" data-i18n={`timeline.${item.i18nKey}.title`}>
+                {item.title}
+              </h3>
+              <p class="tl-desc" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                {item.desc}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
     </div>
   </section>
 
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <div class="flex flex-col mb-6">
-      <h2
-        id="interests-title"
-        class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
-        data-i18n="interests.title"
-      >
-        Interests and hobbies
-      </h2>
-    </div>
-    <div id="interests-and-hobbies" class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-8">
-      <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h3 class="text-h4-mobile italic font-semibold text-gray-800 mb-2" data-i18n="interest.japanese.title">Japanese culture</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.japanese.text">
-          I love the balance between simplicity, detail, and thoughtful storytelling.
-        </p>
-      </div>
-      <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h3 class="text-h4-mobile italic font-semibold text-gray-800 mb-2" data-i18n="interest.lego.title">Building with LEGO</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
-      </div>
-      <div class="interest-item border-t-2 border-gray-200 pt-5">
-        <h3 class="text-h4-mobile italic font-semibold text-gray-800 mb-2" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="interest.themepark.text">
-          Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
-          them.
-        </p>
+    <h2
+      id="interests-title"
+      class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
+      data-i18n="interests.title"
+    >
+      Interests and hobbies
+    </h2>
+    <div id="interests-and-hobbies" class="about-panel">
+      <div class="seal-grid">
+        <div class="seal-item">
+          <span class="seal seal-red" aria-hidden="true">和</span>
+          <div>
+            <h3 class="seal-title" data-i18n="interest.japanese.title">Japanese culture</h3>
+            <p class="seal-text" data-i18n="interest.japanese.text">I love the balance between simplicity, detail, and thoughtful storytelling.</p>
+          </div>
+        </div>
+        <div class="seal-item">
+          <span class="seal seal-blue" aria-hidden="true">組</span>
+          <div>
+            <h3 class="seal-title" data-i18n="interest.lego.title">Building with LEGO</h3>
+            <p class="seal-text" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
+          </div>
+        </div>
+        <div class="seal-item">
+          <span class="seal seal-ink" aria-hidden="true">園</span>
+          <div>
+            <h3 class="seal-title" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h3>
+            <p class="seal-text" data-i18n="interest.themepark.text">
+              Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
+              them.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div id="about-divider-2" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-  </div>
 
   <!-- Resources Section -->
   <section id="resources" class="resources-section max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
@@ -325,9 +275,13 @@ const workTimelineItems = timelineItems
     >
       Resources
     </h2>
-    <div id="resources-section" class="divide-y divide-gray-200">
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
-        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.resume.en.title">Resume (EN)</h3>
+    <div id="resources-section" class="grid md:grid-cols-2 grid-cols-1 gap-5">
+      <div class="resource-row tag-tile">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <div>
+          <p class="tag-label" aria-hidden="true">PDF · EN</p>
+          <h3 class="tag-title" data-i18n="resource.resume.en.title">Resume (EN)</h3>
+        </div>
         <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(EN).pdf"
@@ -340,8 +294,12 @@ const workTimelineItems = timelineItems
           >
         </span>
       </div>
-      <div class="resource-row flex md:flex-row flex-col md:items-center md:justify-between gap-3 md:gap-0 md:py-5 py-6">
-        <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="resource.cv.da.title">CV (DA)</h3>
+      <div class="resource-row tag-tile">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <div>
+          <p class="tag-label" aria-hidden="true">PDF · DA</p>
+          <h3 class="tag-title" data-i18n="resource.cv.da.title">CV (DA)</h3>
+        </div>
         <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(DA).pdf"
@@ -502,9 +460,305 @@ const workTimelineItems = timelineItems
     }
   }
 
+  /* Section panels: one soft tile per section, same family as the accordion tiles */
+  .about-panel,
+  .tag-tile {
+    border: 1px solid #d8d2cc;
+    border-radius: 1.75rem;
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-panel {
+      padding: 2.25rem 2.5rem;
+    }
+  }
+
+  /* Timeline spine */
+  .tl-spine {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tl-entry {
+    position: relative;
+    padding: 0 0 2rem 2.25rem;
+  }
+
+  .tl-entry:last-child {
+    padding-bottom: 0;
+  }
+
+  .tl-entry::before {
+    content: "";
+    position: absolute;
+    left: calc(0.55rem - 1px);
+    top: 1.45rem;
+    bottom: -0.35rem;
+    width: 2px;
+    background: #bfb7b0;
+  }
+
+  .tl-entry:last-child::before {
+    display: none;
+  }
+
+  .tl-marker {
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    z-index: 1;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid #375567;
+    border-radius: 9999px;
+    background: #f5f5f5;
+  }
+
+  .tl-marker-work {
+    border-color: #a8412d;
+    background: #a8412d;
+  }
+
+  .tl-current .tl-marker {
+    box-shadow: 0 0 0 4px rgba(55, 85, 103, 0.22);
+  }
+
+  .tl-current .tl-marker-work {
+    box-shadow: 0 0 0 4px rgba(168, 65, 45, 0.22);
+  }
+
+  .tl-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .tl-year {
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #375567;
+  }
+
+  @media (min-width: 768px) {
+    .tl-year {
+      font-size: 1.85rem;
+    }
+  }
+
+  .tl-chip {
+    border-radius: 9999px;
+    background: #deebef;
+    color: #2f3f4c;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    padding: 0.3rem 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .tl-chip-work {
+    background: #f7d9d2;
+    color: #6b2415;
+  }
+
+  .tl-title {
+    margin-bottom: 0.35rem;
+    font-family: var(--font-almarai);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #1a1a1a;
+  }
+
+  .tl-desc,
+  .seal-text {
+    max-width: 62ch;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #2e2e2e;
+  }
+
+  /* Interest seals */
+  .seal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .seal-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+    }
+  }
+
+  .seal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+
+  @media (min-width: 768px) {
+    .seal-item {
+      flex-direction: column;
+    }
+  }
+
+  .seal {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 9999px;
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    transform: rotate(-5deg);
+  }
+
+  .seal-red {
+    background: #a8412d;
+  }
+
+  .seal-blue {
+    background: #375567;
+  }
+
+  .seal-ink {
+    background: #1a1a1a;
+  }
+
+  .seal-title,
+  .tag-title {
+    margin-bottom: 0.4rem;
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    color: #1a1a1a;
+  }
+
+  /* Download tags */
+  .tag-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 10rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+  }
+
+  .tag-hole {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.25rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 2px solid #8f8882;
+    border-radius: 9999px;
+    background: #ffffff;
+  }
+
+  .tag-label {
+    margin-bottom: 0.5rem;
+    color: #5a5149;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .tag-title {
+    margin-bottom: 0;
+  }
+
+  body.dark .about-panel,
+  body.dark .tag-tile {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark .tl-entry::before {
+    background: var(--dark-border-strong);
+  }
+
+  body.dark .tl-marker {
+    border-color: #c0d7e1;
+    background: transparent;
+  }
+
+  body.dark .tl-marker-work {
+    border-color: #f3b9ae;
+    background: #f3b9ae;
+  }
+
+  body.dark .tl-year {
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark .tl-chip {
+    background: rgba(192, 215, 225, 0.18);
+    color: var(--text-on-dark);
+  }
+
+  body.dark .tl-chip-work {
+    background: rgba(243, 185, 174, 0.2);
+    color: #f9d6cf;
+  }
+
+  body.dark .tl-title,
+  body.dark .seal-title,
+  body.dark .tag-title {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .tl-desc,
+  body.dark .seal-text {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .tag-label {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .tag-hole {
+    border-color: var(--dark-border-strong);
+    background: transparent;
+  }
+
+  body.dark .seal-blue {
+    background: #4a7088;
+  }
+
+  body.dark .seal-ink {
+    background: #f5f5f5;
+    color: #1a1a1a;
+  }
+
   /* Portrait */
   .about-portrait-frame {
-    width: min(100%, 24rem);
+    width: min(100%, 15rem);
+  }
+
+  @media (min-width: 1024px) {
+    .about-portrait-frame {
+      width: min(100%, 17rem);
+    }
   }
 
   .about-portrait-img {
@@ -557,16 +811,10 @@ const workTimelineItems = timelineItems
   html.has-js body:not(.reduce-motion) #about-title-row,
   html.has-js body:not(.reduce-motion) .heading-text,
   html.has-js body:not(.reduce-motion) #about-portrait,
-  html.has-js body:not(.reduce-motion) #about-divider-1,
-  html.has-js body:not(.reduce-motion) #about-divider-2,
   html.has-js body:not(.reduce-motion) #timeline-title,
-  html.has-js body:not(.reduce-motion) .timeline-column-label,
-  html.has-js body:not(.reduce-motion) .timeline-item,
   html.has-js body:not(.reduce-motion) .personal-bg-item,
   html.has-js body:not(.reduce-motion) #interests-title,
-  html.has-js body:not(.reduce-motion) #interests-and-hobbies > div,
   html.has-js body:not(.reduce-motion) #resources-title,
-  html.has-js body:not(.reduce-motion) #resources-section > div,
   html.has-js body:not(.reduce-motion) .button-container {
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);
@@ -585,54 +833,10 @@ const workTimelineItems = timelineItems
     color: var(--text-on-dark-soft);
   }
 
-  body.dark .interest-item {
-    border-color: var(--dark-border);
-  }
-
-  body.dark .interest-item p {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark #resources-section {
-    --tw-divide-opacity: 1;
-    border-color: var(--dark-border);
-  }
-
-  body.dark .resource-row {
-    border-color: var(--dark-border);
-  }
-
-  body.dark .timeline-item {
-    border-color: var(--dark-border);
-  }
-
-  body.dark .timeline-item h4 {
-    color: var(--text-on-dark);
-  }
-
-  body.dark .timeline-item p {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark .timeline-item [data-i18n*=".year"] {
-    color: var(--dark-border-strong);
-  }
-
   body.dark #timeline-title,
   body.dark #interests-title,
   body.dark #resources-title {
     color: var(--text-on-dark);
-  }
-
-  body.dark #about-divider-1,
-  body.dark #about-divider-2 {
-    color: var(--dark-border);
-  }
-
-  body.dark #about-divider-1 .divider-center,
-  body.dark #about-divider-2 .divider-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
   }
 
 </style>
