@@ -92,7 +92,8 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
 
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto xl:px-0">
-    <div id="personal-background-content" class="col-span-12">
+    <div class="grid lg:grid-cols-2 grid-cols-1 lg:items-start items-center justify-center col-span-12 gap-10 lg:gap-12">
+    <div id="personal-background-content" class="md:pb-0 pb-8">
       <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
       <div class="flex flex-col gap-4">
       <div class="acc-item personal-bg-item">
@@ -180,6 +181,17 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
         </div>
       </div>
       </div>
+    </div>
+    <div class="flex items-center justify-center lg:justify-end">
+      <img
+        src="/images/pfp2.webp"
+        alt="Portrait of Sara (taken during the internship at Kadaver)"
+        class="portrait lg:w-[400px] w-[250px] lg:h-[450px] h-[300px] object-cover"
+        width="400"
+        height="450"
+        loading="lazy"
+      />
+    </div>
     </div>
   </section>
 
@@ -721,6 +733,15 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   body.dark .seal-ink {
     background: #f5f5f5;
     color: #1a1a1a;
+  }
+
+  .portrait {
+    border: 1px solid #d8d2cc;
+    border-radius: 1.5rem;
+  }
+
+  body.dark .portrait {
+    border-color: var(--dark-border);
   }
 
   body.dark .acc-item {
