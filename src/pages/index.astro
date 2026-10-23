@@ -64,16 +64,13 @@ import Cases from "../components/Cases.astro";
           </p>
 
           <div id="hero-cta" class="btn-container flex flex-wrap items-center gap-4">
-            <span class="md:hidden block">
-              <Button href="#project-section" variant="primary" size="medium" aria-label="Go to projects section" data-i18n-aria="index.projectscta.aria"
-                ><span data-i18n="hero.cta">See projects</span></Button
-              >
-            </span>
+            <Button href="#project-section" variant="primary" size="medium"><span data-i18n="hero.cta">See projects</span></Button>
+            <Button href="/contact" variant="secondary" size="medium"><span data-i18n="nav.contact">Contact</span></Button>
           </div>
         </div>
 
         <div class="col-span-12 lg:col-span-5">
-          <div id="hero-image" class="hero-image-wrap relative shadow-drop25">
+          <div id="hero-image" class="hero-image-wrap relative">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
             <img
               src="/images/hero_image.webp"
@@ -123,13 +120,6 @@ import Cases from "../components/Cases.astro";
     </div>
   </section>
 
-  <!-- Divider -->
-  <div id="divider-1" class="max-w-7xl mx-auto px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-  </div>
-
   <!-- What makes my approach different? -->
   <section id="differentiator" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
     <div class="mb-8">
@@ -141,83 +131,34 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
-      <!-- Card 1 -->
-      <article id="diff-card-1" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-700 mb-3" data-i18n="diff.card1.label">
-          Lived experience
-        </p>
-        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card1.title">
-          I design from the inside
-        </h3>
-        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card1.text">
+    <div class="grid lg:grid-cols-12 grid-cols-1 gap-5">
+      <article id="diff-card-1" class="diff-card bento-tile bento-blue lg:col-span-7">
+        <p class="diff-card-label" data-i18n="diff.card1.label">Lived experience</p>
+        <h3 class="bento-title" data-i18n="diff.card1.title">I design from the inside</h3>
+        <p class="bento-text" data-i18n="diff.card1.text">
           I'm autistic and have ADD. That's <strong>not a footnote</strong>&mdash; it's the reason accessibility is central to how I work, not just
           something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every
           decision I make.
         </p>
       </article>
 
-      <!-- Card 2 -->
-      <article id="diff-card-2" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-700 mb-3" data-i18n="diff.card2.label">
-          Design + code
-        </p>
-        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card2.title">
-          What I design, I can build
-        </h3>
-        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card2.text">
+      <article id="diff-card-2" class="diff-card bento-tile bento-soft lg:col-span-5">
+        <p class="diff-card-label" data-i18n="diff.card2.label">Design + code</p>
+        <h3 class="bento-title" data-i18n="diff.card2.title">What I design, I can build</h3>
+        <p class="bento-text" data-i18n="diff.card2.text">
           I don't just hand off specs and hope for the best. I design and develop, with <strong>no gap between the idea and the implementation</strong
           >. That means fewer compromises, faster iteration, and solutions that are actually accessible in the final product, not just on paper.
         </p>
       </article>
 
-      <!-- Card 3 -->
-      <article id="diff-card-3" class="diff-card rounded-2xl border-l-4 border border-gray-500 p-6 bg-gradient-to-br from-gray-50 to-gray-100">
-        <p class="diff-card-label text-[0.65rem] font-bold uppercase tracking-widest text-blue-700 mb-3" data-i18n="diff.card3.label">
-          Proof, not promises
-        </p>
-        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="diff.card3.title">
-          The portfolio you're looking at is the work
-        </h3>
-        <p class="text-sm text-gray-600 leading-relaxed" data-i18n="diff.card3.text">
+      <article id="diff-card-3" class="diff-card bento-tile bento-pale lg:col-span-12">
+        <p class="diff-card-label" data-i18n="diff.card3.label">Proof, not promises</p>
+        <h3 class="bento-title" data-i18n="diff.card3.title">The portfolio you're looking at is the work</h3>
+        <p class="bento-text max-w-3xl" data-i18n="diff.card3.text">
           This site has dark mode, focus mode, 4 different reading fonts, keyboard navigation, and bilingual support; all built by me. That, to me, is
           proof that I know <strong>how important accessibility is in web design</strong>. That it's not just something I claim to know.
         </p>
       </article>
-    </div>
-  </section>
-
-  <!-- Lab Teaser -->
-  <section id="lab-teaser" class="max-w-7xl mx-auto px-6 md:pt-desktop-top pt-mobil-top">
-    <div class="mb-8">
-      <h2
-        id="lab-teaser-title"
-        class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-3"
-        data-i18n="labteaser.sectiontitle"
-      >
-        From the Lab
-      </h2>
-      <p id="lab-teaser-intro" class="text-gray-600 leading-relaxed max-w-2xl text-sm md:text-base" data-i18n="labteaser.sectionintro">
-        Personal projects exploring accessibility and everyday needs, with room to test ideas and keep improving them.
-      </p>
-    </div>
-    <div
-      class="lab-teaser-card rounded-2xl border-l-4 border border-gray-500 p-6 md:p-8 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6"
-    >
-      <div>
-        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 mb-3" data-i18n="labteaser.eyebrow">Longest-running project</p>
-        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 mb-3 leading-snug" data-i18n="labteaser.title">
-          Steady
-        </h3>
-        <p class="text-gray-600 text-sm leading-relaxed max-w-xl" data-i18n="labteaser.text">
-          A calmer daily-planning tool for neurodivergent people, developed through accessibility work, user testing and ongoing iteration.
-        </p>
-      </div>
-      <div class="shrink-0">
-        <Button href="/lab" variant="secondary" size="small">
-          <span data-i18n="labteaser.link">Explore the Lab →</span>
-        </Button>
-      </div>
     </div>
   </section>
 
@@ -235,8 +176,8 @@ import Cases from "../components/Cases.astro";
         A few words from people I've worked with directly.
       </p>
     </div>
-    <figure id="testimonial-card" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-l-4 border border-gray-500 p-8 max-w-3xl">
-      <blockquote class="text-gray-600 italic" data-i18n="testimonials.quote">
+    <figure id="testimonial-card" class="bento-tile bento-soft max-w-4xl">
+      <blockquote class="testimonial-quote italic" data-i18n="testimonials.quote">
         <p>
           "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class="font-bold"
             >[...]</em
@@ -284,16 +225,12 @@ import Cases from "../components/Cases.astro";
   html.has-js body:not(.reduce-motion) #project-kanji,
   html.has-js body:not(.reduce-motion) #project-title,
   html.has-js body:not(.reduce-motion) #project-text,
-  html.has-js body:not(.reduce-motion) #divider-1,
   html.has-js body:not(.reduce-motion) #testimonial-title,
   html.has-js body:not(.reduce-motion) #testimonial-intro,
   html.has-js body:not(.reduce-motion) #testimonial-card,
   html.has-js body:not(.reduce-motion) #diff-title,
   html.has-js body:not(.reduce-motion) #diff-intro,
-  html.has-js body:not(.reduce-motion) #differentiator .diff-card,
-  html.has-js body:not(.reduce-motion) #lab-teaser-title,
-  html.has-js body:not(.reduce-motion) #lab-teaser-intro,
-  html.has-js body:not(.reduce-motion) .lab-teaser-card {
+  html.has-js body:not(.reduce-motion) #differentiator .diff-card {
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
@@ -356,20 +293,17 @@ import Cases from "../components/Cases.astro";
   }
 
   .hero-image-wrap {
-    border: 1px solid rgb(244 248 250 / 28%);
+    border: 1px solid #bfb7b0;
     border-radius: 1.75rem;
-    background: linear-gradient(165deg, rgb(244 248 250 / 6%), rgb(244 248 250 / 0%));
-    padding: 0.8rem;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: #f0ebe6;
+    padding: 0.6rem;
   }
 
   .hero-image {
     width: 100%;
     aspect-ratio: 4 / 5;
-    border-radius: 1.15rem;
+    border-radius: 1.2rem;
     object-position: center 28%;
-    border: 1px solid rgb(244 248 250 / 16%);
   }
 
   @media (min-width: 1024px) {
@@ -393,6 +327,107 @@ import Cases from "../components/Cases.astro";
     }
   }
 
+  /* Bento tiles (differentiator + testimonial) */
+  .bento-tile {
+    border-radius: 1.75rem;
+    border: 1px solid transparent;
+    padding: 1.75rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .bento-tile {
+      padding: 2.25rem;
+    }
+  }
+
+  .bento-blue {
+    background: #375567;
+    color: #f5f5f5;
+  }
+
+  .bento-soft {
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+    border-color: #bfb7b0;
+    color: #1a1a1a;
+  }
+
+  .bento-pale {
+    background: #deebef;
+    border-color: #c0d7e1;
+    color: #2f3f4c;
+  }
+
+  .diff-card-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  .bento-blue .diff-card-label {
+    color: #dce8ee;
+  }
+
+  .bento-soft .diff-card-label,
+  .bento-pale .diff-card-label {
+    color: #375567;
+  }
+
+  .bento-title {
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+  }
+
+  @media (min-width: 768px) {
+    .bento-title {
+      font-size: 2rem;
+    }
+  }
+
+  .bento-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .bento-blue .bento-text,
+  .bento-blue .bento-title {
+    color: #f5f5f5;
+  }
+
+  .bento-soft .bento-title,
+  .bento-pale .bento-title {
+    color: #1a1a1a;
+  }
+
+  .bento-soft .bento-text {
+    color: #4b4b4b;
+  }
+
+  .bento-pale .bento-text {
+    color: #2f3f4c;
+  }
+
+  .testimonial-quote {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b4b4b;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-quote {
+      font-size: 1.25rem;
+    }
+  }
+
+  body.calm-mode .bento-blue {
+    background: #4a637a;
+  }
+
   /* Differentiator section */
   body.dark #diff-title,
   body.dark .diff-card h3,
@@ -402,36 +437,28 @@ import Cases from "../components/Cases.astro";
   body.dark #diff-intro {
     color: var(--text-on-dark-soft);
   }
-  body.dark .diff-card p {
-    color: var(--text-on-dark-soft, #c0c0c0);
-  }
   :global(body.dark .diff-card p strong) {
     color: var(--text-on-dark);
   }
-  body.dark .diff-card {
+  body.dark .diff-card,
+  body.dark .bento-tile {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     border-color: var(--dark-border);
   }
 
-  /* Lab teaser section */
-  body.dark #lab-teaser-title {
+  body.dark .bento-pale {
+    background: linear-gradient(to bottom right, rgba(192, 215, 225, 0.14), rgba(192, 215, 225, 0.06));
+    border-color: rgba(192, 215, 225, 0.3);
+  }
+
+  body.dark .bento-tile .bento-title,
+  body.dark .bento-tile .diff-card-label {
     color: var(--text-on-dark);
   }
-  body.dark #lab-teaser-intro {
+
+  body.dark .bento-tile .bento-text,
+  body.dark .bento-tile .testimonial-quote {
     color: var(--text-on-dark-soft);
-  }
-  body.dark .lab-teaser-card {
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-    border-color: var(--dark-border);
-  }
-  body.dark .lab-teaser-card p:first-child {
-    color: var(--text-on-dark-soft);
-  }
-  body.dark .lab-teaser-card h3 {
-    color: var(--text-on-dark);
-  }
-  body.dark .lab-teaser-card p.text-sm {
-    color: var(--text-on-dark-soft, #c0c0c0);
   }
 
   /* Dark-mode */
@@ -451,20 +478,6 @@ import Cases from "../components/Cases.astro";
     color: var(--text-on-dark);
   }
 
-  body.dark #testimonial-card {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-  }
-
-  body.dark #divider-1 {
-    color: var(--dark-border);
-  }
-
-  body.dark #divider-1 .divider-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
-  }
-
   /* Miscellaneous */
   #hero-subtitle-text,
   #hero-text-content {
@@ -478,12 +491,8 @@ import Cases from "../components/Cases.astro";
   }
 
   body.dark .hero-image-wrap {
-    border-color: color-mix(in srgb, var(--dark-border) 64%, var(--brand-primary-soft) 36%);
-    background: linear-gradient(
-      165deg,
-      color-mix(in srgb, var(--dark-surface) 78%, var(--brand-primary-strong) 22%),
-      color-mix(in srgb, var(--dark-surface-strong) 88%, var(--brand-primary-strong) 12%)
-    );
+    border-color: var(--dark-border);
+    background: var(--dark-gradient-start);
   }
 
   body.dark #process-cards div svg {
