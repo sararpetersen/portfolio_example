@@ -59,11 +59,9 @@ const timelineItems: TimelineItem[] = [
 
 const isCurrentItem = (yearRange: string) => yearRange.toLowerCase().includes("present");
 
-// Newest first within each column.
+// Newest first.
 const chronologicalOrder = [0, 2, 3, 4, 5, 6];
-const byNewest = (a: TimelineItem, b: TimelineItem) => chronologicalOrder.indexOf(b.i18nKey) - chronologicalOrder.indexOf(a.i18nKey);
-const schoolTimelineItems = timelineItems.filter((item) => item.category === "school").sort(byNewest);
-const workTimelineItems = timelineItems.filter((item) => item.category === "work").sort(byNewest);
+const newestFirst = [...timelineItems].sort((x, y) => chronologicalOrder.indexOf(y.i18nKey) - chronologicalOrder.indexOf(x.i18nKey));
 ---
 
 <MainLayout
@@ -73,7 +71,7 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
   ogdescription="Concept developer, multimedia- and UX/UI designer specialising in digital accessibility, informed by lived experience of neurodivergence."
 >
   <!-- Top Section -->
-  <section id="about-me" class="grid grid-cols-12 gap-x-0 gap-y-10 items-center md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 lg:px-0 px-6 mx-auto relative container max-w-6xl">
+  <section id="about-me" class="grid grid-cols-12 gap-x-0 gap-y-10 items-center md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 xl:px-0 px-6 mx-auto relative container max-w-6xl">
     <div class="relative col-span-12 lg:col-span-7 md:pt-12 pt-16 lg:pr-10">
       <div id="about-title-row" class="mb-3">
         <h1
@@ -105,7 +103,7 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
   </section>
 
   <!-- Personal Background -->
-  <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto lg:px-0">
+  <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto xl:px-0">
     <div id="personal-background-content" class="col-span-12">
       <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
       <div class="flex flex-col gap-4">
@@ -198,62 +196,38 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
   </section>
 
   <!-- Timeline -->
-  <section id="timeline" class="container max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="timeline" class="container max-w-6xl mx-auto xl:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2 id="timeline-title" class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 pb-6" data-i18n="timeline.title">
       The highlights of my journey
     </h2>
-    <div class="about-panel">
-      <div class="tl-columns">
-        <div>
-          <h3 class="tl-column-label">
-            <span class="tl-dot tl-dot-school" aria-hidden="true"></span><span data-i18n="timeline.education">Education</span>
-          </h3>
-          <ul class="tl-list">
-            {
-              schoolTimelineItems.map((item) => (
-                <li class:list={["tl-entry", isCurrentItem(item.year) && "tl-current"]}>
-                  <p class="tl-year" data-i18n={`timeline.${item.i18nKey}.year`}>
-                    {item.year}
-                  </p>
-                  <h4 class="tl-title" data-i18n={`timeline.${item.i18nKey}.title`}>
-                    {item.title}
-                  </h4>
-                  <p class="tl-desc" data-i18n={`timeline.${item.i18nKey}.desc`}>
-                    {item.desc}
-                  </p>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div>
-          <h3 class="tl-column-label">
-            <span class="tl-dot tl-dot-work" aria-hidden="true"></span><span data-i18n="timeline.work">Work experience</span>
-          </h3>
-          <ul class="tl-list">
-            {
-              workTimelineItems.map((item) => (
-                <li class:list={["tl-entry", isCurrentItem(item.year) && "tl-current"]}>
-                  <p class="tl-year" data-i18n={`timeline.${item.i18nKey}.year`}>
-                    {item.year}
-                  </p>
-                  <h4 class="tl-title" data-i18n={`timeline.${item.i18nKey}.title`}>
-                    {item.title}
-                  </h4>
-                  <p class="tl-desc" data-i18n={`timeline.${item.i18nKey}.desc`}>
-                    {item.desc}
-                  </p>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </div>
+    <ol class="tl-list">
+      {
+        newestFirst.map((item) => (
+          <li class="tl-row">
+            <div class="tl-when">
+              <p class="tl-year" data-i18n={`timeline.${item.i18nKey}.year`}>
+                {item.year}
+              </p>
+              <p class:list={["tl-kind", item.category === "work" && "tl-kind-work"]} data-i18n={item.category === "work" ? "timeline.work" : "timeline.education"}>
+                {item.category === "work" ? "Work experience" : "Education"}
+              </p>
+            </div>
+            <div class="tl-what">
+              <h3 class="tl-title" data-i18n={`timeline.${item.i18nKey}.title`}>
+                {item.title}
+              </h3>
+              <p class="tl-desc" data-i18n={`timeline.${item.i18nKey}.desc`}>
+                {item.desc}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
   </section>
 
   <!-- Interests and Hobbies -->
-  <section id="interests" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="interests" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2
       id="interests-title"
       class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
@@ -292,7 +266,7 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
   </section>
 
   <!-- Resources Section -->
-  <section id="resources" class="resources-section max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="resources" class="resources-section max-w-6xl mx-auto xl:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2
       id="resources-title"
       class="font-garamond font-semibold italic text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
@@ -500,81 +474,65 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
     }
   }
 
-  /* Timeline columns */
-  .tl-columns {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .tl-columns {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-  }
-
-  .tl-column-label {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1.25rem;
-    font-family: var(--font-garamond);
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #1a1a1a;
-  }
-
-  .tl-dot {
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 9999px;
-  }
-
-  .tl-dot-school {
-    border: 2px solid #375567;
-    background: #deebef;
-  }
-
-  .tl-dot-work {
-    border: 2px solid #a8412d;
-    background: #f3b9ae;
-  }
-
+  /* Timeline: open ledger rows, no container */
   .tl-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
     margin: 0;
     padding: 0;
     list-style: none;
+    border-top: 1px solid #d8d2cc;
   }
 
-  .tl-year {
-    margin-bottom: 0.25rem;
-  }
-
-  .tl-year {
-    font-family: var(--font-garamond);
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    color: #375567;
+  .tl-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid #d8d2cc;
   }
 
   @media (min-width: 768px) {
-    .tl-year {
-      font-size: 1.85rem;
+    .tl-row {
+      grid-template-columns: 13rem 1fr;
+      gap: 2.5rem;
     }
+  }
+
+  .tl-year {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #375567;
+  }
+
+  .tl-kind {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    color: #5a5149;
+  }
+
+  .tl-kind::before {
+    content: "";
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-right: 0.45rem;
+    border: 2px solid #375567;
+    border-radius: 9999px;
+    background: #deebef;
+  }
+
+  .tl-kind-work::before {
+    border-color: #a8412d;
+    background: #f3b9ae;
   }
 
   .tl-title {
     margin-bottom: 0.35rem;
     font-family: var(--font-almarai);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.4;
     color: #1a1a1a;
   }
@@ -693,25 +651,30 @@ const workTimelineItems = timelineItems.filter((item) => item.category === "work
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
-        body.dark .tl-column-label {
-    color: var(--text-on-dark);
-  }
-
-  body.dark .tl-dot-school {
-    border-color: #c0d7e1;
-    background: rgba(192, 215, 225, 0.3);
-  }
-
-  body.dark .tl-dot-work {
-    border-color: #f3b9ae;
-    background: rgba(243, 185, 174, 0.3);
+        body.dark .tl-list,
+  body.dark .tl-row {
+    border-color: var(--dark-border);
   }
 
   body.dark .tl-year {
     color: var(--brand-primary-soft);
   }
 
-      body.dark .tl-title,
+  body.dark .tl-kind {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .tl-kind::before {
+    border-color: #c0d7e1;
+    background: rgba(192, 215, 225, 0.3);
+  }
+
+  body.dark .tl-kind-work::before {
+    border-color: #f3b9ae;
+    background: rgba(243, 185, 174, 0.3);
+  }
+
+  body.dark .tl-title,
   body.dark .seal-title,
   body.dark .tag-title {
     color: var(--text-on-dark);
