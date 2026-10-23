@@ -4,3 +4,13 @@
 
 [build.environment]
   NODE_VERSION = "22.12.0"
+
+[[redirects]]
+  from = "/revisited-projects"
+  to = "/lab"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-canny-return-of-the-archive-page"
+  to = "/blog"
+  status = 301

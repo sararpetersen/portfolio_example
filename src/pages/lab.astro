@@ -97,26 +97,6 @@ import { labProjects } from "../data/labProjects";
     <LabProjectCards projects={labProjects} />
   </section>
 
-  <!-- Discreet route to revisited school work (intentionally kept out of main navigation). -->
-  <aside class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14">
-    <div
-      class="revisited-callout rounded-2xl border border-l-4 border-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-    >
-      <div>
-        <h3 class="font-garamond italic font-semibold text-h4-mobile md:text-[1.3rem] text-gray-800 leading-snug" data-i18n="lab.revisited.title">
-          Earlier work, revisited
-        </h3>
-        <p class="text-sm text-gray-600 mt-1" data-i18n="lab.revisited.text">
-          A small collection of old school projects rebuilt with what I know now.
-        </p>
-      </div>
-      <div class="shrink-0">
-        <Button href="/revisited-projects" variant="secondary" size="small">
-          <span data-i18n="lab.revisited.link">Explore revisited projects →</span>
-        </Button>
-      </div>
-    </div>
-  </aside>
 
   <!-- Back to homepage -->
   <section class="lab-back-btn mx-auto py-20 text-center">
@@ -185,8 +165,7 @@ import { labProjects } from "../data/labProjects";
 
   body.dark #lab h1,
   body.dark #lab-vibe-title,
-  body.dark #lab-items-title,
-  body.dark .revisited-callout h3 {
+  body.dark #lab-items-title {
     color: var(--text-on-dark);
   }
 
@@ -201,14 +180,6 @@ import { labProjects } from "../data/labProjects";
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
-  body.dark .revisited-callout {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-  }
-
-  body.dark .revisited-callout p {
-    color: var(--text-on-dark-soft);
-  }
 
   /* Dark mode — badges */
   body.dark .lab-tag {
