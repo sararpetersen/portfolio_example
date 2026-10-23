@@ -5,9 +5,9 @@
 --    when its column is empty, so you can fill these in at your own pace.
 -- 2. Rewrites the descriptions so they no longer repeat the semester (the page already shows it).
 --
--- Everything below is a DRAFT built only from the existing descriptions. Please check the role and
--- outcome lines against what you actually did; "outcome" describes what came out of each project
--- (what was made), so replace it with real results (launch, client feedback, grade) where you have them.
+-- Context comes from the About-page timeline (titles, dates, institutions); the Folkaet outcome comes from
+-- the blog post "What I'm actually working on at Folkaet". Outcome is left empty (null) where there is
+-- nothing to say beyond the description yet; the site simply hides the Outcome tile for those cases.
 
 begin;
 
@@ -23,12 +23,12 @@ alter table public.portfolio_cases
 update public.portfolio_cases set
   description = $q$This was the first project I did during my internship at the advertising agency Kadaver. Here, I had to come up with a redesign for Kadaver's current website. The site hadn't been updated in 5 years, so I had to make it look modern and up-to-date. It was also originally done in Squarespace, so translating that into code was very interesting.$q$,
   description_da = $q$Dette var det første projekt, jeg arbejdede med under mit praktikophold hos reklamebureauet Kadaver. Her skulle jeg komme op med et redesign til Kadavers eksisterende hjemmeside. Hjemmesiden var ikke blevet opdateret i fem år, så jeg skulle få den til at fremstå moderne og tidssvarende. Den var oprindeligt lavet i Squarespace, så det var meget interessant at skulle omsætte den til kode.$q$,
-  context = $q$Internship project for the advertising agency Kadaver's own website$q$,
-  context_da = $q$Praktikprojekt til reklamebureauet Kadavers egen hjemmeside$q$,
+  context = $q$Software Developer Intern at Folkæt · May 2026 – present$q$,
+  context_da = $q$Softwareudvikler-praktikant hos Folkæt · maj 2026 – nu$q$,
   role = $q$Designer and developer$q$,
   role_da = $q$Designer og udvikler$q$,
-  outcome = $q$A modern redesign of the site, rebuilt in code after originally being made in Squarespace.$q$,
-  outcome_da = $q$Et moderne redesign af hjemmesiden, bygget i kode efter oprindeligt at være lavet i Squarespace.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'kadaver';
 
 -- Superheltedagen --------------------------------------------------------
@@ -39,8 +39,8 @@ update public.portfolio_cases set
   context_da = $q$Praktikprojekt til Børneulykkesfondens årlige velgørenhedsarrangement, Superheltedagen$q$,
   role = $q$Designer and developer$q$,
   role_da = $q$Designer og udvikler$q$,
-  outcome = $q$A redesigned event page, built in code instead of a CMS.$q$,
-  outcome_da = $q$En redesignet arrangementsside, bygget i kode i stedet for i et CMS.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'superheltedagen';
 
 -- CP Danmark (description already has no semester, so it is left as is) ---
@@ -49,8 +49,8 @@ update public.portfolio_cases set
   context_da = $q$Afsluttende eksamensprojekt: en case fra CP Danmark, med hjælp fra folk hos Kadaver$q$,
   role = $q$Designer and developer$q$,
   role_da = $q$Designer og udvikler$q$,
-  outcome = $q$A redesign of CP Danmark's large website, aiming to be more eye-catching and user-friendly.$q$,
-  outcome_da = $q$Et redesign af CP Danmarks store hjemmeside med fokus på at gøre den mere iøjnefaldende og brugervenlig.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'cpdanmark';
 
 -- VibeLoop ---------------------------------------------------------------
@@ -61,8 +61,8 @@ update public.portfolio_cases set
   context_da = $q$Kursusprojekt: et appkoncept inden for et selvvalgt emne$q$,
   role = $q$Concept and UX/UI design$q$,
   role_da = $q$Koncept og UX/UI-design$q$,
-  outcome = $q$VibeLoop, an app concept that supports social connection and local engagement, designed in Figma.$q$,
-  outcome_da = $q$VibeLoop, et appkoncept der fremmer sociale relationer og lokalt engagement, designet i Figma.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'vibeloop';
 
 -- UngeForum --------------------------------------------------------------
@@ -73,8 +73,8 @@ update public.portfolio_cases set
   context_da = $q$Eksamensprojekt for Køge Bibliotekerne$q$,
   role = $q$UX/UI designer$q$,
   role_da = $q$UX/UI-designer$q$,
-  outcome = $q$A redesigned and restructured digital solution with better usability, information architecture and accessibility.$q$,
-  outcome_da = $q$En redesignet og omstruktureret digital løsning med bedre brugervenlighed, informationsarkitektur og tilgængelighed.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'ungeforum';
 
 -- Pinterest AI Verification ----------------------------------------------
@@ -85,8 +85,8 @@ update public.portfolio_cases set
   context_da = $q$Valgfag (strategisk design), gruppeprojekt$q$,
   role = $q$Concept designer in a group$q$,
   role_da = $q$Konceptdesigner i en gruppe$q$,
-  outcome = $q$A future-scenario concept for Pinterest, focused on trust, verification and transparency.$q$,
-  outcome_da = $q$Et fremtidsscenariebaseret koncept til Pinterest med fokus på tillid, verifikation og gennemsigtighed.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'pinterest-ai';
 
 -- Pace (Duolingo) --------------------------------------------------------
@@ -97,8 +97,8 @@ update public.portfolio_cases set
   context_da = $q$Valgfag (adfærdsdesign)$q$,
   role = $q$Concept and UX/UI design$q$,
   role_da = $q$Koncept og UX/UI-design$q$,
-  outcome = $q$Pace, a calmer, more inclusive learning concept that redesigns Duolingo using behavioural principles.$q$,
-  outcome_da = $q$Pace, et mere roligt og inkluderende læringskoncept, der redesigner Duolingo ud fra adfærdsmæssige principper.$q$
+  outcome = null,
+  outcome_da = null
 where slug = 'pace-duolingo';
 
 -- Folkæt -----------------------------------------------------------------
@@ -109,8 +109,8 @@ update public.portfolio_cases set
   context_da = $q$Praktikprojekt hos Folkæt$q$,
   role = $q$UX/UI designer$q$,
   role_da = $q$UX/UI-designer$q$,
-  outcome = $q$A page for neurodivergent users, with pictograms and accessibility settings for communicating preferences and support needs in teams.$q$,
-  outcome_da = $q$En side til neurodivergente brugere med piktogrammer og tilgængelighedsindstillinger til at formidle præferencer og skånebehov i teams.$q$
+  outcome = $q$Still in progress: the page is being iterated, and a questionnaire is helping to show which preference and accessibility information people actually find useful.$q$,
+  outcome_da = $q$Stadig under udvikling: siden bliver itereret, og et spørgeskema er med til at vise, hvilken information om præferencer og tilgængelighed folk faktisk finder brugbar.$q$
 where slug = 'folkaet';
 
 commit;
