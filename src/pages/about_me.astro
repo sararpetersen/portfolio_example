@@ -73,9 +73,21 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   ogdescription="Concept developer, multimedia- and UX/UI designer specialising in digital accessibility, informed by lived experience of neurodivergence."
 >
   <!-- Top Section -->
-  <section id="about-me" class="grid grid-cols-12 gap-x-0 gap-y-10 items-center md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 xl:px-0 px-6 mx-auto relative container max-w-6xl">
-    <div class="relative col-span-12 lg:col-span-7 md:pt-12 pt-16 lg:pr-10">
-      <div id="about-title-row" class="mb-3">
+  <section id="about-me" class="md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 xl:px-0 px-6 mx-auto relative container max-w-6xl">
+    <div id="about-portrait" class="about-banner">
+      <img
+        src="/images/pfp2.webp"
+        alt="Portrait of Sara (taken during the internship at Kadaver)"
+        class="about-banner-img"
+        width="800"
+        height="1068"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+    <div class="grid grid-cols-12 gap-x-0 gap-y-4 items-end mt-8 md:mt-10">
+      <div id="about-title-row" class="col-span-12 lg:col-span-5">
         <h1
           class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop [overflow-wrap:anywhere]"
           data-i18n="about.title"
@@ -83,24 +95,10 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
           About me
         </h1>
       </div>
-      <p class="heading-text text-gray-600 max-w-3xl text-left" data-i18n="about.intro">
+      <p class="heading-text text-gray-600 col-span-12 lg:col-span-7 lg:pl-10 text-left" data-i18n="about.intro">
         Expand a section below to read about my background, what inspires me, and where I'm heading.<br class="hidden md:block" /> Scroll further down to
         explore my journey, interests, and downloadable resources.
       </p>
-    </div>
-
-    <div id="about-portrait" class="col-span-12 lg:col-span-5 flex justify-center lg:justify-end lg:pr-4">
-      <div class="about-portrait-frame portrait-frame">
-        <img
-          src="/images/pfp2.webp"
-          alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="about-portrait-img"
-          width="400"
-          height="450"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
     </div>
   </section>
 
@@ -737,24 +735,36 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: #1a1a1a;
   }
 
-  /* Portrait */
-  .about-portrait-frame {
-    width: min(100%, 15rem);
+  /* Banner portrait: studio backdrop colour of the photo, face centred, edges faded into it */
+  .about-banner {
+    position: relative;
+    height: 17rem;
+    overflow: hidden;
+    border-radius: 1.75rem;
+    background: #dfddd0;
   }
 
-  @media (min-width: 1024px) {
-    .about-portrait-frame {
-      width: min(100%, 17rem);
+  @media (min-width: 768px) {
+    .about-banner {
+      height: 22rem;
     }
   }
 
-  .about-portrait-img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 400 / 450;
+  .about-banner-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100%, 30rem);
+    height: 100%;
+    transform: translateX(-50%);
     object-fit: cover;
-    object-position: center 25%;
-    border-radius: 1.2rem;
+    object-position: center top;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
+  }
+
+  body.dark .about-banner {
+    box-shadow: inset 0 0 0 1px var(--dark-border);
   }
 
   body.dark .acc-item {
