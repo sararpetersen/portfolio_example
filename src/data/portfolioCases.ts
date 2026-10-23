@@ -10,6 +10,12 @@ export interface PortfolioCase {
   year_da?: string;
   image: string;
   tools?: string[];
+  context?: string | null;
+  context_da?: string | null;
+  role?: string | null;
+  role_da?: string | null;
+  outcome?: string | null;
+  outcome_da?: string | null;
   url: string;
   ai_used?: boolean;
 }
