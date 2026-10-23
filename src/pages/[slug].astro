@@ -35,6 +35,22 @@ const DB_NOTICES: Record<string, { key: string; fallback: string }> = {
   },
 };
 const dbNotice = DB_NOTICES[project.slug];
+
+const getDegreeLabel = (period?: string) => {
+  const parts = (period ?? "")
+    .split("·")
+    .map((part) => part.trim())
+    .filter(Boolean);
+  return parts[parts.length - 1] || "";
+};
+
+const getPeriodWithoutDegree = (period?: string) => {
+  const parts = (period ?? "")
+    .split("·")
+    .map((part) => part.trim())
+    .filter(Boolean);
+  return parts.length > 1 ? parts.slice(0, -1).join(" · ") : parts[0] || "";
+};
 ---
 
 <MainLayout
@@ -105,22 +121,30 @@ const dbNotice = DB_NOTICES[project.slug];
     </nav>
 
     <!-- Header -->
-    <header id="project-header" class="col-span-12 md:mb-8 mb-6">
-      <div id="project-title-row" class="mb-3">
-        <h1 id="project-title" class="font-nikumaru md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] [overflow-wrap:anywhere]">
-          {project.name}
-        </h1>
+    <header id="project-header" class="case-hero-b col-span-12 md:mb-8 mb-6">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4">
+        <span
+          id="project-degree"
+          class="case-hero-chip"
+          data-year={project.year || ""}
+          data-year-da={project.year_da || ""}
+        >
+          {getDegreeLabel(project.year)}
+        </span>
+        <p
+          id="project-subtitle"
+          class="italic font-light text-[17px] md:text-h4-mobile leading-snug"
+          data-semester={project.semester || ""}
+          data-semester-da={project.semester_da || ""}
+          data-year={project.year || ""}
+          data-year-da={project.year_da || ""}
+        >
+          {project.year ? getPeriodWithoutDegree(project.year) : project.semester}
+        </p>
       </div>
-      <h2
-        id="project-subtitle"
-        class="italic font-light md:text-h4-desktop text-[18.5px] text-gray-600 leading-7"
-        data-semester={project.semester || ""}
-        data-semester-da={project.semester_da || ""}
-        data-year={project.year || ""}
-        data-year-da={project.year_da || ""}
-      >
-        {project.year || project.semester}
-      </h2>
+      <h1 id="project-title" class="font-nikumaru md:text-h2-desktop text-h4-desktop uppercase tracking-[0.14em] md:tracking-[0.18em] [overflow-wrap:anywhere]">
+        {project.name}
+      </h1>
     </header>
 
     <!-- Figma Notice -->
@@ -186,19 +210,21 @@ const dbNotice = DB_NOTICES[project.slug];
     }
 
     <!-- Content Grid -->
-    <div class="col-span-12 grid md:grid-cols-2 grid-cols-1 gap-8">
-      <img
-        id="project-image"
-        src={project.image}
-        alt={project.name}
-        class="w-full aspect-[4/3] rounded-xl object-cover border-l-4 border border-gray-500"
-        loading="lazy"
-      />
+    <div class="col-span-12 grid lg:grid-cols-12 grid-cols-1 gap-6 lg:gap-8">
+      <div class="lg:col-span-7">
+        <img
+          id="project-image"
+          src={project.image}
+          alt={project.name}
+          class="w-full aspect-[4/3] rounded-3xl object-cover border border-gray-300"
+          loading="lazy"
+        />
+      </div>
 
-      <div class="flex flex-col">
+      <div class="lg:col-span-5 flex flex-col rounded-3xl border border-gray-300 bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-8" id="project-details">
         <p
           id="project-description"
-          class="text-gray-600"
+          class="text-gray-700 text-[1.05rem] leading-relaxed"
           data-description={project.description || ""}
           data-description-da={project.description_da || ""}
         >
@@ -206,16 +232,16 @@ const dbNotice = DB_NOTICES[project.slug];
         </p>
 
         {
-          project.tools && (
+          project.tools && project.tools.length > 0 && (
             <div id="tools-list" class="mt-6">
-              <h2 id="tools-title" class="md:text-h4-desktop text-h4-mobile font-semibold not-italic text-gray-800 mb-3" data-i18n="project.tools">
+              <h2 id="tools-title" class="text-sm font-semibold uppercase tracking-[0.12em] text-gray-600 mb-3" data-i18n="project.tools">
                 Tools used:
               </h2>
-              <div class="flex flex-wrap gap-2">
+              <ul class="flex flex-wrap gap-2" aria-labelledby="tools-title">
                 {project.tools.map((tool) => (
-                  <span class="rounded-full px-4 py-2 font-medium border border-blue-600 bg-blue-600 text-gray-50 text-sm uppercase">{tool}</span>
+                  <li class="fact-chip">{tool}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           )
         }
@@ -269,11 +295,11 @@ const dbNotice = DB_NOTICES[project.slug];
             {randomProjects.map((proj) => (
               <a
                 href={`/${proj.slug}`}
-                class="group block rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition-all duration-300 ease-in-out hover:-translate-y-1"
+                class="group block rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2 transition-all duration-300 ease-in-out hover:-translate-y-1"
               >
-                <div class="related-project-card rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 transition-all duration-300 ease-in-out group-hover:from-gray-100 group-hover:to-gray-200 group-hover:border-gray-400 group-focus-visible:-translate-y-1">
+                <div class="related-project-card rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-300 transition-all duration-300 ease-in-out group-hover:from-gray-100 group-hover:to-gray-200 group-hover:border-gray-400 group-focus-visible:-translate-y-1">
                   <img src={proj.image} alt={proj.name} class="w-full aspect-[4/3] sm:aspect-square md:aspect-[4/3] object-cover" loading="lazy" />
-                  <div class="related-project-info p-4 border-t border-gray-500 transition-colors duration-300 group-hover:border-gray-400">
+                  <div class="related-project-info p-5 border-t border-gray-300 transition-colors duration-300 group-hover:border-gray-400">
                     <h3 class="related-project-title text-h4-mobile font-semibold italic mb-2">{proj.name}</h3>
                     <p
                       class="related-project-year text-sm text-gray-600 transition-colors duration-300"
@@ -297,9 +323,14 @@ const dbNotice = DB_NOTICES[project.slug];
 
 <style>
   body.dark #project-header h1,
-  body.dark #project-header h2,
+  body.dark #project-header p,
   body.dark #tools-title {
     color: var(--text-on-dark);
+  }
+
+  body.dark #project-details {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark #project-description {
@@ -402,7 +433,30 @@ const dbNotice = DB_NOTICES[project.slug];
     };
 
     if (subtitleEl) {
-      subtitleEl.textContent = getFullCurrentPeriod(subtitleEl);
+      const year = subtitleEl.dataset.year || "";
+      const yearDa = subtitleEl.dataset.yearDa || "";
+      const currentYear = lang === "da" ? yearDa || year : year;
+      if (currentYear) {
+        const parts = currentYear
+          .split("·")
+          .map((part) => part.trim())
+          .filter(Boolean);
+        subtitleEl.textContent = parts.length > 1 ? parts.slice(0, -1).join(" · ") : parts[0] || "";
+      } else {
+        subtitleEl.textContent = getFullCurrentPeriod(subtitleEl);
+      }
+    }
+
+    const degreeEl = document.querySelector("#project-degree") as HTMLElement | null;
+    if (degreeEl) {
+      const year = degreeEl.dataset.year || "";
+      const yearDa = degreeEl.dataset.yearDa || "";
+      const currentYear = lang === "da" ? yearDa || year : year;
+      const parts = currentYear
+        .split("·")
+        .map((part) => part.trim())
+        .filter(Boolean);
+      degreeEl.textContent = parts[parts.length - 1] || "";
     }
 
     document.querySelectorAll(".related-project-year").forEach((yearEl) => {

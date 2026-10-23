@@ -600,3 +600,80 @@ html.verdana-font .font-inter,
 html.verdana-font .font-almarai {
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
+
+/* Case pages: hero block and fact chips shared by [slug].astro and CaseStudy.astro */
+.case-hero-b {
+  border-radius: 1.75rem;
+  background: #375567;
+  color: #f5f5f5;
+  padding: 1.75rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .case-hero-b {
+    padding: 2.5rem 2.75rem;
+  }
+}
+
+.case-hero-b h1,
+.case-hero-b p,
+.case-hero-b dd {
+  color: #f5f5f5;
+}
+
+.case-hero-b dt.case-hero-dt {
+  color: #dce8ee;
+}
+
+.case-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 245, 245, 0.45);
+  background: rgba(0, 0, 0, 0.22);
+  color: #f5f5f5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  padding: 0.35rem 0.8rem;
+  text-transform: uppercase;
+}
+
+.case-hero-chip:empty {
+  display: none;
+}
+
+.fact-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid #c0d7e1;
+  background: #deebef;
+  color: #2f3f4c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.35rem 0.8rem;
+}
+
+body.calm-mode .case-hero-b {
+  background: #4a637a;
+}
+
+body.dark .case-hero-b {
+  border: 1px solid var(--dark-border);
+  background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+}
+
+body.dark .case-hero-b h1,
+body.dark .case-hero-b p,
+body.dark .case-hero-b dd {
+  color: var(--text-on-dark);
+}
+
+body.dark .fact-chip {
+  border-color: rgba(192, 215, 225, 0.3);
+  background: rgba(192, 215, 225, 0.12);
+  color: var(--text-on-dark);
+}

@@ -17,76 +17,87 @@ const getDegreeLabel = (period?: string) => {
 };
 
 const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[];
+
+// Bento layout on a 6-column desktop grid: rows of [4,2], [2,4], [3,3]. A row that isn't full
+// (fewer cases than the pattern) shares the 6 columns evenly, so there is never a gap.
+const lgSpanClass: Record<number, string> = { 2: "lg:col-span-2", 3: "lg:col-span-3", 4: "lg:col-span-4", 6: "lg:col-span-6" };
+const rowPattern = [
+  [4, 2],
+  [2, 4],
+  [3, 3],
+];
+const lgSpans: number[] = [];
+let remaining = projects.length;
+for (let row = 0; remaining > 0; row++) {
+  const pattern = rowPattern[row % rowPattern.length];
+  if (remaining >= pattern.length) {
+    lgSpans.push(...pattern);
+    remaining -= pattern.length;
+  } else {
+    lgSpans.push(...Array(remaining).fill(6 / remaining));
+    remaining = 0;
+  }
+}
+
+const MAX_CHIPS = 3;
 ---
 
-<!-- Carousel -->
 <div class="carousel w-full col-span-12">
-  <ul id="project-cards" class="carousel-track grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <ul id="project-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
     {
-      projects.map((project: ProjectCard) => (
-        <li
-          class="aspect-[4/3] sm:aspect-square md:aspect-[4/3] relative overflow-hidden rounded-2xl group hover:-translate-y-1 transition duration-300 ease-in-out border border-l-4 border-gray-500 hover:border-gray-400"
-          data-id={project.id ?? ""}
-          data-name={project.name ? project.name.toLowerCase() : ""}
-          data-inactive={NON_ACTIVE_CASE_SLUGS.has(project.slug || "") ? "true" : "false"}
-        >
-          {NON_ACTIVE_CASE_SLUGS.has(project.slug || "") ? (
-            <div class="block h-full w-full">
-              <img src={project.image} alt={project.name} class="block w-full h-full object-cover z-0" loading="lazy" width="800" height="600" />
+      projects.map((project: ProjectCard, index: number) => {
+        const isInactive = NON_ACTIVE_CASE_SLUGS.has(project.slug || "");
+        const isFeatured = index === 0;
+        const isLastOddOnTablet = index === projects.length - 1 && (projects.length - 1) % 2 === 1;
+        const tabletSpan = isFeatured || isLastOddOnTablet ? "md:col-span-2" : "";
+        const tools = project.tools ?? [];
+        const Tag = isInactive ? "div" : "a";
 
-              <div class="absolute inset-0 bg-[rgba(15,23,42,0.75)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
-                  <p
-                    class="card-period text-h4-mobile font-light italic pb-2 text-gray-50"
+        return (
+          <li
+            class:list={["case-tile group", lgSpanClass[lgSpans[index]] ?? "lg:col-span-2", tabletSpan]}
+            data-id={project.id ?? ""}
+            data-name={project.name ? project.name.toLowerCase() : ""}
+            data-inactive={isInactive ? "true" : "false"}
+          >
+            <Tag href={isInactive ? undefined : `/${project.slug}`} class="case-tile-inner">
+              <div class="case-tile-media">
+                <img src={project.image} alt="" class="case-tile-img" loading={index < 2 ? "eager" : "lazy"} width="800" height="600" />
+              </div>
+              <div class="case-tile-body">
+                <div class="case-tile-meta">
+                  <span class="case-tile-degree" data-year={project.year || ""} data-year-da={project.year_da || ""}>
+                    {getDegreeLabel(project.year)}
+                  </span>
+                  <span
+                    class="card-period case-tile-period"
                     data-semester={project.semester || ""}
                     data-semester-da={project.semester_da || ""}
                     data-year={project.year || ""}
                     data-year-da={project.year_da || ""}
                   >
                     {project.semester || project.year}
-                  </p>
-
-                  <div class="flex flex-row flex-wrap gap-2 py-2">
-                    {project.tools && project.tools.map((tool: string) => <span class="tool-chip">{tool}</span>)}
-                  </div>
+                  </span>
+                </div>
+                <h3 class="case-tile-title">{project.name}</h3>
+                <div class="case-tile-foot">
+                  <ul class="case-tile-chips" aria-label="Tools used" data-i18n-aria="project.tools.aria">
+                    {tools.slice(0, MAX_CHIPS).map((tool: string) => (
+                      <li class="case-tile-chip">{tool}</li>
+                    ))}
+                    {tools.length > MAX_CHIPS && <li class="case-tile-chip case-tile-chip-more">+{tools.length - MAX_CHIPS}</li>}
+                  </ul>
+                  {!isInactive && (
+                    <span class="case-tile-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  )}
                 </div>
               </div>
-            </div>
-          ) : (
-            <a
-              href={`/${project.slug}`}
-              aria-label={`View project: ${project.name}`}
-              data-project-card-name={project.name}
-              class="block h-full w-full"
-            >
-              <img src={project.image} alt="" class="block w-full h-full object-cover z-0" loading="lazy" width="800" height="600" />
-
-              <div class="absolute inset-0 bg-[rgba(15,23,42,0.75)] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-10">
-                <span class="card-degree-badge" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-                  {getDegreeLabel(project.year)}
-                </span>
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <p class="text-h4-mobile font-bold text-gray-50">{project.name}</p>
-                  <p
-                    class="card-period text-h4-mobile font-light italic pb-2 text-gray-50"
-                    data-semester={project.semester || ""}
-                    data-semester-da={project.semester_da || ""}
-                    data-year={project.year || ""}
-                    data-year-da={project.year_da || ""}
-                  >
-                    {project.semester || project.year}
-                  </p>
-
-                  <div class="flex flex-row flex-wrap gap-2 py-2">
-                    {project.tools && project.tools.map((tool: string) => <span class="tool-chip">{tool}</span>)}
-                  </div>
-                </div>
-              </div>
-            </a>
-          )}
-        </li>
-      ))
+            </Tag>
+          </li>
+        );
+      })
     }
   </ul>
 </div>
@@ -124,18 +135,9 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
       element.textContent = getCurrentPeriod(element);
     });
 
-    document.querySelectorAll(".card-degree-badge").forEach((degreeEl) => {
+    document.querySelectorAll(".case-tile-degree").forEach((degreeEl) => {
       const element = degreeEl as HTMLElement;
       element.textContent = getCurrentDegree(element);
-    });
-
-    // Card link aria-label interpolates the project name, so it can't use a plain
-    // data-i18n-aria lookup — rebuild it from a translated prefix instead.
-    const viewProjectPrefix = lang === "da" ? "Se projekt" : "View project";
-    document.querySelectorAll<HTMLElement>("[data-project-card-name]").forEach((el) => {
-      const name = el.dataset.projectCardName;
-      if (!name) return;
-      el.setAttribute("aria-label", `${viewProjectPrefix}: ${name}`);
     });
   };
 
@@ -153,53 +155,153 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
 </script>
 
 <style>
-  .card-degree-badge {
+  .case-tile {
+    display: flex;
+    min-width: 0;
+  }
+
+  .case-tile-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #bfb7b0;
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+    color: #1a1a1a;
+    text-decoration: none;
+    transition:
+      transform 300ms ease-in-out,
+      border-color 300ms ease-in-out;
+  }
+
+  a.case-tile-inner:hover {
+    transform: translateY(-4px);
+    border-color: #8f8882;
+  }
+
+  a.case-tile-inner:focus-visible {
+    outline: 3px solid #375567;
+    outline-offset: 3px;
+  }
+
+  .case-tile-media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #deebef;
+  }
+
+  .case-tile-img {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 20;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease-in-out;
+  }
+
+  a.case-tile-inner:hover .case-tile-img {
+    transform: scale(1.03);
+  }
+
+  @media (min-width: 1024px) {
+    .case-tile-media {
+      aspect-ratio: auto;
+      flex: 1 1 auto;
+      min-height: 13rem;
+    }
+  }
+
+  .case-tile-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+    border-top: 1px solid #d8d2cc;
+  }
+
+  .case-tile-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .case-tile-degree {
     display: inline-flex;
     align-items: center;
-    max-width: calc(100% - 2rem);
     border-radius: 9999px;
-    background: rgba(193, 219, 204, 0.18);
-    border: 1px solid rgba(193, 219, 204, 0.28);
-    color: #edf7f0;
+    background: #375567;
+    color: #f5f5f5;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     line-height: 1.2;
-    padding: 0.55rem 0.8rem;
+    padding: 0.3rem 0.7rem;
     text-transform: uppercase;
-    pointer-events: none;
   }
 
-  .tool-chip {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    white-space: nowrap;
+  .case-tile-degree:empty {
+    display: none;
+  }
+
+  .case-tile-period {
+    font-size: 0.85rem;
+    color: #4b4b4b;
+  }
+
+  .case-tile-title {
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    color: #1a1a1a;
+  }
+
+  .case-tile-foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .case-tile-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .case-tile-chip {
     border-radius: 9999px;
-    border: 1px solid rgba(226, 232, 240, 0.35);
-    background: rgba(15, 23, 42, 0.45);
-    color: #f8fafc;
+    border: 1px solid #c0d7e1;
+    background: #deebef;
+    color: #2f3f4c;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    line-height: 1.2;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .case-tile-arrow {
+    flex-shrink: 0;
+    font-size: 1.4rem;
     line-height: 1;
-    padding: 0.4rem 0.7rem;
-    text-transform: uppercase;
+    color: #375567;
+    transition: transform 300ms ease-in-out;
   }
 
-  #project-cards > li[data-inactive="true"] {
+  a.case-tile-inner:hover .case-tile-arrow {
+    transform: translateX(4px);
+  }
+
+  .case-tile[data-inactive="true"] .case-tile-inner {
     cursor: default;
-  }
-
-  /* Lone last card on desktop: center it in the middle column instead of leaving it bottom-left */
-  @media (min-width: 1024px) {
-    #project-cards > li:last-child:nth-child(3n + 1) {
-      grid-column: 2;
-    }
   }
 
   html.has-js body:not(.reduce-motion) #project-cards > li {
@@ -208,45 +310,52 @@ const projects = (propProjects ?? (await fetchPortfolioCases())) as ProjectCard[
     will-change: transform, opacity;
   }
 
-  #project-cards > li[data-inactive="true"]:hover {
-    transform: none;
-    border-color: rgb(107 114 128);
+  body.calm-mode .case-tile-degree {
+    background: #4a637a;
   }
 
-  #project-cards > li[data-inactive="true"] .group-hover\:opacity-100 {
-    opacity: 0;
+  body.calm-mode .case-tile-arrow {
+    color: #4a637a;
   }
 
-  body.dark #project-cards > li {
-    background-color: var(--dark-gradient-start);
+  body.dark .case-tile-inner {
     border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    color: var(--text-on-dark);
   }
 
-  body.dark #project-cards > li:hover {
-    background-color: var(--dark-surface-hover);
+  body.dark a.case-tile-inner:hover {
     border-color: var(--dark-border-strong);
   }
 
-  body.dark #project-cards > li:focus {
-    border-color: var(--brand-primary-soft);
+  body.dark a.case-tile-inner:focus-visible {
+    outline-color: var(--brand-primary-soft);
   }
 
-  body.dark #project-cards > li h1,
-  body.dark #project-cards > li h2,
-  body.dark #project-cards > li p,
-  body.dark #project-cards > li span {
+  body.dark .case-tile-body {
+    border-color: var(--dark-border);
+  }
+
+  body.dark .case-tile-title {
     color: var(--text-on-dark);
   }
 
-  body.dark .card-degree-badge {
-    background: rgba(193, 219, 204, 0.16);
-    border-color: rgba(193, 219, 204, 0.24);
+  body.dark .case-tile-period {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .case-tile-degree {
+    background: rgba(192, 215, 225, 0.2);
     color: var(--text-on-dark);
   }
 
-  body.dark .tool-chip {
-    border-color: rgba(192, 215, 225, 0.35);
-    background: rgba(15, 23, 42, 0.45);
+  body.dark .case-tile-chip {
+    border-color: rgba(192, 215, 225, 0.3);
+    background: rgba(192, 215, 225, 0.12);
     color: var(--text-on-dark);
+  }
+
+  body.dark .case-tile-arrow {
+    color: var(--brand-primary-soft);
   }
 </style>
