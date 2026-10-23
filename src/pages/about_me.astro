@@ -73,34 +73,20 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   ogdescription="Concept developer, multimedia- and UX/UI designer specialising in digital accessibility, informed by lived experience of neurodivergence."
 >
   <!-- Top Section -->
-  <section id="about-me" class="md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 xl:px-0 px-6 mx-auto relative container max-w-6xl">
-    <div class="about-hero">
-      <div id="about-portrait" class="about-banner">
-        <img
-          src="/images/pfp2.webp"
-          alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="about-banner-img"
-          width="800"
-          height="1068"
-          loading="eager"
-          fetchpriority="high"
-        />
+  <section id="about-me" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 xl:px-0 px-6 mx-auto relative container max-w-6xl">
+    <div class="relative col-span-12 md:pt-12 pt-16 mb-12">
+      <div id="about-title-row" class="mb-3">
+        <h1
+          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop [overflow-wrap:anywhere]"
+          data-i18n="about.title"
+        >
+          About me
+        </h1>
       </div>
-
-      <div class="about-hero-text">
-        <div id="about-title-row" class="mb-3">
-          <h1
-            class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop [overflow-wrap:anywhere]"
-            data-i18n="about.title"
-          >
-            About me
-          </h1>
-        </div>
-        <p class="heading-text text-gray-600 max-w-3xl text-left" data-i18n="about.intro">
-          Expand a section below to read about my background, what inspires me, and where I'm heading.<br class="hidden md:block" /> Scroll further down to
-          explore my journey, interests, and downloadable resources.
-        </p>
-      </div>
+      <p class="heading-text text-gray-600 max-w-3xl text-left" data-i18n="about.intro">
+        Expand a section below to read about my background, what inspires me, and where I'm heading.<br class="hidden md:block" /> Scroll further down to
+        explore my journey, interests, and downloadable resources.
+      </p>
     </div>
   </section>
 
@@ -737,50 +723,6 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: #1a1a1a;
   }
 
-  /* Hero: small photo tile on the left, title and intro stacked on the right */
-  .about-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .about-hero {
-      grid-template-columns: 17rem minmax(0, 1fr);
-      gap: 3rem;
-    }
-  }
-
-  .about-banner {
-    position: relative;
-    height: 14rem;
-    overflow: hidden;
-    border-radius: 1.75rem;
-    background: #dfddd0;
-  }
-
-  @media (min-width: 768px) {
-    .about-banner {
-      height: 17rem;
-    }
-  }
-
-  /* Wider than the tile and anchored at the top, so head and shoulders fill it and the face stays clearly visible */
-  .about-banner-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 150%;
-    max-width: none;
-    height: auto;
-    transform: translateX(-50%);
-  }
-
-  body.dark .about-banner {
-    box-shadow: inset 0 0 0 1px var(--dark-border);
-  }
-
   body.dark .acc-item {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
@@ -821,7 +763,6 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   /* Pre-animation: hide elements until JS fires */
   html.has-js body:not(.reduce-motion) #about-title-row,
   html.has-js body:not(.reduce-motion) .heading-text,
-  html.has-js body:not(.reduce-motion) #about-portrait,
   html.has-js body:not(.reduce-motion) #timeline-title,
   html.has-js body:not(.reduce-motion) .personal-bg-item,
   html.has-js body:not(.reduce-motion) #interests-title,
