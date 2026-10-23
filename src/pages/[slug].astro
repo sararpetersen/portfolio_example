@@ -347,15 +347,16 @@ const getPeriodWithoutDegree = (period?: string) => {
   }
 
   .case-note-warn {
-    border-top: none;
     padding: 0.8rem 1rem;
+    border: 1px solid #c2410c;
+    border-left-width: 4px;
     border-radius: 1rem;
-    background: #ffedd5;
-    color: #7c2d12;
+    background: #fed7aa;
+    color: #431407;
   }
 
   .case-note-warn .case-note-icon {
-    color: #9a3412;
+    color: #7c2d12;
   }
 
   body.dark .case-note {
@@ -368,7 +369,8 @@ const getPeriodWithoutDegree = (period?: string) => {
   }
 
   body.dark .case-note-warn {
-    background: rgba(249, 115, 22, 0.16);
+    border-color: #f97316;
+    background: rgba(249, 115, 22, 0.18);
     color: #ffedd5;
   }
 
