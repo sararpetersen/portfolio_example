@@ -43,15 +43,6 @@ import Cases from "../components/Cases.astro";
     <div class="relative z-20 mx-auto md:px-0 px-2">
       <div id="hero-content" class="grid grid-cols-12 items-center min-h-screen pt-[11rem] md:pb-20 pb-8 gap-y-12">
         <div class="col-span-12 lg:col-span-7 hero-panel">
-          <div id="status" class="hero-status mb-8 flex items-center gap-3 justify-start text-sm">
-            <span class="relative flex md:h-3.5 md:w-3.5 h-2.5 w-2.5" aria-hidden="true">
-              <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-              <span class="status-dot relative inline-flex md:h-3.5 md:w-3.5 h-2.5 w-2.5 rounded-full bg-green-400 border border-[#1fb355]"></span>
-            </span>
-
-            <p data-i18n="hero.status">Interning at Folkæt</p>
-          </div>
-
           <h1 class="hero-title display text-gray-800 pb-5 md:pb-6 max-w-2xl" data-i18n="hero.title">
             UX/UI designer focused on accessibility<span class="text-[#bb4a34]">.</span>
           </h1>
@@ -70,17 +61,19 @@ import Cases from "../components/Cases.astro";
         </div>
 
         <div class="col-span-12 lg:col-span-5">
-          <div id="hero-image" class="hero-image-wrap relative">
+          <div id="hero-image" class="relative">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
-            <img
-              src="/images/hero_image.webp"
-              alt="Sara Ringkow Petersen"
-              class="hero-image object-cover"
-              width="600"
-              height="800"
-              loading="eager"
-              fetchpriority="high"
-            />
+            <div class="hero-image-wrap relative">
+              <img
+                src="/images/hero_image.webp"
+                alt="Sara Ringkow Petersen"
+                class="hero-image object-cover"
+                width="600"
+                height="800"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -199,23 +192,10 @@ import Cases from "../components/Cases.astro";
 <!-- CSS -->
 <style>
   /* Animations */
-  @keyframes ping {
-    75%,
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-
-  .animate-ping {
-    animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
   .animate__animated {
     --animate-duration: 1.6s;
   }
 
-  html.has-js body:not(.reduce-motion) #status,
   html.has-js body:not(.reduce-motion) #hero-content h1,
   html.has-js body:not(.reduce-motion) #hero-content .hero-role,
   html.has-js body:not(.reduce-motion) #hero-content .hero-lead,
@@ -247,40 +227,6 @@ import Cases from "../components/Cases.astro";
 
   /* Hero-section */
 
-  /* Styled to match the pill treatment used elsewhere on the site for hover/tag badges
-     (.card-degree-badge in Cases.astro, .lab-tag in lab.astro) — same glass-pill shape.
-     Deliberately neutral gray rather than brand blue: that blue is already the active-nav
-     and CTA-button colour right above/below this element in the hero, so reusing it here
-     would compete with the CTA instead of reading as a quiet status label. Gray ties it
-     into the existing hero-title/role/lead gray hierarchy instead. */
-  .hero-status {
-    width: fit-content;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    border: 1px solid rgba(75, 85, 99, 0.45);
-    border-radius: 9999px;
-    padding: 0.55rem 0.8rem;
-    background: rgba(75, 85, 99, 0.14);
-    color: #4b5563;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
-
-  body.calm-mode .status-ping {
-    background-color: #88b99f;
-    opacity: 0.58;
-  }
-
-  body.calm-mode .status-dot {
-    background-color: #88b99f;
-    border-color: #67977d;
-  }
-
-  #status p {
-    font-size: 0.75rem;
-    color: inherit;
-  }
-
   .hero-role {
     font-size: clamp(1.15rem, 1.75vw, 1.75rem);
     line-height: 1.35;
@@ -297,6 +243,28 @@ import Cases from "../components/Cases.astro";
     border-radius: 1.75rem;
     background: #f0ebe6;
     padding: 0.6rem;
+    box-shadow: 0 22px 54px rgba(26, 26, 26, 0.18);
+    transform: rotate(1.5deg);
+    will-change: transform;
+    animation: heroImageDrift 11s ease-in-out 2.4s infinite;
+  }
+
+  /* Slow ambient drift (same motion as the Personal Professional Profile hero). It starts
+     after the entrance animation has finished and begins at the resting tilt, so there is no jump. */
+  @keyframes heroImageDrift {
+    0%,
+    100% {
+      transform: rotate(1.5deg) translateZ(0);
+    }
+    50% {
+      transform: rotate(0.35deg) translate3d(0.35rem, -0.55rem, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image-wrap {
+      animation: none;
+    }
   }
 
   .hero-image {
@@ -484,15 +452,10 @@ import Cases from "../components/Cases.astro";
     display: inline-block;
   }
 
-  body.dark .hero-status {
-    border-color: rgba(163, 163, 163, 0.4);
-    background: rgba(163, 163, 163, 0.18);
-    color: var(--text-on-dark);
-  }
-
   body.dark .hero-image-wrap {
     border-color: var(--dark-border);
     background: var(--dark-gradient-start);
+    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.45);
   }
 
   body.dark #process-cards div svg {
