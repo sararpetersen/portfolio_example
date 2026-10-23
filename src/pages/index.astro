@@ -63,7 +63,7 @@ import Cases from "../components/Cases.astro";
         <div class="col-span-12 lg:col-span-5">
           <div id="hero-image" class="relative">
             <div class="hero-image-accent md:block hidden" aria-hidden="true"></div>
-            <div class="hero-image-wrap relative">
+            <div class="hero-image-wrap portrait-frame drift-frame relative">
               <img
                 src="/images/hero_image.webp"
                 alt="Sara Ringkow Petersen"
@@ -236,35 +236,6 @@ import Cases from "../components/Cases.astro";
   .hero-lead {
     font-size: clamp(1rem, 1.25vw, 1.35rem);
     line-height: 1.8;
-  }
-
-  .hero-image-wrap {
-    border: 1px solid #bfb7b0;
-    border-radius: 1.75rem;
-    background: #f0ebe6;
-    padding: 0.6rem;
-    box-shadow: 0 22px 54px rgba(26, 26, 26, 0.18);
-    transform: rotate(1.5deg);
-    will-change: transform;
-    animation: heroImageDrift 11s ease-in-out 2.4s infinite;
-  }
-
-  /* Slow ambient drift (same motion as the Personal Professional Profile hero). It starts
-     after the entrance animation has finished and begins at the resting tilt, so there is no jump. */
-  @keyframes heroImageDrift {
-    0%,
-    100% {
-      transform: rotate(1.5deg) translateZ(0);
-    }
-    50% {
-      transform: rotate(0.35deg) translate3d(0.35rem, -0.55rem, 0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-image-wrap {
-      animation: none;
-    }
   }
 
   .hero-image {
@@ -450,12 +421,6 @@ import Cases from "../components/Cases.astro";
   #hero-subtitle-text,
   #hero-text-content {
     display: inline-block;
-  }
-
-  body.dark .hero-image-wrap {
-    border-color: var(--dark-border);
-    background: var(--dark-gradient-start);
-    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.45);
   }
 
   body.dark #process-cards div svg {

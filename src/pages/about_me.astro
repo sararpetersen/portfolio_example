@@ -82,11 +82,11 @@ const workTimelineItems = timelineItems
   ogdescription="Concept developer, multimedia- and UX/UI designer specialising in digital accessibility, informed by lived experience of neurodivergence."
 >
   <!-- Top Section -->
-  <section id="about-me" class="grid grid-cols-12 md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-6 mx-auto relative container max-w-6xl">
-    <div class="relative col-span-12 md:pt-12 pt-16 mb-12">
+  <section id="about-me" class="grid grid-cols-12 gap-x-0 gap-y-10 items-center md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 mb-12 lg:px-0 px-6 mx-auto relative container max-w-6xl">
+    <div class="relative col-span-12 lg:col-span-7 md:pt-12 pt-16 lg:pr-10">
       <div id="about-title-row" class="mb-3">
         <h1
-          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop"
+          class="heading-title uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop [overflow-wrap:anywhere]"
           data-i18n="about.title"
         >
           About me
@@ -97,119 +97,111 @@ const workTimelineItems = timelineItems
         explore my journey, interests, and downloadable resources.
       </p>
     </div>
+
+    <div id="about-portrait" class="col-span-12 lg:col-span-5 flex justify-center lg:justify-end lg:pr-4">
+      <div class="about-portrait-frame portrait-frame">
+        <img
+          src="/images/pfp2.webp"
+          alt="Portrait of Sara (taken during the internship at Kadaver)"
+          class="about-portrait-img"
+          width="400"
+          height="450"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
   </section>
 
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto lg:px-0">
-    <div class="grid lg:grid-cols-2 grid-cols-1 lg:items-start items-center justify-center col-span-12">
-      <div id="personal-background-content" class="md:pb-0 pb-8">
-        <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
-        <div class="personal-bg-item border-t-2 border-gray-200">
-          <button
-            type="button"
-            id="acc-trigger-background"
-            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
-            aria-expanded="false"
-            aria-controls="acc-background"
-          >
-            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.background">Background</h3>
-            <svg
-              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-            </svg>
+    <div id="personal-background-content" class="col-span-12">
+      <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
+      <div class="flex flex-col gap-4">
+      <div class="acc-item personal-bg-item">
+        <h3 class="acc-heading">
+          <button type="button" id="acc-trigger-background" class="accordion-trigger" aria-expanded="false" aria-controls="acc-background">
+            <span class="acc-num" aria-hidden="true">01</span>
+            <span class="acc-title" data-i18n="about.tab.background">Background</span>
+            <span class="acc-chevron" aria-hidden="true">
+              <svg
+                class="accordion-chevron w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </span>
           </button>
-          <div id="acc-background" class="accordion-panel" role="region" aria-labelledby="acc-trigger-background">
-            <div>
-              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.background.text">
-                I've always been drawn to creativity&mdash; drawing, painting, just making stuff in general. I knew fairly early on that, someday, I
-                wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying to
-                figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both design
-                and technology, and to think carefully about how things are built, and not just how they look.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="personal-bg-item border-t-2 border-gray-200">
-          <button
-            type="button"
-            id="acc-trigger-inspiration"
-            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
-            aria-expanded="false"
-            aria-controls="acc-inspiration"
-          >
-            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.inspiration">Inspiration</h3>
-            <svg
-              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-            </svg>
-          </button>
-          <div id="acc-inspiration" class="accordion-panel" role="region" aria-labelledby="acc-trigger-inspiration">
-            <div>
-              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.inspiration.text">
-                As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in
-                mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist,
-                it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find
-                that the small decisions&mdash; a clear label, a consistent layout, a well-structured page &mdash;often matter more than people
-                expect.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="personal-bg-item border-t-2 border-gray-200">
-          <button
-            type="button"
-            id="acc-trigger-goals"
-            class="accordion-trigger w-full flex items-center justify-between py-5 text-left"
-            aria-expanded="false"
-            aria-controls="acc-goals"
-          >
-            <h3 class="md:text-h4-desktop text-h4-mobile font-light text-gray-800" data-i18n="about.tab.goals">Goals</h3>
-            <svg
-              class="accordion-chevron w-4 h-4 text-gray-400 shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-            </svg>
-          </button>
-          <div id="acc-goals" class="accordion-panel" role="region" aria-labelledby="acc-trigger-goals">
-            <div>
-              <p class="text-gray-500 text-sm leading-relaxed pb-5" data-i18n="about.goals.text">
-                I want to work on digital things that are genuinely accessible&mdash; not just technically compliant, but usable for real people. I
-                care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that
-                through studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.
-              </p>
-            </div>
+        </h3>
+        <div id="acc-background" class="accordion-panel" role="region" aria-labelledby="acc-trigger-background">
+          <div>
+            <p class="acc-text" data-i18n="about.background.text">
+              I've always been drawn to creativity&mdash; drawing, painting, just making stuff in general. I knew fairly early on that, someday, I wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying to figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both design and technology, and to think carefully about how things are built, and not just how they look.
+            </p>
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center lg:justify-end">
-        <img
-          src="/images/pfp2.webp"
-          alt="Portrait of Sara (taken during the internship at Kadaver)"
-          class="portrait lg:w-[400px] w-[250px] lg:h-[450px] h-[300px] object-cover rounded-2xl border-r-4 border border-gray-500"
-          width="400"
-          height="450"
-          loading="lazy"
-        />
+      <div class="acc-item personal-bg-item">
+        <h3 class="acc-heading">
+          <button type="button" id="acc-trigger-inspiration" class="accordion-trigger" aria-expanded="false" aria-controls="acc-inspiration">
+            <span class="acc-num" aria-hidden="true">02</span>
+            <span class="acc-title" data-i18n="about.tab.inspiration">Inspiration</span>
+            <span class="acc-chevron" aria-hidden="true">
+              <svg
+                class="accordion-chevron w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </span>
+          </button>
+        </h3>
+        <div id="acc-inspiration" class="accordion-panel" role="region" aria-labelledby="acc-trigger-inspiration">
+          <div>
+            <p class="acc-text" data-i18n="about.inspiration.text">
+              As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions&mdash; a clear label, a consistent layout, a well-structured page &mdash;often matter more than people expect.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item personal-bg-item">
+        <h3 class="acc-heading">
+          <button type="button" id="acc-trigger-goals" class="accordion-trigger" aria-expanded="false" aria-controls="acc-goals">
+            <span class="acc-num" aria-hidden="true">03</span>
+            <span class="acc-title" data-i18n="about.tab.goals">Goals</span>
+            <span class="acc-chevron" aria-hidden="true">
+              <svg
+                class="accordion-chevron w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </span>
+          </button>
+        </h3>
+        <div id="acc-goals" class="accordion-panel" role="region" aria-labelledby="acc-trigger-goals">
+          <div>
+            <p class="acc-text" data-i18n="about.goals.text">
+              I want to work on digital things that are genuinely accessible&mdash; not just technically compliant, but usable for real people. I care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -391,7 +383,96 @@ const workTimelineItems = timelineItems
 
 <!-- CSS -->
 <style>
-  /* Accordion */
+  /* Accordion tiles */
+  .acc-item {
+    border: 1px solid #d8d2cc;
+    border-radius: 1.5rem;
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .acc-item:has(.accordion-trigger[aria-expanded="true"]) {
+    border-color: #c0d7e1;
+    background: #deebef;
+  }
+
+  .acc-heading {
+    margin: 0;
+  }
+
+  .accordion-trigger {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    border-radius: 1.5rem;
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .accordion-trigger:focus-visible {
+    outline: 3px solid #375567;
+    outline-offset: 2px;
+  }
+
+  .acc-num {
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: #deebef;
+    color: #2f3f4c;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .accordion-trigger[aria-expanded="true"] .acc-num {
+    background: #375567;
+    color: #f5f5f5;
+  }
+
+  .acc-title {
+    flex: 1;
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+  }
+
+  @media (min-width: 768px) {
+    .acc-title {
+      font-size: 1.85rem;
+    }
+  }
+
+  .acc-chevron {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid #8f8882;
+    border-radius: 9999px;
+    color: #375567;
+  }
+
+  .accordion-chevron {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
   .accordion-panel {
     display: grid;
     grid-template-rows: 0fr;
@@ -407,28 +488,75 @@ const workTimelineItems = timelineItems
     overflow: hidden;
   }
 
-  .accordion-chevron {
-    transition: transform 0.3s ease;
+  .acc-text {
+    max-width: 70ch;
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #2e2e2e;
   }
 
-  .accordion-trigger[aria-expanded="true"] .accordion-chevron {
-    transform: rotate(180deg);
+  @media (min-width: 768px) {
+    .acc-text {
+      padding: 0 1.5rem 1.75rem 4.6rem;
+    }
   }
 
-  .accordion-trigger {
-    background: none;
-    border: none;
-    cursor: pointer;
+  /* Portrait */
+  .about-portrait-frame {
+    width: min(100%, 24rem);
   }
 
-  body.dark .accordion-chevron {
-    color: var(--dark-border-strong);
+  .about-portrait-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 400 / 450;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 1.2rem;
+  }
+
+  body.dark .acc-item {
+    border-color: var(--dark-border);
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+  }
+
+  body.dark .acc-item:has(.accordion-trigger[aria-expanded="true"]) {
+    border-color: rgba(192, 215, 225, 0.35);
+    background: linear-gradient(to bottom right, rgba(192, 215, 225, 0.16), rgba(192, 215, 225, 0.07));
+  }
+
+  body.dark .acc-item .acc-title {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .acc-item .acc-text {
+    color: var(--text-on-dark-soft);
+  }
+
+  body.dark .acc-item .acc-num {
+    background: rgba(192, 215, 225, 0.18);
+    color: var(--text-on-dark);
+  }
+
+  body.dark .acc-item .accordion-trigger[aria-expanded="true"] .acc-num {
+    background: #f5f5f5;
+    color: #1a1a1a;
+  }
+
+  body.dark .acc-item .acc-chevron {
+    border-color: var(--dark-border-strong);
+    color: var(--brand-primary-soft);
+  }
+
+  body.dark .accordion-trigger:focus-visible {
+    outline-color: var(--brand-primary-soft);
   }
 
   /* Pre-animation: hide elements until JS fires */
   html.has-js body:not(.reduce-motion) #about-title-row,
   html.has-js body:not(.reduce-motion) .heading-text,
-  html.has-js body:not(.reduce-motion) #personal-background img,
+  html.has-js body:not(.reduce-motion) #about-portrait,
   html.has-js body:not(.reduce-motion) #about-divider-1,
   html.has-js body:not(.reduce-motion) #about-divider-2,
   html.has-js body:not(.reduce-motion) #timeline-title,
@@ -454,14 +582,6 @@ const workTimelineItems = timelineItems
   }
 
   body.dark .heading-text {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark .personal-bg-item {
-    border-color: var(--dark-border);
-  }
-
-  body.dark .personal-bg-item p {
     color: var(--text-on-dark-soft);
   }
 
@@ -515,7 +635,4 @@ const workTimelineItems = timelineItems
     border-color: var(--dark-border);
   }
 
-  body.dark .portrait {
-    border-color: var(--dark-border);
-  }
 </style>

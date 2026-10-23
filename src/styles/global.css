@@ -678,3 +678,43 @@ body.dark .fact-chip {
   background: rgba(192, 215, 225, 0.12);
   color: var(--text-on-dark);
 }
+
+/* Tilted portrait frame (homepage and About hero). The slow ambient drift is a separate,
+   opt-in modifier (.drift-frame) used on the homepage only. The drift starts after the entrance
+   and begins at the resting tilt, so there is no jump. Reduced motion (OS setting and the site's
+   own toggle) stops it. */
+.portrait-frame {
+  border: 1px solid #bfb7b0;
+  border-radius: 1.75rem;
+  background: #f0ebe6;
+  padding: 0.6rem;
+  box-shadow: 0 22px 54px rgba(26, 26, 26, 0.18);
+  transform: rotate(1.5deg);
+}
+
+.drift-frame {
+  will-change: transform;
+  animation: heroImageDrift 11s ease-in-out 2.4s infinite;
+}
+
+@keyframes heroImageDrift {
+  0%,
+  100% {
+    transform: rotate(1.5deg) translateZ(0);
+  }
+  50% {
+    transform: rotate(0.35deg) translate3d(0.35rem, -0.55rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift-frame {
+    animation: none;
+  }
+}
+
+body.dark .portrait-frame {
+  border-color: var(--dark-border);
+  background: var(--dark-gradient-start);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.45);
+}
