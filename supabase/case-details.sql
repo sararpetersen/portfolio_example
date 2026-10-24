@@ -33,8 +33,8 @@ where slug = 'kadaver';
 
 -- Superheltedagen --------------------------------------------------------
 update public.portfolio_cases set
-  description = $q$This was the second project I did during my internship at the advertising agency Kadaver. Here, I had to redesign a page for Børneulykkesfondens annual charity event 'Superheltedagen'. This was yet another site done in a CMS system. But overall, it was a really fun and special project to be a part of.$q$,
-  description_da = $q$Dette var det andet projekt, jeg arbejdede med under mit praktikophold hos reklamebureauet Kadaver. Her skulle jeg redesigne en side til Børneulykkesfondens årlige velgørenhedsarrangement 'Superheltedagen'. Det var endnu en hjemmeside, der var blevet udviklet i et CMS-system. Men alt i alt var det et rigtig sjovt og specielt projekt at være en del af.$q$,
+  description = $q$This was one of the projects I did during my internship at the advertising agency Kadaver. Here, I had to redesign a page for Børneulykkesfondens annual charity event 'Superheltedagen'. The original site was built in a CMS system, so the job was to rebuild it in code. Overall, it was a really fun and special project to be a part of.$q$,
+  description_da = $q$Dette var et af de projekter, jeg arbejdede med under mit praktikophold hos reklamebureauet Kadaver. Her skulle jeg redesigne en side til Børneulykkesfondens årlige velgørenhedsarrangement 'Superheltedagen'. Den oprindelige hjemmeside var bygget i et CMS-system, så opgaven var at genopbygge den i kode. Men alt i alt var det et rigtig sjovt og specielt projekt at være en del af.$q$,
   context = $q$Internship project for Børneulykkesfonden's annual charity event, Superheltedagen$q$,
   context_da = $q$Praktikprojekt til Børneulykkesfondens årlige velgørenhedsarrangement, Superheltedagen$q$,
   role = $q$Designer and developer$q$,
