@@ -266,6 +266,9 @@ const schemamarkup = {
             "contact.form.name": "Name",
             "contact.form.email": "Email",
             "contact.form.message": "Message",
+            "contact.form.name.ph": "Your name",
+            "contact.form.email.ph": "your.email@example.com",
+            "contact.form.message.ph": "Your message...",
             "contact.form.gdpr":
               'By submitting an inquiry through this form, you agree to my <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Terms &amp; Privacy Policy</a>.',
             "contact.form.submit": "Send message",
@@ -592,6 +595,9 @@ const schemamarkup = {
             "contact.form.name": "Navn",
             "contact.form.email": "Email",
             "contact.form.message": "Besked",
+            "contact.form.name.ph": "Dit navn",
+            "contact.form.email.ph": "din.email@eksempel.dk",
+            "contact.form.message.ph": "Din besked...",
             "contact.form.gdpr":
               'Ved at indsende en forespørgsel via denne formular, accepterer du mine <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Vilkår &amp; Privatlivspolitik</a>.',
             "contact.form.submit": "Send besked",
@@ -834,6 +840,12 @@ const schemamarkup = {
           });
           document.querySelectorAll("[data-aria-en][data-aria-da]").forEach(function (el) {
             el.setAttribute("aria-label", el.getAttribute(lang === "da" ? "data-aria-da" : "data-aria-en"));
+          });
+          document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+            var key = el.getAttribute("data-i18n-placeholder");
+            if (t[lang] && t[lang][key] !== undefined) {
+              el.setAttribute("placeholder", t[lang][key]);
+            }
           });
           document.querySelectorAll("[data-i18n-tooltip]").forEach(function (el) {
             var key = el.getAttribute("data-i18n-tooltip");
