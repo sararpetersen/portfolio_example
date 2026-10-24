@@ -1,6 +1,5 @@
 ---
 import Button from "./Button.astro";
-import ColorSymIcon from "./ColorSymIcon.astro";
 import type { LabProject } from "../data/labProjects";
 
 const { projects } = Astro.props as { projects: LabProject[] };
@@ -30,7 +29,6 @@ const { projects } = Astro.props as { projects: LabProject[] };
                   data-tooltip="The Lab project I have developed over the longest period"
                   data-i18n-tooltip="lab.badge.longrunning.tooltip"
                 >
-                  <ColorSymIcon letter="P" />
                   <span data-i18n="lab.badge.longrunning">Longest-running project</span>
                 </span>
               )}
@@ -43,10 +41,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
                 data-tooltip="This project was built with AI assistance"
                 data-i18n-tooltip="lab.badge.vibecoded.tooltip"
               >
-                <>
-                  <ColorSymIcon letter="B" />
-                  <span data-i18n="lab.badge.vibecoded">Vibe coded</span>
-                </>
+                <span data-i18n="lab.badge.vibecoded">Vibe coded</span>
               </span>
               {project.wip && (
                 <span
@@ -57,7 +52,6 @@ const { projects } = Astro.props as { projects: LabProject[] };
                   data-tooltip="Work in progress — the coded version is still being developed"
                   data-i18n-tooltip="lab.badge.wip.tooltip"
                 >
-                  <ColorSymIcon letter="O" />
                   WIP
                 </span>
               )}
@@ -113,7 +107,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
     font-weight: 700;
     letter-spacing: 0.08em;
     line-height: 1;
-    padding: 0.42rem 0.72rem;
+    padding: 0.5rem 1.1rem;
     text-transform: uppercase;
   }
 
