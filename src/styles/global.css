@@ -713,6 +713,28 @@ body.dark .fact-chip {
   }
 }
 
+/* On phones the big soft shadow sits right under the drifting frame and reads as a heavy dark smudge,
+   so it is tightened and lightened, and the drift is smaller. */
+@media (max-width: 767px) {
+  .portrait-frame {
+    box-shadow: 0 6px 16px rgba(26, 26, 26, 0.1);
+  }
+
+  body.dark .portrait-frame {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  @keyframes heroImageDrift {
+    0%,
+    100% {
+      transform: rotate(1.5deg) translateZ(0);
+    }
+    50% {
+      transform: rotate(0.6deg) translate3d(0.15rem, -0.25rem, 0);
+    }
+  }
+}
+
 body.dark .portrait-frame {
   border-color: var(--dark-border);
   background: var(--dark-gradient-start);

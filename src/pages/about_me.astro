@@ -285,11 +285,10 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     >
       Resources
     </h2>
-    <ul id="resources-section" class="plain-grid plain-grid-2">
+    <ul id="resources-section" class="plain-list">
       <li class="plain-item resource-row">
-        <p class="plain-label" aria-hidden="true">PDF · EN</p>
         <h3 class="plain-title" data-i18n="resource.resume.en.title">Resume (EN)</h3>
-        <span class="self-start mt-4 inline-block">
+        <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(EN).pdf"
             target="_blank"
@@ -302,9 +301,8 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
         </span>
       </li>
       <li class="plain-item resource-row">
-        <p class="plain-label" aria-hidden="true">PDF · DA</p>
         <h3 class="plain-title" data-i18n="resource.cv.da.title">CV (DA)</h3>
-        <span class="self-start mt-4 inline-block">
+        <span class="self-start">
           <Button
             href="/pdfs/CV_sararpetersen_(DA).pdf"
             target="_blank"
@@ -559,9 +557,34 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .plain-grid-2 {
-      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plain-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #d8d2cc;
+  }
+
+  .resource-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .resource-row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      padding: 1.25rem 0;
     }
+  }
+
+  .resource-row .plain-title {
+    margin-bottom: 0;
   }
 
   .plain-item {
@@ -583,15 +606,6 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     font-size: 0.95rem;
     line-height: 1.65;
     color: #2e2e2e;
-  }
-
-  .plain-label {
-    margin-bottom: 0.4rem;
-    color: #5a5149;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
   }
 
   body.dark .tl-list,
@@ -625,7 +639,8 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: var(--text-on-dark-soft);
   }
 
-  body.dark .plain-item {
+  body.dark .plain-item,
+  body.dark .plain-list {
     border-color: var(--dark-border);
   }
 
@@ -633,8 +648,7 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: var(--text-on-dark);
   }
 
-  body.dark .plain-text,
-  body.dark .plain-label {
+  body.dark .plain-text {
     color: var(--text-on-dark-soft);
   }
 
