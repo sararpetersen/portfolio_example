@@ -93,105 +93,114 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   <!-- Personal Background -->
   <section id="personal-background" class="container grid grid-cols-12 px-6 max-w-6xl mx-auto xl:px-0">
     <div class="grid lg:grid-cols-2 grid-cols-1 lg:items-start items-center justify-center col-span-12 gap-10 lg:gap-12">
-    <div id="personal-background-content" class="md:pb-0 pb-8">
-      <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
-      <div class="flex flex-col gap-4">
-      <div class="acc-item personal-bg-item">
-        <h3 class="acc-heading">
-          <button type="button" id="acc-trigger-background" class="accordion-trigger" aria-expanded="false" aria-controls="acc-background">
-            <span class="acc-num" aria-hidden="true">01</span>
-            <span class="acc-title" data-i18n="about.tab.background">Background</span>
-            <span class="acc-chevron" aria-hidden="true">
-              <svg
-                class="accordion-chevron w-4 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </span>
-          </button>
-        </h3>
-        <div id="acc-background" class="accordion-panel" role="region" aria-labelledby="acc-trigger-background">
-          <div>
-            <p class="acc-text" data-i18n="about.background.text">
-              I've always been drawn to creativity&mdash; drawing, painting, just making stuff in general. I knew fairly early on that, someday, I wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying to figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both design and technology, and to think carefully about how things are built, and not just how they look.
-            </p>
+      <div id="personal-background-content" class="md:pb-0 pb-8">
+        <h2 class="sr-only" data-i18n="about.personalBackground.title">Personal background</h2>
+        <div class="flex flex-col gap-4">
+          <div class="acc-item personal-bg-item">
+            <h3 class="acc-heading">
+              <button type="button" id="acc-trigger-background" class="accordion-trigger" aria-expanded="false" aria-controls="acc-background">
+                <span class="acc-num" aria-hidden="true">01</span>
+                <span class="acc-title" data-i18n="about.tab.background">Background</span>
+                <span class="acc-chevron" aria-hidden="true">
+                  <svg
+                    class="accordion-chevron w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="acc-background" class="accordion-panel" role="region" aria-labelledby="acc-trigger-background">
+              <div>
+                <p class="acc-text" data-i18n="about.background.text">
+                  I've always been drawn to creativity – drawing, painting, just making stuff in general. I knew fairly early on that, someday, I
+                  wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying
+                  to figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both
+                  design and technology, and to think carefully about how things are built, and not just how they look.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item personal-bg-item">
+            <h3 class="acc-heading">
+              <button type="button" id="acc-trigger-inspiration" class="accordion-trigger" aria-expanded="false" aria-controls="acc-inspiration">
+                <span class="acc-num" aria-hidden="true">02</span>
+                <span class="acc-title" data-i18n="about.tab.inspiration">Inspiration</span>
+                <span class="acc-chevron" aria-hidden="true">
+                  <svg
+                    class="accordion-chevron w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="acc-inspiration" class="accordion-panel" role="region" aria-labelledby="acc-trigger-inspiration">
+              <div>
+                <p class="acc-text" data-i18n="about.inspiration.text">
+                  As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in
+                  mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist,
+                  it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find
+                  that the small decisions&mdash; a clear label, a consistent layout, a well-structured page &mdash;often matter more than people
+                  expect.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item personal-bg-item">
+            <h3 class="acc-heading">
+              <button type="button" id="acc-trigger-goals" class="accordion-trigger" aria-expanded="false" aria-controls="acc-goals">
+                <span class="acc-num" aria-hidden="true">03</span>
+                <span class="acc-title" data-i18n="about.tab.goals">Goals</span>
+                <span class="acc-chevron" aria-hidden="true">
+                  <svg
+                    class="accordion-chevron w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="acc-goals" class="accordion-panel" role="region" aria-labelledby="acc-trigger-goals">
+              <div>
+                <p class="acc-text" data-i18n="about.goals.text">
+                  I want to work on digital things that are genuinely accessible – not just technically compliant, but usable for real people. I care
+                  about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through
+                  studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="acc-item personal-bg-item">
-        <h3 class="acc-heading">
-          <button type="button" id="acc-trigger-inspiration" class="accordion-trigger" aria-expanded="false" aria-controls="acc-inspiration">
-            <span class="acc-num" aria-hidden="true">02</span>
-            <span class="acc-title" data-i18n="about.tab.inspiration">Inspiration</span>
-            <span class="acc-chevron" aria-hidden="true">
-              <svg
-                class="accordion-chevron w-4 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </span>
-          </button>
-        </h3>
-        <div id="acc-inspiration" class="accordion-panel" role="region" aria-labelledby="acc-trigger-inspiration">
-          <div>
-            <p class="acc-text" data-i18n="about.inspiration.text">
-              As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions&mdash; a clear label, a consistent layout, a well-structured page &mdash;often matter more than people expect.
-            </p>
-          </div>
-        </div>
+      <div class="flex items-center justify-center lg:justify-end">
+        <img
+          src="/images/pfp2.webp"
+          alt="Portrait of Sara (taken during the internship at Kadaver)"
+          class="portrait lg:w-[400px] w-[250px] lg:h-[450px] h-[300px] object-cover"
+          width="400"
+          height="450"
+          loading="lazy"
+        />
       </div>
-      <div class="acc-item personal-bg-item">
-        <h3 class="acc-heading">
-          <button type="button" id="acc-trigger-goals" class="accordion-trigger" aria-expanded="false" aria-controls="acc-goals">
-            <span class="acc-num" aria-hidden="true">03</span>
-            <span class="acc-title" data-i18n="about.tab.goals">Goals</span>
-            <span class="acc-chevron" aria-hidden="true">
-              <svg
-                class="accordion-chevron w-4 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </span>
-          </button>
-        </h3>
-        <div id="acc-goals" class="accordion-panel" role="region" aria-labelledby="acc-trigger-goals">
-          <div>
-            <p class="acc-text" data-i18n="about.goals.text">
-              I want to work on digital things that are genuinely accessible&mdash; not just technically compliant, but usable for real people. I care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.
-            </p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="flex items-center justify-center lg:justify-end">
-      <img
-        src="/images/pfp2.webp"
-        alt="Portrait of Sara (taken during the internship at Kadaver)"
-        class="portrait lg:w-[400px] w-[250px] lg:h-[450px] h-[300px] object-cover"
-        width="400"
-        height="450"
-        loading="lazy"
-      />
-    </div>
     </div>
   </section>
 
@@ -250,11 +259,7 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
 
   <!-- Interests and Hobbies -->
   <section id="interests" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-desktop-top pt-mobil-top">
-    <h2
-      id="interests-title"
-      class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6"
-      data-i18n="interests.title"
-    >
+    <h2 id="interests-title" class="font-garamond italic font-bold text-h3-mobile md:text-h3-desktop text-gray-800 mb-6" data-i18n="interests.title">
       Interests and hobbies
     </h2>
     <ul id="interests-and-hobbies" class="plain-grid">
@@ -556,7 +561,6 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     .plain-grid {
       grid-template-columns: repeat(3, 1fr);
     }
-
   }
 
   .plain-list {
@@ -728,5 +732,4 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
   body.dark #resources-title {
     color: var(--text-on-dark);
   }
-
 </style>
