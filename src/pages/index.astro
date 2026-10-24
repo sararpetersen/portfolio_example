@@ -129,7 +129,7 @@ import Cases from "../components/Cases.astro";
         <p class="diff-card-label" data-i18n="diff.card1.label">Lived experience</p>
         <h3 class="bento-title" data-i18n="diff.card1.title">I design from the inside</h3>
         <p class="bento-text" data-i18n="diff.card1.text">
-          I'm autistic and have ADD. That's <strong>not a footnote</strong> – it's the reason accessibility is central to how I work, not just something
+          I have autism and ADD. That's <strong>not a footnote</strong> – it's the reason accessibility is central to how I work, not just something
           I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.
         </p>
       </article>
@@ -354,6 +354,13 @@ import Cases from "../components/Cases.astro";
     font-size: 1.1rem;
     line-height: 1.7;
     color: #4b4b4b;
+  }
+
+  /* The quote text sits in a <p> (page markup and dictionary), which has its own size; follow the quote instead,
+     so English and Danish render it the same size. */
+  .testimonial-quote :global(p) {
+    font-size: inherit;
+    line-height: inherit;
   }
 
   @media (min-width: 768px) {

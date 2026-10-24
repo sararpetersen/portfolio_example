@@ -8,7 +8,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.contact": "Contact",
     "nav.blog": "Blog",
     "footer.copyright": "© {year} · SRP Portfolio - Sara Ringkow Petersen. All rights reserved.",
-    "hero.title": "UX/UI designer focused on accessibility<span class=\"text-[#bb4a34]\">.</span>",
+    "hero.title": 'UX/UI designer focused on accessibility<span class="text-[#bb4a34]">.</span>',
     "hero.role": "Sara Ringkow Petersen · Multimedia Designer & Concept Developer",
     "hero.lead":
       "I turn complex ideas into clear, inclusive websites and interfaces by combining thoughtful structure, visual design, and hands-on implementation.",
@@ -33,7 +33,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "testimonials.title": "Featured testimonial",
     "testimonials.intro": "A few words from someone I've worked with directly.",
     "testimonials.quote":
-      "<p>\"Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class='font-bold'>[...]</em> Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet the client's needs&mdash; this has been the case in both her work with design and coding.\"</p>",
+      "\"Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class='font-bold'>[...]</em> Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet the client's needs&mdash; this has been the case in both her work with design and coding.\"",
     "about.title": "About me",
     "about.intro":
       "Expand a section below to read about my background, what inspires me, and where I'm heading.<br class='hidden md:block' /> Scroll further down to explore my journey, interests, and downloadable resources.",
@@ -52,7 +52,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.work": "Work experience",
     "timeline.0.year": "August 2019 - June 2021",
     "timeline.0.title": "HF (higher preparatory examination) | Egedal Gymnasium & HF",
-    "timeline.0.desc": "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
+    "timeline.0.desc":
+      "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
     "timeline.2.year": "August 2023 - June 2025",
     "timeline.2.title": "Multimedia Design | Copenhagen School of Design and Technology (KEA)",
     "timeline.2.desc":
@@ -75,11 +76,9 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "Supporting international students through onboarding, social and academic integration, and acting as a go-to contact for everyday questions.",
     "interests.title": "Interests and hobbies",
     "interest.japanese.title": "Japanese culture",
-    "interest.japanese.text":
-      "I love the balance between simplicity, detail, and thoughtful storytelling.",
+    "interest.japanese.text": "I love the balance between simplicity, detail, and thoughtful storytelling.",
     "interest.lego.title": "Building with LEGO",
-    "interest.lego.text":
-      "My creative outlet that doesn't require a screen.",
+    "interest.lego.text": "My creative outlet that doesn't require a screen.",
     "interest.themepark.title": "Theme parks and attractions",
     "interest.themepark.text":
       "Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind them.",
@@ -110,7 +109,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.email.ph": "your.email@example.com",
     "contact.form.message.ph": "Your message...",
     "contact.form.gdpr":
-      "By submitting this form you agree to my <a href=\"/terms\" class=\"underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs\">Terms &amp; Privacy Policy</a>.",
+      'By submitting this form you agree to my <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Terms &amp; Privacy Policy</a>.',
     "contact.form.submit": "Send message",
     "contact.form.next":
       "(After you hit send, your message goes straight to my inbox and a confirmation appears right here on the page – I usually reply within a couple of days)",
@@ -120,7 +119,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "diff.card1.label": "Lived experience",
     "diff.card1.title": "I design from the inside",
     "diff.card1.text":
-      "I'm autistic and have ADD. That's not a footnote – it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.",
+      "I have autism and ADD. That's not a footnote – it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.",
     "diff.card2.label": "Design + code",
     "diff.card2.title": "What I design, I can build",
     "diff.card2.text":
@@ -154,8 +153,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "terms.privacy.p.why":
       "Contact form data is used solely to respond to your enquiry. It's not used for marketing, analytics, or any other purpose.",
     "terms.privacy.h3.cookies": "Cookies and tracking",
-    "terms.privacy.p.cookies":
-      "This site doesn't use cookies for tracking or analytics. No third-party advertising or profiling tools are active.",
+    "terms.privacy.p.cookies": "This site doesn't use cookies for tracking or analytics. No third-party advertising or profiling tools are active.",
     "terms.privacy.h3.rights":
       "Your rights <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>",
     "terms.privacy.p.rights":
@@ -244,8 +242,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "lab.steady.aria": "Read the Steady case study",
     "lab.vibeloop.aria": "View the Vibeloop case study",
     "lab.autismeguiden.aria": "Visit AutismeGuiden (opens in new tab)",
-    "lab.steady.longrunning":
-      "My longest-running Lab project— shaped through repeated accessibility work, user testing and product iteration.",
+    "lab.steady.longrunning": "My longest-running Lab project— shaped through repeated accessibility work, user testing and product iteration.",
     "lab.badge.wip.tooltip": "Work in progress — the coded version is still being developed",
     "lab.legend.longrunning": "= developed over the longest period",
     "lab.legend.vibecoded": "= built with AI assistance",
@@ -335,7 +332,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.contact": "Kontakt",
     "nav.blog": "Blog",
     "footer.copyright": "© {year} · SRP Portfolio - Sara Ringkow Petersen. Alle rettigheder forbeholdes.",
-    "hero.title": "UX/UI-designer med fokus på tilgængelighed<span class=\"text-[#bb4a34]\">.</span>",
+    "hero.title": 'UX/UI-designer med fokus på tilgængelighed<span class="text-[#bb4a34]">.</span>',
     "hero.role": "Sara Ringkow Petersen · Multimediedesigner & konceptudvikler",
     "hero.lead":
       "Jeg omsætter komplekse idéer til klare, inkluderende websites og interfaces ved at kombinere gennemtænkt struktur, visuelt design og praktisk implementering.",
@@ -360,7 +357,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "testimonials.title": "Udvalgt anbefaling",
     "testimonials.intro": "Et par ord fra nogen, jeg har arbejdet direkte sammen med.",
     "testimonials.quote":
-      "<p>\"Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <em class='font-bold'>[...]</em> Både i teamkonstellationer og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.\"</p>",
+      "\"Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <em class='font-bold'>[...]</em> Både i teamkonstellationer og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.\"",
     "about.title": "Om mig",
     "about.intro":
       "Fold en sektion ud nedenfor for at læse om min baggrund, hvad der inspirerer mig, og hvor jeg er på vej hen.<br class='hidden md:block' /> Scroll videre ned for at udforske min rejse, interesser og ressourcer.",
@@ -379,7 +376,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.work": "Arbejdserfaring",
     "timeline.0.year": "August 2019 - Juni 2021",
     "timeline.0.title": "HF (højere forberedelseseksamen) | Egedal Gymnasium & HF",
-    "timeline.0.desc": "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi, hvilket vakte min interesse for kreativitet, mennesker og kommunikation.",
+    "timeline.0.desc":
+      "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi, hvilket vakte min interesse for kreativitet, mennesker og kommunikation.",
     "timeline.2.year": "August 2023 - Juni 2025",
     "timeline.2.title": "Multimediedesign | Københavns Erhvervsakademi (KEA)",
     "timeline.2.desc":
@@ -402,11 +400,9 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "Arbejder på en side med fokus på tilgængelighed for neurodivergente brugere, samt designopgaver i Figma, og lærer React Router 7 og Python gennem arbejde med mindre opgaver på Folkæts platform.",
     "interests.title": "Interesser og hobbyer",
     "interest.japanese.title": "Japansk kultur",
-    "interest.japanese.text":
-      "Jeg elsker balancen mellem enkelhed, detalje og gennemtænkt historiefortælling.",
+    "interest.japanese.text": "Jeg elsker balancen mellem enkelhed, detalje og gennemtænkt historiefortælling.",
     "interest.lego.title": "Bygge LEGO",
-    "interest.lego.text":
-      "Mit kreative frirum, der ikke kræver en skærm.",
+    "interest.lego.text": "Mit kreative frirum, der ikke kræver en skærm.",
     "interest.themepark.title": "Forlystelsesparker og attraktioner",
     "interest.themepark.text":
       "Noget der er blevet en rigtig passion. Jeg elsker at følge med i forlystelsesparker, attraktioner og historierne bag dem.",
@@ -437,7 +433,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.email.ph": "din.email@eksempel.dk",
     "contact.form.message.ph": "Din besked...",
     "contact.form.gdpr":
-      "Ved at indsende denne formular accepterer du mine <a href=\"/terms\" class=\"underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs\">Vilkår &amp; Privatlivspolitik</a>.",
+      'Ved at indsende denne formular accepterer du mine <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Vilkår &amp; Privatlivspolitik</a>.',
     "contact.form.submit": "Send besked",
     "contact.form.next":
       "(Efter du har trykket på send, lander din besked direkte i min indbakke, og der vises en bekræftelse her på siden – jeg svarer som regel inden for et par dage)",
@@ -447,7 +443,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "diff.card1.label": "Egne erfaringer",
     "diff.card1.title": "Jeg designer indefra",
     "diff.card1.text":
-      "Jeg er autist og har ADD. Det er ikke en fodnote – det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg lægger på til sidst. Jeg ved, hvordan det er at bruge digitale produkter, der ikke er bygget med én i tankerne, og det er det, der former alle mine beslutninger.",
+      "Jeg har autisme og ADD. Det er ikke en fodnote – det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg lægger på til sidst. Jeg ved, hvordan det er at bruge digitale produkter, der ikke er bygget med én i tankerne, og det er det, der former alle mine beslutninger.",
     "diff.card2.label": "Design + kode",
     "diff.card2.title": "Det jeg designer, kan jeg bygge",
     "diff.card2.text":
