@@ -28,21 +28,12 @@ const lastUpdated = "June 25, 2026";
     <!-- Quick navigation -->
     <nav id="terms-page-toc" aria-label="Terms navigation" data-i18n-aria="terms.nav.toc.aria" class="terms-toc">
       <a href="#privacy" data-i18n="modal.terms.privacy">Privacy policy</a>
-      <span aria-hidden="true">·</span>
       <a href="#booking" data-i18n="modal.terms.booking">Booking & freelance terms</a>
-      <span aria-hidden="true">·</span>
       <a href="#use" data-i18n="modal.terms.use">Terms of use</a>
     </nav>
 
-    <!-- Divider -->
-    <div id="terms-divider-1" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    </div>
-
     <!-- 1. Privacy Policy -->
-    <section id="privacy" class="terms-section md:pt-16 pt-12">
+    <section id="privacy" class="terms-section">
       <h2 class="terms-heading" data-i18n="modal.terms.privacy">Privacy policy</h2>
       <p class="terms-sub mb-6" data-i18n="terms.privacy.sub">What data is collected and why</p>
 
@@ -112,15 +103,8 @@ const lastUpdated = "June 25, 2026";
       </div>
     </section>
 
-    <!-- Divider -->
-    <div id="terms-divider-2" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    </div>
-
     <!-- 2. Booking & Freelance Terms -->
-    <section id="booking" class="terms-section md:pt-16 pt-12">
+    <section id="booking" class="terms-section">
       <h2 class="terms-heading" data-i18n="modal.terms.booking">Booking & freelance terms</h2>
       <p class="terms-sub mb-6" data-i18n="terms.booking.sub">How we work together</p>
 
@@ -198,15 +182,8 @@ const lastUpdated = "June 25, 2026";
       </div>
     </section>
 
-    <!-- Divider -->
-    <div id="terms-divider-3" class="terms-divider flex items-center gap-3 text-gray-300 md:pt-16 pt-12" aria-hidden="true">
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    </div>
-
     <!-- 3. Terms of Use -->
-    <section id="use" class="terms-section md:pt-16 pt-12">
+    <section id="use" class="terms-section">
       <h2 class="terms-heading" data-i18n="modal.terms.use">Terms of use</h2>
       <p class="terms-sub mb-6" data-i18n="terms.use.sub">Using this portfolio</p>
 
@@ -270,27 +247,36 @@ const lastUpdated = "June 25, 2026";
   .terms-toc {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    color: #6b7280;
+    gap: 0.5rem;
   }
+  /* Same pale outlined pill as the Lab badges and the blog filters */
   .terms-toc a {
-    color: #3e657c;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: color 0.2s ease;
+    border: 1px solid #375567;
+    border-radius: 9999px;
+    background: #deebef;
+    color: #2f3f4c;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .terms-toc a:hover {
+    background: #c0d7e1;
   }
   .terms-toc a:focus-visible {
-    outline: 2px solid #477b93;
+    outline: 3px solid #375567;
     outline-offset: 2px;
-    border-radius: 2px;
-  }
-  .terms-toc span {
-    color: #bfb7b0;
   }
 
-  .terms-divider .divider-center {
-    background-color: var(--color-pale-100, #f5f1ed);
+  /* Sections are separated by a hairline instead of a divider ornament */
+  .terms-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #d8d2cc;
+  }
+  .terms-section:first-of-type {
+    margin-top: 3rem;
   }
 
   .terms-heading {
@@ -309,7 +295,7 @@ const lastUpdated = "June 25, 2026";
   }
   @media (min-width: 768px) {
     .terms-heading {
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       text-align: left;
     }
     .terms-sub {
@@ -324,9 +310,6 @@ const lastUpdated = "June 25, 2026";
   html.has-js body:not(.reduce-motion) #terms-page-title,
   html.has-js body:not(.reduce-motion) #terms-last-updated,
   html.has-js body:not(.reduce-motion) #terms-page-toc,
-  html.has-js body:not(.reduce-motion) #terms-divider-1,
-  html.has-js body:not(.reduce-motion) #terms-divider-2,
-  html.has-js body:not(.reduce-motion) #terms-divider-3,
   html.has-js body:not(.reduce-motion) .terms-heading,
   html.has-js body:not(.reduce-motion) .terms-sub,
   html.has-js body:not(.reduce-motion) .terms-body > div,
@@ -337,8 +320,6 @@ const lastUpdated = "June 25, 2026";
   }
 
   .terms-body {
-    border-left: 3px solid #dcd6d0;
-    padding-left: 1.25rem;
     display: flex;
     flex-direction: column;
   }
@@ -366,17 +347,19 @@ const lastUpdated = "June 25, 2026";
   body.dark #terms-page-header p {
     color: var(--text-on-dark-soft, #c0c0c0);
   }
-  body.dark .terms-toc {
-    color: var(--text-on-dark-soft, #c0c0c0);
-  }
   body.dark .terms-toc a {
-    color: var(--brand-primary-soft, #c0d7e1);
+    border-color: #c0d7e1;
+    background: rgba(192, 215, 225, 0.18);
+    color: var(--text-on-dark);
   }
   body.dark .terms-toc a:hover {
-    color: var(--brand-primary-strong, #95bccb);
+    background: rgba(192, 215, 225, 0.3);
   }
-  body.dark .terms-toc span {
-    color: var(--dark-border, #444);
+  body.dark .terms-toc a:focus-visible {
+    outline-color: var(--brand-primary-soft);
+  }
+  body.dark .terms-section {
+    border-color: var(--dark-border);
   }
   body.dark .terms-heading {
     color: var(--text-on-dark);
@@ -393,9 +376,6 @@ const lastUpdated = "June 25, 2026";
   :global(body.dark .terms-body strong) {
     color: var(--text-on-dark, #f0f0f0);
   }
-  body.dark .terms-body {
-    border-color: var(--dark-border, #333);
-  }
   :global(body.dark .terms-body a) {
     color: var(--brand-primary-soft, #c0d7e1);
   }
@@ -405,12 +385,5 @@ const lastUpdated = "June 25, 2026";
   :global(body.dark .terms-body code) {
     background: var(--dark-surface, #2a2a2a);
     color: var(--text-on-dark-soft);
-  }
-  :global(body.dark) .terms-divider {
-    color: var(--dark-border);
-  }
-  :global(body.dark) .terms-divider .divider-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
   }
 </style>
