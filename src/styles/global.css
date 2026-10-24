@@ -374,21 +374,6 @@ body.calm-mode .text-blue-500 {
 
 /* Logo calm-mode (also handled in Header.astro for scoped classes) */
 
-/* Blog post tag chips (light mode) */
-body.calm-mode #post-tags .post-tag-chip {
-  border-color: rgb(98 151 174 / 0.22);
-  color: rgb(71 95 106);
-  background-color: rgb(222 235 239 / 0.48);
-}
-
-/* The rule above is more specific than the plain dark chip rule and was painting dark text onto the
-   dark page in calm + dark mode (1.5:1), so dark gets its own combination. */
-body.dark.calm-mode #post-tags .post-tag-chip {
-  border-color: rgb(152 178 188 / 0.32);
-  color: rgb(200 214 219 / 0.92);
-  background-color: rgb(152 178 188 / 0.12);
-}
-
 /* Contact page: preferred contact info box */
 body.calm-mode .border-blue-300 {
   border-color: #b3c8d6;
@@ -742,4 +727,72 @@ body.dark .portrait-frame {
   border-color: var(--dark-border);
   background: var(--dark-gradient-start);
   box-shadow: 0 22px 54px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Pills: one shared style for every label chip on the site (Lab badges, Terms contents, Contact services,
+   Steady status, blog filters and post tags). Same size, type and outline everywhere; .pill-ink is the one
+   darker variant (longest-running badge, and the active blog filter). */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  max-width: 100%;
+  border: 1px solid #375567;
+  border-radius: 9999px;
+  background: #deebef;
+  color: #2f3f4c;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  padding: 0.35rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pill-ink,
+.pill.is-active {
+  background: #375567;
+  color: #f5f5f5;
+}
+
+.pill:focus-visible {
+  outline: 3px solid #375567;
+  outline-offset: 2px;
+}
+
+a.pill,
+button.pill {
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+a.pill:hover,
+button.pill:hover:not(.is-active) {
+  background: #c0d7e1;
+}
+
+body.dark .pill {
+  border-color: #c0d7e1;
+  background: rgba(192, 215, 225, 0.18);
+  color: var(--text-on-dark);
+}
+
+body.dark .pill-ink,
+body.dark .pill.is-active {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+body.dark .pill:focus-visible {
+  outline-color: var(--brand-primary-soft);
+}
+
+body.dark a.pill:hover,
+body.dark button.pill:hover:not(.is-active) {
+  background: rgba(192, 215, 225, 0.3);
 }

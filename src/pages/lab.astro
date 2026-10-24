@@ -48,7 +48,7 @@ import { labProjects } from "../data/labProjects";
     >
       <span class="inline-flex flex-col items-start gap-1.5 lg:flex-row lg:items-center">
         <span
-          class="lab-tag long-running-tag"
+          class="lab-tag pill pill-ink long-running-tag"
           tabindex="0"
           role="note"
           aria-label="Longest-running project"
@@ -61,7 +61,7 @@ import { labProjects } from "../data/labProjects";
       <span class="text-gray-500 hidden lg:inline" aria-hidden="true">·</span>
       <span class="inline-flex flex-col items-start gap-1.5 lg:flex-row lg:items-center">
         <span
-          class="lab-tag"
+          class="lab-tag pill"
           tabindex="0"
           role="note"
           aria-label="Vibe coded"
@@ -100,33 +100,6 @@ import { labProjects } from "../data/labProjects";
     will-change: transform, opacity;
   }
 
-  /* Badges: one quiet pale chip style; the label text, not the colour, says which is which */
-  .lab-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35em;
-    max-width: 100%;
-    border-radius: 9999px;
-    border: 1px solid #375567;
-    background: #deebef;
-    color: #2f3f4c;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    padding: 0.5rem 1.1rem;
-    text-transform: uppercase;
-  }
-
-  .lab-tag:focus-visible {
-    outline: 3px solid #375567;
-    outline-offset: 2px;
-  }
-
-  .long-running-tag {
-    background: #375567;
-    color: #f5f5f5;
-  }
 
   /* Link to the vibe coding post at the end of the intro. The intro text is swapped in by the language
      switcher, so these rules cannot rely on Astro's scoped attributes. */
@@ -163,17 +136,6 @@ import { labProjects } from "../data/labProjects";
   }
 
   /* Dark mode — card backgrounds */
-  /* Dark mode — badges */
-  body.dark .lab-tag {
-    border-color: #c0d7e1;
-    background: rgba(192, 215, 225, 0.18);
-    color: var(--text-on-dark);
-  }
-
-  body.dark .long-running-tag {
-    background: #f5f5f5;
-    color: #1a1a1a;
-  }
 
   body.dark .lab-legend {
     color: var(--text-on-dark-soft);

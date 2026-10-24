@@ -27,9 +27,9 @@ const lastUpdated = "June 25, 2026";
 
     <!-- Quick navigation -->
     <nav id="terms-page-toc" aria-label="Terms navigation" data-i18n-aria="terms.nav.toc.aria" class="terms-toc">
-      <a href="#privacy" data-i18n="modal.terms.privacy">Privacy policy</a>
-      <a href="#booking" data-i18n="modal.terms.booking">Booking & freelance terms</a>
-      <a href="#use" data-i18n="modal.terms.use">Terms of use</a>
+      <a href="#privacy" class="pill" data-i18n="modal.terms.privacy">Privacy policy</a>
+      <a href="#booking" class="pill" data-i18n="modal.terms.booking">Booking & freelance terms</a>
+      <a href="#use" class="pill" data-i18n="modal.terms.use">Terms of use</a>
     </nav>
 
     <!-- 1. Privacy Policy -->
@@ -249,27 +249,6 @@ const lastUpdated = "June 25, 2026";
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  /* Same pale outlined pill as the Lab badges and the blog filters */
-  .terms-toc a {
-    border: 1px solid #375567;
-    border-radius: 9999px;
-    background: #deebef;
-    color: #2f3f4c;
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 0.28rem 0.8rem;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-  }
-  .terms-toc a:hover {
-    background: #c0d7e1;
-  }
-  .terms-toc a:focus-visible {
-    outline: 3px solid #375567;
-    outline-offset: 2px;
-  }
-
   /* Sections are separated by a hairline instead of a divider ornament */
   .terms-section {
     margin-top: 3rem;
@@ -347,17 +326,6 @@ const lastUpdated = "June 25, 2026";
   }
   body.dark #terms-page-header p {
     color: var(--text-on-dark-soft, #c0c0c0);
-  }
-  body.dark .terms-toc a {
-    border-color: #c0d7e1;
-    background: rgba(192, 215, 225, 0.18);
-    color: var(--text-on-dark);
-  }
-  body.dark .terms-toc a:hover {
-    background: rgba(192, 215, 225, 0.3);
-  }
-  body.dark .terms-toc a:focus-visible {
-    outline-color: var(--brand-primary-soft);
   }
   body.dark .terms-section {
     border-color: var(--dark-border);

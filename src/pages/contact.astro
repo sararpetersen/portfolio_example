@@ -113,10 +113,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         <p id="contact-services-label" data-i18n="contact.services.label" class="contact-services-label">What I offer</p>
         <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered" data-i18n-aria="contact.services.aria">
-          <li class="contact-chip"><span data-i18n="contact.services.uiux">UX/UI design</span></li>
-          <li class="contact-chip"><span data-i18n="contact.services.web">Accessible web design</span></li>
-          <li class="contact-chip"><span data-i18n="contact.services.concept">Development of concepts</span></li>
-          <li class="contact-chip"><span data-i18n="contact.services.brand">Brand and visual identity</span></li>
+          <li class="pill"><span data-i18n="contact.services.uiux">UX/UI design</span></li>
+          <li class="pill"><span data-i18n="contact.services.web">Accessible web design</span></li>
+          <li class="pill"><span data-i18n="contact.services.concept">Development of concepts</span></li>
+          <li class="pill"><span data-i18n="contact.services.brand">Brand and visual identity</span></li>
         </ul>
       </div>
 
@@ -453,16 +453,6 @@ import MainLayout from "../layouts/MainLayout.astro";
       color: #5a5149;
     }
 
-    :global(.contact-chip) {
-      border-radius: 9999px;
-      background: #deebef;
-      color: #2f3f4c;
-      font-size: 0.8rem;
-      font-weight: 600;
-      line-height: 1.3;
-      padding: 0.4rem 0.9rem;
-    }
-
     :global(#contact-form input::placeholder),
     :global(#contact-form textarea::placeholder) {
       color: #6b645d;
@@ -525,11 +515,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     :global(body.dark #contact-form-subtitle),
     :global(body.dark #contact-form p:not([role="alert"])) {
       color: var(--text-on-dark-soft);
-    }
-
-    :global(body.dark .contact-chip) {
-      background: rgba(192, 215, 225, 0.18);
-      color: var(--text-on-dark);
     }
 
     /* text-red-700 (#b3222d) is 2.6:1 on the dark form background; reuse the coral already used for

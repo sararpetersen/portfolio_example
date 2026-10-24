@@ -21,7 +21,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
             <div class="flex items-center gap-2 flex-wrap justify-end">
               {project.longRunning && (
                 <span
-                  class="lab-tag long-running-tag"
+                  class="lab-tag pill pill-ink long-running-tag"
                   tabindex="0"
                   role="note"
                   aria-label="Longest-running project"
@@ -33,7 +33,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
                 </span>
               )}
               <span
-                class="lab-tag"
+                class="lab-tag pill"
                 tabindex="0"
                 role="note"
                 aria-label="Vibe coded"
@@ -45,7 +45,7 @@ const { projects } = Astro.props as { projects: LabProject[] };
               </span>
               {project.wip && (
                 <span
-                  class="lab-tag wip-tag"
+                  class="lab-tag pill wip-tag"
                   tabindex="0"
                   role="note"
                   aria-label="WIP"
@@ -95,31 +95,9 @@ const { projects } = Astro.props as { projects: LabProject[] };
     background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
   }
 
-  .lab-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35em;
-    max-width: 100%;
-    border-radius: 9999px;
-    border: 1px solid #375567;
-    background: #deebef;
-    color: #2f3f4c;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    padding: 0.5rem 1.1rem;
-    text-transform: uppercase;
-  }
-
   .lab-tag:focus-visible {
     outline: 3px solid #375567;
     outline-offset: 2px;
-  }
-
-  .long-running-tag {
-    background: #375567;
-    color: #f5f5f5;
   }
 
   :global(body.dark) article {
@@ -135,14 +113,4 @@ const { projects } = Astro.props as { projects: LabProject[] };
     color: var(--text-on-dark);
   }
 
-  :global(body.dark) .lab-tag {
-    border-color: #c0d7e1;
-    background: rgba(192, 215, 225, 0.18);
-    color: var(--text-on-dark);
-  }
-
-  :global(body.dark) .long-running-tag {
-    background: #f5f5f5;
-    color: #1a1a1a;
-  }
 </style>

@@ -66,7 +66,7 @@ const articleSchema = {
             <>
               <span aria-hidden="true">·</span>
               <span
-                class="post-updated-chip rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-blue-700"
+                class="post-updated-chip pill"
                 data-date-label="updated"
                 data-date-iso={post.data.updatedDate.toISOString()}
               >
@@ -124,7 +124,7 @@ const articleSchema = {
       post.data.tags.length > 0 && (
         <div id="post-tags" class="mb-8 flex flex-wrap gap-2" data-tags-en={JSON.stringify(tagsEn)} data-tags-da={JSON.stringify(tagsDa)}>
           {tagsEn.map((tag: string) => (
-            <span class="post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]">{tag}</span>
+            <span class="post-tag-chip pill">{tag}</span>
           ))}
         </div>
       )
@@ -147,7 +147,7 @@ const articleSchema = {
         el.innerHTML = "";
         tags.forEach(function (tag) {
           var chip = document.createElement("span");
-          chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]";
+          chip.className = "post-tag-chip pill";
           chip.textContent = tag;
           el.appendChild(chip);
         });
@@ -356,15 +356,8 @@ const articleSchema = {
     text-decoration: underline;
   }
 
-  body.dark #post-date,
-  body.dark #post-tags .post-tag-chip {
+  body.dark #post-date {
     color: var(--text-on-dark-soft);
-  }
-
-  body.dark #post-date .post-updated-chip {
-    border-color: rgb(98 151 174 / 0.48);
-    color: rgb(222 235 239 / 0.95);
-    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
   }
 
   body.dark #post-update-note {
@@ -374,12 +367,6 @@ const articleSchema = {
   body.dark #post-update-note p,
   body.dark #post-update-note strong {
     color: var(--text-on-dark);
-  }
-
-  :global(#post-tags .post-tag-chip) {
-    border-color: rgb(98 151 174 / 0.38);
-    color: rgb(55 85 103);
-    background-color: rgb(222 235 239 / 0.72);
   }
 
   body.dark #post-title {
@@ -399,11 +386,6 @@ const articleSchema = {
     background: var(--dark-border);
   }
 
-  :global(body.dark #post-tags .post-tag-chip) {
-    border-color: rgb(98 151 174 / 0.48);
-    color: rgb(222 235 239 / 0.95);
-    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
-  }
 </style>
 
 <script>
@@ -424,7 +406,7 @@ const articleSchema = {
       el.innerHTML = "";
       tags.forEach((tag) => {
         const chip = document.createElement("span");
-        chip.className = "post-tag-chip rounded-full border px-2.5 py-1 text-[12px] uppercase tracking-[0.08em]";
+        chip.className = "post-tag-chip pill";
         chip.textContent = tag;
         el.appendChild(chip);
       });

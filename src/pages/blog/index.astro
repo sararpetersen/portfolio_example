@@ -64,13 +64,13 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
               <span id="blog-filter-label" class="text-[11px] uppercase tracking-[0.1em] text-gray-500 mr-1" data-i18n="blog.filter.label">
                 Filter by category:
               </span>
-              <button type="button" class="blog-filter-chip is-active" data-filter-tag="" aria-pressed="true" data-i18n="blog.filter.all">
+              <button type="button" class="blog-filter-chip pill is-active" data-filter-tag="" aria-pressed="true" data-i18n="blog.filter.all">
                 All
               </button>
               {activeCategories.map((cat) => (
                 <button
                   type="button"
-                  class="blog-filter-chip"
+                  class="blog-filter-chip pill"
                   data-filter-tag={cat.key}
                   data-category-tags={JSON.stringify(cat.tags)}
                   data-cat-en={cat.en}
@@ -296,68 +296,6 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
 
   body.dark .blog-show-more-button:disabled {
     color: var(--dark-border);
-  }
-
-  /* Same visual language as .post-tag-chip on the post page, but interactive. */
-  .blog-filter-chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    border: 1px solid rgb(98 151 174 / 0.38);
-    background-color: rgb(222 235 239 / 0.72);
-    color: rgb(55 85 103);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.35rem 0.75rem;
-    cursor: pointer;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-  .blog-filter-chip:hover {
-    border-color: rgb(98 151 174 / 0.6);
-  }
-
-  .blog-filter-chip:focus-visible {
-    outline: 2px solid #477b93;
-    outline-offset: 2px;
-  }
-
-  .blog-filter-chip.is-active {
-    background-color: var(--brand-primary-strong);
-    border-color: var(--brand-primary-strong);
-    color: white;
-  }
-
-  body.dark .blog-filter-chip {
-    border-color: rgb(98 151 174 / 0.48);
-    color: rgb(222 235 239 / 0.95);
-    background-color: color-mix(in srgb, #334857 68%, transparent 32%);
-  }
-
-  /* Same muted treatment calm mode already applies to .post-tag-chip on the post page. */
-  body.calm-mode .blog-filter-chip:not(.is-active) {
-    border-color: rgb(98 151 174 / 0.22);
-    color: rgb(71 95 106);
-    background-color: rgb(222 235 239 / 0.48);
-  }
-
-  /* The light-mode calm-mode rule above is more specific than body.dark .blog-filter-chip,
-     so it was winning even in dark mode and painting light-on-light colors onto a dark
-     background. Needs its own combo instead of relying on cascade order. */
-  body.dark.calm-mode .blog-filter-chip:not(.is-active) {
-    border-color: rgb(152 178 188 / 0.32);
-    color: rgb(200 214 219 / 0.82);
-    background-color: rgb(152 178 188 / 0.12);
-  }
-
-  body.dark .blog-filter-chip.is-active {
-    background-color: var(--brand-primary-strong);
-    border-color: var(--brand-primary-strong);
-    color: #1a1a1a;
   }
 
   body.dark #blog-filter-label {
