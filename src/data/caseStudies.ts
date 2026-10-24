@@ -58,11 +58,6 @@ export const caseStudies: CaseStudy[] = [
         label: { en: "Open the app", da: "Åbn appen" },
         url: "https://app-steady.netlify.app/",
       },
-      {
-        label: { en: "Discuss a project with me", da: "Tal med mig om et projekt" },
-        url: "/contact",
-        external: false,
-      },
     ],
     sections: [
       {
