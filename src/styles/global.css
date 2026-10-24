@@ -381,9 +381,12 @@ body.calm-mode #post-tags .post-tag-chip {
   background-color: rgb(222 235 239 / 0.48);
 }
 
-/* Blog index card left accent border */
-body.calm-mode .blog-card {
-  border-left-color: #9aacb5;
+/* The rule above is more specific than the plain dark chip rule and was painting dark text onto the
+   dark page in calm + dark mode (1.5:1), so dark gets its own combination. */
+body.dark.calm-mode #post-tags .post-tag-chip {
+  border-color: rgb(152 178 188 / 0.32);
+  color: rgb(200 214 219 / 0.92);
+  background-color: rgb(152 178 188 / 0.12);
 }
 
 /* Contact page: preferred contact info box */

@@ -58,18 +58,43 @@ const articleSchema = {
   <article class="max-w-4xl mx-auto px-6 md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom">
     <header class="md:pt-28 pt-24 mb-6">
       <div id="post-date" class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-[0.12em] text-gray-500">
-        <span>Published {post.data.publishDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
+        <span data-date-label="published" data-date-iso={post.data.publishDate.toISOString()}>
+          Published {post.data.publishDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+        </span>
         {
           post.data.updatedDate && (
             <>
               <span aria-hidden="true">·</span>
-              <span class="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-blue-700">
+              <span
+                class="post-updated-chip rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-blue-700"
+                data-date-label="updated"
+                data-date-iso={post.data.updatedDate.toISOString()}
+              >
                 Updated {post.data.updatedDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
               </span>
             </>
           )
         }
       </div>
+      <script is:inline>
+        // Runs right after #post-date so Danish visitors never see the English labels flash, and
+        // again on langchange. Dates are formatted for the current language too.
+        (function () {
+          var labels = { en: { published: "Published", updated: "Updated" }, da: { published: "Udgivet", updated: "Opdateret" } };
+          function apply(lang) {
+            lang = lang === "da" ? "da" : "en";
+            document.querySelectorAll("[data-date-label]").forEach(function (el) {
+              var d = new Date(el.getAttribute("data-date-iso"));
+              var text = d.toLocaleDateString(lang === "da" ? "da-DK" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+              el.textContent = labels[lang][el.getAttribute("data-date-label")] + " " + text;
+            });
+          }
+          apply(localStorage.getItem("lang") || "en");
+          window.addEventListener("langchange", function (e) {
+            apply((e.detail && e.detail.lang) || localStorage.getItem("lang") || "en");
+          });
+        })();
+      </script>
       <h1
         id="post-title" lang={post.data.lang}
         class="font-nikumaru uppercase tracking-[0.08em] sm:tracking-[0.11em] md:tracking-[0.14em] text-[1.65rem] leading-tight sm:text-h3-mobile md:text-h3-desktop mb-3 text-gray-800 break-words"
@@ -81,23 +106,19 @@ const articleSchema = {
         post.data.updatedDate && post.data.updateNote && (
           <aside
             id="post-update-note"
-            class="mt-5 rounded-2xl border border-l-4 border-blue-300 bg-blue-50/70 px-4 py-3"
+            class="mt-5 rounded-2xl bg-[#e8f0f3] px-4 py-3"
             aria-label="Post update"
             data-i18n-aria="blog.postupdate.aria"
           >
             <p class="text-sm leading-relaxed text-gray-700">
-              <strong class="font-semibold text-gray-800">Update:</strong> <span lang={post.data.lang}>{post.data.updateNote}</span>
+              <strong class="font-semibold text-gray-800" data-i18n="blog.update.label">Update:</strong> <span lang={post.data.lang}>{post.data.updateNote}</span>
             </p>
           </aside>
         )
       }
     </header>
 
-    <div id="post-separator" class="mb-6 flex items-center gap-3 text-gray-300" aria-hidden="true">
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-      <span class="post-separator-center block h-2 w-2 rotate-45 border border-current/70 bg-white"></span>
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    </div>
+    <div id="post-separator" class="mb-6" aria-hidden="true"></div>
 
     {
       post.data.tags.length > 0 && (
@@ -301,6 +322,11 @@ const articleSchema = {
     margin: 2rem 0;
   }
 
+  /* Calm mode lightens --brand-primary, which left in-text links at 4:1 on the light page */
+  :global(body.calm-mode:not(.dark) .blog-content a) {
+    color: #355a6f;
+  }
+
   body.dark .blog-content :global(a) {
     color: var(--brand-primary-soft);
     text-decoration: underline;
@@ -335,14 +361,13 @@ const articleSchema = {
     color: var(--text-on-dark-soft);
   }
 
-  body.dark #post-date span.rounded-full {
+  body.dark #post-date .post-updated-chip {
     border-color: rgb(98 151 174 / 0.48);
     color: rgb(222 235 239 / 0.95);
     background-color: color-mix(in srgb, #334857 68%, transparent 32%);
   }
 
   body.dark #post-update-note {
-    border-color: var(--brand-primary-soft);
     background-color: color-mix(in srgb, var(--dark-surface-strong) 82%, var(--brand-primary) 18%);
   }
 
@@ -365,13 +390,13 @@ const articleSchema = {
     color: var(--text-on-dark-soft);
   }
 
-  body.dark #post-separator {
-    color: var(--dark-border);
+  #post-separator {
+    height: 1px;
+    background: #d8d2cc;
   }
 
-  body.dark #post-separator .post-separator-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
+  body.dark #post-separator {
+    background: var(--dark-border);
   }
 
   :global(body.dark #post-tags .post-tag-chip) {
