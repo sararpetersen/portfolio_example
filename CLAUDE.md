@@ -14,6 +14,7 @@ Sara Ringkow Petersen's personal portfolio site, built with Astro + Tailwind CSS
 - `npm run validate-content` — runs both content checks below; this is a build gate, not optional tooling
   - `npm run check-blog-ids` (`scripts/check-blog-ids.js`) — fails the build on duplicate blog post ids or `slug` frontmatter values in `src/content/blog`
   - `npm run check-project-data` (`scripts/validate-portfolio-data.js`) — fails the build on invalid/duplicate case-study or Lab-project slugs, missing bilingual fields, missing logo files, or malformed links in `src/data/caseStudies.ts` and `src/data/labProjects.ts`
+- `npm run check-i18n` (`scripts/check-i18n.js`) — compares the English text written in the page files with `src/i18n/translations.ts` and lists every difference, missing key and key without a Danish version. Not part of `validate-content` yet: it currently reports differences that need a decision about which wording is right.
 - `npm run astro -- <command>` — run any Astro CLI command (e.g. `astro check`)
 
 There is no test suite; `validate-content` is the closest thing to CI and should be run after editing anything in `src/content/blog`, `src/data/caseStudies.ts`, or `src/data/labProjects.ts`.
@@ -31,4 +32,4 @@ There is no test suite; `validate-content` is the closest thing to CI and should
 
 **Styling:** Tailwind v4 via `@tailwindcss/vite` (not the classic PostCSS-only setup — config lives in `tailwind.config.mjs` plus `src/styles/tailwind.css` / `tailwind-theme.css`). Custom color palette (`blue`, `pale`, etc.) is defined in `tailwind.config.mjs`, not Tailwind defaults — use those tokens rather than arbitrary hex values.
 
-**i18n pattern:** There is no i18n framework. Bilingual content is modeled as parallel fields/objects (`{ en, da }` or `_da`-suffixed keys) rather than separate locale files, and language switching is handled client-side (Header/AccessibilityPanel). When adding user-facing copy, follow the existing bilingual-field convention rather than introducing a new i18n mechanism.
+**i18n pattern:** There is no i18n framework. All switcher text (English and Danish) lives in `src/i18n/translations.ts`; `MainLayout.astro` injects it into the page. Page files keep an English copy of each `data-i18n` text so it shows before any script runs, so change the wording in both places and run `npm run check-i18n`. Bilingual content is modeled as parallel fields/objects (`{ en, da }` or `_da`-suffixed keys) rather than separate locale files, and language switching is handled client-side (Header/AccessibilityPanel). When adding user-facing copy, follow the existing bilingual-field convention rather than introducing a new i18n mechanism.

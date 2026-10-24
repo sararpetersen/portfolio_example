@@ -10,6 +10,7 @@
     "astro": "astro",
     "check-blog-ids": "node ./scripts/check-blog-ids.js",
     "check-project-data": "tsx ./scripts/validate-portfolio-data.js",
+    "check-i18n": "tsx ./scripts/check-i18n.js",
     "validate-content": "npm run check-blog-ids && npm run check-project-data"
   },
   "dependencies": {
