@@ -11,7 +11,7 @@ const statusLabels = {
 };
 ---
 
-<div class="case-study max-w-6xl mx-auto px-6 lg:px-0 mt-20 md:pt-desktop-top pt-mobil-top pb-mobil-bottom md:pb-desktop-bottom">
+<div class="case-study max-w-6xl mx-auto px-6 xl:px-0 mt-20 md:pt-desktop-top pt-mobil-top pb-mobil-bottom md:pb-desktop-bottom">
   <nav aria-label="Breadcrumb" data-i18n-aria="nav.breadcrumb.aria" class="mb-10 text-sm text-gray-500">
     <a
       href="/lab"
@@ -52,7 +52,7 @@ const statusLabels = {
 
   <aside
     aria-labelledby="case-navigation-title"
-    class="case-nav my-10 rounded-3xl border border-gray-300 bg-gradient-to-br from-gray-50 to-gray-100 p-6"
+    class="case-nav case-tile my-10 p-6"
   >
     <h2 id="case-navigation-title" class="font-garamond italic font-bold text-h4-mobile md:text-h4-desktop text-gray-800 mb-3">
       <span class="case-en">In this case</span><span class="case-da">I denne case</span>
@@ -79,7 +79,7 @@ const statusLabels = {
   <div class="space-y-8">
     {
       caseStudy.sections.map((section) => (
-        <section id={section.id} class="case-section grid md:grid-cols-12 gap-5 border-b border-gray-300 pb-10">
+        <section id={section.id} class="case-section grid md:grid-cols-12 gap-5 border-b border-[#d8d2cc] pb-10">
           <div class="md:col-span-4">
             <p class="case-step text-xs uppercase tracking-[0.18em] text-blue-700 font-bold mb-3">
               <>
@@ -125,7 +125,7 @@ const statusLabels = {
 
   <section
     aria-labelledby="case-links-title"
-    class="mt-12 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-300 p-7 md:p-10"
+    class="case-tile mt-12 p-6 md:p-10"
   >
     <h2 id="case-links-title" class="font-garamond font-semibold italic text-xl text-gray-800 mb-3">
       <span class="case-en">Try Steady or start a conversation</span><span class="case-da">Prøv Steady, eller start en samtale</span>
@@ -169,8 +169,21 @@ const statusLabels = {
   :global(html[lang="da"]) .case-da {
     display: inline;
   }
+  /* Same thin-border tile as the About, Contact, Blog and Lab pages */
+  .case-tile {
+    border: 1px solid #d8d2cc;
+    border-radius: 1.5rem;
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+  }
+
+  /* Calm mode lightens the heading grey to 4.4:1 on the page; keep headings readable */
+  :global(body.calm-mode:not(.dark)) .case-study h2 {
+    color: #262626;
+  }
+
   .case-status {
     display: inline-flex;
+    border: 1px solid #375567;
     border-radius: 9999px;
     padding: 0.4rem 0.7rem;
     font-size: 0.72rem;
@@ -178,17 +191,11 @@ const statusLabels = {
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
-  .case-status--documented {
-    background: #dbeee3;
-    color: #24543a;
-  }
-  .case-status--reflection {
-    background: #e7e8f7;
-    color: #373a70;
-  }
+  .case-status--documented,
+  .case-status--reflection,
   .case-status--pending {
-    background: #fff0cc;
-    color: #714d00;
+    background: #deebef;
+    color: #2f3f4c;
   }
   :global(body.dark) .case-study h1,
   :global(body.dark) .case-study h2,
@@ -221,28 +228,19 @@ const statusLabels = {
   }
 
   :global(body.dark) .case-hero,
-  :global(body.dark) .case-study section[aria-labelledby="case-links-title"] {
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-    border-color: var(--dark-border);
-  }
-  :global(body.dark) .case-study .case-nav {
+  :global(body.dark) .case-study .case-tile {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     border-color: var(--dark-border);
   }
   :global(body.dark) .case-study .case-section {
     border-color: var(--dark-border);
   }
-  :global(body.dark) .case-status--documented {
-    background: #1c3826;
-    color: #9fe0b8;
-  }
-  :global(body.dark) .case-status--reflection {
-    background: #262845;
-    color: #c3c6f2;
-  }
+  :global(body.dark) .case-status--documented,
+  :global(body.dark) .case-status--reflection,
   :global(body.dark) .case-status--pending {
-    background: #4a3800;
-    color: #ffd980;
+    border-color: #c0d7e1;
+    background: rgba(192, 215, 225, 0.18);
+    color: var(--text-on-dark);
   }
   :global(body.dark) .case-study .case-nav-link {
     color: var(--brand-primary-soft);
