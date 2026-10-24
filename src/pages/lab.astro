@@ -26,23 +26,9 @@ import { labProjects } from "../data/labProjects";
         </div>
         <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
           This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I
-          wanted to see if they could work. Less polished than the main cases, but more honest about the process.
+          wanted to see if they could work. Less polished than the main cases, but more honest about the process. If 'vibe coding' is new to you,
+          <a href="/blog/vibe-coding">this post explains what it means</a>.
         </p>
-      </div>
-
-      <!-- What is vibe coding -->
-      <div id="lab-about">
-        <div class="lab-tile p-6 md:p-8 max-w-3xl">
-          <h2 id="lab-vibe-title" class="font-garamond italic font-semibold text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
-            What is <em>'vibe coding'</em>?
-          </h2>
-
-          <p id="lab-vibe-text" class="text-gray-600 leading-relaxed" data-i18n="lab.vibe.text">
-            <em>'Vibe coding'</em> is building with AI assistance. You describe what you want, the AI generates the code, and you shape and guide it. It's
-            less about writing every line yourself and more about knowing what you want and being able to evaluate what you get. It changes how you think
-            about prototyping and iteration.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -103,7 +89,6 @@ import { labProjects } from "../data/labProjects";
   html.has-js body:not(.reduce-motion) #lab-label,
   html.has-js body:not(.reduce-motion) #lab-title-row,
   html.has-js body:not(.reduce-motion) #lab-intro,
-  html.has-js body:not(.reduce-motion) #lab-about,
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-items-intro,
   html.has-js body:not(.reduce-motion) #lab-item-bivi,
@@ -115,13 +100,6 @@ import { labProjects } from "../data/labProjects";
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);
     will-change: transform, opacity;
-  }
-
-  /* Same thin-border tile as the About, Contact and Blog pages */
-  .lab-tile {
-    border: 1px solid #d8d2cc;
-    border-radius: 1.5rem;
-    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
   }
 
   /* Badges: one quiet pale chip style; the label text, not the colour, says which is which */
@@ -152,26 +130,41 @@ import { labProjects } from "../data/labProjects";
     color: #f5f5f5;
   }
 
+  /* Link to the vibe coding post at the end of the intro. The intro text is swapped in by the language
+     switcher, so these rules cannot rely on Astro's scoped attributes. */
+  :global(#lab-intro a) {
+    color: #375567;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  :global(#lab-intro a:hover) {
+    color: var(--brand-primary);
+  }
+
+  :global(#lab-intro a:focus-visible) {
+    outline: 3px solid #375567;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  :global(body.dark #lab-intro a) {
+    color: var(--brand-primary-soft);
+  }
+
   /* Dark mode — text */
   body.dark #lab-label,
   body.dark #lab-intro,
-  body.dark #lab-vibe-text,
   body.dark #lab-items-intro {
     color: var(--text-on-dark-soft);
   }
 
   body.dark #lab h1,
-  body.dark #lab-vibe-title,
   body.dark #lab-items-title {
     color: var(--text-on-dark);
   }
 
   /* Dark mode — card backgrounds */
-  body.dark .lab-tile {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-  }
-
   /* Dark mode — badges */
   body.dark .lab-tag {
     border-color: #c0d7e1;
