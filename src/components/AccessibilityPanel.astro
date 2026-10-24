@@ -314,7 +314,12 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    border-left: 1px solid #d8d2cc;
     box-shadow: -4px 0 28px rgba(0, 0, 0, 0.14);
+  }
+  /* The floating scroll-to-top button (z-index 999) used to sit on top of the open panel and cover its controls */
+  :global(body.a11y-panel-open #scrollToTop) {
+    visibility: hidden;
   }
   #a11y-panel.a11y-open {
     transform: translateX(0);
@@ -411,8 +416,7 @@
     padding: 0.55rem 0.875rem;
     background: #f7f3ef;
     border: 1px solid #dcd6d0;
-    border-left: 3px solid #dcd6d0;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     cursor: pointer;
     text-align: left;
     transition: all 0.15s ease;
@@ -420,12 +424,10 @@
     width: 100%;
   }
   .a11y-font-option:hover {
-    border-left-color: #95bccb;
     border-color: #95bccb;
     background: #f2f8f9;
   }
   .a11y-font-option[aria-pressed="true"] {
-    border-left-color: #43748a;
     border-color: #43748a;
     background: #f2f8f9;
   }
@@ -499,13 +501,13 @@
   }
   .a11y-toggle-desc {
     font-size: 0.7rem;
-    color: #6b7280;
+    color: #565e6b;
   }
 
   .a11y-switch {
     flex-shrink: 0;
-    width: 2.625rem;
-    height: 1.375rem;
+    width: 2.875rem;
+    height: 1.625rem;
     border-radius: 9999px;
     background: #bfb7b0;
     border: none;
@@ -524,15 +526,15 @@
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 1.0625rem;
-    height: 1.0625rem;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 9999px;
     background: white;
     transition: transform 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
   .a11y-switch[aria-checked="true"] .a11y-switch-thumb {
-    transform: translateX(1.1875rem);
+    transform: translateX(1.25rem);
   }
 
   .a11y-divider {
@@ -588,6 +590,7 @@
 
   body.dark #a11y-panel {
     background: var(--dark-bg, #1a1a1a);
+    border-left-color: var(--dark-border, #333);
     box-shadow: -4px 0 28px rgba(0, 0, 0, 0.5);
   }
   body.dark .a11y-panel-header {
@@ -623,7 +626,7 @@
   body.dark .a11y-font-option:hover,
   body.dark .a11y-font-option[aria-pressed="true"] {
     background: var(--dark-surface-hover, #333);
-    border-left-color: #43748a;
+    border-color: #43748a;
   }
   body.dark .a11y-font-label,
   body.dark .a11y-font-preview {
@@ -679,6 +682,8 @@
     overlay.classList.add("a11y-open");
     panel.setAttribute("aria-hidden", "false");
     panel.removeAttribute("inert");
+    document.body.classList.add("a11y-panel-open");
+    panel.scrollTop = 0;
     fab.setAttribute("aria-expanded", "true");
     syncUI();
     closeBtn.focus();
@@ -689,6 +694,7 @@
     overlay.classList.remove("a11y-open");
     panel.setAttribute("aria-hidden", "true");
     panel.setAttribute("inert", "");
+    document.body.classList.remove("a11y-panel-open");
     fab.setAttribute("aria-expanded", "false");
     fab.focus();
   }

@@ -349,6 +349,10 @@ const currentYear = new Date().getFullYear();
   #terms-modal.open {
     display: block;
   }
+  /* The floating scroll-to-top button (z-index 999) would otherwise sit on top of the dialog */
+  :global(body.terms-modal-open #scrollToTop) {
+    visibility: hidden;
+  }
 
   #terms-modal-panel {
     position: absolute;
@@ -358,8 +362,9 @@ const currentYear = new Date().getFullYear();
     left: 0;
     right: 0;
     max-height: 75vh;
-    background: #f7f3ef;
-    border-radius: 1.25rem 1.25rem 0 0;
+    background: linear-gradient(to bottom right, #f7f5f2, #f0ebe6);
+    border: 1px solid #d8d2cc;
+    border-radius: 1.5rem 1.5rem 0 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -375,7 +380,7 @@ const currentYear = new Date().getFullYear();
       width: 640px;
       max-width: calc(100vw - 2rem);
       max-height: 80vh;
-      border-radius: 1.25rem;
+      border-radius: 1.5rem;
       animation: fadeIn 0.25s ease;
     }
   }
@@ -406,7 +411,7 @@ const currentYear = new Date().getFullYear();
     flex-shrink: 0;
     position: sticky;
     top: 0;
-    background: #f7f3ef;
+    background: transparent;
   }
   #terms-modal-title {
     font-weight: 600;
@@ -447,7 +452,7 @@ const currentYear = new Date().getFullYear();
     gap: 0.625rem;
   }
   :global(.terms-modal-section a) {
-    color: #43748a;
+    color: #2f5a70;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -475,9 +480,12 @@ const currentYear = new Date().getFullYear();
   }
 
   /* Dark mode modal */
-  body.dark #terms-modal-panel,
+  body.dark #terms-modal-panel {
+    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
+    border-color: var(--dark-border, #333);
+  }
   body.dark #terms-modal-header {
-    background: var(--dark-bg, #1a1a1a);
+    background: transparent;
   }
 
   :global(body.dark .terms-modal-section a) {
@@ -617,13 +625,17 @@ const currentYear = new Date().getFullYear();
   function openTerms(): void {
     termsModal.classList.add("open");
     termsModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("terms-modal-open");
     backgroundLandmarks.forEach((el) => el.setAttribute("inert", ""));
     document.body.style.overflow = "hidden";
+    // Reopen at the top, not wherever the last visit was scrolled to
+    document.getElementById("terms-modal-body")?.scrollTo(0, 0);
     termsClose.focus();
   }
   function closeTerms(): void {
     termsModal.classList.remove("open");
     termsModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("terms-modal-open");
     backgroundLandmarks.forEach((el) => el.removeAttribute("inert"));
     document.body.style.overflow = "";
     termsTrigger.focus();
