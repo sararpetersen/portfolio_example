@@ -8,7 +8,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.contact": "Contact",
     "nav.blog": "Blog",
     "footer.copyright": "© {year} · SRP Portfolio - Sara Ringkow Petersen. All rights reserved.",
-    "hero.title": "UX/UI designer focused on accessibility",
+    "hero.title": "UX/UI designer focused on accessibility<span class=\"text-[#bb4a34]\">.</span>",
     "hero.role": "Sara Ringkow Petersen · Multimedia Designer & Concept Developer",
     "hero.lead":
       "I turn complex ideas into clear, inclusive websites and interfaces by combining thoughtful structure, visual design, and hands-on implementation.",
@@ -20,9 +20,9 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "project.back": "↑ Homepage",
     "project.figma.notice": "This project is presented as an interactive prototype created in Figma",
     "project.db.notice.showcase":
-      "The database behind this project's case-showcase has been deactivated. The site may still display it for now, but the content is no longer being kept up to date.",
+      "The database behind this project's live case showcase has been deactivated. The site may still display it for now, but the content is no longer being kept up to date.",
     "project.db.notice.offline":
-      "The database behind this project's site has been deactivated. The site may still appear to work for now, but the content is no longer being kept up to date.",
+      "The database behind this project's live site has been deactivated. The site may still appear to work for now, but the content is no longer being kept up to date.",
     "project.tools": "Tools used:",
     "project.context": "Context",
     "project.role": "Role",
@@ -30,10 +30,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "project.tools.aria": "Tools used",
     "project.view": "View project",
     "project.related.title": "More projects",
-    "testimonials.title": "Testimonials",
+    "testimonials.title": "Featured testimonial",
     "testimonials.intro": "A few words from someone I've worked with directly.",
     "testimonials.quote":
-      "Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <span class='italic font-semibold text-[16px]'>[...]</span> Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that met the client's needs&mdash; this has been the case in both her work with design and coding.",
+      "<p>\"Sara has shown consistent presence, where she has been fully involved in the daily operations of the agency. <em class='font-bold'>[...]</em> Both in team configurations and independently, Sara has demonstrated great responsibility and a strong desire to find solutions that meet the client's needs&mdash; this has been the case in both her work with design and coding.\"</p>",
     "about.title": "About me",
     "about.intro":
       "Expand a section below to read about my background, what inspires me, and where I'm heading.<br class='hidden md:block' /> Scroll further down to explore my journey, interests, and downloadable resources.",
@@ -42,17 +42,17 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "about.tab.inspiration": "Inspiration",
     "about.tab.goals": "Goals",
     "about.background.text":
-      "I've always loved creativity – drawing, painting, just making stuff with my hands. I knew fairly early on that, someday, I wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a very long time trying to figure out how to combine the two. And Multimedia Design was where those two things eventually came together. It gave me a way to work with both design and technology, to learn how to think carefully about how things are built, and not just how they look.",
+      "I've always been drawn to creativity – drawing, painting, just making stuff in general. I knew fairly early on that, someday, I wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying to figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both design and technology, and to think carefully about how things are built, and not just how they look.",
     "about.inspiration.text":
-      "As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built for people with disabilities in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions— a clear label, a consistent layout, a well-structured page —often matter more than people expect.",
+      "As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions— a clear label, a consistent layout, a well-structured page —often matter more than people expect.",
     "about.goals.text":
-      "I want to work on digital things that are genuinely accessible – not just technically compliant, but usable for real people. I care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through studying, working, and making stuff in my free time. My aim is to keep doing that in a context where good design actually matters.",
+      "I want to work on digital things that are genuinely accessible – not just technically compliant, but usable for real people. I care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.",
     "timeline.title": "The highlights of my journey",
     "timeline.education": "Education",
     "timeline.work": "Work experience",
     "timeline.0.year": "August 2019 - June 2021",
     "timeline.0.title": "HF (higher preparatory examination) | Egedal Gymnasium & HF",
-    "timeline.0.desc": "Completed high school with a focus on art, social studies and psychology.",
+    "timeline.0.desc": "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
     "timeline.2.year": "August 2023 - June 2025",
     "timeline.2.title": "Multimedia Design | Copenhagen School of Design and Technology (KEA)",
     "timeline.2.desc":
@@ -76,10 +76,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "interests.title": "Interests and hobbies",
     "interest.japanese.title": "Japanese culture",
     "interest.japanese.text":
-      "I've always loved Japanese aesthetics, culture, and language&mdash; especially the balance between simplicity, detail, and thoughtful storytelling.",
+      "I love the balance between simplicity, detail, and thoughtful storytelling.",
     "interest.lego.title": "Building with LEGO",
     "interest.lego.text":
-      "There's something oddly therapeutic about clicking LEGO bricks together. It's my creative outlet that doesn't require a screen.",
+      "My creative outlet that doesn't require a screen.",
     "interest.themepark.title": "Theme parks and attractions",
     "interest.themepark.text":
       "Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind them.",
@@ -95,7 +95,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.services.uiux": "UX/UI design",
     "contact.services.web": "Accessible web design",
     "contact.services.concept": "Development of concepts",
-    "contact.services.brand": "Brand and visual Identity",
+    "contact.services.brand": "Brand and visual identity",
     "contact.info.email": "Email",
     "contact.info.phone": "Phone*",
     "contact.phone.note": "*Phone calls can be difficult for me, so Email or LinkedIn are the fastest ways to reach me.",
@@ -110,17 +110,17 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.email.ph": "your.email@example.com",
     "contact.form.message.ph": "Your message...",
     "contact.form.gdpr":
-      'By submitting an inquiry through this form, you agree to my <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Terms &amp; Privacy Policy</a>.',
+      "By submitting this form you agree to my <a href=\"/terms\" class=\"underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs\">Terms &amp; Privacy Policy</a>.",
     "contact.form.submit": "Send message",
     "contact.form.next":
-      "(After you've sent your message, it goes straight to my inbox and a confirmation appears right here on the page – I usually reply within a couple of days)",
+      "(After you hit send, your message goes straight to my inbox and a confirmation appears right here on the page – I usually reply within a couple of days)",
     "btn.back": "Back to homepage",
     "diff.title": "What makes my approach different?",
     "diff.intro": "A lot of designers mention accessibility. Here's what actually shapes how I work.",
     "diff.card1.label": "Lived experience",
     "diff.card1.title": "I design from the inside",
     "diff.card1.text":
-      "I have autism and ADD. And that's <strong>not a footnote</strong> – it's the reason accessibility is central to how I work, and not just something I layer on at the end. I know what it's like to use digital platforms that weren't built with you in mind, and that is what shapes every decision I make.",
+      "I'm autistic and have ADD. That's not a footnote – it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.",
     "diff.card2.label": "Design + code",
     "diff.card2.title": "What I design, I can build",
     "diff.card2.text":
@@ -132,12 +132,12 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "modal.terms.title": "Terms & Privacy",
     "modal.terms.privacy": "Privacy policy",
     "modal.terms.privacy.p1":
-      "When you submit your inquiry through the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code> only – <strong>no personal data leaves your device</strong>. No cookies, no tracking, no third-party marketing.",
+      "When you submit the contact form, your name, email, and message are processed by <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> solely to respond to your enquiry. Accessibility preferences are stored in your browser's <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code> only – <strong>no personal data leaves your device</strong>. No cookies, no tracking, no third-party marketing.",
     "modal.terms.privacy.p2":
       "<strong>Your rights <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='General Data Protection Regulation: an EU law protecting personal data'>GDPR</span>)</em>:</strong> You may request access to, correction of, or deletion of your data at any time – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
     "modal.terms.booking": "Booking and freelance terms",
     "modal.terms.booking.p1":
-      "I take on projects case by case. <strong>A written quote will be sent out before work starts</strong> – no surprises. Two rounds of revisions are included. Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is agreed.",
+      "I take on projects case by case. <strong>A written quote is provided before work starts</strong> – no surprises. Two rounds of revisions are included. Upon full payment you receive a licence to use agreed deliverables; I retain the right to show the work in my portfolio unless confidentiality is agreed.",
     "modal.terms.booking.p2": "Cancellations must be in writing. Work completed up to that point may be invoiced.",
     "modal.terms.use": "Terms of use",
     "modal.terms.use.p1":
@@ -147,7 +147,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "terms.privacy.sub": "What data is collected and why",
     "terms.privacy.h3.collected": "Data collected",
     "terms.privacy.p.collected1":
-      "When you submit your enquiry through the contact form on this site, the following information is collected: full name, email address, and the message you write. This data is processed and stored by <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> on my behalf. <strong>No other personal data is collected.</strong>",
+      "When you submit the contact form on this site, the following information is collected: full name, email address, and the message you write. This data is processed and stored by <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> on my behalf. <strong>No other personal data is collected.</strong>",
     "terms.privacy.p.collected2":
       "Accessibility preferences you set <em>(such as dark mode, text size, or reduced motion)</em> are stored in your browser's <code class='tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='A place in your browser that saves small bits of data on your device'>localStorage</code>. This data never leaves your device and contains no personal information.",
     "terms.privacy.h3.why": "Why I collect it",
@@ -165,13 +165,13 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "terms.booking.sub": "How we work together",
     "terms.booking.h3.availability": "Availability",
     "terms.booking.p.availability":
-      "I'm currently studying and take on freelance projects on the sideline, depending on scope and availability. Please reach out early to discuss timing.",
+      "I'm currently studying and take on freelance projects on a case-by-case basis, depending on scope and availability. Please reach out early to discuss timing.",
     "terms.booking.h3.contact": "Getting in touch",
     "terms.booking.p.contact":
       "Send an enquiry via the <a href='/contact#contact-form' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out'>contact form</a> or directly to <a class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I aim to respond within 2-3 business days.",
     "terms.booking.h3.proposals": "Proposals and agreements",
     "terms.booking.p.proposals":
-      "A written quote or scope agreement is sent out before any work begins. <strong>No work starts without mutual written confirmation</strong> of scope, timeline, and price.",
+      "A written quote or scope agreement is provided before any work begins. No work starts without mutual written confirmation of scope, timeline, and price.",
     "terms.booking.h3.payment": "Payment",
     "terms.booking.p.payment":
       "Onboarding-sessions are at <strong>100 DKK (approx. 13,38€)</strong> for 30 minutes. For projects, the cost will be agreed on, depending on scope. For larger engagements, a deposit of up to 50% may be required before work commences. If the project expands by more than 10% mid-way through, I reserve the right to pause work and invoice for an additional deposit. The final payment is due within <strong>7 days</strong> of delivery of the agreed deliverables, and invoicing is handled via email.",
@@ -180,7 +180,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "<strong>Two rounds of revisions are included</strong> in every project unless otherwise agreed in writing. Additional revision rounds may incur extra cost.",
     "terms.booking.h3.ip": "Intellectual property",
     "terms.booking.p.ip":
-      "Upon receipt of full and final payment, you receive a licence to use the agreed deliverables for the agreed purpose. I retain the right to display the work in my portfolio unless confidentiality is explicitly agreed in writing.",
+      "Upon receipt of full and final payment, you receive a licence to use the agreed deliverables for the agreed purpose. I retain the right to display the work in my portfolio and case studies unless confidentiality is explicitly agreed in writing.",
     "terms.booking.h3.scope": "Scope changes",
     "terms.booking.p.scope":
       "Any changes to the agreed scope must be approved in writing and may affect delivery timeline and price. I will provide an updated estimate before proceeding.",
@@ -221,10 +221,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "The Lab",
     "lab.title": "Experiments",
     "lab.intro":
-      "This is where I put the looser stuff – projects built with AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the actual cases, but more honest about the process. If <em>'vibe coding'</em> is new to you, <a href='/blog/vibe-coding'>this post explains what it means</a>.",
+      "This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the main cases, but more honest about the process. If <em>'vibe coding'</em> is new to you, <a href='/blog/vibe-coding'>this post explains what it means</a>.",
     "lab.items.title": "Projects from the Lab",
     "lab.items.intro":
-      "A collection of experimental solutions and concepts centred on neurodivergence, disability, and accessible design. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
+      "A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
     "lab.bivi.link": "Visit site/app →",
     "lab.bivi.title": "Bivi - Your Little Medication Sidekick",
     "lab.vibeloop.link": "View case →",
@@ -248,13 +248,13 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "My longest-running Lab project— shaped through repeated accessibility work, user testing and product iteration.",
     "lab.badge.wip.tooltip": "Work in progress — the coded version is still being developed",
     "lab.legend.longrunning": "= developed over the longest period",
-    "lab.legend.vibecoded": "= built with the help of AI",
+    "lab.legend.vibecoded": "= built with AI assistance",
     "lab.legend.wip": "= work in progress",
     "a11y.title": "Accessibility",
     "a11y.theme": "THEME",
     "a11y.light": "Light",
     "a11y.dark": "Dark",
-    "a11y.font": "Font",
+    "a11y.font": "READING FONT",
     "a11y.font.default": "Default",
     "a11y.font.atkinson": "Atkinson Hyperlegible",
     "a11y.font.verdana": "Verdana",
@@ -276,7 +276,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11y.cvd.protanopia": "Protanopia",
     "a11y.cvd.deuteranopia": "Deuteranopia",
     "a11y.cvd.tritanopia": "Tritanopia",
-    "a11y.cvd.desc": "Preview how the site may look with different types of colour vision.",
+    "a11y.cvd.desc": "Preview the page as someone with red-green or blue-yellow colour blindness would see it.",
     "a11y.reset": "Reset settings",
     "a11y.note": "Your preferences are saved on your device.",
     "a11y.lang": "LANGUAGE",
@@ -335,7 +335,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.contact": "Kontakt",
     "nav.blog": "Blog",
     "footer.copyright": "© {year} · SRP Portfolio - Sara Ringkow Petersen. Alle rettigheder forbeholdes.",
-    "hero.title": "UX/UI-designer med fokus på tilgængelighed",
+    "hero.title": "UX/UI-designer med fokus på tilgængelighed<span class=\"text-[#bb4a34]\">.</span>",
     "hero.role": "Sara Ringkow Petersen · Multimediedesigner & konceptudvikler",
     "hero.lead":
       "Jeg omsætter komplekse idéer til klare, inkluderende websites og interfaces ved at kombinere gennemtænkt struktur, visuelt design og praktisk implementering.",
@@ -347,9 +347,9 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "project.back": "↑ Forside",
     "project.figma.notice": "Dette projekt pr\u00e6senteres som en interaktiv prototype lavet i Figma",
     "project.db.notice.showcase":
-      "Databasen bag dette projekts case-showcase er blevet deaktiveret. Siden viser den muligvis stadig lige nu, men indholdet bliver ikke længere holdt opdateret.",
+      "Databasen bag dette projekts live case-showcase er blevet deaktiveret. Siden viser den muligvis stadig lige nu, men indholdet bliver ikke længere holdt opdateret.",
     "project.db.notice.offline":
-      "Databasen bag dette projekts site er blevet deaktiveret. Siden fremstår muligvis stadig funktionel lige nu, men indholdet bliver ikke længere holdt opdateret.",
+      "Databasen bag dette projekts live site er blevet deaktiveret. Siden fremstår muligvis stadig funktionel lige nu, men indholdet bliver ikke længere holdt opdateret.",
     "project.tools": "Værktøjer brugt:",
     "project.context": "Kontekst",
     "project.role": "Rolle",
@@ -357,10 +357,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "project.tools.aria": "Værktøjer brugt",
     "project.view": "Se projekt",
     "project.related.title": "Flere projekter",
-    "testimonials.title": "Anbefalinger",
+    "testimonials.title": "Udvalgt anbefaling",
     "testimonials.intro": "Et par ord fra nogen, jeg har arbejdet direkte sammen med.",
     "testimonials.quote":
-      'Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <span class="italic font-semibold text-[16px]">[...]</span> Både i teamkonstellationer og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.',
+      "<p>\"Sara har vist en konsekvent tilstedeværelse, hvor hun på fuldtid har været en del af hverdagen på bureauet. <em class='font-bold'>[...]</em> Både i teamkonstellationer og selvstændigt har Sara udvist stort ansvar og en enorm lyst til at finde løsninger som talte ind i kundens behov&mdash; det har været tilfældet både i forhold til hendes arbejde med design og kodning.\"</p>",
     "about.title": "Om mig",
     "about.intro":
       "Fold en sektion ud nedenfor for at læse om min baggrund, hvad der inspirerer mig, og hvor jeg er på vej hen.<br class='hidden md:block' /> Scroll videre ned for at udforske min rejse, interesser og ressourcer.",
@@ -369,17 +369,17 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "about.tab.inspiration": "Inspiration",
     "about.tab.goals": "M\u00e5l",
     "about.background.text":
-      "Jeg har altid elsket kreativitet – tegning, maleri, bare det at lave ting med mine hænder. Og jeg vidste ret tidligt, at det på et tidspunkt skulle indgå i min fremtidige karriere. Da jeg blev ældre, begyndte jeg dog også at interessere mig for teknologi, så jeg brugte rigtig lang tid på at finde ud af, hvordan de to ting kunne kombineres. Og multimediedesign var der, hvor de to ting til sidst faldt på plads. Det gav mig en vej til at arbejde med både design og teknologi. Til at lære at tænke nøje over, hvordan ting er bygget, og ikke bare hvordan de ser ud.",
+      "Jeg har altid været draget af kreativitet – tegning, maleri, bare det at lave ting generelt. Og jeg vidste ret tidligt, at det på et tidspunkt skulle indgå i min fremtidige karriere. Da jeg blev ældre, begyndte jeg dog også at interessere mig for teknologi, så jeg brugte lang tid på at finde ud af, hvordan de to ting kunne kombineres. Multimediedesign er der, hvor de to ting kom sammen. Det gav mig en måde at arbejde med både design og teknologi på og tænke nøje over, hvordan ting er bygget, og ikke kun hvordan de ser ud.",
     "about.inspiration.text":
-      "Som én der er sen-diagnosticeret med autisme og ADD, ved jeg, hvad det vil sige at bruge digitale platforme, der ikke er lavet til mennesker med handicap i tankerne. Mit neurodivergente perspektiv former den måde, jeg tænker tilgængelighed, struktur og brugerbehov. I stedet for en tjekliste er det noget, der løber igennem hele processen. Jeg har fokus på at gøre ting lettere at forstå, navigere og bruge. Og jeg oplever, at de små beslutninger— en tydelig label, et konsistent layout, en velstruktureret side —ofte betyder mere end man regner med.",
+      "Som én der er sen-diagnosticeret med autisme og ADD, ved jeg, hvad det vil sige at bruge digitale platforme, der ikke er lavet med én i tankerne. Mit neurodivergente perspektiv former den måde, jeg tænker tilgængelighed, struktur og brugerbehov. I stedet for en tjekliste er det noget, der løber igennem hele processen. Jeg har fokus på at gøre ting lettere at forstå, navigere og bruge. Og jeg oplever, at de små beslutninger— en tydelig label, et konsistent layout, en velstruktureret side —ofte betyder mere end man regner med.",
     "about.goals.text":
-      "Jeg vil gerne arbejde med digitale løsninger, som rent faktisk er tilgængelige – ikke blot i overensstemmelse med de tekniske standarder, men som kan bruges af rigtige mennesker. Jeg har fokus på at få detaljerne til at sidde rigtigt: struktur, klarhed og de dele, brugerne faktisk interagerer med. Lige nu bygger jeg det op ved at studere, arbejde og ved at lave ting i min fritid. Mit mål er at fortsætte med det i en sammenhæng, hvor godt design reelt gør en forskel.",
+      "Jeg vil gerne arbejde med digitale løsninger, som rent faktisk er tilgængelige – ikke blot i overensstemmelse med de tekniske standarder, men som kan bruges af rigtige mennesker. Jeg har fokus på at få detaljerne til at sidde rigtigt: struktur, klarhed og de dele, brugerne faktisk interagerer med. Lige nu bygger jeg det op ved at studere, arbejde og lave ting. Mit mål er at fortsætte med det i en sammenhæng, hvor godt design reelt gør en forskel.",
     "timeline.title": "H\u00f8jdepunkterne i min rejse",
     "timeline.education": "Uddannelse",
     "timeline.work": "Arbejdserfaring",
     "timeline.0.year": "August 2019 - Juni 2021",
     "timeline.0.title": "HF (højere forberedelseseksamen) | Egedal Gymnasium & HF",
-    "timeline.0.desc": "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi.",
+    "timeline.0.desc": "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi, hvilket vakte min interesse for kreativitet, mennesker og kommunikation.",
     "timeline.2.year": "August 2023 - Juni 2025",
     "timeline.2.title": "Multimediedesign | Københavns Erhvervsakademi (KEA)",
     "timeline.2.desc":
@@ -403,10 +403,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "interests.title": "Interesser og hobbyer",
     "interest.japanese.title": "Japansk kultur",
     "interest.japanese.text":
-      "Jeg har altid været vild med Japansk æstetik, kultur og sprog&mdash; især balancen mellem enkelhed, detalje og gennemtænkt historiefortælling.",
+      "Jeg elsker balancen mellem enkelhed, detalje og gennemtænkt historiefortælling.",
     "interest.lego.title": "Bygge LEGO",
     "interest.lego.text":
-      "Der er noget m\u00e6rkeligt terapeutisk ved at klikke LEGO-klodser sammen. Det er mit kreative frirum, der ikke kr\u00e6ver en sk\u00e6rm.",
+      "Mit kreative frirum, der ikke kræver en skærm.",
     "interest.themepark.title": "Forlystelsesparker og attraktioner",
     "interest.themepark.text":
       "Noget der er blevet en rigtig passion. Jeg elsker at følge med i forlystelsesparker, attraktioner og historierne bag dem.",
@@ -437,17 +437,17 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.email.ph": "din.email@eksempel.dk",
     "contact.form.message.ph": "Din besked...",
     "contact.form.gdpr":
-      'Ved at indsende en forespørgsel via denne formular, accepterer du mine <a href="/terms" class="underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs">Vilkår &amp; Privatlivspolitik</a>.',
+      "Ved at indsende denne formular accepterer du mine <a href=\"/terms\" class=\"underline underline-offset-2 hover:text-blue-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 text-xs\">Vilkår &amp; Privatlivspolitik</a>.",
     "contact.form.submit": "Send besked",
     "contact.form.next":
-      "(Efter du har sendt din besked, lander den direkte i min indbakke, og der vises en bekræftelse her på siden – jeg svarer som regel inden for et par dage)",
+      "(Efter du har trykket på send, lander din besked direkte i min indbakke, og der vises en bekræftelse her på siden – jeg svarer som regel inden for et par dage)",
     "btn.back": "Tilbage til forsiden",
     "diff.title": "Hvad adskiller min tilgang?",
     "diff.intro": "Mange designere nævner tilgængelighed. Her er hvad der faktisk former min måde at arbejde på.",
     "diff.card1.label": "Egne erfaringer",
     "diff.card1.title": "Jeg designer indefra",
     "diff.card1.text":
-      "Jeg har autisme og ADD. Og det er <strong>ikke en fodnote</strong>&mdash; det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg tilføjer til sidst. Jeg ved, hvordan det er at bruge digitale platforme, der ikke er bygget med én i tankerne, og det er det der former alle mine beslutninger.",
+      "Jeg er autist og har ADD. Det er ikke en fodnote – det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg lægger på til sidst. Jeg ved, hvordan det er at bruge digitale produkter, der ikke er bygget med én i tankerne, og det er det, der former alle mine beslutninger.",
     "diff.card2.label": "Design + kode",
     "diff.card2.title": "Det jeg designer, kan jeg bygge",
     "diff.card2.text":
@@ -459,12 +459,12 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "modal.terms.title": "Vilkår & Privatliv",
     "modal.terms.privacy": "Privatlivspolitik",
     "modal.terms.privacy.p1":
-      "Når du indsender din henvendelse gennem kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code> – <strong>ingen persondata forlader din enhed</strong>. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
+      "Når du indsender kontaktformularen, behandles dit navn, din email og din besked af <a href='https://www.netlify.com/privacy/' class='terms-link hover:underline' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> udelukkende med henblik på at besvare din henvendelse. Tilgængelighedspræferencer gemmes kun i din browsers <code class='text-[14px] tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code> – <strong>ingen persondata forlader din enhed</strong>. Ingen cookies, ingen sporing, ingen tredjeparts-markedsføring.",
     "modal.terms.privacy.p2":
       "<strong>Dine rettigheder <em>(<span class='tooltip-term' tabindex='0' role='note' aria-label='GDPR' data-tooltip='Generel Forordning om Databeskyttelse: en EU-lov om beskyttelse af persondata'>GDPR</span>)</em>:</strong> Du kan til enhver tid anmode om adgang til, rettelse af eller sletning af dine data – email: <a href='mailto:sara.ringkow@gmail.com' class='terms-link hover:underline'>sara.ringkow@gmail.com</a>.",
     "modal.terms.booking": "Booking- og freelancebetingelser",
     "modal.terms.booking.p1":
-      "Jeg påtager mig projekter fra case til case. <strong>Et skriftligt tilbud bliver sendt ud, inden arbejdet påbegyndes</strong> – ingen overraskelser. To runder af revisioner er inkluderet. Ved fuld betaling modtager du licens til at anvende de aftalte leverancer; jeg forbeholder mig retten til at vise arbejdet i min portefølje, medmindre fortrolighed er aftalt.",
+      "Jeg påtager mig projekter fra case til case. <strong>Et skriftligt tilbud udleveres, inden arbejdet påbegyndes</strong> – ingen overraskelser. To runder af revisioner er inkluderet. Ved fuld betaling modtager du licens til at anvende de aftalte leverancer; jeg forbeholder mig retten til at vise arbejdet i min portefølje, medmindre fortrolighed er aftalt.",
     "modal.terms.booking.p2": "Aflysninger skal ske skriftligt. Arbejde udført frem til det tidspunkt kan faktureres.",
     "modal.terms.use": "Brugsbetingelser",
     "modal.terms.use.p1":
@@ -474,7 +474,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "terms.privacy.sub": "Hvad der indsamles og hvorfor",
     "terms.privacy.h3.collected": "Indsamlet data",
     "terms.privacy.p.collected1":
-      "Når du indsender din henvendelse gennem kontaktformularen på dette site, indsamles følgende oplysninger: fulde navn, emailadresse og den besked du skriver. Disse data behandles og opbevares af <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> på mine vegne. <strong>Ingen andre personoplysninger indsamles.</strong>",
+      "Når du indsender kontaktformularen på dette site, indsamles følgende oplysninger: fulde navn, emailadresse og den besked du skriver. Disse data behandles og opbevares af <a href='https://www.netlify.com/privacy/' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' target='_blank' rel='noopener noreferrer'>Netlify Forms</a> på mine vegne. <strong>Ingen andre personoplysninger indsamles.</strong>",
     "terms.privacy.p.collected2":
       "Tilgængelighedspræferencer du sætter <em>(f.eks. mørk tilstand, tekststørrelse eller reduceret bevægelse)</em> gemmes i din browsers <code class='tooltip-term' tabindex='0' role='note' aria-label='localStorage' data-tooltip='Et sted i din browser, der gemmer små mængder data på din enhed'>localStorage</code>. Disse data forlader aldrig din enhed og indeholder ingen personlige oplysninger.",
     "terms.privacy.h3.why": "Hvorfor jeg indsamler det",
@@ -492,13 +492,13 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "terms.booking.sub": "Sådan arbejder vi sammen",
     "terms.booking.h3.availability": "Tilgængelighed",
     "terms.booking.p.availability":
-      "Jeg studerer i øjeblikket og påtager mig freelanceprojekter ved siden af, afhængigt af omfang og tilgængelighed. Kontakt mig gerne i god tid for at diskutere timing.",
+      "Jeg studerer i øjeblikket og påtager mig freelanceprojekter fra sag til sag, afhængigt af omfang og tilgængelighed. Kontakt mig gerne i god tid for at diskutere timing.",
     "terms.booking.h3.contact": "Kom i kontakt",
     "terms.booking.p.contact":
       "Send en forespørgsel via <a href='/contact#contact-form' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out'>kontaktformularen</a> eller direkte til <a class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. Jeg regner med at svare inden for 2-3 hverdage.",
     "terms.booking.h3.proposals": "Tilbud og aftaler",
     "terms.booking.p.proposals":
-      "Et skriftligt tilbud eller omfangsaftale bliver sendt ud, inden arbejdet begynder. <strong>Intet arbejde påbegyndes uden gensidig skriftlig bekræftelse</strong> af omfang, tidsplan og pris.",
+      "Et skriftligt tilbud eller omfangsaftale udleveres, inden arbejdet begynder. <strong>Intet arbejde påbegyndes uden gensidig skriftlig bekræftelse</strong> af omfang, tidsplan og pris.",
     "terms.booking.h3.payment": "Betaling",
     "terms.booking.p.payment":
       "Onboarding-sessioner koster <strong>100 DKK (ca. 13,38€)</strong> og er af 30 minutters varighed. For projekter aftales prisen ud fra omfanget. For større opgaver kan der kræves et depositum på op til 50% inden arbejdet påbegyndes. Hvis projektet udvides med mere end 10% undervejs, forbeholder jeg mig retten til at sætte arbejdet på pause og fakturere for et yderligere depositum. Den endelige betaling forfalder inden for <strong>7 dage</strong> efter levering af de aftalte leverancer, og fakturering håndteres via email.",
@@ -507,7 +507,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "<strong>To revisionsrunder er inkluderet</strong> i hvert projekt, medmindre andet er skriftligt aftalt. Yderligere revisionsrunder kan medføre ekstraomkostninger.",
     "terms.booking.h3.ip": "Intellektuel ejendom",
     "terms.booking.p.ip":
-      "Ved modtagelse af fuld og endelig betaling modtager du licens til at anvende de aftalte leverancer til det aftalte formål. Jeg forbeholder mig retten til at vise arbejdet i min portefølje, medmindre fortrolighed er eksplicit aftalt skriftligt.",
+      "Ved modtagelse af fuld og endelig betaling modtager du licens til at anvende de aftalte leverancer til det aftalte formål. Jeg forbeholder mig retten til at vise arbejdet i min portefølje og mine casestudier, medmindre fortrolighed er eksplicit aftalt skriftligt.",
     "terms.booking.h3.scope": "Omfangsændringer",
     "terms.booking.p.scope":
       "Ændringer i det aftalte omfang skal godkendes skriftligt og kan påvirke leveringstid og pris. Jeg vil give et opdateret estimat, inden arbejdet fortsættes.",
@@ -548,10 +548,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "Laboratoriet",
     "lab.title": "Eksperimenter",
     "lab.intro":
-      "Her lægger jeg de lidt løsere ting – projekter bygget med AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end de faktiske cases, men mere ærlig om processen. Hvis <em>'vibe coding'</em> er nyt for dig, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad det betyder.",
+      "Her lægger jeg de lidt løsere ting – projekter bygget med hjælp fra AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end hovedcasene, men mere ærlig om processen. Hvis <em>'vibe coding'</em> er nyt for dig, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad det betyder.",
     "lab.items.title": "Projekter fra Laboratoriet",
     "lab.items.intro":
-      "En samling af eksperimentelle løsninger og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
+      "En samling af eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
     "lab.bivi.title": "Bivi - Din Lille Medicinmakker",
     "lab.bivi.link": "Besøg siden/appen →",
     "lab.vibeloop.title": "VibeLoop - Humørbaseret Social App",
@@ -602,7 +602,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11y.cvd.protanopia": "Protanopi",
     "a11y.cvd.deuteranopia": "Deuteranopi",
     "a11y.cvd.tritanopia": "Tritanopi",
-    "a11y.cvd.desc": "Se hvordan siden kan fremstå med forskellige typer farvesyn.",
+    "a11y.cvd.desc": "Se siden, som en person med rød-grøn eller blå-gul farveblindhed ville se den.",
     "a11y.reset": "Nulstil indstillinger",
     "a11y.note": "Dine præferencer gemmes lokalt på din enhed.",
     "a11y.lang": "SPROG",

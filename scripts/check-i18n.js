@@ -88,6 +88,9 @@ function innerHtml(src, tagName, from) {
 
 const attrMap = { "data-i18n-aria": "aria-label", "data-i18n-tooltip": "data-tooltip", "data-i18n-placeholder": "placeholder" };
 
+// Elements whose page markup deliberately differs from the dictionary text (responsive spans)
+const skipText = new Set(["project.back"]);
+
 const errors = [];
 const used = new Set();
 const rel = (f) => path.relative(root, f);
@@ -117,11 +120,13 @@ for (const file of files) {
       checkKey(file, key, "data-i18n");
       const selfClosing = src[end - 2] === "/";
       const inner = selfClosing ? "" : innerHtml(src, t[1], end);
-      if (inner !== null && !selfClosing && !/[{}]/.test(inner) && translations.en[key] !== undefined) {
-        const page = plain(inner);
+      // {" "} is just a space that Astro would otherwise drop; anything else in braces is dynamic and skipped
+      const innerText = inner === null ? null : inner.replace(/\{" "\}/g, " ");
+      if (innerText !== null && !selfClosing && !skipText.has(key) && !/[{}]/.test(innerText) && translations.en[key] !== undefined) {
+        const page = plain(innerText);
         const dict = plain(translations.en[key]);
         if (page !== dict && !translations.en[key].includes("{year}")) {
-          errors.push(`${rel(file)}: "${key}" differs\n    page:       ${page}\n    dictionary: ${dict}`);
+          errors.push(`${rel(file)}: "${key}" differs\n    page:       ${page}\n    dictionary: ${dict}\n    danish:     ${plain(translations.da[key] ?? "")}`);
         }
       }
     }
@@ -136,6 +141,41 @@ for (const file of files) {
       if (v && translations.en[key] !== undefined && plain(v[1]) !== plain(translations.en[key])) {
         errors.push(`${rel(file)}: ${realAttr} for "${key}" differs\n    page:       ${plain(v[1])}\n    dictionary: ${plain(translations.en[key])}`);
       }
+    }
+  }
+}
+
+// Text that comes from data instead of markup: the About timeline (in about_me.astro) and the Lab projects.
+const aboutSrc = fs.readFileSync(path.join(root, "src/pages/about_me.astro"), "utf8");
+for (const m of aboutSrc.matchAll(/i18nKey:\s*(\d+),[\s\S]*?year:\s*"([^"]*)",\s*title:\s*"([^"]*)",\s*desc:\s*"([^"]*)"/g)) {
+  for (const [field, value] of [["year", m[2]], ["title", m[3]], ["desc", m[4]]]) {
+    const key = `timeline.${m[1]}.${field}`;
+    used.add(key);
+    if (translations.en[key] === undefined) errors.push(`src/pages/about_me.astro: timeline entry ${m[1]} has no "${key}" in the dictionary`);
+    else if (plain(value) !== plain(translations.en[key])) {
+      errors.push(`src/pages/about_me.astro: "${key}" differs\n    page:       ${plain(value)}\n    dictionary: ${plain(translations.en[key])}`);
+    }
+  }
+}
+
+// The case-page notices (project.db.notice.*, project.figma.notice) are defined in [slug].astro's frontmatter.
+const slugSrc = fs.readFileSync(path.join(root, "src/pages/[slug].astro"), "utf8");
+for (const m of slugSrc.matchAll(/key:\s*"(project\.[\w.]+)",[\s\S]{0,160}?text:\s*"([^"]*)"/g)) {
+  const key = m[1];
+  used.add(key);
+  if (translations.en[key] === undefined) errors.push(`src/pages/[slug].astro: "${key}" is missing from the dictionary`);
+  else if (plain(m[2]) !== plain(translations.en[key])) {
+    errors.push(`src/pages/[slug].astro: "${key}" differs\n    page:       ${plain(m[2])}\n    dictionary: ${plain(translations.en[key])}`);
+  }
+}
+
+const { labProjects } = await import("../src/data/labProjects.ts");
+for (const p of labProjects) {
+  for (const [key, fallback] of [[p.titleKey, p.titleFallback], [p.linkKey, p.linkFallback], [p.ariaLabelKey, p.ariaLabel]]) {
+    used.add(key);
+    if (translations.en[key] === undefined) errors.push(`src/data/labProjects.ts: "${key}" is missing from the dictionary`);
+    else if (plain(fallback) !== plain(translations.en[key])) {
+      errors.push(`src/data/labProjects.ts: "${key}" differs\n    data:       ${plain(fallback)}\n    dictionary: ${plain(translations.en[key])}`);
     }
   }
 }

@@ -11,10 +11,10 @@ Sara Ringkow Petersen's personal portfolio site, built with Astro + Tailwind CSS
 - `npm run dev` / `npm start` — local dev server at `localhost:4321`
 - `npm run build` — runs `validate-content` then `astro build`; output goes to `dist/`
 - `npm run preview` — preview the production build locally
-- `npm run validate-content` — runs both content checks below; this is a build gate, not optional tooling
+- `npm run validate-content` — runs all the content checks below; this is a build gate, not optional tooling
   - `npm run check-blog-ids` (`scripts/check-blog-ids.js`) — fails the build on duplicate blog post ids or `slug` frontmatter values in `src/content/blog`
   - `npm run check-project-data` (`scripts/validate-portfolio-data.js`) — fails the build on invalid/duplicate case-study or Lab-project slugs, missing bilingual fields, missing logo files, or malformed links in `src/data/caseStudies.ts` and `src/data/labProjects.ts`
-- `npm run check-i18n` (`scripts/check-i18n.js`) — compares the English text written in the page files with `src/i18n/translations.ts` and lists every difference, missing key and key without a Danish version. Not part of `validate-content` yet: it currently reports differences that need a decision about which wording is right.
+- `npm run check-i18n` (`scripts/check-i18n.js`) — compares the English text written in the page files with `src/i18n/translations.ts` and lists every difference, missing key and key without a Danish version. It is part of `validate-content`, so the build fails if the page text and the dictionary drift apart.
 - `npm run astro -- <command>` — run any Astro CLI command (e.g. `astro check`)
 
 There is no test suite; `validate-content` is the closest thing to CI and should be run after editing anything in `src/content/blog`, `src/data/caseStudies.ts`, or `src/data/labProjects.ts`.
