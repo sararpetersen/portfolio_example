@@ -257,34 +257,23 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     >
       Interests and hobbies
     </h2>
-    <div id="interests-and-hobbies" class="about-panel">
-      <div class="seal-grid">
-        <div class="seal-item">
-          <span class="seal seal-red" aria-hidden="true">和</span>
-          <div>
-            <h3 class="seal-title" data-i18n="interest.japanese.title">Japanese culture</h3>
-            <p class="seal-text" data-i18n="interest.japanese.text">I love the balance between simplicity, detail, and thoughtful storytelling.</p>
-          </div>
-        </div>
-        <div class="seal-item">
-          <span class="seal seal-blue" aria-hidden="true">組</span>
-          <div>
-            <h3 class="seal-title" data-i18n="interest.lego.title">Building with LEGO</h3>
-            <p class="seal-text" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
-          </div>
-        </div>
-        <div class="seal-item">
-          <span class="seal seal-ink" aria-hidden="true">園</span>
-          <div>
-            <h3 class="seal-title" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h3>
-            <p class="seal-text" data-i18n="interest.themepark.text">
-              Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
-              them.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ul id="interests-and-hobbies" class="plain-grid">
+      <li class="plain-item">
+        <h3 class="plain-title" data-i18n="interest.japanese.title">Japanese culture</h3>
+        <p class="plain-text" data-i18n="interest.japanese.text">I love the balance between simplicity, detail, and thoughtful storytelling.</p>
+      </li>
+      <li class="plain-item">
+        <h3 class="plain-title" data-i18n="interest.lego.title">Building with LEGO</h3>
+        <p class="plain-text" data-i18n="interest.lego.text">My creative outlet that doesn't require a screen.</p>
+      </li>
+      <li class="plain-item">
+        <h3 class="plain-title" data-i18n="interest.themepark.title">Theme parks &amp; attractions</h3>
+        <p class="plain-text" data-i18n="interest.themepark.text">
+          Something that somehow became a real passion. I love keeping up with the world of theme parks, their attractions, and the stories behind
+          them.
+        </p>
+      </li>
+    </ul>
   </section>
 
   <!-- Resources Section -->
@@ -296,14 +285,11 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     >
       Resources
     </h2>
-    <div id="resources-section" class="grid md:grid-cols-2 grid-cols-1 gap-5">
-      <div class="resource-row tag-tile">
-        <span class="tag-hole" aria-hidden="true"></span>
-        <div>
-          <p class="tag-label" aria-hidden="true">PDF · EN</p>
-          <h3 class="tag-title" data-i18n="resource.resume.en.title">Resume (EN)</h3>
-        </div>
-        <span class="self-start">
+    <ul id="resources-section" class="plain-grid plain-grid-2">
+      <li class="plain-item resource-row">
+        <p class="plain-label" aria-hidden="true">PDF · EN</p>
+        <h3 class="plain-title" data-i18n="resource.resume.en.title">Resume (EN)</h3>
+        <span class="self-start mt-4 inline-block">
           <Button
             href="/pdfs/CV_sararpetersen_(EN).pdf"
             target="_blank"
@@ -314,14 +300,11 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
             data-i18n-aria="resource.resume.en.aria"><span data-i18n="resource.resume.en.btn">View resume</span></Button
           >
         </span>
-      </div>
-      <div class="resource-row tag-tile">
-        <span class="tag-hole" aria-hidden="true"></span>
-        <div>
-          <p class="tag-label" aria-hidden="true">PDF · DA</p>
-          <h3 class="tag-title" data-i18n="resource.cv.da.title">CV (DA)</h3>
-        </div>
-        <span class="self-start">
+      </li>
+      <li class="plain-item resource-row">
+        <p class="plain-label" aria-hidden="true">PDF · DA</p>
+        <h3 class="plain-title" data-i18n="resource.cv.da.title">CV (DA)</h3>
+        <span class="self-start mt-4 inline-block">
           <Button
             href="/pdfs/CV_sararpetersen_(DA).pdf"
             target="_blank"
@@ -332,8 +315,8 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
             data-i18n-aria="resource.cv.da.aria"><span data-i18n="resource.cv.da.btn">Se CV</span></Button
           >
         </span>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 
   <!-- Navigation Back to Portfolio -->
@@ -481,21 +464,6 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     }
   }
 
-  /* Section panels: one soft tile per section, same family as the accordion tiles */
-  .about-panel,
-  .tag-tile {
-    border: 1px solid #d8d2cc;
-    border-radius: 1.75rem;
-    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
-    padding: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .about-panel {
-      padding: 2.25rem 2.5rem;
-    }
-  }
-
   /* Timeline: two open columns, hairline-separated entries, no container */
   .tl-columns {
     display: grid;
@@ -569,70 +537,39 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: #1a1a1a;
   }
 
-  .tl-desc,
-  .seal-text {
+  .tl-desc {
     max-width: 62ch;
     font-size: 0.95rem;
     line-height: 1.65;
     color: #2e2e2e;
   }
 
-  /* Interest seals */
-  .seal-grid {
+  /* Interests and resources: plain columns with a hairline on top, same language as the timeline */
+  .plain-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 0 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   @media (min-width: 768px) {
-    .seal-grid {
+    .plain-grid {
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.25rem;
+    }
+
+    .plain-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  .seal-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.1rem;
+  .plain-item {
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid #d8d2cc;
   }
 
-  @media (min-width: 768px) {
-    .seal-item {
-      flex-direction: column;
-    }
-  }
-
-  .seal {
-    display: inline-flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 9999px;
-    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1;
-    transform: rotate(-5deg);
-  }
-
-  .seal-red {
-    background: #a8412d;
-  }
-
-  .seal-blue {
-    background: #375567;
-  }
-
-  .seal-ink {
-    background: #1a1a1a;
-  }
-
-  .seal-title,
-  .tag-title {
+  .plain-title {
     margin-bottom: 0.4rem;
     font-family: var(--font-garamond);
     font-style: italic;
@@ -642,45 +579,19 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     color: #1a1a1a;
   }
 
-  /* Download tags */
-  .tag-tile {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.5rem;
-    min-height: 10rem;
-    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+  .plain-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #2e2e2e;
   }
 
-  .tag-hole {
-    position: absolute;
-    top: 1.1rem;
-    right: 1.25rem;
-    width: 0.9rem;
-    height: 0.9rem;
-    border: 2px solid #8f8882;
-    border-radius: 9999px;
-    background: #ffffff;
-  }
-
-  .tag-label {
-    margin-bottom: 0.5rem;
+  .plain-label {
+    margin-bottom: 0.4rem;
     color: #5a5149;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-  }
-
-  .tag-title {
-    margin-bottom: 0;
-  }
-
-  body.dark .about-panel,
-  body.dark .tag-tile {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
 
   body.dark .tl-list,
@@ -706,42 +617,25 @@ const workTimelineItems = newestFirst.filter((item) => item.category === "work")
     background: rgba(243, 185, 174, 0.3);
   }
 
-  body.dark .tl-title,
-  body.dark .seal-title,
-  body.dark .tag-title {
+  body.dark .tl-title {
     color: var(--text-on-dark);
   }
 
-  body.dark .tl-desc,
-  body.dark .seal-text {
+  body.dark .tl-desc {
     color: var(--text-on-dark-soft);
   }
 
-  body.dark .tag-label {
-    color: var(--text-on-dark-soft);
-  }
-
-  body.dark .tag-hole {
-    border-color: var(--dark-border-strong);
-    background: transparent;
-  }
-
-  body.dark .seal-blue {
-    background: #4a7088;
-  }
-
-  body.dark .seal-ink {
-    background: #f5f5f5;
-    color: #1a1a1a;
-  }
-
-  .portrait {
-    border: 1px solid #d8d2cc;
-    border-radius: 1.5rem;
-  }
-
-  body.dark .portrait {
+  body.dark .plain-item {
     border-color: var(--dark-border);
+  }
+
+  body.dark .plain-title {
+    color: var(--text-on-dark);
+  }
+
+  body.dark .plain-text,
+  body.dark .plain-label {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .acc-item {
