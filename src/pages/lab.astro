@@ -14,7 +14,7 @@ import { labProjects } from "../data/labProjects";
   ogdescription="Experimental tools and inclusive digital concepts exploring neurodivergence, disability and accessible design."
 >
   <!-- Lab Intro -->
-  <section id="lab" class="grid grid-cols-12 gap-x-0 gap-y-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 lg:px-0 px-8 relative">
+  <section id="lab" class="grid grid-cols-12 gap-x-0 gap-y-10 max-w-6xl mx-auto md:pt-desktop-top pt-mobil-top md:mt-16 mt-8 xl:px-0 px-6 relative">
     <div class="col-span-12">
       <div class="lg:pt-12 pt-16 mb-8">
         <div id="lab-title-row" class="mb-3">
@@ -30,7 +30,7 @@ import { labProjects } from "../data/labProjects";
 
       <!-- What is vibe coding -->
       <div id="lab-about">
-        <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border border-gray-500 rounded-3xl p-8 max-w-3xl">
+        <div class="lab-tile p-6 md:p-8 max-w-3xl">
           <h2 id="lab-vibe-title" class="font-garamond italic font-semibold text-gray-800 text-xl mb-3" data-i18n="lab.vibe.title">
             What is <em>'vibe coding'</em>?
           </h2>
@@ -45,15 +45,8 @@ import { labProjects } from "../data/labProjects";
     </div>
   </section>
 
-  <!-- Divider -->
-  <div id="lab-divider-1" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-20 pt-14 flex items-center gap-3 text-gray-300" aria-hidden="true">
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-    <span class="divider-center block h-2 w-2 rotate-45 border border-current/70"></span>
-    <span class="h-px flex-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-70"></span>
-  </div>
-
   <!-- Lab Items -->
-  <section id="lab-items" class="max-w-6xl mx-auto lg:px-0 px-6 md:pt-desktop-top pt-mobil-top">
+  <section id="lab-items" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-desktop-top pt-mobil-top">
     <h2 id="lab-items-title" class="font-garamond font-bold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3" data-i18n="lab.items.title">
       Projects from the Lab
     </h2>
@@ -77,7 +70,7 @@ import { labProjects } from "../data/labProjects";
         >
         <span data-i18n="lab.legend.longrunning">= developed over the longest period</span>
       </span>
-      <span class="text-gray-300 hidden lg:inline" aria-hidden="true">·</span>
+      <span class="text-gray-500 hidden lg:inline" aria-hidden="true">·</span>
       <span class="inline-flex flex-col items-start gap-1.5 lg:flex-row lg:items-center">
         <span
           class="lab-tag"
@@ -111,7 +104,6 @@ import { labProjects } from "../data/labProjects";
   html.has-js body:not(.reduce-motion) #lab-about,
   html.has-js body:not(.reduce-motion) #lab-items-title,
   html.has-js body:not(.reduce-motion) #lab-items-intro,
-  html.has-js body:not(.reduce-motion) #lab-divider-1,
   html.has-js body:not(.reduce-motion) #lab-item-bivi,
   html.has-js body:not(.reduce-motion) #lab-item-autismeguiden,
   html.has-js body:not(.reduce-motion) #lab-item-steady,
@@ -123,15 +115,22 @@ import { labProjects } from "../data/labProjects";
     will-change: transform, opacity;
   }
 
+  /* Same thin-border tile as the About, Contact and Blog pages */
+  .lab-tile {
+    border: 1px solid #d8d2cc;
+    border-radius: 1.5rem;
+    background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
+  }
+
+  /* Badges: one quiet pale chip style; the label text, not the colour, says which is which */
   .lab-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.35em;
     max-width: 100%;
     border-radius: 9999px;
-    border: 1px solid rgba(71, 123, 147, 0.4);
-    background: rgba(71, 123, 147, 0.1);
-    color: var(--brand-primary-strong);
+    background: #deebef;
+    color: #2f3f4c;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -141,18 +140,13 @@ import { labProjects } from "../data/labProjects";
   }
 
   .lab-tag:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #477b93;
+    outline: 3px solid #375567;
+    outline-offset: 2px;
   }
 
   .long-running-tag {
-    border-color: rgba(67, 56, 202, 0.38);
-    background: rgba(99, 102, 241, 0.1);
-    color: #4338ca;
-  }
-
-  #lab-divider-1 .divider-center {
-    background-color: #ffffff;
+    background: #375567;
+    color: #f5f5f5;
   }
 
   /* Dark mode — text */
@@ -170,12 +164,7 @@ import { labProjects } from "../data/labProjects";
   }
 
   /* Dark mode — card backgrounds */
-  body.dark #lab-about > div {
-    border-color: var(--dark-border);
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-  }
-
-  body.dark #lab-items article {
+  body.dark .lab-tile {
     border-color: var(--dark-border);
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
   }
@@ -183,27 +172,16 @@ import { labProjects } from "../data/labProjects";
 
   /* Dark mode — badges */
   body.dark .lab-tag {
-    border-color: rgba(192, 215, 225, 0.35);
-    background: rgba(71, 123, 147, 0.2);
-    color: var(--brand-primary-soft);
+    background: rgba(192, 215, 225, 0.18);
+    color: var(--text-on-dark);
   }
 
   body.dark .long-running-tag {
-    border-color: rgba(199, 210, 254, 0.4);
-    background: rgba(99, 102, 241, 0.2);
-    color: #c7d2fe;
+    background: #f5f5f5;
+    color: #1a1a1a;
   }
 
   body.dark .lab-legend {
     color: var(--text-on-dark-soft);
-  }
-
-  :global(body.dark) #lab-divider-1 {
-    color: var(--dark-border);
-  }
-
-  :global(body.dark) #lab-divider-1 .divider-center {
-    background-color: var(--dark-surface-strong);
-    border-color: var(--dark-border);
   }
 </style>
