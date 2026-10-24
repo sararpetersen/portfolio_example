@@ -351,22 +351,16 @@ import Cases from "../components/Cases.astro";
   }
 
   .testimonial-quote {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: #4b4b4b;
   }
 
-  /* The quote text sits in a <p> (page markup and dictionary), which has its own size; follow the quote instead,
-     so English and Danish render it the same size. */
+  /* The page wraps the quote in a <p> (the dictionary text does not, because injected text gets no scoped styles);
+     make the <p> follow the quote so English and Danish render it the same size. */
   .testimonial-quote :global(p) {
     font-size: inherit;
     line-height: inherit;
-  }
-
-  @media (min-width: 768px) {
-    .testimonial-quote {
-      font-size: 1.25rem;
-    }
   }
 
   body.calm-mode .bento-blue {

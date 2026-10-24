@@ -119,7 +119,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "diff.card1.label": "Lived experience",
     "diff.card1.title": "I design from the inside",
     "diff.card1.text":
-      "I have autism and ADD. That's not a footnote – it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.",
+      "I have autism and ADD. That's <strong>not a footnote</strong> – it's the reason accessibility is central to how I work, not just something I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.",
     "diff.card2.label": "Design + code",
     "diff.card2.title": "What I design, I can build",
     "diff.card2.text":
@@ -169,7 +169,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
       "Send an enquiry via the <a href='/contact#contact-form' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out'>contact form</a> or directly to <a class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 transition duration-300 ease-in-out' href='mailto:sara.ringkow@gmail.com'>sara.ringkow@gmail.com</a>. I aim to respond within 2-3 business days.",
     "terms.booking.h3.proposals": "Proposals and agreements",
     "terms.booking.p.proposals":
-      "A written quote or scope agreement is provided before any work begins. No work starts without mutual written confirmation of scope, timeline, and price.",
+      "A written quote or scope agreement is provided before any work begins. <strong>No work starts without mutual written confirmation</strong> of scope, timeline, and price.",
     "terms.booking.h3.payment": "Payment",
     "terms.booking.p.payment":
       "Onboarding-sessions are at <strong>100 DKK (approx. 13,38€)</strong> for 30 minutes. For projects, the cost will be agreed on, depending on scope. For larger engagements, a deposit of up to 50% may be required before work commences. If the project expands by more than 10% mid-way through, I reserve the right to pause work and invoice for an additional deposit. The final payment is due within <strong>7 days</strong> of delivery of the agreed deliverables, and invoicing is handled via email.",
@@ -443,7 +443,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "diff.card1.label": "Egne erfaringer",
     "diff.card1.title": "Jeg designer indefra",
     "diff.card1.text":
-      "Jeg har autisme og ADD. Det er ikke en fodnote – det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg lægger på til sidst. Jeg ved, hvordan det er at bruge digitale produkter, der ikke er bygget med én i tankerne, og det er det, der former alle mine beslutninger.",
+      "Jeg har autisme og ADD. Det er <strong>ikke en fodnote</strong> – det er grunden til, at tilgængelighed er central i mit arbejde, og ikke bare noget, jeg lægger på til sidst. Jeg ved, hvordan det er at bruge digitale produkter, der ikke er bygget med én i tankerne, og det er det, der former alle mine beslutninger.",
     "diff.card2.label": "Design + kode",
     "diff.card2.title": "Det jeg designer, kan jeg bygge",
     "diff.card2.text":

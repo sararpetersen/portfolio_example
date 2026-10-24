@@ -88,8 +88,14 @@ function innerHtml(src, tagName, from) {
 
 const attrMap = { "data-i18n-aria": "aria-label", "data-i18n-tooltip": "data-tooltip", "data-i18n-placeholder": "placeholder" };
 
+// Inline tags (strong, em, a, span...) in order, without attributes. A highlight that exists in the page but
+// not in the dictionary text disappears when the language is switched.
+const tagNames = (html) => (html.replace(/<!--[\s\S]*?-->/g, "").match(/<\/?[A-Za-z][\w.]*/g) || []).join(" ").toLowerCase();
+
 // Elements whose page markup deliberately differs from the dictionary text (responsive spans)
 const skipText = new Set(["project.back"]);
+// The page wraps the testimonial in a <p>; the dictionary text must not (injected text does not get scoped styles)
+const skipTags = new Set(["project.back", "testimonials.quote"]);
 
 const errors = [];
 const used = new Set();
@@ -125,6 +131,10 @@ for (const file of files) {
       if (innerText !== null && !selfClosing && !skipText.has(key) && !/[{}]/.test(innerText) && translations.en[key] !== undefined) {
         const page = plain(innerText);
         const dict = plain(translations.en[key]);
+        const tagsDiffer = !skipTags.has(key) && tagNames(innerText) !== tagNames(translations.en[key]);
+        if (tagsDiffer) {
+          errors.push(`${rel(file)}: "${key}" has different formatting tags\n    page:       ${tagNames(innerText) || "(none)"}\n    dictionary: ${tagNames(translations.en[key]) || "(none)"}`);
+        }
         if (page !== dict && !translations.en[key].includes("{year}")) {
           errors.push(`${rel(file)}: "${key}" differs\n    page:       ${page}\n    dictionary: ${dict}\n    danish:     ${plain(translations.da[key] ?? "")}`);
         }
@@ -182,6 +192,9 @@ for (const p of labProjects) {
 
 for (const key of Object.keys(translations.en)) {
   if (translations.da[key] === undefined) errors.push(`src/i18n/translations.ts: "${key}" has English but no Danish`);
+  else if (tagNames(translations.da[key]) !== tagNames(translations.en[key])) {
+    errors.push(`src/i18n/translations.ts: "${key}" has different formatting tags in English and Danish\n    english: ${tagNames(translations.en[key]) || "(none)"}\n    danish:  ${tagNames(translations.da[key]) || "(none)"}`);
+  }
 }
 for (const key of Object.keys(translations.da)) {
   if (translations.en[key] === undefined) errors.push(`src/i18n/translations.ts: "${key}" has Danish but no English`);
