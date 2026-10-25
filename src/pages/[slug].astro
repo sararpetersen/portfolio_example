@@ -324,6 +324,14 @@ const getPeriodWithoutDegree = (period?: string) => {
 </MainLayout>
 
 <style>
+  /* On phones the long single words (SUPERHELTEDAGEN, NEURODIVERGENT) must fit on one line instead of breaking mid-word.
+     The factor comes from the widest title word's width per font-size, over the width inside the hero padding. */
+  @media (max-width: 767px) {
+    #project-title {
+      font-size: min(1.8rem, calc((100vw - 6rem) / 12.5));
+    }
+  }
+
   .case-note {
     display: flex;
     align-items: flex-start;

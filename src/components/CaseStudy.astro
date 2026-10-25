@@ -17,7 +17,7 @@ const statusLabels = {
       href="/lab"
       class="case-back-link hover:text-blue-500 underline hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
     >
-      <span class="case-en">← Back to the Lab</span><span class="case-da">← Tilbage til Laboratoriet</span>
+      <span class="case-en">←&nbsp;Back to the Lab</span><span class="case-da">←&nbsp;Tilbage til Laboratoriet</span>
     </a>
   </nav>
 
@@ -144,8 +144,8 @@ const statusLabels = {
             data-aria-da={link.external === false ? link.label.da : `${link.label.da} (åbner i en ny fane)`}
           >
             <>
-              <span class="case-en">{link.label.en} →</span>
-              <span class="case-da">{link.label.da} →</span>
+              <span class="case-en">{link.label.en}&nbsp;→</span>
+              <span class="case-da">{link.label.da}&nbsp;→</span>
             </>
           </Button>
         ))
