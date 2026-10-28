@@ -329,7 +329,7 @@ const currentYear = new Date().getFullYear();
   >
     <p class="text-gray-300 text-xs" data-i18n="footer.copyright">© {currentYear} · SRP Portfolio - Sara Ringkow Petersen. All rights reserved.</p>
     <div class="flex flex-wrap items-center gap-2">
-      <a href="/accessibility" class="text-gray-300 text-xs border border-gray-600 rounded-full px-3 py-1 hover:cursor-pointer hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" data-i18n="a11ystmt.title">Accessibility statement</a>
+      <a id="a11y-statement-link" href="/accessibility" class="text-gray-300 text-xs border border-gray-600 rounded-full px-3 py-1 hover:cursor-pointer hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" data-i18n="a11ystmt.title">Accessibility statement</a>
           <button
       id="terms-modal-trigger"
       class="text-gray-300 text-xs border border-gray-600 rounded-full px-3 py-1 hover:cursor-pointer hover:text-gray-100 hover:border-gray-400 hover:bg-gray-700 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
@@ -565,11 +565,18 @@ const currentYear = new Date().getFullYear();
   body.dark #footer-bottom p {
     color: var(--text-on-dark-soft, #c0c0c0);
   }
-  body.dark #terms-modal-trigger {
+  /* The statement link is an <a>, so give it the button's font and line height to make the two pills identical */
+  #a11y-statement-link {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    line-height: 16px;
+  }
+  body.dark #terms-modal-trigger,
+  body.dark #a11y-statement-link {
     color: var(--text-on-dark-soft, #c0c0c0);
     border-color: #4a4a4a;
   }
-  body.dark #terms-modal-trigger:hover {
+  body.dark #terms-modal-trigger:hover,
+  body.dark #a11y-statement-link:hover {
     color: var(--text-on-dark, #f0f0f0);
     border-color: var(--brand-primary-soft);
     background: rgba(71, 123, 147, 0.15);
