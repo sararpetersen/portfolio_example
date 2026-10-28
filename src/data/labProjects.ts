@@ -15,18 +15,6 @@ export interface LabProject {
 
 export const labProjects: LabProject[] = [
   {
-    slug: "bivi",
-    year: "2026",
-    titleKey: "lab.bivi.title",
-    titleFallback: "Bivi - Your Little Medication Sidekick",
-    linkKey: "lab.bivi.link",
-    linkFallback: "Visit site/app\u00a0→",
-    href: "https://web-bivi.netlify.app/",
-    ariaLabel: "Visit Bivi website (opens in new tab)",
-    ariaLabelKey: "lab.bivi.aria",
-    featured: true,
-  },
-  {
     slug: "steady",
     year: "2026",
     titleKey: "lab.steady.title",
@@ -36,7 +24,19 @@ export const labProjects: LabProject[] = [
     href: "/steady",
     ariaLabel: "Read the Steady case study",
     ariaLabelKey: "lab.steady.aria",
+    featured: true,
     longRunning: true,
+  },
+  {
+    slug: "bivi",
+    year: "2026",
+    titleKey: "lab.bivi.title",
+    titleFallback: "Bivi - Your Little Medication Sidekick",
+    linkKey: "lab.bivi.link",
+    linkFallback: "Visit site/app\u00a0→",
+    href: "https://web-bivi.netlify.app/",
+    ariaLabel: "Visit Bivi website (opens in new tab)",
+    ariaLabelKey: "lab.bivi.aria",
   },
   {
     slug: "autismeguiden",
