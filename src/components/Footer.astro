@@ -570,6 +570,10 @@ const currentYear = new Date().getFullYear();
     font-family: ui-sans-serif, system-ui, sans-serif;
     line-height: 16px;
   }
+  /* footer a:hover would turn the text light blue; the Terms button keeps the Tailwind hover colour, so do the same */
+  #a11y-statement-link:hover {
+    color: #f0ebe6;
+  }
   body.dark #terms-modal-trigger,
   body.dark #a11y-statement-link {
     color: var(--text-on-dark-soft, #c0c0c0);
