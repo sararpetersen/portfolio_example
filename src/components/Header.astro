@@ -33,7 +33,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       id="fontCycleToggle"
       type="button"
       aria-pressed="false"
-      aria-label="Reading font: Default. Click to cycle to the next option."
+      aria-label="Aa reading font: Default. Click to cycle to the next option."
       class="bar-quick-btn tooltip-below tooltip-align-left"
       data-tooltip="Font: Default"
     >
@@ -469,7 +469,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     width: 26px;
     height: 26px;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.42);
     background: transparent;
     color: #ffffff;
     cursor: pointer;
@@ -683,8 +683,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     btn.setAttribute(
       "aria-label",
       lang === "da"
-        ? `Læseskrift: ${label}. Klik for at skifte til næste valgmulighed.`
-        : `Reading font: ${label}. Click to cycle to the next option.`,
+        ? `Aa læseskrift: ${label}. Klik for at skifte til næste valgmulighed.`
+        : `Aa reading font: ${label}. Click to cycle to the next option.`,
     );
     btn.setAttribute("aria-pressed", String(font !== "default"));
   }
