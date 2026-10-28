@@ -1,0 +1,182 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout
+  title="Accessibility statement | SRP Portfolio"
+  description="How accessible sararingkow.dk is, which standard it follows, what is known to be missing and how to report a barrier."
+  ogtitle="Accessibility statement – SRP Portfolio"
+  ogdescription="The accessibility standard, features, checks and known limitations of sararingkow.dk."
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-0 md:pt-desktop-top pt-mobil-top">
+    <div id="a11ystmt-header" class="md:pt-28 pt-24">
+      <h1
+        class="uppercase tracking-[0.14em] md:tracking-[0.18em] font-nikumaru text-[1.85rem] md:text-h2-desktop mb-3 [overflow-wrap:anywhere]"
+        data-i18n="a11ystmt.title"
+      >
+        Accessibility statement
+      </h1>
+      <p class="text-gray-500 text-sm font-inter mb-6" data-i18n="a11ystmt.updated">Last updated: October 28, 2026</p>
+    </div>
+
+    <nav aria-label="Accessibility statement navigation" data-i18n-aria="a11ystmt.nav.aria" class="terms-toc">
+      <a href="#standard" class="pill" data-i18n="a11ystmt.nav.standard">Standard and status</a>
+      <a href="#features" class="pill" data-i18n="a11ystmt.nav.features">What the site offers</a>
+      <a href="#checks" class="pill" data-i18n="a11ystmt.nav.checks">How it is checked</a>
+      <a href="#limits" class="pill" data-i18n="a11ystmt.nav.limits">Known limitations</a>
+      <a href="#feedback" class="pill" data-i18n="a11ystmt.nav.feedback">Report a barrier</a>
+    </nav>
+
+    <section id="standard" class="terms-section">
+      <h2 class="terms-heading" data-i18n="a11ystmt.standard.h2">Standard and status</h2>
+      <p class="terms-sub mb-6" data-i18n="a11ystmt.standard.sub">What I build to, and what applies</p>
+      <div class="terms-body flex flex-col gap-gap">
+        <p class="text-gray-600 leading-relaxed" data-i18n="a11ystmt.standard.p1">I build this portfolio to meet <strong>WCAG 2.2 level AA</strong>. The European standard for digital accessibility, EN 301 549, is based on the same guidelines.</p>
+        <p class="text-gray-600 leading-relaxed" data-i18n="a11ystmt.standard.p2">This is a personal portfolio. As far as I know it falls outside the EU Web Accessibility Directive (public-sector websites) and the European Accessibility Act (products and services such as e-commerce and banking). I follow the standard anyway, because accessible design is what I work with.</p>
+      </div>
+    </section>
+    <section id="features" class="terms-section">
+      <h2 class="terms-heading" data-i18n="a11ystmt.features.h2">What the site offers</h2>
+      <p class="terms-sub mb-6" data-i18n="a11ystmt.features.sub">Built in, not bolted on</p>
+      <div class="terms-body flex flex-col gap-gap">
+        <ul class="text-gray-600 leading-relaxed list-disc pl-6 flex flex-col gap-2">
+          <li data-i18n="a11ystmt.features.li1">Larger text, four reading fonts (including Atkinson Hyperlegible and OpenDyslexic), dark mode and calm colours.</li>
+          <li data-i18n="a11ystmt.features.li2">Reduced motion, a focus mode and a colour-vision simulation, all in the accessibility bar at the top of every page.</li>
+          <li data-i18n="a11ystmt.features.li3">Everything can be used with a keyboard, with a visible focus indicator.</li>
+          <li data-i18n="a11ystmt.features.li4">The whole site is available in English and Danish, and the page language is updated when you switch.</li>
+          <li data-i18n="a11ystmt.features.li5">Your settings are only saved in your own browser. No personal data is involved.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="checks" class="terms-section">
+      <h2 class="terms-heading" data-i18n="a11ystmt.checks.h2">How it is checked</h2>
+      <p class="terms-sub mb-6" data-i18n="a11ystmt.checks.sub">Automated and by hand</p>
+      <div class="terms-body flex flex-col gap-gap">
+        <p class="text-gray-600 leading-relaxed" data-i18n="a11ystmt.checks.p1">I run automated scans (axe-core and EqualWeb) regularly and fix what they find. I also check by hand that colour contrast holds up in every colour mode, that pages work at 320 px wide without sideways scrolling, and that nothing breaks when text spacing is increased.</p>
+      </div>
+    </section>
+    <section id="limits" class="terms-section">
+      <h2 class="terms-heading" data-i18n="a11ystmt.limits.h2">Known limitations</h2>
+      <p class="terms-sub mb-6" data-i18n="a11ystmt.limits.sub">What I know is not perfect yet</p>
+      <div class="terms-body flex flex-col gap-gap">
+        <ul class="text-gray-600 leading-relaxed list-disc pl-6 flex flex-col gap-2">
+          <li data-i18n="a11ystmt.limits.li1">The site has not yet had a full manual review with screen readers.</li>
+          <li data-i18n="a11ystmt.limits.li2">Some professional terms, such as UX/UI or CMS, are not explained everywhere.</li>
+          <li data-i18n="a11ystmt.limits.li3">My CV is available as PDF files, which are separate documents that I have not reviewed to the same level as the pages.</li>
+          <li data-i18n="a11ystmt.limits.li4">Projects that I link to in the Lab and in the case studies are separate websites, and I do not control their accessibility.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="feedback" class="terms-section">
+      <h2 class="terms-heading" data-i18n="a11ystmt.feedback.h2">Report a barrier</h2>
+      <p class="terms-sub mb-6" data-i18n="a11ystmt.feedback.sub">Tell me what is in your way</p>
+      <div class="terms-body flex flex-col gap-gap">
+        <p class="text-gray-600 leading-relaxed" data-i18n="a11ystmt.feedback.p1">If something on this site is hard or impossible for you to use, please tell me. Write to <a href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a> or use the <a href="/contact">contact form</a>, and say which page it was and what happened. Phone calls can be difficult for me, so email is the fastest way to reach me.</p>
+      </div>
+    </section>
+  </section>
+</MainLayout>
+
+<style>
+  .terms-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  /* Sections are separated by a hairline instead of a divider ornament */
+  .terms-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #d8d2cc;
+  }
+  .terms-section:first-of-type {
+    margin-top: 3rem;
+  }
+
+  .terms-heading {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    font-style: italic;
+    color: #1a1a1a;
+  }
+  .terms-sub {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3e657c;
+    font-weight: 600;
+  }
+  @media (min-width: 768px) {
+    .terms-heading {
+      font-size: 2.1rem;
+      text-align: left;
+    }
+    .terms-sub {
+      text-align: left;
+    }
+
+    .terms-body code {
+      font-size: 14px;
+    }
+  }
+
+
+  .terms-body {
+    display: flex;
+    flex-direction: column;
+  }
+  :global(.terms-body a) {
+    color: #3e657c;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-size: 1rem;
+  }
+  :global(.terms-body a:hover) {
+    color: #334857;
+  }
+  :global(.terms-body code) {
+    font-size: 14px;
+    background: #f0ebe6;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  /* Dark mode */
+  body.dark #a11ystmt-header h1 {
+    color: var(--text-on-dark);
+  }
+  body.dark #a11ystmt-header p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .terms-section {
+    border-color: var(--dark-border);
+  }
+  body.dark .terms-heading {
+    color: var(--text-on-dark);
+  }
+  body.dark .terms-sub {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  body.dark .terms-body p {
+    color: var(--text-on-dark-soft, #c0c0c0);
+  }
+  body.dark .terms-body h3 {
+    color: var(--text-on-dark, #f0f0f0);
+  }
+  :global(body.dark .terms-body strong) {
+    color: var(--text-on-dark, #f0f0f0);
+  }
+  :global(body.dark .terms-body a) {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  :global(body.dark .terms-body a:hover) {
+    color: var(--brand-primary-strong, #95bccb);
+  }
+  :global(body.dark .terms-body code) {
+    background: var(--dark-surface, #2a2a2a);
+    color: var(--text-on-dark-soft);
+  }
+</style>
