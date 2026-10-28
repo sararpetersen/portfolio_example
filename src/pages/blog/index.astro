@@ -96,27 +96,44 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
             })();
           </script>
 
-          <div id="blog-post-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {posts.map((post, index) => (
-              <article
-                class:list={[
-                  "blog-card blog-tile p-5",
-                  { "blog-card--extra": index >= initialPostCount },
-                ]}
-                data-tags={JSON.stringify(post.data.tags)}
-              >
-                <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500 mb-3">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
-                <h2 lang={post.data.lang} class="text-lg italic font-bold leading-snug mb-2">{post.data.title}</h2>
-                <p lang={post.data.lang} class="text-sm text-gray-600 leading-relaxed mb-4">{post.data.excerpt}</p>
-                <a
-                  href={`/blog/${post.id}`}
-                  class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+          <div id="blog-post-grid" class="flex flex-col">
+            {posts.map((post, index) => {
+              const isLatest = index === 0;
+              return (
+                <article
+                  class:list={[
+                    "blog-card",
+                    isLatest ? "blog-tile blog-latest p-6 md:p-8 mb-4 md:mb-6" : "blog-row py-6 md:py-7 md:grid md:grid-cols-[9rem_minmax(0,1fr)] md:gap-x-8",
+                    { "blog-card--extra": index >= initialPostCount },
+                  ]}
+                  data-tags={JSON.stringify(post.data.tags)}
                 >
-                  <span data-i18n="blog.read">Read post&nbsp;→</span>
-                  <span class="sr-only" lang={post.data.lang}>: {post.data.title}</span>
-                </a>
-              </article>
-            ))}
+                  <div class="mb-3 md:mb-0 flex flex-wrap items-center gap-3 md:flex-col md:items-start md:gap-2">
+                    <p class="text-[11px] uppercase tracking-[0.12em] text-gray-500">{post.data.publishDate.toLocaleDateString("en-GB")}</p>
+                    {isLatest && (
+                      <span class="pill" data-i18n="blog.latest">
+                        Latest post
+                      </span>
+                    )}
+                  </div>
+                  <div class="max-w-3xl">
+                    <h2 lang={post.data.lang} class:list={["italic font-bold leading-snug mb-2", isLatest ? "text-2xl md:text-3xl" : "text-xl md:text-[1.4rem]"]}>
+                      {post.data.title}
+                    </h2>
+                    <p lang={post.data.lang} class:list={["text-gray-600 leading-relaxed mb-4", isLatest ? "text-base" : "text-sm"]}>
+                      {post.data.excerpt}
+                    </p>
+                    <a
+                      href={`/blog/${post.id}`}
+                      class="py-1 md:text-p-desktop text-[15px] text-gray-500 hover:text-blue-400 hover:underline transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                    >
+                      <span data-i18n="blog.read">Read post&nbsp;→</span>
+                      <span class="sr-only" lang={post.data.lang}>: {post.data.title}</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
           <p id="blog-filter-empty" class="hidden blog-tile p-6 text-gray-700 mt-5" data-i18n="blog.filter.empty">
             No posts match this category yet.
@@ -250,9 +267,16 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     color: var(--text-on-dark-soft);
   }
 
-  body.dark .blog-card {
-    background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
-    border-color: var(--dark-border);
+  /* Only the newest post is a tile; the rest are open rows between hairlines */
+  .blog-row {
+    border-top: 1px solid #a8a098;
+  }
+  #blog-post-grid {
+    border-bottom: 1px solid #a8a098;
+  }
+  body.dark .blog-row,
+  body.dark #blog-post-grid {
+    border-color: rgba(255, 255, 255, 0.28);
   }
 
   body.dark .blog-card p,
