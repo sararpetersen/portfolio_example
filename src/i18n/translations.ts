@@ -173,7 +173,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11ystmt.limits.li4": "Projects that I link to in the Lab and in the case studies are separate websites, and I do not control their accessibility.",
     "a11ystmt.feedback.h2": "Report a barrier",
     "a11ystmt.feedback.sub": "Tell me what is in your way",
-    "a11ystmt.feedback.p1": "If something on this site is hard or impossible for you to use, please tell me. Write to <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, message me on <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> or use the <a href=\"/contact\">contact form</a>, and say which page it was and what happened. Phone calls can be difficult for me, so email or LinkedIn are the fastest ways to reach me.",
+    "a11ystmt.feedback.p1": "If something on this site is hard or impossible for you to use, please tell me. Write to <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, message me on <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> or use the <a href=\"/contact\">contact form</a>, and say which page it was and what happened. Phone calls can be difficult for me, so I prefer written messages.",
     "terms.privacy.sub": "What data is collected and why",
     "terms.privacy.h3.collected": "Data collected",
     "terms.privacy.p.collected1":
@@ -528,7 +528,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11ystmt.limits.li4": "Projekter, jeg linker til i Lab og i casene, er separate hjemmesider, og jeg bestemmer ikke over deres tilgængelighed.",
     "a11ystmt.feedback.h2": "Meld en barriere",
     "a11ystmt.feedback.sub": "Fortæl mig, hvad der står i vejen",
-    "a11ystmt.feedback.p1": "Hvis noget på denne side er svært eller umuligt for dig at bruge, så fortæl mig det. Skriv til <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, skriv til mig på <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> eller brug <a href=\"/contact\">kontaktformularen</a>, og skriv, hvilken side det drejede sig om, og hvad der skete. Telefonopkald kan være svære for mig, så e-mail eller LinkedIn er de hurtigste måder at nå mig på.",
+    "a11ystmt.feedback.p1": "Hvis noget på denne side er svært eller umuligt for dig at bruge, så fortæl mig det. Skriv til <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, skriv til mig på <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> eller brug <a href=\"/contact\">kontaktformularen</a>, og skriv, hvilken side det drejede sig om, og hvad der skete. Telefonopkald kan være svære for mig, så jeg foretrækker skriftlige beskeder.",
     "terms.privacy.sub": "Hvad der indsamles og hvorfor",
     "terms.privacy.h3.collected": "Indsamlet data",
     "terms.privacy.p.collected1":
