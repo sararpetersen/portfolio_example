@@ -124,17 +124,17 @@ import Cases from "../components/Cases.astro";
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-12 grid-cols-1 gap-5">
-      <article id="diff-card-1" class="diff-card bento-tile bento-blue lg:col-span-7">
+    <div class="grid lg:grid-cols-12 grid-cols-1 gap-x-10 gap-y-8 lg:gap-y-10">
+      <article id="diff-card-1" class="diff-card bento-tile bento-blue lg:col-span-12">
         <p class="diff-card-label" data-i18n="diff.card1.label">Lived experience</p>
         <h3 class="bento-title" data-i18n="diff.card1.title">I design from the inside</h3>
-        <p class="bento-text" data-i18n="diff.card1.text">
+        <p class="bento-text max-w-3xl" data-i18n="diff.card1.text">
           I have autism and ADD. That's <strong>not a footnote</strong> – it's the reason accessibility is central to how I work, not just something
           I layer on at the end. I know what it's like to use digital products that weren't built with you in mind, and that shapes every decision I make.
         </p>
       </article>
 
-      <article id="diff-card-2" class="diff-card bento-tile bento-soft lg:col-span-5">
+      <article id="diff-card-2" class="diff-card diff-open lg:col-span-6">
         <p class="diff-card-label" data-i18n="diff.card2.label">Design + code</p>
         <h3 class="bento-title" data-i18n="diff.card2.title">What I design, I can build</h3>
         <p class="bento-text" data-i18n="diff.card2.text">
@@ -143,10 +143,10 @@ import Cases from "../components/Cases.astro";
         </p>
       </article>
 
-      <article id="diff-card-3" class="diff-card bento-tile bento-pale lg:col-span-12">
+      <article id="diff-card-3" class="diff-card diff-open lg:col-span-6">
         <p class="diff-card-label" data-i18n="diff.card3.label">Proof, not promises</p>
         <h3 class="bento-title" data-i18n="diff.card3.title">The portfolio you're looking at is the work</h3>
-        <p class="bento-text max-w-3xl" data-i18n="diff.card3.text">
+        <p class="bento-text" data-i18n="diff.card3.text">
           This site has dark mode, focus mode, 4 different reading fonts, keyboard navigation, and bilingual support; all built by me. That, to me, is
           proof that I know <strong>how important accessibility is in web design</strong>. That it's not just something I claim to know.
         </p>
@@ -278,6 +278,21 @@ import Cases from "../components/Cases.astro";
     }
   }
 
+  /* Cards two and three are open: a hairline, a label, a big italic title and text, no box */
+  .diff-open {
+    border-top: 1px solid #a8a098;
+    padding-top: 1.5rem;
+  }
+  .diff-open .diff-card-label {
+    color: #375567;
+  }
+  .diff-open .bento-title {
+    color: #1a1a1a;
+  }
+  .diff-open .bento-text {
+    color: #4b4b4b;
+  }
+
   .bento-blue {
     background: #375567;
     color: #f5f5f5;
@@ -383,6 +398,17 @@ import Cases from "../components/Cases.astro";
   body.dark .bento-tile {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     border-color: var(--dark-border);
+  }
+
+  body.dark .diff-open {
+    background: none;
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+  body.dark .diff-open .diff-card-label {
+    color: var(--brand-primary-soft, #c0d7e1);
+  }
+  body.dark .diff-open .bento-text {
+    color: var(--text-on-dark-soft);
   }
 
   body.dark .bento-pale {
