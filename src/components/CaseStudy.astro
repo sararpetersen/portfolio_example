@@ -21,8 +21,8 @@ const statusLabels = {
     </a>
   </nav>
 
-  <header class="case-hero">
-    <p class="mb-4"><span class="pill">{caseStudy.year} · UX/UI case study</span></p>
+  <header class="case-hero case-hero-b">
+    <p class="case-hero-chip mb-4">{caseStudy.year} · UX/UI case study</p>
     <div class="flex items-center gap-4 mb-1">
       {caseStudy.logo && <img src={caseStudy.logo} alt="" width="48" height="48" class="shrink-0" />}
       <h1 class="font-nikumaru not-italic uppercase tracking-[0.14em] text-h3-mobile md:text-h2-desktop [overflow-wrap:anywhere] min-w-0">
@@ -36,15 +36,15 @@ const statusLabels = {
       <span class="case-en">{caseStudy.summary.en}</span><span class="case-da">{caseStudy.summary.da}</span>
     </p>
 
-    <dl class="grid md:grid-cols-2 gap-5 mt-9 pt-7 border-t border-[#a8a098]">
+    <dl class="grid md:grid-cols-2 gap-5 mt-9 pt-7 border-t border-[rgba(245,245,245,0.3)]">
       <div>
-        <dt class="case-dt text-xs uppercase tracking-widest font-bold mb-1">
+        <dt class="case-hero-dt text-xs uppercase tracking-widest font-bold mb-1">
           <span class="case-en">Role</span><span class="case-da">Rolle</span>
         </dt>
         <dd class="text-gray-700"><span class="case-en">{caseStudy.role.en}</span><span class="case-da">{caseStudy.role.da}</span></dd>
       </div>
       <div>
-        <dt class="case-dt text-xs uppercase tracking-widest font-bold mb-1">
+        <dt class="case-hero-dt text-xs uppercase tracking-widest font-bold mb-1">
           <span class="case-en">Audience</span><span class="case-da">Målgruppe</span>
         </dt>
         <dd class="text-gray-700"><span class="case-en">{caseStudy.audience.en}</span><span class="case-da">{caseStudy.audience.da}</span></dd>
@@ -52,7 +52,7 @@ const statusLabels = {
     </dl>
   </header>
 
-  <aside aria-labelledby="case-navigation-title" class="case-nav my-10 pt-6 border-t border-[#a8a098]">
+  <aside aria-labelledby="case-navigation-title" class="case-nav case-tile my-10 p-6">
     <h2 id="case-navigation-title" class="font-garamond italic font-bold text-h4-mobile md:text-h4-desktop text-gray-800 mb-3">
       <span class="case-en">In this case</span><span class="case-da">I denne case</span>
     </h2>
@@ -172,10 +172,6 @@ const statusLabels = {
     background: linear-gradient(to bottom right, #f5f5f5, #f0ebe6);
   }
 
-  .case-dt {
-    color: #375567;
-  }
-
   /* Calm mode lightens the heading grey to 4.4:1 on the page; keep headings readable */
   :global(body.calm-mode:not(.dark)) .case-study h2 {
     color: #262626;
@@ -211,19 +207,13 @@ const statusLabels = {
     color: var(--text-on-dark);
   }
 
+  :global(body.dark) .case-hero,
   :global(body.dark) .case-study .case-tile {
     background: linear-gradient(to bottom right, var(--dark-gradient-start), var(--dark-gradient-end));
     border-color: var(--dark-border);
   }
   :global(body.dark) .case-study .case-section {
     border-color: var(--dark-border);
-  }
-  :global(body.dark) .case-study .case-nav,
-  :global(body.dark) .case-study dl {
-    border-color: rgba(255, 255, 255, 0.28);
-  }
-  :global(body.dark) .case-study .case-dt {
-    color: var(--brand-primary-soft, #c0d7e1);
   }
   :global(body.dark) .case-study .case-nav-link {
     color: var(--brand-primary-soft);
