@@ -18,7 +18,7 @@ The brief was small: an accessibility poster I was checking this site against po
 
 ## What the AI got right, immediately
 
-It found the right spot without me pointing at it— between the GDPR note and the submit button, matching the existing fine-print styling exactly rather than introducing a new visual pattern. It wrote both the English and Danish versions in one pass, correctly using this site's actual i18n key convention (`contact.form.next`, sitting next to the existing `contact.form.gdpr`) instead of inventing a new pattern. And the copy itself covered all 3 things the source guidance actually asked for— where the message goes, what confirmation looks like, and a timeframe —without me having to spell that checklist out explicitly. That's a genuinely strong first pass, and it's the part of vibe coding that still impresses me: it had clearly _"read"_ the surrounding code's conventions, not just the instruction.
+It found the right spot without me pointing at it– between the GDPR note and the submit button, matching the existing fine-print styling exactly rather than introducing a new visual pattern. It wrote both the English and Danish versions in one pass, correctly using this site's actual i18n key convention (`contact.form.next`, sitting next to the existing `contact.form.gdpr`) instead of inventing a new pattern. And the copy itself covered all 3 things the source guidance actually asked for– where the message goes, what confirmation looks like, and a timeframe –without me having to spell that checklist out explicitly. That's a genuinely strong first pass, and it's the part of vibe coding that still impresses me: it had clearly _"read"_ the surrounding code's conventions, not just the instruction.
 
 ## Where it went wrong, and why the mistake was subtle
 
@@ -32,11 +32,11 @@ Here's the part worth writing down. When I mentioned the spacing between the new
 
 The new paragraph had a different `data-i18n` value, so it wasn't covered by that rule. In light mode this was invisible. Both paragraphs use the same gray on a light background regardless. In dark mode, the new note would have rendered as dark gray text on a dark background, nearly unreadable. Nobody would have caught this by looking at the page in the mode it was built in, because it only breaks in the _other_ mode.
 
-This is exactly the failure mode I described in the first post: it's not that the AI wrote bad code. Both the markup and the styling approach were sound. It's that the AI— and, in the moment, me too —was reasoning about the one component in isolation and not tracing every existing rule that happened to scope itself narrowly to a sibling element. That's a _"hold the whole system in your head"_ problem, and it's still squarely a human judgment task, not a prompting task.
+This is exactly the failure mode I described in the first post: it's not that the AI wrote bad code. Both the markup and the styling approach were sound. It's that the AI– and, in the moment, me too –was reasoning about the one component in isolation and not tracing every existing rule that happened to scope itself narrowly to a sibling element. That's a _"hold the whole system in your head"_ problem, and it's still squarely a human judgment task, not a prompting task.
 
 ## What actually caught it
 
-Not a smarter prompt. A dark-mode check, on purpose, as its own separate verification step— which is the same lesson from [auditing my own portfolio for accessibility](/blog/auditing-my-portfolio-for-accessibility): most of the things that go wrong on this site are invisible in whichever mode you happened to be looking at when you built the feature. The fix was one line— widen the selector to cover both paragraphs —but finding it required deliberately switching modes and looking, not reading the diff and just assuming it was fine because it compiled and matched the design.
+Not a smarter prompt. A dark-mode check, on purpose, as its own separate verification step– which is the same lesson from [auditing my own portfolio for accessibility](/blog/auditing-my-portfolio-for-accessibility): most of the things that go wrong on this site are invisible in whichever mode you happened to be looking at when you built the feature. The fix was one line– widen the selector to cover both paragraphs –but finding it required deliberately switching modes and looking, not reading the diff and just assuming it was fine because it compiled and matched the design.
 
 ## The actual takeaway
 

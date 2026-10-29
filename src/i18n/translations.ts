@@ -44,7 +44,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "about.background.text":
       "I've always been drawn to creativity – drawing, painting, just making stuff in general. I knew fairly early on that, someday, I wanted that to be part of my career. As I got older, however, I also became interested in technology, so I spent a long time trying to figure out how to combine the two. Multimedia Design is where those things came together. It gave me a way to work with both design and technology, and to think carefully about how things are built, and not just how they look.",
     "about.inspiration.text":
-      "As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions— a clear label, a consistent layout, a well-structured page —often matter more than people expect.",
+      "As someone who's late-diagnosed with autism and ADD, I know what it's like to use digital platforms that weren't built with you in mind. My neurodivergent perspective shapes the way I think about accessibility, structure, and user needs. Rather than a checklist, it's something that runs through the whole process. I care about making things easier to understand, navigate, and use. And I find that the small decisions– a clear label, a consistent layout, a well-structured page –often matter more than people expect.",
     "about.goals.text":
       "I want to work on digital things that are genuinely accessible – not just technically compliant, but usable for real people. I care about getting the details right: structure, clarity, and the parts users actually interact with. Right now I'm building that through studying, working, and making things. My aim is to keep doing that in a context where good design actually matters.",
     "timeline.title": "The highlights of my journey",
@@ -153,27 +153,33 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11ystmt.nav.feedback": "Report a barrier",
     "a11ystmt.standard.h2": "Standard and status",
     "a11ystmt.standard.sub": "What I build to, and what applies",
-    "a11ystmt.standard.p1": "I build this portfolio to meet <strong>WCAG 2.2 level AA</strong>. The European standard for digital accessibility, EN 301 549, is based on the same guidelines.",
-    "a11ystmt.standard.p2": "This is a personal portfolio. As far as I know it falls outside the EU Web Accessibility Directive <em>(public-sector websites)</em> and the European Accessibility Act <em>(products and services such as e-commerce and banking)</em>. I follow the standard anyway, because accessible design is what I work with.",
+    "a11ystmt.standard.p1":
+      "I build this portfolio to meet <strong>WCAG 2.2 level AA</strong>. The European standard for digital accessibility, EN 301 549, is based on the same guidelines.",
+    "a11ystmt.standard.p2":
+      "This is a personal portfolio. As far as I know it falls outside the EU Web Accessibility Directive <em>(public-sector websites)</em> and the European Accessibility Act <em>(products and services such as e-commerce and banking)</em>. I follow the standard anyway, because accessible design is what I work with.",
     "a11ystmt.features.h2": "What the site offers",
     "a11ystmt.features.sub": "Built in, not bolted on",
-    "a11ystmt.features.li1": "Larger text, four reading fonts <em>(including Atkinson Hyperlegible and OpenDyslexic)</em>, dark mode and calm colours.",
+    "a11ystmt.features.li1":
+      "Larger text, four reading fonts <em>(including Atkinson Hyperlegible and OpenDyslexic)</em>, dark mode and calm colours.",
     "a11ystmt.features.li2": "Reduced motion, a focus mode and a colour-vision simulation, all in the accessibility bar at the top of every page.",
     "a11ystmt.features.li3": "Everything can be used with a keyboard, with a visible focus indicator.",
     "a11ystmt.features.li4": "The whole site is available in English and Danish, and the page language is updated when you switch.",
     "a11ystmt.features.li5": "Your settings are only saved in your own browser. No personal data is involved.",
     "a11ystmt.checks.h2": "How it is checked",
     "a11ystmt.checks.sub": "Automated and by hand",
-    "a11ystmt.checks.p1": "I run automated scans <em>(axe-core)</em> regularly and fix what they find. I also check by hand that colour contrast holds up in every colour mode, that pages work at 320 px wide without sideways scrolling, and that nothing breaks when text spacing is increased.",
+    "a11ystmt.checks.p1":
+      "I run automated scans <em>(axe-core)</em> regularly and fix what they find. I also check by hand that colour contrast holds up in every colour mode, that pages work at 320 px wide without sideways scrolling, and that nothing breaks when text spacing is increased.",
     "a11ystmt.limits.h2": "Known limitations",
     "a11ystmt.limits.sub": "What I know is not perfect yet",
     "a11ystmt.limits.li1": "The site has not yet had a full manual review with screen readers.",
     "a11ystmt.limits.li2": "Some professional terms, such as UX/UI or CMS, are not explained everywhere.",
     "a11ystmt.limits.li3": "My CV is available as PDF files, which are separate documents that I have not reviewed to the same level as the pages.",
-    "a11ystmt.limits.li4": "Projects that I link to in the Lab and in the case studies are separate websites, and I do not control their accessibility.",
+    "a11ystmt.limits.li4":
+      "Projects that I link to in the Lab and in the case studies are separate websites, and I do not control their accessibility.",
     "a11ystmt.feedback.h2": "Report a barrier",
     "a11ystmt.feedback.sub": "Tell me what is in your way",
-    "a11ystmt.feedback.p1": "If something on this site is hard or impossible for you to use, please tell me. Write to <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, message me on <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> or use the <a href=\"/contact\">contact form</a>, and say which page it was and what happened. Phone calls can be difficult for me, so I prefer written messages.",
+    "a11ystmt.feedback.p1":
+      'If something on this site is hard or impossible for you to use, please tell me. Write to <a href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a>, message me on <a href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/">LinkedIn</a> or use the <a href="/contact">contact form</a>, and say which page it was and what happened. Phone calls can be difficult for me, so I prefer written messages.',
     "terms.privacy.sub": "What data is collected and why",
     "terms.privacy.h3.collected": "Data collected",
     "terms.privacy.p.collected1":
@@ -273,8 +279,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "lab.steady.aria": "Read the Steady case study",
     "lab.vibeloop.aria": "View the Vibeloop case study",
     "lab.autismeguiden.aria": "Visit AutismeGuiden (opens in new tab)",
-    "lab.steady.longrunning": "My longest-running Lab project— shaped through repeated accessibility work, user testing and product iteration.",
-    "lab.badge.wip.tooltip": "Work in progress — the coded version is still being developed",
+    "lab.steady.longrunning": "My longest-running Lab project– shaped through repeated accessibility work, user testing and product iteration.",
+    "lab.badge.wip.tooltip": "Work in progress – the coded version is still being developed",
     "lab.legend.longrunning": "= developed over the longest period",
     "lab.legend.vibecoded": "= built with AI assistance",
     "lab.legend.wip": "= work in progress",
@@ -399,7 +405,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "about.background.text":
       "Jeg har altid været draget af kreativitet – tegning, maleri, bare det at lave ting generelt. Og jeg vidste ret tidligt, at det på et tidspunkt skulle indgå i min fremtidige karriere. Da jeg blev ældre, begyndte jeg dog også at interessere mig for teknologi, så jeg brugte lang tid på at finde ud af, hvordan de to ting kunne kombineres. Multimediedesign er der, hvor de to ting kom sammen. Det gav mig en måde at arbejde med både design og teknologi på og tænke nøje over, hvordan ting er bygget, og ikke kun hvordan de ser ud.",
     "about.inspiration.text":
-      "Som én der er sen-diagnosticeret med autisme og ADD, ved jeg, hvad det vil sige at bruge digitale platforme, der ikke er lavet med én i tankerne. Mit neurodivergente perspektiv former den måde, jeg tænker tilgængelighed, struktur og brugerbehov. I stedet for en tjekliste er det noget, der løber igennem hele processen. Jeg har fokus på at gøre ting lettere at forstå, navigere og bruge. Og jeg oplever, at de små beslutninger— en tydelig label, et konsistent layout, en velstruktureret side —ofte betyder mere end man regner med.",
+      "Som én der er sen-diagnosticeret med autisme og ADD, ved jeg, hvad det vil sige at bruge digitale platforme, der ikke er lavet med én i tankerne. Mit neurodivergente perspektiv former den måde, jeg tænker tilgængelighed, struktur og brugerbehov. I stedet for en tjekliste er det noget, der løber igennem hele processen. Jeg har fokus på at gøre ting lettere at forstå, navigere og bruge. Og jeg oplever, at de små beslutninger– en tydelig label, et konsistent layout, en velstruktureret side –ofte betyder mere end man regner med.",
     "about.goals.text":
       "Jeg vil gerne arbejde med digitale løsninger, som rent faktisk er tilgængelige – ikke blot i overensstemmelse med de tekniske standarder, men som kan bruges af rigtige mennesker. Jeg har fokus på at få detaljerne til at sidde rigtigt: struktur, klarhed og de dele, brugerne faktisk interagerer med. Lige nu bygger jeg det op ved at studere, arbejde og lave ting. Mit mål er at fortsætte med det i en sammenhæng, hvor godt design reelt gør en forskel.",
     "timeline.title": "H\u00f8jdepunkterne i min rejse",
@@ -508,18 +514,23 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11ystmt.nav.feedback": "Meld en barriere",
     "a11ystmt.standard.h2": "Standard og status",
     "a11ystmt.standard.sub": "Hvad jeg bygger efter, og hvad der gælder",
-    "a11ystmt.standard.p1": "Jeg bygger dette portfolio, så det lever op til <strong>WCAG 2.2 niveau AA</strong>. Den europæiske standard for digital tilgængelighed, EN 301 549, bygger på de samme retningslinjer.",
-    "a11ystmt.standard.p2": "Dette er et personligt portfolio. Så vidt jeg ved, falder det uden for EU's webtilgængelighedsdirektiv <em>(offentlige hjemmesider)</em> og den europæiske tilgængelighedslov <em>(produkter og tjenester som e-handel og bankydelser)</em>. Jeg følger standarden alligevel, fordi tilgængeligt design er det, jeg arbejder med.",
+    "a11ystmt.standard.p1":
+      "Jeg bygger dette portfolio, så det lever op til <strong>WCAG 2.2 niveau AA</strong>. Den europæiske standard for digital tilgængelighed, EN 301 549, bygger på de samme retningslinjer.",
+    "a11ystmt.standard.p2":
+      "Dette er et personligt portfolio. Så vidt jeg ved, falder det uden for EU's webtilgængelighedsdirektiv <em>(offentlige hjemmesider)</em> og den europæiske tilgængelighedslov <em>(produkter og tjenester som e-handel og bankydelser)</em>. Jeg følger standarden alligevel, fordi tilgængeligt design er det, jeg arbejder med.",
     "a11ystmt.features.h2": "Hvad siden tilbyder",
     "a11ystmt.features.sub": "Indbygget, ikke tilføjet bagefter",
-    "a11ystmt.features.li1": "Større tekst, fire læseskrifttyper <em>(bl.a. Atkinson Hyperlegible og OpenDyslexic)</em>, mørk tilstand og rolige farver.",
-    "a11ystmt.features.li2": "Reduceret bevægelse, en fokustilstand og en farvesynssimulering, alt sammen i tilgængelighedslinjen øverst på hver side.",
+    "a11ystmt.features.li1":
+      "Større tekst, fire læseskrifttyper <em>(bl.a. Atkinson Hyperlegible og OpenDyslexic)</em>, mørk tilstand og rolige farver.",
+    "a11ystmt.features.li2":
+      "Reduceret bevægelse, en fokustilstand og en farvesynssimulering, alt sammen i tilgængelighedslinjen øverst på hver side.",
     "a11ystmt.features.li3": "Alt kan bruges med tastaturet, med en tydelig fokusmarkering.",
     "a11ystmt.features.li4": "Hele siden findes på dansk og engelsk, og sidens sprog opdateres, når du skifter.",
     "a11ystmt.features.li5": "Dine indstillinger gemmes kun i din egen browser. Der er ingen personoplysninger involveret.",
     "a11ystmt.checks.h2": "Sådan kontrolleres den",
     "a11ystmt.checks.sub": "Automatisk og manuelt",
-    "a11ystmt.checks.p1": "Jeg kører automatiske scanninger <em>(axe-core)</em> jævnligt og retter det, de finder. Jeg tjekker også manuelt, at farvekontrasten holder i alle farvetilstande, at siderne virker ved 320 px bredde uden sidelæns scrolling, og at intet går i stykker, når tekstafstanden øges.",
+    "a11ystmt.checks.p1":
+      "Jeg kører automatiske scanninger <em>(axe-core)</em> jævnligt og retter det, de finder. Jeg tjekker også manuelt, at farvekontrasten holder i alle farvetilstande, at siderne virker ved 320 px bredde uden sidelæns scrolling, og at intet går i stykker, når tekstafstanden øges.",
     "a11ystmt.limits.h2": "Kendte begrænsninger",
     "a11ystmt.limits.sub": "Hvad jeg ved, endnu ikke er perfekt",
     "a11ystmt.limits.li1": "Siden har endnu ikke gennemgået en fuld manuel test med skærmlæsere.",
@@ -528,7 +539,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "a11ystmt.limits.li4": "Projekter, jeg linker til i Lab og i casene, er separate hjemmesider, og jeg bestemmer ikke over deres tilgængelighed.",
     "a11ystmt.feedback.h2": "Meld en barriere",
     "a11ystmt.feedback.sub": "Fortæl mig, hvad der står i vejen",
-    "a11ystmt.feedback.p1": "Hvis noget på denne side er svært eller umuligt for dig at bruge, så fortæl mig det. Skriv til <a href=\"mailto:sara.ringkow@gmail.com\">sara.ringkow@gmail.com</a>, skriv til mig på <a href=\"https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/\">LinkedIn</a> eller brug <a href=\"/contact\">kontaktformularen</a>, og skriv, hvilken side det drejede sig om, og hvad der skete. Telefonopkald kan være svære for mig, så jeg foretrækker skriftlige beskeder.",
+    "a11ystmt.feedback.p1":
+      'Hvis noget på denne side er svært eller umuligt for dig at bruge, så fortæl mig det. Skriv til <a href="mailto:sara.ringkow@gmail.com">sara.ringkow@gmail.com</a>, skriv til mig på <a href="https://www.linkedin.com/in/sara-ringkow-petersen-49830b264/">LinkedIn</a> eller brug <a href="/contact">kontaktformularen</a>, og skriv, hvilken side det drejede sig om, og hvad der skete. Telefonopkald kan være svære for mig, så jeg foretrækker skriftlige beskeder.',
     "terms.privacy.sub": "Hvad der indsamles og hvorfor",
     "terms.privacy.h3.collected": "Indsamlet data",
     "terms.privacy.p.collected1":
@@ -629,8 +641,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "lab.steady.aria": "Læs case-studiet om Steady",
     "lab.vibeloop.aria": "Se case-studiet om VibeLoop",
     "lab.autismeguiden.aria": "Besøg AutismeGuiden (åbner i en ny fane)",
-    "lab.steady.longrunning": "Mit længstvarende Lab-projekt— formet gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
-    "lab.badge.wip.tooltip": "Under udvikling — den kodede version er stadig under udarbejdelse",
+    "lab.steady.longrunning": "Mit længstvarende Lab-projekt– formet gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
+    "lab.badge.wip.tooltip": "Under udvikling – den kodede version er stadig under udarbejdelse",
     "lab.legend.longrunning": "= udviklet over den længste periode",
     "lab.legend.vibecoded": "= bygget ved hjælp af AI",
     "lab.legend.wip": "= under udvikling",

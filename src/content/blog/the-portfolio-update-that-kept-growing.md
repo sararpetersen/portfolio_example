@@ -41,4 +41,4 @@ That distinction now runs through the visible copy, metadata, contact page, and 
 
 What started as one visual bug became a reminder that polish is not always about adding more. Sometimes it's removing the animation that gets in the way, shortening the text that tries to explain too much, or making sure the first thing a page shows is already the correct thing.
 
-The portfolio looks a little quieter now, but it also feels more deliberate— and much closer to what I wanted it to communicate in the first place.
+The portfolio looks a little quieter now, but it also feels more deliberate– and much closer to what I wanted it to communicate in the first place.

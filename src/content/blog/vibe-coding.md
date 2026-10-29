@@ -10,14 +10,14 @@ tags:
   - lab
 ---
 
-There's a term going around right now— _"vibe coding."_ It means building software with the assistance of AI, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director. I've been doing this for a while, and I have some thoughts.
+There's a term going around right now– _"vibe coding."_ It means building software with the assistance of AI, where you describe what you want and the AI generates the code. You guide it, refine it, correct it. You're less a typist and more a director. I've been doing this for a while, and I have some thoughts.
 
 ## What it's actually like
 
 The honest version: it's faster and weirder than I expected.
 
-Faster, because you can go from idea to working prototype in an afternoon. Things that would have taken me days of looking up syntax, debugging, and rebuilding— they just... appear. That's genuinely useful.
-Weirder, because it asks something different of you. You have to be really clear about what you want. If you're vague, you get something vague back. And you have to be able to evaluate what you get— to know when it's wrong, even if you couldn't have written the right version yourself.
+Faster, because you can go from idea to working prototype in an afternoon. Things that would have taken me days of looking up syntax, debugging, and rebuilding– they just... appear. That's genuinely useful.
+Weirder, because it asks something different of you. You have to be really clear about what you want. If you're vague, you get something vague back. And you have to be able to evaluate what you get– to know when it's wrong, even if you couldn't have written the right version yourself.
 
 That second part is, I think, the real skill. It's not about prompting. It's about judgment.
 

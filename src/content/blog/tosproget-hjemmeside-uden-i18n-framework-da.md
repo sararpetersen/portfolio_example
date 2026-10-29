@@ -11,7 +11,7 @@ tags:
   - process
 ---
 
-Denne portfolio er tosproget— engelsk og dansk, med øjeblikkeligt sprogskift og ingen genindlæsning af siden. Den bruger hverken `astro-i18n`, `i18next` eller nogen form for rute-baseret lokalisering. Det er et helt almindeligt JavaScript-objekt og et `data-i18n`-attribut. Her er, hvordan det virker, og hvor jeg ved, at løsningen en dag ikke længere er nok.
+Denne portfolio er tosproget– engelsk og dansk, med øjeblikkeligt sprogskift og ingen genindlæsning af siden. Den bruger hverken `astro-i18n`, `i18next` eller nogen form for rute-baseret lokalisering. Det er et helt almindeligt JavaScript-objekt og et `data-i18n`-attribut. Her er, hvordan det virker, og hvor jeg ved, at løsningen en dag ikke længere er nok.
 
 ## Selve mekanikken
 
@@ -70,13 +70,13 @@ Et Astro-framework ville give mig ordentlige URL-baserede sprogversioner (`/da/a
 
 Jeg vil gerne være ærlig om afvejningerne, for de er reelle:
 
-- **SEO ser kun ét sprog per URL:** Google indekserer, hvad den server-renderede HTML siger— hvilket altid er engelsk, fordi det er standardtilstanden, før JavaScript kører. Det danske indhold er reelt og skiftbart, men en søgemaskine, der crawler siden lige nu, ser engelsk. En URL-baseret løsning (`/da/...`) ville lade hvert sprog blive indekseret og rangeret for sig.
+- **SEO ser kun ét sprog per URL:** Google indekserer, hvad den server-renderede HTML siger– hvilket altid er engelsk, fordi det er standardtilstanden, før JavaScript kører. Det danske indhold er reelt og skiftbart, men en søgemaskine, der crawler siden lige nu, ser engelsk. En URL-baseret løsning (`/da/...`) ville lade hvert sprog blive indekseret og rangeret for sig.
 - **Den skalerer ikke til lange, indholdstunge tekster:** Systemet er bygget til korte, strukturerede UI-strenge: knaptekster, overskrifter, korttekst – selve dette blogindlæg _kan_ ikke bruge det, hvilket netop er grunden til, at de danske indlæg på denne blog er separate filer i stedet for ét tosproget dokument med et toggle
 - **Hver ny tekststreng er dobbelt bogføring:** Tilføj én engelsk streng, og der følger en underforstået forpligtelse til at tilføje dens danske modstykke i et andet objekt, i hånden, uden nogen build-tids-kontrol af, om du glemte det
 
 ## Det, der reelt holder det kørende i hverdagen
 
-Det, der forhindrer løsningen i at føles skrøbelig, er en custom event ved navn `langchange`. Alt på siden, der viser sprogafhængigt indhold fra data— kortdatoer, værktøjs-tags, mm. —lytter efter den i stedet for at hardcode sproglogik ind i hver enkelt komponent:
+Det, der forhindrer løsningen i at føles skrøbelig, er en custom event ved navn `langchange`. Alt på siden, der viser sprogafhængigt indhold fra data– kortdatoer, værktøjs-tags, mm. –lytter efter den i stedet for at hardcode sproglogik ind i hver enkelt komponent:
 
 ```js
 window.addEventListener("langchange", (event) => {
@@ -87,4 +87,4 @@ window.addEventListener("langchange", (event) => {
 
 Det adskiller _"sproget skiftede"_ fra _"her er alle de steder, der skal reagere,"_ hvilket er den ene reelle infrastruktur-brik, denne løsning havde brug for for at forblive vedligeholdelsesvenlig.
 
-Ville jeg anbefale det til en større side, eller én der reelt skal ranke på to sprog? Nej, ikke rigtig— brug et rigtigt framework. Men til en personlig portfolio, hvor målet var at skifte sprog øjeblikkeligt, holde det simpelt og undgå at kæmpe mod et build-værktøj, klarede et data-attribut og et objekt blot opgaven.
+Ville jeg anbefale det til en større side, eller én der reelt skal ranke på to sprog? Nej, ikke rigtig– brug et rigtigt framework. Men til en personlig portfolio, hvor målet var at skifte sprog øjeblikkeligt, holde det simpelt og undgå at kæmpe mod et build-værktøj, klarede et data-attribut og et objekt blot opgaven.
