@@ -599,6 +599,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
 </style>
 
 <script>
+  import { translations } from "../i18n/translations";
+
   type ToggleTarget = "body" | "html";
 
   interface ToggleOptions {
@@ -660,11 +662,8 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     verdana: "verdanaFontEnabled",
     opendyslexic: "opendyslexicFontEnabled",
   };
-  // Font names are proper nouns and stay the same in both languages — only "Default" translates.
-  const fontDisplayLabels: Record<string, Record<FontOption, string>> = {
-    en: { default: "Default", atkinson: "Atkinson Hyperlegible", verdana: "Verdana", opendyslexic: "OpenDyslexic" },
-    da: { default: "Standard", atkinson: "Atkinson Hyperlegible", verdana: "Verdana", opendyslexic: "OpenDyslexic" },
-  };
+  // Font names are proper nouns and stay the same in both languages; only "Default" and the sentences around the name translate.
+  const fontNames: Record<FontOption, string> = { default: "", atkinson: "Atkinson Hyperlegible", verdana: "Verdana", opendyslexic: "OpenDyslexic" };
 
   function getCurrentFont(): FontOption {
     const html = document.documentElement;
@@ -678,14 +677,10 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     const btn = document.getElementById("fontCycleToggle");
     if (!btn) return;
     const lang = localStorage.getItem("lang") || "en";
-    const label = (fontDisplayLabels[lang] || fontDisplayLabels.en)[font];
-    btn.setAttribute("data-tooltip", lang === "da" ? `Læseskrift: ${label}` : `Font: ${label}`);
-    btn.setAttribute(
-      "aria-label",
-      lang === "da"
-        ? `Aa læseskrift: ${label}. Klik for at skifte til næste valgmulighed.`
-        : `Aa reading font: ${label}. Click to cycle to the next option.`,
-    );
+    const t = translations[lang === "da" ? "da" : "en"];
+    const label = font === "default" ? t["header.font.default"] : fontNames[font];
+    btn.setAttribute("data-tooltip", t["header.font.tooltip"].replace("{font}", label));
+    btn.setAttribute("aria-label", t["header.font.aria"].replace("{font}", label));
     btn.setAttribute("aria-pressed", String(font !== "default"));
   }
 

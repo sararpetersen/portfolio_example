@@ -524,6 +524,8 @@ const getPeriodWithoutDegree = (period?: string) => {
 </style>
 
 <script>
+  import { translations } from "../i18n/translations";
+
   const applyDatabaseTranslations = (lang: string) => {
     const descriptionEl = document.querySelector("#project-description") as HTMLElement | null;
     const subtitleEl = document.querySelector("#project-subtitle") as HTMLElement | null;
@@ -589,15 +591,11 @@ const getPeriodWithoutDegree = (period?: string) => {
 
     // Prev/next case-study nav: aria-label interpolates the project name, so it can't
     // use a plain data-i18n-aria lookup — rebuild it from the translated prefix instead.
-    const prefixes: Record<string, { en: string; da: string }> = {
-      prev: { en: "Go to previous project", da: "Gå til forrige projekt" },
-      next: { en: "Go to next project", da: "Gå til næste projekt" },
-    };
     document.querySelectorAll<HTMLElement>("[data-project-nav-prefix]").forEach((el) => {
       const prefixKey = el.dataset.projectNavPrefix as "prev" | "next" | undefined;
       const name = el.dataset.projectNavName;
-      if (!prefixKey || !name || !prefixes[prefixKey]) return;
-      const prefix = lang === "da" ? prefixes[prefixKey].da : prefixes[prefixKey].en;
+      if (!prefixKey || !name) return;
+      const prefix = translations[lang === "da" ? "da" : "en"][`slugpage.${prefixKey}.aria`];
       el.setAttribute("aria-label", `${prefix}: ${name}`);
     });
   };

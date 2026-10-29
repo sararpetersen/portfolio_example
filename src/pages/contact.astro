@@ -272,6 +272,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
 
   <script>
+    import { translations } from "../i18n/translations";
+
     (() => {
       const textarea = document.querySelector("#form-message") as HTMLElement | null;
       const contactForm = document.querySelector("#contact-form") as HTMLElement | null;
@@ -291,20 +293,14 @@ import MainLayout from "../layouts/MainLayout.astro";
         if (params.get("submitted") === "true") {
           statusDiv.className = "block rounded-lg p-4 text-sm font-medium bg-green-50 text-green-800 border border-green-200";
           statusDiv.dataset.i18n = "contact.form.success";
-          statusDiv.textContent =
-            localStorage.getItem("lang") === "da"
-              ? "Tak! Din besked er sendt. Jeg vender tilbage hurtigst muligt."
-              : "Thank you! Your message has been sent. I'll get back to you soon.";
+          statusDiv.textContent = translations[localStorage.getItem("lang") === "da" ? "da" : "en"]["contact.form.success"];
         }
       }
 
       // The form uses novalidate so error text is our own (bilingual), not the browser's
       // built-in bubble — which always renders in the browser's language, not the site's.
-      const errorText = {
-        en: { required: "This field is required.", email: "Enter a valid email address." },
-        da: { required: "Dette felt er påkrævet.", email: "Indtast en gyldig emailadresse." },
-      };
       const getLang = () => (localStorage.getItem("lang") === "da" ? "da" : "en");
+      const errorText = (key: "required" | "email") => translations[getLang()][`contact.form.error.${key}`];
 
       const fields = [
         { input: document.querySelector<HTMLInputElement>("#form-name"), error: document.getElementById("form-name-error") },
@@ -314,7 +310,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
       function showError(error: HTMLElement, key: "required" | "email") {
         error.dataset.errorKey = key;
-        error.textContent = errorText[getLang()][key];
+        error.textContent = errorText(key);
         error.classList.remove("sr-only");
         error.classList.add("mt-1.5");
       }
@@ -365,7 +361,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       window.addEventListener("langchange", () => {
         fields.forEach(({ error }) => {
           const key = error?.dataset.errorKey as "required" | "email" | undefined;
-          if (error && key) error.textContent = errorText[getLang()][key];
+          if (error && key) error.textContent = errorText(key);
         });
       });
     })();

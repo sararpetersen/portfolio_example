@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
+import { translations } from "../../i18n/translations";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).filter((entry: CollectionEntry<"blog">) => !entry.data.draft);
@@ -76,11 +77,11 @@ const articleSchema = {
           )
         }
       </div>
-      <script is:inline>
+      <script is:inline define:vars={{ dateLabels: { en: { published: translations.en["blog.published"], updated: translations.en["blog.updated"] }, da: { published: translations.da["blog.published"], updated: translations.da["blog.updated"] } } }}>
         // Runs right after #post-date so Danish visitors never see the English labels flash, and
         // again on langchange. Dates are formatted for the current language too.
         (function () {
-          var labels = { en: { published: "Published", updated: "Updated" }, da: { published: "Udgivet", updated: "Opdateret" } };
+          var labels = dateLabels;
           function apply(lang) {
             lang = lang === "da" ? "da" : "en";
             document.querySelectorAll("[data-date-label]").forEach(function (el) {

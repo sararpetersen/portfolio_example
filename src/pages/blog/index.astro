@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
+import { translations } from "../../i18n/translations";
 
 const posts: CollectionEntry<"blog">[] = (await getCollection("blog"))
   .filter((entry: CollectionEntry<"blog">) => !entry.data.draft)
@@ -12,20 +13,20 @@ const initialPostCount = 9;
 
 // Broader groupings over the raw post tags — filtering by ~26 individual tags was too granular,
 // so each button here bundles several related tags into one category.
-const categoryDefinitions: { key: string; en: string; da: string; tags: string[] }[] = [
-  { key: "a11y-ux", en: "Accessibility & UX", da: "Tilgængelighed & UX", tags: ["accessibility", "ux"] },
+const categoryDefinitions: { key: string; tags: string[] }[] = [
+  { key: "a11y-ux", tags: ["accessibility", "ux"] },
   {
     key: "development",
-    en: "Development",
-    da: "Udvikling",
     tags: ["react", "components", "astro", "tailwind", "tutorial", "web-development", "domain"],
   },
-  { key: "process-ai", en: "Process & AI", da: "Proces & AI", tags: ["process", "lab", "vibe coding", "ai"] },
-  { key: "career", en: "Career & Internship", da: "Karriere & praktik", tags: ["internship", "learning", "career", "networking"] },
-  { key: "updates", en: "The Portfolio", da: "Porteføjlen", tags: ["portfolio", "blog", "updates", "update"] },
-  { key: "personal", en: "Personal", da: "Personligt", tags: ["personal", "neurodivergent", "social-media", "routine"] },
-  { key: "danish", en: "In Danish", da: "På Dansk", tags: ["danish"] },
+  { key: "process-ai", tags: ["process", "lab", "vibe coding", "ai"] },
+  { key: "career", tags: ["internship", "learning", "career", "networking"] },
+  { key: "updates", tags: ["portfolio", "blog", "updates", "update"] },
+  { key: "personal", tags: ["personal", "neurodivergent", "social-media", "routine"] },
+  { key: "danish", tags: ["danish"] },
 ];
+
+const categoryLabels = (key: string) => ({ en: translations.en[`blog.cat.${key}`], da: translations.da[`blog.cat.${key}`] });
 
 const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) => post.data.tags.some((tag) => cat.tags.includes(tag))));
 ---
@@ -73,11 +74,11 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
                   class="blog-filter-chip pill"
                   data-filter-tag={cat.key}
                   data-category-tags={JSON.stringify(cat.tags)}
-                  data-cat-en={cat.en}
-                  data-cat-da={cat.da}
+                  data-cat-en={categoryLabels(cat.key).en}
+                  data-cat-da={categoryLabels(cat.key).da}
                   aria-pressed="false"
                 >
-                  {cat.en}
+                  {categoryLabels(cat.key).en}
                 </button>
               ))}
             </div>
@@ -318,6 +319,8 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
 </style>
 
 <script>
+  import { translations } from "../../i18n/translations";
+
   const revealBatchSize = 6;
   const showMoreButton = document.querySelector<HTMLButtonElement>("#show-more-posts");
   const showMoreStatus = document.querySelector<HTMLElement>("#show-more-status");
@@ -326,6 +329,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
   const filterButtons = [...document.querySelectorAll<HTMLButtonElement>(".blog-filter-chip")];
   const filterEmpty = document.querySelector<HTMLElement>("#blog-filter-empty");
   const getLang = () => localStorage.getItem("lang") || "en";
+  const text = () => translations[getLang() === "da" ? "da" : "en"];
 
   // Which cards started out beyond the initial page size is captured by the inline script
   // above (before it potentially strips "blog-card--extra" while restoring a saved filter),
@@ -334,9 +338,8 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
 
   function resetShowMore(): void {
     if (!showMoreButton) return;
-    const isDanish = getLang() === "da";
     showMoreButton.disabled = false;
-    showMoreButton.textContent = isDanish ? "Vis flere indlæg ↓" : "Show more posts ↓";
+    showMoreButton.textContent = text()["blog.showMore.button"];
     showMoreButton.classList.remove("opacity-70", "cursor-default");
     if (showMoreStatus) showMoreStatus.textContent = "";
   }
@@ -353,17 +356,14 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
     });
 
     const remainingPosts = hiddenPosts.length - postsToReveal.length;
-    const isDanish = getLang() === "da";
 
     if (showMoreStatus) {
-      showMoreStatus.textContent = isDanish
-        ? `${postsToReveal.length} flere indlæg vises. ${remainingPosts} tilbage.`
-        : `${postsToReveal.length} more posts shown. ${remainingPosts} remaining.`;
+      showMoreStatus.textContent = text()["blog.showMore.status"].replace("{shown}", String(postsToReveal.length)).replace("{left}", String(remainingPosts));
     }
 
     if (remainingPosts === 0) {
       showMoreButton.disabled = true;
-      showMoreButton.textContent = isDanish ? "Alle indlæg vises" : "All posts shown";
+      showMoreButton.textContent = text()["blog.showMore.done"];
       showMoreButton.classList.add("opacity-70", "cursor-default");
     }
   });
@@ -423,8 +423,14 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
       btn.textContent = lang === "da" ? da || en : en;
     });
   }
+  function refreshShowMoreLabel(): void {
+    if (!showMoreButton) return;
+    showMoreButton.textContent = showMoreButton.disabled ? text()["blog.showMore.done"] : text()["blog.showMore.button"];
+    if (showMoreStatus) showMoreStatus.textContent = "";
+  }
   window.addEventListener("langchange", (e: Event) => {
     applyFilterChipLang((e as CustomEvent).detail?.lang || getLang());
+    refreshShowMoreLabel();
   });
 
 </script>

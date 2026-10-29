@@ -771,13 +771,8 @@
       const cvdLabels = panelStrings[lang] || panelStrings.en;
       const modeLabel = cvdLabels[`a11y.cvd.${mode}`];
       cvdBtn.setAttribute("aria-pressed", String(mode !== "off"));
-      cvdBtn.setAttribute(
-        "aria-label",
-        lang === "da"
-          ? `Simulering af farvesyn: ${modeLabel}. Klik for at skifte til næste valgmulighed.`
-          : `Colour vision simulation: ${modeLabel}. Click to cycle to the next option.`,
-      );
-      cvdBtn.setAttribute("data-tooltip", `${lang === "da" ? "Farvesyn" : "Colour vision"}: ${modeLabel}`);
+      cvdBtn.setAttribute("aria-label", cvdLabels["a11y.cvd.aria"].replace("{mode}", modeLabel));
+      cvdBtn.setAttribute("data-tooltip", cvdLabels["a11y.cvd.tooltip"].replace("{mode}", modeLabel));
     }
 
     // Language buttons
@@ -918,11 +913,9 @@
       const key = el.getAttribute("data-i18n");
       if (key && t[key]) el.textContent = t[key];
     });
-    const openLabel = lang === "da" ? "Åbn tilgængeligheds-panel" : "Open accessibility panel";
-    const closeLabel = lang === "da" ? "Luk tilgængelighedsindstillinger" : "Close accessibility settings";
-    fab.setAttribute("aria-label", openLabel);
-    fab.setAttribute("data-tooltip", lang === "da" ? "Tilgængelighedsindstillinger" : "Accessibility Settings");
-    closeBtn.setAttribute("aria-label", closeLabel);
+    fab.setAttribute("aria-label", t["a11y.open.aria"]);
+    fab.setAttribute("data-tooltip", t["a11y.fab.label"]);
+    closeBtn.setAttribute("aria-label", t["a11y.close.aria"]);
     if (t["a11y.close"]) closeBtn.setAttribute("data-tooltip", t["a11y.close"]);
     document.getElementById("a11y-lang-en")?.setAttribute("aria-pressed", String(lang === "en"));
     document.getElementById("a11y-lang-da")?.setAttribute("aria-pressed", String(lang === "da"));
