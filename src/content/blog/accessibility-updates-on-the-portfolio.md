@@ -13,7 +13,7 @@ I just finished a new round of accessibility updates on this portfolio and wante
 
 ## Calm colours mode
 
-This was the feature I was most curious about building. When enabled, it softens all the accent colours across the entire site. The warm reds, teals, and blues all shift to quieter, lower-saturation versions of themselves. The logo, the decorative kanji labels, the scroll-to-top button, tag chips, the contact box— everything adjusts together.
+This was the feature I was most curious about building. When enabled, it softens all the accent colours across the entire site. The warm reds, teals, and blues all shift to quieter, lower-saturation versions of themselves. The logo, the decorative kanji labels, the scroll-to-top button, tag chips, the contact box– everything adjusts together.
 
 The inspiration came from thinking about how intense colours can feel for some people, especially those who're sensitive to visual stimulation. I wanted a mode that keeps the same layout and structure, but turns the visual intensity down a notch.
 
@@ -27,7 +27,7 @@ Previously, dark mode and reduced motion only applied after the user had manuall
 
 ## Skip link discoverability
 
-A _"skip-to-content"_-link has been in the markup for a while, but it was always invisible unless you were using a keyboard. It still works that way— which is correct behavior for accessibility —but now it briefly appears on the very first page load, so it's easier to notice it exists.
+A _"skip-to-content"_-link has been in the markup for a while, but it was always invisible unless you were using a keyboard. It still works that way– which is correct behavior for accessibility –but now it briefly appears on the very first page load, so it's easier to notice it exists.
 
 ## Why this matters to me
 

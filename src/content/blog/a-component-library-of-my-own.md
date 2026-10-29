@@ -10,7 +10,7 @@ tags:
   - lab
 ---
 
-I've spent a lot of time on this portfolio building things I never reuse anywhere else. A card here, a toggle there, a panel that only ever gets mounted once. That's fine for a portfolio— it only has to work in one place —but it started to bother me that every component I build lives and dies inside this one Astro project, with no separation between _"this is a button"_ and _"this is a button styled exactly for this site."_
+I've spent a lot of time on this portfolio building things I never reuse anywhere else. A card here, a toggle there, a panel that only ever gets mounted once. That's fine for a portfolio– it only has to work in one place –but it started to bother me that every component I build lives and dies inside this one Astro project, with no separation between _"this is a button"_ and _"this is a button styled exactly for this site."_
 
 So I started a separate project: a standalone React component library, published on its own at <a href="https://srp-library.netlify.app/" target="_blank" rel="noopener noreferrer">srp-library.netlify.app</a>. It's linked from the nav now, under _"The Library."_ It's not a one-off either. The plan is to keep adding to it as other projects come along, so it becomes the shared place components live instead of getting rebuilt from scratch each time.
 
@@ -22,7 +22,7 @@ Mostly, no. Not at first. Which was the whole point.
 
 ## What's actually in it
 
-Right now: a set of React components I'd otherwise keep reinventing— the kind of UI pieces that show up in almost every project regardless of what the project is actually about. Nothing exotic yet. But _"right now"_ is doing some work in that sentence, because the whole point of the library is that it's not meant to stay this small. As I build other things, whatever's reusable from them is meant to land here instead of staying buried in whichever project it started in.
+Right now: a set of React components I'd otherwise keep reinventing– the kind of UI pieces that show up in almost every project regardless of what the project is actually about. Nothing exotic yet. But _"right now"_ is doing some work in that sentence, because the whole point of the library is that it's not meant to stay this small. As I build other things, whatever's reusable from them is meant to land here instead of staying buried in whichever project it started in.
 
 ## Why is this worth a separate post?
 

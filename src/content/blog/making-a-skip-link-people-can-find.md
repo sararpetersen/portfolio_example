@@ -9,7 +9,7 @@ tags:
   - ux
 ---
 
-Every accessible site is supposed to have a _"Skip to main content"_ link— a keyboard-only shortcut past the header and navigation, straight to the page's actual content. Mine has had one for a while. The mechanism is standard: visually hidden until it receives keyboard focus, then it appears.
+Every accessible site is supposed to have a _"Skip to main content"_ link– a keyboard-only shortcut past the header and navigation, straight to the page's actual content. Mine has had one for a while. The mechanism is standard: visually hidden until it receives keyboard focus, then it appears.
 
 ```css
 .skip-link {
@@ -54,7 +54,7 @@ body.show-skip-link-hint .skip-link {
 
 ## Why `localStorage` and not "just show it on every load"
 
-I went back and forth on this. Showing the hint on every page load would guarantee visibility, but it would also mean every returning visitor— including the ones who navigate entirely with a mouse and will never touch that link —gets a moving element at the top of the page on every single visit. That's not a neutral cost. Uninvited motion is exactly the kind of thing the reduce-motion toggle on this site exists to prevent, and the hint respects that toggle too, since it's just another CSS transition. `localStorage` with a one-time flag gets the discoverability benefit without the recurring nuisance.
+I went back and forth on this. Showing the hint on every page load would guarantee visibility, but it would also mean every returning visitor– including the ones who navigate entirely with a mouse and will never touch that link –gets a moving element at the top of the page on every single visit. That's not a neutral cost. Uninvited motion is exactly the kind of thing the reduce-motion toggle on this site exists to prevent, and the hint respects that toggle too, since it's just another CSS transition. `localStorage` with a one-time flag gets the discoverability benefit without the recurring nuisance.
 
 ## The part that's easy to get wrong
 

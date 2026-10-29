@@ -31,13 +31,13 @@ html.opendyslexic-font input {
 }
 ```
 
-Yup, that's an `!important`— normally a code smell, but here it's the point: when someone explicitly asks for a readable font, it should win over every decorative font choice I've made. Accessibility settings are one of the few places where `!important` is the honest tool.
+Yup, that's an `!important`– normally a code smell, but here it's the point: when someone explicitly asks for a readable font, it should win over every decorative font choice I've made. Accessibility settings are one of the few places where `!important` is the honest tool.
 
 I load OpenDyslexic from Fontsource's CDN so it isn't part of the normal page weight. The browser only downloads it when a rule actually uses it.
 
 ## Remembering the choice
 
-The toggle button saves the preference to `localStorage` and cycles through the options (default → Atkinson → Verdana → OpenDyslexic). The interesting part isn't the click handler— it's making the choice survive a page reload _without a flash of the wrong font. Because that has happened.. a lot_.
+The toggle button saves the preference to `localStorage` and cycles through the options (default → Atkinson → Verdana → OpenDyslexic). The interesting part isn't the click handler– it's making the choice survive a page reload _without a flash of the wrong font. Because that has happened.. a lot_.
 
 Astro sites are multi-page, so every navigation is a real page load. If you apply the saved font in a normal script, the page renders with the default font first and then visibly snaps. The fix for that is a tiny **inline, render-blocking script in the `<head>`**, before any content:
 
@@ -54,7 +54,7 @@ Astro sites are multi-page, so every navigation is a real page load. If you appl
         root.classList.add("readable-font");
       }
     } catch {
-      // localStorage can be unavailable (private mode) — never break first paint.
+      // localStorage can be unavailable (private mode) – never break first paint.
     }
   })();
 </script>
@@ -68,6 +68,6 @@ Two accessibility details on the button: it uses `aria-pressed` so screen reader
 
 ## Why these 3 fonts
 
-Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers and looks close enough to a _"normal"_ font that it doesn't feel like a special mode. Verdana is the pragmatic choice— familiar, wide, and installed everywhere. OpenDyslexic is the most distinctive one of the 3 fonts; research on its effectiveness is genuinely mixed, but some readers strongly prefer it, and preference matters. Offering a choice is the feature, not any single font.
+Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers and looks close enough to a _"normal"_ font that it doesn't feel like a special mode. Verdana is the pragmatic choice– familiar, wide, and installed everywhere. OpenDyslexic is the most distinctive one of the 3 fonts; research on its effectiveness is genuinely mixed, but some readers strongly prefer it, and preference matters. Offering a choice is the feature, not any single font.
 
 That's the whole thing: a `@font-face`, a class on the root element, a `localStorage` flag, and an inline script to beat first paint. Try toggling it in the accessibility bar at the top of this page or via the accessibility panel, accessed through the lower left-hand button on the page – this post is just the demo.

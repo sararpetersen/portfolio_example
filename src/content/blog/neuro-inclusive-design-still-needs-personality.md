@@ -28,4 +28,4 @@ The mistake is treating these as trade-offs, where turning up clarity means turn
 
 This is the line I keep coming back to when I'm designing anything meant to feel calm. It's less a rule and more a check I run on myself: did I remove something because it was genuinely distracting, or did I remove it because _"accessible"_ and _"boring"_ got tangled up in my head somewhere along the way?
 
-Most of the time, when something feels too flat, it's not because it has too much personality— it's because someone reached for uniformity instead of clarity, and called it accessibility. Those aren't the same fix, even though they can look identical on a spec sheet.
+Most of the time, when something feels too flat, it's not because it has too much personality– it's because someone reached for uniformity instead of clarity, and called it accessibility. Those aren't the same fix, even though they can look identical on a spec sheet.

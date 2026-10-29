@@ -9,7 +9,7 @@ tags:
   - tutorial
 ---
 
-Dark mode looks like a solved problem— Tailwind itself even has its own `dark:` attribute —but doing it _accessibly_ involves three decisions that the utility classes don't make for you: who decides (system or user), how the choice persists, and how the toggle announces itself. Here's how it works on this site.
+Dark mode looks like a solved problem– Tailwind itself even has its own `dark:` attribute –but doing it _accessibly_ involves three decisions that the utility classes don't make for you: who decides (system or user), how the choice persists, and how the toggle announces itself. Here's how it works on this site.
 
 ## Decision 1: system preference first, user choice forever
 
@@ -22,7 +22,7 @@ const isDark = saved !== null ? saved === "true" : systemPrefersDark;
 document.body.classList.toggle("dark", isDark);
 ```
 
-The `saved !== null` check is an important line. A common mistake is `saved === "true" || systemPrefersDark`— that makes it impossible for a dark-system user to choose light mode. Respecting an explicit _"no"_ is just as much a part of accessibility as offering the feature.
+The `saved !== null` check is an important line. A common mistake is `saved === "true" || systemPrefersDark`– that makes it impossible for a dark-system user to choose light mode. Respecting an explicit _"no"_ is just as much a part of accessibility as offering the feature.
 
 Like every other setting on this site, this runs in an inline script before first paint, so there's no white flash before dark mode kicks in on a page load.
 
