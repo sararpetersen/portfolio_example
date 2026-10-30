@@ -67,7 +67,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.4.desc":
       "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
     "timeline.6.year": "May 2026 - Present",
-    "timeline.6.title": "Software Developer Intern | Folkæt",
+    "timeline.6.title": "Multimedia Intern | Folkæt",
     "timeline.6.desc":
       "Working on an accessibility-focused page for neurodivergent users, alongside design tasks in Figma and learning React Router 7 and Python through minor tasks on Folkæt's platform.",
     "timeline.5.year": "January 2026 - June 2026",
@@ -457,7 +457,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.5.desc":
       "Hjælper internationale studerende med onboarding, social og faglig integration og fungerer som kontaktperson for spørgsmål og daglig støtte.",
     "timeline.6.year": "Maj 2026 - Nu",
-    "timeline.6.title": "Softwareudviklerpraktikant | Folkæt",
+    "timeline.6.title": "Multimediedesign Praktikant | Folkæt",
     "timeline.6.desc":
       "Arbejder på en side med fokus på tilgængelighed for neurodivergente brugere, samt designopgaver i Figma, og lærer React Router 7 og Python gennem arbejde med mindre opgaver på Folkæts platform.",
     "interests.title": "Interesser og hobbyer",
