@@ -105,8 +105,8 @@ where slug = 'pace-duolingo';
 update public.portfolio_cases set
   description = $q$This was the main project I worked on during my internship at Folkæt. Here, I designed a page for neurodivergent users, focusing on accessibility and how individual preferences and support needs can be communicated in teams. The work also included pictograms and accessibility settings to support a more inclusive user experience.$q$,
   description_da = $q$Dette var mit hovedprojekt under min praktik hos Folkæt. Her designede jeg en side til neurodivergente brugere med fokus på tilgængelighed og på, hvordan individuelle præferencer og skånebehov kan formidles i teams. Arbejdet omfattede også piktogrammer og tilgængelighedsindstillinger, der skulle understøtte en mere inkluderende brugeroplevelse.$q$,
-  context = $q$Internship project at Folkæt$q$,
-  context_da = $q$Praktikprojekt hos Folkæt$q$,
+  context = $q$Multimedia Design Intern at Folkæt$q$,
+  context_da = $q$Multimediedesign-praktikant hos Folkæt$q$,
   role = $q$UX/UI designer$q$,
   role_da = $q$UX/UI-designer$q$,
   outcome = $q$Still in progress: the page is being iterated, and a questionnaire is helping to show which preference and accessibility information people actually find useful.$q$,
