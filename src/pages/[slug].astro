@@ -133,7 +133,7 @@ const getPeriodWithoutDegree = (period?: string) => {
 
     <!-- Header -->
     <header id="project-header" class="col-span-12 md:mb-10 mb-8">
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4">
+      <div class="flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 mb-4">
         <span id="project-degree" class="pill" data-year={project.year || ""} data-year-da={project.year_da || ""}>
           {getDegreeLabel(project.year)}
         </span>
@@ -310,7 +310,7 @@ const getPeriodWithoutDegree = (period?: string) => {
                   <div class="related-project-info p-5 border-t border-gray-300 transition-colors duration-300 group-hover:border-gray-400">
                     <h3 class="related-project-title text-h4-mobile font-semibold italic mb-2">{proj.name}</h3>
                     <p
-                      class="related-project-year text-sm text-gray-600 transition-colors duration-300"
+                      class="related-project-year text-sm leading-snug text-gray-600 transition-colors duration-300"
                       data-semester={proj.semester || ""}
                       data-semester-da={proj.semester_da || ""}
                       data-year={proj.year || ""}

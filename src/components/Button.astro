@@ -50,6 +50,9 @@ const cls = buttonStyling + " " + variantClasses[variant] + " " + sizeClasses[si
   .secondary-button {
     position: relative;
     overflow: hidden;
+    /* A button label that has to wrap should not get the 28px body line height; the min-height keeps one-line buttons the same size */
+    line-height: 1.35;
+    min-height: 3.25rem;
   }
 
   .main-button > span,
