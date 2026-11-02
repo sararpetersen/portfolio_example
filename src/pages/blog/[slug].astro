@@ -390,6 +390,16 @@ const articleSchema = {
 </style>
 
 <script>
+  import { translations } from "../../i18n/translations";
+
+  // Shiki makes every code block keyboard-focusable (tabindex="0") but gives it no name, so a screen reader
+  // announces an empty focus stop. Name each block after the post's own language, not the interface language.
+  document.querySelectorAll<HTMLElement>("#post-content pre[tabindex]").forEach((pre) => {
+    const postLang = document.getElementById("post-content")?.getAttribute("lang") === "da" ? "da" : "en";
+    pre.setAttribute("role", "region");
+    pre.setAttribute("aria-label", translations[postLang]["blog.code.label"]);
+  });
+
   (() => {
     const applyTagLang = (lang: string) => {
       const el = document.querySelector("#post-tags") as HTMLElement | null;
