@@ -752,6 +752,15 @@ body.dark .portrait-frame {
   text-transform: uppercase;
 }
 
+/* Smaller on phones, so several pills share a row instead of stacking one per line */
+@media (max-width: 767px) {
+  .pill {
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.75rem;
+  }
+}
+
 .pill-ink,
 .pill.is-active {
   background: #375567;

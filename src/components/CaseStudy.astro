@@ -165,9 +165,10 @@ const statusLabels = {
   :global(html[lang="da"]) .case-da {
     display: inline;
   }
-  /* On narrow phones the button label has to fit on one line inside the tile */
-  @media (max-width: 479px) {
+  /* On phones the two link buttons are the same full width, one under the other, instead of a long and a short one */
+  @media (max-width: 639px) {
     :global(.case-tile .secondary-button) {
+      width: 100%;
       padding-left: 1rem;
       padding-right: 1rem;
     }
