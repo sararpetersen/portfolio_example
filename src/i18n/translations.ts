@@ -251,10 +251,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "The Lab",
     "lab.title": "Experiments",
     "lab.intro":
-      "This is where I put the looser stuff – unfinished prototypes and things that exist mostly because I wanted to see if they could work. Most of it is <em>vibe coded</em>: built with the help of AI, where I describe what I want, the AI writes the code, and I guide, test and correct it. Less polished than the main cases, but more honest about the process. Want the longer version? <a href='/blog/vibe-coding'>This post explains what vibe coding is, and what I think about it</a>.",
+      "This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the main cases, but more honest about the process. If <em>'vibe coding'</em> is new to you, <a href='/blog/vibe-coding'>this post explains what it means</a>.",
     "lab.items.title": "Projects from the Lab",
     "lab.items.intro":
-      "A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
+      "A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Most are vibe coded: I describe what I want to an AI, then guide, test and correct what it builds. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
     "lab.bivi.link": "Visit site/app\u00a0→",
     "lab.bivi.title": "Bivi - Your Little Medication Sidekick",
     "lab.vibeloop.link": "View case\u00a0→",
@@ -635,10 +635,10 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "Laboratoriet",
     "lab.title": "Eksperimenter",
     "lab.intro":
-      "Her lægger jeg de lidt løsere ting – uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se, om de virkede. Det meste er <em>vibe-kodet</em>: bygget med hjælp fra AI, hvor jeg beskriver, hvad jeg vil have, AI'en skriver koden, og jeg styrer, tester og retter den til. Mindre poleret end hovedcasene, men mere ærlig om processen. Vil du have den lange version, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad vibe coding er, og hvad jeg mener om det.",
+      "Her lægger jeg de lidt løsere ting – projekter bygget med hjælp fra AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end hovedcasene, men mere ærlig om processen. Hvis <em>'vibe coding'</em> er nyt for dig, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad det betyder.",
     "lab.items.title": "Projekter fra Laboratoriet",
     "lab.items.intro":
-      "En samling af eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
+      "En samling af eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Det meste er vibe-kodet: jeg beskriver, hvad jeg vil have, til en AI og styrer, tester og retter så det, den bygger. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
     "lab.bivi.title": "Bivi - Din Lille Medicinmakker",
     "lab.bivi.link": "Besøg siden/appen\u00a0→",
     "lab.vibeloop.title": "VibeLoop - Humørbaseret Social App",
