@@ -26,7 +26,7 @@ import { labProjects } from "../data/labProjects";
         </div>
         <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
           This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I
-          wanted to see if they could work. Less polished than the main cases, but more honest about the process. If <em>'vibe coding'</em> is new to you,{" "}<a href="/blog/vibe-coding">this post explains what it means</a>.
+          wanted to see if they could work. Less polished than the main cases, but more honest about the process.
         </p>
       </div>
     </div>
@@ -40,8 +40,8 @@ import { labProjects } from "../data/labProjects";
 
     <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-2xl mb-6" data-i18n="lab.items.intro">
       A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Most are vibe coded: I describe
-      what I want to an AI, then guide, test and correct what it builds. Steady is the project I have worked on for the longest, growing through
-      repeated accessibility work, user testing, and product iteration.
+      what I want to an AI, then guide, test and correct what it builds (<a href="/blog/vibe-coding">more about vibe coding</a>). Steady is the
+      project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.
     </p>
 
     <p
@@ -91,23 +91,23 @@ import { labProjects } from "../data/labProjects";
 
   /* Link to the vibe coding post at the end of the intro. The intro text is swapped in by the language
      switcher, so these rules cannot rely on Astro's scoped attributes. */
-  :global(#lab-intro a) {
+  :global(#lab-items-intro a) {
     color: #375567;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  :global(#lab-intro a:hover) {
+  :global(#lab-items-intro a:hover) {
     color: var(--brand-primary);
   }
 
-  :global(#lab-intro a:focus-visible) {
+  :global(#lab-items-intro a:focus-visible) {
     outline: 3px solid #375567;
     outline-offset: 2px;
     border-radius: 2px;
   }
 
-  :global(body.dark #lab-intro a) {
+  :global(body.dark #lab-items-intro a) {
     color: var(--brand-primary-soft);
   }
 
