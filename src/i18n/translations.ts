@@ -55,7 +55,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.0.desc":
       "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
     "timeline.2.year": "August 2023 - June 2025",
-    "timeline.2.title": "AP-degree in Multimedia Design (MMD) | Copenhagen School of Design and Technology (KEA)",
+    "timeline.2.title": "AP-degree in Multimedia Design | Copenhagen School of Design and Technology (KEA)",
     "timeline.2.desc":
       "Worked with UX/UI, digital design and coding, and gained hands-on experience with design tools, prototyping and web projects.",
     "timeline.3.year": "January 2025 - April 2025",
@@ -63,7 +63,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.3.desc":
       "Worked on website redesigns, developed sitemaps and information architecture, and created maintenance documentation for clients.",
     "timeline.4.year": "Present",
-    "timeline.4.title": "PBA in Digital Concept Development (DCON) | Academy of Technologies and Business (Zealand)",
+    "timeline.4.title": "PBA in Digital Concept Development | Academy of Technologies and Business (Zealand)",
     "timeline.4.desc":
       "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
     "timeline.6.year": "May 2026 - Present",
@@ -442,7 +442,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.0.desc":
       "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi, hvilket vakte min interesse for kreativitet, mennesker og kommunikation.",
     "timeline.2.year": "August 2023 - Juni 2025",
-    "timeline.2.title": "AK-uddannelse i Multimediedesign (MMD) | Københavns Erhvervsakademi (KEA)",
+    "timeline.2.title": "AK-uddannelse i Multimediedesign | Københavns Erhvervsakademi",
     "timeline.2.desc":
       "Arbejdede med UX/UI, digitalt design og kodning og opnåede praktisk erfaring med designværktøjer, prototyping og webprojekter.",
     "timeline.3.year": "Januar 2025 - April 2025",
@@ -450,7 +450,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.3.desc":
       "Arbejdede med redesign af websites, udviklede sitemaps og informationsarkitektur samt udarbejdede vedligeholdelsesdokumentation til kunder.",
     "timeline.4.year": "Nu",
-    "timeline.4.title": "PBA i Digital Konceptudvikling (DKON) | Sjællands Erhvervsakademi (Zealand)",
+    "timeline.4.title": "PBA i Digital Konceptudvikling | Sjællands Erhvervsakademi",
     "timeline.4.desc":
       "Studerer i øjeblikket hvordan idéer omsættes til brugerrettede digitale koncepter med fokus på strategisk og adfærdsorienteret design.",
     "timeline.5.year": "Januar 2026 - Juni 2026",
