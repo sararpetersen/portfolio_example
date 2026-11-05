@@ -19,19 +19,6 @@ const { projects } = Astro.props as { projects: LabProject[] };
           <div class="lab-meta flex flex-row flex-wrap items-center gap-x-2 gap-y-1 md:gap-3 md:items-center md:justify-between mb-4">
             <p class="text-[12px] uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap shrink-0">{project.year}</p>
             <div class="flex items-center gap-2 flex-wrap md:justify-end">
-              {project.longRunning && (
-                <span
-                  class="lab-tag pill pill-ink long-running-tag"
-                  tabindex="0"
-                  role="note"
-                  aria-label="Longest-running project"
-                  data-i18n-aria="lab.badge.longrunning"
-                  data-tooltip="The Lab project I have developed over the longest period"
-                  data-i18n-tooltip="lab.badge.longrunning.tooltip"
-                >
-                  <span data-i18n="lab.badge.longrunning">Longest-running project</span>
-                </span>
-              )}
               {project.wip && (
                 <span
                   class="lab-tag pill wip-tag"

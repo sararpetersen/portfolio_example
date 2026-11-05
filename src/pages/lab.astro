@@ -44,23 +44,6 @@ import { labProjects } from "../data/labProjects";
       project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.
     </p>
 
-    <p
-      class="lab-legend hidden lg:flex flex-row flex-wrap items-center gap-2 lg:gap-x-3 lg:gap-y-1.5 text-[11px] text-gray-600 mb-6"
-    >
-      <span class="inline-flex items-center gap-1.5">
-        <span
-          class="lab-tag pill pill-ink long-running-tag"
-          tabindex="0"
-          role="note"
-          aria-label="Longest-running project"
-          data-i18n-aria="lab.badge.longrunning"
-          data-tooltip="The Lab project I have developed over the longest period"
-          data-i18n-tooltip="lab.badge.longrunning.tooltip"><span data-i18n="lab.badge.longrunning">Longest-running project</span></span
-        >
-        <span class="hidden lg:inline" data-i18n="lab.legend.longrunning">= developed over the longest period</span>
-      </span>
-    </p>
-
     <!-- Project cards keep their existing layout, but are generated from one data source. -->
     <LabProjectCards projects={labProjects} />
   </section>
@@ -92,6 +75,9 @@ import { labProjects } from "../data/labProjects";
   /* Link to the vibe coding post at the end of the intro. The intro text is swapped in by the language
      switcher, so these rules cannot rely on Astro's scoped attributes. */
   :global(#lab-items-intro a) {
+    /* The base link style sets its own, larger font size; follow the small paragraph around it instead */
+    font-size: inherit;
+    line-height: inherit;
     color: #375567;
     text-decoration: underline;
     text-underline-offset: 3px;
