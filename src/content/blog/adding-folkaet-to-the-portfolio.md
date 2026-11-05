@@ -10,7 +10,7 @@ tags:
   - ux
 ---
 
-I've added a new project to the site – [Folkæt for Neurodivergent People](/folkaet). If you've read my [recent internship update](/blog/what-im-actually-working-on-at-folkaet), you've already heard a little about the work behind it. Now there's a project page with a prototype, where you can explore the design for yourselves.
+I've added a new project to the site – [Folkæt Neurodivergents](/folkaet). If you've read my [recent internship update](/blog/what-im-actually-working-on-at-folkaet), you've already heard a little about the work behind it. Now there's a project page with a prototype, where you can explore the design for yourselves.
 
 The prototype explores a page for neurodivergent users within Folkæt. It introduces different ways of thinking, communicating and working as strengths within a team, with clear entry points to learn more, find people and build a profile. It's part of the accessibility-focused work I've been doing during my internship, where I've been exploring how people can communicate their preferences and support needs.
 
