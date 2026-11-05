@@ -755,9 +755,11 @@ body.dark .portrait-frame {
 /* Smaller on phones, so several pills share a row instead of stacking one per line */
 @media (max-width: 767px) {
   .pill {
-    font-size: 0.6875rem;
-    letter-spacing: 0.05em;
-    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.3rem 0.8rem;
+    text-transform: none;
   }
 }
 
