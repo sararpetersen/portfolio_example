@@ -394,6 +394,35 @@ const getPeriodWithoutDegree = (period?: string) => {
     padding-top: 1rem;
   }
 
+  /* On phones the degree and the semester are one line of plain text ("MULTIMEDIA DESIGN · 2025 · 4th semester"),
+     and context and role share one hairline instead of getting one each. */
+  @media (max-width: 767px) {
+    #project-degree {
+      background: transparent !important;
+      border: 0 !important;
+      padding: 0 !important;
+      color: #375567 !important;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    #project-degree::after {
+      content: "·";
+      margin-left: 0.75rem;
+    }
+    :global(body.dark) #project-degree {
+      color: var(--text-on-dark-soft) !important;
+    }
+    #case-facts {
+      gap: 0.75rem;
+    }
+    .case-fact + .case-fact {
+      border-top: 0;
+      padding-top: 0;
+    }
+  }
+
   .case-outcome {
     border: 1px solid #c0d7e1;
     background: #deebef;

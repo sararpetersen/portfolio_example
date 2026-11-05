@@ -761,6 +761,26 @@ body.dark .portrait-frame {
     padding: 0.3rem 0.8rem;
     text-transform: none;
   }
+
+  /* The jump links at the top of Terms and the accessibility statement are plain underlined links on phones,
+     not a stack of pills */
+  .terms-toc {
+    gap: 0.1rem 1.1rem !important;
+  }
+  .terms-toc a.pill {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    padding: 0.35rem 0 !important;
+    color: #2f5a70 !important;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  body.dark .terms-toc a.pill {
+    color: var(--brand-primary-soft, #c0d7e1) !important;
+  }
 }
 
 .pill-ink,

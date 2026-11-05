@@ -65,6 +65,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
               <span id="blog-filter-label" class="w-full text-[11px] uppercase tracking-[0.1em] text-gray-500" data-i18n="blog.filter.label">
                 Filter by category:
               </span>
+              <div class="blog-chip-row flex flex-wrap items-center gap-2 w-full">
               <button type="button" class="blog-filter-chip pill is-active" data-filter-tag="" aria-pressed="true" data-i18n="blog.filter.all">
                 All
               </button>
@@ -81,6 +82,7 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
                   {categoryLabels(cat.key).en}
                 </button>
               ))}
+              </div>
             </div>
           )}
 
@@ -267,6 +269,19 @@ const activeCategories = categoryDefinitions.filter((cat) => posts.some((post) =
 
   body.dark .blog-card a:hover {
     color: var(--brand-primary-soft);
+  }
+
+  /* On phones the category chips are one swipeable row instead of three rows of pills */
+  @media (max-width: 767px) {
+    .blog-chip-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+    }
+    .blog-chip-row > .pill {
+      flex: none;
+    }
   }
 
   #show-more-container {
