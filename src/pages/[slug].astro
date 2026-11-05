@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import { ARCHIVED_CASE_SLUGS, fetchPortfolioCases, NON_ACTIVE_CASE_SLUGS, type PortfolioCase } from "../data/portfolioCases";
 import "../styles/global.css";
+import { translations } from "../i18n/translations";
 
 export async function getStaticPaths() {
   const projects = await fetchPortfolioCases();
@@ -47,12 +48,14 @@ const hasContext = Boolean(project.context?.trim());
 const hasRole = Boolean(project.role?.trim());
 const hasOutcome = Boolean(project.outcome?.trim());
 
+// The last part of the period is the degree. Supabase holds the short code (MMD, DCON); the case page spells it out.
 const getDegreeLabel = (period?: string) => {
   const parts = (period ?? "")
     .split("·")
     .map((part) => part.trim())
     .filter(Boolean);
-  return parts[parts.length - 1] || "";
+  const code = parts[parts.length - 1] || "";
+  return translations.en[`degree.${code}`] ?? code;
 };
 
 const getPeriodWithoutDegree = (period?: string) => {
@@ -610,7 +613,8 @@ const getPeriodWithoutDegree = (period?: string) => {
         .split("·")
         .map((part) => part.trim())
         .filter(Boolean);
-      degreeEl.textContent = parts[parts.length - 1] || "";
+      const code = parts[parts.length - 1] || "";
+      degreeEl.textContent = translations[lang === "da" ? "da" : "en"][`degree.${code}`] ?? code;
     }
 
     document.querySelectorAll(".related-project-year").forEach((yearEl) => {
