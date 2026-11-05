@@ -50,12 +50,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.title": "The highlights of my journey",
     "timeline.education": "Education",
     "timeline.work": "Work experience",
-    "timeline.0.year": "August 2019 - June 2021",
-    "timeline.0.title": "HF (higher preparatory examination) | Egedal Gymnasium & HF",
-    "timeline.0.desc":
-      "Completed high school with a focus on art, social studies and psychology, which sparked my interest in creativity, people and communication.",
     "timeline.2.year": "August 2023 - June 2025",
-    "timeline.2.title": "AP-degree in Multimedia Design | Copenhagen School of Design and Technology (KEA)",
+    "timeline.2.title": "Multimedia Design | Copenhagen Business Academy (KEA)",
     "timeline.2.desc":
       "Worked with UX/UI, digital design and coding, and gained hands-on experience with design tools, prototyping and web projects.",
     "timeline.3.year": "January 2025 - April 2025",
@@ -63,7 +59,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.3.desc":
       "Worked on website redesigns, developed sitemaps and information architecture, and created maintenance documentation for clients.",
     "timeline.4.year": "Present",
-    "timeline.4.title": "PBA in Digital Concept Development | Academy of Technologies and Business (Zealand)",
+    "timeline.4.title": "Digital Concept Development | Academy of Technologies and Business (Zealand)",
     "timeline.4.desc":
       "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
     "timeline.6.year": "May 2026 - Present",
@@ -255,7 +251,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "The Lab",
     "lab.title": "Experiments",
     "lab.intro":
-      "This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the main cases, but more honest about the process. If <em>'vibe coding'</em> is new to you, <a href='/blog/vibe-coding'>this post explains what it means</a>.",
+      "This is where I put the looser stuff – unfinished prototypes and things that exist mostly because I wanted to see if they could work. Most of it is <em>vibe coded</em>: built with the help of AI, where I describe what I want, the AI writes the code, and I guide, test and correct it. Less polished than the main cases, but more honest about the process. Want the longer version? <a href='/blog/vibe-coding'>This post explains what vibe coding is, and what I think about it</a>.",
     "lab.items.title": "Projects from the Lab",
     "lab.items.intro":
       "A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
@@ -437,12 +433,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.title": "H\u00f8jdepunkterne i min rejse",
     "timeline.education": "Uddannelse",
     "timeline.work": "Arbejdserfaring",
-    "timeline.0.year": "August 2019 - Juni 2021",
-    "timeline.0.title": "HF (højere forberedelseseksamen) | Egedal Gymnasium & HF",
-    "timeline.0.desc":
-      "Gennemførte gymnasiet med fokus på billedkunst, samfundsfag og psykologi, hvilket vakte min interesse for kreativitet, mennesker og kommunikation.",
     "timeline.2.year": "August 2023 - Juni 2025",
-    "timeline.2.title": "AK-uddannelse i Multimediedesign | Københavns Erhvervsakademi",
+    "timeline.2.title": "Multimediedesign | Københavns Erhvervsakademi (KEA)",
     "timeline.2.desc":
       "Arbejdede med UX/UI, digitalt design og kodning og opnåede praktisk erfaring med designværktøjer, prototyping og webprojekter.",
     "timeline.3.year": "Januar 2025 - April 2025",
@@ -450,7 +442,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.3.desc":
       "Arbejdede med redesign af websites, udviklede sitemaps og informationsarkitektur samt udarbejdede vedligeholdelsesdokumentation til kunder.",
     "timeline.4.year": "Nu",
-    "timeline.4.title": "PBA i Digital Konceptudvikling | Sjællands Erhvervsakademi",
+    "timeline.4.title": "Digital Konceptudvikling | Sjællands Erhvervsakademi (Zealand)",
     "timeline.4.desc":
       "Studerer i øjeblikket hvordan idéer omsættes til brugerrettede digitale koncepter med fokus på strategisk og adfærdsorienteret design.",
     "timeline.5.year": "Januar 2026 - Juni 2026",
@@ -643,7 +635,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "Laboratoriet",
     "lab.title": "Eksperimenter",
     "lab.intro":
-      "Her lægger jeg de lidt løsere ting – projekter bygget med hjælp fra AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end hovedcasene, men mere ærlig om processen. Hvis <em>'vibe coding'</em> er nyt for dig, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad det betyder.",
+      "Her lægger jeg de lidt løsere ting – uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se, om de virkede. Det meste er <em>vibe-kodet</em>: bygget med hjælp fra AI, hvor jeg beskriver, hvad jeg vil have, AI'en skriver koden, og jeg styrer, tester og retter den til. Mindre poleret end hovedcasene, men mere ærlig om processen. Vil du have den lange version, forklarer <a href='/blog/vibe-coding'>dette indlæg</a> (på engelsk), hvad vibe coding er, og hvad jeg mener om det.",
     "lab.items.title": "Projekter fra Laboratoriet",
     "lab.items.intro":
       "En samling af eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
