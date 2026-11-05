@@ -1,5 +1,6 @@
 ---
 import { fetchPortfolioCases, NON_ACTIVE_CASE_SLUGS, type PortfolioCase } from "../data/portfolioCases";
+import { translations } from "../i18n/translations";
 
 type ProjectCard = Partial<PortfolioCase> & Pick<PortfolioCase, "image">;
 
@@ -64,7 +65,9 @@ const MAX_CHIPS = 3;
               <div class="case-tile-media">
                 <img src={project.image} alt="" class="case-tile-img" loading={index < 2 ? "eager" : "lazy"} width="800" height="600" />
                 <span class="case-tile-degree" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-                  {getDegreeLabel(project.year)}
+                  <span class="deg-full">{translations.en[`degree.${getDegreeLabel(project.year)}`] ?? getDegreeLabel(project.year)}</span><span class="deg-code"
+                    >{getDegreeLabel(project.year)}</span
+                  >
                 </span>
               </div>
               <div class="case-tile-body">
@@ -103,6 +106,8 @@ const MAX_CHIPS = 3;
 </div>
 
 <script>
+  import { translations } from "../i18n/translations";
+
   const getLang = () => localStorage.getItem("lang") || "en";
 
   const applyCardTranslations = (lang: string) => {
@@ -137,7 +142,12 @@ const MAX_CHIPS = 3;
 
     document.querySelectorAll(".case-tile-degree").forEach((degreeEl) => {
       const element = degreeEl as HTMLElement;
-      element.textContent = getCurrentDegree(element);
+      const code = getCurrentDegree(element);
+      const dictionary = translations[lang === "da" ? "da" : "en"];
+      const full = element.querySelector(".deg-full");
+      const short = element.querySelector(".deg-code");
+      if (full) full.textContent = dictionary[`degree.${code}`] ?? code;
+      if (short) short.textContent = code;
     });
   };
 
@@ -251,6 +261,19 @@ const MAX_CHIPS = 3;
 
   .case-tile-degree:empty {
     display: none;
+  }
+
+  /* The full degree name on wide screens, the short code on phones where the long name would not fit */
+  .deg-full {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .deg-full {
+      display: inline;
+    }
+    .deg-code {
+      display: none;
+    }
   }
 
   .case-tile-period {
