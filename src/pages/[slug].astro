@@ -48,13 +48,17 @@ const hasContext = Boolean(project.context?.trim());
 const hasRole = Boolean(project.role?.trim());
 const hasOutcome = Boolean(project.outcome?.trim());
 
-// The last part of the period is the degree. Supabase holds the short code (MMD, DCON); the case page spells it out.
-const getDegreeLabel = (period?: string) => {
+// The last part of the period is the degree. Supabase holds the short code (MMD, DCON); wide screens spell it out,
+// phones show the code.
+const getDegreeCode = (period?: string) => {
   const parts = (period ?? "")
     .split("·")
     .map((part) => part.trim())
     .filter(Boolean);
-  const code = parts[parts.length - 1] || "";
+  return parts[parts.length - 1] || "";
+};
+const getDegreeLabel = (period?: string) => {
+  const code = getDegreeCode(period);
   return translations.en[`degree.${code}`] ?? code;
 };
 
@@ -138,7 +142,7 @@ const getPeriodWithoutDegree = (period?: string) => {
     <header id="project-header" class="col-span-12 md:mb-10 mb-8">
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-4 mb-4">
         <span id="project-degree" class="pill" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-          {getDegreeLabel(project.year)}
+          <span class="deg-full">{getDegreeLabel(project.year)}</span><span class="deg-code">{getDegreeCode(project.year)}</span>
         </span>
         <p
           id="project-subtitle"
@@ -397,6 +401,10 @@ const getPeriodWithoutDegree = (period?: string) => {
     padding-top: 1rem;
   }
 
+  #project-degree .deg-code {
+    display: none;
+  }
+
   /* On phones the degree and the semester are one line of plain text ("MULTIMEDIA DESIGN · 2025 · 4th semester"),
      and context and role share one hairline instead of getting one each. */
   @media (max-width: 767px) {
@@ -413,6 +421,12 @@ const getPeriodWithoutDegree = (period?: string) => {
     #project-degree::after {
       content: "·";
       margin-left: 0.75rem;
+    }
+    #project-degree .deg-full {
+      display: none;
+    }
+    #project-degree .deg-code {
+      display: inline;
     }
     :global(body.dark) #project-degree {
       color: var(--text-on-dark-soft) !important;
@@ -614,7 +628,10 @@ const getPeriodWithoutDegree = (period?: string) => {
         .map((part) => part.trim())
         .filter(Boolean);
       const code = parts[parts.length - 1] || "";
-      degreeEl.textContent = translations[lang === "da" ? "da" : "en"][`degree.${code}`] ?? code;
+      const full = degreeEl.querySelector(".deg-full");
+      const short = degreeEl.querySelector(".deg-code");
+      if (full) full.textContent = translations[lang === "da" ? "da" : "en"][`degree.${code}`] ?? code;
+      if (short) short.textContent = code;
     }
 
     document.querySelectorAll(".related-project-year").forEach((yearEl) => {
