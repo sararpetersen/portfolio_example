@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     tools: ["UX/UI", "React", "TypeScript", "Supabase", "Accessible design", "User testing", "AI-assisted development"],
     links: [
       {
-        label: { en: "Explore the onboarding site", da: "Se onboarding-sitet" },
+        label: { en: "Onboarding site", da: "Onboarding-site" },
         url: "https://web-steady.netlify.app/",
       },
       {

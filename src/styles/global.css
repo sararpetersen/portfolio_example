@@ -756,7 +756,7 @@ body.dark .portrait-frame {
 @media (max-width: 767px) {
   .pill {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.01em;
     padding: 0.3rem 0.8rem;
     text-transform: none;

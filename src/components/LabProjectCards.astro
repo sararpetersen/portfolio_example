@@ -32,17 +32,6 @@ const { projects } = Astro.props as { projects: LabProject[] };
                   <span data-i18n="lab.badge.longrunning">Longest-running project</span>
                 </span>
               )}
-              <span
-                class="lab-tag pill"
-                tabindex="0"
-                role="note"
-                aria-label="Vibe coded"
-                data-i18n-aria="lab.badge.vibecoded"
-                data-tooltip="This project was built with AI assistance"
-                data-i18n-tooltip="lab.badge.vibecoded.tooltip"
-              >
-                <span data-i18n="lab.badge.vibecoded">Vibe coded</span>
-              </span>
               {project.wip && (
                 <span
                   class="lab-tag pill wip-tag"
@@ -109,12 +98,12 @@ const { projects } = Astro.props as { projects: LabProject[] };
       padding: 0 !important;
       color: #375567 !important;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .lab-tag.pill-ink {
-      font-weight: 800;
+      font-weight: 600;
     }
     .lab-tag {
       white-space: nowrap;
