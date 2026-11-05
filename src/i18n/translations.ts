@@ -59,7 +59,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.3.desc":
       "Worked on website redesigns, developed sitemaps and information architecture, and created maintenance documentation for clients.",
     "timeline.4.year": "Present",
-    "timeline.4.title": "Digital Concept Development | Academy of Technologies and Business (Zealand)",
+    "timeline.4.title": "Digital Concept Development | Zealand Business Academy (Zealand)",
     "timeline.4.desc":
       "Currently studying how to turn ideas into user-focused digital concepts, with a strong focus on strategic and behavioural design.",
     "timeline.6.year": "May 2026 - Present",
@@ -67,7 +67,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "timeline.6.desc":
       "Working on an accessibility-focused page for neurodivergent users, alongside design tasks in Figma and learning React Router 7 and Python through minor tasks on Folkæt's platform.",
     "timeline.5.year": "January 2026 - June 2026",
-    "timeline.5.title": "Student Buddy | Academy of Technologies and Business (Zealand)",
+    "timeline.5.title": "Student Buddy | Zealand Business Academy (Zealand)",
     "timeline.5.desc":
       "Supporting international students through onboarding, social and academic integration, and acting as a go-to contact for everyday questions.",
     "interests.title": "Interests and hobbies",
