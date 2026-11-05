@@ -10,8 +10,7 @@ const siteUrl = "https://sararingkow.dk/";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/images/hero_image.webp", siteUrl).toString();
 const pageTitle = Astro.props.title ?? "Sara Ringkow Petersen | UX/UI & Digital Accessibility";
-const pageDescription =
-  Astro.props.description ?? "UX/UI design, digital accessibility and inclusive web design by Sara Ringkow Petersen in Denmark.";
+const pageDescription = Astro.props.description ?? "UX/UI design, digital accessibility & inclusive web design by Sara Ringkow Petersen in Denmark.";
 const pageType = Astro.props.pageType ?? "website";
 const socialImageAlt = Astro.props.socialImageAlt ?? "Sara Ringkow Petersen — multimedia designer specialising in UX/UI and digital accessibility";
 const additionalSchema = Astro.props.schema;
