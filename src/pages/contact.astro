@@ -112,7 +112,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         </p>
 
         <p id="contact-services-label" data-i18n="contact.services.label" class="contact-services-label">What I offer</p>
-        <ul id="contact-services" class="flex flex-wrap gap-2" aria-label="Services offered" data-i18n-aria="contact.services.aria">
+        <ul id="contact-services" role="list" class="flex flex-wrap gap-2" aria-label="Services offered" data-i18n-aria="contact.services.aria">
           <li class="pill"><span data-i18n="contact.services.uiux">UX/UI design</span></li>
           <li class="pill"><span data-i18n="contact.services.web">Accessible web design</span></li>
           <li class="pill"><span data-i18n="contact.services.concept">Development of concepts</span></li>
@@ -447,6 +447,32 @@ import MainLayout from "../layouts/MainLayout.astro";
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #5a5149;
+    }
+
+    /* On phones the services are one line of text, separated by dots, not a stack of pills.
+       inline-block lets the line break between the services. */
+    @media (max-width: 767px) {
+      :global(#contact-services) {
+        display: block !important;
+        line-height: 1.8;
+      }
+      :global(#contact-services li) {
+        display: inline-block !important;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+        color: #3d3d3d !important;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      :global(#contact-services li:not(:last-child))::after {
+        content: "·";
+        margin: 0 0.6rem;
+      }
+      :global(body.dark #contact-services li) {
+        color: var(--text-on-dark-soft) !important;
+      }
     }
 
     :global(#contact-form input::placeholder),
