@@ -251,7 +251,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "The Lab",
     "lab.title": "Experiments",
     "lab.intro":
-      "This is where I put the projects I build with AI – <em>vibe coded</em>: I describe what I want, the AI writes the code, and I guide, test and correct what it builds. Experimental tools and concepts centred on neurodivergence, disability, and accessible design – less polished than the main cases, but more honest about the process. Steady is the one I have worked on the longest. <a href='/blog/vibe-coding'>Here's what I think about vibe coding.</a>",
+      "These are the things I build with AI. I describe an idea, the AI writes the code, and I do the steering – testing it, breaking it, fixing it. They're rougher than my main cases, but I'd rather show you the real process than hide it. <a href='/blog/vibe-coding'>Here's what I think about vibe coding.</a>",
     "lab.items.title": "Projects from the Lab",
     "lab.bivi.link": "Visit site/app\u00a0→",
     "lab.bivi.title": "Bivi - Your Little Medication Sidekick",
@@ -630,7 +630,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "Laboratoriet",
     "lab.title": "Eksperimenter",
     "lab.intro":
-      "Her lægger jeg de projekter, jeg bygger med AI – <em>vibe-kodet</em>: jeg beskriver, hvad jeg vil have, AI'en skriver koden, og jeg styrer, tester og retter til. Eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design – mindre poleret end hovedcasene, men mere ærlig om processen. Steady er det projekt, jeg har arbejdet længst på. <a href='/blog/vibe-coding'>Her er, hvad jeg mener om vibe coding</a> (på engelsk).",
+      "Det her er de ting, jeg bygger med AI. Jeg beskriver en idé, AI'en skriver koden, og jeg står for styringen – tester den, knækker den, retter den til. De er mere rå end mine hovedcases, men jeg vil hellere vise dig den rigtige proces end skjule den. <a href='/blog/vibe-coding'>Her er, hvad jeg mener om vibe coding</a> (på engelsk).",
     "lab.items.title": "Projekter fra Laboratoriet",
     "lab.bivi.title": "Bivi - Din Lille Medicinmakker",
     "lab.bivi.link": "Besøg siden/appen\u00a0→",

@@ -25,9 +25,8 @@ import { labProjects } from "../data/labProjects";
           </h1>
         </div>
         <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
-          This is where I put the projects I build with AI – <em>vibe coded</em>: I describe what I want, the AI writes the code, and I guide, test and
-          correct what it builds. Experimental tools and concepts centred on neurodivergence, disability, and accessible design – less polished than
-          the main cases, but more honest about the process. Steady is the one I have worked on the longest.{" "}<a href="/blog/vibe-coding"
+          These are the things I build with AI. I describe an idea, the AI writes the code, and I do the steering – testing it, breaking it, fixing
+          it. They're rougher than my main cases, but I'd rather show you the real process than hide it.{" "}<a href="/blog/vibe-coding"
             >Here's what I think about vibe coding.</a
           >
         </p>
@@ -36,11 +35,8 @@ import { labProjects } from "../data/labProjects";
   </section>
 
   <!-- Lab Items -->
-  <section id="lab-items" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-8 pt-6">
-    <h2 id="lab-items-title" class="sr-only" data-i18n="lab.items.title">
-      Projects from the Lab
-    </h2>
-
+  <section id="lab-items" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-12 pt-8">
+    <h2 id="lab-items-title" class="sr-only" data-i18n="lab.items.title">Projects from the Lab</h2>
 
     <!-- Project cards keep their existing layout, but are generated from one data source. -->
     <LabProjectCards projects={labProjects} />
