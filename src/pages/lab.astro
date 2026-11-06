@@ -25,24 +25,22 @@ import { labProjects } from "../data/labProjects";
           </h1>
         </div>
         <p id="lab-intro" class="text-gray-600 max-w-3xl leading-relaxed text-left" data-i18n="lab.intro">
-          This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I
-          wanted to see if they could work. Less polished than the main cases, but more honest about the process.
+          This is where I put the projects I build with AI – <em>vibe coded</em>: I describe what I want, the AI writes the code, and I guide, test and
+          correct what it builds. Experimental tools and concepts centred on neurodivergence, disability, and accessible design – less polished than
+          the main cases, but more honest about the process. Steady is the one I have worked on the longest.{" "}<a href="/blog/vibe-coding"
+            >Here's what I think about vibe coding.</a
+          >
         </p>
       </div>
     </div>
   </section>
 
   <!-- Lab Items -->
-  <section id="lab-items" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-14 pt-12">
-    <h2 id="lab-items-title" class="font-garamond font-bold italic md:text-h3-desktop text-h3-mobile text-gray-800 mb-3" data-i18n="lab.items.title">
+  <section id="lab-items" class="max-w-6xl mx-auto xl:px-0 px-6 md:pt-8 pt-6">
+    <h2 id="lab-items-title" class="sr-only" data-i18n="lab.items.title">
       Projects from the Lab
     </h2>
 
-    <p id="lab-items-intro" class="text-sm text-gray-600 leading-relaxed max-w-2xl mb-6" data-i18n="lab.items.intro">
-      A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Most are vibe coded: I describe
-      what I want to an AI, then guide, test and correct what it builds (<a href="/blog/vibe-coding">more about vibe coding</a>). Steady is the
-      project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.
-    </p>
 
     <!-- Project cards keep their existing layout, but are generated from one data source. -->
     <LabProjectCards projects={labProjects} />
@@ -73,7 +71,7 @@ import { labProjects } from "../data/labProjects";
 
   /* Link to the vibe coding post at the end of the intro. The intro text is swapped in by the language
      switcher, so these rules cannot rely on Astro's scoped attributes. */
-  :global(#lab-items-intro a) {
+  :global(#lab-intro a) {
     /* The base link style sets its own, larger font size; follow the small paragraph around it instead */
     font-size: inherit;
     line-height: inherit;
@@ -82,17 +80,17 @@ import { labProjects } from "../data/labProjects";
     text-underline-offset: 3px;
   }
 
-  :global(#lab-items-intro a:hover) {
+  :global(#lab-intro a:hover) {
     color: var(--brand-primary);
   }
 
-  :global(#lab-items-intro a:focus-visible) {
+  :global(#lab-intro a:focus-visible) {
     outline: 3px solid #375567;
     outline-offset: 2px;
     border-radius: 2px;
   }
 
-  :global(body.dark #lab-items-intro a) {
+  :global(body.dark #lab-intro a) {
     color: var(--brand-primary-soft);
   }
 

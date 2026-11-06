@@ -251,10 +251,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "The Lab",
     "lab.title": "Experiments",
     "lab.intro":
-      "This is where I put the looser stuff – projects built with help from AI, unfinished prototypes, and things that exist mostly because I wanted to see if they could work. Less polished than the main cases, but more honest about the process.",
+      "This is where I put the projects I build with AI – <em>vibe coded</em>: I describe what I want, the AI writes the code, and I guide, test and correct what it builds. Experimental tools and concepts centred on neurodivergence, disability, and accessible design – less polished than the main cases, but more honest about the process. Steady is the one I have worked on the longest. <a href='/blog/vibe-coding'>Here's what I think about vibe coding.</a>",
     "lab.items.title": "Projects from the Lab",
-    "lab.items.intro":
-      "A collection of experimental tools and concepts centred on neurodivergence, disability, and accessible design. Most are vibe coded: I describe what I want to an AI, then guide, test and correct what it builds (<a href='/blog/vibe-coding'>more about vibe coding</a>). Steady is the project I have worked on for the longest, growing through repeated accessibility work, user testing, and product iteration.",
     "lab.bivi.link": "Visit site/app\u00a0→",
     "lab.bivi.title": "Bivi - Your Little Medication Sidekick",
     "lab.vibeloop.link": "View case\u00a0→",
@@ -632,10 +630,8 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "nav.lab": "Laboratoriet",
     "lab.title": "Eksperimenter",
     "lab.intro":
-      "Her lægger jeg de lidt løsere ting – projekter bygget med hjælp fra AI, uafsluttede prototyper og ting, der primært eksisterer, fordi jeg ville se om de virkede. Mindre poleret end hovedcasene, men mere ærlig om processen.",
+      "Her lægger jeg de projekter, jeg bygger med AI – <em>vibe-kodet</em>: jeg beskriver, hvad jeg vil have, AI'en skriver koden, og jeg styrer, tester og retter til. Eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design – mindre poleret end hovedcasene, men mere ærlig om processen. Steady er det projekt, jeg har arbejdet længst på. <a href='/blog/vibe-coding'>Her er, hvad jeg mener om vibe coding</a> (på engelsk).",
     "lab.items.title": "Projekter fra Laboratoriet",
-    "lab.items.intro":
-      "En samling af eksperimentelle værktøjer og koncepter med fokus på neurodivergens, handicap og tilgængeligt design. Det meste er vibe-kodet: jeg beskriver, hvad jeg vil have, til en AI og styrer, tester og retter så det, den bygger (<a href='/blog/vibe-coding'>mere om vibe coding</a>, på engelsk). Steady er det projekt, jeg har arbejdet længst på, og det er vokset gennem gentaget tilgængelighedsarbejde, brugertest og produktiteration.",
     "lab.bivi.title": "Bivi - Din Lille Medicinmakker",
     "lab.bivi.link": "Besøg siden/appen\u00a0→",
     "lab.vibeloop.title": "VibeLoop - Humørbaseret Social App",
