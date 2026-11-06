@@ -449,29 +449,32 @@ import MainLayout from "../layouts/MainLayout.astro";
       color: #5a5149;
     }
 
-    /* On phones the services are one line of text, separated by dots, not a stack of pills.
-       inline-block lets the line break between the services. */
+    /* On phones the four services are plain text in a tidy two-by-two grid, not a stack of pills */
     @media (max-width: 767px) {
       :global(#contact-services) {
-        display: block !important;
-        line-height: 1.8;
+        display: grid !important;
+        grid-template-columns: auto auto;
+        justify-content: start;
+        gap: 0.5rem 1.5rem;
       }
       :global(#contact-services li) {
-        display: inline-block !important;
+        display: block !important;
         background: transparent !important;
         border: 0 !important;
+        border-radius: 0;
         padding: 0 !important;
         color: #3d3d3d !important;
-        font-size: 0.9375rem;
+        font-size: 0.8125rem;
         font-weight: 400;
         letter-spacing: 0;
-      }
-      :global(#contact-services li:not(:last-child))::after {
-        content: "·";
-        margin: 0 0.6rem;
+        line-height: 1.4;
       }
       :global(body.dark #contact-services li) {
         color: var(--text-on-dark-soft) !important;
+      }
+
+      :global(.contact-services-label) {
+        margin: 1.5rem 0 0.2rem;
       }
     }
 
