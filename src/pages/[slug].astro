@@ -77,7 +77,7 @@ const getPeriodWithoutDegree = (period?: string) => {
   ogtitle={`${project.name} – SRP Portfolio`}
   ogdescription={`Explore the challenge, design process and outcome behind ${project.name}. ${project.description}`}
 >
-  <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-[5.5rem] mt-12 xl:px-0 px-6">
+  <section id="project" class="relative grid grid-cols-12 max-w-6xl mx-auto pt-mobil-top md:mt-[5.5rem] mt-[1.5rem] xl:px-0 px-6">
     <!-- Navigation -->
     <nav
       id="navigation"
@@ -139,7 +139,7 @@ const getPeriodWithoutDegree = (period?: string) => {
     </nav>
 
     <!-- Header -->
-    <header id="project-header" class="col-span-12 md:mb-10 mb-8">
+    <header id="project-header" class="col-span-12 md:mb-10 mb-6">
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-4 mb-4">
         <span id="project-degree" class="pill" data-year={project.year || ""} data-year-da={project.year_da || ""}>
           <span class="deg-full">{getDegreeLabel(project.year)}</span><span class="deg-code">{getDegreeCode(project.year)}</span>
@@ -215,7 +215,7 @@ const getPeriodWithoutDegree = (period?: string) => {
 
         {
           project.tools && project.tools.length > 0 && (
-            <div id="tools-list" class="mt-6">
+            <div id="tools-list" class="md:mt-6 mt-8">
               <h2 id="tools-title" class="text-sm font-semibold uppercase tracking-[0.12em] text-gray-600 mb-3" data-i18n="project.tools">
                 Tools used:
               </h2>
@@ -284,10 +284,7 @@ const getPeriodWithoutDegree = (period?: string) => {
   </div>
 
   <!-- Related Projects Section -->
-  <section
-    id="related-projects"
-    class="max-w-6xl grid grid-cols-12 mx-auto md:pt-desktop-top pt-mobil-top md:pb-desktop-bottom pb-mobil-bottom xl:px-0 px-6"
-  >
+  <section id="related-projects" class="max-w-6xl grid grid-cols-12 mx-auto md:pt-12 pt-8 md:pb-desktop-bottom pb-mobil-bottom xl:px-0 px-6">
     <div id="related-projects-title" class="col-span-12">
       <div id="related-projects-title-row" class="flex items-center gap-4 mb-6">
         <h2
@@ -349,8 +346,8 @@ const getPeriodWithoutDegree = (period?: string) => {
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
-    margin-bottom: 1.1rem;
-    padding-top: 0.9rem;
+    margin-bottom: 1.6rem;
+    padding-top: 1.2rem;
     border-top: 1px solid #a8a098;
     color: #4b4b4b;
   }
@@ -364,7 +361,7 @@ const getPeriodWithoutDegree = (period?: string) => {
   .case-note-icon {
     flex-shrink: 0;
     margin-top: 0.1rem;
-    color: #375567;
+    color: #1e3a8a;
   }
 
   .case-note-warn .case-note-icon {
@@ -432,11 +429,16 @@ const getPeriodWithoutDegree = (period?: string) => {
       color: var(--text-on-dark-soft) !important;
     }
     #case-facts {
-      gap: 1.3rem;
+      gap: 1.6rem;
     }
     .case-fact + .case-fact {
       border-top: 0;
-      padding-top: 0;
+      padding-top: 0.2rem;
+    }
+
+    .case-note {
+      margin-bottom: 2rem;
+      padding-top: 1.2rem;
     }
   }
 

@@ -291,7 +291,7 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
       data-i18n-aria="header.burger.aria"
       aria-controls="mobilmenu"
       x-bind:aria-expanded="showmenu ? 'true' : 'false'"
-      class="lg:hidden tooltip-below"
+      class="lg:hidden tooltip-below cursor-pointer"
       x-on:click="showmenu = !showmenu"
       data-tooltip="Menu"
       data-i18n-tooltip="header.burger.tooltip"
