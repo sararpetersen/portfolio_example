@@ -1,0 +1,70 @@
+---
+// Thin reading-progress line along the bottom edge of the header, for long pages (blog posts, case pages).
+// Purely visual: screen-reader and keyboard users already get position from the page itself, so it is
+// hidden from assistive tech instead of announcing a value on every scroll.
+---
+
+<div id="reading-progress" aria-hidden="true"><span id="reading-progress-fill"></span></div>
+
+<style is:global>
+  #reading-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  #reading-progress[hidden] {
+    display: none;
+  }
+
+  #reading-progress-fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--brand-primary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.1s linear;
+  }
+
+  body.reduce-motion #reading-progress-fill {
+    transition: none;
+  }
+
+  body.dark #reading-progress-fill {
+    background: var(--brand-primary-soft);
+  }
+
+  @media print {
+    #reading-progress {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const bar = document.getElementById("reading-progress");
+  const fill = document.getElementById("reading-progress-fill");
+  const header = document.getElementById("header");
+
+  if (bar && fill) {
+    // The header is fixed, so the line lives inside it and always follows its height.
+    header?.appendChild(bar);
+
+    // Only worth showing on pages that are clearly longer than the screen (about 2 screens of scrolling).
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.hidden = max < window.innerHeight * 2;
+      const ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      fill.style.transform = `scaleX(${ratio})`;
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+</script>
