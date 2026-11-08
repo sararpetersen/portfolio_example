@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
@@ -100,6 +101,11 @@ import "../styles/global.css";
           >, and say which page it was and what happened. Phone calls can be difficult for me, so I prefer written messages.
         </p>
       </div>
+    </section>
+
+    <!-- Back button -->
+    <section id="a11ystmt-back" class="button-container mx-auto py-20 text-center">
+      <Button href="/" variant="primary" size="small"><span data-i18n="btn.back">Back to homepage</span></Button>
     </section>
   </section>
 </MainLayout>
