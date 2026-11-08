@@ -447,18 +447,35 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     background-color: var(--brand-primary-soft);
   }
 
-  /* Keep the header layer visually stable while scrolling. */
+  /* At the very top the header has a thin border; once the page scrolls, the border turns into a shadow. */
   #header {
+    border-bottom: 1px solid #d8d2cc;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition:
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  #header.header-scrolled {
+    border-bottom-color: transparent;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid transparent;
+  }
+
+  body.reduce-motion #header {
+    transition: none;
   }
 
   /* Dark Mode */
   body.dark #header {
     background: var(--dark-bg);
     color: var(--text-on-dark);
-    box-shadow: none;
     border-bottom: 1px solid #333;
+    box-shadow: none;
+  }
+
+  body.dark #header.header-scrolled {
+    border-bottom-color: #333;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
 
   .bar-quick-btn {
@@ -720,4 +737,12 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
   const currentLang = localStorage.getItem("lang") || "en";
   document.getElementById("lang-toggle-en")?.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
   document.getElementById("lang-toggle-da")?.setAttribute("aria-pressed", currentLang === "da" ? "true" : "false");
+
+  // Header: border at the top, shadow once the page has scrolled
+  const siteHeader = document.getElementById("header");
+  const syncHeaderShadow = () => {
+    siteHeader?.classList.toggle("header-scrolled", window.scrollY > 4);
+  };
+  window.addEventListener("scroll", syncHeaderShadow, { passive: true });
+  syncHeaderShadow();
 </script>
