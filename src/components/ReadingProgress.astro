@@ -12,9 +12,21 @@
     left: 0;
     right: 0;
     bottom: -1px;
-    height: 3px;
-    background: transparent;
+    height: 5px;
+    /* A faint track shows how far there is left to go */
+    background: rgba(67, 116, 138, 0.12);
     pointer-events: none;
+    /* Invisible at the very top of the page, fades in once the page starts to scroll */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #reading-progress.is-visible {
+    opacity: 1;
+  }
+
+  body.reduce-motion #reading-progress {
+    transition: none;
   }
 
   #reading-progress[hidden] {
@@ -33,6 +45,10 @@
 
   body.reduce-motion #reading-progress-fill {
     transition: none;
+  }
+
+  body.dark #reading-progress {
+    background: rgba(192, 215, 225, 0.14);
   }
 
   body.dark #reading-progress-fill {
@@ -60,6 +76,7 @@
       const max = document.documentElement.scrollHeight - window.innerHeight;
       bar.hidden = max < window.innerHeight * 2;
       const ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      bar.classList.toggle("is-visible", window.scrollY > 4);
       fill.style.transform = `scaleX(${ratio})`;
     };
 
