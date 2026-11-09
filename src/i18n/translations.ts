@@ -358,6 +358,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.success": "Thank you! Your message has been sent. I'll get back to you soon.",
     "contact.form.error.required": "This field is required.",
     "contact.form.error.email": "Enter a valid email address.",
+    // Used from src/pages/[slug].astro as `slugpage.${prefixKey}.aria` (built at runtime), so a search for the full key finds nothing. Do not delete.
     "slugpage.prev.aria": "Go to previous project",
     "slugpage.next.aria": "Go to next project",
     "degree.MMD": "Multimedia Design",
@@ -729,6 +730,7 @@ export const translations: Record<"en" | "da", Record<string, string>> = {
     "contact.form.success": "Tak! Din besked er sendt. Jeg vender tilbage hurtigst muligt.",
     "contact.form.error.required": "Dette felt er påkrævet.",
     "contact.form.error.email": "Indtast en gyldig emailadresse.",
+    // Used from src/pages/[slug].astro as `slugpage.${prefixKey}.aria` (built at runtime), so a search for the full key finds nothing. Do not delete.
     "slugpage.prev.aria": "Gå til forrige projekt",
     "slugpage.next.aria": "Gå til næste projekt",
     "degree.MMD": "Multimediedesign",
