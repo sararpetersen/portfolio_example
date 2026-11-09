@@ -65,7 +65,7 @@ const MAX_CHIPS = 3;
               <div class="case-tile-media">
                 <img src={project.image} alt="" class="case-tile-img" loading={index < 2 ? "eager" : "lazy"} width="800" height="600" />
                 <span class="case-tile-degree" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-                  <span class="deg-full">{translations.en[`degree.${getDegreeLabel(project.year)}`] ?? getDegreeLabel(project.year)}</span><span class="deg-code"
+                  <span class="deg-full">{translations.en[`degree.${getDegreeLabel(project.year)}`] ?? getDegreeLabel(project.year)}</span><span class="deg-code" aria-hidden="true"
                     >{getDegreeLabel(project.year)}</span
                   >
                 </span>
@@ -264,12 +264,23 @@ const MAX_CHIPS = 3;
   }
 
   /* The full degree name on wide screens, the short code on phones where the long name would not fit */
+  /* The full name stays in the page for screen readers (visually hidden on phones); the code is only visual. */
   .deg-full {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   @media (min-width: 768px) {
     .deg-full {
-      display: inline;
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip-path: none;
+      white-space: normal;
     }
     .deg-code {
       display: none;

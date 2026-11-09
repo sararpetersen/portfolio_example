@@ -142,7 +142,7 @@ const getPeriodWithoutDegree = (period?: string) => {
     <header id="project-header" class="col-span-12 md:mb-10 mb-6">
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-4 mb-4">
         <span id="project-degree" class="pill" data-year={project.year || ""} data-year-da={project.year_da || ""}>
-          <span class="deg-full">{getDegreeLabel(project.year)}</span><span class="deg-code">{getDegreeCode(project.year)}</span>
+          <span class="deg-full">{getDegreeLabel(project.year)}</span><span class="deg-code" aria-hidden="true">{getDegreeCode(project.year)}</span>
         </span>
         <p
           id="project-subtitle"
@@ -419,8 +419,14 @@ const getPeriodWithoutDegree = (period?: string) => {
       content: "·";
       margin-left: 0.75rem;
     }
+    /* Visually hidden, not removed, so screen readers still get the full degree name */
     #project-degree .deg-full {
-      display: none;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
     #project-degree .deg-code {
       display: inline;
