@@ -607,6 +607,12 @@ const isActive = (path: string) => (path === "/" ? currentPath === "/" : current
     color: #f0f1f3;
     background-color: transparent;
     border: 1px solid transparent;
+    /* 24px minimum target size (WCAG 2.5.8); the label stays centred */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    min-width: 24px;
   }
 
   .lang-btn[aria-pressed="true"] {
