@@ -413,7 +413,7 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(100% + 7px);
+  bottom: 100%;
   top: auto;
   white-space: nowrap;
   background: rgba(26, 26, 26, 0.92);
@@ -423,15 +423,30 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
   font-weight: 500;
   letter-spacing: 0.01em;
   padding: 4px 8px;
+  /* The 7px gap to the trigger is a transparent border (not an offset), so the pointer can travel from
+     the trigger onto the tooltip without leaving the hover area (WCAG 1.4.13, hoverable). The background
+     stops at the padding box, and the elliptical radii on the gap side keep the visible corners at 5px. */
+  border: 0 solid transparent;
+  border-bottom-width: 7px;
+  background-clip: padding-box;
   border-radius: 5px;
+  border-bottom-left-radius: 5px 12px;
+  border-bottom-right-radius: 5px 12px;
+  /* Not interactive while hidden, so an invisible tooltip never blocks clicks on what is underneath it */
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.18s ease;
   z-index: 9999;
 }
 [data-tooltip].tooltip-below::after {
-  top: calc(100% + 7px);
+  top: 100%;
   bottom: auto;
+  border-bottom-width: 0;
+  border-top-width: 7px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px 12px;
+  border-top-right-radius: 5px 12px;
 }
 /* For buttons near the left edge of the viewport, where a long centered
    tooltip would otherwise run off-screen — grow rightward from the button
@@ -443,14 +458,18 @@ body.calm-mode img:not(.logo-light):not(.logo-dark):not([aria-hidden="true"]) {
 [data-tooltip]:hover::after,
 [data-tooltip]:focus-visible::after {
   opacity: 1;
+  /* While it is showing, the tooltip itself counts as part of the trigger's hover area */
+  pointer-events: auto;
 }
 /* Escape dismisses an open tooltip without requiring the pointer/focus to move (WCAG 1.4.13);
    see the keydown listener in MainLayout.astro that toggles this class. */
 body.tooltips-dismissed [data-tooltip]::after {
   opacity: 0 !important;
+  pointer-events: none !important;
 }
 body.dark [data-tooltip]::after {
-  background: rgba(235, 235, 235, 0.95);
+  /* background-color, not the shorthand: the shorthand would reset background-clip to border-box */
+  background-color: rgba(235, 235, 235, 0.95);
   color: #1a1a1a;
 }
 
